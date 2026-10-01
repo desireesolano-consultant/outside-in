@@ -3,9 +3,9 @@
 
 const TEXTOS = {
   es: {
-    subtitulo: "Un espacio de análisis y consultoría por Desiree Solano",
+    subtitulo: "Tendencias de industria y transformación organizacional · por Desiree Solano",
     botonIdioma: "English",
-    introTitulo: "Sobre este espacio",
+    introTitulo: "Te doy la bienvenida a Outside-In",
     tendenciasTitulo: "Las 5 tendencias que todo líder debería mirar",
     matrizTitulo: "Matriz de tendencias por industria y eje temático",
     matrizAyuda: "Haz clic en una casilla para ver los hallazgos.",
@@ -24,9 +24,9 @@ const TEXTOS = {
     sinHallazgos: "Todavía no hay hallazgos cargados para este cruce.",
   },
   en: {
-    subtitulo: "An analysis and consulting space by Desiree Solano",
+    subtitulo: "Industry trends and organizational transformation · by Desiree Solano",
     botonIdioma: "Español",
-    introTitulo: "About this space",
+    introTitulo: "Welcome to Outside-In",
     tendenciasTitulo: "The 5 trends every leader should watch",
     matrizTitulo: "Trend matrix by industry and topic",
     matrizAyuda: "Click a cell to see the findings.",

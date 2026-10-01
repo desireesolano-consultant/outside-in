@@ -14,6 +14,7 @@ function init() {
   }
 
   aplicarIdioma();
+  renderizarIntro();
   renderizarTendencias();
   renderizarMatriz();
 
@@ -34,6 +35,7 @@ function cambiarIdioma() {
     // ignorar si no se puede guardar
   }
   aplicarIdioma();
+  renderizarIntro();
   renderizarTendencias();
   renderizarMatriz();
 }
@@ -48,9 +50,31 @@ function aplicarIdioma() {
   });
 
   document.getElementById("boton-idioma").textContent = t.botonIdioma;
-  document.getElementById("texto-intro").textContent = idioma === "es" ? TEXTO_INTRO.es : TEXTO_INTRO.en;
   document.getElementById("texto-sobre-mi").textContent = idioma === "es" ? TEXTO_SOBRE_MI.es : TEXTO_SOBRE_MI.en;
   document.getElementById("link-linkedin").href = LINK_LINKEDIN_EJEMPLO;
+}
+
+function renderizarIntro() {
+  const contenedor = document.getElementById("texto-intro");
+  contenedor.innerHTML = "";
+  const carta = idioma === "es" ? INTRO.es : INTRO.en;
+
+  carta.parrafos.forEach((parrafo) => {
+    const p = document.createElement("p");
+    p.textContent = parrafo;
+    contenedor.appendChild(p);
+  });
+
+  const firma = document.createElement("div");
+  firma.className = "carta-firma";
+  const firmaNombre = document.createElement("p");
+  firmaNombre.className = "firma-nombre";
+  firmaNombre.textContent = carta.firma_nombre;
+  const firmaCargo = document.createElement("p");
+  firmaCargo.className = "firma-cargo";
+  firmaCargo.textContent = carta.firma_cargo;
+  firma.append(firmaNombre, firmaCargo);
+  contenedor.appendChild(firma);
 }
 
 function renderizarTendencias() {

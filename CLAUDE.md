@@ -6,7 +6,7 @@
 - Háblame siempre en español peruano, de tú.
 
 ## Objetivo del proyecto
-- Sitio web llamado "Radar de Tendencias Organizacionales", firmado por mí, que funciona como portafolio profesional.
+- Sitio web llamado "Outside-In", firmado por mí, que funciona como portafolio profesional.
 - Demuestra que estoy informada de lo que pasa en distintas industrias, más allá de un cliente específico, y muestra cómo pienso como consultora.
 - Público: reclutadores, gerentes de consultoría y líderes de negocio.
 
@@ -47,3 +47,4 @@
 - Fase 2: script que busque informes nuevos y use la API de Claude para proponer hallazgos.
 - Fase 3: ejecución semanal con GitHub Actions, con mi aprobación antes de publicar.
 - Nunca guardar claves de API en archivos del proyecto.
+- La carta de bienvenida dice que el sitio se actualiza cada semana. No publicar el sitio en internet hasta que la automatización semanal esté funcionando.

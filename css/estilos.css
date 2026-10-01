@@ -128,6 +128,29 @@ main {
   max-width: 65ch;
 }
 
+/* Carta de bienvenida */
+
+.carta {
+  max-width: 65ch;
+  color: var(--tinta-secundaria);
+}
+
+.carta-firma {
+  margin-top: 1.5rem;
+}
+
+.firma-nombre {
+  font-weight: 700;
+  color: var(--tinta-primaria);
+  margin-bottom: 0.15rem;
+}
+
+.firma-cargo {
+  color: var(--tinta-tenue);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
 /* Tendencias */
 
 .grid-tendencias {
