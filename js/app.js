@@ -1,9 +1,21 @@
-// Lógica del sitio: cambio de idioma, dibujar la matriz y abrir las fichas.
-// Este archivo no tiene contenido (eso está en datos.js) ni colores (eso está en estilos.css).
+// Lógica del sitio. El contenido vive en datos.js, los textos de interfaz en
+// textos.js, y los colores/tipografía en estilos.css — aquí solo "conectamos" todo.
 
 let idioma = "es";
+let indiceCapsula = 0;
 
-const RAMPA_SECUENCIAL = ["#cde2fb", "#9ec5f4", "#5598e7", "#2a78d6", "#1c5cab", "#0d366b"];
+const RAMPA_SECUENCIAL = ["#C9CCFF", "#9AA3F2", "#5C6CE0", "#2440F0", "#1B30B3", "#121F7A"];
+
+// Colores de fondo/texto/punto para cada tarjeta de la sección "Temas",
+// en el mismo orden que EJES (se repiten cada 4 porque son solo 4 colores de marca).
+const PALETA_TEMAS = [
+  { bg: "#2440F0", fg: "#FFFFFF", dot: "#FF6B2C" },
+  { bg: "#111214", fg: "#FFFFFF", dot: "#2440F0" },
+  { bg: "#FF6B2C", fg: "#111214", dot: "#FFFFFF" },
+  { bg: "#C9CCFF", fg: "#111214", dot: "#2440F0" },
+  { bg: "#2440F0", fg: "#FFFFFF", dot: "#C9CCFF" },
+  { bg: "#111214", fg: "#FFFFFF", dot: "#FF6B2C" },
+];
 
 function init() {
   try {
@@ -14,16 +26,33 @@ function init() {
   }
 
   aplicarIdioma();
-  renderizarIntro();
-  renderizarTendencias();
+  renderizarSobre();
+  renderizarHallazgosRecientes();
+  renderizarTemas();
   renderizarMatriz();
+  renderizarIndustrias();
+  iniciarCapsulaRotativa();
+  centrarDiagrama();
+
+  window.addEventListener("resize", debounce(centrarDiagrama, 150));
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      calcularAnchoCapsula();
+      centrarDiagrama();
+    });
+  }
 
   document.getElementById("boton-idioma").addEventListener("click", cambiarIdioma);
-  document.getElementById("modal-cerrar").addEventListener("click", cerrarModal);
 
-  const modal = document.getElementById("modal-fichas");
-  modal.addEventListener("click", (evento) => {
-    if (evento.target === modal) cerrarModal();
+  document.getElementById("modal-cerrar").addEventListener("click", () => cerrarModal("modal-fichas"));
+  document.getElementById("modal-sobre-cerrar").addEventListener("click", () => cerrarModal("modal-sobre"));
+  document.getElementById("boton-sobre").addEventListener("click", abrirModalSobre);
+
+  ["modal-fichas", "modal-sobre"].forEach((idModal) => {
+    const modal = document.getElementById(idModal);
+    modal.addEventListener("click", (evento) => {
+      if (evento.target === modal) cerrarModal(idModal);
+    });
   });
 }
 
@@ -35,9 +64,22 @@ function cambiarIdioma() {
     // ignorar si no se puede guardar
   }
   aplicarIdioma();
-  renderizarIntro();
-  renderizarTendencias();
+  renderizarSobre();
+  renderizarHallazgosRecientes();
+  renderizarTemas();
   renderizarMatriz();
+  renderizarIndustrias();
+  calcularAnchoCapsula();
+  actualizarTextoCapsula();
+  centrarDiagrama();
+}
+
+function debounce(fn, esperaMs) {
+  let temporizador = null;
+  return function () {
+    clearTimeout(temporizador);
+    temporizador = setTimeout(fn, esperaMs);
+  };
 }
 
 function aplicarIdioma() {
@@ -50,21 +92,24 @@ function aplicarIdioma() {
   });
 
   document.getElementById("boton-idioma").textContent = t.botonIdioma;
-  document.getElementById("texto-sobre-mi").textContent = idioma === "es" ? TEXTO_SOBRE_MI.es : TEXTO_SOBRE_MI.en;
-  document.getElementById("link-linkedin").href = LINK_LINKEDIN_EJEMPLO;
+  document.getElementById("link-linkedin-footer").href = LINK_LINKEDIN_EJEMPLO;
 }
 
-function renderizarIntro() {
-  const contenedor = document.getElementById("texto-intro");
-  contenedor.innerHTML = "";
-  const carta = idioma === "es" ? INTRO.es : INTRO.en;
+// ---- Sección "Sobre Outside-In" + modal con la carta completa ----
 
+function renderizarSobre() {
+  const carta = idioma === "es" ? INTRO.es : INTRO.en;
+  document.getElementById("sobre-parrafo").textContent = carta.parrafos[2];
+  construirCarta(document.getElementById("modal-sobre-cuerpo"), carta);
+}
+
+function construirCarta(contenedor, carta) {
+  contenedor.innerHTML = "";
   carta.parrafos.forEach((parrafo) => {
     const p = document.createElement("p");
     p.textContent = parrafo;
     contenedor.appendChild(p);
   });
-
   const firma = document.createElement("div");
   firma.className = "carta-firma";
   const firmaNombre = document.createElement("p");
@@ -77,34 +122,186 @@ function renderizarIntro() {
   contenedor.appendChild(firma);
 }
 
-function renderizarTendencias() {
-  const contenedor = document.getElementById("grid-tendencias");
+function abrirModalSobre() {
+  document.getElementById("modal-sobre-titulo").textContent = TEXTOS[idioma].introTitulo;
+  document.getElementById("modal-sobre").showModal();
+}
+
+// ---- Cápsula rotativa del hero (usa los 6 temas reales del sitio) ----
+
+function iniciarCapsulaRotativa() {
+  calcularAnchoCapsula();
+  actualizarTextoCapsula();
+  setInterval(() => {
+    indiceCapsula = (indiceCapsula + 1) % EJES.length;
+    actualizarTextoCapsula();
+  }, 2400);
+}
+
+function actualizarTextoCapsula() {
+  const tema = EJES[indiceCapsula];
+  document.getElementById("oi-word").textContent = idioma === "es" ? tema.es : tema.en;
+}
+
+// Mide los 6 temas reales y fija el ancho de la cápsula al más largo,
+// para que el texto no "salte" de tamaño cuando el tema rota.
+function calcularAnchoCapsula() {
+  const capsula = document.getElementById("oi-word");
+  if (!capsula) return;
+  const estilos = getComputedStyle(capsula);
+
+  const medidor = document.createElement("span");
+  medidor.style.position = "absolute";
+  medidor.style.visibility = "hidden";
+  medidor.style.whiteSpace = "nowrap";
+  medidor.style.fontFamily = estilos.fontFamily;
+  medidor.style.fontWeight = estilos.fontWeight;
+  medidor.style.fontSize = estilos.fontSize;
+  document.body.appendChild(medidor);
+
+  let anchoMaximo = 0;
+  EJES.forEach((tema) => {
+    medidor.textContent = idioma === "es" ? tema.es : tema.en;
+    anchoMaximo = Math.max(anchoMaximo, medidor.offsetWidth);
+  });
+
+  document.body.removeChild(medidor);
+
+  const relleno = 16; // 8px de cada lado, igual al padding de .oi-capsula
+  capsula.style.width = `${anchoMaximo + relleno}px`;
+}
+
+// Alinea el centro vertical del diagrama decorativo con el centro
+// vertical del titular ("Entender. Conectar. Anticipar.").
+function centrarDiagrama() {
+  const titular = document.querySelector(".oi-headline");
+  const diagrama = document.querySelector(".oi-hero-diagrama");
+  if (!titular || !diagrama) return;
+
+  if (window.innerWidth <= 760) {
+    diagrama.style.marginTop = "";
+    return;
+  }
+
+  const centroTitular = titular.offsetTop + titular.offsetHeight / 2;
+  const nuevoMargen = Math.max(0, centroTitular - diagrama.offsetHeight / 2);
+  diagrama.style.marginTop = `${nuevoMargen}px`;
+}
+
+// ---- Hallazgos recientes (tarjetas) ----
+
+function renderizarHallazgosRecientes() {
+  const contenedor = document.getElementById("grid-hallazgos");
   contenedor.innerHTML = "";
   const t = TEXTOS[idioma];
 
-  TENDENCIAS.forEach((tendencia) => {
-    const tarjeta = document.createElement("article");
-    tarjeta.className = "tarjeta-tendencia";
+  HALLAZGOS.forEach((h, indice) => {
+    const eje = EJES.find((e) => e.id === h.eje);
 
-    const titular = document.createElement("h3");
-    titular.textContent = idioma === "es" ? tendencia.titular_es : tendencia.titular_en;
+    const tarjeta = document.createElement("button");
+    tarjeta.type = "button";
+    tarjeta.className = "oi-tarjeta-hallazgo";
+    tarjeta.addEventListener("click", () => abrirFichaUnica(h));
 
-    const dato = document.createElement("p");
-    dato.className = "dato-respaldo";
-    dato.textContent = idioma === "es" ? tendencia.dato_es : tendencia.dato_en;
+    const portada = document.createElement("div");
+    portada.className = `oi-cover oi-cover-${(indice % 4) + 1}`;
+    const insignia = document.createElement("span");
+    insignia.className = "oi-insignia-ejemplo";
+    insignia.textContent = t.hallazgosEjemploBadge;
+    portada.appendChild(insignia);
 
-    const fuente = document.createElement("p");
-    fuente.className = "fuente";
-    fuente.textContent = `${t.fuenteLabel}: ${idioma === "es" ? tendencia.fuente_es : tendencia.fuente_en}`;
+    const categoria = document.createElement("div");
+    categoria.className = "oi-categoria-hallazgo";
+    categoria.textContent = eje ? (idioma === "es" ? eje.es : eje.en) : "";
 
-    const implicancia = document.createElement("p");
-    implicancia.className = "implicancia";
-    implicancia.textContent = idioma === "es" ? tendencia.implicancia_es : tendencia.implicancia_en;
+    const titulo = document.createElement("h3");
+    titulo.className = "oi-titulo-hallazgo";
+    titulo.textContent = idioma === "es" ? h.hallazgo_es : h.hallazgo_en;
 
-    tarjeta.append(titular, dato, fuente, implicancia);
+    tarjeta.append(portada, categoria, titulo);
     contenedor.appendChild(tarjeta);
   });
 }
+
+function abrirFichaUnica(h) {
+  const industria = INDUSTRIAS.find((i) => i.id === h.industria);
+  const eje = EJES.find((e) => e.id === h.eje);
+  const nombreIndustria = industria ? (idioma === "es" ? industria.es : industria.en) : "";
+  const nombreEje = eje ? (idioma === "es" ? eje.es : eje.en) : "";
+
+  const modal = document.getElementById("modal-fichas");
+  document.getElementById("modal-titulo").textContent = `${nombreIndustria} · ${nombreEje}`;
+  const cuerpo = document.getElementById("modal-cuerpo");
+  cuerpo.innerHTML = "";
+  cuerpo.appendChild(crearFicha(h));
+  modal.showModal();
+}
+
+// ---- Temas: panel que cambia con scroll y con clic ----
+
+let observadorTemas = null;
+
+function renderizarTemas() {
+  const caja = document.getElementById("oi-temas");
+  caja.innerHTML = "";
+
+  if (observadorTemas) observadorTemas.disconnect();
+
+  const botones = EJES.map((tema, indice) => {
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "oi-tema-boton";
+    boton.dataset.indice = String(indice);
+
+    const numero = document.createElement("span");
+    numero.className = "oi-tema-numero";
+    numero.textContent = String(indice + 1).padStart(2, "0");
+
+    const nombre = document.createElement("span");
+    nombre.className = "oi-tema-nombre";
+    nombre.textContent = idioma === "es" ? tema.es : tema.en;
+
+    boton.append(numero, nombre);
+    boton.addEventListener("click", () => activarTema(indice));
+    caja.appendChild(boton);
+    return boton;
+  });
+
+  activarTema(0, botones);
+
+  observadorTemas = new IntersectionObserver(
+    (entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          const indice = Number(entrada.target.dataset.indice);
+          activarTema(indice, botones);
+        }
+      });
+    },
+    { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+  );
+  botones.forEach((boton) => observadorTemas.observe(boton));
+}
+
+function activarTema(indice, botones) {
+  const tema = EJES[indice];
+  const colores = PALETA_TEMAS[indice % PALETA_TEMAS.length];
+  const panel = document.getElementById("oi-panel");
+
+  panel.style.background = colores.bg;
+  panel.style.color = colores.fg;
+  document.getElementById("oi-dot").style.background = colores.dot;
+  document.getElementById("oi-num").textContent = String(indice + 1).padStart(2, "0");
+  document.getElementById("oi-name").textContent = idioma === "es" ? tema.es : tema.en;
+  document.getElementById("oi-desc").textContent = idioma === "es" ? tema.desc_es : tema.desc_en;
+
+  const listaBotones = botones || Array.from(document.querySelectorAll(".oi-tema-boton"));
+  listaBotones.forEach((boton, i) => {
+    boton.classList.toggle("oi-tema-activo", i === indice);
+  });
+}
+
+// ---- Matriz interactiva industria x eje ----
 
 function contarHallazgos(industriaId, ejeId) {
   return HALLAZGOS.filter((h) => h.industria === industriaId && h.eje === ejeId).length;
@@ -170,11 +367,10 @@ function renderizarMatriz() {
 
 function abrirFichas(industria, eje) {
   const modal = document.getElementById("modal-fichas");
-  const titulo = document.getElementById("modal-titulo");
-  const cuerpo = document.getElementById("modal-cuerpo");
   const t = TEXTOS[idioma];
 
-  titulo.textContent = `${idioma === "es" ? industria.es : industria.en} · ${idioma === "es" ? eje.es : eje.en}`;
+  document.getElementById("modal-titulo").textContent = `${idioma === "es" ? industria.es : industria.en} · ${idioma === "es" ? eje.es : eje.en}`;
+  const cuerpo = document.getElementById("modal-cuerpo");
   cuerpo.innerHTML = "";
 
   const hallazgos = HALLAZGOS.filter((h) => h.industria === industria.id && h.eje === eje.id);
@@ -190,8 +386,8 @@ function abrirFichas(industria, eje) {
   modal.showModal();
 }
 
-function cerrarModal() {
-  document.getElementById("modal-fichas").close();
+function cerrarModal(idModal) {
+  document.getElementById(idModal).close();
 }
 
 function agregarMetadato(dl, etiqueta, valor) {
@@ -252,6 +448,26 @@ function crearFicha(h) {
 
   ficha.append(bloqueDatos, bloqueImplicancia);
   return ficha;
+}
+
+// ---- Industrias (botones grandes) ----
+
+function renderizarIndustrias() {
+  const contenedor = document.getElementById("grid-industrias");
+  contenedor.innerHTML = "";
+
+  INDUSTRIAS.forEach((industria) => {
+    const boton = document.createElement("a");
+    boton.href = "#matriz";
+    boton.className = "oi-boton-industria";
+    const texto = document.createElement("span");
+    texto.textContent = idioma === "es" ? industria.es : industria.en;
+    const flecha = document.createElement("span");
+    flecha.setAttribute("aria-hidden", "true");
+    flecha.textContent = "→";
+    boton.append(texto, flecha);
+    contenedor.appendChild(boton);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", init);

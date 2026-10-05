@@ -4,45 +4,168 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Outside-In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
-  <header class="cabecera">
-    <div class="cabecera-contenido">
-      <div class="cabecera-marca">
-        <p class="marca">Outside-In</p>
-        <p class="subtitulo" data-i18n="subtitulo"></p>
-      </div>
+  <header class="oi-header">
+    <div class="oi-header-inner">
+      <a href="#inicio" class="oi-logo">
+        <span class="oi-logo-circulo"><span class="oi-logo-punto"></span></span>
+        Outside-In
+      </a>
+      <nav class="oi-nav">
+        <a href="#sobre" data-i18n="navSobre"></a>
+        <a href="#hallazgos" data-i18n="navHallazgos"></a>
+        <a href="#temas" data-i18n="navTemas"></a>
+        <a href="#matriz" data-i18n="navMatriz"></a>
+        <a href="#industrias" data-i18n="navIndustrias"></a>
+      </nav>
       <button id="boton-idioma" class="boton-idioma" type="button"></button>
     </div>
   </header>
 
   <main>
-    <section id="intro" class="seccion seccion-intro">
-      <h1 data-i18n="introTitulo"></h1>
-      <div class="carta" id="texto-intro"></div>
+    <!-- PORTADA -->
+    <section id="inicio" class="oi-hero">
+      <div class="oi-hero-grid">
+        <div class="oi-hero-texto">
+          <p class="oi-tagline" data-i18n="heroTagline"></p>
+          <h1 class="oi-headline">
+            <span data-i18n="heroPalabra1"></span>.<br />
+            <span data-i18n="heroPalabra2"></span>.<br />
+            <span class="oi-headline-acento" data-i18n="heroPalabra3"></span><span class="oi-headline-punto">.</span>
+          </h1>
+          <p class="oi-hero-parrafo-capsula">
+            <span data-i18n="heroParrafoPre"></span>
+            <span class="oi-capsula" id="oi-word"></span><br class="oi-salto-forzado" />
+            <span data-i18n="heroParrafoPost"></span>
+          </p>
+          <div class="oi-bio-fila">
+            <div class="oi-foto-placeholder" aria-hidden="true">[Foto]</div>
+            <div class="oi-bio-texto">
+              <p class="oi-bio-nombre" data-i18n="heroSaludo"></p>
+              <p class="oi-bio-cargo" data-i18n="heroCargo"></p>
+            </div>
+          </div>
+          <div class="oi-hero-narrativa">
+            <p data-i18n="heroParrafo1"></p>
+            <p data-i18n="heroParrafo2"></p>
+          </div>
+          <div class="oi-hero-ctas">
+            <a href="#hallazgos" class="oi-boton oi-boton-primario" data-i18n="heroCtaPrimario"></a>
+            <a href="#industrias" class="oi-boton oi-boton-secundario" data-i18n="heroCtaSecundario"></a>
+          </div>
+        </div>
+        <div class="oi-hero-diagrama" aria-hidden="true">
+          <div class="oi-diagrama-caja">
+            <div class="oi-diagrama-circulo-1"></div>
+            <div class="oi-diagrama-circulo-2"></div>
+            <div class="oi-diagrama-centro" data-i18n="diagramaCentro"></div>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-arriba oi-pos-1" data-i18n="diagramaEstudios"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-2" data-i18n="diagramaReportes"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-3" data-i18n="diagramaEncuestas"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-4" data-i18n="diagramaRankings"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-5" data-i18n="diagramaDatos"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-6" data-i18n="diagramaInvestigacion"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-7" data-i18n="diagramaTendencias"></span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="tendencias" class="seccion">
-      <h2 data-i18n="tendenciasTitulo"></h2>
-      <div id="grid-tendencias" class="grid-tendencias"></div>
+    <!-- 01 SOBRE -->
+    <section id="sobre" class="oi-sobre">
+      <div class="oi-sobre-inner">
+        <div class="oi-etiqueta-seccion oi-etiqueta-clara" data-i18n="sobreEtiqueta"></div>
+        <div class="oi-sobre-contenido">
+          <blockquote class="oi-sobre-cita" data-i18n="sobreCita"></blockquote>
+          <p class="oi-sobre-parrafo" id="sobre-parrafo"></p>
+          <button type="button" id="boton-sobre" class="oi-boton oi-boton-claro" data-i18n="sobreBoton"></button>
+        </div>
+      </div>
     </section>
 
-    <section id="matriz" class="seccion">
-      <h2 data-i18n="matrizTitulo"></h2>
-      <p class="ayuda" data-i18n="matrizAyuda"></p>
+    <!-- 02 HALLAZGOS RECIENTES -->
+    <section id="hallazgos" class="oi-seccion-ancha">
+      <div class="oi-seccion-cabecera">
+        <div>
+          <div class="oi-etiqueta-seccion" data-i18n="hallazgosEtiqueta"></div>
+          <h2 class="oi-titulo-seccion" data-i18n="hallazgosTitulo"></h2>
+        </div>
+        <a href="#matriz" class="oi-ver-todos" data-i18n="hallazgosVerTodos"></a>
+      </div>
+      <div id="grid-hallazgos" class="oi-grid-hallazgos"></div>
+    </section>
+
+    <!-- 03 TEMAS -->
+    <section id="temas" class="oi-temas">
+      <div class="oi-temas-inner">
+        <div class="oi-seccion-cabecera-col">
+          <div class="oi-etiqueta-seccion" data-i18n="temasEtiqueta"></div>
+          <h2 class="oi-titulo-seccion" data-i18n="temasTitulo"></h2>
+        </div>
+        <div class="oi-temas-grid">
+          <div id="oi-panel" class="oi-panel-tema">
+            <div class="oi-panel-circulo" aria-hidden="true"></div>
+            <div id="oi-dot" class="oi-panel-dot" aria-hidden="true"></div>
+            <div class="oi-panel-num" id="oi-num"></div>
+            <div class="oi-panel-texto">
+              <div class="oi-panel-nombre" id="oi-name"></div>
+              <div class="oi-panel-desc" id="oi-desc"></div>
+            </div>
+          </div>
+          <div class="oi-temas-lista-col">
+            <div id="oi-temas" class="oi-temas-lista"></div>
+            <a href="#matriz" class="oi-ver-todos" data-i18n="temasVerTodos"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 MATRIZ -->
+    <section id="matriz" class="oi-seccion-ancha">
+      <div class="oi-seccion-cabecera-col">
+        <div class="oi-etiqueta-seccion" data-i18n="matrizEtiqueta"></div>
+        <h2 class="oi-titulo-seccion" data-i18n="matrizTitulo"></h2>
+        <p class="ayuda" data-i18n="matrizAyuda"></p>
+      </div>
       <div class="matriz-scroll">
         <table id="tabla-matriz" class="tabla-matriz"></table>
       </div>
     </section>
 
-    <section id="sobre-mi" class="seccion seccion-sobre-mi">
-      <h2 data-i18n="sobreMiTitulo"></h2>
-      <p class="texto-ejemplo" id="texto-sobre-mi"></p>
-      <a id="link-linkedin" class="link-linkedin" href="#" target="_blank" rel="noopener" data-i18n="linkedinTexto"></a>
+    <!-- 05 INDUSTRIAS -->
+    <section id="industrias" class="oi-seccion-ancha">
+      <div class="oi-seccion-cabecera-col">
+        <div class="oi-etiqueta-seccion" data-i18n="industriasEtiqueta"></div>
+        <h2 class="oi-titulo-seccion" data-i18n="industriasTitulo"></h2>
+      </div>
+      <div id="grid-industrias" class="oi-grid-industrias"></div>
     </section>
   </main>
 
+  <footer class="oi-footer">
+    <div class="oi-footer-inner">
+      <div class="oi-footer-top">
+        <div class="oi-footer-marca">Outside-In</div>
+        <div class="oi-footer-nav">
+          <a href="#hallazgos" data-i18n="navHallazgos"></a>
+          <a href="#temas" data-i18n="navTemas"></a>
+          <a href="#matriz" data-i18n="navMatriz"></a>
+          <a href="#industrias" data-i18n="navIndustrias"></a>
+          <a id="link-linkedin-footer" href="#" target="_blank" rel="noopener" data-i18n="linkedinFooter"></a>
+        </div>
+      </div>
+      <div class="oi-footer-bottom" data-i18n="subtitulo"></div>
+    </div>
+  </footer>
+
+  <!-- MODAL: ficha(s) de hallazgo -->
   <dialog id="modal-fichas" class="modal">
     <div class="modal-cabecera">
       <h2 id="modal-titulo"></h2>
@@ -51,9 +174,14 @@
     <div id="modal-cuerpo" class="modal-cuerpo"></div>
   </dialog>
 
-  <footer class="pie">
-    <p>&copy; 2026 Desiree Solano</p>
-  </footer>
+  <!-- MODAL: carta de bienvenida completa -->
+  <dialog id="modal-sobre" class="modal">
+    <div class="modal-cabecera">
+      <h2 id="modal-sobre-titulo"></h2>
+      <button id="modal-sobre-cerrar" class="modal-cerrar" type="button">&times;</button>
+    </div>
+    <div id="modal-sobre-cuerpo" class="modal-cuerpo carta"></div>
+  </dialog>
 
   <script src="js/textos.js"></script>
   <script src="js/datos.js"></script>

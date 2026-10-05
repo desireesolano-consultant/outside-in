@@ -1,11 +1,14 @@
-// CONTENIDO del sitio: tendencias, industrias, ejes temáticos y hallazgos.
-// Todo lo que ves aquí es un EJEMPLO de relleno para armar el esqueleto del sitio.
-// Nada de esto es un dato real. Regla del proyecto: nunca inventar cifras, estudios
-// ni fuentes — este archivo se reemplaza con datos verificados más adelante.
+// CONTENIDO del sitio: carta de bienvenida, industrias, temas (ejes) y hallazgos.
+// Los hallazgos y la portada de tendencias todavía son EJEMPLO de relleno.
+// Nada de eso es un dato real. Regla del proyecto: nunca inventar cifras, estudios
+// ni fuentes — ese contenido se reemplaza con datos verificados más adelante.
 
 const EJEMPLO = "[EJEMPLO – NO ES UN DATO REAL]";
 const EJEMPLO_EN = "[EXAMPLE – NOT REAL DATA]";
 
+// Carta de bienvenida completa. El resumen corto que se ve en la sección
+// "Sobre Outside-In" se construye a partir de estos mismos párrafos (ver app.js),
+// y el texto completo aparece al hacer clic en "Por qué creé Outside-In".
 const INTRO = {
   es: {
     parrafos: [
@@ -31,28 +34,65 @@ const INTRO = {
   },
 };
 
-const TEXTO_SOBRE_MI = {
-  es: "[EJEMPLO – TEXTO PROVISIONAL, PENDIENTE DE REDACTAR JUNTAS] Breve biografía profesional de Desiree Solano.",
-  en: "[EXAMPLE – DRAFT TEXT, TO BE WRITTEN TOGETHER] Short professional bio for Desiree Solano.",
-};
-
 const LINK_LINKEDIN_EJEMPLO = "#";
 
+// Primera versión del sitio: 3 industrias reales.
 const INDUSTRIAS = [
   { id: "banca_pagos", es: "Banca y pagos", en: "Banking & payments" },
   { id: "consumo_masivo", es: "Consumo masivo", en: "Consumer goods" },
   { id: "tecnologia", es: "Tecnología", en: "Technology" },
 ];
 
+// Los 6 temas (ejes) reales del sitio. "desc" es una descripción corta de una
+// línea para el panel de la sección "Temas" — es copy de interfaz, no un dato o
+// hallazgo, así que no lleva fuente.
 const EJES = [
-  { id: "gestion_cambio", es: "Gestión del cambio", en: "Change management" },
-  { id: "estrategia_negocio", es: "Estrategia de negocio", en: "Business strategy" },
-  { id: "comunicaciones", es: "Comunicaciones", en: "Communications" },
-  { id: "cultura_organizacional", es: "Cultura organizacional", en: "Organizational culture" },
-  { id: "ia", es: "Inteligencia artificial", en: "Artificial intelligence" },
-  { id: "transformacion", es: "Transformación", en: "Transformation" },
+  {
+    id: "gestion_cambio",
+    es: "Gestión del cambio",
+    en: "Change management",
+    desc_es: "Cómo las organizaciones diseñan, lideran y sostienen procesos de cambio.",
+    desc_en: "How organizations design, lead, and sustain change processes.",
+  },
+  {
+    id: "estrategia_negocio",
+    es: "Estrategia de negocio",
+    en: "Business strategy",
+    desc_es: "Hacia dónde mueven su rumbo las industrias y qué las impulsa a decidirlo.",
+    desc_en: "Where industries are steering their course and what's driving that decision.",
+  },
+  {
+    id: "comunicaciones",
+    es: "Comunicaciones",
+    en: "Communications",
+    desc_es: "Cómo se comunican las organizaciones, hacia adentro y hacia afuera, en momentos de cambio.",
+    desc_en: "How organizations communicate, internally and externally, in moments of change.",
+  },
+  {
+    id: "cultura_organizacional",
+    es: "Cultura organizacional",
+    en: "Organizational culture",
+    desc_es: "Cómo se construye, se mide y se transforma la cultura de una organización.",
+    desc_en: "How an organization's culture is built, measured, and transformed.",
+  },
+  {
+    id: "ia",
+    es: "Inteligencia artificial",
+    en: "Artificial intelligence",
+    desc_es: "Cómo la IA está cambiando el trabajo, las habilidades y las decisiones de negocio.",
+    desc_en: "How AI is changing work, skills, and business decisions.",
+  },
+  {
+    id: "transformacion",
+    es: "Transformación",
+    en: "Transformation",
+    desc_es: "Cómo las organizaciones ejecutan transformaciones de negocio de punta a punta.",
+    desc_en: "How organizations execute end-to-end business transformations.",
+  },
 ];
 
+// Portada de "5 tendencias": todavía no se muestra en el sitio (ver nota en
+// app.js), pero se conserva aquí para no perder el contenido de ejemplo.
 const TENDENCIAS = [
   {
     id: 1,
@@ -112,7 +152,9 @@ const TENDENCIAS = [
 ];
 
 // Hallazgos de ejemplo, repartidos en distintos cruces de industria x eje
-// para que la matriz y las fichas se puedan ver funcionando.
+// para que la matriz, las tarjetas de "Hallazgos recientes" y las fichas
+// se puedan ver funcionando. Antes de publicar el sitio, se reemplazan por
+// hallazgos reales con su fuente verificable.
 const HALLAZGOS = [
   {
     id: "h1",
