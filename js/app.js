@@ -30,12 +30,15 @@ function init() {
   aplicarIdioma();
   renderizarSobre();
   renderizarHallazgosRecientes();
+  renderizarSenalVida();
   renderizarLoQueSigo();
   renderizarMatriz();
   renderizarBannerCita();
+  renderizarRadar();
   iniciarCapsulaRotativa();
   centrarDiagrama();
   configurarMenuMovil();
+  configurarCarrusel();
   configurarScrollHorizontal();
   configurarBanner();
   configurarRevelado();
@@ -88,9 +91,11 @@ function cambiarIdioma() {
   aplicarIdioma();
   renderizarSobre();
   renderizarHallazgosRecientes();
+  renderizarSenalVida();
   renderizarLoQueSigo();
   renderizarMatriz();
   renderizarBannerCita();
+  renderizarRadar();
   actualizarTextoCapsula();
   centrarDiagrama();
   configurarScrollHorizontal();
@@ -108,6 +113,56 @@ function aplicarIdioma() {
   document.getElementById("boton-idioma").textContent = t.botonIdioma;
   document.getElementById("link-linkedin-footer").href = LINK_LINKEDIN_EJEMPLO;
   document.getElementById("boton-menu").setAttribute("aria-label", t.menuAbrir);
+  document.getElementById("hallazgos-flecha-izq").setAttribute("aria-label", t.carruselAnterior);
+  document.getElementById("hallazgos-flecha-der").setAttribute("aria-label", t.carruselSiguiente);
+}
+
+// ---- Fechas y "señales de vida" (solo a partir de hallazgos reales) ----
+
+function formatearFecha(fechaIso) {
+  const fecha = new Date(`${fechaIso}T00:00:00`);
+  const formato = new Intl.DateTimeFormat(idioma === "es" ? "es-PE" : "en-US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  return formato.format(fecha);
+}
+
+function diasDesde(fechaIso) {
+  const fecha = new Date(`${fechaIso}T00:00:00`);
+  const ahora = new Date();
+  const msPorDia = 1000 * 60 * 60 * 24;
+  return Math.floor((ahora - fecha) / msPorDia);
+}
+
+function esReciente(h) {
+  if (h.esEjemplo !== false || !h.fecha) return false;
+  const dias = diasDesde(h.fecha);
+  return dias >= 0 && dias <= 7;
+}
+
+function calcularSenalesDeVida() {
+  const reales = HALLAZGOS.filter((h) => h.esEjemplo === false && h.fecha);
+  if (reales.length === 0) return null;
+  const fechaMasReciente = reales.reduce((maxFecha, h) => (h.fecha > maxFecha ? h.fecha : maxFecha), reales[0].fecha);
+  const nuevosEstaSemana = reales.filter((h) => esReciente(h)).length;
+  return { fechaMasReciente, nuevosEstaSemana };
+}
+
+function renderizarSenalVida() {
+  const el = document.getElementById("senal-vida");
+  const senales = calcularSenalesDeVida();
+
+  if (!senales) {
+    el.hidden = true;
+    return;
+  }
+
+  const t = TEXTOS[idioma];
+  const etiquetaNuevos = senales.nuevosEstaSemana === 1 ? t.senalNuevoSingular : t.senalNuevoPlural;
+  el.textContent = `${t.senalActualizadoPrefijo} ${formatearFecha(senales.fechaMasReciente)} · ${senales.nuevosEstaSemana} ${etiquetaNuevos}`;
+  el.hidden = false;
 }
 
 // ---- Menú hamburguesa (celular) ----
@@ -183,7 +238,7 @@ function construirCombinaciones() {
         return;
       }
       const tieneHallazgoReal = HALLAZGOS.some(
-        (h) => h.esEjemplo === false && h.eje === tema.id && h.industria === industria.id
+        (h) => h.esEjemplo === false && h.tema === tema.id && h.industria === industria.id
       );
       if (tieneHallazgoReal) combos.push({ tema, industria });
     });
@@ -234,7 +289,7 @@ function renderizarHallazgosRecientes() {
   const t = TEXTOS[idioma];
 
   HALLAZGOS.forEach((h, indice) => {
-    const tema = TEMAS.find((tm) => tm.id === h.eje);
+    const tema = TEMAS.find((tm) => tm.id === h.tema);
 
     const tarjeta = document.createElement("button");
     tarjeta.type = "button";
@@ -243,10 +298,17 @@ function renderizarHallazgosRecientes() {
 
     const portada = document.createElement("div");
     portada.className = `oi-cover oi-cover-${(indice % 4) + 1}`;
-    const insignia = document.createElement("span");
-    insignia.className = "oi-insignia-ejemplo";
-    insignia.textContent = t.hallazgosEjemploBadge;
-    portada.appendChild(insignia);
+    if (h.esEjemplo !== false) {
+      const insignia = document.createElement("span");
+      insignia.className = "oi-insignia-ejemplo";
+      insignia.textContent = t.hallazgosEjemploBadge;
+      portada.appendChild(insignia);
+    } else if (esReciente(h)) {
+      const insignia = document.createElement("span");
+      insignia.className = "oi-insignia-nuevo";
+      insignia.textContent = t.etiquetaNuevo;
+      portada.appendChild(insignia);
+    }
 
     const categoria = document.createElement("div");
     categoria.className = "oi-categoria-hallazgo";
@@ -263,7 +325,7 @@ function renderizarHallazgosRecientes() {
 
 function abrirFichaUnica(h) {
   const industria = INDUSTRIAS.find((i) => i.id === h.industria);
-  const tema = TEMAS.find((tm) => tm.id === h.eje);
+  const tema = TEMAS.find((tm) => tm.id === h.tema);
   const nombreIndustria = industria ? (idioma === "es" ? industria.es : industria.en) : "";
   const nombreTema = tema ? (idioma === "es" ? tema.es : tema.en) : "";
 
@@ -273,6 +335,27 @@ function abrirFichaUnica(h) {
   cuerpo.innerHTML = "";
   cuerpo.appendChild(crearFicha(h));
   modal.showModal();
+}
+
+// Carrusel de una sola fila: las tarjetas nunca cambian de tamaño ni se
+// estiran, aunque haya más de las que entran en pantalla.
+function configurarCarrusel() {
+  const contenedor = document.getElementById("grid-hallazgos");
+  const flechaIzq = document.getElementById("hallazgos-flecha-izq");
+  const flechaDer = document.getElementById("hallazgos-flecha-der");
+  if (!contenedor || !flechaIzq || !flechaDer) return;
+
+  const desplazar = (direccion) => {
+    const primeraTarjeta = contenedor.querySelector(".oi-tarjeta-hallazgo");
+    const distancia = primeraTarjeta ? primeraTarjeta.getBoundingClientRect().width + 24 : 280;
+    contenedor.scrollBy({
+      left: direccion * distancia,
+      behavior: prefiereMovimientoReducido() ? "auto" : "smooth",
+    });
+  };
+
+  flechaIzq.addEventListener("click", () => desplazar(-1));
+  flechaDer.addEventListener("click", () => desplazar(1));
 }
 
 // ---- "Lo que sigo de cerca": tarjetas de temas + industrias ----
@@ -420,9 +503,16 @@ function configurarRevelado() {
 }
 
 // ---- Matriz interactiva industria x tema ----
+// La matriz es una "señal de vida": su color y su conteo salen solo de
+// hallazgos REALES (esEjemplo === false). Mientras no haya ninguno, todas
+// las casillas quedan atenuadas — eso es lo correcto, no un error.
 
 function contarHallazgos(industriaId, temaId) {
-  return HALLAZGOS.filter((h) => h.industria === industriaId && h.eje === temaId).length;
+  return HALLAZGOS.filter((h) => h.esEjemplo === false && h.industria === industriaId && h.tema === temaId).length;
+}
+
+function tieneHallazgoRecienteEnCelda(industriaId, temaId) {
+  return HALLAZGOS.some((h) => h.industria === industriaId && h.tema === temaId && esReciente(h));
 }
 
 function colorPorConteo(conteo) {
@@ -468,6 +558,8 @@ function renderizarMatriz() {
       if (color) {
         celda.style.backgroundColor = color;
         if (conteo >= 4) celda.classList.add("celda-oscura");
+      } else {
+        celda.classList.add("celda-atenuada");
       }
 
       const boton = document.createElement("button");
@@ -478,10 +570,20 @@ function renderizarMatriz() {
       const nombreIndustria = idioma === "es" ? industria.es : industria.en;
       const nombreTema = idioma === "es" ? tema.es : tema.en;
       const etiquetaConteo = conteo === 1 ? t.hallazgoSingular : t.hallazgosPlural;
-      boton.setAttribute("aria-label", `${nombreIndustria} · ${nombreTema}: ${conteo} ${etiquetaConteo}`);
+      const celdaReciente = tieneHallazgoRecienteEnCelda(industria.id, tema.id);
+      const sufijoNuevo = celdaReciente ? ` · ${t.etiquetaNuevo}` : "";
+      boton.setAttribute("aria-label", `${nombreIndustria} · ${nombreTema}: ${conteo} ${etiquetaConteo}${sufijoNuevo}`);
 
       boton.addEventListener("click", () => abrirFichas(industria, tema));
       celda.appendChild(boton);
+
+      if (celdaReciente) {
+        const puntoNuevo = document.createElement("span");
+        puntoNuevo.className = "oi-punto-nuevo";
+        puntoNuevo.setAttribute("aria-hidden", "true");
+        celda.appendChild(puntoNuevo);
+      }
+
       fila.appendChild(celda);
     });
 
@@ -497,7 +599,7 @@ function abrirFichas(industria, tema) {
   const cuerpo = document.getElementById("modal-cuerpo");
   cuerpo.innerHTML = "";
 
-  const hallazgos = HALLAZGOS.filter((h) => h.industria === industria.id && h.eje === tema.id);
+  const hallazgos = HALLAZGOS.filter((h) => h.esEjemplo === false && h.industria === industria.id && h.tema === tema.id);
 
   if (hallazgos.length === 0) {
     const vacio = document.createElement("p");
@@ -572,6 +674,39 @@ function crearFicha(h) {
 
   ficha.append(bloqueDatos, bloqueImplicancia);
   return ficha;
+}
+
+// ---- "En mi radar": solo se muestra si radar.js trae estudios ----
+
+function renderizarRadar() {
+  const seccion = document.getElementById("en-mi-radar");
+  const lista = document.getElementById("lista-radar");
+  if (!seccion || !lista) return;
+
+  if (!RADAR_ESTUDIOS || RADAR_ESTUDIOS.length === 0) {
+    seccion.hidden = true;
+    return;
+  }
+
+  seccion.hidden = false;
+  lista.innerHTML = "";
+  const t = TEXTOS[idioma];
+
+  RADAR_ESTUDIOS.forEach((estudio) => {
+    const item = document.createElement("article");
+    item.className = "oi-radar-item";
+
+    const titulo = document.createElement("h3");
+    titulo.className = "oi-radar-titulo";
+    titulo.textContent = idioma === "es" ? estudio.titulo_es : estudio.titulo_en;
+
+    const meta = document.createElement("p");
+    meta.className = "oi-radar-meta";
+    meta.textContent = `${estudio.fuente} · ${t.radarDetectadoLabel} ${formatearFecha(estudio.fecha_detectado)}`;
+
+    item.append(titulo, meta);
+    lista.appendChild(item);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", init);

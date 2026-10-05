@@ -44,20 +44,41 @@ const TEXTOS = {
       "“Las organizaciones que mejor se transforman son las que se mantienen curiosas y entienden su contexto antes de que el cambio las alcance.”",
     sobreBoton: "Por qué creé Outside-In",
 
-    hallazgosEtiqueta: "02 — Hallazgos recientes",
+    comoFuncionaEtiqueta: "02 — Cómo funciona Outside-In",
+    comoFuncionaTitulo: "Así trabajo",
+    paso1Titulo: "Rastreo",
+    paso1Desc: "Un sistema que construí con IA revisa cada semana nuevos estudios de consultoras, empresas y otras fuentes.",
+    paso2Titulo: "Curaduría",
+    paso2Desc: "Leo lo que encuentra, descarto lo irrelevante y elijo lo que vale la pena.",
+    paso3Titulo: "Lectura",
+    paso3Desc: "Publico cada hallazgo con su fuente original y mi interpretación.",
+    comoFuncionaCierre: "La IA lee mucho. Yo decido qué importa.",
+
+    hallazgosEtiqueta: "03 — Hallazgos recientes",
     hallazgosTitulo: "Lo último que leí",
     hallazgosVerTodos: "Ver todos los hallazgos →",
     hallazgosEjemploBadge: "EJEMPLO",
+    etiquetaNuevo: "Nuevo",
+    carruselAnterior: "Anterior",
+    carruselSiguiente: "Siguiente",
 
-    loQueSigoEtiqueta: "03 — Lo que sigo de cerca",
+    loQueSigoEtiqueta: "04 — Lo que sigo de cerca",
     loQueSigoTitulo: "Lo que sigo de cerca",
     tarjetaTemaEtiqueta: "Tema",
     tarjetaIndustriaEtiqueta: "Industria",
     tarjetaVerHallazgos: "Ver hallazgos →",
 
-    matrizEtiqueta: "04 — Matriz",
+    matrizEtiqueta: "05 — Matriz",
     matrizTitulo: "Matriz de tendencias por industria y tema",
     matrizAyuda: "Haz clic en una casilla para ver los hallazgos.",
+
+    senalActualizadoPrefijo: "Actualizado el",
+    senalNuevoSingular: "hallazgo nuevo esta semana",
+    senalNuevoPlural: "hallazgos nuevos esta semana",
+
+    enMiRadarTitulo: "En mi radar",
+    enMiRadarAyuda: "Estudios que todavía estoy leyendo, antes de convertirlos en hallazgos.",
+    radarDetectadoLabel: "Detectado el",
 
     linkedinFooter: "LinkedIn",
 
@@ -115,20 +136,41 @@ const TEXTOS = {
       "“The organizations that transform best are the ones that stay curious and understand their context before change catches up with them.”",
     sobreBoton: "Why I created Outside-In",
 
-    hallazgosEtiqueta: "02 — Recent findings",
+    comoFuncionaEtiqueta: "02 — How Outside-In works",
+    comoFuncionaTitulo: "How I work",
+    paso1Titulo: "Tracking",
+    paso1Desc: "A system I built with AI reviews new studies from consultancies, companies, and other sources every week.",
+    paso2Titulo: "Curation",
+    paso2Desc: "I read what it finds, discard what's irrelevant, and choose what's worth sharing.",
+    paso3Titulo: "Reading",
+    paso3Desc: "I publish each finding with its original source and my own interpretation.",
+    comoFuncionaCierre: "AI reads a lot. I decide what matters.",
+
+    hallazgosEtiqueta: "03 — Recent findings",
     hallazgosTitulo: "The latest I've read",
     hallazgosVerTodos: "See all findings →",
     hallazgosEjemploBadge: "EXAMPLE",
+    etiquetaNuevo: "New",
+    carruselAnterior: "Previous",
+    carruselSiguiente: "Next",
 
-    loQueSigoEtiqueta: "03 — What I follow closely",
+    loQueSigoEtiqueta: "04 — What I follow closely",
     loQueSigoTitulo: "What I follow closely",
     tarjetaTemaEtiqueta: "Topic",
     tarjetaIndustriaEtiqueta: "Industry",
     tarjetaVerHallazgos: "See findings →",
 
-    matrizEtiqueta: "04 — Matrix",
+    matrizEtiqueta: "05 — Matrix",
     matrizTitulo: "Trend matrix by industry and topic",
     matrizAyuda: "Click a cell to see the findings.",
+
+    senalActualizadoPrefijo: "Updated on",
+    senalNuevoSingular: "new finding this week",
+    senalNuevoPlural: "new findings this week",
+
+    enMiRadarTitulo: "On my radar",
+    enMiRadarAyuda: "Studies I'm still reading through, before turning them into findings.",
+    radarDetectadoLabel: "Detected on",
 
     linkedinFooter: "LinkedIn",
 

@@ -162,18 +162,18 @@ const TENDENCIAS = [
 ];
 
 // Hallazgos de ejemplo. "esEjemplo: true" marca que todavía no es un hallazgo
-// real — se usa para decidir cómo rota la cápsula del hero (ver app.js) y
-// para mostrar la insignia "EJEMPLO" en las tarjetas. industria/eje ya están
-// actualizados a las 3+3 categorías vigentes (antes, h4 y h5 estaban en
-// "Tecnología", que ya no existe como industria: los reasigné a
-// "Life Sciences" porque son solo placeholders, no hay ningún dato real
-// de por medio).
+// real — se usa para decidir cómo rota la cápsula del hero, ocultar las
+// señales de vida y mostrar la insignia "EJEMPLO" en las tarjetas (ver
+// app.js). "fecha" queda en null mientras sea ejemplo: ningún cálculo de
+// fecha real debe depender de un hallazgo de ejemplo. La lista completa de
+// campos de un hallazgo está documentada en README.md.
 const HALLAZGOS = [
   {
     id: "h1",
     industria: "servicios_financieros",
-    eje: "gestion_cambio",
+    tema: "gestion_cambio",
     esEjemplo: true,
+    fecha: null,
     fuente: EJEMPLO,
     estudio_es: EJEMPLO,
     estudio_en: EJEMPLO_EN,
@@ -192,8 +192,9 @@ const HALLAZGOS = [
   {
     id: "h2",
     industria: "servicios_financieros",
-    eje: "ia_personas",
+    tema: "ia_personas",
     esEjemplo: true,
+    fecha: null,
     fuente: EJEMPLO,
     estudio_es: EJEMPLO,
     estudio_en: EJEMPLO_EN,
@@ -212,8 +213,9 @@ const HALLAZGOS = [
   {
     id: "h3",
     industria: "consumo_masivo",
-    eje: "liderazgo_cultura",
+    tema: "liderazgo_cultura",
     esEjemplo: true,
+    fecha: null,
     fuente: EJEMPLO,
     estudio_es: EJEMPLO,
     estudio_en: EJEMPLO_EN,
@@ -232,8 +234,9 @@ const HALLAZGOS = [
   {
     id: "h4",
     industria: "life_sciences",
-    eje: "ia_personas",
+    tema: "ia_personas",
     esEjemplo: true,
+    fecha: null,
     fuente: EJEMPLO,
     estudio_es: EJEMPLO,
     estudio_en: EJEMPLO_EN,
@@ -252,8 +255,9 @@ const HALLAZGOS = [
   {
     id: "h5",
     industria: "life_sciences",
-    eje: "ia_personas",
+    tema: "ia_personas",
     esEjemplo: true,
+    fecha: null,
     fuente: EJEMPLO,
     estudio_es: EJEMPLO,
     estudio_en: EJEMPLO_EN,

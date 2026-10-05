@@ -342,6 +342,12 @@ button {
   color: var(--oi-blanco);
 }
 
+.oi-senal-vida {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--oi-texto-gris);
+}
+
 .oi-bio-fila {
   display: flex;
   align-items: center;
@@ -548,17 +554,32 @@ button {
   max-width: 680px;
 }
 
-/* 02 Hallazgos recientes */
+/* 03 Hallazgos recientes: carrusel de una sola fila, tarjetas de tamaño fijo.
+   (antes era un grid con flex-wrap: con una cantidad de tarjetas que no
+   llenaba filas completas, la última quedaba sola y se estiraba a todo el
+   ancho — por eso ahora nunca envuelve, solo se desliza). */
+
+.oi-carrusel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
 .oi-grid-hallazgos {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 4px;
 }
 
 .oi-tarjeta-hallazgo {
-  flex: 1 1 260px;
-  min-width: 0;
+  flex: 0 0 260px;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -569,6 +590,32 @@ button {
   cursor: pointer;
   font-family: inherit;
   color: var(--oi-negro);
+}
+
+.oi-carrusel-flecha {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--oi-borde);
+  background: var(--oi-blanco);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+}
+
+@media (min-width: 761px) {
+  .oi-carrusel-flecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.oi-carrusel-flecha:hover {
+  border-color: var(--oi-azul);
+  color: var(--oi-azul);
 }
 
 .oi-cover {
@@ -668,11 +715,11 @@ button {
   border-radius: 50%;
 }
 
-.oi-insignia-ejemplo {
+.oi-insignia-ejemplo,
+.oi-insignia-nuevo {
   position: absolute;
   left: 16px;
   bottom: 16px;
-  background: var(--oi-blanco);
   color: var(--oi-negro);
   font-weight: 700;
   font-size: 12px;
@@ -680,6 +727,14 @@ button {
   text-transform: uppercase;
   padding: 4px 10px;
   border-radius: 999px;
+}
+
+.oi-insignia-ejemplo {
+  background: var(--oi-blanco);
+}
+
+.oi-insignia-nuevo {
+  background: var(--oi-naranja);
 }
 
 .oi-categoria-hallazgo {
@@ -694,6 +749,7 @@ button {
   font-size: 22px;
   line-height: 1.2;
   letter-spacing: -0.01em;
+  min-height: 2.4em;
 }
 
 /* 03 Lo que sigo de cerca: temas + industrias en un carril que se desliza
@@ -960,12 +1016,27 @@ button {
 }
 
 .celda-matriz {
+  position: relative;
   padding: 0.35rem;
   transition: box-shadow 0.3s ease;
 }
 
+.celda-atenuada {
+  background: var(--oi-fondo-alt);
+}
+
 .celda-resaltada {
   box-shadow: inset 0 0 0 3px var(--oi-azul);
+}
+
+.oi-punto-nuevo {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--oi-naranja);
 }
 
 .boton-celda {
@@ -1188,6 +1259,70 @@ button {
   .ficha {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* 02 Cómo funciona Outside-In */
+
+.oi-pasos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.oi-paso {
+  flex: 1 1 220px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.oi-paso-numero {
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--oi-azul);
+}
+
+.oi-paso-titulo {
+  font-size: 20px;
+}
+
+.oi-paso-desc {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--oi-texto-gris-2);
+}
+
+.oi-paso-cierre {
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 700;
+  font-size: clamp(22px, 2.6vw, 30px);
+  letter-spacing: -0.01em;
+  max-width: 760px;
+}
+
+/* En mi radar */
+
+.oi-lista-radar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.oi-radar-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--oi-borde);
+}
+
+.oi-radar-titulo {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.oi-radar-meta {
+  font-size: 14px;
+  color: var(--oi-texto-gris);
 }
 
 /* Textos y títulos que aparecen subiendo suavemente al hacer scroll.

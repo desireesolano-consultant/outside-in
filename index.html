@@ -53,6 +53,7 @@
             <span class="oi-capsula oi-capsula-industria" id="oi-word-industria"></span><br class="oi-salto-forzado" />
             <span data-i18n="heroParrafoPost"></span>
           </p>
+          <p id="senal-vida" class="oi-senal-vida" hidden></p>
           <div class="oi-bio-fila">
             <div class="oi-foto-placeholder" aria-hidden="true">[Foto]</div>
             <div class="oi-bio-texto">
@@ -74,13 +75,13 @@
             <div class="oi-diagrama-circulo-1"></div>
             <div class="oi-diagrama-circulo-2"></div>
             <div class="oi-diagrama-centro" data-i18n="diagramaCentro"></div>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-arriba oi-pos-1" data-i18n="diagramaEstudios"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-2" data-i18n="diagramaReportes"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-3" data-i18n="diagramaEncuestas"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-4" data-i18n="diagramaRankings"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-5" data-i18n="diagramaDatos"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-6" data-i18n="diagramaInvestigacion"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-7" data-i18n="diagramaTendencias"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-arriba oi-pos-1" style="text-align: center" data-i18n="diagramaEstudios"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-2" style="text-align: left" data-i18n="diagramaReportes"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-3" style="text-align: left" data-i18n="diagramaEncuestas"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-4" style="text-align: left" data-i18n="diagramaRankings"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-5" style="text-align: right" data-i18n="diagramaDatos"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-6" style="text-align: right" data-i18n="diagramaInvestigacion"></span>
+            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-7" style="text-align: right" data-i18n="diagramaTendencias"></span>
           </div>
         </div>
       </div>
@@ -98,7 +99,33 @@
       </div>
     </section>
 
-    <!-- 02 HALLAZGOS RECIENTES -->
+    <!-- 02 CÓMO FUNCIONA OUTSIDE-IN (siempre visible, no depende de datos) -->
+    <section id="como-funciona" class="oi-seccion-ancha">
+      <div class="oi-seccion-cabecera-col">
+        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="comoFuncionaEtiqueta"></div>
+        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="comoFuncionaTitulo"></h2>
+      </div>
+      <div class="oi-pasos">
+        <div class="oi-paso oi-reveal">
+          <div class="oi-paso-numero">01</div>
+          <h3 class="oi-paso-titulo" data-i18n="paso1Titulo"></h3>
+          <p class="oi-paso-desc" data-i18n="paso1Desc"></p>
+        </div>
+        <div class="oi-paso oi-reveal">
+          <div class="oi-paso-numero">02</div>
+          <h3 class="oi-paso-titulo" data-i18n="paso2Titulo"></h3>
+          <p class="oi-paso-desc" data-i18n="paso2Desc"></p>
+        </div>
+        <div class="oi-paso oi-reveal">
+          <div class="oi-paso-numero">03</div>
+          <h3 class="oi-paso-titulo" data-i18n="paso3Titulo"></h3>
+          <p class="oi-paso-desc" data-i18n="paso3Desc"></p>
+        </div>
+      </div>
+      <p class="oi-paso-cierre oi-reveal" data-i18n="comoFuncionaCierre"></p>
+    </section>
+
+    <!-- 03 HALLAZGOS RECIENTES -->
     <section id="hallazgos" class="oi-seccion-ancha">
       <div class="oi-seccion-cabecera">
         <div>
@@ -107,10 +134,14 @@
         </div>
         <a href="#matriz" class="oi-ver-todos" data-i18n="hallazgosVerTodos"></a>
       </div>
-      <div id="grid-hallazgos" class="oi-grid-hallazgos"></div>
+      <div class="oi-carrusel">
+        <button type="button" id="hallazgos-flecha-izq" class="oi-carrusel-flecha oi-carrusel-flecha-izq" aria-label="">‹</button>
+        <div id="grid-hallazgos" class="oi-grid-hallazgos"></div>
+        <button type="button" id="hallazgos-flecha-der" class="oi-carrusel-flecha oi-carrusel-flecha-der" aria-label="">›</button>
+      </div>
     </section>
 
-    <!-- 03 LO QUE SIGO DE CERCA (temas + industrias, scroll horizontal) -->
+    <!-- 04 LO QUE SIGO DE CERCA (temas + industrias, scroll horizontal) -->
     <section id="lo-que-sigo" class="oi-loquesigo oi-scrollx-section">
       <div class="oi-loquesigo-cabecera">
         <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="loQueSigoEtiqueta"></div>
@@ -130,7 +161,7 @@
       </div>
     </section>
 
-    <!-- 04 MATRIZ -->
+    <!-- 05 MATRIZ -->
     <section id="matriz" class="oi-seccion-ancha">
       <div class="oi-seccion-cabecera-col">
         <div class="oi-etiqueta-seccion oi-reveal" data-i18n="matrizEtiqueta"></div>
@@ -140,6 +171,15 @@
       <div class="matriz-scroll">
         <table id="tabla-matriz" class="tabla-matriz"></table>
       </div>
+    </section>
+
+    <!-- EN MI RADAR: solo se muestra si radar.js trae datos -->
+    <section id="en-mi-radar" class="oi-seccion-ancha" hidden>
+      <div class="oi-seccion-cabecera-col">
+        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="enMiRadarTitulo"></h2>
+        <p class="ayuda" data-i18n="enMiRadarAyuda"></p>
+      </div>
+      <div id="lista-radar" class="oi-lista-radar"></div>
     </section>
   </main>
 
@@ -178,6 +218,7 @@
 
   <script src="js/textos.js"></script>
   <script src="js/datos.js"></script>
+  <script src="js/radar.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
