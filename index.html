@@ -18,14 +18,20 @@
         <span class="oi-logo-circulo"><span class="oi-logo-punto"></span></span>
         Outside-In
       </a>
-      <nav class="oi-nav">
+      <nav id="oi-nav" class="oi-nav">
         <a href="#sobre" data-i18n="navSobre"></a>
         <a href="#hallazgos" data-i18n="navHallazgos"></a>
-        <a href="#temas" data-i18n="navTemas"></a>
+        <a href="#lo-que-sigo" data-i18n="navLoQueSigo"></a>
         <a href="#matriz" data-i18n="navMatriz"></a>
-        <a href="#industrias" data-i18n="navIndustrias"></a>
       </nav>
-      <button id="boton-idioma" class="boton-idioma" type="button"></button>
+      <div class="oi-header-acciones">
+        <button id="boton-idioma" class="boton-idioma" type="button"></button>
+        <button id="boton-menu" class="oi-boton-menu" type="button" aria-expanded="false" aria-controls="oi-nav">
+          <span class="oi-menu-linea"></span>
+          <span class="oi-menu-linea"></span>
+          <span class="oi-menu-linea"></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -42,7 +48,9 @@
           </h1>
           <p class="oi-hero-parrafo-capsula">
             <span data-i18n="heroParrafoPre"></span>
-            <span class="oi-capsula" id="oi-word"></span><br class="oi-salto-forzado" />
+            <span class="oi-capsula oi-capsula-tema" id="oi-word-tema"></span>
+            <span data-i18n="heroParrafoMid"></span>
+            <span class="oi-capsula oi-capsula-industria" id="oi-word-industria"></span><br class="oi-salto-forzado" />
             <span data-i18n="heroParrafoPost"></span>
           </p>
           <div class="oi-bio-fila">
@@ -58,7 +66,7 @@
           </div>
           <div class="oi-hero-ctas">
             <a href="#hallazgos" class="oi-boton oi-boton-primario" data-i18n="heroCtaPrimario"></a>
-            <a href="#industrias" class="oi-boton oi-boton-secundario" data-i18n="heroCtaSecundario"></a>
+            <a href="#lo-que-sigo" class="oi-boton oi-boton-secundario" data-i18n="heroCtaSecundario"></a>
           </div>
         </div>
         <div class="oi-hero-diagrama" aria-hidden="true">
@@ -81,10 +89,10 @@
     <!-- 01 SOBRE -->
     <section id="sobre" class="oi-sobre">
       <div class="oi-sobre-inner">
-        <div class="oi-etiqueta-seccion oi-etiqueta-clara" data-i18n="sobreEtiqueta"></div>
+        <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="sobreEtiqueta"></div>
         <div class="oi-sobre-contenido">
-          <blockquote class="oi-sobre-cita" data-i18n="sobreCita"></blockquote>
-          <p class="oi-sobre-parrafo" id="sobre-parrafo"></p>
+          <blockquote class="oi-sobre-cita oi-reveal" data-i18n="sobreCita"></blockquote>
+          <p class="oi-sobre-parrafo oi-reveal" id="sobre-parrafo"></p>
           <button type="button" id="boton-sobre" class="oi-boton oi-boton-claro" data-i18n="sobreBoton"></button>
         </div>
       </div>
@@ -94,58 +102,44 @@
     <section id="hallazgos" class="oi-seccion-ancha">
       <div class="oi-seccion-cabecera">
         <div>
-          <div class="oi-etiqueta-seccion" data-i18n="hallazgosEtiqueta"></div>
-          <h2 class="oi-titulo-seccion" data-i18n="hallazgosTitulo"></h2>
+          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="hallazgosEtiqueta"></div>
+          <h2 class="oi-titulo-seccion oi-reveal" data-i18n="hallazgosTitulo"></h2>
         </div>
         <a href="#matriz" class="oi-ver-todos" data-i18n="hallazgosVerTodos"></a>
       </div>
       <div id="grid-hallazgos" class="oi-grid-hallazgos"></div>
     </section>
 
-    <!-- 03 TEMAS -->
-    <section id="temas" class="oi-temas">
-      <div class="oi-temas-inner">
-        <div class="oi-seccion-cabecera-col">
-          <div class="oi-etiqueta-seccion" data-i18n="temasEtiqueta"></div>
-          <h2 class="oi-titulo-seccion" data-i18n="temasTitulo"></h2>
-        </div>
-        <div class="oi-temas-grid">
-          <div id="oi-panel" class="oi-panel-tema">
-            <div class="oi-panel-circulo" aria-hidden="true"></div>
-            <div id="oi-dot" class="oi-panel-dot" aria-hidden="true"></div>
-            <div class="oi-panel-num" id="oi-num"></div>
-            <div class="oi-panel-texto">
-              <div class="oi-panel-nombre" id="oi-name"></div>
-              <div class="oi-panel-desc" id="oi-desc"></div>
-            </div>
-          </div>
-          <div class="oi-temas-lista-col">
-            <div id="oi-temas" class="oi-temas-lista"></div>
-            <a href="#matriz" class="oi-ver-todos" data-i18n="temasVerTodos"></a>
-          </div>
-        </div>
+    <!-- 03 LO QUE SIGO DE CERCA (temas + industrias, scroll horizontal) -->
+    <section id="lo-que-sigo" class="oi-loquesigo oi-scrollx-section">
+      <div class="oi-loquesigo-cabecera">
+        <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="loQueSigoEtiqueta"></div>
+        <h2 class="oi-titulo-seccion oi-titulo-claro oi-reveal" data-i18n="loQueSigoTitulo"></h2>
+      </div>
+      <div class="oi-scrollx-sticky">
+        <div id="grid-loquesigo" class="oi-scrollx-track"></div>
+      </div>
+    </section>
+
+    <!-- BANNER: cita que crece con el scroll -->
+    <section id="banner-cita" class="oi-banner-seccion">
+      <div id="banner-cita-caja" class="oi-banner-caja">
+        <div class="oi-banner-circulo oi-banner-circulo-1" aria-hidden="true"></div>
+        <div class="oi-banner-circulo oi-banner-circulo-2" aria-hidden="true"></div>
+        <p class="oi-banner-texto" id="banner-cita-texto"></p>
       </div>
     </section>
 
     <!-- 04 MATRIZ -->
     <section id="matriz" class="oi-seccion-ancha">
       <div class="oi-seccion-cabecera-col">
-        <div class="oi-etiqueta-seccion" data-i18n="matrizEtiqueta"></div>
-        <h2 class="oi-titulo-seccion" data-i18n="matrizTitulo"></h2>
+        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="matrizEtiqueta"></div>
+        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="matrizTitulo"></h2>
         <p class="ayuda" data-i18n="matrizAyuda"></p>
       </div>
       <div class="matriz-scroll">
         <table id="tabla-matriz" class="tabla-matriz"></table>
       </div>
-    </section>
-
-    <!-- 05 INDUSTRIAS -->
-    <section id="industrias" class="oi-seccion-ancha">
-      <div class="oi-seccion-cabecera-col">
-        <div class="oi-etiqueta-seccion" data-i18n="industriasEtiqueta"></div>
-        <h2 class="oi-titulo-seccion" data-i18n="industriasTitulo"></h2>
-      </div>
-      <div id="grid-industrias" class="oi-grid-industrias"></div>
     </section>
   </main>
 
@@ -155,9 +149,8 @@
         <div class="oi-footer-marca">Outside-In</div>
         <div class="oi-footer-nav">
           <a href="#hallazgos" data-i18n="navHallazgos"></a>
-          <a href="#temas" data-i18n="navTemas"></a>
+          <a href="#lo-que-sigo" data-i18n="navLoQueSigo"></a>
           <a href="#matriz" data-i18n="navMatriz"></a>
-          <a href="#industrias" data-i18n="navIndustrias"></a>
           <a id="link-linkedin-footer" href="#" target="_blank" rel="noopener" data-i18n="linkedinFooter"></a>
         </div>
       </div>

@@ -120,6 +120,35 @@ button {
   font-weight: 500;
 }
 
+.oi-header-acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.oi-boton-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--oi-negro);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.oi-menu-linea {
+  display: block;
+  margin: 0 auto;
+  width: 18px;
+  height: 2px;
+  background: var(--oi-negro);
+  border-radius: 2px;
+}
+
 .boton-idioma {
   font-size: 14px;
   font-weight: 600;
@@ -223,6 +252,10 @@ button {
   line-height: 1.02;
 }
 
+.oi-titulo-claro {
+  color: var(--oi-blanco);
+}
+
 .oi-ver-todos {
   font-weight: 600;
   font-size: 16px;
@@ -293,15 +326,20 @@ button {
 
 .oi-capsula {
   display: inline-block;
-  background: var(--oi-naranja);
-  color: var(--oi-negro);
   font-weight: 700;
   padding: 1px 8px;
   border-radius: 999px;
   white-space: nowrap;
-  text-align: center;
-  box-sizing: border-box;
-  min-width: 110px;
+}
+
+.oi-capsula-tema {
+  background: var(--oi-naranja);
+  color: var(--oi-negro);
+}
+
+.oi-capsula-industria {
+  background: var(--oi-azul);
+  color: var(--oi-blanco);
 }
 
 .oi-bio-fila {
@@ -649,7 +687,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--oi-texto-gris);
+  color: var(--oi-naranja);
 }
 
 .oi-titulo-hallazgo {
@@ -658,136 +696,232 @@ button {
   letter-spacing: -0.01em;
 }
 
-/* 03 Temas (scroll-story) */
+/* 03 Lo que sigo de cerca: temas + industrias en un carril que se desliza
+   horizontal mientras el usuario sigue bajando la página (sección "anclada"
+   con position:sticky). En celular, o si la persona prefiere menos
+   movimiento, es un carrusel normal que se desliza con el dedo. */
 
-.oi-temas {
-  background: var(--oi-fondo-alt);
-  padding: 96px 0;
+.oi-loquesigo {
+  background: var(--oi-negro);
+  color: var(--oi-blanco);
+  position: relative;
 }
 
-.oi-temas-inner {
+.oi-loquesigo-cabecera {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 96px 32px 0;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 10px;
 }
 
-.oi-temas-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 48px;
-  align-items: stretch;
-}
-
-.oi-panel-tema {
-  flex: 999 1 520px;
-  min-width: 0;
-  min-height: 420px;
-  border-radius: 6px;
-  position: relative;
+.oi-scrollx-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   overflow: hidden;
-  padding: 40px;
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.oi-scrollx-track {
+  display: flex;
+  gap: 24px;
+  padding: 0 32px;
+  will-change: transform;
+}
+
+.oi-scrollx-tarjeta {
+  flex: 0 0 280px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: background 0.5s ease, color 0.5s ease;
+  gap: 16px;
 }
 
-.oi-panel-circulo {
-  position: absolute;
-  width: 460px;
-  height: 460px;
-  border-radius: 50%;
-  border: 2px solid currentColor;
-  right: -120px;
-  top: -120px;
-  opacity: 0.5;
+.oi-scrollx-tarjeta:nth-child(even) {
+  margin-top: 64px;
 }
 
-.oi-panel-dot {
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  right: 80px;
-  bottom: 80px;
-  transition: background 0.5s ease;
-}
-
-.oi-panel-num {
+.oi-scrollx-visual {
   position: relative;
-  font-size: 90px;
-  line-height: 1;
-  letter-spacing: -0.04em;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.oi-panel-texto {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 420px;
+.oi-scrollx-visual-tema { background: var(--oi-naranja); }
+.oi-scrollx-visual-industria { background: var(--oi-azul); }
+
+.oi-scrollx-forma-1::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid rgba(17, 18, 20, 0.35);
+  left: -10%;
+  top: 14%;
+}
+.oi-scrollx-visual-industria.oi-scrollx-forma-1::before {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.oi-scrollx-forma-1::after {
+  content: "";
+  position: absolute;
+  width: 38%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  right: 12%;
+  bottom: 16%;
 }
 
-.oi-panel-nombre {
-  font-family: var(--oi-fuente-titulo);
-  font-weight: 800;
-  font-size: 36px;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+.oi-scrollx-forma-2::before {
+  content: "";
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  top: 20%;
+  height: 26%;
+  background: rgba(17, 18, 20, 0.3);
+}
+.oi-scrollx-visual-industria.oi-scrollx-forma-2::before {
+  background: rgba(255, 255, 255, 0.35);
+}
+.oi-scrollx-forma-2::after {
+  content: "";
+  position: absolute;
+  width: 34%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  left: 16%;
+  bottom: 18%;
 }
 
-.oi-panel-desc {
-  font-size: 18px;
-  line-height: 1.5;
+.oi-scrollx-forma-3::before {
+  content: "";
+  position: absolute;
+  inset: 18% 18% 36% 18%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50% 50% 0 0;
+}
+.oi-scrollx-forma-3::after {
+  content: "";
+  position: absolute;
+  width: 26%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(17, 18, 20, 0.35);
+  right: 16%;
+  top: 22%;
 }
 
-.oi-temas-lista-col {
-  flex: 1 1 320px;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.oi-temas-lista {
-  display: flex;
-  flex-direction: column;
-}
-
-.oi-tema-boton {
-  font: inherit;
-  text-align: left;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid #CFCFCB;
-  padding: 22px 0;
-  min-height: 44px;
-  cursor: pointer;
-  display: flex;
-  align-items: baseline;
-  gap: 18px;
-  color: var(--oi-negro);
-}
-
-.oi-tema-numero {
-  font-size: 14px;
+.oi-scrollx-etiqueta {
+  font-size: 13px;
   font-weight: 600;
-  width: 28px;
-  flex-shrink: 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--oi-texto-footer);
 }
 
-.oi-tema-nombre {
-  font-family: var(--oi-fuente-titulo);
-  font-weight: 700;
+.oi-scrollx-nombre {
   font-size: 24px;
+  line-height: 1.15;
   letter-spacing: -0.01em;
 }
 
-.oi-tema-activo {
-  color: var(--oi-azul);
+.oi-scrollx-enlace {
+  color: var(--oi-blanco);
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid var(--oi-texto-gris-2);
+  padding-bottom: 2px;
+  align-self: flex-start;
+}
+
+.oi-scrollx-enlace:hover {
+  color: var(--oi-naranja);
+  border-color: var(--oi-naranja);
+}
+
+/* Modo estático: celular, o prefers-reduced-motion. Carrusel normal, sin
+   anclar la sección ni mover nada por JavaScript. */
+
+.oi-scrollx-estatico {
+  height: auto !important;
+}
+
+.oi-scrollx-estatico .oi-scrollx-sticky {
+  position: static;
+  height: auto;
+  overflow-x: auto;
+  padding-bottom: 24px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.oi-scrollx-estatico .oi-scrollx-track {
+  transform: none !important;
+}
+
+.oi-scrollx-estatico .oi-scrollx-tarjeta {
+  scroll-snap-align: start;
+}
+
+/* Banner de cita que crece con el scroll */
+
+.oi-banner-seccion {
+  background: var(--oi-blanco);
+  padding: 72px 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.oi-banner-caja {
+  position: relative;
+  width: 92%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 64px 48px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: radial-gradient(circle at 25% 20%, var(--oi-lila), var(--oi-azul) 55%, var(--oi-naranja) 115%);
+  box-sizing: border-box;
+}
+
+.oi-banner-circulo {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+
+.oi-banner-circulo-1 {
+  width: 360px;
+  height: 360px;
+  right: -120px;
+  top: -140px;
+}
+
+.oi-banner-circulo-2 {
+  width: 220px;
+  height: 220px;
+  left: -80px;
+  bottom: -100px;
+}
+
+.oi-banner-texto {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 700;
+  font-size: clamp(24px, 3.2vw, 38px);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--oi-blanco);
 }
 
 /* 04 Matriz */
@@ -813,21 +947,25 @@ button {
   font-size: 0.85rem;
 }
 
-.tabla-matriz thead th,
-.tabla-matriz tr th[scope="col"] {
-  color: var(--oi-texto-gris);
+.oi-cabecera-tema {
+  color: var(--oi-naranja);
   font-weight: 600;
 }
 
-.tabla-matriz th[scope="row"] {
+.oi-cabecera-industria {
   text-align: left;
-  color: var(--oi-negro);
+  color: var(--oi-azul);
   font-weight: 600;
   white-space: nowrap;
 }
 
 .celda-matriz {
   padding: 0.35rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.celda-resaltada {
+  box-shadow: inset 0 0 0 3px var(--oi-azul);
 }
 
 .boton-celda {
@@ -848,35 +986,6 @@ button {
 }
 
 .celda-oscura .boton-celda {
-  color: var(--oi-blanco);
-}
-
-/* 05 Industrias */
-
-.oi-grid-industrias {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.oi-boton-industria {
-  flex: 1 1 340px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 32px;
-  border: 1.5px solid var(--oi-negro);
-  border-radius: 6px;
-  font-family: var(--oi-fuente-titulo);
-  font-weight: 700;
-  font-size: 28px;
-  letter-spacing: -0.01em;
-  color: var(--oi-negro);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.oi-boton-industria:hover {
-  background: var(--oi-negro);
   color: var(--oi-blanco);
 }
 
@@ -1081,21 +1190,68 @@ button {
   }
 }
 
-/* Responsive: ocultar el menú de navegación y el diagrama decorativo
-   en pantallas angostas para que no se amontonen */
+/* Textos y títulos que aparecen subiendo suavemente al hacer scroll.
+   Si la persona pidió "reducir movimiento" en su sistema, esta animación
+   ni siquiera se declara: el contenido queda visible de inmediato
+   (ver la regla base .oi-reveal más abajo, que ya es visible por defecto). */
 
-@media (max-width: 760px) {
-  .oi-nav {
-    display: none;
+.oi-reveal {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .oi-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .oi-hero-diagrama {
-    display: none;
+  .oi-reveal-visible {
+    opacity: 1;
+    transform: none;
   }
 }
 
-/* El salto forzado de la bajada ("...sobre [tema]" / resto de la frase) solo
-   se mantiene cuando hay espacio real para que la línea 1 entre completa con
-   el tema más largo. Por debajo de este ancho, el texto fluye natural. */
+/* Responsive: el diagrama decorativo del hero se oculta en pantallas
+   angostas, y el menú pasa a ser un panel de pantalla completa que se abre
+   con el botón de hamburguesa. */
+
+@media (max-width: 760px) {
+  .oi-hero-diagrama {
+    display: none;
+  }
+
+  .oi-boton-menu {
+    display: flex;
+  }
+
+  .oi-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: 0;
+    z-index: 30;
+    background: var(--oi-blanco);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    font-size: 22px;
+    padding: 96px 32px 32px;
+    overflow-y: auto;
+  }
+
+  .oi-nav.oi-nav-abierto {
+    display: flex;
+  }
+}
+
+body.oi-menu-bloqueo {
+  overflow: hidden;
+}
+
+/* El salto forzado de la bajada ("...sobre [tema] en [industria]" / resto de
+   la frase) solo se mantiene cuando hay espacio real para que la línea 1
+   entre completa con la combinación más larga. Por debajo de este ancho,
+   el texto fluye natural. */
 @media (max-width: 1180px) {
   .oi-salto-forzado {
     display: none;

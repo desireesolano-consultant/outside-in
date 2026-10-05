@@ -3,19 +3,21 @@
 
 let idioma = "es";
 let indiceCapsula = 0;
+let combosCapsula = [];
 
 const RAMPA_SECUENCIAL = ["#C9CCFF", "#9AA3F2", "#5C6CE0", "#2440F0", "#1B30B3", "#121F7A"];
 
-// Colores de fondo/texto/punto para cada tarjeta de la sección "Temas",
-// en el mismo orden que EJES (se repiten cada 4 porque son solo 4 colores de marca).
-const PALETA_TEMAS = [
-  { bg: "#2440F0", fg: "#FFFFFF", dot: "#FF6B2C" },
-  { bg: "#111214", fg: "#FFFFFF", dot: "#2440F0" },
-  { bg: "#FF6B2C", fg: "#111214", dot: "#FFFFFF" },
-  { bg: "#C9CCFF", fg: "#111214", dot: "#2440F0" },
-  { bg: "#2440F0", fg: "#FFFFFF", dot: "#C9CCFF" },
-  { bg: "#111214", fg: "#FFFFFF", dot: "#FF6B2C" },
-];
+function prefiereMovimientoReducido() {
+  return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function debounce(fn, esperaMs) {
+  let temporizador = null;
+  return function () {
+    clearTimeout(temporizador);
+    temporizador = setTimeout(fn, esperaMs);
+  };
+}
 
 function init() {
   try {
@@ -28,19 +30,15 @@ function init() {
   aplicarIdioma();
   renderizarSobre();
   renderizarHallazgosRecientes();
-  renderizarTemas();
+  renderizarLoQueSigo();
   renderizarMatriz();
-  renderizarIndustrias();
+  renderizarBannerCita();
   iniciarCapsulaRotativa();
   centrarDiagrama();
-
-  window.addEventListener("resize", debounce(centrarDiagrama, 150));
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(() => {
-      calcularAnchoCapsula();
-      centrarDiagrama();
-    });
-  }
+  configurarMenuMovil();
+  configurarScrollHorizontal();
+  configurarBanner();
+  configurarRevelado();
 
   document.getElementById("boton-idioma").addEventListener("click", cambiarIdioma);
 
@@ -54,6 +52,30 @@ function init() {
       if (evento.target === modal) cerrarModal(idModal);
     });
   });
+
+  let tickeando = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (tickeando) return;
+      tickeando = true;
+      requestAnimationFrame(() => {
+        actualizarScrollHorizontal();
+        actualizarBanner();
+        tickeando = false;
+      });
+    },
+    { passive: true }
+  );
+
+  window.addEventListener(
+    "resize",
+    debounce(() => {
+      centrarDiagrama();
+      configurarScrollHorizontal();
+      configurarBanner();
+    }, 200)
+  );
 }
 
 function cambiarIdioma() {
@@ -66,20 +88,12 @@ function cambiarIdioma() {
   aplicarIdioma();
   renderizarSobre();
   renderizarHallazgosRecientes();
-  renderizarTemas();
+  renderizarLoQueSigo();
   renderizarMatriz();
-  renderizarIndustrias();
-  calcularAnchoCapsula();
+  renderizarBannerCita();
   actualizarTextoCapsula();
   centrarDiagrama();
-}
-
-function debounce(fn, esperaMs) {
-  let temporizador = null;
-  return function () {
-    clearTimeout(temporizador);
-    temporizador = setTimeout(fn, esperaMs);
-  };
+  configurarScrollHorizontal();
 }
 
 function aplicarIdioma() {
@@ -93,6 +107,30 @@ function aplicarIdioma() {
 
   document.getElementById("boton-idioma").textContent = t.botonIdioma;
   document.getElementById("link-linkedin-footer").href = LINK_LINKEDIN_EJEMPLO;
+  document.getElementById("boton-menu").setAttribute("aria-label", t.menuAbrir);
+}
+
+// ---- Menú hamburguesa (celular) ----
+
+function configurarMenuMovil() {
+  const boton = document.getElementById("boton-menu");
+  const nav = document.getElementById("oi-nav");
+
+  boton.addEventListener("click", () => {
+    const abierto = nav.classList.toggle("oi-nav-abierto");
+    boton.setAttribute("aria-expanded", String(abierto));
+    boton.setAttribute("aria-label", abierto ? TEXTOS[idioma].menuCerrar : TEXTOS[idioma].menuAbrir);
+    document.body.classList.toggle("oi-menu-bloqueo", abierto);
+  });
+
+  nav.querySelectorAll("a").forEach((enlace) => {
+    enlace.addEventListener("click", () => {
+      nav.classList.remove("oi-nav-abierto");
+      boton.setAttribute("aria-expanded", "false");
+      boton.setAttribute("aria-label", TEXTOS[idioma].menuAbrir);
+      document.body.classList.remove("oi-menu-bloqueo");
+    });
+  });
 }
 
 // ---- Sección "Sobre Outside-In" + modal con la carta completa ----
@@ -127,48 +165,48 @@ function abrirModalSobre() {
   document.getElementById("modal-sobre").showModal();
 }
 
-// ---- Cápsula rotativa del hero (usa los 6 temas reales del sitio) ----
+// ---- Banner de cita ----
+
+function renderizarBannerCita() {
+  document.getElementById("banner-cita-texto").textContent = idioma === "es" ? CITA_BANNER.es : CITA_BANNER.en;
+}
+
+// ---- Cápsulas rotativas del hero (tema + industria, las 3x3 reales) ----
+
+function construirCombinaciones() {
+  const hayHallazgosReales = HALLAZGOS.some((h) => h.esEjemplo === false);
+  const combos = [];
+  TEMAS.forEach((tema) => {
+    INDUSTRIAS.forEach((industria) => {
+      if (!hayHallazgosReales) {
+        combos.push({ tema, industria });
+        return;
+      }
+      const tieneHallazgoReal = HALLAZGOS.some(
+        (h) => h.esEjemplo === false && h.eje === tema.id && h.industria === industria.id
+      );
+      if (tieneHallazgoReal) combos.push({ tema, industria });
+    });
+  });
+  return combos;
+}
 
 function iniciarCapsulaRotativa() {
-  calcularAnchoCapsula();
+  combosCapsula = construirCombinaciones();
   actualizarTextoCapsula();
   setInterval(() => {
-    indiceCapsula = (indiceCapsula + 1) % EJES.length;
+    if (combosCapsula.length === 0) return;
+    indiceCapsula = (indiceCapsula + 1) % combosCapsula.length;
     actualizarTextoCapsula();
   }, 2400);
 }
 
 function actualizarTextoCapsula() {
-  const tema = EJES[indiceCapsula];
-  document.getElementById("oi-word").textContent = idioma === "es" ? tema.es : tema.en;
-}
-
-// Mide los 6 temas reales y fija el ancho de la cápsula al más largo,
-// para que el texto no "salte" de tamaño cuando el tema rota.
-function calcularAnchoCapsula() {
-  const capsula = document.getElementById("oi-word");
-  if (!capsula) return;
-  const estilos = getComputedStyle(capsula);
-
-  const medidor = document.createElement("span");
-  medidor.style.position = "absolute";
-  medidor.style.visibility = "hidden";
-  medidor.style.whiteSpace = "nowrap";
-  medidor.style.fontFamily = estilos.fontFamily;
-  medidor.style.fontWeight = estilos.fontWeight;
-  medidor.style.fontSize = estilos.fontSize;
-  document.body.appendChild(medidor);
-
-  let anchoMaximo = 0;
-  EJES.forEach((tema) => {
-    medidor.textContent = idioma === "es" ? tema.es : tema.en;
-    anchoMaximo = Math.max(anchoMaximo, medidor.offsetWidth);
-  });
-
-  document.body.removeChild(medidor);
-
-  const relleno = 16; // 8px de cada lado, igual al padding de .oi-capsula
-  capsula.style.width = `${anchoMaximo + relleno}px`;
+  if (combosCapsula.length === 0) return;
+  const combo = combosCapsula[indiceCapsula % combosCapsula.length];
+  document.getElementById("oi-word-tema").textContent = idioma === "es" ? combo.tema.frase_es : combo.tema.frase_en;
+  document.getElementById("oi-word-industria").textContent =
+    idioma === "es" ? combo.industria.frase_es : combo.industria.frase_en;
 }
 
 // Alinea el centro vertical del diagrama decorativo con el centro
@@ -196,7 +234,7 @@ function renderizarHallazgosRecientes() {
   const t = TEXTOS[idioma];
 
   HALLAZGOS.forEach((h, indice) => {
-    const eje = EJES.find((e) => e.id === h.eje);
+    const tema = TEMAS.find((tm) => tm.id === h.eje);
 
     const tarjeta = document.createElement("button");
     tarjeta.type = "button";
@@ -212,7 +250,7 @@ function renderizarHallazgosRecientes() {
 
     const categoria = document.createElement("div");
     categoria.className = "oi-categoria-hallazgo";
-    categoria.textContent = eje ? (idioma === "es" ? eje.es : eje.en) : "";
+    categoria.textContent = tema ? (idioma === "es" ? tema.es : tema.en) : "";
 
     const titulo = document.createElement("h3");
     titulo.className = "oi-titulo-hallazgo";
@@ -225,86 +263,166 @@ function renderizarHallazgosRecientes() {
 
 function abrirFichaUnica(h) {
   const industria = INDUSTRIAS.find((i) => i.id === h.industria);
-  const eje = EJES.find((e) => e.id === h.eje);
+  const tema = TEMAS.find((tm) => tm.id === h.eje);
   const nombreIndustria = industria ? (idioma === "es" ? industria.es : industria.en) : "";
-  const nombreEje = eje ? (idioma === "es" ? eje.es : eje.en) : "";
+  const nombreTema = tema ? (idioma === "es" ? tema.es : tema.en) : "";
 
   const modal = document.getElementById("modal-fichas");
-  document.getElementById("modal-titulo").textContent = `${nombreIndustria} · ${nombreEje}`;
+  document.getElementById("modal-titulo").textContent = `${nombreIndustria} · ${nombreTema}`;
   const cuerpo = document.getElementById("modal-cuerpo");
   cuerpo.innerHTML = "";
   cuerpo.appendChild(crearFicha(h));
   modal.showModal();
 }
 
-// ---- Temas: panel que cambia con scroll y con clic ----
+// ---- "Lo que sigo de cerca": tarjetas de temas + industrias ----
 
-let observadorTemas = null;
+function crearTarjetaLoQueSigo(item, tipo, indice) {
+  const t = TEXTOS[idioma];
+  const tarjeta = document.createElement("div");
+  tarjeta.className = `oi-scrollx-tarjeta oi-scrollx-tarjeta-${tipo}`;
 
-function renderizarTemas() {
-  const caja = document.getElementById("oi-temas");
-  caja.innerHTML = "";
+  const visual = document.createElement("div");
+  visual.className = `oi-scrollx-visual oi-scrollx-visual-${tipo} oi-scrollx-forma-${(indice % 3) + 1}`;
 
-  if (observadorTemas) observadorTemas.disconnect();
+  const etiqueta = document.createElement("div");
+  etiqueta.className = "oi-scrollx-etiqueta";
+  etiqueta.textContent = tipo === "tema" ? t.tarjetaTemaEtiqueta : t.tarjetaIndustriaEtiqueta;
 
-  const botones = EJES.map((tema, indice) => {
-    const boton = document.createElement("button");
-    boton.type = "button";
-    boton.className = "oi-tema-boton";
-    boton.dataset.indice = String(indice);
+  const nombre = document.createElement("h3");
+  nombre.className = "oi-scrollx-nombre";
+  nombre.textContent = idioma === "es" ? item.es : item.en;
 
-    const numero = document.createElement("span");
-    numero.className = "oi-tema-numero";
-    numero.textContent = String(indice + 1).padStart(2, "0");
+  const enlace = document.createElement("a");
+  enlace.href = "#matriz";
+  enlace.className = "oi-scrollx-enlace";
+  enlace.textContent = t.tarjetaVerHallazgos;
+  enlace.addEventListener("click", () => resaltarEnMatriz(tipo, item.id));
 
-    const nombre = document.createElement("span");
-    nombre.className = "oi-tema-nombre";
-    nombre.textContent = idioma === "es" ? tema.es : tema.en;
+  tarjeta.append(visual, etiqueta, nombre, enlace);
+  return tarjeta;
+}
 
-    boton.append(numero, nombre);
-    boton.addEventListener("click", () => activarTema(indice));
-    caja.appendChild(boton);
-    return boton;
+function renderizarLoQueSigo() {
+  const contenedor = document.getElementById("grid-loquesigo");
+  contenedor.innerHTML = "";
+  TEMAS.forEach((tema, i) => contenedor.appendChild(crearTarjetaLoQueSigo(tema, "tema", i)));
+  INDUSTRIAS.forEach((industria, i) => contenedor.appendChild(crearTarjetaLoQueSigo(industria, "industria", i)));
+}
+
+function resaltarEnMatriz(tipo, id) {
+  const tabla = document.getElementById("tabla-matriz");
+  const selector = tipo === "tema" ? `[data-tema="${id}"]` : `[data-industria="${id}"]`;
+  tabla.querySelectorAll(selector).forEach((celda) => {
+    celda.classList.add("celda-resaltada");
+    setTimeout(() => celda.classList.remove("celda-resaltada"), 1600);
   });
+}
 
-  activarTema(0, botones);
+// ---- Scroll horizontal anclado de "Lo que sigo de cerca" ----
 
-  observadorTemas = new IntersectionObserver(
+let scrollXInfo = null;
+
+function configurarScrollHorizontal() {
+  const section = document.getElementById("lo-que-sigo");
+  const track = document.getElementById("grid-loquesigo");
+  const sticky = section ? section.querySelector(".oi-scrollx-sticky") : null;
+  if (!section || !track || !sticky) {
+    scrollXInfo = null;
+    return;
+  }
+
+  const esMovil = window.innerWidth <= 760;
+
+  if (prefiereMovimientoReducido() || esMovil) {
+    section.style.height = "auto";
+    section.classList.add("oi-scrollx-estatico");
+    track.style.transform = "none";
+    scrollXInfo = null;
+    return;
+  }
+
+  section.classList.remove("oi-scrollx-estatico");
+  const alturaCabecera = sticky.offsetTop;
+  const desplazable = Math.max(0, track.scrollWidth - window.innerWidth);
+  section.style.height = `${alturaCabecera + window.innerHeight + desplazable}px`;
+  scrollXInfo = { section, alturaCabecera, desplazable };
+  actualizarScrollHorizontal();
+}
+
+function actualizarScrollHorizontal() {
+  if (!scrollXInfo) return;
+  const { section, alturaCabecera, desplazable } = scrollXInfo;
+  const track = document.getElementById("grid-loquesigo");
+  if (!track || desplazable <= 0) return;
+
+  const rect = section.getBoundingClientRect();
+  const progreso = Math.min(1, Math.max(0, (-rect.top - alturaCabecera) / desplazable));
+  track.style.transform = `translateX(-${progreso * desplazable}px)`;
+}
+
+// ---- Banner que crece con el scroll ----
+
+let bannerInfo = null;
+
+function configurarBanner() {
+  const caja = document.getElementById("banner-cita-caja");
+  if (!caja) {
+    bannerInfo = null;
+    return;
+  }
+
+  if (prefiereMovimientoReducido()) {
+    caja.style.width = "100%";
+    caja.style.borderRadius = "16px";
+    bannerInfo = null;
+    return;
+  }
+
+  bannerInfo = { caja, seccion: caja.closest(".oi-banner-seccion") };
+  actualizarBanner();
+}
+
+function actualizarBanner() {
+  if (!bannerInfo) return;
+  const { caja, seccion } = bannerInfo;
+  const rect = seccion.getBoundingClientRect();
+  const altoVentana = window.innerHeight;
+  const progreso = Math.min(1, Math.max(0, (altoVentana - rect.top) / (altoVentana + rect.height)));
+  caja.style.width = `${92 + progreso * 8}%`;
+  caja.style.borderRadius = `${32 - progreso * 32}px`;
+}
+
+// ---- Textos y títulos que aparecen al hacer scroll ----
+
+function configurarRevelado() {
+  const elementos = document.querySelectorAll(".oi-reveal");
+  if (!elementos.length) return;
+
+  if (prefiereMovimientoReducido()) {
+    elementos.forEach((el) => el.classList.add("oi-reveal-visible"));
+    return;
+  }
+
+  const observador = new IntersectionObserver(
     (entradas) => {
       entradas.forEach((entrada) => {
         if (entrada.isIntersecting) {
-          const indice = Number(entrada.target.dataset.indice);
-          activarTema(indice, botones);
+          entrada.target.classList.add("oi-reveal-visible");
+          observador.unobserve(entrada.target);
         }
       });
     },
-    { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    { threshold: 0.15 }
   );
-  botones.forEach((boton) => observadorTemas.observe(boton));
+
+  elementos.forEach((el) => observador.observe(el));
 }
 
-function activarTema(indice, botones) {
-  const tema = EJES[indice];
-  const colores = PALETA_TEMAS[indice % PALETA_TEMAS.length];
-  const panel = document.getElementById("oi-panel");
+// ---- Matriz interactiva industria x tema ----
 
-  panel.style.background = colores.bg;
-  panel.style.color = colores.fg;
-  document.getElementById("oi-dot").style.background = colores.dot;
-  document.getElementById("oi-num").textContent = String(indice + 1).padStart(2, "0");
-  document.getElementById("oi-name").textContent = idioma === "es" ? tema.es : tema.en;
-  document.getElementById("oi-desc").textContent = idioma === "es" ? tema.desc_es : tema.desc_en;
-
-  const listaBotones = botones || Array.from(document.querySelectorAll(".oi-tema-boton"));
-  listaBotones.forEach((boton, i) => {
-    boton.classList.toggle("oi-tema-activo", i === indice);
-  });
-}
-
-// ---- Matriz interactiva industria x eje ----
-
-function contarHallazgos(industriaId, ejeId) {
-  return HALLAZGOS.filter((h) => h.industria === industriaId && h.eje === ejeId).length;
+function contarHallazgos(industriaId, temaId) {
+  return HALLAZGOS.filter((h) => h.industria === industriaId && h.eje === temaId).length;
 }
 
 function colorPorConteo(conteo) {
@@ -320,10 +438,12 @@ function renderizarMatriz() {
 
   const encabezado = document.createElement("tr");
   encabezado.appendChild(document.createElement("th"));
-  EJES.forEach((eje) => {
+  TEMAS.forEach((tema) => {
     const th = document.createElement("th");
     th.scope = "col";
-    th.textContent = idioma === "es" ? eje.es : eje.en;
+    th.className = "oi-cabecera-tema";
+    th.dataset.tema = tema.id;
+    th.textContent = idioma === "es" ? tema.es : tema.en;
     encabezado.appendChild(th);
   });
   tabla.appendChild(encabezado);
@@ -332,13 +452,17 @@ function renderizarMatriz() {
     const fila = document.createElement("tr");
     const thIndustria = document.createElement("th");
     thIndustria.scope = "row";
+    thIndustria.className = "oi-cabecera-industria";
+    thIndustria.dataset.industria = industria.id;
     thIndustria.textContent = idioma === "es" ? industria.es : industria.en;
     fila.appendChild(thIndustria);
 
-    EJES.forEach((eje) => {
-      const conteo = contarHallazgos(industria.id, eje.id);
+    TEMAS.forEach((tema) => {
+      const conteo = contarHallazgos(industria.id, tema.id);
       const celda = document.createElement("td");
       celda.className = "celda-matriz";
+      celda.dataset.tema = tema.id;
+      celda.dataset.industria = industria.id;
 
       const color = colorPorConteo(conteo);
       if (color) {
@@ -352,11 +476,11 @@ function renderizarMatriz() {
       boton.textContent = conteo > 0 ? String(conteo) : "–";
 
       const nombreIndustria = idioma === "es" ? industria.es : industria.en;
-      const nombreEje = idioma === "es" ? eje.es : eje.en;
+      const nombreTema = idioma === "es" ? tema.es : tema.en;
       const etiquetaConteo = conteo === 1 ? t.hallazgoSingular : t.hallazgosPlural;
-      boton.setAttribute("aria-label", `${nombreIndustria} · ${nombreEje}: ${conteo} ${etiquetaConteo}`);
+      boton.setAttribute("aria-label", `${nombreIndustria} · ${nombreTema}: ${conteo} ${etiquetaConteo}`);
 
-      boton.addEventListener("click", () => abrirFichas(industria, eje));
+      boton.addEventListener("click", () => abrirFichas(industria, tema));
       celda.appendChild(boton);
       fila.appendChild(celda);
     });
@@ -365,15 +489,15 @@ function renderizarMatriz() {
   });
 }
 
-function abrirFichas(industria, eje) {
+function abrirFichas(industria, tema) {
   const modal = document.getElementById("modal-fichas");
   const t = TEXTOS[idioma];
 
-  document.getElementById("modal-titulo").textContent = `${idioma === "es" ? industria.es : industria.en} · ${idioma === "es" ? eje.es : eje.en}`;
+  document.getElementById("modal-titulo").textContent = `${idioma === "es" ? industria.es : industria.en} · ${idioma === "es" ? tema.es : tema.en}`;
   const cuerpo = document.getElementById("modal-cuerpo");
   cuerpo.innerHTML = "";
 
-  const hallazgos = HALLAZGOS.filter((h) => h.industria === industria.id && h.eje === eje.id);
+  const hallazgos = HALLAZGOS.filter((h) => h.industria === industria.id && h.eje === tema.id);
 
   if (hallazgos.length === 0) {
     const vacio = document.createElement("p");
@@ -448,26 +572,6 @@ function crearFicha(h) {
 
   ficha.append(bloqueDatos, bloqueImplicancia);
   return ficha;
-}
-
-// ---- Industrias (botones grandes) ----
-
-function renderizarIndustrias() {
-  const contenedor = document.getElementById("grid-industrias");
-  contenedor.innerHTML = "";
-
-  INDUSTRIAS.forEach((industria) => {
-    const boton = document.createElement("a");
-    boton.href = "#matriz";
-    boton.className = "oi-boton-industria";
-    const texto = document.createElement("span");
-    texto.textContent = idioma === "es" ? industria.es : industria.en;
-    const flecha = document.createElement("span");
-    flecha.setAttribute("aria-hidden", "true");
-    flecha.textContent = "→";
-    boton.append(texto, flecha);
-    contenedor.appendChild(boton);
-  });
 }
 
 document.addEventListener("DOMContentLoaded", init);

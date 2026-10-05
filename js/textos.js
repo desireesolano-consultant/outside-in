@@ -10,14 +10,16 @@ const TEXTOS = {
 
     navSobre: "Sobre Outside-In",
     navHallazgos: "Hallazgos",
-    navTemas: "Temas",
+    navLoQueSigo: "Lo que sigo de cerca",
     navMatriz: "Matriz",
-    navIndustrias: "Industrias",
+    menuAbrir: "Abrir menú",
+    menuCerrar: "Cerrar menú",
 
     heroPalabra1: "Entender",
     heroPalabra2: "Conectar",
     heroPalabra3: "Anticipar",
-    heroParrafoPre: "Leo y analizo lo que dicen los grandes estudios sobre",
+    heroParrafoPre: "Leo y analizo qué pasa con",
+    heroParrafoMid: "en",
     heroParrafoPost: "para que lo conectes con tu organización y te anticipes al cambio.",
     heroSaludo: "Hola, soy Desiree Solano",
     heroCargo: "Consultora en estrategia de comunicación y transformación",
@@ -47,16 +49,15 @@ const TEXTOS = {
     hallazgosVerTodos: "Ver todos los hallazgos →",
     hallazgosEjemploBadge: "EJEMPLO",
 
-    temasEtiqueta: "03 — Temas",
-    temasTitulo: "Los temas que sigo de cerca",
-    temasVerTodos: "Ver todos los temas →",
+    loQueSigoEtiqueta: "03 — Lo que sigo de cerca",
+    loQueSigoTitulo: "Lo que sigo de cerca",
+    tarjetaTemaEtiqueta: "Tema",
+    tarjetaIndustriaEtiqueta: "Industria",
+    tarjetaVerHallazgos: "Ver hallazgos →",
 
     matrizEtiqueta: "04 — Matriz",
-    matrizTitulo: "Matriz de tendencias por industria y eje temático",
+    matrizTitulo: "Matriz de tendencias por industria y tema",
     matrizAyuda: "Haz clic en una casilla para ver los hallazgos.",
-
-    industriasEtiqueta: "05 — Industrias",
-    industriasTitulo: "Busca tu sector",
 
     linkedinFooter: "LinkedIn",
 
@@ -80,14 +81,16 @@ const TEXTOS = {
 
     navSobre: "About Outside-In",
     navHallazgos: "Findings",
-    navTemas: "Topics",
+    navLoQueSigo: "What I follow closely",
     navMatriz: "Matrix",
-    navIndustrias: "Industries",
+    menuAbrir: "Open menu",
+    menuCerrar: "Close menu",
 
     heroPalabra1: "Understand",
     heroPalabra2: "Connect",
     heroPalabra3: "Anticipate",
-    heroParrafoPre: "I read and analyze what major studies say about",
+    heroParrafoPre: "I read and analyze what's happening with",
+    heroParrafoMid: "in",
     heroParrafoPost: "so you can connect it to your organization and get ahead of change.",
     heroSaludo: "Hi, I'm Desiree Solano",
     heroCargo: "Communication Strategy & Transformation Consultant",
@@ -117,16 +120,15 @@ const TEXTOS = {
     hallazgosVerTodos: "See all findings →",
     hallazgosEjemploBadge: "EXAMPLE",
 
-    temasEtiqueta: "03 — Topics",
-    temasTitulo: "The topics I follow closely",
-    temasVerTodos: "See all topics →",
+    loQueSigoEtiqueta: "03 — What I follow closely",
+    loQueSigoTitulo: "What I follow closely",
+    tarjetaTemaEtiqueta: "Topic",
+    tarjetaIndustriaEtiqueta: "Industry",
+    tarjetaVerHallazgos: "See findings →",
 
     matrizEtiqueta: "04 — Matrix",
     matrizTitulo: "Trend matrix by industry and topic",
     matrizAyuda: "Click a cell to see the findings.",
-
-    industriasEtiqueta: "05 — Industries",
-    industriasTitulo: "Browse your sector",
 
     linkedinFooter: "LinkedIn",
 

@@ -1,4 +1,4 @@
-// CONTENIDO del sitio: carta de bienvenida, industrias, temas (ejes) y hallazgos.
+// CONTENIDO del sitio: carta de bienvenida, industrias, temas y hallazgos.
 // Los hallazgos y la portada de tendencias todavía son EJEMPLO de relleno.
 // Nada de eso es un dato real. Regla del proyecto: nunca inventar cifras, estudios
 // ni fuentes — ese contenido se reemplaza con datos verificados más adelante.
@@ -36,58 +36,68 @@ const INTRO = {
 
 const LINK_LINKEDIN_EJEMPLO = "#";
 
-// Primera versión del sitio: 3 industrias reales.
+// Cita destacada del banner, antes de la matriz. Es la misma frase real de
+// la carta de bienvenida (INTRO), no un texto nuevo.
+const CITA_BANNER = {
+  es: "Las organizaciones que mejor se transforman son las que se mantienen curiosas y entienden su contexto antes de que el cambio las alcance.",
+  en: "The organizations that transform best are the ones that stay curious and understand their context before change catches up with them.",
+};
+
+// Segunda versión del sitio: foco reducido a 3 industrias reales.
+// "frase" es la forma corta en minúscula que se usa dentro de la bajada
+// rotativa del hero ("...qué pasa con [tema] en [industria]...").
 const INDUSTRIAS = [
-  { id: "banca_pagos", es: "Banca y pagos", en: "Banking & payments" },
-  { id: "consumo_masivo", es: "Consumo masivo", en: "Consumer goods" },
-  { id: "tecnologia", es: "Tecnología", en: "Technology" },
+  {
+    id: "life_sciences",
+    es: "Life Sciences",
+    en: "Life Sciences",
+    frase_es: "Life Sciences",
+    frase_en: "Life Sciences",
+  },
+  {
+    id: "servicios_financieros",
+    es: "Servicios financieros (banca, pagos y seguros)",
+    en: "Financial services (banking, payments & insurance)",
+    frase_es: "servicios financieros",
+    frase_en: "financial services",
+  },
+  {
+    id: "consumo_masivo",
+    es: "Consumo masivo",
+    en: "Consumer goods",
+    frase_es: "consumo masivo",
+    frase_en: "consumer goods",
+  },
 ];
 
-// Los 6 temas (ejes) reales del sitio. "desc" es una descripción corta de una
-// línea para el panel de la sección "Temas" — es copy de interfaz, no un dato o
-// hallazgo, así que no lleva fuente.
-const EJES = [
+// Foco reducido a 3 temas reales.
+const TEMAS = [
   {
     id: "gestion_cambio",
     es: "Gestión del cambio",
     en: "Change management",
+    frase_es: "la gestión del cambio",
+    frase_en: "change management",
     desc_es: "Cómo las organizaciones diseñan, lideran y sostienen procesos de cambio.",
     desc_en: "How organizations design, lead, and sustain change processes.",
   },
   {
-    id: "estrategia_negocio",
-    es: "Estrategia de negocio",
-    en: "Business strategy",
-    desc_es: "Hacia dónde mueven su rumbo las industrias y qué las impulsa a decidirlo.",
-    desc_en: "Where industries are steering their course and what's driving that decision.",
+    id: "ia_personas",
+    es: "IA y personas",
+    en: "AI and people",
+    frase_es: "la IA y las personas",
+    frase_en: "AI and people",
+    desc_es: "Cómo la IA está cambiando el trabajo, las habilidades y las decisiones de las personas en las organizaciones.",
+    desc_en: "How AI is changing work, skills, and people's decisions inside organizations.",
   },
   {
-    id: "comunicaciones",
-    es: "Comunicaciones",
-    en: "Communications",
-    desc_es: "Cómo se comunican las organizaciones, hacia adentro y hacia afuera, en momentos de cambio.",
-    desc_en: "How organizations communicate, internally and externally, in moments of change.",
-  },
-  {
-    id: "cultura_organizacional",
-    es: "Cultura organizacional",
-    en: "Organizational culture",
-    desc_es: "Cómo se construye, se mide y se transforma la cultura de una organización.",
-    desc_en: "How an organization's culture is built, measured, and transformed.",
-  },
-  {
-    id: "ia",
-    es: "Inteligencia artificial",
-    en: "Artificial intelligence",
-    desc_es: "Cómo la IA está cambiando el trabajo, las habilidades y las decisiones de negocio.",
-    desc_en: "How AI is changing work, skills, and business decisions.",
-  },
-  {
-    id: "transformacion",
-    es: "Transformación",
-    en: "Transformation",
-    desc_es: "Cómo las organizaciones ejecutan transformaciones de negocio de punta a punta.",
-    desc_en: "How organizations execute end-to-end business transformations.",
+    id: "liderazgo_cultura",
+    es: "Liderazgo, cultura y comunicación",
+    en: "Leadership, culture & communication",
+    frase_es: "el liderazgo y la cultura",
+    frase_en: "leadership and culture",
+    desc_es: "Cómo se lidera, se construye cultura y se comunica una organización en momentos de cambio.",
+    desc_en: "How an organization leads, builds culture, and communicates in moments of change.",
   },
 ];
 
@@ -151,15 +161,19 @@ const TENDENCIAS = [
   },
 ];
 
-// Hallazgos de ejemplo, repartidos en distintos cruces de industria x eje
-// para que la matriz, las tarjetas de "Hallazgos recientes" y las fichas
-// se puedan ver funcionando. Antes de publicar el sitio, se reemplazan por
-// hallazgos reales con su fuente verificable.
+// Hallazgos de ejemplo. "esEjemplo: true" marca que todavía no es un hallazgo
+// real — se usa para decidir cómo rota la cápsula del hero (ver app.js) y
+// para mostrar la insignia "EJEMPLO" en las tarjetas. industria/eje ya están
+// actualizados a las 3+3 categorías vigentes (antes, h4 y h5 estaban en
+// "Tecnología", que ya no existe como industria: los reasigné a
+// "Life Sciences" porque son solo placeholders, no hay ningún dato real
+// de por medio).
 const HALLAZGOS = [
   {
     id: "h1",
-    industria: "banca_pagos",
+    industria: "servicios_financieros",
     eje: "gestion_cambio",
+    esEjemplo: true,
     fuente: EJEMPLO,
     estudio_es: EJEMPLO,
     estudio_en: EJEMPLO_EN,
@@ -177,8 +191,9 @@ const HALLAZGOS = [
   },
   {
     id: "h2",
-    industria: "banca_pagos",
-    eje: "ia",
+    industria: "servicios_financieros",
+    eje: "ia_personas",
+    esEjemplo: true,
     fuente: EJEMPLO,
     estudio_es: EJEMPLO,
     estudio_en: EJEMPLO_EN,
@@ -197,7 +212,8 @@ const HALLAZGOS = [
   {
     id: "h3",
     industria: "consumo_masivo",
-    eje: "cultura_organizacional",
+    eje: "liderazgo_cultura",
+    esEjemplo: true,
     fuente: EJEMPLO,
     estudio_es: EJEMPLO,
     estudio_en: EJEMPLO_EN,
@@ -215,8 +231,9 @@ const HALLAZGOS = [
   },
   {
     id: "h4",
-    industria: "tecnologia",
-    eje: "ia",
+    industria: "life_sciences",
+    eje: "ia_personas",
+    esEjemplo: true,
     fuente: EJEMPLO,
     estudio_es: EJEMPLO,
     estudio_en: EJEMPLO_EN,
@@ -234,8 +251,9 @@ const HALLAZGOS = [
   },
   {
     id: "h5",
-    industria: "tecnologia",
-    eje: "ia",
+    industria: "life_sciences",
+    eje: "ia_personas",
+    esEjemplo: true,
     fuente: EJEMPLO,
     estudio_es: EJEMPLO,
     estudio_en: EJEMPLO_EN,
