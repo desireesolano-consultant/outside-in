@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detrás de Outside-In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="oi-header">
+    <div class="oi-header-inner">
+      <a href="index.html#inicio" class="oi-logo">
+        <span class="oi-logo-circulo"><span class="oi-logo-punto"></span></span>
+        Outside-In
+      </a>
+      <nav id="oi-nav" class="oi-nav">
+        <a href="index.html#sobre" data-i18n="navSobre"></a>
+        <a href="index.html#hallazgos" data-i18n="navHallazgos"></a>
+        <a href="index.html#lo-que-sigo" data-i18n="navLoQueSigo"></a>
+        <a href="index.html#matriz" data-i18n="navMatriz"></a>
+      </nav>
+      <div class="oi-header-acciones">
+        <button id="boton-idioma" class="boton-idioma" type="button"></button>
+        <button id="boton-menu" class="oi-boton-menu" type="button" aria-expanded="false" aria-controls="oi-nav">
+          <span class="oi-menu-linea"></span>
+          <span class="oi-menu-linea"></span>
+          <span class="oi-menu-linea"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="oi-seccion-ancha oi-pagina-hero">
+      <p class="oi-tagline oi-reveal" data-i18n="detrasBajada"></p>
+      <h1 class="oi-titulo-pagina oi-reveal" data-i18n="detrasTitulo"></h1>
+    </section>
+
+    <section class="oi-seccion-ancha oi-bloques-detras">
+      <article class="oi-bloque-detras oi-reveal">
+        <div class="oi-etiqueta-seccion">01</div>
+        <h2 class="oi-titulo-seccion" style="font-size: 28px" data-i18n="detras1Titulo"></h2>
+        <p data-i18n="detras1Texto"></p>
+      </article>
+
+      <article class="oi-bloque-detras oi-reveal">
+        <div class="oi-etiqueta-seccion">02</div>
+        <h2 class="oi-titulo-seccion" style="font-size: 28px" data-i18n="detras2Titulo"></h2>
+        <p data-i18n="detras2Texto"></p>
+      </article>
+
+      <article class="oi-bloque-detras oi-reveal">
+        <div class="oi-etiqueta-seccion">03</div>
+        <h2 class="oi-titulo-seccion" style="font-size: 28px" data-i18n="detras3Titulo"></h2>
+        <p data-i18n="detras3Texto"></p>
+      </article>
+
+      <article class="oi-bloque-detras oi-reveal">
+        <div class="oi-etiqueta-seccion">04</div>
+        <h2 class="oi-titulo-seccion" style="font-size: 28px" data-i18n="detras4Titulo"></h2>
+        <blockquote class="oi-cita-destacada" data-i18n="detrasCita"></blockquote>
+        <p data-i18n="detras4Texto"></p>
+      </article>
+
+      <article class="oi-bloque-detras oi-reveal">
+        <div class="oi-etiqueta-seccion">05</div>
+        <h2 class="oi-titulo-seccion" style="font-size: 28px" data-i18n="detras5Titulo"></h2>
+        <p data-i18n="detras5Texto"></p>
+      </article>
+    </section>
+
+    <section class="oi-seccion-ancha oi-detras-ctas">
+      <a href="index.html#hallazgos" class="oi-boton oi-boton-primario" data-i18n="detrasCtaHallazgos"></a>
+      <a id="detras-link-linkedin" href="#" target="_blank" rel="noopener" class="oi-boton oi-boton-secundario" data-i18n="detrasCtaLinkedin"></a>
+    </section>
+  </main>
+
+  <footer class="oi-footer">
+    <div class="oi-footer-inner">
+      <div class="oi-footer-top">
+        <div class="oi-footer-marca">Outside-In</div>
+        <div class="oi-footer-nav">
+          <a href="index.html#hallazgos" data-i18n="navHallazgos"></a>
+          <a href="index.html#lo-que-sigo" data-i18n="navLoQueSigo"></a>
+          <a href="index.html#matriz" data-i18n="navMatriz"></a>
+          <a id="link-linkedin-footer" href="#" target="_blank" rel="noopener" data-i18n="linkedinFooter"></a>
+        </div>
+      </div>
+      <div class="oi-footer-bottom" data-i18n="subtitulo"></div>
+      <div class="oi-footer-firma" data-i18n="footerFirma"></div>
+    </div>
+  </footer>
+
+  <script src="js/textos.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/pagina-detras.js"></script>
+</body>
+</html>

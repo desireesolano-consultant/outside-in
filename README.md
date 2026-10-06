@@ -7,6 +7,13 @@ estructura de datos para cuando construyamos la automatización (Fase 2).
 **No publicar el sitio en internet hasta que la automatización semanal esté
 funcionando** (regla del proyecto, ver `CLAUDE.md`).
 
+## Antes de publicar
+
+- [ ] Apagar el modo vista previa.
+- [ ] Confirmar que la automatización semanal esté funcionando — la página
+      "Detrás de Outside-In" la describe como algo que ya está activo, así
+      que tiene que serlo de verdad antes de publicar.
+
 ## Estructura de archivos
 
 - `index.html` — estructura del sitio.
