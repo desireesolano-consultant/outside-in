@@ -6,6 +6,7 @@
   --oi-azul: #2440F0;
   --oi-negro: #111214;
   --oi-naranja: #FF6B2C;
+  --oi-naranja-claro: #FFB38A;
   --oi-lila: #C9CCFF;
   --oi-blanco: #FFFFFF;
   --oi-fondo-alt: #F2F2F0;
@@ -143,6 +144,117 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.oi-boton-en-vivo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--oi-negro);
+  border: 1px solid var(--oi-borde);
+  border-radius: 999px;
+  padding: 10px 16px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.oi-boton-en-vivo:hover {
+  border-color: var(--oi-azul);
+  color: var(--oi-azul);
+}
+
+/* Panel "en vivo": se abre debajo del header (que ya es sticky, así que el
+   botón siempre está a la vista) y se cierra con la X o haciendo clic afuera. */
+
+.oi-panel-en-vivo {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--oi-azul);
+  color: var(--oi-blanco);
+  box-shadow: 0 16px 32px rgba(17, 18, 20, 0.2);
+  z-index: 20;
+}
+
+.oi-panel-en-vivo-inner {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 32px 32px 40px;
+}
+
+.oi-panel-en-vivo-cerrar {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--oi-blanco);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.oi-panel-en-vivo-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.oi-panel-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.oi-panel-tab {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--oi-blanco);
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.oi-panel-tab.oi-cf-activo {
+  background: var(--oi-blanco);
+  color: var(--oi-azul);
+  border-color: var(--oi-blanco);
+}
+
+.oi-panel-en-vivo-titulo {
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 800;
+  font-size: clamp(22px, 3vw, 32px);
+  margin-bottom: 24px;
+}
+
+.oi-panel-en-vivo-inner .oi-contador-numero {
+  color: var(--oi-blanco);
+}
+
+.oi-panel-en-vivo-inner .oi-contador-numero-final {
+  color: var(--oi-naranja-claro);
+}
+
+.oi-panel-en-vivo-inner .oi-contador-etiqueta {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.oi-panel-en-vivo-inner .oi-contador-flecha {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .oi-boton-menu {
@@ -376,9 +488,18 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font: inherit;
   font-size: 14px;
   font-weight: 600;
   color: var(--oi-texto-gris);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.oi-senal-vida:hover {
+  color: var(--oi-azul);
 }
 
 .oi-punto-vivo {
@@ -550,6 +671,7 @@ button {
 }
 
 .oi-svg-particula {
+  r: 3px;
   fill: var(--oi-naranja);
   opacity: 0;
 }
@@ -1238,10 +1360,59 @@ button {
   max-width: 760px;
 }
 
-.oi-cf-contador {
-  font-size: 17px;
+/* Números grandes del contador en vivo (se usan tal cual, en fondo claro,
+   dentro de "Así automaticé"; el panel del menú los sobreescribe a blanco
+   más arriba, porque ahí el fondo es azul). */
+
+.oi-contador-numeros {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.oi-contador-bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.oi-contador-numero {
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 800;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1;
+  color: var(--oi-negro);
+  font-variant-numeric: tabular-nums;
+}
+
+.oi-contador-numero-final {
+  color: var(--oi-naranja);
+}
+
+.oi-contador-etiqueta {
+  font-size: 13px;
   font-weight: 600;
   color: var(--oi-texto-gris);
+}
+
+.oi-contador-flecha {
+  font-size: 24px;
+  color: var(--oi-texto-gris);
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 540px) {
+  .oi-contador-numeros {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .oi-contador-flecha {
+    transform: rotate(90deg);
+    margin: -4px 0;
+  }
 }
 
 .oi-cf-pin-contenedor {

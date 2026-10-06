@@ -11,10 +11,10 @@
 - Público: reclutadores, gerentes de consultoría y líderes de negocio.
 
 ## Estructura del sitio
-- Portada con titular clicable (Entender / Aterrizar / Descubrir), carta de bienvenida completa en "Sobre Outside-In", y mi correo y LinkedIn debajo de mi presentación.
+- Portada con titular clicable (Entender / Conectar / Anticipar), carta de bienvenida completa en "Sobre Outside-In", y mi correo y LinkedIn debajo de mi presentación.
 - "Entender": mis lecturas individuales, cuando un hallazgo tiene solo tema o solo industria.
-- "Aterrizar": frase interactiva con desplegables de tema e industria; muestra los hallazgos que cruzan ambos (una "conexión").
-- "Descubrir": estudios que detecté y todavía estoy leyendo (el radar). No se muestra si no hay ninguno.
+- "Conectar": frase interactiva con desplegables de tema e industria; muestra los hallazgos que cruzan ambos (una "conexión").
+- "Anticipar": estudios que detecté y todavía estoy leyendo (el radar). No se muestra si no hay ninguno.
 - "Así automaticé Outside-In": cómo funciona el sistema, con enlace a la página completa "Detrás de Outside-In".
 - Fichas de hallazgo, con dos partes separadas visualmente: "Lo que dicen los datos" (con fuente) e "Implicancia para el negocio" (mi análisis).
 - Botón para cambiar todo el contenido entre español e inglés.
@@ -32,7 +32,7 @@
 
 ## Reglas de datos (lo más importante)
 - NUNCA inventar datos, cifras, porcentajes, estudios, fechas ni links. NUNCA.
-- Cada hallazgo debe tener: fuente, nombre del estudio, año, link verificable, hallazgo, dato clave y región. Tema e industria son opcionales, pero debe tener al menos uno de los dos (solo uno = lectura individual, en "Entender"; los dos = conexión, en "Aterrizar").
+- Cada hallazgo debe tener: fuente, nombre del estudio, año, link verificable, hallazgo, dato clave y región. Tema e industria son opcionales, pero debe tener al menos uno de los dos (solo uno = lectura individual, en "Entender"; los dos = conexión, en "Conectar").
 - Si un dato no se puede verificar, no se incluye. Es preferible dejar un campo vacío que inventarlo.
 - Resumir con palabras propias; nunca copiar párrafos de los informes.
 - Las implicancias son mi análisis: puedes proponer borradores, pero deben marcarse como "BORRADOR" hasta que yo los apruebe.

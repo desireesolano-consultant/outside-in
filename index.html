@@ -22,17 +22,37 @@
       <nav id="oi-nav" class="oi-nav">
         <a href="#sobre" data-i18n="navSobre"></a>
         <a href="#entender" data-i18n="navEntender"></a>
-        <a href="#aterrizar" data-i18n="navAterrizar"></a>
-        <a href="#descubrir" data-i18n="navDescubrir"></a>
+        <a href="#aterrizar" data-i18n="navConectar"></a>
+        <a href="#descubrir" data-i18n="navAnticipar"></a>
         <a href="#asi-automatice" data-i18n="navAsiAutomatice"></a>
       </nav>
       <div class="oi-header-acciones">
+        <button id="boton-en-vivo" class="oi-boton-en-vivo" type="button" aria-expanded="false" aria-controls="panel-en-vivo" hidden>
+          <span class="oi-punto-vivo" aria-hidden="true"></span>
+          <span data-i18n="navEnVivo"></span>
+        </button>
         <button id="boton-idioma" class="boton-idioma" type="button"></button>
         <button id="boton-menu" class="oi-boton-menu" type="button" aria-expanded="false" aria-controls="oi-nav">
           <span class="oi-menu-linea"></span>
           <span class="oi-menu-linea"></span>
           <span class="oi-menu-linea"></span>
         </button>
+      </div>
+    </div>
+
+    <div id="panel-en-vivo" class="oi-panel-en-vivo" hidden>
+      <div class="oi-panel-en-vivo-inner">
+        <button type="button" id="panel-en-vivo-cerrar" class="oi-panel-en-vivo-cerrar">&times;</button>
+        <div class="oi-panel-en-vivo-cabecera">
+          <span class="oi-punto-vivo" aria-hidden="true"></span>
+          <span id="panel-en-vivo-actualizado"></span>
+        </div>
+        <div class="oi-panel-tabs" role="tablist">
+          <button type="button" class="oi-panel-tab oi-cf-activo" data-rango="semana" data-i18n="contadorSemana"></button>
+          <button type="button" class="oi-panel-tab" data-rango="inicio" data-i18n="contadorInicio"></button>
+        </div>
+        <h3 class="oi-panel-en-vivo-titulo" data-i18n="contadorTitulo"></h3>
+        <div id="contador-numeros-panel" class="oi-contador-numeros"></div>
       </div>
     </div>
   </header>
@@ -55,10 +75,10 @@
             <span class="oi-capsula oi-capsula-industria" id="oi-word-industria"></span><br class="oi-salto-forzado" />
             <span data-i18n="heroParrafoPost"></span>
           </p>
-          <a href="#asi-automatice" id="senal-vida" class="oi-senal-vida" hidden>
+          <button type="button" id="senal-vida" class="oi-senal-vida" hidden>
             <span class="oi-punto-vivo" aria-hidden="true"></span>
             <span id="senal-vida-texto"></span>
-          </a>
+          </button>
           <div class="oi-bio-fila">
             <div class="oi-foto-placeholder" aria-hidden="true">[Foto]</div>
             <div class="oi-bio-texto">
@@ -149,9 +169,9 @@
     <!-- 02 ATERRIZAR: frase interactiva con desplegables -->
     <section id="aterrizar" class="oi-seccion-ancha">
       <div class="oi-seccion-cabecera-col">
-        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="aterrizarEtiqueta"></div>
-        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="aterrizarTitulo"></h2>
-        <p class="ayuda oi-reveal" data-i18n="aterrizarBajada"></p>
+        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="conectarEtiqueta"></div>
+        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="conectarTitulo"></h2>
+        <p class="ayuda oi-reveal" data-i18n="conectarBajada"></p>
       </div>
 
       <p class="oi-aterrizar-frase">
@@ -174,9 +194,9 @@
     <!-- 03 DESCUBRIR: estudios en el radar -->
     <section id="descubrir" class="oi-seccion-ancha" hidden>
       <div class="oi-seccion-cabecera-col">
-        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="descubrirEtiqueta"></div>
-        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="descubrirTitulo"></h2>
-        <p class="ayuda oi-reveal" data-i18n="descubrirBajada"></p>
+        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="anticiparEtiqueta"></div>
+        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="anticiparTitulo"></h2>
+        <p class="ayuda oi-reveal" data-i18n="anticiparBajada"></p>
       </div>
       <div id="lista-radar" class="oi-lista-radar"></div>
     </section>
@@ -250,7 +270,7 @@
       </div>
 
       <p class="oi-paso-cierre oi-reveal" data-i18n="asiAutomaticeCierre"></p>
-      <p class="oi-cf-contador oi-reveal" id="cf-contador"></p>
+      <div id="contador-numeros-cf" class="oi-contador-numeros oi-reveal"></div>
       <a href="detras-de-outside-in.html" class="oi-ver-todos oi-reveal" data-i18n="asiAutomaticeLeerMas"></a>
     </section>
   </main>
@@ -261,8 +281,8 @@
         <div class="oi-footer-marca">Outside-In</div>
         <div class="oi-footer-nav">
           <a href="#entender" data-i18n="navEntender"></a>
-          <a href="#aterrizar" data-i18n="navAterrizar"></a>
-          <a href="#descubrir" data-i18n="navDescubrir"></a>
+          <a href="#aterrizar" data-i18n="navConectar"></a>
+          <a href="#descubrir" data-i18n="navAnticipar"></a>
           <a href="#asi-automatice" data-i18n="navAsiAutomatice"></a>
           <a id="link-linkedin-footer" href="#" target="_blank" rel="noopener" data-i18n="linkedinFooter"></a>
         </div>

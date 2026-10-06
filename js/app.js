@@ -45,7 +45,8 @@ function init() {
   renderizarBannerCita();
   renderizarChipsAsiAutomatice();
   renderizarFichaEjemploAsiAutomatice();
-  renderizarContadorAsiAutomatice();
+  configurarContadorInlineAsiAutomatice();
+  configurarPanelEnVivo();
   iniciarCapsulaRotativa();
   centrarDiagrama();
   verificarEtiquetasDiagrama();
@@ -74,6 +75,15 @@ function init() {
 
   document.querySelectorAll(".oi-cf-progreso-boton").forEach((boton) => {
     boton.addEventListener("click", () => saltarAEtapaAsiAutomatice(Number(boton.dataset.etapa)));
+  });
+
+  document.getElementById("senal-vida").addEventListener("click", () => {
+    if (tieneDatosEnVivo()) {
+      abrirPanelEnVivo();
+      return;
+    }
+    const seccion = document.getElementById("asi-automatice");
+    if (seccion) seccion.scrollIntoView({ behavior: prefiereMovimientoReducido() ? "auto" : "smooth" });
   });
 
   let tickeando = false;
@@ -121,7 +131,8 @@ function cambiarIdioma() {
   renderizarBannerCita();
   renderizarChipsAsiAutomatice();
   renderizarFichaEjemploAsiAutomatice();
-  renderizarContadorAsiAutomatice();
+  configurarContadorInlineAsiAutomatice();
+  if (!document.getElementById("panel-en-vivo").hidden) actualizarPanelEnVivo();
   actualizarTextoCapsula();
   centrarDiagrama();
   verificarEtiquetasDiagrama();
@@ -141,6 +152,7 @@ function aplicarIdioma() {
   document.getElementById("boton-idioma").textContent = t.botonIdioma;
   document.getElementById("link-linkedin-footer").href = LINK_LINKEDIN;
   document.getElementById("boton-menu").setAttribute("aria-label", t.menuAbrir);
+  document.getElementById("panel-en-vivo-cerrar").setAttribute("aria-label", t.contadorCerrarAria);
 }
 
 // ---- Vista previa ----
@@ -314,7 +326,7 @@ function actualizarTextoCapsula() {
 }
 
 // Alinea el centro vertical del diagrama decorativo con el centro
-// vertical del titular ("Entender. Aterrizar. Descubrir.").
+// vertical del titular ("Entender. Conectar. Anticipar.").
 function centrarDiagrama() {
   const titular = document.querySelector(".oi-headline");
   const diagrama = document.querySelector(".oi-hero-diagrama");
@@ -677,22 +689,196 @@ function renderizarFichaEjemploAsiAutomatice() {
   if (capsulaIndustria) capsulaIndustria.textContent = idioma === "es" ? industria.es : industria.en;
 }
 
-// El contador del embudo (revisados → seleccionados → publicados) solo se
-// muestra en vista previa: todavía no existe una forma real de medir
-// "revisados" y "seleccionados" hasta que la automatización esté funcionando.
-function renderizarContadorAsiAutomatice() {
-  const contador = document.getElementById("cf-contador");
-  if (!contador) return;
+// ---- Contador "en vivo": el panel del menú y el cierre de "Así
+// automaticé Outside-In" comparten esta misma lógica. El embudo
+// (revisados → seleccionados → publicados) solo existe en vista previa:
+// todavía no hay una forma real de medir "revisados" y "seleccionados"
+// hasta que la automatización esté funcionando — ver README.md.
 
-  if (!MODO_VISTA_PREVIA) {
-    contador.hidden = true;
+function tieneDatosEnVivo() {
+  return MODO_VISTA_PREVIA;
+}
+
+function obtenerFunnel(rango) {
+  if (!MODO_VISTA_PREVIA) return null;
+  return rango === "inicio" ? VISTA_PREVIA.funnelDesdeInicio : VISTA_PREVIA.funnelSemana;
+}
+
+// Construye los 3 números con flechas dentro de "contenedor". Si
+// "mostrarFinal" es true, aparecen directo en su valor final; si no,
+// arrancan en 0 (para animarlos después con animarNumeros).
+function construirBloqueNumeros(contenedor, datos, mostrarFinal) {
+  contenedor.innerHTML = "";
+  const t = TEXTOS[idioma];
+  const bloques = [
+    { valor: datos.revisados, etiqueta: t.senalEstudiosLabel, final: false },
+    { valor: datos.seleccionados, etiqueta: t.contadorSeleccionados, final: false },
+    { valor: datos.publicados, etiqueta: t.contadorPublicados, final: true },
+  ];
+
+  bloques.forEach((bloque, indice) => {
+    if (indice > 0) {
+      const flecha = document.createElement("span");
+      flecha.className = "oi-contador-flecha";
+      flecha.setAttribute("aria-hidden", "true");
+      flecha.textContent = "→";
+      contenedor.appendChild(flecha);
+    }
+
+    const envoltorio = document.createElement("div");
+    envoltorio.className = "oi-contador-bloque";
+
+    const numero = document.createElement("span");
+    numero.className = "oi-contador-numero" + (bloque.final ? " oi-contador-numero-final" : "");
+    numero.dataset.destino = String(bloque.valor);
+    numero.textContent = mostrarFinal ? String(bloque.valor) : "0";
+
+    const etiqueta = document.createElement("span");
+    etiqueta.className = "oi-contador-etiqueta";
+    etiqueta.textContent = bloque.etiqueta;
+
+    envoltorio.append(numero, etiqueta);
+    contenedor.appendChild(envoltorio);
+  });
+
+  return Array.from(contenedor.querySelectorAll(".oi-contador-numero"));
+}
+
+// Cuenta rápido desde 0 hasta el valor final de cada número.
+function animarNumeros(spans) {
+  if (prefiereMovimientoReducido()) {
+    spans.forEach((span) => {
+      span.textContent = span.dataset.destino;
+    });
     return;
   }
 
+  const duracion = 900;
+  const inicio = performance.now();
+
+  function paso(ahora) {
+    const progreso = Math.min(1, (ahora - inicio) / duracion);
+    const facilitado = 1 - Math.pow(1 - progreso, 3);
+    spans.forEach((span) => {
+      const destino = Number(span.dataset.destino || 0);
+      span.textContent = String(Math.round(destino * facilitado));
+    });
+    if (progreso < 1) requestAnimationFrame(paso);
+  }
+
+  requestAnimationFrame(paso);
+}
+
+// -- Contador dentro de "Así automaticé Outside-In" (siempre "Esta
+// semana", se anima una sola vez por visita, cuando aparece en pantalla) --
+
+let cfContadorYaAnimado = false;
+
+function configurarContadorInlineAsiAutomatice() {
+  const contenedor = document.getElementById("contador-numeros-cf");
+  if (!contenedor) return;
+
+  if (!tieneDatosEnVivo()) {
+    contenedor.hidden = true;
+    return;
+  }
+  contenedor.hidden = false;
+
+  const datos = obtenerFunnel("semana");
+
+  if (cfContadorYaAnimado) {
+    construirBloqueNumeros(contenedor, datos, true);
+    return;
+  }
+
+  const spans = construirBloqueNumeros(contenedor, datos, false);
+
+  if (prefiereMovimientoReducido()) {
+    cfContadorYaAnimado = true;
+    animarNumeros(spans);
+    return;
+  }
+
+  const observador = new IntersectionObserver(
+    (entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting && !cfContadorYaAnimado) {
+          cfContadorYaAnimado = true;
+          animarNumeros(spans);
+          observador.unobserve(entrada.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+  observador.observe(contenedor);
+}
+
+// -- Panel "en vivo" del menú: botón + desplegable con pestañas --
+
+let rangoPanelActual = "semana";
+
+function configurarPanelEnVivo() {
+  const botonEnVivo = document.getElementById("boton-en-vivo");
+  const panel = document.getElementById("panel-en-vivo");
+  const botonCerrar = document.getElementById("panel-en-vivo-cerrar");
+  if (!botonEnVivo || !panel || !botonCerrar) return;
+
+  botonEnVivo.hidden = !tieneDatosEnVivo();
+
+  botonEnVivo.addEventListener("click", () => {
+    if (panel.hidden) abrirPanelEnVivo();
+    else cerrarPanelEnVivo();
+  });
+
+  botonCerrar.addEventListener("click", cerrarPanelEnVivo);
+
+  document.addEventListener("click", (evento) => {
+    if (panel.hidden) return;
+    if (panel.contains(evento.target) || botonEnVivo.contains(evento.target)) return;
+    cerrarPanelEnVivo();
+  });
+
+  panel.querySelectorAll(".oi-panel-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      rangoPanelActual = tab.dataset.rango;
+      panel.querySelectorAll(".oi-panel-tab").forEach((otraTab) => {
+        otraTab.classList.toggle("oi-cf-activo", otraTab === tab);
+      });
+      actualizarPanelEnVivo();
+    });
+  });
+}
+
+function abrirPanelEnVivo() {
+  const panel = document.getElementById("panel-en-vivo");
+  const botonEnVivo = document.getElementById("boton-en-vivo");
+  panel.hidden = false;
+  botonEnVivo.setAttribute("aria-expanded", "true");
+  actualizarPanelEnVivo();
+}
+
+function cerrarPanelEnVivo() {
+  const panel = document.getElementById("panel-en-vivo");
+  const botonEnVivo = document.getElementById("boton-en-vivo");
+  panel.hidden = true;
+  botonEnVivo.setAttribute("aria-expanded", "false");
+}
+
+function actualizarPanelEnVivo() {
   const t = TEXTOS[idioma];
-  const f = VISTA_PREVIA.funnel;
-  contador.textContent = `${t.asiAutomaticeContador}: ${f.revisados} → ${f.seleccionados} → ${f.publicados}`;
-  contador.hidden = false;
+  const senales = calcularSenalesDeVida();
+  const actualizadoEl = document.getElementById("panel-en-vivo-actualizado");
+  if (actualizadoEl && senales) {
+    actualizadoEl.textContent = `${t.senalActualizadoPrefijo} ${senales.fechaTexto}`;
+  }
+
+  const contenedor = document.getElementById("contador-numeros-panel");
+  const funnel = obtenerFunnel(rangoPanelActual);
+  if (!contenedor || !funnel) return;
+
+  const spans = construirBloqueNumeros(contenedor, funnel, false);
+  animarNumeros(spans);
 }
 
 let cfInfo = null;

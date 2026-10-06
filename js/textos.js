@@ -10,18 +10,19 @@ const TEXTOS = {
 
     navSobre: "Sobre Outside-In",
     navEntender: "Entender",
-    navAterrizar: "Aterrizar",
-    navDescubrir: "Descubrir",
+    navConectar: "Conectar",
+    navAnticipar: "Anticipar",
     navAsiAutomatice: "Así automaticé Outside-In",
+    navEnVivo: "En vivo",
     menuAbrir: "Abrir menú",
     menuCerrar: "Cerrar menú",
 
     heroPalabra1: "Entender",
-    heroPalabra2: "Aterrizar",
-    heroPalabra3: "Descubrir",
+    heroPalabra2: "Conectar",
+    heroPalabra3: "Anticipar",
     heroParrafoPre: "Leo y analizo qué pasa con",
     heroParrafoMid: "en",
-    heroParrafoPost: "para que lo aterrices en tu organización y descubras lo que viene.",
+    heroParrafoPost: "para que lo conectes con tu organización y te anticipes al cambio.",
     heroSaludo: "Hola, soy Desiree Solano",
     heroCargo: "Consultora en estrategia de comunicación y transformación",
     heroParrafo1:
@@ -50,21 +51,20 @@ const TEXTOS = {
     entenderBajada: "Mis lecturas sobre un tema o una industria en particular, cada una con su fuente original y mi mirada.",
     entenderVerConexiones: "Ver conexiones →",
 
-    aterrizarEtiqueta: "02 — Aterrizar",
-    aterrizarTitulo: "Lo que conecto",
-    aterrizarBajada: "Elige un tema y una industria, mira qué está pasando donde se encuentran y llévalo a tu organización.",
+    conectarEtiqueta: "02 — Conectar",
+    conectarTitulo: "Lo que conecto",
+    conectarBajada: "Elige un tema y una industria, mira qué está pasando donde se encuentran y llévalo a tu organización.",
     aterrizarFrasePre: "Muéstrame qué pasa con",
     aterrizarFraseMid: "en",
     aterrizarVacio: "Todavía no hay hallazgos en esta combinación.",
 
-    descubrirEtiqueta: "03 — Descubrir",
-    descubrirTitulo: "Lo que estoy leyendo ahora",
-    descubrirBajada: "Estudios que acabo de detectar y todavía estoy leyendo, para que descubras lo que viene.",
+    anticiparEtiqueta: "03 — Anticipar",
+    anticiparTitulo: "Lo que estoy leyendo ahora",
+    anticiparBajada: "Estudios que acabo de detectar y todavía estoy leyendo, para que te anticipes a lo que viene.",
 
     asiAutomaticeEtiqueta: "04 — Así automaticé Outside-In",
     asiAutomaticeTitulo: "Así automaticé Outside-In",
-    asiAutomaticeContador: "Esta semana",
-    asiAutomaticeCierre: "La IA lee mucho. Yo decido qué importa.",
+    asiAutomaticeCierre: "El sistema me ayuda a ver más; mi trabajo es ver mejor.",
     asiAutomaticeLeerMas: "Lee la historia completa →",
 
     cfEtiquetaEstudio: "Estudio",
@@ -90,6 +90,13 @@ const TEXTOS = {
 
     franjaVistaPrevia: "Vista previa con datos de ejemplo",
 
+    contadorTitulo: "Outside-In en vivo",
+    contadorSemana: "Esta semana",
+    contadorInicio: "Desde el inicio",
+    contadorSeleccionados: "seleccionados",
+    contadorPublicados: "publicados",
+    contadorCerrarAria: "Cerrar",
+
     linkedinFooter: "LinkedIn",
     footerFirma: "Diseñado y construido por Desiree Solano con Claude Code",
 
@@ -97,10 +104,10 @@ const TEXTOS = {
     detrasBajada: "Cómo y por qué lo construí",
     detras1Titulo: "Por qué existe",
     detras1Texto:
-      "Les digo a mis clientes que la tecnología no reemplaza el criterio, lo amplifica. Outside-In es mi forma de probarlo en carne propia: un espacio donde la IA me ayuda a leer más, y yo decido qué importa.",
+      "Siempre he creído que la tecnología no reemplaza el criterio, lo amplifica. Outside-In es mi forma de ponerlo en práctica: un espacio donde la IA me ayuda a leer más, para que yo pueda dedicarme a entender mejor.",
     detras2Titulo: "Quién lo construyó",
     detras2Texto:
-      "Soy consultora en comunicación y transformación, no programadora. Construí Outside-In con Claude Code, una herramienta de IA con la que fui creando el sitio y su sistema paso a paso, conversando en español sobre lo que necesitaba.",
+      "Soy consultora en comunicación y transformación, no programadora. Construí Outside-In con Claude Code, una herramienta de IA con la que fui creando el sitio y su sistema paso a paso, conversando sobre lo que necesitaba.",
     detras3Titulo: "Qué hace el sistema",
     detras3Texto:
       "Cada semana revisa nuevas publicaciones de consultoras, empresas y otras fuentes, detecta los estudios relevantes para los temas e industrias que sigo, y me propone posibles hallazgos.",
@@ -136,18 +143,19 @@ const TEXTOS = {
 
     navSobre: "About Outside-In",
     navEntender: "Understand",
-    navAterrizar: "Ground",
-    navDescubrir: "Discover",
+    navConectar: "Connect",
+    navAnticipar: "Anticipate",
     navAsiAutomatice: "How I automated Outside-In",
+    navEnVivo: "Live",
     menuAbrir: "Open menu",
     menuCerrar: "Close menu",
 
     heroPalabra1: "Understand",
-    heroPalabra2: "Ground",
-    heroPalabra3: "Discover",
+    heroPalabra2: "Connect",
+    heroPalabra3: "Anticipate",
     heroParrafoPre: "I read and analyze what's happening with",
     heroParrafoMid: "in",
-    heroParrafoPost: "so you can ground it in your organization and discover what's coming.",
+    heroParrafoPost: "so you can connect it to your organization and get ahead of change.",
     heroSaludo: "Hi, I'm Desiree Solano",
     heroCargo: "Communication Strategy & Transformation Consultant",
     heroParrafo1:
@@ -176,21 +184,20 @@ const TEXTOS = {
     entenderBajada: "My take on a single topic or industry, each with its original source and my perspective.",
     entenderVerConexiones: "See connections →",
 
-    aterrizarEtiqueta: "02 — Ground",
-    aterrizarTitulo: "What I connect",
-    aterrizarBajada: "Pick a topic and an industry, see what's happening where they meet, and bring it to your organization.",
+    conectarEtiqueta: "02 — Connect",
+    conectarTitulo: "What I connect",
+    conectarBajada: "Pick a topic and an industry, see what's happening where they meet, and bring it to your organization.",
     aterrizarFrasePre: "Show me what's happening with",
     aterrizarFraseMid: "in",
     aterrizarVacio: "There are no findings in this combination yet.",
 
-    descubrirEtiqueta: "03 — Discover",
-    descubrirTitulo: "What I'm reading right now",
-    descubrirBajada: "Studies I've just detected and am still reading, so you can discover what's coming.",
+    anticiparEtiqueta: "03 — Anticipate",
+    anticiparTitulo: "What I'm reading right now",
+    anticiparBajada: "Studies I've just detected and am still reading, so you can get ahead of what's coming.",
 
     asiAutomaticeEtiqueta: "04 — How I automated Outside-In",
     asiAutomaticeTitulo: "How I automated Outside-In",
-    asiAutomaticeContador: "This week",
-    asiAutomaticeCierre: "AI reads a lot. I decide what matters.",
+    asiAutomaticeCierre: "The system helps me see more; my job is to see better.",
     asiAutomaticeLeerMas: "Read the full story →",
 
     cfEtiquetaEstudio: "Study",
@@ -216,6 +223,13 @@ const TEXTOS = {
 
     franjaVistaPrevia: "Preview with example data",
 
+    contadorTitulo: "Outside-In live",
+    contadorSemana: "This week",
+    contadorInicio: "Since the start",
+    contadorSeleccionados: "selected",
+    contadorPublicados: "published",
+    contadorCerrarAria: "Close",
+
     linkedinFooter: "LinkedIn",
     footerFirma: "Designed and built by Desiree Solano with Claude Code",
 
@@ -223,10 +237,10 @@ const TEXTOS = {
     detrasBajada: "How and why I built it",
     detras1Titulo: "Why it exists",
     detras1Texto:
-      "I tell my clients that technology doesn't replace judgment, it amplifies it. Outside-In is my way of proving that firsthand: a space where AI helps me read more, and I decide what matters.",
+      "I've always believed that technology doesn't replace judgment, it amplifies it. Outside-In is my way of putting that into practice: a space where AI helps me read more, so I can focus on understanding better.",
     detras2Titulo: "Who built it",
     detras2Texto:
-      "I'm a communication and transformation consultant, not a programmer. I built Outside-In with Claude Code, an AI tool I used to create the site and its system step by step, talking through what I needed in Spanish.",
+      "I'm a communication and transformation consultant, not a programmer. I built Outside-In with Claude Code, an AI tool I used to create the site and its system step by step, talking through what I needed.",
     detras3Titulo: "What the system does",
     detras3Texto:
       "Every week it reviews new publications from consultancies, companies, and other sources, detects studies relevant to the topics and industries I follow, and proposes possible findings to me.",

@@ -9,10 +9,16 @@ const VISTA_PREVIA = {
   estudiosRevisados: 38,
   hallazgosNuevosSemana: 3,
 
-  funnel: {
+  funnelSemana: {
     revisados: 38,
     seleccionados: 5,
     publicados: 2,
+  },
+
+  funnelDesdeInicio: {
+    revisados: 412,
+    seleccionados: 47,
+    publicados: 23,
   },
 
   // ids de HALLAZGOS que muestran la insignia "Nuevo" en vez de "EJEMPLO"

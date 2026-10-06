@@ -59,12 +59,19 @@ respetar:
   - Solo `tema` o solo `industria` → es una **lectura individual** y
     aparece en la sección "Entender".
   - `tema` **e** `industria` → es una **conexión** y aparece en la
-    sección "Aterrizar".
+    sección "Conectar".
 - Un hallazgo con `esEjemplo: false` es lo único que cuenta como "real": solo
   esos hallazgos mueven la fecha de "Actualizado el...", la etiqueta "Nuevo"
   y el cálculo de "estudios revisados".
 - "Nuevo" se calcula solo: un hallazgo es reciente si `fecha` está dentro de
   los últimos 7 días (ver `esReciente()` en `js/app.js`).
+- El contador "en vivo" (botón del menú y cierre de "Así automaticé
+  Outside-In") muestra revisados → seleccionados → publicados. Hoy solo
+  existe con datos de vista previa, porque todavía no hay una forma real de
+  contar "seleccionados" (estudios que pasaron la curaduría pero no se
+  publicaron). La Fase 2 necesita registrar ese número para que el
+  contador funcione con datos reales (`tieneDatosEnVivo()` en `js/app.js`
+  es el único lugar que hay que actualizar).
 
 ## Campos de un estudio del radar (`RADAR_ESTUDIOS` en `js/radar.js`)
 
