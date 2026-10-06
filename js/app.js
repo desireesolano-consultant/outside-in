@@ -19,6 +19,14 @@ function debounce(fn, esperaMs) {
   };
 }
 
+// Un hallazgo tiene tema, industria, o ambos (nunca ninguno).
+function esConexion(h) {
+  return Boolean(h.tema) && Boolean(h.industria);
+}
+function esLecturaIndividual(h) {
+  return !esConexion(h);
+}
+
 function init() {
   try {
     const guardado = localStorage.getItem("idioma");
@@ -30,23 +38,26 @@ function init() {
   aplicarIdioma();
   configurarFranjaVistaPrevia();
   renderizarSobre();
-  renderizarHallazgosRecientes();
   renderizarSenalVida();
-  renderizarLoQueSigo();
-  renderizarMatriz();
+  renderizarEntender();
+  configurarAterrizar();
+  renderizarDescubrir();
   renderizarBannerCita();
-  renderizarRadar();
-  renderizarChipsComoFunciona();
-  renderizarFichaEjemploComoFunciona();
-  renderizarContadorComoFunciona();
+  renderizarChipsAsiAutomatice();
+  renderizarFichaEjemploAsiAutomatice();
+  renderizarContadorAsiAutomatice();
   iniciarCapsulaRotativa();
   centrarDiagrama();
+  verificarEtiquetasDiagrama();
   configurarMenuMovil();
-  configurarCarrusel();
-  configurarScrollHorizontal();
-  configurarComoFuncionaSticky();
+  configurarScrollHorizontalEntender();
+  configurarAsiAutomaticeSticky();
   configurarBanner();
   configurarRevelado();
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(verificarEtiquetasDiagrama);
+  }
 
   document.getElementById("boton-idioma").addEventListener("click", cambiarIdioma);
 
@@ -61,6 +72,10 @@ function init() {
     });
   });
 
+  document.querySelectorAll(".oi-cf-progreso-boton").forEach((boton) => {
+    boton.addEventListener("click", () => saltarAEtapaAsiAutomatice(Number(boton.dataset.etapa)));
+  });
+
   let tickeando = false;
   window.addEventListener(
     "scroll",
@@ -68,8 +83,8 @@ function init() {
       if (tickeando) return;
       tickeando = true;
       requestAnimationFrame(() => {
-        actualizarScrollHorizontal();
-        actualizarComoFuncionaSticky();
+        actualizarScrollHorizontalEntender();
+        actualizarAsiAutomaticeSticky();
         actualizarBanner();
         tickeando = false;
       });
@@ -81,8 +96,9 @@ function init() {
     "resize",
     debounce(() => {
       centrarDiagrama();
-      configurarScrollHorizontal();
-      configurarComoFuncionaSticky();
+      verificarEtiquetasDiagrama();
+      configurarScrollHorizontalEntender();
+      configurarAsiAutomaticeSticky();
       configurarBanner();
     }, 200)
   );
@@ -97,19 +113,20 @@ function cambiarIdioma() {
   }
   aplicarIdioma();
   renderizarSobre();
-  renderizarHallazgosRecientes();
   renderizarSenalVida();
-  renderizarLoQueSigo();
-  renderizarMatriz();
+  renderizarEntender();
+  renderizarOpcionesAterrizar();
+  actualizarResultadosAterrizar();
+  renderizarDescubrir();
   renderizarBannerCita();
-  renderizarRadar();
-  renderizarChipsComoFunciona();
-  renderizarFichaEjemploComoFunciona();
-  renderizarContadorComoFunciona();
+  renderizarChipsAsiAutomatice();
+  renderizarFichaEjemploAsiAutomatice();
+  renderizarContadorAsiAutomatice();
   actualizarTextoCapsula();
   centrarDiagrama();
-  configurarScrollHorizontal();
-  configurarComoFuncionaSticky();
+  verificarEtiquetasDiagrama();
+  configurarScrollHorizontalEntender();
+  configurarAsiAutomaticeSticky();
 }
 
 function aplicarIdioma() {
@@ -124,8 +141,6 @@ function aplicarIdioma() {
   document.getElementById("boton-idioma").textContent = t.botonIdioma;
   document.getElementById("link-linkedin-footer").href = LINK_LINKEDIN;
   document.getElementById("boton-menu").setAttribute("aria-label", t.menuAbrir);
-  document.getElementById("hallazgos-flecha-izq").setAttribute("aria-label", t.carruselAnterior);
-  document.getElementById("hallazgos-flecha-der").setAttribute("aria-label", t.carruselSiguiente);
 }
 
 // ---- Vista previa ----
@@ -157,6 +172,11 @@ function esReciente(h) {
   if (h.esEjemplo !== false || !h.fecha) return false;
   const dias = diasDesde(h.fecha);
   return dias >= 0 && dias <= 7;
+}
+
+function debeMostrarNuevo(h) {
+  if (MODO_VISTA_PREVIA) return VISTA_PREVIA.hallazgosNuevosIds.includes(h.id);
+  return esReciente(h);
 }
 
 function calcularSenalesDeVida() {
@@ -294,7 +314,7 @@ function actualizarTextoCapsula() {
 }
 
 // Alinea el centro vertical del diagrama decorativo con el centro
-// vertical del titular ("Entender. Conectar. Anticipar.").
+// vertical del titular ("Entender. Aterrizar. Descubrir.").
 function centrarDiagrama() {
   const titular = document.querySelector(".oi-headline");
   const diagrama = document.querySelector(".oi-hero-diagrama");
@@ -310,23 +330,75 @@ function centrarDiagrama() {
   diagrama.style.marginTop = `${nuevoMargen}px`;
 }
 
-// ---- Hallazgos recientes (tarjetas) ----
+// Comprobación real del gráfico: mide cada etiqueta de verdad (getBBox solo
+// existe en SVG) y, si queda a menos de 16px del círculo azul o lo cruza,
+// la desplaza hacia afuera. Se corre al cargar (cuando ya cargaron las
+// fuentes) y de nuevo al cambiar de idioma.
+function distanciaRectanguloACirculo(caja, cx, cy, radio) {
+  const puntoX = Math.max(caja.x, Math.min(cx, caja.x + caja.width));
+  const puntoY = Math.max(caja.y, Math.min(cy, caja.y + caja.height));
+  const dx = cx - puntoX;
+  const dy = cy - puntoY;
+  return Math.sqrt(dx * dx + dy * dy) - radio;
+}
 
-function renderizarHallazgosRecientes() {
-  const contenedor = document.getElementById("grid-hallazgos");
+function verificarEtiquetasDiagrama() {
+  const svg = document.getElementById("oi-svg-diagrama");
+  if (!svg || typeof svg.querySelectorAll !== "function") return;
+
+  const cx = 145;
+  const cy = 145;
+  const radio = 78;
+  const margenMinimo = 16;
+
+  svg.querySelectorAll(".oi-svg-etiqueta").forEach((texto) => {
+    texto.removeAttribute("transform");
+
+    let caja;
+    try {
+      caja = texto.getBBox();
+    } catch (e) {
+      return;
+    }
+    if (!caja || (caja.width === 0 && caja.height === 0)) return;
+
+    const distancia = distanciaRectanguloACirculo(caja, cx, cy, radio);
+    if (distancia < margenMinimo) {
+      const faltante = margenMinimo - distancia;
+      const lado = texto.dataset.lado;
+      if (lado === "izquierda") {
+        texto.setAttribute("transform", `translate(${-faltante}, 0)`);
+      } else if (lado === "derecha") {
+        texto.setAttribute("transform", `translate(${faltante}, 0)`);
+      } else {
+        texto.setAttribute("transform", `translate(0, ${-faltante})`);
+      }
+    }
+  });
+}
+
+// ---- Entender: lecturas individuales (solo tema o solo industria) ----
+
+function renderizarEntender() {
+  const contenedor = document.getElementById("grid-entender");
+  if (!contenedor) return;
   contenedor.innerHTML = "";
+
   const t = TEXTOS[idioma];
+  const lecturas = HALLAZGOS.filter(esLecturaIndividual);
 
-  HALLAZGOS.forEach((h, indice) => {
-    const tema = TEMAS.find((tm) => tm.id === h.tema);
+  lecturas.forEach((h, indice) => {
+    const esTema = Boolean(h.tema);
+    const item = esTema ? TEMAS.find((tm) => tm.id === h.tema) : INDUSTRIAS.find((i) => i.id === h.industria);
 
-    const tarjeta = document.createElement("button");
-    tarjeta.type = "button";
-    tarjeta.className = "oi-tarjeta-hallazgo";
-    tarjeta.addEventListener("click", () => abrirFichaUnica(h));
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "oi-scrollx-tarjeta";
 
-    const portada = document.createElement("div");
-    portada.className = `oi-cover oi-cover-${(indice % 4) + 1}`;
+    const portada = document.createElement("button");
+    portada.type = "button";
+    portada.className = `oi-cover oi-cover-${(indice % 4) + 1} oi-cover-clicable`;
+    portada.addEventListener("click", () => abrirFichaUnica(h));
+
     if (MODO_VISTA_PREVIA && VISTA_PREVIA.hallazgosNuevosIds.includes(h.id)) {
       const insignia = document.createElement("span");
       insignia.className = "oi-insignia-nuevo";
@@ -344,105 +416,47 @@ function renderizarHallazgosRecientes() {
       portada.appendChild(insignia);
     }
 
-    const categoria = document.createElement("div");
-    categoria.className = "oi-categoria-hallazgo";
-    categoria.textContent = tema ? (idioma === "es" ? tema.es : tema.en) : "";
+    const capsula = document.createElement("span");
+    capsula.className = `oi-capsula ${esTema ? "oi-capsula-tema" : "oi-capsula-industria"} oi-capsula-tarjeta`;
+    capsula.textContent = item ? (idioma === "es" ? item.es : item.en) : "";
 
-    const titulo = document.createElement("h3");
-    titulo.className = "oi-titulo-hallazgo";
-    titulo.textContent = idioma === "es" ? h.hallazgo_es : h.hallazgo_en;
+    const nombre = document.createElement("h3");
+    nombre.className = "oi-scrollx-nombre";
+    nombre.textContent = idioma === "es" ? h.hallazgo_es : h.hallazgo_en;
 
-    tarjeta.append(portada, categoria, titulo);
+    const enlace = document.createElement("button");
+    enlace.type = "button";
+    enlace.className = "oi-scrollx-enlace";
+    enlace.textContent = t.entenderVerConexiones;
+    enlace.addEventListener("click", () => irAAterrizar(h.tema, h.industria));
+
+    tarjeta.append(portada, capsula, nombre, enlace);
     contenedor.appendChild(tarjeta);
   });
 }
 
 function abrirFichaUnica(h) {
-  const industria = INDUSTRIAS.find((i) => i.id === h.industria);
-  const tema = TEMAS.find((tm) => tm.id === h.tema);
-  const nombreIndustria = industria ? (idioma === "es" ? industria.es : industria.en) : "";
-  const nombreTema = tema ? (idioma === "es" ? tema.es : tema.en) : "";
+  const industria = h.industria ? INDUSTRIAS.find((i) => i.id === h.industria) : null;
+  const tema = h.tema ? TEMAS.find((tm) => tm.id === h.tema) : null;
+  const partes = [];
+  if (industria) partes.push(idioma === "es" ? industria.es : industria.en);
+  if (tema) partes.push(idioma === "es" ? tema.es : tema.en);
 
   const modal = document.getElementById("modal-fichas");
-  document.getElementById("modal-titulo").textContent = `${nombreIndustria} · ${nombreTema}`;
+  document.getElementById("modal-titulo").textContent = partes.join(" · ");
   const cuerpo = document.getElementById("modal-cuerpo");
   cuerpo.innerHTML = "";
   cuerpo.appendChild(crearFicha(h));
   modal.showModal();
 }
 
-// Carrusel de una sola fila: las tarjetas nunca cambian de tamaño ni se
-// estiran, aunque haya más de las que entran en pantalla.
-function configurarCarrusel() {
-  const contenedor = document.getElementById("grid-hallazgos");
-  const flechaIzq = document.getElementById("hallazgos-flecha-izq");
-  const flechaDer = document.getElementById("hallazgos-flecha-der");
-  if (!contenedor || !flechaIzq || !flechaDer) return;
-
-  const desplazar = (direccion) => {
-    const primeraTarjeta = contenedor.querySelector(".oi-tarjeta-hallazgo");
-    const distancia = primeraTarjeta ? primeraTarjeta.getBoundingClientRect().width + 24 : 280;
-    contenedor.scrollBy({
-      left: direccion * distancia,
-      behavior: prefiereMovimientoReducido() ? "auto" : "smooth",
-    });
-  };
-
-  flechaIzq.addEventListener("click", () => desplazar(-1));
-  flechaDer.addEventListener("click", () => desplazar(1));
-}
-
-// ---- "Lo que sigo de cerca": tarjetas de temas + industrias ----
-
-function crearTarjetaLoQueSigo(item, tipo, indice) {
-  const t = TEXTOS[idioma];
-  const tarjeta = document.createElement("div");
-  tarjeta.className = `oi-scrollx-tarjeta oi-scrollx-tarjeta-${tipo}`;
-
-  const visual = document.createElement("div");
-  visual.className = `oi-scrollx-visual oi-scrollx-visual-${tipo} oi-scrollx-forma-${(indice % 3) + 1}`;
-
-  const etiqueta = document.createElement("div");
-  etiqueta.className = "oi-scrollx-etiqueta";
-  etiqueta.textContent = tipo === "tema" ? t.tarjetaTemaEtiqueta : t.tarjetaIndustriaEtiqueta;
-
-  const nombre = document.createElement("h3");
-  nombre.className = "oi-scrollx-nombre";
-  nombre.textContent = idioma === "es" ? item.es : item.en;
-
-  const enlace = document.createElement("a");
-  enlace.href = "#matriz";
-  enlace.className = "oi-scrollx-enlace";
-  enlace.textContent = t.tarjetaVerHallazgos;
-  enlace.addEventListener("click", () => resaltarEnMatriz(tipo, item.id));
-
-  tarjeta.append(visual, etiqueta, nombre, enlace);
-  return tarjeta;
-}
-
-function renderizarLoQueSigo() {
-  const contenedor = document.getElementById("grid-loquesigo");
-  contenedor.innerHTML = "";
-  TEMAS.forEach((tema, i) => contenedor.appendChild(crearTarjetaLoQueSigo(tema, "tema", i)));
-  INDUSTRIAS.forEach((industria, i) => contenedor.appendChild(crearTarjetaLoQueSigo(industria, "industria", i)));
-}
-
-function resaltarEnMatriz(tipo, id) {
-  const tabla = document.getElementById("tabla-matriz");
-  const selector = tipo === "tema" ? `[data-tema="${id}"]` : `[data-industria="${id}"]`;
-  tabla.querySelectorAll(selector).forEach((celda) => {
-    celda.classList.add("celda-resaltada");
-    setTimeout(() => celda.classList.remove("celda-resaltada"), 1600);
-  });
-}
-
-// ---- Scroll horizontal anclado de "Lo que sigo de cerca" ----
+// ---- Scroll horizontal anclado de "Entender" ----
 
 let scrollXInfo = null;
 
-function configurarScrollHorizontal() {
-  const section = document.getElementById("lo-que-sigo");
-  const track = document.getElementById("grid-loquesigo");
+function configurarScrollHorizontalEntender() {
+  const section = document.getElementById("entender");
+  const track = document.getElementById("grid-entender");
   const sticky = section ? section.querySelector(".oi-scrollx-sticky") : null;
   if (!section || !track || !sticky) {
     scrollXInfo = null;
@@ -464,18 +478,286 @@ function configurarScrollHorizontal() {
   const desplazable = Math.max(0, track.scrollWidth - window.innerWidth);
   section.style.height = `${alturaCabecera + window.innerHeight + desplazable}px`;
   scrollXInfo = { section, alturaCabecera, desplazable };
-  actualizarScrollHorizontal();
+  actualizarScrollHorizontalEntender();
 }
 
-function actualizarScrollHorizontal() {
+function actualizarScrollHorizontalEntender() {
   if (!scrollXInfo) return;
   const { section, alturaCabecera, desplazable } = scrollXInfo;
-  const track = document.getElementById("grid-loquesigo");
+  const track = document.getElementById("grid-entender");
   if (!track || desplazable <= 0) return;
 
   const rect = section.getBoundingClientRect();
   const progreso = Math.min(1, Math.max(0, (-rect.top - alturaCabecera) / desplazable));
   track.style.transform = `translateX(-${progreso * desplazable}px)`;
+}
+
+// ---- Aterrizar: frase interactiva con desplegables ----
+
+function renderizarOpcionesAterrizar() {
+  const selectTema = document.getElementById("aterrizar-select-tema");
+  const selectIndustria = document.getElementById("aterrizar-select-industria");
+  if (!selectTema || !selectIndustria) return;
+
+  const temaElegido = selectTema.value;
+  const industriaElegida = selectIndustria.value;
+
+  selectTema.innerHTML = "";
+  TEMAS.forEach((tema) => {
+    const opcion = document.createElement("option");
+    opcion.value = tema.id;
+    opcion.textContent = idioma === "es" ? tema.es : tema.en;
+    selectTema.appendChild(opcion);
+  });
+
+  selectIndustria.innerHTML = "";
+  INDUSTRIAS.forEach((industria) => {
+    const opcion = document.createElement("option");
+    opcion.value = industria.id;
+    opcion.textContent = idioma === "es" ? industria.es : industria.en;
+    selectIndustria.appendChild(opcion);
+  });
+
+  if (temaElegido) selectTema.value = temaElegido;
+  if (industriaElegida) selectIndustria.value = industriaElegida;
+}
+
+function actualizarResultadosAterrizar() {
+  const selectTema = document.getElementById("aterrizar-select-tema");
+  const selectIndustria = document.getElementById("aterrizar-select-industria");
+  const contadorEl = document.getElementById("aterrizar-conteo");
+  const tarjetasEl = document.getElementById("aterrizar-tarjetas");
+  if (!selectTema || !selectIndustria || !contadorEl || !tarjetasEl) return;
+
+  const t = TEXTOS[idioma];
+  const temaId = selectTema.value;
+  const industriaId = selectIndustria.value;
+
+  const hallazgos = HALLAZGOS.filter((h) => h.tema === temaId && h.industria === industriaId);
+
+  contadorEl.textContent = hallazgos.length === 0 ? "" : `${hallazgos.length} ${hallazgos.length === 1 ? t.hallazgoSingular : t.hallazgosPlural}`;
+
+  tarjetasEl.innerHTML = "";
+  if (hallazgos.length === 0) {
+    const vacio = document.createElement("p");
+    vacio.className = "oi-aterrizar-vacio";
+    vacio.textContent = t.aterrizarVacio;
+    tarjetasEl.appendChild(vacio);
+    return;
+  }
+
+  hallazgos.forEach((h, indice) => tarjetasEl.appendChild(crearTarjetaResultado(h, indice)));
+}
+
+function crearTarjetaResultado(h, indice) {
+  const t = TEXTOS[idioma];
+  const tarjeta = document.createElement("button");
+  tarjeta.type = "button";
+  tarjeta.className = "oi-tarjeta-hallazgo";
+  tarjeta.addEventListener("click", () => abrirFichaUnica(h));
+
+  const portada = document.createElement("div");
+  portada.className = `oi-cover oi-cover-${(indice % 4) + 1}`;
+  if (MODO_VISTA_PREVIA && VISTA_PREVIA.hallazgosNuevosIds.includes(h.id)) {
+    const insignia = document.createElement("span");
+    insignia.className = "oi-insignia-nuevo";
+    insignia.textContent = t.etiquetaNuevo;
+    portada.appendChild(insignia);
+  } else if (h.esEjemplo !== false) {
+    const insignia = document.createElement("span");
+    insignia.className = "oi-insignia-ejemplo";
+    insignia.textContent = t.hallazgosEjemploBadge;
+    portada.appendChild(insignia);
+  } else if (esReciente(h)) {
+    const insignia = document.createElement("span");
+    insignia.className = "oi-insignia-nuevo";
+    insignia.textContent = t.etiquetaNuevo;
+    portada.appendChild(insignia);
+  }
+
+  const titulo = document.createElement("h3");
+  titulo.className = "oi-titulo-hallazgo";
+  titulo.textContent = idioma === "es" ? h.hallazgo_es : h.hallazgo_en;
+
+  tarjeta.append(portada, titulo);
+  return tarjeta;
+}
+
+function configurarAterrizar() {
+  renderizarOpcionesAterrizar();
+  actualizarResultadosAterrizar();
+
+  const selectTema = document.getElementById("aterrizar-select-tema");
+  const selectIndustria = document.getElementById("aterrizar-select-industria");
+  if (selectTema) selectTema.addEventListener("change", actualizarResultadosAterrizar);
+  if (selectIndustria) selectIndustria.addEventListener("change", actualizarResultadosAterrizar);
+}
+
+// Lleva a "Aterrizar" con el tema y/o la industria preseleccionados
+// (se usa desde las tarjetas de "Entender").
+function irAAterrizar(temaId, industriaId) {
+  const selectTema = document.getElementById("aterrizar-select-tema");
+  const selectIndustria = document.getElementById("aterrizar-select-industria");
+  if (temaId && selectTema) selectTema.value = temaId;
+  if (industriaId && selectIndustria) selectIndustria.value = industriaId;
+  actualizarResultadosAterrizar();
+  window.location.hash = "aterrizar";
+}
+
+// ---- Descubrir: estudios en el radar ----
+
+function renderizarDescubrir() {
+  const seccion = document.getElementById("descubrir");
+  const lista = document.getElementById("lista-radar");
+  if (!seccion || !lista) return;
+
+  const estudios = MODO_VISTA_PREVIA ? VISTA_PREVIA.radar : RADAR_ESTUDIOS;
+
+  if (!estudios || estudios.length === 0) {
+    seccion.hidden = true;
+    return;
+  }
+
+  seccion.hidden = false;
+  lista.innerHTML = "";
+  const t = TEXTOS[idioma];
+
+  estudios.forEach((estudio) => {
+    const item = document.createElement("article");
+    item.className = "oi-radar-item";
+
+    const titulo = document.createElement("h3");
+    titulo.className = "oi-radar-titulo";
+    titulo.textContent = idioma === "es" ? estudio.titulo_es : estudio.titulo_en;
+
+    const meta = document.createElement("p");
+    meta.className = "oi-radar-meta";
+    meta.textContent = `${estudio.fuente} · ${t.radarDetectadoLabel} ${formatearFecha(estudio.fecha_detectado)}`;
+
+    item.append(titulo, meta);
+    lista.appendChild(item);
+  });
+}
+
+// ---- "Así automaticé Outside-In": escenario animado y scroll anclado ----
+
+function renderizarChipsAsiAutomatice() {
+  const t = TEXTOS[idioma];
+  const etiquetas = [t.cfEtiquetaEstudio, t.cfEtiquetaReporte, t.cfEtiquetaEncuesta, t.cfEtiquetaRanking, t.cfEtiquetaDatos];
+
+  const rastreo = document.getElementById("cf-chips-rastreo");
+  const curaduria = document.getElementById("cf-chips-curaduria");
+  if (!rastreo || !curaduria) return;
+
+  rastreo.innerHTML = "";
+  for (let i = 0; i < 12; i++) {
+    const chip = document.createElement("span");
+    chip.className = "oi-cf-chip";
+    chip.textContent = etiquetas[i % etiquetas.length];
+    chip.style.animationDelay = `${(i % 6) * 0.4}s`;
+    rastreo.appendChild(chip);
+  }
+
+  const elegidos = [1, 4, 6];
+  curaduria.innerHTML = "";
+  for (let i = 0; i < 8; i++) {
+    const chip = document.createElement("span");
+    chip.className = `oi-cf-chip ${elegidos.includes(i) ? "oi-cf-elegido" : "oi-cf-descartado"}`;
+    chip.textContent = etiquetas[i % etiquetas.length];
+    curaduria.appendChild(chip);
+  }
+}
+
+function renderizarFichaEjemploAsiAutomatice() {
+  const tema = TEMAS[1];
+  const industria = INDUSTRIAS[0];
+  const capsulaTema = document.getElementById("cf-capsula-tema");
+  const capsulaIndustria = document.getElementById("cf-capsula-industria");
+  if (capsulaTema) capsulaTema.textContent = idioma === "es" ? tema.es : tema.en;
+  if (capsulaIndustria) capsulaIndustria.textContent = idioma === "es" ? industria.es : industria.en;
+}
+
+// El contador del embudo (revisados → seleccionados → publicados) solo se
+// muestra en vista previa: todavía no existe una forma real de medir
+// "revisados" y "seleccionados" hasta que la automatización esté funcionando.
+function renderizarContadorAsiAutomatice() {
+  const contador = document.getElementById("cf-contador");
+  if (!contador) return;
+
+  if (!MODO_VISTA_PREVIA) {
+    contador.hidden = true;
+    return;
+  }
+
+  const t = TEXTOS[idioma];
+  const f = VISTA_PREVIA.funnel;
+  contador.textContent = `${t.asiAutomaticeContador}: ${f.revisados} → ${f.seleccionados} → ${f.publicados}`;
+  contador.hidden = false;
+}
+
+let cfInfo = null;
+
+function configurarAsiAutomaticeSticky() {
+  const contenedor = document.getElementById("cf-pin-contenedor");
+  const pin = contenedor ? contenedor.querySelector(".oi-cf-pin") : null;
+  if (!contenedor || !pin) {
+    cfInfo = null;
+    return;
+  }
+
+  const esMovil = window.innerWidth <= 760;
+
+  if (prefiereMovimientoReducido() || esMovil) {
+    contenedor.style.height = "auto";
+    contenedor.classList.add("oi-cf-estatico");
+    cfInfo = null;
+    return;
+  }
+
+  contenedor.classList.remove("oi-cf-estatico");
+  // Las 3 etapas completas deben caber en ~1.5 pantallas de scroll.
+  const desplazable = Math.round(window.innerHeight * 1.5);
+  contenedor.style.height = `${pin.offsetHeight + desplazable}px`;
+  cfInfo = { contenedor, desplazable };
+  actualizarAsiAutomaticeSticky();
+}
+
+function actualizarAsiAutomaticeSticky() {
+  if (!cfInfo) return;
+  const { contenedor, desplazable } = cfInfo;
+  if (desplazable <= 0) return;
+
+  const rect = contenedor.getBoundingClientRect();
+  const progreso = Math.min(1, Math.max(0, -rect.top / desplazable));
+  const etapa = progreso < 0.33 ? 0 : progreso < 0.66 ? 1 : 2;
+  activarEtapaAsiAutomatice(etapa);
+}
+
+function activarEtapaAsiAutomatice(etapa) {
+  document.querySelectorAll(".oi-cf-paso-boton, .oi-cf-progreso-boton").forEach((boton) => {
+    boton.classList.toggle("oi-cf-activo", Number(boton.dataset.etapa) === etapa);
+  });
+  document.querySelectorAll(".oi-cf-etapa").forEach((el) => {
+    el.classList.toggle("oi-cf-activo", Number(el.dataset.etapa) === etapa);
+  });
+}
+
+// Al hacer clic en 01/02/03, salta el scroll a la mitad de esa etapa.
+function saltarAEtapaAsiAutomatice(etapa) {
+  if (!cfInfo) {
+    const contenedor = document.getElementById("cf-pin-contenedor");
+    if (contenedor) contenedor.scrollIntoView({ behavior: prefiereMovimientoReducido() ? "auto" : "smooth" });
+    return;
+  }
+
+  const { contenedor, desplazable } = cfInfo;
+  const progresoObjetivo = (etapa + 0.5) / 3;
+  const rect = contenedor.getBoundingClientRect();
+  const scrollActual = window.scrollY || window.pageYOffset;
+  const topAbsoluto = rect.top + scrollActual;
+  const scrollObjetivo = topAbsoluto + progresoObjetivo * desplazable;
+
+  window.scrollTo({ top: scrollObjetivo, behavior: prefiereMovimientoReducido() ? "auto" : "smooth" });
 }
 
 // ---- Banner que crece con el scroll ----
@@ -510,109 +792,6 @@ function actualizarBanner() {
   caja.style.borderRadius = `${32 - progreso * 32}px`;
 }
 
-// ---- "Cómo funciona": escenario animado y scroll anclado en 3 etapas ----
-
-function renderizarChipsComoFunciona() {
-  const t = TEXTOS[idioma];
-  const etiquetas = [t.cfEtiquetaEstudio, t.cfEtiquetaReporte, t.cfEtiquetaEncuesta, t.cfEtiquetaRanking, t.cfEtiquetaDatos];
-
-  const rastreo = document.getElementById("cf-chips-rastreo");
-  const curaduria = document.getElementById("cf-chips-curaduria");
-  if (!rastreo || !curaduria) return;
-
-  rastreo.innerHTML = "";
-  for (let i = 0; i < 12; i++) {
-    const chip = document.createElement("span");
-    chip.className = "oi-cf-chip";
-    chip.textContent = etiquetas[i % etiquetas.length];
-    chip.style.animationDelay = `${(i % 6) * 0.4}s`;
-    rastreo.appendChild(chip);
-  }
-
-  const elegidos = [1, 4, 6];
-  curaduria.innerHTML = "";
-  for (let i = 0; i < 8; i++) {
-    const chip = document.createElement("span");
-    chip.className = `oi-cf-chip ${elegidos.includes(i) ? "oi-cf-elegido" : "oi-cf-descartado"}`;
-    chip.textContent = etiquetas[i % etiquetas.length];
-    curaduria.appendChild(chip);
-  }
-}
-
-function renderizarFichaEjemploComoFunciona() {
-  const tema = TEMAS[1];
-  const industria = INDUSTRIAS[0];
-  const capsulaTema = document.getElementById("cf-capsula-tema");
-  const capsulaIndustria = document.getElementById("cf-capsula-industria");
-  if (capsulaTema) capsulaTema.textContent = idioma === "es" ? tema.es : tema.en;
-  if (capsulaIndustria) capsulaIndustria.textContent = idioma === "es" ? industria.es : industria.en;
-}
-
-// El contador del embudo (revisados → seleccionados → publicados) solo se
-// muestra en vista previa: todavía no existe una forma real de medir
-// "revisados" y "seleccionados" hasta que la automatización esté funcionando.
-function renderizarContadorComoFunciona() {
-  const contador = document.getElementById("cf-contador");
-  if (!contador) return;
-
-  if (!MODO_VISTA_PREVIA) {
-    contador.hidden = true;
-    return;
-  }
-
-  const t = TEXTOS[idioma];
-  const f = VISTA_PREVIA.funnel;
-  contador.textContent = `${t.comoFuncionaContador}: ${f.revisados} → ${f.seleccionados} → ${f.publicados}`;
-  contador.hidden = false;
-}
-
-let cfInfo = null;
-
-function configurarComoFuncionaSticky() {
-  const contenedor = document.getElementById("cf-pin-contenedor");
-  const pin = contenedor ? contenedor.querySelector(".oi-cf-pin") : null;
-  if (!contenedor || !pin) {
-    cfInfo = null;
-    return;
-  }
-
-  const esMovil = window.innerWidth <= 760;
-
-  if (prefiereMovimientoReducido() || esMovil) {
-    contenedor.style.height = "auto";
-    contenedor.classList.add("oi-cf-estatico");
-    cfInfo = null;
-    return;
-  }
-
-  contenedor.classList.remove("oi-cf-estatico");
-  const alturaPin = pin.offsetHeight;
-  const desplazable = Math.round(alturaPin * 1.6);
-  contenedor.style.height = `${alturaPin + desplazable}px`;
-  cfInfo = { contenedor, desplazable };
-  actualizarComoFuncionaSticky();
-}
-
-function actualizarComoFuncionaSticky() {
-  if (!cfInfo) return;
-  const { contenedor, desplazable } = cfInfo;
-  if (desplazable <= 0) return;
-
-  const rect = contenedor.getBoundingClientRect();
-  const progreso = Math.min(1, Math.max(0, -rect.top / desplazable));
-  const etapa = progreso < 0.33 ? 0 : progreso < 0.66 ? 1 : 2;
-  activarEtapaComoFunciona(etapa);
-}
-
-function activarEtapaComoFunciona(etapa) {
-  document.querySelectorAll(".oi-cf-paso-boton").forEach((boton) => {
-    boton.classList.toggle("oi-cf-activo", Number(boton.dataset.etapa) === etapa);
-  });
-  document.querySelectorAll(".oi-cf-etapa").forEach((el) => {
-    el.classList.toggle("oi-cf-activo", Number(el.dataset.etapa) === etapa);
-  });
-}
-
 // ---- Textos y títulos que aparecen al hacer scroll ----
 
 function configurarRevelado() {
@@ -637,122 +816,6 @@ function configurarRevelado() {
   );
 
   elementos.forEach((el) => observador.observe(el));
-}
-
-// ---- Matriz interactiva industria x tema ----
-// La matriz es una "señal de vida": su color y su conteo salen solo de
-// hallazgos REALES (esEjemplo === false). Mientras no haya ninguno, todas
-// las casillas quedan atenuadas — eso es lo correcto, no un error.
-
-function contarHallazgos(industriaId, temaId) {
-  if (MODO_VISTA_PREVIA) {
-    return VISTA_PREVIA.intensidadMapa[`${industriaId}|${temaId}`] || 0;
-  }
-  return HALLAZGOS.filter((h) => h.esEjemplo === false && h.industria === industriaId && h.tema === temaId).length;
-}
-
-function tieneHallazgoRecienteEnCelda(industriaId, temaId) {
-  if (MODO_VISTA_PREVIA) {
-    return VISTA_PREVIA.celdasNuevas.includes(`${industriaId}|${temaId}`);
-  }
-  return HALLAZGOS.some((h) => h.industria === industriaId && h.tema === temaId && esReciente(h));
-}
-
-function colorPorConteo(conteo) {
-  if (conteo === 0) return null;
-  const indice = Math.min(conteo - 1, RAMPA_SECUENCIAL.length - 1);
-  return RAMPA_SECUENCIAL[indice];
-}
-
-function renderizarMatriz() {
-  const tabla = document.getElementById("tabla-matriz");
-  tabla.innerHTML = "";
-  const t = TEXTOS[idioma];
-
-  const encabezado = document.createElement("tr");
-  encabezado.appendChild(document.createElement("th"));
-  TEMAS.forEach((tema) => {
-    const th = document.createElement("th");
-    th.scope = "col";
-    th.className = "oi-cabecera-tema";
-    th.dataset.tema = tema.id;
-    th.textContent = idioma === "es" ? tema.es : tema.en;
-    encabezado.appendChild(th);
-  });
-  tabla.appendChild(encabezado);
-
-  INDUSTRIAS.forEach((industria) => {
-    const fila = document.createElement("tr");
-    const thIndustria = document.createElement("th");
-    thIndustria.scope = "row";
-    thIndustria.className = "oi-cabecera-industria";
-    thIndustria.dataset.industria = industria.id;
-    thIndustria.textContent = idioma === "es" ? industria.es : industria.en;
-    fila.appendChild(thIndustria);
-
-    TEMAS.forEach((tema) => {
-      const conteo = contarHallazgos(industria.id, tema.id);
-      const celda = document.createElement("td");
-      celda.className = "celda-matriz";
-      celda.dataset.tema = tema.id;
-      celda.dataset.industria = industria.id;
-
-      const color = colorPorConteo(conteo);
-      if (color) {
-        celda.style.backgroundColor = color;
-        if (conteo >= 4) celda.classList.add("celda-oscura");
-      } else {
-        celda.classList.add("celda-atenuada");
-      }
-
-      const boton = document.createElement("button");
-      boton.type = "button";
-      boton.className = "boton-celda";
-      boton.textContent = conteo > 0 ? String(conteo) : "–";
-
-      const nombreIndustria = idioma === "es" ? industria.es : industria.en;
-      const nombreTema = idioma === "es" ? tema.es : tema.en;
-      const etiquetaConteo = conteo === 1 ? t.hallazgoSingular : t.hallazgosPlural;
-      const celdaReciente = tieneHallazgoRecienteEnCelda(industria.id, tema.id);
-      const sufijoNuevo = celdaReciente ? ` · ${t.etiquetaNuevo}` : "";
-      boton.setAttribute("aria-label", `${nombreIndustria} · ${nombreTema}: ${conteo} ${etiquetaConteo}${sufijoNuevo}`);
-
-      boton.addEventListener("click", () => abrirFichas(industria, tema));
-      celda.appendChild(boton);
-
-      if (celdaReciente) {
-        const puntoNuevo = document.createElement("span");
-        puntoNuevo.className = "oi-punto-nuevo";
-        puntoNuevo.setAttribute("aria-hidden", "true");
-        celda.appendChild(puntoNuevo);
-      }
-
-      fila.appendChild(celda);
-    });
-
-    tabla.appendChild(fila);
-  });
-}
-
-function abrirFichas(industria, tema) {
-  const modal = document.getElementById("modal-fichas");
-  const t = TEXTOS[idioma];
-
-  document.getElementById("modal-titulo").textContent = `${idioma === "es" ? industria.es : industria.en} · ${idioma === "es" ? tema.es : tema.en}`;
-  const cuerpo = document.getElementById("modal-cuerpo");
-  cuerpo.innerHTML = "";
-
-  const hallazgos = HALLAZGOS.filter((h) => h.esEjemplo === false && h.industria === industria.id && h.tema === tema.id);
-
-  if (hallazgos.length === 0) {
-    const vacio = document.createElement("p");
-    vacio.textContent = t.sinHallazgos;
-    cuerpo.appendChild(vacio);
-  } else {
-    hallazgos.forEach((h) => cuerpo.appendChild(crearFicha(h)));
-  }
-
-  modal.showModal();
 }
 
 function cerrarModal(idModal) {
@@ -817,41 +880,6 @@ function crearFicha(h) {
 
   ficha.append(bloqueDatos, bloqueImplicancia);
   return ficha;
-}
-
-// ---- "En mi radar": solo se muestra si radar.js trae estudios ----
-
-function renderizarRadar() {
-  const seccion = document.getElementById("en-mi-radar");
-  const lista = document.getElementById("lista-radar");
-  if (!seccion || !lista) return;
-
-  const estudios = MODO_VISTA_PREVIA ? VISTA_PREVIA.radar : RADAR_ESTUDIOS;
-
-  if (!estudios || estudios.length === 0) {
-    seccion.hidden = true;
-    return;
-  }
-
-  seccion.hidden = false;
-  lista.innerHTML = "";
-  const t = TEXTOS[idioma];
-
-  estudios.forEach((estudio) => {
-    const item = document.createElement("article");
-    item.className = "oi-radar-item";
-
-    const titulo = document.createElement("h3");
-    titulo.className = "oi-radar-titulo";
-    titulo.textContent = idioma === "es" ? estudio.titulo_es : estudio.titulo_en;
-
-    const meta = document.createElement("p");
-    meta.className = "oi-radar-meta";
-    meta.textContent = `${estudio.fuente} · ${t.radarDetectadoLabel} ${formatearFecha(estudio.fecha_detectado)}`;
-
-    item.append(titulo, meta);
-    lista.appendChild(item);
-  });
 }
 
 document.addEventListener("DOMContentLoaded", init);

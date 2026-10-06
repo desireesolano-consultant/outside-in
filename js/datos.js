@@ -36,8 +36,8 @@ const INTRO = {
 
 const LINK_LINKEDIN = "https://www.linkedin.com/in/desiree-solano-baba59131/";
 
-// Cita destacada del banner, antes de la matriz. Es la misma frase real de
-// la carta de bienvenida (INTRO), no un texto nuevo.
+// Cita destacada del banner. Es la misma frase real de la carta de
+// bienvenida (INTRO), no un texto nuevo.
 const CITA_BANNER = {
   es: "Las organizaciones que mejor se transforman son las que se mantienen curiosas y entienden su contexto antes de que el cambio las alcance.",
   en: "The organizations that transform best are the ones that stay curious and understand their context before change catches up with them.",
@@ -49,9 +49,9 @@ const CITA_BANNER = {
 const INDUSTRIAS = [
   {
     id: "life_sciences",
-    es: "Life Sciences",
+    es: "Salud y farmacéutica",
     en: "Life Sciences",
-    frase_es: "Life Sciences",
+    frase_es: "salud y farmacéutica",
     frase_en: "Life Sciences",
   },
   {
@@ -165,12 +165,18 @@ const TENDENCIAS = [
 // real — se usa para decidir cómo rota la cápsula del hero, ocultar las
 // señales de vida y mostrar la insignia "EJEMPLO" en las tarjetas (ver
 // app.js). "fecha" queda en null mientras sea ejemplo: ningún cálculo de
-// fecha real debe depender de un hallazgo de ejemplo. La lista completa de
-// campos de un hallazgo está documentada en README.md.
+// fecha real debe depender de un hallazgo de ejemplo.
+//
+// "tema" e "industria" son OPCIONALES, pero un hallazgo necesita al menos
+// uno de los dos:
+// - Solo tema o solo industria -> es una "lectura individual" y aparece en
+//   la sección "Entender".
+// - Tema E industria -> es una "conexión" y aparece en la sección
+//   "Aterrizar". La lista completa de campos está en README.md.
 const HALLAZGOS = [
   {
     id: "h1",
-    industria: "servicios_financieros",
+    industria: null,
     tema: "gestion_cambio",
     esEjemplo: true,
     fecha: null,
@@ -192,7 +198,7 @@ const HALLAZGOS = [
   {
     id: "h2",
     industria: "servicios_financieros",
-    tema: "ia_personas",
+    tema: null,
     esEjemplo: true,
     fecha: null,
     fuente: EJEMPLO,
@@ -254,7 +260,7 @@ const HALLAZGOS = [
   },
   {
     id: "h5",
-    industria: "life_sciences",
+    industria: null,
     tema: "ia_personas",
     esEjemplo: true,
     fecha: null,

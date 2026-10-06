@@ -36,8 +36,8 @@ funcionando** (regla del proyecto, ver `CLAUDE.md`).
 | Campo | Qué es |
 |---|---|
 | `id` | Identificador único del hallazgo (texto, por ejemplo `"h1"`). |
-| `industria` | `id` de una de las industrias en `INDUSTRIAS`. |
-| `tema` | `id` de uno de los temas en `TEMAS`. |
+| `industria` | `id` de una de las industrias en `INDUSTRIAS`, o `null`. |
+| `tema` | `id` de uno de los temas en `TEMAS`, o `null`. |
 | `esEjemplo` | `true` si es un hallazgo de relleno (no real), `false` si es un hallazgo real y publicado. **La automatización siempre debe escribir `false` aquí.** |
 | `fecha` | Fecha de publicación, formato `"AAAA-MM-DD"` (por ejemplo `"2026-03-10"`). `null` mientras `esEjemplo` sea `true`. |
 | `anio` | Año como texto, para mostrar en la ficha (por ejemplo `"2026"`). |
@@ -54,9 +54,15 @@ Reglas que ya están aplicadas en el sitio y que la automatización debe
 respetar:
 
 - Si un campo no se puede verificar, se deja vacío — nunca se inventa.
+- `tema` e `industria` son opcionales, pero un hallazgo necesita al menos
+  uno de los dos (nunca los dos en `null`):
+  - Solo `tema` o solo `industria` → es una **lectura individual** y
+    aparece en la sección "Entender".
+  - `tema` **e** `industria` → es una **conexión** y aparece en la
+    sección "Aterrizar".
 - Un hallazgo con `esEjemplo: false` es lo único que cuenta como "real": solo
   esos hallazgos mueven la fecha de "Actualizado el...", la etiqueta "Nuevo"
-  y el color de la matriz.
+  y el cálculo de "estudios revisados".
 - "Nuevo" se calcula solo: un hallazgo es reciente si `fecha` está dentro de
   los últimos 7 días (ver `esReciente()` en `js/app.js`).
 

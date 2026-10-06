@@ -11,19 +11,19 @@
 - Público: reclutadores, gerentes de consultoría y líderes de negocio.
 
 ## Estructura del sitio
-- Texto introductorio: presenta el espacio, quién soy y su objetivo. Lo redactamos juntas; no lo publiques sin mi aprobación.
-- Portada: "Las 5 tendencias que todo líder debería mirar", cada una con titular, dato de respaldo con fuente e implicancia breve.
-- Mapa de tendencias (antes "matriz interactiva"): cruce de industrias con temas. Cada casilla muestra cuántos hallazgos tiene y, al hacer clic, abre las fichas.
+- Portada con titular clicable (Entender / Aterrizar / Descubrir), carta de bienvenida completa en "Sobre Outside-In", y mi correo y LinkedIn debajo de mi presentación.
+- "Entender": mis lecturas individuales, cuando un hallazgo tiene solo tema o solo industria.
+- "Aterrizar": frase interactiva con desplegables de tema e industria; muestra los hallazgos que cruzan ambos (una "conexión").
+- "Descubrir": estudios que detecté y todavía estoy leyendo (el radar). No se muestra si no hay ninguno.
+- "Así automaticé Outside-In": cómo funciona el sistema, con enlace a la página completa "Detrás de Outside-In".
 - Fichas de hallazgo, con dos partes separadas visualmente: "Lo que dicen los datos" (con fuente) e "Implicancia para el negocio" (mi análisis).
-- Sección breve "Sobre mí" con link a mi LinkedIn.
 - Botón para cambiar todo el contenido entre español e inglés.
 
 ## Industrias
-- Primera versión: banca y pagos, consumo masivo, tecnología.
-- Después: life sciences, retail, telecomunicaciones, internet.
+- Primera versión: salud y farmacéutica (Life Sciences en inglés), servicios financieros (banca, pagos y seguros), consumo masivo.
 
-## Ejes temáticos
-- Gestión del cambio, estrategia de negocio, comunicaciones, cultura organizacional, inteligencia artificial y transformación.
+## Temas
+- Gestión del cambio, IA y personas, liderazgo-cultura-comunicación.
 
 ## Fuentes
 - EY, Accenture, Deloitte, KPMG, McKinsey, Gartner, PwC y JPMorgan.
@@ -32,7 +32,7 @@
 
 ## Reglas de datos (lo más importante)
 - NUNCA inventar datos, cifras, porcentajes, estudios, fechas ni links. NUNCA.
-- Cada hallazgo debe tener: fuente, nombre del estudio, año, link verificable, industria, eje temático, hallazgo, dato clave y región.
+- Cada hallazgo debe tener: fuente, nombre del estudio, año, link verificable, hallazgo, dato clave y región. Tema e industria son opcionales, pero debe tener al menos uno de los dos (solo uno = lectura individual, en "Entender"; los dos = conexión, en "Aterrizar").
 - Si un dato no se puede verificar, no se incluye. Es preferible dejar un campo vacío que inventarlo.
 - Resumir con palabras propias; nunca copiar párrafos de los informes.
 - Las implicancias son mi análisis: puedes proponer borradores, pero deben marcarse como "BORRADOR" hasta que yo los apruebe.

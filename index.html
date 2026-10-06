@@ -21,9 +21,10 @@
       </a>
       <nav id="oi-nav" class="oi-nav">
         <a href="#sobre" data-i18n="navSobre"></a>
-        <a href="#hallazgos" data-i18n="navHallazgos"></a>
-        <a href="#lo-que-sigo" data-i18n="navLoQueSigo"></a>
-        <a href="#matriz" data-i18n="navMatriz"></a>
+        <a href="#entender" data-i18n="navEntender"></a>
+        <a href="#aterrizar" data-i18n="navAterrizar"></a>
+        <a href="#descubrir" data-i18n="navDescubrir"></a>
+        <a href="#asi-automatice" data-i18n="navAsiAutomatice"></a>
       </nav>
       <div class="oi-header-acciones">
         <button id="boton-idioma" class="boton-idioma" type="button"></button>
@@ -43,9 +44,9 @@
         <div class="oi-hero-texto">
           <p class="oi-tagline" data-i18n="heroTagline"></p>
           <h1 class="oi-headline">
-            <span data-i18n="heroPalabra1"></span>.<br />
-            <span data-i18n="heroPalabra2"></span>.<br />
-            <span class="oi-headline-acento" data-i18n="heroPalabra3"></span><span class="oi-headline-punto">.</span>
+            <a href="#entender" class="oi-headline-enlace"><span data-i18n="heroPalabra1"></span></a>.<br />
+            <a href="#aterrizar" class="oi-headline-enlace"><span data-i18n="heroPalabra2"></span></a>.<br />
+            <a href="#descubrir" class="oi-headline-enlace"><span class="oi-headline-acento" data-i18n="heroPalabra3"></span></a><span class="oi-headline-punto">.</span>
           </h1>
           <p class="oi-hero-parrafo-capsula">
             <span data-i18n="heroParrafoPre"></span>
@@ -54,7 +55,7 @@
             <span class="oi-capsula oi-capsula-industria" id="oi-word-industria"></span><br class="oi-salto-forzado" />
             <span data-i18n="heroParrafoPost"></span>
           </p>
-          <a href="#como-funciona" id="senal-vida" class="oi-senal-vida" hidden>
+          <a href="#asi-automatice" id="senal-vida" class="oi-senal-vida" hidden>
             <span class="oi-punto-vivo" aria-hidden="true"></span>
             <span id="senal-vida-texto"></span>
           </a>
@@ -65,35 +66,58 @@
               <p class="oi-bio-cargo" data-i18n="heroCargo"></p>
             </div>
           </div>
+          <div class="oi-contacto-fila">
+            <a href="mailto:desireesolanochang27@gmail.com" class="oi-contacto-enlace">
+              <svg class="oi-contacto-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="M3 7l9 6 9-6"></path>
+              </svg>
+              <span>desireesolanochang27@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener" class="oi-contacto-enlace">
+              <svg class="oi-contacto-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                <line x1="8" y1="11" x2="8" y2="16"></line>
+                <circle cx="8" cy="8" r="0.6" fill="currentColor" stroke="none"></circle>
+                <path d="M12 16v-3.2a1.8 1.8 0 0 1 3.6 0V16"></path>
+                <line x1="12" y1="12.8" x2="12" y2="16"></line>
+              </svg>
+              <span data-i18n="linkedinFooter"></span>
+            </a>
+          </div>
           <div class="oi-hero-narrativa">
             <p data-i18n="heroParrafo1"></p>
             <p data-i18n="heroParrafo2"></p>
           </div>
           <div class="oi-hero-ctas">
-            <a href="#hallazgos" class="oi-boton oi-boton-primario" data-i18n="heroCtaPrimario"></a>
-            <a href="#como-funciona" class="oi-boton oi-boton-secundario" data-i18n="heroCtaSecundario"></a>
+            <a href="#entender" class="oi-boton oi-boton-primario" data-i18n="heroCtaPrimario"></a>
+            <a href="#asi-automatice" class="oi-boton oi-boton-secundario" data-i18n="heroCtaSecundario"></a>
           </div>
         </div>
         <div class="oi-hero-diagrama" aria-hidden="true">
-          <div class="oi-diagrama-caja">
-            <div class="oi-diagrama-circulo-1"></div>
-            <div class="oi-diagrama-circulo-2"></div>
-            <div class="oi-diagrama-centro" data-i18n="diagramaCentro"></div>
-            <span class="oi-particula" style="left: 145px; top: 50px; --dx: 0px; --dy: 95px; animation-delay: 0s"></span>
-            <span class="oi-particula" style="left: 237px; top: 70px; --dx: -92px; --dy: 75px; animation-delay: 1s"></span>
-            <span class="oi-particula oi-particula-llega" style="left: 237px; top: 145px; --dx: -92px; --dy: 0px; animation-delay: 2s"></span>
-            <span class="oi-particula" style="left: 237px; top: 220px; --dx: -92px; --dy: -75px; animation-delay: 3s"></span>
-            <span class="oi-particula" style="left: 53px; top: 220px; --dx: 92px; --dy: -75px; animation-delay: 4s"></span>
-            <span class="oi-particula oi-particula-llega" style="left: 53px; top: 145px; --dx: 92px; --dy: 0px; animation-delay: 5s"></span>
-            <span class="oi-particula" style="left: 53px; top: 70px; --dx: 92px; --dy: 75px; animation-delay: 6s"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-arriba oi-pos-1" style="text-align: center" data-i18n="diagramaEstudios"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-2" style="text-align: left" data-i18n="diagramaReportes"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-3" style="text-align: left" data-i18n="diagramaEncuestas"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-4" style="text-align: left" data-i18n="diagramaRankings"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-5" style="text-align: right" data-i18n="diagramaDatos"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-6" style="text-align: right" data-i18n="diagramaInvestigacion"></span>
-            <span class="oi-diagrama-etiqueta oi-etiqueta-izquierda oi-pos-7" style="text-align: right" data-i18n="diagramaTendencias"></span>
-          </div>
+          <svg id="oi-svg-diagrama" class="oi-svg-diagrama" viewBox="0 0 290 290">
+            <circle class="oi-svg-circulo-1" cx="145" cy="145" r="78"></circle>
+            <circle class="oi-svg-circulo-2" cx="145" cy="145" r="53"></circle>
+
+            <circle class="oi-svg-particula" data-lado="arriba" cx="145" cy="51" style="--dx: 0px; --dy: 94px; animation-delay: 0s"></circle>
+            <circle class="oi-svg-particula" data-lado="derecha" cx="239" cy="70" style="--dx: -94px; --dy: 75px; animation-delay: 1s"></circle>
+            <circle class="oi-svg-particula oi-svg-particula-llega" data-lado="derecha" cx="239" cy="145" style="--dx: -94px; --dy: 0px; animation-delay: 2s"></circle>
+            <circle class="oi-svg-particula" data-lado="derecha" cx="239" cy="220" style="--dx: -94px; --dy: -75px; animation-delay: 3s"></circle>
+            <circle class="oi-svg-particula" data-lado="izquierda" cx="51" cy="220" style="--dx: 94px; --dy: -75px; animation-delay: 4s"></circle>
+            <circle class="oi-svg-particula oi-svg-particula-llega" data-lado="izquierda" cx="51" cy="145" style="--dx: 94px; --dy: 0px; animation-delay: 5s"></circle>
+            <circle class="oi-svg-particula" data-lado="izquierda" cx="51" cy="70" style="--dx: 94px; --dy: 75px; animation-delay: 6s"></circle>
+
+            <circle class="oi-svg-centro-circulo" cx="145" cy="145" r="34"></circle>
+            <text class="oi-svg-centro-texto" x="145" y="148" text-anchor="middle" style="text-anchor: middle" data-i18n="diagramaCentro"></text>
+
+            <text class="oi-svg-etiqueta" data-lado="arriba" x="145" y="44" text-anchor="middle" style="text-anchor: middle" data-i18n="diagramaEstudios"></text>
+            <text class="oi-svg-etiqueta" data-lado="derecha" x="239" y="70" text-anchor="start" style="text-anchor: start" data-i18n="diagramaReportes"></text>
+            <text class="oi-svg-etiqueta" data-lado="derecha" x="239" y="145" text-anchor="start" style="text-anchor: start" data-i18n="diagramaEncuestas"></text>
+            <text class="oi-svg-etiqueta" data-lado="derecha" x="239" y="220" text-anchor="start" style="text-anchor: start" data-i18n="diagramaRankings"></text>
+            <text class="oi-svg-etiqueta" data-lado="izquierda" x="51" y="220" text-anchor="end" style="text-anchor: end" data-i18n="diagramaDatos"></text>
+            <text class="oi-svg-etiqueta" data-lado="izquierda" x="51" y="145" text-anchor="end" style="text-anchor: end" data-i18n="diagramaInvestigacion"></text>
+            <text class="oi-svg-etiqueta" data-lado="izquierda" x="51" y="70" text-anchor="end" style="text-anchor: end" data-i18n="diagramaTendencias"></text>
+          </svg>
         </div>
       </div>
     </section>
@@ -110,87 +134,51 @@
       </div>
     </section>
 
-    <!-- 02 CÓMO FUNCIONA OUTSIDE-IN (siempre visible, no depende de datos) -->
-    <section id="como-funciona" class="oi-seccion-ancha">
-      <div class="oi-seccion-cabecera-col">
-        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="comoFuncionaEtiqueta"></div>
-        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="comoFuncionaTitulo"></h2>
-      </div>
-
-      <div id="cf-pin-contenedor" class="oi-cf-pin-contenedor">
-        <div class="oi-cf-pin">
-          <div class="oi-cf-pasos">
-            <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="0">
-              <span class="oi-paso-numero">01</span>
-              <span class="oi-paso-titulo" data-i18n="paso1Titulo"></span>
-              <span class="oi-paso-desc" data-i18n="paso1Desc"></span>
-            </button>
-            <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="1">
-              <span class="oi-paso-numero">02</span>
-              <span class="oi-paso-titulo" data-i18n="paso2Titulo"></span>
-              <span class="oi-paso-desc" data-i18n="paso2Desc"></span>
-            </button>
-            <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="2">
-              <span class="oi-paso-numero">03</span>
-              <span class="oi-paso-titulo" data-i18n="paso3Titulo"></span>
-              <span class="oi-paso-desc" data-i18n="paso3Desc"></span>
-            </button>
-          </div>
-
-          <div class="oi-cf-escenario" aria-hidden="true">
-            <div class="oi-cf-etapa oi-cf-etapa-rastreo" data-etapa="0">
-              <div id="cf-chips-rastreo" class="oi-cf-chips"></div>
-            </div>
-            <div class="oi-cf-etapa oi-cf-etapa-curaduria" data-etapa="1">
-              <div class="oi-cf-filtro"></div>
-              <div id="cf-chips-curaduria" class="oi-cf-chips"></div>
-            </div>
-            <div class="oi-cf-etapa oi-cf-etapa-lectura" data-etapa="2">
-              <div class="oi-cf-ficha-ejemplo">
-                <span class="oi-insignia-ejemplo" style="position: static; display: inline-block; margin-bottom: 8px">EJEMPLO</span>
-                <div class="oi-cf-ficha-titulo" data-i18n="cfFichaEjemploTitulo"></div>
-                <div class="oi-cf-ficha-fuente" data-i18n="cfFichaEjemploFuente"></div>
-                <div class="oi-cf-ficha-capsulas">
-                  <span class="oi-capsula oi-capsula-tema" id="cf-capsula-tema"></span>
-                  <span class="oi-capsula oi-capsula-industria" id="cf-capsula-industria"></span>
-                </div>
-                <div class="oi-cf-ficha-lectura" data-i18n="cfFichaEjemploLectura"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p class="oi-paso-cierre oi-reveal" data-i18n="comoFuncionaCierre"></p>
-      <p class="oi-cf-contador oi-reveal" id="cf-contador"></p>
-      <a href="detras-de-outside-in.html" class="oi-ver-todos oi-reveal" data-i18n="comoFuncionaLeerMas"></a>
-    </section>
-
-    <!-- 03 HALLAZGOS RECIENTES -->
-    <section id="hallazgos" class="oi-seccion-ancha">
-      <div class="oi-seccion-cabecera">
-        <div>
-          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="hallazgosEtiqueta"></div>
-          <h2 class="oi-titulo-seccion oi-reveal" data-i18n="hallazgosTitulo"></h2>
-        </div>
-        <a href="#matriz" class="oi-ver-todos" data-i18n="hallazgosVerTodos"></a>
-      </div>
-      <div class="oi-carrusel">
-        <button type="button" id="hallazgos-flecha-izq" class="oi-carrusel-flecha oi-carrusel-flecha-izq" aria-label="">‹</button>
-        <div id="grid-hallazgos" class="oi-grid-hallazgos"></div>
-        <button type="button" id="hallazgos-flecha-der" class="oi-carrusel-flecha oi-carrusel-flecha-der" aria-label="">›</button>
-      </div>
-    </section>
-
-    <!-- 04 LO QUE SIGO DE CERCA (temas + industrias, scroll horizontal) -->
-    <section id="lo-que-sigo" class="oi-loquesigo oi-scrollx-section">
-      <div class="oi-loquesigo-cabecera">
-        <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="loQueSigoEtiqueta"></div>
-        <h2 class="oi-titulo-seccion oi-titulo-claro oi-reveal" data-i18n="loQueSigoTitulo"></h2>
+    <!-- 01 ENTENDER: lecturas individuales, scroll horizontal anclado -->
+    <section id="entender" class="oi-entender oi-scrollx-section">
+      <div class="oi-entender-cabecera">
+        <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="entenderEtiqueta"></div>
+        <h2 class="oi-titulo-seccion oi-titulo-claro oi-reveal" data-i18n="entenderTitulo"></h2>
+        <p class="oi-bajada-clara oi-reveal" data-i18n="entenderBajada"></p>
       </div>
       <div class="oi-scrollx-sticky">
-        <div id="grid-loquesigo" class="oi-scrollx-track"></div>
+        <div id="grid-entender" class="oi-scrollx-track"></div>
       </div>
+    </section>
+
+    <!-- 02 ATERRIZAR: frase interactiva con desplegables -->
+    <section id="aterrizar" class="oi-seccion-ancha">
+      <div class="oi-seccion-cabecera-col">
+        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="aterrizarEtiqueta"></div>
+        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="aterrizarTitulo"></h2>
+        <p class="ayuda oi-reveal" data-i18n="aterrizarBajada"></p>
+      </div>
+
+      <p class="oi-aterrizar-frase">
+        <span data-i18n="aterrizarFrasePre"></span>
+        <span class="oi-select-envoltorio">
+          <select id="aterrizar-select-tema" class="oi-select-capsula oi-select-capsula-tema"></select>
+        </span>
+        <span data-i18n="aterrizarFraseMid"></span>
+        <span class="oi-select-envoltorio">
+          <select id="aterrizar-select-industria" class="oi-select-capsula oi-select-capsula-industria"></select>
+        </span>
+      </p>
+
+      <div>
+        <p id="aterrizar-conteo" class="oi-aterrizar-conteo"></p>
+        <div id="aterrizar-tarjetas" class="oi-grid-resultados"></div>
+      </div>
+    </section>
+
+    <!-- 03 DESCUBRIR: estudios en el radar -->
+    <section id="descubrir" class="oi-seccion-ancha" hidden>
+      <div class="oi-seccion-cabecera-col">
+        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="descubrirEtiqueta"></div>
+        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="descubrirTitulo"></h2>
+        <p class="ayuda oi-reveal" data-i18n="descubrirBajada"></p>
+      </div>
+      <div id="lista-radar" class="oi-lista-radar"></div>
     </section>
 
     <!-- BANNER: cita que crece con el scroll -->
@@ -202,25 +190,68 @@
       </div>
     </section>
 
-    <!-- 05 MATRIZ -->
-    <section id="matriz" class="oi-seccion-ancha">
+    <!-- 04 ASÍ AUTOMATICÉ OUTSIDE-IN -->
+    <section id="asi-automatice" class="oi-seccion-ancha">
       <div class="oi-seccion-cabecera-col">
-        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="matrizEtiqueta"></div>
-        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="matrizTitulo"></h2>
-        <p class="ayuda" data-i18n="matrizAyuda"></p>
+        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="asiAutomaticeEtiqueta"></div>
+        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="asiAutomaticeTitulo"></h2>
       </div>
-      <div class="matriz-scroll">
-        <table id="tabla-matriz" class="tabla-matriz"></table>
-      </div>
-    </section>
 
-    <!-- EN MI RADAR: solo se muestra si radar.js trae datos -->
-    <section id="en-mi-radar" class="oi-seccion-ancha" hidden>
-      <div class="oi-seccion-cabecera-col">
-        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="enMiRadarTitulo"></h2>
-        <p class="ayuda" data-i18n="enMiRadarAyuda"></p>
+      <div id="cf-pin-contenedor" class="oi-cf-pin-contenedor">
+        <div class="oi-cf-pin">
+          <div class="oi-cf-progreso" role="tablist">
+            <button type="button" class="oi-cf-progreso-boton" data-etapa="0">01</button>
+            <button type="button" class="oi-cf-progreso-boton" data-etapa="1">02</button>
+            <button type="button" class="oi-cf-progreso-boton" data-etapa="2">03</button>
+          </div>
+
+          <div class="oi-cf-pin-cuerpo">
+            <div class="oi-cf-pasos">
+              <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="0">
+                <span class="oi-paso-numero">01</span>
+                <span class="oi-paso-titulo" data-i18n="paso1Titulo"></span>
+                <span class="oi-paso-desc" data-i18n="paso1Desc"></span>
+              </button>
+              <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="1">
+                <span class="oi-paso-numero">02</span>
+                <span class="oi-paso-titulo" data-i18n="paso2Titulo"></span>
+                <span class="oi-paso-desc" data-i18n="paso2Desc"></span>
+              </button>
+              <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="2">
+                <span class="oi-paso-numero">03</span>
+                <span class="oi-paso-titulo" data-i18n="paso3Titulo"></span>
+                <span class="oi-paso-desc" data-i18n="paso3Desc"></span>
+              </button>
+            </div>
+
+            <div class="oi-cf-escenario" aria-hidden="true">
+              <div class="oi-cf-etapa oi-cf-etapa-rastreo" data-etapa="0">
+                <div id="cf-chips-rastreo" class="oi-cf-chips"></div>
+              </div>
+              <div class="oi-cf-etapa oi-cf-etapa-curaduria" data-etapa="1">
+                <div class="oi-cf-filtro"></div>
+                <div id="cf-chips-curaduria" class="oi-cf-chips"></div>
+              </div>
+              <div class="oi-cf-etapa oi-cf-etapa-lectura" data-etapa="2">
+                <div class="oi-cf-ficha-ejemplo">
+                  <span class="oi-insignia-ejemplo" style="position: static; display: inline-block; margin-bottom: 8px">EJEMPLO</span>
+                  <div class="oi-cf-ficha-titulo" data-i18n="cfFichaEjemploTitulo"></div>
+                  <div class="oi-cf-ficha-fuente" data-i18n="cfFichaEjemploFuente"></div>
+                  <div class="oi-cf-ficha-capsulas">
+                    <span class="oi-capsula oi-capsula-tema" id="cf-capsula-tema"></span>
+                    <span class="oi-capsula oi-capsula-industria" id="cf-capsula-industria"></span>
+                  </div>
+                  <div class="oi-cf-ficha-lectura" data-i18n="cfFichaEjemploLectura"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="lista-radar" class="oi-lista-radar"></div>
+
+      <p class="oi-paso-cierre oi-reveal" data-i18n="asiAutomaticeCierre"></p>
+      <p class="oi-cf-contador oi-reveal" id="cf-contador"></p>
+      <a href="detras-de-outside-in.html" class="oi-ver-todos oi-reveal" data-i18n="asiAutomaticeLeerMas"></a>
     </section>
   </main>
 
@@ -229,9 +260,10 @@
       <div class="oi-footer-top">
         <div class="oi-footer-marca">Outside-In</div>
         <div class="oi-footer-nav">
-          <a href="#hallazgos" data-i18n="navHallazgos"></a>
-          <a href="#lo-que-sigo" data-i18n="navLoQueSigo"></a>
-          <a href="#matriz" data-i18n="navMatriz"></a>
+          <a href="#entender" data-i18n="navEntender"></a>
+          <a href="#aterrizar" data-i18n="navAterrizar"></a>
+          <a href="#descubrir" data-i18n="navDescubrir"></a>
+          <a href="#asi-automatice" data-i18n="navAsiAutomatice"></a>
           <a id="link-linkedin-footer" href="#" target="_blank" rel="noopener" data-i18n="linkedinFooter"></a>
         </div>
       </div>

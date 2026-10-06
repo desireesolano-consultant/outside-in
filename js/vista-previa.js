@@ -16,25 +16,8 @@ const VISTA_PREVIA = {
   },
 
   // ids de HALLAZGOS que muestran la insignia "Nuevo" en vez de "EJEMPLO"
-  // en las tarjetas de "Hallazgos recientes".
+  // en las tarjetas de "Entender" y "Aterrizar".
   hallazgosNuevosIds: ["h1", "h4"],
-
-  // Intensidad de ejemplo para cada casilla del mapa de tendencias
-  // (industria|tema -> cantidad de hallazgos).
-  intensidadMapa: {
-    "servicios_financieros|gestion_cambio": 3,
-    "servicios_financieros|ia_personas": 1,
-    "servicios_financieros|liderazgo_cultura": 0,
-    "consumo_masivo|gestion_cambio": 0,
-    "consumo_masivo|ia_personas": 2,
-    "consumo_masivo|liderazgo_cultura": 4,
-    "life_sciences|gestion_cambio": 1,
-    "life_sciences|ia_personas": 5,
-    "life_sciences|liderazgo_cultura": 0,
-  },
-
-  // Casillas que además muestran el punto "Nuevo".
-  celdasNuevas: ["life_sciences|ia_personas", "consumo_masivo|liderazgo_cultura"],
 
   radar: [
     {
