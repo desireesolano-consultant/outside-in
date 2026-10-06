@@ -532,6 +532,33 @@ function renderizarOpcionesAterrizar() {
 
   if (temaElegido) selectTema.value = temaElegido;
   if (industriaElegida) selectIndustria.value = industriaElegida;
+
+  ajustarAnchoSelect(selectTema);
+  ajustarAnchoSelect(selectIndustria);
+}
+
+// El <select> nativo se dimensiona según su opción MÁS ANCHA, no la elegida
+// (así funcionan los navegadores). Para que la cápsula mida solo lo que
+// mide la opción actual, medimos su texto de verdad y fijamos ese ancho.
+function ajustarAnchoSelect(select) {
+  if (!select || !select.options.length) return;
+  const opcionActual = select.options[select.selectedIndex];
+  const estilos = getComputedStyle(select);
+
+  const medidor = document.createElement("span");
+  medidor.style.position = "absolute";
+  medidor.style.visibility = "hidden";
+  medidor.style.whiteSpace = "nowrap";
+  medidor.style.fontFamily = estilos.fontFamily;
+  medidor.style.fontWeight = estilos.fontWeight;
+  medidor.style.fontSize = estilos.fontSize;
+  medidor.textContent = opcionActual ? opcionActual.textContent : "";
+  document.body.appendChild(medidor);
+  const anchoTexto = medidor.offsetWidth;
+  document.body.removeChild(medidor);
+
+  const relleno = 36; // 12px a la izquierda + 24px a la derecha (para la flecha)
+  select.style.width = `${anchoTexto + relleno}px`;
 }
 
 function actualizarResultadosAterrizar() {
@@ -601,8 +628,18 @@ function configurarAterrizar() {
 
   const selectTema = document.getElementById("aterrizar-select-tema");
   const selectIndustria = document.getElementById("aterrizar-select-industria");
-  if (selectTema) selectTema.addEventListener("change", actualizarResultadosAterrizar);
-  if (selectIndustria) selectIndustria.addEventListener("change", actualizarResultadosAterrizar);
+  if (selectTema) {
+    selectTema.addEventListener("change", () => {
+      ajustarAnchoSelect(selectTema);
+      actualizarResultadosAterrizar();
+    });
+  }
+  if (selectIndustria) {
+    selectIndustria.addEventListener("change", () => {
+      ajustarAnchoSelect(selectIndustria);
+      actualizarResultadosAterrizar();
+    });
+  }
 }
 
 // Lleva a "Aterrizar" con el tema y/o la industria preseleccionados

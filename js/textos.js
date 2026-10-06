@@ -153,7 +153,7 @@ const TEXTOS = {
     heroPalabra1: "Understand",
     heroPalabra2: "Connect",
     heroPalabra3: "Anticipate",
-    heroParrafoPre: "I read and analyze what's happening with",
+    heroParrafoPre: "I analyze what's happening with",
     heroParrafoMid: "in",
     heroParrafoPost: "so you can connect it to your organization and get ahead of change.",
     heroSaludo: "Hi, I'm Desiree Solano",
