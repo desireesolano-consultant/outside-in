@@ -9,7 +9,7 @@ funcionando** (regla del proyecto, ver `CLAUDE.md`).
 
 ## Antes de publicar
 
-- [ ] Apagar el modo vista previa.
+- [ ] Apagar el modo vista previa (`MODO_VISTA_PREVIA = false` en `js/config.js`).
 - [ ] Confirmar que la automatización semanal esté funcionando — la página
       "Detrás de Outside-In" la describe como algo que ya está activo, así
       que tiene que serlo de verdad antes de publicar.
@@ -17,14 +17,19 @@ funcionando** (regla del proyecto, ver `CLAUDE.md`).
 ## Estructura de archivos
 
 - `index.html` — estructura del sitio.
+- `detras-de-outside-in.html` — página "Detrás de Outside-In".
 - `css/estilos.css` — todo el diseño visual.
+- `js/config.js` — el interruptor único `MODO_VISTA_PREVIA`.
+- `js/vista-previa.js` — datos de ejemplo que se usan solo mientras el
+  interruptor esté en `true`. Nunca se usan datos reales de aquí.
 - `js/textos.js` — textos fijos de la interfaz, en español e inglés.
 - `js/datos.js` — contenido: carta de bienvenida, industrias, temas y
   hallazgos. **Este es el archivo que la automatización va a actualizar.**
 - `js/radar.js` — estudios detectados que todavía no se convirtieron en
   hallazgos. Está separado de `datos.js` a propósito, para que la
   automatización pueda escribir aquí sin tocar los hallazgos ya publicados.
-- `js/app.js` — toda la lógica (nada de contenido ni de colores aquí).
+- `js/app.js` — toda la lógica de `index.html` (nada de contenido ni de colores aquí).
+- `js/pagina-detras.js` — la lógica (bien chica) de `detras-de-outside-in.html`.
 
 ## Campos de un hallazgo (`HALLAZGOS` en `js/datos.js`)
 

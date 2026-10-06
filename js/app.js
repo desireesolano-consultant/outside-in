@@ -28,6 +28,7 @@ function init() {
   }
 
   aplicarIdioma();
+  configurarFranjaVistaPrevia();
   renderizarSobre();
   renderizarHallazgosRecientes();
   renderizarSenalVida();
@@ -35,11 +36,15 @@ function init() {
   renderizarMatriz();
   renderizarBannerCita();
   renderizarRadar();
+  renderizarChipsComoFunciona();
+  renderizarFichaEjemploComoFunciona();
+  renderizarContadorComoFunciona();
   iniciarCapsulaRotativa();
   centrarDiagrama();
   configurarMenuMovil();
   configurarCarrusel();
   configurarScrollHorizontal();
+  configurarComoFuncionaSticky();
   configurarBanner();
   configurarRevelado();
 
@@ -64,6 +69,7 @@ function init() {
       tickeando = true;
       requestAnimationFrame(() => {
         actualizarScrollHorizontal();
+        actualizarComoFuncionaSticky();
         actualizarBanner();
         tickeando = false;
       });
@@ -76,6 +82,7 @@ function init() {
     debounce(() => {
       centrarDiagrama();
       configurarScrollHorizontal();
+      configurarComoFuncionaSticky();
       configurarBanner();
     }, 200)
   );
@@ -96,9 +103,13 @@ function cambiarIdioma() {
   renderizarMatriz();
   renderizarBannerCita();
   renderizarRadar();
+  renderizarChipsComoFunciona();
+  renderizarFichaEjemploComoFunciona();
+  renderizarContadorComoFunciona();
   actualizarTextoCapsula();
   centrarDiagrama();
   configurarScrollHorizontal();
+  configurarComoFuncionaSticky();
 }
 
 function aplicarIdioma() {
@@ -111,22 +122,28 @@ function aplicarIdioma() {
   });
 
   document.getElementById("boton-idioma").textContent = t.botonIdioma;
-  document.getElementById("link-linkedin-footer").href = LINK_LINKEDIN_EJEMPLO;
+  document.getElementById("link-linkedin-footer").href = LINK_LINKEDIN;
   document.getElementById("boton-menu").setAttribute("aria-label", t.menuAbrir);
   document.getElementById("hallazgos-flecha-izq").setAttribute("aria-label", t.carruselAnterior);
   document.getElementById("hallazgos-flecha-der").setAttribute("aria-label", t.carruselSiguiente);
 }
 
-// ---- Fechas y "señales de vida" (solo a partir de hallazgos reales) ----
+// ---- Vista previa ----
+
+function configurarFranjaVistaPrevia() {
+  const franja = document.getElementById("franja-vista-previa");
+  if (franja) franja.hidden = !MODO_VISTA_PREVIA;
+}
+
+// ---- Fechas y "señales de vida" (solo a partir de hallazgos reales,
+// salvo en modo vista previa) ----
 
 function formatearFecha(fechaIso) {
   const fecha = new Date(`${fechaIso}T00:00:00`);
-  const formato = new Intl.DateTimeFormat(idioma === "es" ? "es-PE" : "en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-  return formato.format(fecha);
+  const locale = idioma === "es" ? "es-PE" : "en-US";
+  const diaSemana = new Intl.DateTimeFormat(locale, { weekday: "long" }).format(fecha);
+  const diaMes = new Intl.DateTimeFormat(locale, { day: "numeric", month: "long" }).format(fecha);
+  return idioma === "es" ? `${diaSemana} ${diaMes}` : `${diaSemana}, ${diaMes}`;
 }
 
 function diasDesde(fechaIso) {
@@ -143,26 +160,38 @@ function esReciente(h) {
 }
 
 function calcularSenalesDeVida() {
+  if (MODO_VISTA_PREVIA) {
+    return {
+      fechaTexto: idioma === "es" ? VISTA_PREVIA.fecha_es : VISTA_PREVIA.fecha_en,
+      estudiosRevisados: VISTA_PREVIA.estudiosRevisados,
+      hallazgosNuevos: VISTA_PREVIA.hallazgosNuevosSemana,
+    };
+  }
+
   const reales = HALLAZGOS.filter((h) => h.esEjemplo === false && h.fecha);
   if (reales.length === 0) return null;
+
   const fechaMasReciente = reales.reduce((maxFecha, h) => (h.fecha > maxFecha ? h.fecha : maxFecha), reales[0].fecha);
-  const nuevosEstaSemana = reales.filter((h) => esReciente(h)).length;
-  return { fechaMasReciente, nuevosEstaSemana };
+  const hallazgosNuevos = reales.filter((h) => esReciente(h)).length;
+  const estudiosRevisados = (typeof RADAR_ESTUDIOS !== "undefined" ? RADAR_ESTUDIOS.length : 0) + reales.length;
+
+  return { fechaTexto: formatearFecha(fechaMasReciente), estudiosRevisados, hallazgosNuevos };
 }
 
 function renderizarSenalVida() {
-  const el = document.getElementById("senal-vida");
+  const enlace = document.getElementById("senal-vida");
+  const texto = document.getElementById("senal-vida-texto");
   const senales = calcularSenalesDeVida();
 
   if (!senales) {
-    el.hidden = true;
+    enlace.hidden = true;
     return;
   }
 
   const t = TEXTOS[idioma];
-  const etiquetaNuevos = senales.nuevosEstaSemana === 1 ? t.senalNuevoSingular : t.senalNuevoPlural;
-  el.textContent = `${t.senalActualizadoPrefijo} ${formatearFecha(senales.fechaMasReciente)} · ${senales.nuevosEstaSemana} ${etiquetaNuevos}`;
-  el.hidden = false;
+  const etiquetaNuevos = senales.hallazgosNuevos === 1 ? t.senalNuevoSingular : t.senalNuevoPlural;
+  texto.textContent = `${t.senalActualizadoPrefijo} ${senales.fechaTexto} · ${senales.estudiosRevisados} ${t.senalEstudiosLabel} · ${senales.hallazgosNuevos} ${etiquetaNuevos}`;
+  enlace.hidden = false;
 }
 
 // ---- Menú hamburguesa (celular) ----
@@ -298,7 +327,12 @@ function renderizarHallazgosRecientes() {
 
     const portada = document.createElement("div");
     portada.className = `oi-cover oi-cover-${(indice % 4) + 1}`;
-    if (h.esEjemplo !== false) {
+    if (MODO_VISTA_PREVIA && VISTA_PREVIA.hallazgosNuevosIds.includes(h.id)) {
+      const insignia = document.createElement("span");
+      insignia.className = "oi-insignia-nuevo";
+      insignia.textContent = t.etiquetaNuevo;
+      portada.appendChild(insignia);
+    } else if (h.esEjemplo !== false) {
       const insignia = document.createElement("span");
       insignia.className = "oi-insignia-ejemplo";
       insignia.textContent = t.hallazgosEjemploBadge;
@@ -476,6 +510,109 @@ function actualizarBanner() {
   caja.style.borderRadius = `${32 - progreso * 32}px`;
 }
 
+// ---- "Cómo funciona": escenario animado y scroll anclado en 3 etapas ----
+
+function renderizarChipsComoFunciona() {
+  const t = TEXTOS[idioma];
+  const etiquetas = [t.cfEtiquetaEstudio, t.cfEtiquetaReporte, t.cfEtiquetaEncuesta, t.cfEtiquetaRanking, t.cfEtiquetaDatos];
+
+  const rastreo = document.getElementById("cf-chips-rastreo");
+  const curaduria = document.getElementById("cf-chips-curaduria");
+  if (!rastreo || !curaduria) return;
+
+  rastreo.innerHTML = "";
+  for (let i = 0; i < 12; i++) {
+    const chip = document.createElement("span");
+    chip.className = "oi-cf-chip";
+    chip.textContent = etiquetas[i % etiquetas.length];
+    chip.style.animationDelay = `${(i % 6) * 0.4}s`;
+    rastreo.appendChild(chip);
+  }
+
+  const elegidos = [1, 4, 6];
+  curaduria.innerHTML = "";
+  for (let i = 0; i < 8; i++) {
+    const chip = document.createElement("span");
+    chip.className = `oi-cf-chip ${elegidos.includes(i) ? "oi-cf-elegido" : "oi-cf-descartado"}`;
+    chip.textContent = etiquetas[i % etiquetas.length];
+    curaduria.appendChild(chip);
+  }
+}
+
+function renderizarFichaEjemploComoFunciona() {
+  const tema = TEMAS[1];
+  const industria = INDUSTRIAS[0];
+  const capsulaTema = document.getElementById("cf-capsula-tema");
+  const capsulaIndustria = document.getElementById("cf-capsula-industria");
+  if (capsulaTema) capsulaTema.textContent = idioma === "es" ? tema.es : tema.en;
+  if (capsulaIndustria) capsulaIndustria.textContent = idioma === "es" ? industria.es : industria.en;
+}
+
+// El contador del embudo (revisados → seleccionados → publicados) solo se
+// muestra en vista previa: todavía no existe una forma real de medir
+// "revisados" y "seleccionados" hasta que la automatización esté funcionando.
+function renderizarContadorComoFunciona() {
+  const contador = document.getElementById("cf-contador");
+  if (!contador) return;
+
+  if (!MODO_VISTA_PREVIA) {
+    contador.hidden = true;
+    return;
+  }
+
+  const t = TEXTOS[idioma];
+  const f = VISTA_PREVIA.funnel;
+  contador.textContent = `${t.comoFuncionaContador}: ${f.revisados} → ${f.seleccionados} → ${f.publicados}`;
+  contador.hidden = false;
+}
+
+let cfInfo = null;
+
+function configurarComoFuncionaSticky() {
+  const contenedor = document.getElementById("cf-pin-contenedor");
+  const pin = contenedor ? contenedor.querySelector(".oi-cf-pin") : null;
+  if (!contenedor || !pin) {
+    cfInfo = null;
+    return;
+  }
+
+  const esMovil = window.innerWidth <= 760;
+
+  if (prefiereMovimientoReducido() || esMovil) {
+    contenedor.style.height = "auto";
+    contenedor.classList.add("oi-cf-estatico");
+    cfInfo = null;
+    return;
+  }
+
+  contenedor.classList.remove("oi-cf-estatico");
+  const alturaPin = pin.offsetHeight;
+  const desplazable = Math.round(alturaPin * 1.6);
+  contenedor.style.height = `${alturaPin + desplazable}px`;
+  cfInfo = { contenedor, desplazable };
+  actualizarComoFuncionaSticky();
+}
+
+function actualizarComoFuncionaSticky() {
+  if (!cfInfo) return;
+  const { contenedor, desplazable } = cfInfo;
+  if (desplazable <= 0) return;
+
+  const rect = contenedor.getBoundingClientRect();
+  const progreso = Math.min(1, Math.max(0, -rect.top / desplazable));
+  const etapa = progreso < 0.33 ? 0 : progreso < 0.66 ? 1 : 2;
+  activarEtapaComoFunciona(etapa);
+}
+
+function activarEtapaComoFunciona(etapa) {
+  document.querySelectorAll(".oi-cf-paso-boton").forEach((boton) => {
+    boton.classList.toggle("oi-cf-activo", Number(boton.dataset.etapa) === etapa);
+  });
+  document.querySelectorAll(".oi-cf-etapa").forEach((el) => {
+    el.classList.toggle("oi-cf-activo", Number(el.dataset.etapa) === etapa);
+  });
+}
+
 // ---- Textos y títulos que aparecen al hacer scroll ----
 
 function configurarRevelado() {
@@ -508,10 +645,16 @@ function configurarRevelado() {
 // las casillas quedan atenuadas — eso es lo correcto, no un error.
 
 function contarHallazgos(industriaId, temaId) {
+  if (MODO_VISTA_PREVIA) {
+    return VISTA_PREVIA.intensidadMapa[`${industriaId}|${temaId}`] || 0;
+  }
   return HALLAZGOS.filter((h) => h.esEjemplo === false && h.industria === industriaId && h.tema === temaId).length;
 }
 
 function tieneHallazgoRecienteEnCelda(industriaId, temaId) {
+  if (MODO_VISTA_PREVIA) {
+    return VISTA_PREVIA.celdasNuevas.includes(`${industriaId}|${temaId}`);
+  }
   return HALLAZGOS.some((h) => h.industria === industriaId && h.tema === temaId && esReciente(h));
 }
 
@@ -683,7 +826,9 @@ function renderizarRadar() {
   const lista = document.getElementById("lista-radar");
   if (!seccion || !lista) return;
 
-  if (!RADAR_ESTUDIOS || RADAR_ESTUDIOS.length === 0) {
+  const estudios = MODO_VISTA_PREVIA ? VISTA_PREVIA.radar : RADAR_ESTUDIOS;
+
+  if (!estudios || estudios.length === 0) {
     seccion.hidden = true;
     return;
   }
@@ -692,7 +837,7 @@ function renderizarRadar() {
   lista.innerHTML = "";
   const t = TEXTOS[idioma];
 
-  RADAR_ESTUDIOS.forEach((estudio) => {
+  estudios.forEach((estudio) => {
     const item = document.createElement("article");
     item.className = "oi-radar-item";
 

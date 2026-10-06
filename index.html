@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
+  <div id="franja-vista-previa" class="oi-franja-vista-previa" data-i18n="franjaVistaPrevia" hidden></div>
   <header class="oi-header">
     <div class="oi-header-inner">
       <a href="#inicio" class="oi-logo">
@@ -53,7 +54,10 @@
             <span class="oi-capsula oi-capsula-industria" id="oi-word-industria"></span><br class="oi-salto-forzado" />
             <span data-i18n="heroParrafoPost"></span>
           </p>
-          <a href="#como-funciona" id="senal-vida" class="oi-senal-vida" hidden></a>
+          <a href="#como-funciona" id="senal-vida" class="oi-senal-vida" hidden>
+            <span class="oi-punto-vivo" aria-hidden="true"></span>
+            <span id="senal-vida-texto"></span>
+          </a>
           <div class="oi-bio-fila">
             <div class="oi-foto-placeholder" aria-hidden="true">[Foto]</div>
             <div class="oi-bio-texto">
@@ -75,6 +79,13 @@
             <div class="oi-diagrama-circulo-1"></div>
             <div class="oi-diagrama-circulo-2"></div>
             <div class="oi-diagrama-centro" data-i18n="diagramaCentro"></div>
+            <span class="oi-particula" style="left: 145px; top: 50px; --dx: 0px; --dy: 95px; animation-delay: 0s"></span>
+            <span class="oi-particula" style="left: 237px; top: 70px; --dx: -92px; --dy: 75px; animation-delay: 1s"></span>
+            <span class="oi-particula oi-particula-llega" style="left: 237px; top: 145px; --dx: -92px; --dy: 0px; animation-delay: 2s"></span>
+            <span class="oi-particula" style="left: 237px; top: 220px; --dx: -92px; --dy: -75px; animation-delay: 3s"></span>
+            <span class="oi-particula" style="left: 53px; top: 220px; --dx: 92px; --dy: -75px; animation-delay: 4s"></span>
+            <span class="oi-particula oi-particula-llega" style="left: 53px; top: 145px; --dx: 92px; --dy: 0px; animation-delay: 5s"></span>
+            <span class="oi-particula" style="left: 53px; top: 70px; --dx: 92px; --dy: 75px; animation-delay: 6s"></span>
             <span class="oi-diagrama-etiqueta oi-etiqueta-arriba oi-pos-1" style="text-align: center" data-i18n="diagramaEstudios"></span>
             <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-2" style="text-align: left" data-i18n="diagramaReportes"></span>
             <span class="oi-diagrama-etiqueta oi-etiqueta-derecha oi-pos-3" style="text-align: left" data-i18n="diagramaEncuestas"></span>
@@ -105,24 +116,53 @@
         <div class="oi-etiqueta-seccion oi-reveal" data-i18n="comoFuncionaEtiqueta"></div>
         <h2 class="oi-titulo-seccion oi-reveal" data-i18n="comoFuncionaTitulo"></h2>
       </div>
-      <div class="oi-pasos">
-        <div class="oi-paso oi-reveal">
-          <div class="oi-paso-numero">01</div>
-          <h3 class="oi-paso-titulo" data-i18n="paso1Titulo"></h3>
-          <p class="oi-paso-desc" data-i18n="paso1Desc"></p>
-        </div>
-        <div class="oi-paso oi-reveal">
-          <div class="oi-paso-numero">02</div>
-          <h3 class="oi-paso-titulo" data-i18n="paso2Titulo"></h3>
-          <p class="oi-paso-desc" data-i18n="paso2Desc"></p>
-        </div>
-        <div class="oi-paso oi-reveal">
-          <div class="oi-paso-numero">03</div>
-          <h3 class="oi-paso-titulo" data-i18n="paso3Titulo"></h3>
-          <p class="oi-paso-desc" data-i18n="paso3Desc"></p>
+
+      <div id="cf-pin-contenedor" class="oi-cf-pin-contenedor">
+        <div class="oi-cf-pin">
+          <div class="oi-cf-pasos">
+            <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="0">
+              <span class="oi-paso-numero">01</span>
+              <span class="oi-paso-titulo" data-i18n="paso1Titulo"></span>
+              <span class="oi-paso-desc" data-i18n="paso1Desc"></span>
+            </button>
+            <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="1">
+              <span class="oi-paso-numero">02</span>
+              <span class="oi-paso-titulo" data-i18n="paso2Titulo"></span>
+              <span class="oi-paso-desc" data-i18n="paso2Desc"></span>
+            </button>
+            <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="2">
+              <span class="oi-paso-numero">03</span>
+              <span class="oi-paso-titulo" data-i18n="paso3Titulo"></span>
+              <span class="oi-paso-desc" data-i18n="paso3Desc"></span>
+            </button>
+          </div>
+
+          <div class="oi-cf-escenario" aria-hidden="true">
+            <div class="oi-cf-etapa oi-cf-etapa-rastreo" data-etapa="0">
+              <div id="cf-chips-rastreo" class="oi-cf-chips"></div>
+            </div>
+            <div class="oi-cf-etapa oi-cf-etapa-curaduria" data-etapa="1">
+              <div class="oi-cf-filtro"></div>
+              <div id="cf-chips-curaduria" class="oi-cf-chips"></div>
+            </div>
+            <div class="oi-cf-etapa oi-cf-etapa-lectura" data-etapa="2">
+              <div class="oi-cf-ficha-ejemplo">
+                <span class="oi-insignia-ejemplo" style="position: static; display: inline-block; margin-bottom: 8px">EJEMPLO</span>
+                <div class="oi-cf-ficha-titulo" data-i18n="cfFichaEjemploTitulo"></div>
+                <div class="oi-cf-ficha-fuente" data-i18n="cfFichaEjemploFuente"></div>
+                <div class="oi-cf-ficha-capsulas">
+                  <span class="oi-capsula oi-capsula-tema" id="cf-capsula-tema"></span>
+                  <span class="oi-capsula oi-capsula-industria" id="cf-capsula-industria"></span>
+                </div>
+                <div class="oi-cf-ficha-lectura" data-i18n="cfFichaEjemploLectura"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <p class="oi-paso-cierre oi-reveal" data-i18n="comoFuncionaCierre"></p>
+      <p class="oi-cf-contador oi-reveal" id="cf-contador"></p>
       <a href="detras-de-outside-in.html" class="oi-ver-todos oi-reveal" data-i18n="comoFuncionaLeerMas"></a>
     </section>
 
@@ -218,9 +258,11 @@
     <div id="modal-sobre-cuerpo" class="modal-cuerpo carta"></div>
   </dialog>
 
+  <script src="js/config.js"></script>
   <script src="js/textos.js"></script>
   <script src="js/datos.js"></script>
   <script src="js/radar.js"></script>
+  <script src="js/vista-previa.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

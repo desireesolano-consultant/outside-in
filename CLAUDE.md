@@ -13,7 +13,7 @@
 ## Estructura del sitio
 - Texto introductorio: presenta el espacio, quién soy y su objetivo. Lo redactamos juntas; no lo publiques sin mi aprobación.
 - Portada: "Las 5 tendencias que todo líder debería mirar", cada una con titular, dato de respaldo con fuente e implicancia breve.
-- Matriz interactiva: cruce de industrias con ejes temáticos. Cada casilla muestra cuántos hallazgos tiene y, al hacer clic, abre las fichas.
+- Mapa de tendencias (antes "matriz interactiva"): cruce de industrias con temas. Cada casilla muestra cuántos hallazgos tiene y, al hacer clic, abre las fichas.
 - Fichas de hallazgo, con dos partes separadas visualmente: "Lo que dicen los datos" (con fuente) e "Implicancia para el negocio" (mi análisis).
 - Sección breve "Sobre mí" con link a mi LinkedIn.
 - Botón para cambiar todo el contenido entre español e inglés.

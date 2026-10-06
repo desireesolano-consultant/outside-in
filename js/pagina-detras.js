@@ -18,6 +18,7 @@ function init() {
   }
 
   aplicarIdioma();
+  configurarFranjaVistaPrevia();
   configurarMenuMovil();
   configurarRevelado();
 
@@ -45,8 +46,13 @@ function aplicarIdioma() {
 
   document.getElementById("boton-idioma").textContent = t.botonIdioma;
   document.getElementById("boton-menu").setAttribute("aria-label", t.menuAbrir);
-  document.getElementById("link-linkedin-footer").href = LINK_LINKEDIN_EJEMPLO;
-  document.getElementById("detras-link-linkedin").href = LINK_LINKEDIN_EJEMPLO;
+  document.getElementById("link-linkedin-footer").href = LINK_LINKEDIN;
+  document.getElementById("detras-link-linkedin").href = LINK_LINKEDIN;
+}
+
+function configurarFranjaVistaPrevia() {
+  const franja = document.getElementById("franja-vista-previa");
+  if (franja) franja.hidden = !MODO_VISTA_PREVIA;
 }
 
 function configurarMenuMovil() {

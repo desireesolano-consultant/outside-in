@@ -11,7 +11,7 @@ const TEXTOS = {
     navSobre: "Sobre Outside-In",
     navHallazgos: "Hallazgos",
     navLoQueSigo: "Lo que sigo de cerca",
-    navMatriz: "Matriz",
+    navMatriz: "Mapa de tendencias",
     menuAbrir: "Abrir menú",
     menuCerrar: "Cerrar menú",
 
@@ -49,10 +49,11 @@ const TEXTOS = {
     paso1Titulo: "Rastreo",
     paso1Desc: "Un sistema que construí con Claude Code revisa cada semana nuevos estudios de consultoras, empresas y otras fuentes.",
     paso2Titulo: "Curaduría",
-    paso2Desc: "Leo lo que encuentra, descarto lo irrelevante y elijo lo que vale la pena.",
+    paso2Desc: "Leo con calma lo que encuentra y me quedo con lo que realmente puede aportar.",
     paso3Titulo: "Lectura",
-    paso3Desc: "Publico cada hallazgo con su fuente original y mi interpretación.",
+    paso3Desc: "Lo comparto con su fuente original y mi mirada como consultora.",
     comoFuncionaCierre: "La IA lee mucho. Yo decido qué importa.",
+    comoFuncionaContador: "Esta semana",
     comoFuncionaLeerMas: "Lee cómo lo construí →",
 
     hallazgosEtiqueta: "03 — Hallazgos recientes",
@@ -69,13 +70,25 @@ const TEXTOS = {
     tarjetaIndustriaEtiqueta: "Industria",
     tarjetaVerHallazgos: "Ver hallazgos →",
 
-    matrizEtiqueta: "05 — Matriz",
-    matrizTitulo: "Matriz de tendencias por industria y tema",
+    matrizEtiqueta: "05 — Mapa de tendencias",
+    matrizTitulo: "Mapa de tendencias por industria y tema",
     matrizAyuda: "Haz clic en una casilla para ver los hallazgos.",
 
     senalActualizadoPrefijo: "Actualizado el",
+    senalEstudiosLabel: "estudios revisados",
     senalNuevoSingular: "hallazgo nuevo esta semana",
     senalNuevoPlural: "hallazgos nuevos esta semana",
+
+    franjaVistaPrevia: "Vista previa con datos de ejemplo",
+
+    cfEtiquetaEstudio: "Estudio",
+    cfEtiquetaReporte: "Reporte",
+    cfEtiquetaEncuesta: "Encuesta",
+    cfEtiquetaRanking: "Ranking",
+    cfEtiquetaDatos: "Datos",
+    cfFichaEjemploTitulo: "[EJEMPLO] Un hallazgo recién detectado",
+    cfFichaEjemploFuente: "Fuente de ejemplo",
+    cfFichaEjemploLectura: "Mi lectura: así se vería mi análisis sobre este hallazgo.",
 
     enMiRadarTitulo: "En mi radar",
     enMiRadarAyuda: "Estudios que todavía estoy leyendo, antes de convertirlos en hallazgos.",
@@ -126,7 +139,7 @@ const TEXTOS = {
     navSobre: "About Outside-In",
     navHallazgos: "Findings",
     navLoQueSigo: "What I follow closely",
-    navMatriz: "Matrix",
+    navMatriz: "Trend map",
     menuAbrir: "Open menu",
     menuCerrar: "Close menu",
 
@@ -164,10 +177,11 @@ const TEXTOS = {
     paso1Titulo: "Tracking",
     paso1Desc: "A system I built with Claude Code reviews new studies from consultancies, companies, and other sources every week.",
     paso2Titulo: "Curation",
-    paso2Desc: "I read what it finds, discard what's irrelevant, and choose what's worth sharing.",
+    paso2Desc: "I calmly read through what it finds and keep only what can truly add value.",
     paso3Titulo: "Reading",
-    paso3Desc: "I publish each finding with its original source and my own interpretation.",
+    paso3Desc: "I share it with its original source and my perspective as a consultant.",
     comoFuncionaCierre: "AI reads a lot. I decide what matters.",
+    comoFuncionaContador: "This week",
     comoFuncionaLeerMas: "Read how I built it →",
 
     hallazgosEtiqueta: "03 — Recent findings",
@@ -184,13 +198,25 @@ const TEXTOS = {
     tarjetaIndustriaEtiqueta: "Industry",
     tarjetaVerHallazgos: "See findings →",
 
-    matrizEtiqueta: "05 — Matrix",
-    matrizTitulo: "Trend matrix by industry and topic",
+    matrizEtiqueta: "05 — Trend map",
+    matrizTitulo: "Trend map by industry and topic",
     matrizAyuda: "Click a cell to see the findings.",
 
     senalActualizadoPrefijo: "Updated on",
+    senalEstudiosLabel: "studies reviewed",
     senalNuevoSingular: "new finding this week",
     senalNuevoPlural: "new findings this week",
+
+    franjaVistaPrevia: "Preview with example data",
+
+    cfEtiquetaEstudio: "Study",
+    cfEtiquetaReporte: "Report",
+    cfEtiquetaEncuesta: "Survey",
+    cfEtiquetaRanking: "Ranking",
+    cfEtiquetaDatos: "Data",
+    cfFichaEjemploTitulo: "[EXAMPLE] A finding just detected",
+    cfFichaEjemploFuente: "Example source",
+    cfFichaEjemploLectura: "My take: this is what my analysis of this finding would look like.",
 
     enMiRadarTitulo: "On my radar",
     enMiRadarAyuda: "Studies I'm still reading through, before turning them into findings.",

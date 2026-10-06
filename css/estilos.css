@@ -68,6 +68,19 @@ button {
   50% { transform: scale(1.06); }
 }
 
+/* Franja de vista previa */
+
+.oi-franja-vista-previa {
+  background: var(--oi-naranja);
+  color: var(--oi-negro);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+}
+
 /* Cabecera */
 
 .oi-header {
@@ -349,9 +362,26 @@ button {
 }
 
 .oi-senal-vida {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
   font-weight: 600;
   color: var(--oi-texto-gris);
+}
+
+.oi-punto-vivo {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--oi-naranja);
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .oi-punto-vivo {
+    animation: oi-pul 2.4s ease-in-out infinite;
+  }
 }
 
 .oi-bio-fila {
@@ -473,6 +503,67 @@ button {
   line-height: 1.15;
   color: var(--oi-negro);
   animation: oi-pul 4s ease-in-out infinite;
+}
+
+/* Partículas: salen de cada etiqueta y viajan hacia el centro. La mayoría
+   se desvanece al cruzar el círculo punteado interior; solo dos llegan
+   hasta "Mi mirada". --dx/--dy (en el HTML) son la distancia de cada una
+   hasta el centro. */
+
+.oi-particula {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--oi-naranja);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .oi-particula {
+    animation: oi-particula-desvanece 7s ease-in infinite;
+  }
+  .oi-particula-llega {
+    animation: oi-particula-llega 7s ease-in infinite;
+  }
+
+  @keyframes oi-particula-desvanece {
+    0% {
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+    12% {
+      opacity: 1;
+    }
+    55% {
+      opacity: 0.8;
+    }
+    70% {
+      opacity: 0;
+    }
+    100% {
+      transform: translate(calc(-50% + var(--dx) * 0.65), calc(-50% + var(--dy) * 0.65));
+      opacity: 0;
+    }
+  }
+
+  @keyframes oi-particula-llega {
+    0% {
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+    12% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy)));
+      opacity: 0;
+    }
+  }
 }
 
 /* Etiquetas del diagrama: en vez de centrarlas sobre un punto (lo que hacía
@@ -1272,21 +1363,7 @@ button {
   }
 }
 
-/* 02 Cómo funciona Outside-In */
-
-.oi-pasos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-}
-
-.oi-paso {
-  flex: 1 1 220px;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+/* 02 Cómo funciona Outside-In: scroll anclado en 3 etapas */
 
 .oi-paso-numero {
   font-family: var(--oi-fuente-titulo);
@@ -1297,6 +1374,8 @@ button {
 
 .oi-paso-titulo {
   font-size: 20px;
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 700;
 }
 
 .oi-paso-desc {
@@ -1311,6 +1390,187 @@ button {
   font-size: clamp(22px, 2.6vw, 30px);
   letter-spacing: -0.01em;
   max-width: 760px;
+}
+
+.oi-cf-contador {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--oi-texto-gris);
+}
+
+.oi-cf-pin-contenedor {
+  position: relative;
+}
+
+.oi-cf-pin {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px;
+  padding: 32px 0;
+  box-sizing: border-box;
+}
+
+.oi-cf-pasos {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.oi-cf-paso-boton {
+  font: inherit;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--oi-borde);
+  padding: 4px 0 4px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: default;
+  opacity: 0.4;
+  transition: opacity 0.4s ease, border-color 0.4s ease;
+}
+
+.oi-cf-paso-boton.oi-cf-activo {
+  opacity: 1;
+  border-left-color: var(--oi-azul);
+}
+
+.oi-cf-escenario {
+  flex: 1 1 380px;
+  position: relative;
+  min-height: 360px;
+}
+
+.oi-cf-etapa {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  background: var(--oi-fondo-alt);
+  border-radius: 12px;
+  padding: 28px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.oi-cf-etapa.oi-cf-activo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.oi-cf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: flex-start;
+  height: 100%;
+}
+
+.oi-cf-chip {
+  flex: 0 0 auto;
+  background: var(--oi-blanco);
+  border: 1px solid var(--oi-borde);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--oi-texto-gris-2);
+}
+
+.oi-cf-etapa-rastreo .oi-cf-chip {
+  animation: oi-cf-entrar 4s ease-in-out infinite;
+}
+
+.oi-cf-filtro {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--oi-naranja);
+  opacity: 0.6;
+}
+
+.oi-cf-descartado {
+  opacity: 0.35;
+  filter: grayscale(1);
+}
+
+.oi-cf-elegido {
+  background: var(--oi-naranja);
+  color: var(--oi-negro);
+  border-color: var(--oi-naranja);
+  animation: oi-pul 3s ease-in-out infinite;
+}
+
+.oi-cf-ficha-ejemplo {
+  background: var(--oi-blanco);
+  border: 1px solid var(--oi-borde);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 360px;
+}
+
+.oi-cf-ficha-titulo {
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.oi-cf-ficha-fuente {
+  font-size: 13px;
+  color: var(--oi-texto-gris);
+  margin-bottom: 12px;
+}
+
+.oi-cf-ficha-capsulas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.oi-cf-ficha-lectura {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--oi-texto-gris-2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes oi-cf-entrar {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(6px);
+    }
+  }
+}
+
+/* Celular o "reducir movimiento": nada anclado, las 3 etapas se leen una
+   debajo de otra; el escenario animado se oculta porque está pensado para
+   acompañar el scroll anclado, no para verse suelto. */
+
+.oi-cf-estatico .oi-cf-pin {
+  position: static;
+  min-height: 0;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.oi-cf-estatico .oi-cf-paso-boton {
+  opacity: 1;
+}
+
+.oi-cf-estatico .oi-cf-escenario {
+  display: none;
 }
 
 /* En mi radar */

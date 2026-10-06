@@ -34,7 +34,7 @@ const INTRO = {
   },
 };
 
-const LINK_LINKEDIN_EJEMPLO = "#";
+const LINK_LINKEDIN = "https://www.linkedin.com/in/desiree-solano-baba59131/";
 
 // Cita destacada del banner, antes de la matriz. Es la misma frase real de
 // la carta de bienvenida (INTRO), no un texto nuevo.
