@@ -95,6 +95,18 @@ function renderizarHallazgo() {
   document.getElementById("hallazgo-titulo").textContent = titulo;
   document.getElementById("hallazgo-fuente-linea").textContent = `${h.fuente} · ${texto(h, "estudio")}`;
 
+  const figura = document.getElementById("hallazgo-foto");
+  const imagen = typeof imagenDeHallazgo === "function" ? imagenDeHallazgo(h) : null;
+  if (imagen) {
+    const img = document.getElementById("hallazgo-foto-img");
+    img.src = urlImagen(imagen, 1600);
+    img.onerror = () => { figura.hidden = true; };
+    document.getElementById("hallazgo-foto-credito").textContent = `${t.fotoCredito} ${imagen.autor} / Unsplash`;
+    figura.hidden = false;
+  } else {
+    figura.hidden = true;
+  }
+
   const capsulas = document.getElementById("hallazgo-capsulas");
   capsulas.innerHTML = "";
   const tema = h.tema ? TEMAS.find((tm) => tm.id === h.tema) : null;
@@ -170,7 +182,16 @@ function renderizarHallazgo() {
   const tituloLectura = document.createElement("h2");
   tituloLectura.className = "oi-hallazgo-subtitulo";
   tituloLectura.textContent = t.miMiradaTitulo;
-  lectura.appendChild(tituloLectura);
+  const cabeceraLectura = document.createElement("div");
+  cabeceraLectura.className = "oi-mirada-cabecera";
+  const fotoLectura = document.createElement("img");
+  fotoLectura.className = "oi-foto-perfil oi-foto-mirada";
+  fotoLectura.src = "img/desiree-mirada.jpg";
+  fotoLectura.alt = "Desiree Solano";
+  fotoLectura.width = 56;
+  fotoLectura.height = 56;
+  cabeceraLectura.append(fotoLectura, tituloLectura);
+  lectura.appendChild(cabeceraLectura);
   const textoLectura = texto(h, "implicancia");
   if (textoLectura) {
     const p = document.createElement("p");

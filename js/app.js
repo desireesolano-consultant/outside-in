@@ -421,6 +421,7 @@ function renderizarEntender() {
     portada.type = "button";
     portada.className = `oi-cover oi-cover-${(indice % 4) + 1} oi-cover-clicable`;
     portada.addEventListener("click", () => abrirFichaUnica(h));
+    if (typeof agregarFotoPortada === "function") agregarFotoPortada(portada, h);
 
     if (MODO_VISTA_PREVIA && VISTA_PREVIA.hallazgosNuevosIds.includes(h.id)) {
       const insignia = document.createElement("span");
@@ -601,6 +602,7 @@ function crearTarjetaResultado(h, indice) {
 
   const portada = document.createElement("div");
   portada.className = `oi-cover oi-cover-${(indice % 4) + 1}`;
+  if (typeof agregarFotoPortada === "function") agregarFotoPortada(portada, h);
   if (MODO_VISTA_PREVIA && VISTA_PREVIA.hallazgosNuevosIds.includes(h.id)) {
     const insignia = document.createElement("span");
     insignia.className = "oi-insignia-nuevo";
