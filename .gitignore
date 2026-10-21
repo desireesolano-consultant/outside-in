@@ -1,0 +1,6 @@
+# Archivos del sistema y de herramientas: no se publican
+.DS_Store
+.claude/
+
+# Referencia de diseño de trabajo: no es parte de la web
+outside-in-diseno-referencia.html
