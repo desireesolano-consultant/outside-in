@@ -28,7 +28,7 @@ const TEXTOS = {
     heroParrafo1:
       "Mi trabajo siempre empieza por el mismo lugar: entender qué está pasando. Leer el contexto, encontrar el insight que importa y convertirlo en estrategia y en comunicación, que para mí es la herramienta más poderosa de cualquier transformación. Outside-In nace de esa forma de trabajar, la que creo que todo consultor debería tener.",
     heroParrafo2:
-      "Aquí leo lo que publican grandes consultoras, empresas y otras fuentes sobre lo que está cambiando, y te comparto mi mirada. No busco decirte qué hacer, porque cada organización es un mundo. Quiero que encuentres la información que te sirve y la lleves a tu propia realidad.",
+      "Aquí reúno estudios públicos sobre lo que está cambiando en las organizaciones, y te comparto mi mirada. No busco decirte qué hacer, porque cada organización es un mundo. Quiero que encuentres la información que te sirve y la lleves a tu propia realidad.",
     heroCtaPrimario: "Empieza por entender",
     heroCtaSecundario: "Así automaticé Outside-In →",
 
@@ -47,8 +47,8 @@ const TEXTOS = {
     sobreBoton: "Por qué creé Outside-In",
 
     entenderEtiqueta: "01 — Entender",
-    entenderTitulo: "Mi análisis por tema e industria",
-    entenderBajada: "Mis lecturas sobre un tema o una industria en particular, cada una con su fuente original y mi mirada.",
+    entenderTitulo: "Los estudios, uno por uno",
+    entenderBajada: "Cada tarjeta es un estudio público sobre un tema o una industria. Ábrela para leer el resumen completo, las cifras clave y el link al original. Mi mirada como consultora se va sumando dentro de cada estudio.",
     entenderVerConexiones: "Ver conexiones →",
     verHallazgoCompleto: "Ver hallazgo completo →",
     hallazgoVolver: "← Volver a los hallazgos",
@@ -58,6 +58,16 @@ const TEXTOS = {
     firmaProceso: "Lo diseñé y lo superviso yo, Desiree Solano: los criterios, las fuentes y lo que se publica son decisiones mías.",
     firmaDetras: "Por Desiree Solano · Comunicación organizacional, gestión del cambio y transformación",
     fotoCredito: "Foto:",
+    sobreFotoPie: "Desiree Solano · Creé, diseñé y automaticé este espacio.",
+    guiaTitulo: "Cómo leer Outside-In",
+    guiaEntender: "Los estudios, uno por uno. Cada uno trata un tema o una industria y se abre en una página con el resumen, las cifras y el link al original.",
+    guiaConectar: "Donde un tema se cruza con una industria. Eliges, por ejemplo, IA y servicios financieros, y ves qué dicen los estudios sobre ese cruce.",
+    guiaAnticipar: "Estudios que acabo de detectar o que están por salir. Todavía no tienen un resumen publicado, pero conviene tenerlos en el radar.",
+    guiaMirada: "Primero están los datos, siempre con su fuente. Mi mirada como consultora va dentro de cada estudio: cuando todavía no la escribí, lo verás marcado como “Mi lectura: en camino”.",
+    buscadorPlaceholder: "Busca un tema: IA, banca, cultura…",
+    buscadorSinResultados: "No encontré estudios sobre eso todavía. Prueba con IA, cambio, cultura, banca, salud o consumo.",
+    buscadorResultados: "estudios",
+    buscadorResultado: "estudio",
     miMiradaTitulo: "Mi mirada",
     hallazgoContextoTitulo: "Sobre el estudio",
     hallazgoLeerOriginal: "Leer el estudio original →",
@@ -177,7 +187,7 @@ const TEXTOS = {
     heroParrafo1:
       "My work always starts in the same place: understanding what's happening. Reading the context, finding the insight that matters, and turning it into strategy and communication — which, to me, is the most powerful tool in any transformation. Outside-In grew out of that way of working, the one I believe every consultant should have.",
     heroParrafo2:
-      "Here I read what major consulting firms, companies, and other sources publish about what's changing, and I share my perspective with you. I'm not trying to tell you what to do, because every organization is its own world. I want you to find the information that's useful to you and bring it into your own reality.",
+      "Here I gather public studies on what's changing in organizations, and I share my perspective with you. I'm not trying to tell you what to do, because every organization is its own world. I want you to find the information that's useful to you and bring it into your own reality.",
     heroCtaPrimario: "Start by understanding",
     heroCtaSecundario: "How I automated Outside-In →",
 
@@ -196,8 +206,8 @@ const TEXTOS = {
     sobreBoton: "Why I created Outside-In",
 
     entenderEtiqueta: "01 — Understand",
-    entenderTitulo: "My analysis by topic and industry",
-    entenderBajada: "My take on a single topic or industry, each with its original source and my perspective.",
+    entenderTitulo: "The studies, one by one",
+    entenderBajada: "Each card is a public study on a topic or an industry. Open it to read the full summary, the key figures and the link to the original. My take as a consultant is added inside each study.",
     entenderVerConexiones: "See connections →",
     verHallazgoCompleto: "See full finding →",
     hallazgoVolver: "← Back to findings",
@@ -207,6 +217,16 @@ const TEXTOS = {
     firmaProceso: "I designed it and I oversee it, Desiree Solano: the criteria, the sources and what gets published are my calls.",
     firmaDetras: "By Desiree Solano · Organizational communication, change management and transformation",
     fotoCredito: "Photo:",
+    sobreFotoPie: "Desiree Solano · I created, designed and automated this space.",
+    guiaTitulo: "How to read Outside-In",
+    guiaEntender: "The studies, one by one. Each covers a topic or an industry and opens into a page with the summary, the figures and the link to the original.",
+    guiaConectar: "Where a topic meets an industry. Pick, for example, AI and financial services, and see what the studies say about that intersection.",
+    guiaAnticipar: "Studies I just spotted or that are about to come out. They don't have a published summary yet, but they're worth keeping on the radar.",
+    guiaMirada: "The data comes first, always with its source. My take as a consultant goes inside each study: when I haven't written it yet, you'll see it marked as “My take: coming soon”.",
+    buscadorPlaceholder: "Search a topic: AI, banking, culture…",
+    buscadorSinResultados: "No studies on that yet. Try AI, change, culture, banking, health or consumer.",
+    buscadorResultados: "studies",
+    buscadorResultado: "study",
     miMiradaTitulo: "My take",
     hallazgoContextoTitulo: "About the study",
     hallazgoLeerOriginal: "Read the original study →",

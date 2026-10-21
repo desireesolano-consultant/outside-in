@@ -73,7 +73,7 @@ function init() {
     });
   });
 
-  document.querySelectorAll(".oi-cf-progreso-boton").forEach((boton) => {
+  document.querySelectorAll(".oi-cf-progreso-boton, .oi-cf-paso-boton").forEach((boton) => {
     boton.addEventListener("click", () => saltarAEtapaAsiAutomatice(Number(boton.dataset.etapa)));
   });
 
@@ -929,6 +929,8 @@ function actualizarPanelEnVivo() {
 }
 
 let cfInfo = null;
+// Mientras el scroll viaja tras un clic, no se cambia la etapa elegida.
+let cfBloqueoHasta = 0;
 
 function configurarAsiAutomaticeSticky() {
   const contenedor = document.getElementById("cf-pin-contenedor");
@@ -948,8 +950,8 @@ function configurarAsiAutomaticeSticky() {
   }
 
   contenedor.classList.remove("oi-cf-estatico");
-  // Las 3 etapas completas deben caber en ~1.5 pantallas de scroll.
-  const desplazable = Math.round(window.innerHeight * 1.5);
+  // Más corto: cada paso cambia con poco scroll (antes era 1.5 pantallas).
+  const desplazable = Math.round(window.innerHeight * 0.75);
   contenedor.style.height = `${pin.offsetHeight + desplazable}px`;
   cfInfo = { contenedor, desplazable };
   actualizarAsiAutomaticeSticky();
@@ -963,6 +965,7 @@ function actualizarAsiAutomaticeSticky() {
   const rect = contenedor.getBoundingClientRect();
   const progreso = Math.min(1, Math.max(0, -rect.top / desplazable));
   const etapa = progreso < 0.33 ? 0 : progreso < 0.66 ? 1 : 2;
+  if (Date.now() < cfBloqueoHasta) return;
   activarEtapaAsiAutomatice(etapa);
 }
 
@@ -977,6 +980,7 @@ function activarEtapaAsiAutomatice(etapa) {
 
 // Al hacer clic en 01/02/03, salta el scroll a la mitad de esa etapa.
 function saltarAEtapaAsiAutomatice(etapa) {
+  activarEtapaAsiAutomatice(etapa);
   if (!cfInfo) {
     const contenedor = document.getElementById("cf-pin-contenedor");
     if (contenedor) contenedor.scrollIntoView({ behavior: prefiereMovimientoReducido() ? "auto" : "smooth" });
@@ -985,6 +989,7 @@ function saltarAEtapaAsiAutomatice(etapa) {
 
   const { contenedor, desplazable } = cfInfo;
   const progresoObjetivo = (etapa + 0.5) / 3;
+  cfBloqueoHasta = Date.now() + 900;
   const rect = contenedor.getBoundingClientRect();
   const scrollActual = window.scrollY || window.pageYOffset;
   const topAbsoluto = rect.top + scrollActual;

@@ -80,7 +80,7 @@
             <span id="senal-vida-texto"></span>
           </button>
           <div class="oi-bio-fila">
-            <img class="oi-foto-perfil oi-foto-hero" src="img/desiree-hero.jpg" alt="Desiree Solano" width="88" height="88" />
+            <img class="oi-foto-perfil oi-foto-hero" src="img/desiree-hero.jpg?v=2" alt="Desiree Solano" width="88" height="88" />
             <div class="oi-bio-texto">
               <p class="oi-bio-nombre" data-i18n="heroSaludo"></p>
               <p class="oi-bio-cargo" data-i18n="heroCargo"></p>
@@ -146,10 +146,36 @@
     <section id="sobre" class="oi-sobre">
       <div class="oi-sobre-inner">
         <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="sobreEtiqueta"></div>
+        <div class="oi-sobre-fotos oi-reveal">
+          <img class="oi-sobre-foto-principal" src="img/desiree-sobre.jpg" alt="Desiree Solano" width="360" height="360" loading="lazy" />
+          <img class="oi-sobre-foto-secundaria" src="img/desiree-sobre-2.jpg" alt="" width="180" height="180" loading="lazy" />
+          <p class="oi-sobre-foto-pie" data-i18n="sobreFotoPie"></p>
+        </div>
         <div class="oi-sobre-contenido">
           <blockquote class="oi-sobre-cita oi-reveal" data-i18n="sobreCita"></blockquote>
           <p class="oi-sobre-parrafo oi-reveal" id="sobre-parrafo"></p>
           <button type="button" id="boton-sobre" class="oi-boton oi-boton-claro" data-i18n="sobreBoton"></button>
+        </div>
+        <div class="oi-sobre-guia">
+          <h3 class="oi-sobre-guia-titulo oi-reveal" data-i18n="guiaTitulo"></h3>
+          <div class="oi-sobre-guia-grid">
+            <a href="#entender" class="oi-sobre-guia-item oi-reveal">
+              <span class="oi-sobre-guia-num">01</span>
+              <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra1"></span>
+              <span class="oi-sobre-guia-texto" data-i18n="guiaEntender"></span>
+            </a>
+            <a href="#aterrizar" class="oi-sobre-guia-item oi-reveal">
+              <span class="oi-sobre-guia-num">02</span>
+              <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra2"></span>
+              <span class="oi-sobre-guia-texto" data-i18n="guiaConectar"></span>
+            </a>
+            <a href="#descubrir" class="oi-sobre-guia-item oi-reveal">
+              <span class="oi-sobre-guia-num">03</span>
+              <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra3"></span>
+              <span class="oi-sobre-guia-texto" data-i18n="guiaAnticipar"></span>
+            </a>
+          </div>
+          <p class="oi-sobre-guia-nota oi-reveal" data-i18n="guiaMirada"></p>
         </div>
       </div>
     </section>
@@ -322,5 +348,6 @@
   <script src="js/imagenes.js"></script>
   <script src="js/vista-previa.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/buscador.js"></script>
 </body>
 </html>
