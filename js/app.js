@@ -723,13 +723,30 @@ function renderizarChipsAsiAutomatice() {
   }
 }
 
+// La ficha del paso 03 muestra el último estudio publicado de verdad.
 function renderizarFichaEjemploAsiAutomatice() {
-  const tema = TEMAS[1];
-  const industria = INDUSTRIAS[0];
+  const t = TEXTOS[idioma];
+  const reales = HALLAZGOS.filter((h) => h.esEjemplo === false);
+  if (reales.length === 0) return;
+  const h = reales
+    .slice()
+    .sort((a, b) => String(b.publicado || b.fecha).localeCompare(String(a.publicado || a.fecha)) || String(b.fecha).localeCompare(String(a.fecha)))[0];
+  const ficha = document.getElementById("cf-ficha-real");
+  if (!ficha) return;
+  ficha.href = urlHallazgo(h);
+  document.getElementById("cf-ficha-etiqueta").textContent = t.cfFichaUltimo;
+  document.getElementById("cf-ficha-titulo").textContent = idioma === "es" ? h.hallazgo_es : h.hallazgo_en;
+  document.getElementById("cf-ficha-fuente").textContent = `${h.fuente} · ${idioma === "es" ? h.estudio_es : h.estudio_en}`;
+  const tema = TEMAS.find((x) => x.id === h.tema);
+  const industria = INDUSTRIAS.find((x) => x.id === h.industria);
   const capsulaTema = document.getElementById("cf-capsula-tema");
   const capsulaIndustria = document.getElementById("cf-capsula-industria");
-  if (capsulaTema) capsulaTema.textContent = idioma === "es" ? tema.es : tema.en;
-  if (capsulaIndustria) capsulaIndustria.textContent = idioma === "es" ? industria.es : industria.en;
+  capsulaTema.textContent = tema ? tema[idioma] : "";
+  capsulaTema.hidden = !tema;
+  capsulaIndustria.textContent = industria ? industria[idioma] : "";
+  capsulaIndustria.hidden = !industria;
+  const tieneLectura = Boolean(idioma === "es" ? h.implicancia_es : h.implicancia_en);
+  document.getElementById("cf-ficha-lectura").textContent = tieneLectura ? t.cfFichaConLectura : t.lecturaPendienteEtiqueta;
 }
 
 // ---- Contador "en vivo": el panel del menú y el cierre de "Así

@@ -2181,3 +2181,6 @@ body.oi-menu-bloqueo {
   .oi-header-acciones { gap: 6px; }
   .oi-sobre-foto-secundaria { right: -8px; }
 }
+a.oi-cf-ficha-ejemplo { display: block; text-decoration: none; color: var(--oi-negro); transition: border-color 0.2s ease; }
+a.oi-cf-ficha-ejemplo:hover { border-color: var(--oi-azul); }
+.oi-capsula[hidden] { display: none; }
