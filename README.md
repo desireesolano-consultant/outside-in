@@ -25,6 +25,8 @@ funcionando** (regla del proyecto, ver `CLAUDE.md`).
 - `js/textos.js` — textos fijos de la interfaz, en español e inglés.
 - `js/datos.js` — contenido: carta de bienvenida, industrias, temas y
   hallazgos. **Este es el archivo que la automatización va a actualizar.**
+- `js/contador.js` — números reales del contador "en vivo" (revisados → seleccionados → publicados) y la fecha de la última búsqueda (`actualizado`). La búsqueda semanal lo actualiza.
+- `hallazgo.html` + `js/pagina-hallazgo.js` — página completa de cada hallazgo.
 - `js/radar.js` — estudios detectados que todavía no se convirtieron en
   hallazgos. Está separado de `datos.js` a propósito, para que la
   automatización pueda escribir aquí sin tocar los hallazgos ya publicados.
@@ -48,7 +50,16 @@ funcionando** (regla del proyecto, ver `CLAUDE.md`).
 | `hallazgo_es` / `hallazgo_en` | El título/resumen de "lo que dicen los datos", con palabras propias (nunca copiar párrafos del informe). |
 | `dato_clave_es` / `dato_clave_en` | La cifra o dato puntual más importante del hallazgo. |
 | `implicancia_es` / `implicancia_en` | "Mi lectura": el análisis de Desiree sobre ese hallazgo. |
-| `estado` | `"BORRADOR"` hasta que Desiree lo apruebe. Nunca se publica sin su aprobación. |
+| `subtema` | Subtema dentro del tema paraguas (ver `criterios-deteccion.md`), o `null`. |
+| `publicado` | Fecha en que el hallazgo se publicó en Outside-In, `"AAAA-MM-DD"`. Define la etiqueta "Nuevo" (últimos 7 días). |
+| `contexto_es` / `contexto_en` | Sobre el estudio: quién lo hizo, muestra, geografía y fechas del trabajo de campo. |
+| `puntos_es` / `puntos_en` | Lista de 3 a 6 cifras o hallazgos clave, con palabras propias. Se muestran en la página completa del hallazgo. |
+| `lecturaEstado` | `"pendiente"` mientras Desiree no escriba su lectura; `"publicada"` cuando la escribe. |
+| `estado` | `"PUBLICADO"` para hallazgos publicados. `"BORRADOR"` solo si una lectura de Desiree está en revisión. |
+
+Cada hallazgo tiene su página completa en `hallazgo.html?id=<id>` (lógica en
+`js/pagina-hallazgo.js`). `implicancia_es` / `implicancia_en` ("Mi lectura")
+la escribe solo Desiree: si está en `null`, la web muestra "Mi lectura: en camino".
 
 Reglas que ya están aplicadas en el sitio y que la automatización debe
 respetar:

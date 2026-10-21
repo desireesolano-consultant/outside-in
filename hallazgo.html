@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hallazgo · Outside-In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <div id="franja-vista-previa" class="oi-franja-vista-previa" data-i18n="franjaVistaPrevia" hidden></div>
+  <header class="oi-header">
+    <div class="oi-header-inner">
+      <a href="index.html#inicio" class="oi-logo">
+        <span class="oi-logo-circulo"><span class="oi-logo-punto"></span></span>
+        Outside-In
+      </a>
+      <nav id="oi-nav" class="oi-nav">
+        <a href="index.html#sobre" data-i18n="navSobre"></a>
+        <a href="index.html#entender" data-i18n="navEntender"></a>
+        <a href="index.html#aterrizar" data-i18n="navConectar"></a>
+        <a href="index.html#descubrir" data-i18n="navAnticipar"></a>
+        <a href="index.html#asi-automatice" data-i18n="navAsiAutomatice"></a>
+      </nav>
+      <div class="oi-header-acciones">
+        <button id="boton-idioma" class="boton-idioma" type="button"></button>
+        <button id="boton-menu" class="oi-boton-menu" type="button" aria-expanded="false" aria-controls="oi-nav">
+          <span class="oi-menu-linea"></span>
+          <span class="oi-menu-linea"></span>
+          <span class="oi-menu-linea"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article id="hallazgo" class="oi-hallazgo-pagina">
+      <section class="oi-seccion-ancha oi-hallazgo-hero">
+        <a href="index.html#entender" class="oi-hallazgo-volver" data-i18n="hallazgoVolver"></a>
+        <div id="hallazgo-capsulas" class="oi-hallazgo-capsulas"></div>
+        <h1 id="hallazgo-titulo" class="oi-titulo-pagina oi-hallazgo-titulo"></h1>
+        <p id="hallazgo-fuente-linea" class="oi-hallazgo-fuente-linea"></p>
+      </section>
+
+      <section class="oi-seccion-ancha oi-hallazgo-cuerpo">
+        <div class="oi-hallazgo-principal">
+          <h2 class="oi-hallazgo-subtitulo" data-i18n="hallazgoPuntosTitulo"></h2>
+          <ol id="hallazgo-puntos" class="oi-hallazgo-puntos"></ol>
+
+          <h2 class="oi-hallazgo-subtitulo" data-i18n="hallazgoContextoTitulo"></h2>
+          <p id="hallazgo-contexto" class="oi-hallazgo-contexto"></p>
+
+          <div id="hallazgo-lectura" class="oi-hallazgo-lectura"></div>
+        </div>
+
+        <aside class="oi-hallazgo-ficha">
+          <dl id="hallazgo-metadatos" class="metadatos"></dl>
+          <a id="hallazgo-link" class="oi-boton oi-boton-primario oi-hallazgo-boton-fuente" target="_blank" rel="noopener" data-i18n="hallazgoLeerOriginal"></a>
+          <p class="oi-hallazgo-nota-publica" data-i18n="hallazgoNotaPublica"></p>
+        </aside>
+      </section>
+    </article>
+
+    <section id="hallazgo-no-encontrado" class="oi-seccion-ancha oi-pagina-hero" hidden>
+      <h1 class="oi-titulo-pagina" data-i18n="hallazgoNoEncontrado"></h1>
+      <a href="index.html#entender" class="oi-boton oi-boton-primario" data-i18n="detrasCtaHallazgos"></a>
+    </section>
+  </main>
+
+  <footer class="oi-footer">
+    <div class="oi-footer-inner">
+      <div class="oi-footer-top">
+        <div class="oi-footer-marca">Outside-In</div>
+        <div class="oi-footer-nav">
+          <a href="index.html#entender" data-i18n="navEntender"></a>
+          <a href="index.html#aterrizar" data-i18n="navConectar"></a>
+          <a href="index.html#descubrir" data-i18n="navAnticipar"></a>
+          <a href="index.html#asi-automatice" data-i18n="navAsiAutomatice"></a>
+          <a id="link-linkedin-footer" href="#" target="_blank" rel="noopener" data-i18n="linkedinFooter"></a>
+        </div>
+      </div>
+      <div class="oi-footer-bottom" data-i18n="subtitulo"></div>
+      <div class="oi-footer-firma" data-i18n="footerFirma"></div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/textos.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/pagina-hallazgo.js"></script>
+</body>
+</html>

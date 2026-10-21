@@ -180,9 +180,12 @@ function diasDesde(fechaIso) {
   return Math.floor((ahora - fecha) / msPorDia);
 }
 
+// "Nuevo" = publicado en Outside-In en los últimos 7 días ("publicado"),
+// no la fecha en que la consultora sacó el estudio ("fecha").
 function esReciente(h) {
-  if (h.esEjemplo !== false || !h.fecha) return false;
-  const dias = diasDesde(h.fecha);
+  const fechaEnLaWeb = h.publicado || h.fecha;
+  if (h.esEjemplo !== false || !fechaEnLaWeb) return false;
+  const dias = diasDesde(fechaEnLaWeb);
   return dias >= 0 && dias <= 7;
 }
 
@@ -210,7 +213,12 @@ function calcularSenalesDeVida() {
       ? CONTADOR.desdeInicio.revisados
       : (typeof RADAR_ESTUDIOS !== "undefined" ? RADAR_ESTUDIOS.length : 0) + reales.length;
 
-  return { fechaTexto: formatearFecha(fechaMasReciente), estudiosRevisados, hallazgosNuevos };
+  // "Actualizado el" = la fecha de la última búsqueda del sistema (contador.js),
+  // no la fecha de publicación del estudio más reciente.
+  const fechaActualizacion =
+    typeof CONTADOR !== "undefined" && CONTADOR.actualizado ? CONTADOR.actualizado : fechaMasReciente;
+
+  return { fechaTexto: formatearFecha(fechaActualizacion), estudiosRevisados, hallazgosNuevos };
 }
 
 function renderizarSenalVida() {
@@ -439,30 +447,23 @@ function renderizarEntender() {
     nombre.className = "oi-scrollx-nombre";
     nombre.textContent = idioma === "es" ? h.hallazgo_es : h.hallazgo_en;
 
-    const enlace = document.createElement("button");
-    enlace.type = "button";
+    const enlace = document.createElement("a");
     enlace.className = "oi-scrollx-enlace";
-    enlace.textContent = t.entenderVerConexiones;
-    enlace.addEventListener("click", () => irAAterrizar(h.tema, h.industria));
+    enlace.href = urlHallazgo(h);
+    enlace.textContent = t.verHallazgoCompleto;
 
     tarjeta.append(portada, capsula, nombre, enlace);
     contenedor.appendChild(tarjeta);
   });
 }
 
-function abrirFichaUnica(h) {
-  const industria = h.industria ? INDUSTRIAS.find((i) => i.id === h.industria) : null;
-  const tema = h.tema ? TEMAS.find((tm) => tm.id === h.tema) : null;
-  const partes = [];
-  if (industria) partes.push(idioma === "es" ? industria.es : industria.en);
-  if (tema) partes.push(idioma === "es" ? tema.es : tema.en);
+// Cada hallazgo tiene su propia página completa (hallazgo.html).
+function urlHallazgo(h) {
+  return `hallazgo.html?id=${encodeURIComponent(h.id)}`;
+}
 
-  const modal = document.getElementById("modal-fichas");
-  document.getElementById("modal-titulo").textContent = partes.join(" · ");
-  const cuerpo = document.getElementById("modal-cuerpo");
-  cuerpo.innerHTML = "";
-  cuerpo.appendChild(crearFicha(h));
-  modal.showModal();
+function abrirFichaUnica(h) {
+  window.location.href = urlHallazgo(h);
 }
 
 // ---- Scroll horizontal anclado de "Entender" ----

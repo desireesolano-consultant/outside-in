@@ -949,6 +949,7 @@ button {
 }
 
 .oi-scrollx-enlace {
+  text-decoration: none;
   color: var(--oi-blanco);
   font-weight: 600;
   font-size: 15px;
@@ -1785,4 +1786,119 @@ body.oi-menu-bloqueo {
 .nota-lectura-pendiente {
   font-style: italic;
   opacity: 0.7;
+}
+
+/* ---- Página completa de un hallazgo (hallazgo.html) ---- */
+.oi-hallazgo-hero {
+  padding-top: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--oi-borde);
+}
+.oi-hallazgo-volver {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--oi-texto-gris);
+  text-decoration: none;
+  font-size: 15px;
+}
+.oi-hallazgo-volver:hover { color: var(--oi-azul); }
+.oi-hallazgo-capsulas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.oi-hallazgo-titulo {
+  max-width: 900px;
+  font-size: clamp(30px, 4.5vw, 52px);
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+.oi-hallazgo-fuente-linea {
+  color: var(--oi-texto-gris);
+  font-size: 17px;
+  margin: 0;
+}
+.oi-hallazgo-cuerpo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 56px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  align-items: start;
+}
+.oi-hallazgo-subtitulo {
+  font-family: var(--oi-fuente-titulo);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--oi-texto-gris);
+  margin: 0 0 16px;
+}
+.oi-hallazgo-puntos {
+  list-style: none;
+  counter-reset: punto;
+  padding: 0;
+  margin: 0 0 48px;
+}
+.oi-hallazgo-puntos li {
+  counter-increment: punto;
+  position: relative;
+  padding: 18px 0 18px 52px;
+  border-top: 1px solid var(--oi-borde);
+  font-size: 19px;
+  line-height: 1.5;
+}
+.oi-hallazgo-puntos li::before {
+  content: counter(punto, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 18px;
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 800;
+  color: var(--oi-azul);
+}
+.oi-hallazgo-contexto {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--oi-texto-gris-2);
+  margin: 0 0 48px;
+}
+.oi-hallazgo-lectura {
+  background: var(--oi-fondo-alt);
+  border-radius: 12px;
+  padding: 28px;
+}
+.oi-hallazgo-lectura p { font-size: 18px; line-height: 1.6; margin: 12px 0 0; }
+.oi-hallazgo-ficha {
+  position: sticky;
+  top: 100px;
+  border: 1px solid var(--oi-borde);
+  border-radius: 12px;
+  padding: 24px;
+}
+.oi-hallazgo-ficha .metadatos { margin: 0 0 24px; }
+.oi-hallazgo-boton-fuente {
+  display: block;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.oi-hallazgo-nota-publica {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--oi-texto-gris);
+  margin: 16px 0 0;
+}
+@media (max-width: 860px) {
+  .oi-hallazgo-cuerpo { grid-template-columns: 1fr; gap: 32px; }
+  .oi-hallazgo-ficha { position: static; order: -1; }
+  .oi-hallazgo-puntos li { font-size: 17px; padding-left: 44px; }
+}
+
+/* Las secciones con el atributo hidden no se muestran, aunque tengan display propio */
+#hallazgo[hidden],
+#hallazgo-no-encontrado[hidden] {
+  display: none !important;
 }
