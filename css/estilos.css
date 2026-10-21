@@ -1483,7 +1483,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  cursor: default;
+  cursor: pointer;
   opacity: 0.4;
   transition: opacity 0.4s ease, border-color 0.4s ease;
 }
@@ -1988,17 +1988,17 @@ body.oi-menu-bloqueo {
   box-shadow: 0 0 0 4px var(--oi-blanco), 0 0 0 6px var(--oi-naranja);
 }
 .oi-foto-hero { width: 88px; height: 88px; }
-.oi-foto-firma { width: 64px; height: 64px; }
+.oi-foto-firma { width: 104px; height: 104px; }
 .oi-foto-mirada { width: 56px; height: 56px; }
 
 .oi-firma {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-top: 10px;
-  max-width: 640px;
+  gap: 24px;
+  margin-top: 16px;
+  max-width: 760px;
 }
-.oi-firma p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--oi-gris-texto, #555); }
+.oi-firma p { margin: 0; font-size: 20px; line-height: 1.45; color: var(--oi-gris-texto, #555); }
 
 .oi-mirada-cabecera { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
 .oi-mirada-cabecera .oi-hallazgo-subtitulo { margin: 0; }
@@ -2129,29 +2129,20 @@ body.oi-menu-bloqueo {
 }
 
 /* ===== Sobre Outside-In con fotos y guía ===== */
-.oi-sobre-inner { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 56px 64px; align-items: start; }
+.oi-sobre-inner { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 56px 64px; align-items: start; }
 .oi-sobre-inner > .oi-etiqueta-seccion { grid-column: 1 / -1; }
-.oi-sobre-fotos { position: relative; padding-bottom: 70px; }
-.oi-sobre-foto-principal {
+.oi-sobre-fotos { position: relative; display: flex; flex-direction: column; align-items: center; }
+.oi-sobre-circulo { position: absolute; width: 88%; aspect-ratio: 1; border-radius: 50%; background: var(--oi-naranja); top: 48px; left: 6%; }
+.oi-sobre-recorte {
+  position: relative;
   width: 100%;
   height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 6px;
   display: block;
+  -webkit-mask-image: linear-gradient(#000 82%, transparent);
+  mask-image: linear-gradient(#000 82%, transparent);
 }
-.oi-sobre-foto-secundaria {
-  position: absolute;
-  right: -24px;
-  bottom: 24px;
-  width: 44%;
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 6px solid var(--oi-azul);
-}
-.oi-sobre-foto-pie { position: absolute; left: 0; bottom: 0; width: 60%; margin: 0; font-size: 13px; line-height: 1.4; opacity: 0.85; }
+.oi-sobre-foto-pie { margin: 12px 0 0; text-align: center; font-size: 14px; opacity: 0.9; }
+.oi-sobre-foto-pie strong { display: block; font: 700 20px var(--oi-fuente-titulo); margin-bottom: 2px; }
 .oi-sobre-guia { grid-column: 1 / -1; border-top: 1px solid rgba(255, 255, 255, 0.35); padding-top: 40px; }
 .oi-sobre-guia-titulo { margin: 0 0 24px; font: 700 24px/1.2 var(--oi-fuente-titulo); }
 .oi-sobre-guia-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -2173,14 +2164,23 @@ body.oi-menu-bloqueo {
 .oi-sobre-guia-nota { margin: 24px 0 0; font-size: 16px; line-height: 1.55; max-width: 760px; }
 @media (max-width: 860px) {
   .oi-sobre-inner { grid-template-columns: 1fr; }
-  .oi-sobre-fotos { max-width: 300px; }
+  .oi-sobre-fotos { max-width: 340px; margin: 0 auto; }
   .oi-sobre-guia-grid { grid-template-columns: 1fr; }
 }
 #boton-sobre { align-self: flex-start; }
 @media (max-width: 540px) {
   .oi-header-acciones { gap: 6px; }
-  .oi-sobre-foto-secundaria { right: -8px; }
 }
 a.oi-cf-ficha-ejemplo { display: block; text-decoration: none; color: var(--oi-negro); transition: border-color 0.2s ease; }
 a.oi-cf-ficha-ejemplo:hover { border-color: var(--oi-azul); }
 .oi-capsula[hidden] { display: none; }
+
+.oi-cf-paso-boton:hover { opacity: 0.75; }
+.oi-cf-paso-boton.oi-cf-activo:hover { opacity: 1; }
+.oi-cf-paso-boton:hover .oi-paso-titulo { text-decoration: underline; text-underline-offset: 4px; }
+.oi-cf-progreso-boton { cursor: pointer; }
+
+/* Anticipar en una banda gris, para separarlo de Conectar */
+.oi-banda-alt { background: var(--oi-fondo-alt); border-top: 1px solid var(--oi-borde); border-bottom: 1px solid var(--oi-borde); }
+.oi-banda-alt:has(> #descubrir[hidden]) { display: none; }
+@media (max-width: 540px) { .oi-foto-firma { width: 80px; height: 80px; } .oi-firma p { font-size: 17px; } }

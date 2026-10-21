@@ -58,7 +58,7 @@ const TEXTOS = {
     firmaProceso: "Lo diseñé y lo superviso yo, Desiree Solano: los criterios, las fuentes y lo que se publica son decisiones mías.",
     firmaDetras: "Por Desiree Solano · Comunicación organizacional, gestión del cambio y transformación",
     fotoCredito: "Foto:",
-    sobreFotoPie: "Desiree Solano · Creé, diseñé y automaticé este espacio.",
+    sobreFotoPie: "Creé, diseñé y automaticé este espacio.",
     guiaTitulo: "Cómo leer Outside-In",
     guiaEntender: "Los estudios, uno por uno. Cada uno trata un tema o una industria y se abre en una página con el resumen, las cifras y el link al original.",
     guiaConectar: "Donde un tema se cruza con una industria. Eliges, por ejemplo, IA y servicios financieros, y ves qué dicen los estudios sobre ese cruce.",
@@ -77,14 +77,14 @@ const TEXTOS = {
 
     conectarEtiqueta: "02 — Conectar",
     conectarTitulo: "Lo que conecto",
-    conectarBajada: "Elige un tema y una industria, mira qué está pasando donde se encuentran y llévalo a tu organización.",
+    conectarBajada: "Aquí se cruzan un tema y una industria. Elige, por ejemplo, «IA y personas» en «servicios financieros», y verás los estudios que hablan justo de ese cruce, cada uno con su fuente y su resumen completo.",
     aterrizarFrasePre: "Muéstrame qué pasa con",
     aterrizarFraseMid: "en",
     aterrizarVacio: "Todavía no hay hallazgos en esta combinación.",
 
     anticiparEtiqueta: "03 — Anticipar",
-    anticiparTitulo: "Lo que estoy leyendo ahora",
-    anticiparBajada: "Estudios que acabo de detectar y todavía estoy leyendo, para que te anticipes a lo que viene.",
+    anticiparTitulo: "En el radar",
+    anticiparBajada: "Estudios que acabo de detectar o que están por salir. Todavía no tienen un resumen publicado, pero conviene tenerlos en el radar para anticiparte a lo que viene.",
 
     asiAutomaticeEtiqueta: "04 — Así automaticé Outside-In",
     asiAutomaticeTitulo: "Así automaticé Outside-In",
@@ -216,7 +216,7 @@ const TEXTOS = {
     firmaProceso: "I designed it and I oversee it, Desiree Solano: the criteria, the sources and what gets published are my calls.",
     firmaDetras: "By Desiree Solano · Organizational communication, change management and transformation",
     fotoCredito: "Photo:",
-    sobreFotoPie: "Desiree Solano · I created, designed and automated this space.",
+    sobreFotoPie: "I created, designed and automated this space.",
     guiaTitulo: "How to read Outside-In",
     guiaEntender: "The studies, one by one. Each covers a topic or an industry and opens into a page with the summary, the figures and the link to the original.",
     guiaConectar: "Where a topic meets an industry. Pick, for example, AI and financial services, and see what the studies say about that intersection.",
@@ -235,14 +235,14 @@ const TEXTOS = {
 
     conectarEtiqueta: "02 — Connect",
     conectarTitulo: "What I connect",
-    conectarBajada: "Pick a topic and an industry, see what's happening where they meet, and bring it to your organization.",
+    conectarBajada: "This is where a topic meets an industry. Pick, for example, “AI and people” in “financial services”, and you'll see the studies that speak to exactly that intersection, each with its source and full summary.",
     aterrizarFrasePre: "Show me what's happening with",
     aterrizarFraseMid: "in",
     aterrizarVacio: "There are no findings in this combination yet.",
 
     anticiparEtiqueta: "03 — Anticipate",
-    anticiparTitulo: "What I'm reading right now",
-    anticiparBajada: "Studies I've just detected and am still reading, so you can get ahead of what's coming.",
+    anticiparTitulo: "On the radar",
+    anticiparBajada: "Studies I've just spotted or that are about to come out. They don't have a published summary yet, but they're worth keeping on the radar to get ahead of what's coming.",
 
     asiAutomaticeEtiqueta: "04 — How I automated Outside-In",
     asiAutomaticeTitulo: "How I automated Outside-In",
