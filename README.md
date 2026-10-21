@@ -97,3 +97,7 @@ Si `RADAR_ESTUDIOS` está vacío (`[]`), la sección "En mi radar" no aparece en
 el sitio. Un estudio del radar es un borrador de investigación, no un
 hallazgo: cuando Desiree decide publicarlo, se convierte en un objeto nuevo
 dentro de `HALLAZGOS` (con `esEjemplo: false`) y se puede quitar de aquí.
+
+## Fotos
+- `img/`: fotos de Desiree (portada, "Así automaticé", "Detrás de Outside-In" y "Mi mirada").
+- `js/imagenes.js`: fotos de portada de cada hallazgo, gratuitas de Unsplash. Se eligen por id del hallazgo o, si no hay, por industria o tema. Un hallazgo también puede traer su propio campo `imagen: { foto: "photo-XXXX", autor: "Nombre" }`. Si la foto no carga, vuelve la portada geométrica.
