@@ -7,4 +7,19 @@
 // (ver app.js). Campos de cada estudio, documentados en README.md:
 //   id, titulo_es, titulo_en, fuente, fecha_detectado ("AAAA-MM-DD")
 
-const RADAR_ESTUDIOS = [];
+const RADAR_ESTUDIOS = [
+  {
+    id: "r-2026-10-deloitte-coo",
+    titulo_es: "Prioridades del COO en la transformación con agentes de IA",
+    titulo_en: "COO priorities in agentic AI transformation",
+    fuente: "Deloitte",
+    fecha_detectado: "2026-10-07",
+  },
+  {
+    id: "r-2026-10-ey-medtech",
+    titulo_es: "Pulse of the MedTech Industry 2026",
+    titulo_en: "Pulse of the MedTech Industry 2026",
+    fuente: "EY",
+    fecha_detectado: "2026-10-21",
+  },
+];

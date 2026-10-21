@@ -205,7 +205,10 @@ function calcularSenalesDeVida() {
 
   const fechaMasReciente = reales.reduce((maxFecha, h) => (h.fecha > maxFecha ? h.fecha : maxFecha), reales[0].fecha);
   const hallazgosNuevos = reales.filter((h) => esReciente(h)).length;
-  const estudiosRevisados = (typeof RADAR_ESTUDIOS !== "undefined" ? RADAR_ESTUDIOS.length : 0) + reales.length;
+  const estudiosRevisados =
+    typeof CONTADOR !== "undefined"
+      ? CONTADOR.desdeInicio.revisados
+      : (typeof RADAR_ESTUDIOS !== "undefined" ? RADAR_ESTUDIOS.length : 0) + reales.length;
 
   return { fechaTexto: formatearFecha(fechaMasReciente), estudiosRevisados, hallazgosNuevos };
 }
@@ -733,12 +736,16 @@ function renderizarFichaEjemploAsiAutomatice() {
 // hasta que la automatización esté funcionando — ver README.md.
 
 function tieneDatosEnVivo() {
-  return MODO_VISTA_PREVIA;
+  if (MODO_VISTA_PREVIA) return true;
+  return typeof CONTADOR !== "undefined" && CONTADOR.desdeInicio.revisados > 0;
 }
 
 function obtenerFunnel(rango) {
-  if (!MODO_VISTA_PREVIA) return null;
-  return rango === "inicio" ? VISTA_PREVIA.funnelDesdeInicio : VISTA_PREVIA.funnelSemana;
+  if (MODO_VISTA_PREVIA) {
+    return rango === "inicio" ? VISTA_PREVIA.funnelDesdeInicio : VISTA_PREVIA.funnelSemana;
+  }
+  if (typeof CONTADOR === "undefined") return null;
+  return rango === "inicio" ? CONTADOR.desdeInicio : CONTADOR.semana;
 }
 
 // Construye los 3 números con flechas dentro de "contenedor". Si
@@ -1092,14 +1099,31 @@ function crearFicha(h) {
   const tituloImplicancia = document.createElement("h4");
   tituloImplicancia.textContent = t.implicanciaTitulo;
 
-  const etiquetaBorrador = document.createElement("span");
-  etiquetaBorrador.className = "etiqueta-borrador";
-  etiquetaBorrador.textContent = t.borradorEtiqueta;
+  const textoLectura = idioma === "es" ? h.implicancia_es : h.implicancia_en;
 
-  const implicanciaTexto = document.createElement("p");
-  implicanciaTexto.textContent = idioma === "es" ? h.implicancia_es : h.implicancia_en;
-
-  bloqueImplicancia.append(tituloImplicancia, etiquetaBorrador, implicanciaTexto);
+  if (!textoLectura) {
+    // Todavía no hay "Mi lectura": la ficha se publica igual, con una
+    // etiqueta que lo dice con claridad. Solo Desiree escribe su lectura.
+    bloqueImplicancia.classList.add("ficha-implicancia-pendiente");
+    const etiquetaPendiente = document.createElement("span");
+    etiquetaPendiente.className = "etiqueta-lectura-pendiente";
+    etiquetaPendiente.textContent = t.lecturaPendienteEtiqueta;
+    const notaPendiente = document.createElement("p");
+    notaPendiente.className = "nota-lectura-pendiente";
+    notaPendiente.textContent = t.lecturaPendienteNota;
+    bloqueImplicancia.append(tituloImplicancia, etiquetaPendiente, notaPendiente);
+  } else {
+    const implicanciaTexto = document.createElement("p");
+    implicanciaTexto.textContent = textoLectura;
+    if (h.estado === "BORRADOR") {
+      const etiquetaBorrador = document.createElement("span");
+      etiquetaBorrador.className = "etiqueta-borrador";
+      etiquetaBorrador.textContent = t.borradorEtiqueta;
+      bloqueImplicancia.append(tituloImplicancia, etiquetaBorrador, implicanciaTexto);
+    } else {
+      bloqueImplicancia.append(tituloImplicancia, implicanciaTexto);
+    }
+  }
 
   ficha.append(bloqueDatos, bloqueImplicancia);
   return ficha;

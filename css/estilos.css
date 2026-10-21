@@ -1769,3 +1769,20 @@ body.oi-menu-bloqueo {
     display: none;
   }
 }
+
+/* "Mi lectura: en camino" — hallazgo publicado sin perspectiva todavía */
+.etiqueta-lectura-pendiente {
+  display: inline-block;
+  border: 1px dashed currentColor;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  opacity: 0.75;
+}
+
+.nota-lectura-pendiente {
+  font-style: italic;
+  opacity: 0.7;
+}
