@@ -1902,3 +1902,79 @@ body.oi-menu-bloqueo {
 #hallazgo-no-encontrado[hidden] {
   display: none !important;
 }
+
+/* Artículo del hallazgo */
+.oi-hallazgo-bajada {
+  max-width: 820px;
+  font-size: clamp(19px, 2vw, 23px);
+  line-height: 1.45;
+  color: var(--oi-texto-gris-2);
+  margin: 0 0 20px;
+}
+.oi-hallazgo-texto p {
+  font-size: 19px;
+  line-height: 1.7;
+  margin: 0 0 22px;
+  max-width: 720px;
+}
+.oi-hallazgo-texto:first-child p:first-child::first-letter {
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 800;
+  float: left;
+  font-size: 64px;
+  line-height: 0.85;
+  padding: 6px 10px 0 0;
+  color: var(--oi-azul);
+}
+.oi-hallazgo-cifras {
+  background: var(--oi-fondo-alt);
+  border-radius: 12px;
+  padding: 28px 28px 8px;
+  margin: 16px 0 40px;
+}
+.oi-hallazgo-cifras .oi-hallazgo-puntos { margin-bottom: 0; }
+.oi-hallazgo-cifras .oi-hallazgo-puntos li:first-child { border-top: none; }
+.oi-hallazgo-cita {
+  margin: 40px 0 48px;
+  padding: 8px 0 8px 28px;
+  border-left: 4px solid var(--oi-naranja);
+}
+.oi-hallazgo-cita blockquote {
+  margin: 0 0 12px;
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.25;
+}
+.oi-hallazgo-cita figcaption { color: var(--oi-texto-gris); font-size: 15px; }
+.oi-hallazgo-cita-original { color: var(--oi-texto-gris); font-size: 13px; font-style: italic; margin: 8px 0 0; }
+.oi-hallazgo-preguntas { margin: 0 0 48px; }
+.oi-hallazgo-preguntas ul { list-style: none; padding: 0; margin: 0; }
+.oi-hallazgo-preguntas li {
+  position: relative;
+  padding: 14px 0 14px 36px;
+  font-size: 18px;
+  line-height: 1.5;
+  border-top: 1px solid var(--oi-borde);
+}
+.oi-hallazgo-preguntas li::before {
+  content: "?";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--oi-azul);
+  color: var(--oi-blanco);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  line-height: 24px;
+}
+.oi-hallazgo-sobre { margin: 0 0 40px; }
+.oi-hallazgo-cuerpo [hidden] { display: none !important; }
+@media (max-width: 860px) {
+  .oi-hallazgo-texto p { font-size: 17px; }
+  .oi-hallazgo-cifras { padding: 20px 18px 4px; }
+}

@@ -76,18 +76,18 @@ function formatearFechaLarga(fechaIso) {
 
 function renderizarHallazgo() {
   const t = TEXTOS[idioma];
-  const articulo = document.getElementById("hallazgo");
+  const contenedorArticulo = document.getElementById("hallazgo");
   const noEncontrado = document.getElementById("hallazgo-no-encontrado");
   const h = hallazgoActual;
 
   if (!h) {
-    articulo.hidden = true;
+    contenedorArticulo.hidden = true;
     noEncontrado.hidden = false;
     document.title = "Outside-In";
     return;
   }
 
-  articulo.hidden = false;
+  contenedorArticulo.hidden = false;
   noEncontrado.hidden = true;
 
   const titulo = texto(h, "hallazgo");
@@ -112,24 +112,64 @@ function renderizarHallazgo() {
     capsulas.appendChild(c);
   }
 
+  const articulo = texto(h, "articulo");
+  document.getElementById("hallazgo-bajada").textContent = articulo ? articulo.bajada : "";
+
+  // Párrafos: los dos primeros antes de las cifras, el resto después.
+  const inicio = document.getElementById("hallazgo-texto-inicio");
+  const resto = document.getElementById("hallazgo-texto-resto");
+  inicio.innerHTML = "";
+  resto.innerHTML = "";
+  const parrafos = articulo ? articulo.parrafos : [texto(h, "dato_clave")];
+  parrafos.forEach((parrafo, indice) => {
+    const p = document.createElement("p");
+    p.textContent = parrafo;
+    (indice < 2 ? inicio : resto).appendChild(p);
+  });
+
   const lista = document.getElementById("hallazgo-puntos");
   lista.innerHTML = "";
-  const puntos = texto(h, "puntos") || [texto(h, "dato_clave")];
-  puntos.forEach((punto) => {
+  (texto(h, "puntos") || []).forEach((punto) => {
     const li = document.createElement("li");
     li.textContent = punto;
     lista.appendChild(li);
   });
+  lista.parentElement.hidden = lista.children.length === 0;
+
+  // Cita: en inglés se muestra la original; en español, la traducción
+  // con la frase original debajo.
+  const cita = document.getElementById("hallazgo-cita");
+  if (h.cita) {
+    cita.hidden = false;
+    document.getElementById("hallazgo-cita-texto").textContent =
+      `“${idioma === "es" ? h.cita.traduccion_es : h.cita.original}”`;
+    document.getElementById("hallazgo-cita-autor").textContent =
+      `— ${idioma === "es" ? h.cita.autor_es : h.cita.autor_en}`;
+    const original = document.getElementById("hallazgo-cita-original");
+    original.hidden = idioma !== "es";
+    original.textContent = `${t.hallazgoCitaOriginal}: “${h.cita.original}”`;
+  } else {
+    cita.hidden = true;
+  }
+
+  const preguntas = document.getElementById("hallazgo-preguntas");
+  preguntas.innerHTML = "";
+  (texto(h, "preguntas") || []).forEach((pregunta) => {
+    const li = document.createElement("li");
+    li.textContent = pregunta;
+    preguntas.appendChild(li);
+  });
+  document.getElementById("hallazgo-preguntas-bloque").hidden = preguntas.children.length === 0;
 
   const contexto = document.getElementById("hallazgo-contexto");
   contexto.textContent = texto(h, "contexto") || "";
-  contexto.previousElementSibling.hidden = !texto(h, "contexto");
+  contexto.parentElement.hidden = !texto(h, "contexto");
 
   const lectura = document.getElementById("hallazgo-lectura");
   lectura.innerHTML = "";
   const tituloLectura = document.createElement("h2");
   tituloLectura.className = "oi-hallazgo-subtitulo";
-  tituloLectura.textContent = t.implicanciaTitulo;
+  tituloLectura.textContent = t.miMiradaTitulo;
   lectura.appendChild(tituloLectura);
   const textoLectura = texto(h, "implicancia");
   if (textoLectura) {
