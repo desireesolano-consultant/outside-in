@@ -187,7 +187,7 @@
     <!-- 01 ENTENDER: lecturas individuales, scroll horizontal anclado -->
     <section id="entender" class="oi-entender oi-scrollx-section">
       <div class="oi-entender-cabecera">
-        <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="entenderEtiqueta"></div>
+        <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal"><span>01 — </span><span class="oi-palabra-zoom" data-i18n="heroPalabra1"></span></div>
         <h2 class="oi-titulo-seccion oi-titulo-claro oi-reveal" data-i18n="entenderTitulo"></h2>
         <p class="oi-bajada-clara oi-reveal" data-i18n="entenderBajada"></p>
       </div>
@@ -198,8 +198,8 @@
 
     <!-- 02 ATERRIZAR: frase interactiva con desplegables -->
     <section id="aterrizar" class="oi-seccion-ancha">
-      <div class="oi-seccion-cabecera-col oi-zoom-entrada">
-        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="conectarEtiqueta"></div>
+      <div class="oi-seccion-cabecera-col">
+        <div class="oi-etiqueta-seccion oi-reveal"><span>02 — </span><span class="oi-palabra-zoom" data-i18n="heroPalabra2"></span></div>
         <h2 class="oi-titulo-seccion oi-reveal" data-i18n="conectarTitulo"></h2>
         <p class="ayuda oi-reveal" data-i18n="conectarBajada"></p>
       </div>
@@ -224,8 +224,8 @@
     <!-- 03 DESCUBRIR: estudios en el radar -->
     <div class="oi-banda-alt">
     <section id="descubrir" class="oi-seccion-ancha" hidden>
-      <div class="oi-seccion-cabecera-col oi-zoom-entrada">
-        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="anticiparEtiqueta"></div>
+      <div class="oi-seccion-cabecera-col">
+        <div class="oi-etiqueta-seccion oi-reveal"><span>03 — </span><span class="oi-palabra-zoom" data-i18n="heroPalabra3"></span></div>
         <h2 class="oi-titulo-seccion oi-reveal" data-i18n="anticiparTitulo"></h2>
         <p class="ayuda oi-reveal" data-i18n="anticiparBajada"></p>
       </div>
@@ -236,11 +236,14 @@
     <!-- BANNER: cita que crece con el scroll -->
     <section id="banner-cita" class="oi-banner-seccion">
       <div id="banner-cita-caja" class="oi-banner-caja">
-        <img class="oi-banner-foto" src="img/desiree-banner.jpg" alt="Desiree Solano" width="640" height="640" loading="lazy" />
+        <div class="oi-banner-pieza oi-banner-foto-marco" data-pieza="foto">
+          <img class="oi-banner-foto" src="img/desiree-banner.jpg?v=2" alt="Desiree Solano" width="720" height="720" loading="lazy" />
+        </div>
+        <span class="oi-banner-pieza oi-banner-barra" data-pieza="barra" aria-hidden="true"></span>
         <figure class="oi-banner-contenido">
-          <span class="oi-banner-comillas" aria-hidden="true">“</span>
-          <blockquote id="banner-cita-texto" class="oi-banner-texto"></blockquote>
-          <figcaption class="oi-banner-firma">
+          <span class="oi-banner-pieza oi-banner-comillas" data-pieza="comillas" aria-hidden="true">“</span>
+          <blockquote id="banner-cita-texto" class="oi-banner-pieza oi-banner-texto" data-pieza="texto"></blockquote>
+          <figcaption class="oi-banner-pieza oi-banner-firma" data-pieza="firma">
             <strong>Desiree Solano</strong>
             <span data-i18n="bannerFirmaCargo"></span>
           </figcaption>

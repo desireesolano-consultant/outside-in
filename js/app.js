@@ -1068,26 +1068,46 @@ function configurarBanner() {
     bannerInfo = null;
     return;
   }
-
   if (prefiereMovimientoReducido()) {
-    caja.style.width = "100%";
-    caja.style.borderRadius = "16px";
+    caja.classList.add("oi-banner-armado");
     bannerInfo = null;
     return;
   }
-
-  bannerInfo = { caja, seccion: caja.closest(".oi-banner-seccion") };
+  bannerInfo = { caja, seccion: caja.closest(".oi-banner-seccion"), piezas: caja.querySelectorAll(".oi-banner-pieza") };
   actualizarBanner();
 }
 
+// La sección se arma con el scroll: cada pieza llega desde un lado distinto
+// y en su propio momento, hasta quedar todo unido.
+const BANNER_PIEZAS = {
+  foto: { desde: 0.0, hasta: 0.45, x: -120, y: 0, rot: -4 },
+  barra: { desde: 0.15, hasta: 0.55, escalaY: true },
+  comillas: { desde: 0.25, hasta: 0.6, x: 0, y: -80, rot: -12 },
+  texto: { desde: 0.3, hasta: 0.75, x: 140, y: 0, rot: 2 },
+  firma: { desde: 0.5, hasta: 0.9, x: 0, y: 60, rot: 0 },
+};
+
 function actualizarBanner() {
   if (!bannerInfo) return;
-  const { caja, seccion } = bannerInfo;
+  const { seccion, piezas } = bannerInfo;
   const rect = seccion.getBoundingClientRect();
-  const altoVentana = window.innerHeight;
-  const progreso = Math.min(1, Math.max(0, (altoVentana - rect.top) / (altoVentana + rect.height)));
-  caja.style.width = `${92 + progreso * 8}%`;
-  caja.style.borderRadius = `${32 - progreso * 32}px`;
+  const alto = window.innerHeight;
+  // 0 cuando la sección empieza a entrar; 1 cuando su parte de arriba
+  // llega a un cuarto de la pantalla.
+  const progreso = Math.min(1, Math.max(0, (alto - rect.top) / (alto * 0.75)));
+  piezas.forEach((pieza) => {
+    const conf = BANNER_PIEZAS[pieza.dataset.pieza];
+    if (!conf) return;
+    const local = Math.min(1, Math.max(0, (progreso - conf.desde) / (conf.hasta - conf.desde)));
+    const suave = 1 - Math.pow(1 - local, 3);
+    const falta = 1 - suave;
+    if (conf.escalaY) {
+      pieza.style.transform = window.innerWidth <= 760 ? `scaleX(${suave.toFixed(3)})` : `scaleY(${suave.toFixed(3)})`;
+    } else {
+      pieza.style.transform = `translate(${(conf.x * falta).toFixed(1)}px, ${(conf.y * falta).toFixed(1)}px) rotate(${(conf.rot * falta).toFixed(2)}deg)`;
+    }
+    pieza.style.opacity = (0.05 + 0.95 * suave).toFixed(2);
+  });
 }
 
 // ---- Zoom de entrada: el título de Conectar y Anticipar llega grande y
@@ -1096,13 +1116,14 @@ function actualizarBanner() {
 function actualizarZoomEntrada() {
   if (prefiereMovimientoReducido()) return;
   const alto = window.innerHeight;
-  document.querySelectorAll(".oi-zoom-entrada").forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    // 0 cuando el título asoma por abajo; 1 cuando llega al tercio superior.
-    const progreso = Math.min(1, Math.max(0, (alto - rect.top) / (alto * 0.65)));
-    const escala = 1.28 - 0.28 * progreso;
+  document.querySelectorAll(".oi-palabra-zoom").forEach((el) => {
+    const rect = el.parentElement.getBoundingClientRect();
+    // 0 cuando la palabra asoma por abajo; 1 cuando llega al tercio superior.
+    const progreso = Math.min(1, Math.max(0, (alto - rect.top) / (alto * 0.7)));
+    const escala = 2.6 - 1.6 * progreso;
     el.style.transform = `scale(${escala.toFixed(3)})`;
-    el.style.opacity = (0.6 + 0.4 * progreso).toFixed(2);
+    // Del naranja a su color final (azul, o lila en la sección oscura).
+    el.style.setProperty("--oi-zoom-mezcla", `${Math.round(progreso * 100)}%`);
   });
 }
 
