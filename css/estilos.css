@@ -391,9 +391,16 @@ button {
   margin: 0;
 }
 
+.oi-seccion-cabecera-col .ayuda {
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.5;
+  max-width: 62ch;
+}
+
 .oi-bajada-clara {
   color: var(--oi-texto-footer);
-  font-size: 0.95rem;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.5;
   margin: 0;
   max-width: 60ch;
 }
@@ -2138,8 +2145,18 @@ body.oi-menu-bloqueo {
   width: 100%;
   height: auto;
   display: block;
-  -webkit-mask-image: linear-gradient(#000 82%, transparent);
-  mask-image: linear-gradient(#000 82%, transparent);
+}
+/* Difuminado hacia el azul: va encima de la foto, así el círculo naranja
+   queda sólido detrás y no se mezcla con la ropa. */
+.oi-sobre-fotos::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 0;
+  aspect-ratio: 742 / 760;
+  background: linear-gradient(to bottom, transparent 80%, var(--oi-azul) 99%);
+  pointer-events: none;
 }
 .oi-sobre-foto-pie { margin: 12px 0 0; text-align: center; font-size: 14px; opacity: 0.9; }
 .oi-sobre-foto-pie strong { display: block; font: 700 20px var(--oi-fuente-titulo); margin-bottom: 2px; }

@@ -55,7 +55,7 @@ const TEXTOS = {
     hallazgoPuntosTitulo: "Las cifras clave",
     hallazgoPreguntasTitulo: "Preguntas que deja abiertas",
     hallazgoCitaOriginal: "Original en inglés",
-    firmaProceso: "Lo diseñé y lo superviso yo, Desiree Solano: los criterios, las fuentes y lo que se publica son decisiones mías.",
+    firmaProceso: "Diseñé este sistema y superviso su funcionamiento. Los criterios de selección, las fuentes y los estándares de publicación reflejan mi mirada como consultora.",
     firmaDetras: "Por Desiree Solano · Comunicación organizacional, gestión del cambio y transformación",
     fotoCredito: "Foto:",
     sobreFotoPie: "Creé, diseñé y automaticé este espacio.",
@@ -77,14 +77,14 @@ const TEXTOS = {
 
     conectarEtiqueta: "02 — Conectar",
     conectarTitulo: "Lo que conecto",
-    conectarBajada: "Aquí se cruzan un tema y una industria. Elige, por ejemplo, «IA y personas» en «servicios financieros», y verás los estudios que hablan justo de ese cruce, cada uno con su fuente y su resumen completo.",
+    conectarBajada: "Explora qué dicen los estudios cuando un tema se cruza con una industria. Selecciona, por ejemplo, «IA y personas» en «servicios financieros» para ver los hallazgos específicos de esa intersección, cada uno con su fuente original y su análisis completo.",
     aterrizarFrasePre: "Muéstrame qué pasa con",
     aterrizarFraseMid: "en",
     aterrizarVacio: "Todavía no hay hallazgos en esta combinación.",
 
     anticiparEtiqueta: "03 — Anticipar",
     anticiparTitulo: "En el radar",
-    anticiparBajada: "Estudios que acabo de detectar o que están por salir. Todavía no tienen un resumen publicado, pero conviene tenerlos en el radar para anticiparte a lo que viene.",
+    anticiparBajada: "Estudios identificados recientemente o de próxima publicación. Aún no cuentan con un resumen en el sitio, pero anticipan las conversaciones que marcarán la agenda de las organizaciones.",
 
     asiAutomaticeEtiqueta: "04 — Así automaticé Outside-In",
     asiAutomaticeTitulo: "Así automaticé Outside-In",
@@ -213,7 +213,7 @@ const TEXTOS = {
     hallazgoPuntosTitulo: "The key figures",
     hallazgoPreguntasTitulo: "Questions it leaves open",
     hallazgoCitaOriginal: "Original in English",
-    firmaProceso: "I designed it and I oversee it, Desiree Solano: the criteria, the sources and what gets published are my calls.",
+    firmaProceso: "I designed this system and oversee how it runs. The selection criteria, the sources and the publishing standards reflect my perspective as a consultant.",
     firmaDetras: "By Desiree Solano · Organizational communication, change management and transformation",
     fotoCredito: "Photo:",
     sobreFotoPie: "I created, designed and automated this space.",
@@ -235,14 +235,14 @@ const TEXTOS = {
 
     conectarEtiqueta: "02 — Connect",
     conectarTitulo: "What I connect",
-    conectarBajada: "This is where a topic meets an industry. Pick, for example, “AI and people” in “financial services”, and you'll see the studies that speak to exactly that intersection, each with its source and full summary.",
+    conectarBajada: "Explore what the studies say when a topic meets an industry. Select, for example, “AI and people” in “financial services” to see the findings specific to that intersection, each with its original source and full analysis.",
     aterrizarFrasePre: "Show me what's happening with",
     aterrizarFraseMid: "in",
     aterrizarVacio: "There are no findings in this combination yet.",
 
     anticiparEtiqueta: "03 — Anticipate",
     anticiparTitulo: "On the radar",
-    anticiparBajada: "Studies I've just spotted or that are about to come out. They don't have a published summary yet, but they're worth keeping on the radar to get ahead of what's coming.",
+    anticiparBajada: "Recently identified or upcoming studies. They don't have a summary on the site yet, but they anticipate the conversations that will shape the organizational agenda.",
 
     asiAutomaticeEtiqueta: "04 — How I automated Outside-In",
     asiAutomaticeTitulo: "How I automated Outside-In",

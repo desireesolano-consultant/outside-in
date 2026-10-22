@@ -6,3 +6,8 @@
 // vuelve a depender solo de datos reales — lo que no tenga datos, se oculta.
 
 const MODO_VISTA_PREVIA = false;
+
+// Métricas (GoatCounter: gratis, sin cookies, respeta la privacidad).
+// Cuando Desiree cree su cuenta en goatcounter.com, aquí va su código
+// (por ejemplo "outside-in"). Mientras esté vacío, no se mide nada.
+const GOATCOUNTER_CODIGO = "";
