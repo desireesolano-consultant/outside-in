@@ -282,15 +282,29 @@ function configurarMenuMovil() {
 
 function renderizarSobre() {
   const carta = idioma === "es" ? INTRO.es : INTRO.en;
-  document.getElementById("sobre-parrafo").textContent = carta.parrafos[2];
+  ponerTextoConNegritas(document.getElementById("sobre-parrafo"), carta.parrafos[2]);
   construirCarta(document.getElementById("modal-sobre-cuerpo"), carta);
+}
+
+// Convierte **palabra** en negrita, sin interpretar ningún otro HTML.
+function ponerTextoConNegritas(elemento, texto) {
+  elemento.textContent = "";
+  String(texto || "").split(/(\*\*[^*]+\*\*)/).forEach((parte) => {
+    if (/^\*\*[^*]+\*\*$/.test(parte)) {
+      const fuerte = document.createElement("strong");
+      fuerte.textContent = parte.slice(2, -2);
+      elemento.appendChild(fuerte);
+    } else if (parte) {
+      elemento.appendChild(document.createTextNode(parte));
+    }
+  });
 }
 
 function construirCarta(contenedor, carta) {
   contenedor.innerHTML = "";
   carta.parrafos.forEach((parrafo) => {
     const p = document.createElement("p");
-    p.textContent = parrafo;
+    ponerTextoConNegritas(p, parrafo);
     contenedor.appendChild(p);
   });
   const firma = document.createElement("div");
