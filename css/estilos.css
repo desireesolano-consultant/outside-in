@@ -1116,9 +1116,9 @@ button {
 
 .oi-banner-comillas {
   display: block;
-  font: 700 96px/0.6 var(--oi-fuente-titulo);
+  font: 700 120px/0.6 var(--oi-fuente-titulo);
   color: var(--oi-naranja);
-  height: 40px;
+  height: 48px;
   transform-origin: left center;
 }
 
@@ -1126,9 +1126,9 @@ button {
   margin: 0;
   font-family: var(--oi-fuente-titulo);
   font-weight: 700;
-  font-size: clamp(21px, 2.2vw, 30px);
-  line-height: 1.3;
-  letter-spacing: -0.015em;
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .oi-banner-firma { margin: 0; display: flex; flex-direction: column; gap: 2px; font-size: 15px; color: var(--oi-texto-footer); }
@@ -2277,7 +2277,7 @@ a.oi-cf-ficha-ejemplo:hover { border-color: var(--oi-azul); }
 .oi-palabra-gigante {
   font-family: var(--oi-fuente-titulo);
   font-weight: 800;
-  font-size: clamp(72px, 15vw, 220px);
+  font-size: clamp(56px, 10vw, 150px);
   line-height: 0.85;
   letter-spacing: -0.05em;
   color: var(--oi-naranja);
@@ -2334,7 +2334,7 @@ a.oi-cf-ficha-ejemplo:hover { border-color: var(--oi-azul); }
   border-left: 3px solid var(--oi-naranja);
 }
 @media (max-width: 860px) {
-  .oi-palabra-gigante { font-size: clamp(56px, 19vw, 120px); }
+  .oi-palabra-gigante { font-size: clamp(46px, 14vw, 88px); }
   .oi-cabecera-dos > p { padding-left: 14px; }
 }
 .oi-cabecera-dos .oi-titulo-seccion { font-size: clamp(34px, 3.8vw, 52px); }
