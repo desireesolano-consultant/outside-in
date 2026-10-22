@@ -3,7 +3,7 @@
 
 const TEXTOS = {
   es: {
-    subtitulo: "Tendencias de industria y transformación organizacional · por Desiree Solano",
+    subtitulo: "Tendencias de industria y transformación organizacional · por Desirée Solano",
     heroTagline: "Tendencias de industria y transformación organizacional",
     botonIdioma: "English",
     introTitulo: "Te doy la bienvenida a Outside-In",
@@ -23,7 +23,7 @@ const TEXTOS = {
     heroParrafoPre: "Leo y analizo qué pasa con",
     heroParrafoMid: "en",
     heroParrafoPost: "para que lo conectes con tu organización y te anticipes al cambio.",
-    heroSaludo: "Hola, soy Desiree Solano",
+    heroSaludo: "Hola, soy Desirée Solano",
     heroCargo: "Consultora en estrategia de comunicación y transformación",
     heroParrafo1:
       "Mi trabajo siempre empieza por el mismo lugar: entender qué está pasando. Leer el contexto, encontrar el insight que importa y convertirlo en estrategia y en comunicación, que para mí es la herramienta más poderosa de cualquier transformación. Outside-In nace de esa forma de trabajar, la que creo que todo consultor debería tener.",
@@ -55,7 +55,7 @@ const TEXTOS = {
     hallazgoPreguntasTitulo: "Preguntas que deja abiertas",
     hallazgoCitaOriginal: "Original en inglés",
     firmaProceso: "Creé este espacio para seguir de cerca lo que está transformando a las organizaciones y comprender su contexto con mayor profundidad. La automatización me permite revisar más estudios, y con más constancia, de lo que podría hacer por mi cuenta. Aun así, el sistema trabaja bajo mi guía: yo defino los criterios y las fuentes, y reviso personalmente los casos que lo requieren. A continuación te cuento, paso a paso, cómo funciona.",
-    firmaDetras: "Por Desiree Solano · Consultora en estrategia de comunicación y transformación",
+    firmaDetras: "Por Desirée Solano · Consultora en estrategia de comunicación y transformación",
     fotoCredito: "Foto:",
     sobreFotoPie: "Creé, diseñé y automaticé este espacio.",
     guiaTitulo: "Cómo leer Outside-In",
@@ -70,6 +70,7 @@ const TEXTOS = {
     copiarCorreo: "Copiar correo",
     correoCopiado: "¡Copiado!",
     bannerFirmaCargo: "Consultora en estrategia de comunicación y transformación",
+    nombreCompleto: "Desirée Solano",
     miMiradaTitulo: "Mi mirada",
     hallazgoContextoTitulo: "Sobre el estudio",
     hallazgoLeerOriginal: "Leer el estudio original →",
@@ -123,7 +124,7 @@ const TEXTOS = {
     contadorCerrarAria: "Cerrar",
 
     linkedinFooter: "LinkedIn",
-    footerFirma: "© 2026 Desiree Solano. Outside-In: concepto, diseño, textos y sistema. Todos los derechos reservados. Diseñado y construido con Claude Code.",
+    footerFirma: "© 2026 Desirée Solano. Outside-In: concepto, diseño, textos y sistema. Todos los derechos reservados. Diseñado y construido con Claude Code.",
 
     detrasTitulo: "Detrás de Outside-In",
     detrasBajada: "Cómo y por qué lo construí",
@@ -230,6 +231,7 @@ const TEXTOS = {
     copiarCorreo: "Copy email",
     correoCopiado: "Copied!",
     bannerFirmaCargo: "Communication Strategy & Transformation Consultant",
+    nombreCompleto: "Desiree Solano",
     miMiradaTitulo: "My take",
     hallazgoContextoTitulo: "About the study",
     hallazgoLeerOriginal: "Read the original study →",

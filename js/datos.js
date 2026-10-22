@@ -13,12 +13,12 @@ const INTRO = {
   es: {
     parrafos: [
       "Entender el contexto es lo que le permite a una organización mirarse a sí misma y saber en qué punto de su camino está.",
-      "Soy Desiree Solano y acompaño a empresas en transformaciones de negocio que terminan impactando en sus personas: en sus estrategias internas, su cultura, sus formas de trabajar y su comunicación. En ese rol hay algo que considero esencial: ver la foto completa. Quien asesora a una organización necesita saber qué está pasando más allá de su cliente, conocer las tendencias que mueven a las industrias y ser una fuente de información a la que valga la pena acudir. Outside-In nace de esa convicción.",
+      "Soy Desirée Solano y acompaño a empresas en transformaciones de negocio que terminan impactando en sus personas: en sus estrategias internas, su cultura, sus formas de trabajar y su comunicación. En ese rol hay algo que considero esencial: ver la foto completa. Quien asesora a una organización necesita saber qué está pasando más allá de su cliente, conocer las tendencias que mueven a las industrias y ser una fuente de información a la que valga la pena acudir. Outside-In nace de esa convicción.",
       "Creé Outside-In para reunir **en un solo lugar** las miradas y los datos de valor que se publican sobre las organizaciones. Al leerlos en conjunto, se obtiene una visión que ningún estudio ofrece por sí solo: **un contexto más amplio** para entender lo que está pasando y anticipar hacia dónde se dirigen las organizaciones. Funciona sobre un sistema que construí con Claude Code: **cada semana** identifica estudios nuevos, verifica sus datos en la **fuente original** y publica los que cumplen **mis criterios**.",
       "No pretende decirte qué hacer. Es un espacio para mantenerte informado, encontrar el insight que te interese y llevarlo a las conversaciones que importan: sobre la estrategia, el rumbo y la comunicación de tu propia organización.",
       "Las organizaciones que mejor se transforman son las que se mantienen curiosas y entienden su contexto antes de que el cambio las alcance. Outside-In está pensado para quienes lideran así.",
     ],
-    firma_nombre: "Desiree Solano",
+    firma_nombre: "Desirée Solano",
     firma_cargo: "Consultora en estrategia de comunicación y transformación",
   },
   en: {
