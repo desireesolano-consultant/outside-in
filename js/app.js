@@ -55,6 +55,7 @@ function init() {
   configurarAsiAutomaticeSticky();
   configurarBanner();
   actualizarZoomEntrada();
+  animarEntradas();
   configurarRevelado();
 
   if (document.fonts && document.fonts.ready) {
@@ -634,6 +635,7 @@ function actualizarResultadosAterrizar() {
   }
 
   hallazgos.forEach((h, indice) => tarjetasEl.appendChild(crearTarjetaResultado(h, indice)));
+  if (typeof animarEntradas === "function") animarEntradas();
 }
 
 function crearTarjetaResultado(h, indice) {
@@ -735,6 +737,7 @@ function renderizarDescubrir() {
     item.append(titulo, meta);
     lista.appendChild(item);
   });
+  if (typeof animarEntradas === "function") animarEntradas();
 }
 
 // ---- "Así automaticé Outside-In": escenario animado y scroll anclado ----
@@ -1151,6 +1154,47 @@ function configurarRevelado() {
   );
 
   elementos.forEach((el) => observador.observe(el));
+}
+
+// ---- Entradas animadas: tarjetas, pasos y listas aparecen en cascada
+// (una tras otra) cuando llegan a la pantalla. Funciona también con las
+// tarjetas que se dibujan después, como los resultados de Conectar. ----
+
+const SELECTOR_ENTRADAS = [
+  ".oi-sobre-guia-item",
+  ".oi-tarjeta-hallazgo",
+  ".oi-radar-item",
+  ".oi-contacto-fila > *",
+  ".oi-hero-ctas > *",
+  ".oi-footer-nav > *",
+].join(", ");
+
+let observadorEntradas = null;
+
+function animarEntradas() {
+  const elementos = document.querySelectorAll(SELECTOR_ENTRADAS);
+  if (prefiereMovimientoReducido() || !("IntersectionObserver" in window)) return;
+  if (!observadorEntradas) {
+    observadorEntradas = new IntersectionObserver(
+      (entradas) => {
+        entradas.forEach((entrada) => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add("oi-entrada-visible");
+            observadorEntradas.unobserve(entrada.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+    );
+  }
+  elementos.forEach((el) => {
+    if (el.dataset.entrada) return;
+    el.dataset.entrada = "1";
+    const hermanos = Array.from(el.parentElement.children);
+    el.style.setProperty("--oi-retraso", `${Math.min(hermanos.indexOf(el), 6) * 90}ms`);
+    el.classList.add("oi-entrada");
+    observadorEntradas.observe(el);
+  });
 }
 
 function cerrarModal(idModal) {
