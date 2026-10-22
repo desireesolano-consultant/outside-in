@@ -2338,3 +2338,15 @@ a.oi-cf-ficha-ejemplo:hover { border-color: var(--oi-azul); }
   .oi-cabecera-dos > p { padding-left: 14px; }
 }
 .oi-cabecera-dos .oi-titulo-seccion { font-size: clamp(34px, 3.8vw, 52px); }
+
+/* Palabras clave en negrita: más marcadas, con subrayado tipo resaltador */
+.oi-sobre-parrafo strong,
+#modal-sobre-cuerpo strong {
+  font-weight: 700;
+  background-image: linear-gradient(transparent 48%, rgba(255, 107, 44, 0.85) 48%, rgba(255, 107, 44, 0.85) 94%, transparent 94%);
+  padding: 0 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.oi-sobre-parrafo strong { color: var(--oi-blanco); }
+#modal-sobre-cuerpo strong { color: var(--oi-negro); background-image: linear-gradient(transparent 48%, rgba(255, 107, 44, 0.45) 48%, rgba(255, 107, 44, 0.45) 94%, transparent 94%); }
