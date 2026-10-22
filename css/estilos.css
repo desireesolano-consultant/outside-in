@@ -2291,29 +2291,50 @@ a.oi-cf-ficha-ejemplo:hover { border-color: var(--oi-azul); }
 .oi-letra { display: inline-block; will-change: transform, opacity; }
 .oi-palabra-armada .oi-letra { transform: none !important; opacity: 1 !important; }
 
-/* ===== Cabecera en dos columnas: título a la izquierda, bajada a la derecha ===== */
+/* ===== Cabecera de sección: número + palabra gigante, y debajo título y bajada ===== */
 .oi-cabecera-dos {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  grid-template-areas:
-    "palabra palabra"
-    "izq bajada";
-  column-gap: 64px;
-  row-gap: 8px;
-  align-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
   overflow: clip;
   overflow-clip-margin: 24px;
 }
-.oi-cabecera-dos > .oi-palabra-gigante { grid-area: palabra; }
-.oi-cabecera-izq { grid-area: izq; display: flex; flex-direction: column; gap: 10px; }
+.oi-cabecera-dos > .oi-palabra-gigante {
+  position: relative;
+  margin-bottom: 0.22em;
+}
+/* El número de la sección acompaña a la palabra, en pequeño, arriba a la izquierda */
+.oi-cabecera-dos > .oi-palabra-gigante::before {
+  content: attr(data-numero) " —";
+  display: block;
+  font-family: var(--oi-fuente-texto);
+  font-size: max(13px, 0.075em);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  margin: 0 0 0.45em 0.06em;
+  color: currentColor;
+}
+/* La etiqueta "03 — Anticipar" queda solo para lectores de pantalla (ya la dice la palabra gigante) */
+.oi-cabecera-dos .oi-etiqueta-seccion {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.oi-cabecera-izq { display: flex; flex-direction: column; gap: 10px; }
 .oi-cabecera-izq > h2 { margin: 0; }
-.oi-cabecera-dos > p { grid-area: bajada; max-width: none; margin: 0; padding-bottom: 6px; }
+.oi-cabecera-dos > p {
+  margin: 14px 0 0;
+  max-width: 64ch;
+  padding-left: 20px;
+  border-left: 3px solid var(--oi-naranja);
+}
 @media (max-width: 860px) {
-  .oi-cabecera-dos {
-    grid-template-columns: 1fr;
-    grid-template-areas: "palabra" "izq" "bajada";
-    row-gap: 16px;
-  }
   .oi-palabra-gigante { font-size: clamp(56px, 19vw, 120px); }
+  .oi-cabecera-dos > p { padding-left: 14px; }
 }
 .oi-cabecera-dos .oi-titulo-seccion { font-size: clamp(34px, 3.8vw, 52px); }

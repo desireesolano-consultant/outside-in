@@ -42,7 +42,7 @@ const TEXTOS = {
     diagramaTendencias: "Tendencias",
 
     sobreEtiqueta: "01 — Sobre Outside-In",
-    sobreCita: "“Los mejores jugadores son los que conocen la cancha.”",
+    sobreCita: "“Los mejores jugadores son los que estudian bien la cancha.”",
     sobreBoton: "Por qué creé Outside-In",
 
     entenderEtiqueta: "01 — Entender",
@@ -78,7 +78,7 @@ const TEXTOS = {
     hallazgoNoEncontrado: "No encontré este hallazgo.",
 
     conectarEtiqueta: "02 — Conectar",
-    conectarTitulo: "Lo que conecto",
+    conectarTitulo: "El cruce que importa",
     conectarBajada: "Un tema cobra otro sentido cuando se mira desde una industria concreta. La adopción de la IA no se vive igual en un banco que en un laboratorio, ni la gestión del cambio en una empresa de consumo masivo que en una farmacéutica. Elige un tema y una industria para descubrir qué revelan los estudios en ese cruce, con su fuente y su análisis completo, y llevar esos aprendizajes a la realidad de tu organización.",
     aterrizarFrasePre: "Muéstrame qué pasa con",
     aterrizarFraseMid: "en",
@@ -202,7 +202,7 @@ const TEXTOS = {
     diagramaTendencias: "Trends",
 
     sobreEtiqueta: "01 — About Outside-In",
-    sobreCita: "“The best players are the ones who know the field.”",
+    sobreCita: "“The best players are the ones who study the field closely.”",
     sobreBoton: "Why I created Outside-In",
 
     entenderEtiqueta: "01 — Understand",
@@ -238,7 +238,7 @@ const TEXTOS = {
     hallazgoNoEncontrado: "I couldn't find this finding.",
 
     conectarEtiqueta: "02 — Connect",
-    conectarTitulo: "What I connect",
+    conectarTitulo: "The intersection that matters",
     conectarBajada: "A topic takes on new meaning when you look at it through a specific industry. AI adoption doesn't play out the same way in a bank as in a lab, nor does change management in a consumer goods company as in a pharmaceutical one. Choose a topic and an industry to discover what the studies reveal at that intersection, with their source and full analysis, and bring those insights to the reality of your organization.",
     aterrizarFrasePre: "Show me what's happening with",
     aterrizarFraseMid: "in",
