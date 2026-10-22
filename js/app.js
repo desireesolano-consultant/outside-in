@@ -54,7 +54,7 @@ function init() {
   configurarScrollHorizontalEntender();
   configurarAsiAutomaticeSticky();
   configurarBanner();
-  actualizarZoomEntrada();
+  construirPalabrasGigantes();
   animarEntradas();
   configurarRevelado();
 
@@ -143,6 +143,7 @@ function cambiarIdioma() {
     // ignorar si no se puede guardar
   }
   aplicarIdioma();
+  construirPalabrasGigantes();
   renderizarSobre();
   renderizarSenalVida();
   renderizarEntender();
@@ -1116,17 +1117,58 @@ function actualizarBanner() {
 // ---- Zoom de entrada: el título de Conectar y Anticipar llega grande y
 // se acomoda a su tamaño normal cuando ya estás dentro de la sección ----
 
+// La palabra gigante de cada sección (Entender, Conectar, Anticipar) se
+// arma letra por letra: cada letra llega desde un punto distinto, girando,
+// y se van juntando a medida que entras a la sección.
+function construirPalabrasGigantes() {
+  const t = TEXTOS[idioma];
+  document.querySelectorAll(".oi-palabra-gigante").forEach((contenedor, n) => {
+    const palabra = t[contenedor.dataset.palabra] || "";
+    contenedor.innerHTML = "";
+    let semilla = 7 + n * 13;
+    const azar = () => {
+      semilla = (semilla * 9301 + 49297) % 233280;
+      return semilla / 233280;
+    };
+    Array.from(palabra).forEach((letra, i) => {
+      const span = document.createElement("span");
+      span.className = "oi-letra";
+      span.textContent = letra;
+      span.dataset.i = i;
+      span.dataset.dx = Math.round((azar() - 0.5) * 700);
+      span.dataset.dy = Math.round((azar() - 0.5) * 260);
+      span.dataset.rot = Math.round((azar() - 0.5) * 200);
+      span.dataset.esc = (0.3 + azar() * 1.8).toFixed(2);
+      contenedor.appendChild(span);
+    });
+    contenedor.dataset.total = palabra.length;
+  });
+  actualizarZoomEntrada();
+}
+
 function actualizarZoomEntrada() {
-  if (prefiereMovimientoReducido()) return;
+  const contenedores = document.querySelectorAll(".oi-palabra-gigante");
+  if (prefiereMovimientoReducido()) {
+    contenedores.forEach((c) => c.classList.add("oi-palabra-armada"));
+    return;
+  }
   const alto = window.innerHeight;
-  document.querySelectorAll(".oi-palabra-zoom").forEach((el) => {
-    const rect = el.parentElement.getBoundingClientRect();
-    // 0 cuando la palabra asoma por abajo; 1 cuando llega al tercio superior.
+  contenedores.forEach((c) => {
+    const rect = c.getBoundingClientRect();
+    // 0 cuando la palabra asoma por abajo; 1 cuando llega a un 30% de la pantalla.
     const progreso = Math.min(1, Math.max(0, (alto - rect.top) / (alto * 0.7)));
-    const escala = 2.6 - 1.6 * progreso;
-    el.style.transform = `scale(${escala.toFixed(3)})`;
-    // Del naranja a su color final (azul, o lila en la sección oscura).
-    el.style.setProperty("--oi-zoom-mezcla", `${Math.round(progreso * 100)}%`);
+    const total = Number(c.dataset.total) || 1;
+    c.classList.toggle("oi-palabra-armada", progreso >= 1);
+    c.querySelectorAll(".oi-letra").forEach((letra) => {
+      const i = Number(letra.dataset.i);
+      const inicio = (i / total) * 0.35;
+      const local = Math.min(1, Math.max(0, (progreso - inicio) / 0.6));
+      const suave = 1 - Math.pow(1 - local, 3);
+      const falta = 1 - suave;
+      const esc = 1 + (Number(letra.dataset.esc) - 1) * falta;
+      letra.style.transform = `translate(${(letra.dataset.dx * falta).toFixed(1)}px, ${(letra.dataset.dy * falta).toFixed(1)}px) rotate(${(letra.dataset.rot * falta).toFixed(1)}deg) scale(${esc.toFixed(3)})`;
+      letra.style.opacity = (0.08 + 0.92 * suave).toFixed(2);
+    });
   });
 }
 

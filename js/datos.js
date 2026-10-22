@@ -19,7 +19,7 @@ const INTRO = {
       "Las organizaciones que mejor se transforman son las que se mantienen curiosas y entienden su contexto antes de que el cambio las alcance. Outside-In está pensado para quienes lideran así.",
     ],
     firma_nombre: "Desiree Solano",
-    firma_cargo: "Consultora en comunicaciones y transformación organizacional",
+    firma_cargo: "Consultora en estrategia de comunicación y transformación",
   },
   en: {
     parrafos: [
@@ -30,7 +30,7 @@ const INTRO = {
       "The organizations that transform best are the ones that stay curious and understand their context before change catches up with them. Outside-In is built for those who lead that way.",
     ],
     firma_nombre: "Desiree Solano",
-    firma_cargo: "Communications & Organizational Transformation Consultant",
+    firma_cargo: "Communication Strategy & Transformation Consultant",
   },
 };
 

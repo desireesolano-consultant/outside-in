@@ -1143,14 +1143,6 @@ button {
   .oi-banner-comillas { font-size: 90px; height: 36px; }
 }
 
-/* Zoom solo en la palabra de cada sección (Entender, Conectar, Anticipar) */
-.oi-palabra-zoom {
-  display: inline-block;
-  transform-origin: left bottom;
-  will-change: transform;
-  --oi-zoom-mezcla: 100%;
-  color: color-mix(in srgb, currentColor var(--oi-zoom-mezcla), var(--oi-naranja));
-}
 
 /* Footer */
 
@@ -2280,3 +2272,48 @@ a.oi-cf-ficha-ejemplo:hover { border-color: var(--oi-azul); }
   from { opacity: 0.35; transform: translateY(48px); }
   to { opacity: 1; transform: none; }
 }
+
+/* ===== Palabra gigante que se arma con el scroll ===== */
+.oi-palabra-gigante {
+  font-family: var(--oi-fuente-titulo);
+  font-weight: 800;
+  font-size: clamp(72px, 15vw, 220px);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  color: var(--oi-naranja);
+  white-space: nowrap;
+  margin: 0 0 18px -0.04em;
+  transition: color 0.6s ease;
+  user-select: none;
+}
+.oi-palabra-gigante.oi-palabra-armada { color: var(--oi-azul); }
+.oi-palabra-gigante-clara.oi-palabra-armada { color: var(--oi-lila); }
+.oi-letra { display: inline-block; will-change: transform, opacity; }
+.oi-palabra-armada .oi-letra { transform: none !important; opacity: 1 !important; }
+
+/* ===== Cabecera en dos columnas: título a la izquierda, bajada a la derecha ===== */
+.oi-cabecera-dos {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-areas:
+    "palabra palabra"
+    "izq bajada";
+  column-gap: 64px;
+  row-gap: 8px;
+  align-items: end;
+  overflow: clip;
+  overflow-clip-margin: 24px;
+}
+.oi-cabecera-dos > .oi-palabra-gigante { grid-area: palabra; }
+.oi-cabecera-izq { grid-area: izq; display: flex; flex-direction: column; gap: 10px; }
+.oi-cabecera-izq > h2 { margin: 0; }
+.oi-cabecera-dos > p { grid-area: bajada; max-width: none; margin: 0; padding-bottom: 6px; }
+@media (max-width: 860px) {
+  .oi-cabecera-dos {
+    grid-template-columns: 1fr;
+    grid-template-areas: "palabra" "izq" "bajada";
+    row-gap: 16px;
+  }
+  .oi-palabra-gigante { font-size: clamp(56px, 19vw, 120px); }
+}
+.oi-cabecera-dos .oi-titulo-seccion { font-size: clamp(34px, 3.8vw, 52px); }
