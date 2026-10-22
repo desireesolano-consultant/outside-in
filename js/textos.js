@@ -121,7 +121,7 @@ const TEXTOS = {
     contadorCerrarAria: "Cerrar",
 
     linkedinFooter: "LinkedIn",
-    footerFirma: "Diseñado y construido por Desiree Solano con Claude Code",
+    footerFirma: "© 2026 Desiree Solano. Outside-In: concepto, diseño, textos y sistema. Todos los derechos reservados. Diseñado y construido con Claude Code.",
 
     detrasTitulo: "Detrás de Outside-In",
     detrasBajada: "Cómo y por qué lo construí",
@@ -279,7 +279,7 @@ const TEXTOS = {
     contadorCerrarAria: "Close",
 
     linkedinFooter: "LinkedIn",
-    footerFirma: "Designed and built by Desiree Solano with Claude Code",
+    footerFirma: "© 2026 Desiree Solano. Outside-In: concept, design, copy and system. All rights reserved. Designed and built with Claude Code.",
 
     detrasTitulo: "Behind Outside-In",
     detrasBajada: "How and why I built it",
