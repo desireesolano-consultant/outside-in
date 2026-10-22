@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Outside-In</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap"
@@ -195,7 +198,7 @@
 
     <!-- 02 ATERRIZAR: frase interactiva con desplegables -->
     <section id="aterrizar" class="oi-seccion-ancha">
-      <div class="oi-seccion-cabecera-col">
+      <div class="oi-seccion-cabecera-col oi-zoom-entrada">
         <div class="oi-etiqueta-seccion oi-reveal" data-i18n="conectarEtiqueta"></div>
         <h2 class="oi-titulo-seccion oi-reveal" data-i18n="conectarTitulo"></h2>
         <p class="ayuda oi-reveal" data-i18n="conectarBajada"></p>
@@ -221,7 +224,7 @@
     <!-- 03 DESCUBRIR: estudios en el radar -->
     <div class="oi-banda-alt">
     <section id="descubrir" class="oi-seccion-ancha" hidden>
-      <div class="oi-seccion-cabecera-col">
+      <div class="oi-seccion-cabecera-col oi-zoom-entrada">
         <div class="oi-etiqueta-seccion oi-reveal" data-i18n="anticiparEtiqueta"></div>
         <h2 class="oi-titulo-seccion oi-reveal" data-i18n="anticiparTitulo"></h2>
         <p class="ayuda oi-reveal" data-i18n="anticiparBajada"></p>
@@ -233,9 +236,15 @@
     <!-- BANNER: cita que crece con el scroll -->
     <section id="banner-cita" class="oi-banner-seccion">
       <div id="banner-cita-caja" class="oi-banner-caja">
-        <div class="oi-banner-circulo oi-banner-circulo-1" aria-hidden="true"></div>
-        <div class="oi-banner-circulo oi-banner-circulo-2" aria-hidden="true"></div>
-        <p class="oi-banner-texto" id="banner-cita-texto"></p>
+        <img class="oi-banner-foto" src="img/desiree-banner.jpg" alt="Desiree Solano" width="640" height="640" loading="lazy" />
+        <figure class="oi-banner-contenido">
+          <span class="oi-banner-comillas" aria-hidden="true">“</span>
+          <blockquote id="banner-cita-texto" class="oi-banner-texto"></blockquote>
+          <figcaption class="oi-banner-firma">
+            <strong>Desiree Solano</strong>
+            <span data-i18n="bannerFirmaCargo"></span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 

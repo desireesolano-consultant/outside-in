@@ -54,6 +54,7 @@ function init() {
   configurarScrollHorizontalEntender();
   configurarAsiAutomaticeSticky();
   configurarBanner();
+  actualizarZoomEntrada();
   configurarRevelado();
 
   if (document.fonts && document.fonts.ready) {
@@ -114,6 +115,7 @@ function init() {
         actualizarScrollHorizontalEntender();
         actualizarAsiAutomaticeSticky();
         actualizarBanner();
+        actualizarZoomEntrada();
         tickeando = false;
       });
     },
@@ -1086,6 +1088,22 @@ function actualizarBanner() {
   const progreso = Math.min(1, Math.max(0, (altoVentana - rect.top) / (altoVentana + rect.height)));
   caja.style.width = `${92 + progreso * 8}%`;
   caja.style.borderRadius = `${32 - progreso * 32}px`;
+}
+
+// ---- Zoom de entrada: el título de Conectar y Anticipar llega grande y
+// se acomoda a su tamaño normal cuando ya estás dentro de la sección ----
+
+function actualizarZoomEntrada() {
+  if (prefiereMovimientoReducido()) return;
+  const alto = window.innerHeight;
+  document.querySelectorAll(".oi-zoom-entrada").forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    // 0 cuando el título asoma por abajo; 1 cuando llega al tercio superior.
+    const progreso = Math.min(1, Math.max(0, (alto - rect.top) / (alto * 0.65)));
+    const escala = 1.28 - 0.28 * progreso;
+    el.style.transform = `scale(${escala.toFixed(3)})`;
+    el.style.opacity = (0.6 + 0.4 * progreso).toFixed(2);
+  });
 }
 
 // ---- Textos y títulos que aparecen al hacer scroll ----

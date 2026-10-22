@@ -42,8 +42,7 @@ const TEXTOS = {
     diagramaTendencias: "Tendencias",
 
     sobreEtiqueta: "01 — Sobre Outside-In",
-    sobreCita:
-      "“Las organizaciones que mejor se transforman son las que se mantienen curiosas y entienden su contexto antes de que el cambio las alcance.”",
+    sobreCita: "“Los mejores jugadores son los que conocen la cancha.”",
     sobreBoton: "Por qué creé Outside-In",
 
     entenderEtiqueta: "01 — Entender",
@@ -70,6 +69,7 @@ const TEXTOS = {
     buscadorResultado: "estudio",
     copiarCorreo: "Copiar correo",
     correoCopiado: "¡Copiado!",
+    bannerFirmaCargo: "Consultora en comunicación y transformación organizacional",
     miMiradaTitulo: "Mi mirada",
     hallazgoContextoTitulo: "Sobre el estudio",
     hallazgoLeerOriginal: "Leer el estudio original →",
@@ -202,8 +202,7 @@ const TEXTOS = {
     diagramaTendencias: "Trends",
 
     sobreEtiqueta: "01 — About Outside-In",
-    sobreCita:
-      "“The organizations that transform best are the ones that stay curious and understand their context before change catches up with them.”",
+    sobreCita: "“The best players are the ones who know the field.”",
     sobreBoton: "Why I created Outside-In",
 
     entenderEtiqueta: "01 — Understand",
@@ -230,6 +229,7 @@ const TEXTOS = {
     buscadorResultado: "study",
     copiarCorreo: "Copy email",
     correoCopiado: "Copied!",
+    bannerFirmaCargo: "Communications & Organizational Transformation Consultant",
     miMiradaTitulo: "My take",
     hallazgoContextoTitulo: "About the study",
     hallazgoLeerOriginal: "Read the original study →",

@@ -39,8 +39,8 @@ const LINK_LINKEDIN = "https://www.linkedin.com/in/desiree-solano-baba59131/";
 // Cita destacada del banner. Es la misma frase real de la carta de
 // bienvenida (INTRO), no un texto nuevo.
 const CITA_BANNER = {
-  es: "Las organizaciones que mejor se transforman son las que se mantienen curiosas y entienden su contexto antes de que el cambio las alcance.",
-  en: "The organizations that transform best are the ones that stay curious and understand their context before change catches up with them.",
+  es: "No busco decirte qué hacer, porque cada organización es un mundo.",
+  en: "I'm not here to tell you what to do, because every organization is its own world.",
 };
 
 // Segunda versión del sitio: foco reducido a 3 industrias reales.
