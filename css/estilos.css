@@ -1028,37 +1028,22 @@ button {
   line-height: 1.3;
   border: none;
   border-radius: 999px;
-  padding: 4px 24px 4px 12px;
+  padding: 4px 1.7em 4px 0.75em;
+  background-repeat: no-repeat;
+  background-position: right 0.65em center;
+  background-size: 0.6em auto;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
 }
 
 .oi-select-capsula-tema {
-  background: var(--oi-naranja);
+  background-color: var(--oi-naranja);
   color: var(--oi-negro);
 }
 
 .oi-select-capsula-industria {
-  background: var(--oi-azul);
-  color: var(--oi-blanco);
-}
-
-.oi-select-envoltorio::after {
-  content: "▾";
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-size: 0.5em;
-}
-
-.oi-select-envoltorio:has(.oi-select-capsula-tema)::after {
-  color: var(--oi-negro);
-}
-
-.oi-select-envoltorio:has(.oi-select-capsula-industria)::after {
+  background-color: var(--oi-azul);
   color: var(--oi-blanco);
 }
 
@@ -2005,7 +1990,7 @@ body.oi-menu-bloqueo {
   margin-top: 16px;
   max-width: 760px;
 }
-.oi-firma p { margin: 0; font-size: 20px; line-height: 1.45; color: var(--oi-gris-texto, #555); }
+.oi-firma p { margin: 0; font-size: 18px; line-height: 1.55; color: var(--oi-gris-texto, #555); }
 
 .oi-mirada-cabecera { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
 .oi-mirada-cabecera .oi-hallazgo-subtitulo { margin: 0; }
@@ -2201,3 +2186,40 @@ a.oi-cf-ficha-ejemplo:hover { border-color: var(--oi-azul); }
 .oi-banda-alt { background: var(--oi-fondo-alt); border-top: 1px solid var(--oi-borde); border-bottom: 1px solid var(--oi-borde); }
 .oi-banda-alt:has(> #descubrir[hidden]) { display: none; }
 @media (max-width: 540px) { .oi-foto-firma { width: 80px; height: 80px; } .oi-firma p { font-size: 17px; } }
+
+/* Flecha de los desplegables de Conectar: va dentro del botón, con su espacio propio */
+.oi-select-capsula-tema {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23111214' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.oi-select-capsula-industria {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* Contacto más visible */
+.oi-contacto-fila { gap: 10px; align-items: center; }
+.oi-contacto-enlace {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--oi-negro);
+  color: var(--oi-negro);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.oi-contacto-enlace:hover { color: var(--oi-azul); border-color: var(--oi-azul); }
+.oi-contacto-linkedin { background: var(--oi-azul); border-color: var(--oi-azul); color: var(--oi-blanco); }
+.oi-contacto-linkedin:hover { background: var(--oi-negro); border-color: var(--oi-negro); color: var(--oi-blanco); }
+.oi-contacto-icono { width: 18px; height: 18px; }
+.oi-contacto-copiar {
+  border: none;
+  background: none;
+  font: 600 13px var(--oi-fuente-texto);
+  color: var(--oi-texto-gris);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+.oi-contacto-copiar:hover { color: var(--oi-azul); }
+@media (max-width: 540px) { .oi-contacto-enlace { font-size: 14px; padding: 9px 14px; } }

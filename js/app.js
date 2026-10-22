@@ -61,6 +61,24 @@ function init() {
   }
 
   document.getElementById("boton-idioma").addEventListener("click", cambiarIdioma);
+  const botonCopiar = document.getElementById("boton-copiar-correo");
+  if (botonCopiar) {
+    botonCopiar.addEventListener("click", async () => {
+      const correo = botonCopiar.dataset.correo;
+      try {
+        await navigator.clipboard.writeText(correo);
+      } catch (e) {
+        const temporal = document.createElement("textarea");
+        temporal.value = correo;
+        document.body.appendChild(temporal);
+        temporal.select();
+        document.execCommand("copy");
+        temporal.remove();
+      }
+      botonCopiar.textContent = TEXTOS[idioma].correoCopiado;
+      setTimeout(() => { botonCopiar.textContent = TEXTOS[idioma].copiarCorreo; }, 1800);
+    });
+  }
 
   document.getElementById("modal-cerrar").addEventListener("click", () => cerrarModal("modal-fichas"));
   document.getElementById("modal-sobre-cerrar").addEventListener("click", () => cerrarModal("modal-sobre"));
@@ -540,6 +558,13 @@ function renderizarOpcionesAterrizar() {
 
   ajustarAnchoSelect(selectTema);
   ajustarAnchoSelect(selectIndustria);
+  // La tipografía puede terminar de cargar después: se vuelve a medir.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      ajustarAnchoSelect(selectTema);
+      ajustarAnchoSelect(selectIndustria);
+    });
+  }
 }
 
 // El <select> nativo se dimensiona según su opción MÁS ANCHA, no la elegida
@@ -562,8 +587,10 @@ function ajustarAnchoSelect(select) {
   const anchoTexto = medidor.offsetWidth;
   document.body.removeChild(medidor);
 
-  const relleno = 36; // 12px a la izquierda + 24px a la derecha (para la flecha)
-  select.style.width = `${anchoTexto + relleno}px`;
+  // Relleno real del botón (izquierda + derecha, donde va la flecha) y un
+  // pequeño margen de seguridad para que el texto nunca toque la flecha.
+  const relleno = parseFloat(estilos.paddingLeft) + parseFloat(estilos.paddingRight) + 6;
+  select.style.width = `${Math.ceil(anchoTexto + relleno)}px`;
 }
 
 function actualizarResultadosAterrizar() {
