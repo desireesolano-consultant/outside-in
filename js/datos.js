@@ -39,8 +39,8 @@ const LINK_LINKEDIN = "https://www.linkedin.com/in/desiree-solano-baba59131/";
 // Cita destacada del banner. Es la misma frase real de la carta de
 // bienvenida (INTRO), no un texto nuevo.
 const CITA_BANNER = {
-  es: "No busco decirte qué hacer, porque cada organización es un mundo. Busco darte el contexto para que encuentres tu propio camino.",
-  en: "I'm not here to tell you what to do, because every organization is its own world. I'm here to give you the context to find your own path.",
+  es: "Más que darte respuestas, busco darte el contexto para que encuentres tu propio camino.",
+  en: "More than giving you answers, I aim to give you the context to find your own path.",
 };
 
 // Segunda versión del sitio: foco reducido a 3 industrias reales.
