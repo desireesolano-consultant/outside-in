@@ -217,6 +217,11 @@ function renderizarHallazgo() {
   agregarMetadato(metadatos, t.regionLabel, texto(h, "region"));
 
   document.getElementById("hallazgo-link").href = h.link;
+  // Compartir en LinkedIn: comparte la página de este estudio en Outside-In,
+  // con una etiqueta para saber cuántas visitas llegan desde LinkedIn.
+  const paginaEstudio = `https://desireesolano-consultant.github.io/outside-in/hallazgo.html?id=${encodeURIComponent(h.id)}&ref=linkedin`;
+  document.getElementById("hallazgo-compartir").href =
+    `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(paginaEstudio)}`;
 }
 
 function configurarFranjaVistaPrevia() {

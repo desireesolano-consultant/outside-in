@@ -2350,3 +2350,119 @@ a.oi-cf-ficha-ejemplo:hover { border-color: var(--oi-azul); }
 }
 .oi-sobre-parrafo strong { color: var(--oi-blanco); }
 #modal-sobre-cuerpo strong { color: var(--oi-negro); background-image: linear-gradient(transparent 48%, rgba(255, 107, 44, 0.45) 48%, rgba(255, 107, 44, 0.45) 94%, transparent 94%); }
+
+/* ===================== Rediseño de portada (feedback oct 2026) ===================== */
+#boton-en-vivo { display: none !important; }
+
+.oi-hero-pregunta {
+  align-self: flex-start;
+  margin: 0;
+  font: 600 15px var(--oi-fuente-texto);
+  color: var(--oi-azul);
+  background: #eef0ff;
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+.oi-hero-titular {
+  margin: 0;
+  font: 800 clamp(46px, 5.6vw, 84px)/1 var(--oi-fuente-titulo);
+  letter-spacing: -0.035em;
+  color: var(--oi-negro);
+}
+.oi-hero-titular-azul { color: var(--oi-azul); }
+.oi-hero-titular-naranja { color: var(--oi-naranja); }
+.oi-hero-bajada {
+  margin: 0;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.55;
+  color: var(--oi-texto-gris);
+  max-width: 560px;
+}
+.oi-hero-bajada strong { color: var(--oi-negro); font-weight: 700; }
+
+/* Qué es Outside-In: cita a la izquierda, explicación a la derecha */
+.oi-sobre-queEs > .oi-sobre-cita { align-self: start; }
+.oi-sobre-historia {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--oi-blanco);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.oi-paso-item .oi-sobre-guia-nombre { color: var(--oi-blanco); }
+
+/* Conóceme */
+.oi-conoceme { background: var(--oi-fondo-alt); padding: 104px 32px 96px; }
+.oi-conoceme-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+.oi-conoceme-foto { position: relative; display: flex; flex-direction: column; align-items: center; }
+.oi-conoceme-difuminado {
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 0;
+  aspect-ratio: 742 / 760;
+  background: linear-gradient(to bottom, transparent 80%, var(--oi-fondo-alt) 99%);
+  pointer-events: none;
+}
+.oi-conoceme-pie { position: relative; margin: 12px 0 0; text-align: center; font-size: 14px; color: var(--oi-texto-gris); }
+.oi-conoceme-pie strong { display: block; font: 700 20px var(--oi-fuente-titulo); color: var(--oi-negro); margin-bottom: 2px; }
+.oi-conoceme-titulo {
+  margin: 8px 0 22px;
+  font: 800 clamp(30px, 3.4vw, 48px)/1.08 var(--oi-fuente-titulo);
+  letter-spacing: -0.03em;
+}
+.oi-conoceme-texto p { font-size: 18px; line-height: 1.65; margin: 0 0 16px; color: #2a2b2e; }
+.oi-recomendaciones { max-width: 1240px; margin: 64px auto 0; }
+.oi-recomendaciones-titulo { margin: 0 0 20px; font: 700 24px var(--oi-fuente-titulo); }
+.oi-recomendaciones-grilla { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.oi-recomendacion {
+  margin: 0;
+  background: var(--oi-blanco);
+  border: 1px solid var(--oi-borde);
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+.oi-recomendacion blockquote { margin: 0; font-size: 15.5px; line-height: 1.55; color: #2a2b2e; }
+.oi-recomendacion blockquote::before {
+  content: "“";
+  display: block;
+  color: var(--oi-naranja);
+  font: 800 54px/0.6 var(--oi-fuente-titulo);
+  height: 26px;
+}
+.oi-recomendacion figcaption { display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: var(--oi-texto-gris); }
+.oi-recomendacion figcaption strong { color: var(--oi-negro); font-size: 15px; }
+.oi-conoceme-ctas { max-width: 1240px; margin: 28px auto 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+
+@media (max-width: 1000px) {
+  .oi-recomendaciones-grilla { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .oi-conoceme { padding: 72px 20px; }
+  .oi-conoceme-inner { grid-template-columns: 1fr; gap: 32px; }
+  .oi-conoceme-foto { max-width: 300px; margin: 0 auto; }
+  .oi-recomendaciones-grilla { grid-template-columns: 1fr; }
+  /* Encabezado en celular: menú a la izquierda, logo, y a la derecha lupa e idioma */
+  .oi-header-inner { flex-wrap: nowrap; gap: 10px; padding-left: 16px; padding-right: 16px; }
+  .oi-header-acciones { display: contents; }
+  .oi-boton-menu { order: -1; flex-shrink: 0; }
+  .oi-logo { order: 0; margin-right: auto; white-space: nowrap; font-size: 19px; }
+  .oi-boton-buscar { order: 1; }
+  .boton-idioma { order: 2; padding-left: 12px; padding-right: 12px; font-size: 13px; }
+}
+.oi-hero-texto { gap: 22px; }
+.oi-hallazgo-boton-compartir { display: block; margin-top: 10px; width: 100%; text-align: center; box-sizing: border-box; }
+.oi-hero-titular { font-size: clamp(44px, 4.9vw, 74px); }
+.oi-senal-vida { text-align: left; }

@@ -938,3 +938,37 @@ const HALLAZGOS = [
     estado: "PUBLICADO",
   },
 ];
+
+
+// Recomendaciones reales de LinkedIn (fragmentos). Cada una en su idioma
+// original y con su traducción. Fuente: perfil de LinkedIn de Desirée.
+const RECOMENDACIONES = [
+  {
+    nombre: "Tanesia Leflore",
+    rol_es: "Fue su líder directa en Accenture",
+    rol_en: "Managed Desirée directly at Accenture",
+    texto_es: "Rápidamente se convirtió en una de las personas en las que más confiaba para el trabajo con clientes.",
+    texto_en: "She quickly became one of the people I trusted most on client work.",
+  },
+  {
+    nombre: "Vishnu Rao",
+    rol_es: "Novartis · trabajaron juntos desde el lado del cliente",
+    rol_en: "Novartis · worked together from the client side",
+    texto_es: "Desi es reflexiva, colaborativa, muy receptiva y una gran comunicadora.",
+    texto_en: "Desi is thoughtful, collaborative, highly responsive, and a strong communicator.",
+  },
+  {
+    nombre: "Valeria Martínez Pereyra",
+    rol_es: "Compañera de equipo en un proyecto de transformación organizacional",
+    rol_en: "Teammate on an organizational transformation project",
+    texto_es: "Rápidamente encontré en ella equipo, colaboración, profesionalismo y una gran capacidad de análisis del cliente.",
+    texto_en: "I quickly found in her teamwork, collaboration, professionalism and a great ability to analyze the client.",
+  },
+  {
+    nombre: "Inés Weiss",
+    rol_es: "Formó parte de su equipo en Accenture",
+    rol_en: "Was part of her team at Accenture",
+    texto_es: "Su capacidad para liderar, escuchar y potenciar a las personas hace que trabajar con ella sea realmente un placer.",
+    texto_en: "Her ability to lead, listen to and empower people makes working with her a real pleasure.",
+  },
+];

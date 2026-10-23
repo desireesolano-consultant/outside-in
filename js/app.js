@@ -43,6 +43,7 @@ function init() {
   configurarAterrizar();
   renderizarDescubrir();
   renderizarBannerCita();
+  renderizarRecomendaciones();
   renderizarChipsAsiAutomatice();
   renderizarFichaEjemploAsiAutomatice();
   configurarContadorInlineAsiAutomatice();
@@ -98,13 +99,10 @@ function init() {
   });
 
   document.getElementById("senal-vida").addEventListener("click", () => {
-    if (tieneDatosEnVivo()) {
-      abrirPanelEnVivo();
-      return;
-    }
-    const seccion = document.getElementById("asi-automatice");
+    const seccion = document.getElementById("sobre");
     if (seccion) seccion.scrollIntoView({ behavior: prefiereMovimientoReducido() ? "auto" : "smooth" });
   });
+
 
   let tickeando = false;
   window.addEventListener(
@@ -151,6 +149,7 @@ function cambiarIdioma() {
   actualizarResultadosAterrizar();
   renderizarDescubrir();
   renderizarBannerCita();
+  renderizarRecomendaciones();
   renderizarChipsAsiAutomatice();
   renderizarFichaEjemploAsiAutomatice();
   configurarContadorInlineAsiAutomatice();
@@ -255,7 +254,7 @@ function renderizarSenalVida() {
 
   const t = TEXTOS[idioma];
   const etiquetaNuevos = senales.hallazgosNuevos === 1 ? t.senalNuevoSingular : t.senalNuevoPlural;
-  texto.textContent = `${t.senalActualizadoPrefijo} ${senales.fechaTexto} · ${senales.estudiosRevisados} ${t.senalEstudiosLabel} · ${senales.hallazgosNuevos} ${etiquetaNuevos}`;
+  texto.textContent = `${t.senalCadaLunes} · ${t.senalUltimaLectura} ${senales.fechaTexto}`;
   enlace.hidden = false;
 }
 
@@ -280,6 +279,36 @@ function configurarMenuMovil() {
       document.body.classList.remove("oi-menu-bloqueo");
     });
   });
+}
+
+// ---- Conóceme: recomendaciones reales de LinkedIn ----
+
+function renderizarRecomendaciones() {
+  const contenedor = document.getElementById("recomendaciones");
+  if (!contenedor || typeof RECOMENDACIONES === "undefined") return;
+  const t = TEXTOS[idioma];
+  contenedor.innerHTML = "";
+  const titulo = document.createElement("h3");
+  titulo.className = "oi-recomendaciones-titulo";
+  titulo.textContent = t.conocemeRecosTitulo;
+  const grilla = document.createElement("div");
+  grilla.className = "oi-recomendaciones-grilla";
+  RECOMENDACIONES.forEach((r) => {
+    const tarjeta = document.createElement("figure");
+    tarjeta.className = "oi-recomendacion";
+    const cita = document.createElement("blockquote");
+    cita.textContent = idioma === "es" ? r.texto_es : r.texto_en;
+    const autor = document.createElement("figcaption");
+    const nombre = document.createElement("strong");
+    nombre.textContent = r.nombre;
+    const rol = document.createElement("span");
+    rol.textContent = idioma === "es" ? r.rol_es : r.rol_en;
+    autor.append(nombre, rol);
+    tarjeta.append(cita, autor);
+    grilla.appendChild(tarjeta);
+  });
+  contenedor.append(titulo, grilla);
+  if (typeof animarEntradas === "function") animarEntradas();
 }
 
 // ---- Sección "Sobre Outside-In" + modal con la carta completa ----
@@ -1208,6 +1237,7 @@ const SELECTOR_ENTRADAS = [
   ".oi-radar-item",
   ".oi-contacto-fila > *",
   ".oi-hero-ctas > *",
+  ".oi-recomendacion",
   ".oi-footer-nav > *",
 ].join(", ");
 

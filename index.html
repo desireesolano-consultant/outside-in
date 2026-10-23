@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="css/estilos.css?v=202610220209" />
+  <link rel="stylesheet" href="css/estilos.css?v=202610232025" />
 </head>
 <body>
   <div id="franja-vista-previa" class="oi-franja-vista-previa" data-i18n="franjaVistaPrevia" hidden></div>
@@ -23,11 +23,9 @@
         Outside-In
       </a>
       <nav id="oi-nav" class="oi-nav">
-        <a href="#sobre" data-i18n="navSobre"></a>
-        <a href="#entender" data-i18n="navEntender"></a>
-        <a href="#aterrizar" data-i18n="navConectar"></a>
-        <a href="#descubrir" data-i18n="navAnticipar"></a>
-        <a href="#asi-automatice" data-i18n="navAsiAutomatice"></a>
+        <a href="#sobre" data-i18n="navQueEs"></a>
+        <a href="#entender" data-i18n="navExplora"></a>
+        <a href="#conoceme" data-i18n="navConoceme"></a>
       </nav>
       <div class="oi-header-acciones">
         <button id="boton-en-vivo" class="oi-boton-en-vivo" type="button" aria-expanded="false" aria-controls="panel-en-vivo" hidden>
@@ -65,58 +63,27 @@
     <section id="inicio" class="oi-hero">
       <div class="oi-hero-grid">
         <div class="oi-hero-texto">
-          <p class="oi-tagline" data-i18n="heroTagline"></p>
-          <h1 class="oi-headline">
-            <a href="#entender" class="oi-headline-enlace"><span data-i18n="heroPalabra1"></span></a>.<br />
-            <a href="#aterrizar" class="oi-headline-enlace"><span data-i18n="heroPalabra2"></span></a>.<br />
-            <a href="#descubrir" class="oi-headline-enlace"><span class="oi-headline-acento" data-i18n="heroPalabra3"></span></a><span class="oi-headline-punto">.</span>
+          <p class="oi-hero-pregunta" data-i18n="heroPregunta"></p>
+          <h1 class="oi-hero-titular">
+            <span data-i18n="heroTitular1"></span>
+            <span class="oi-hero-titular-azul" data-i18n="heroTitular2"></span>
+            <span class="oi-hero-titular-naranja" data-i18n="heroTitular3"></span><span class="oi-headline-punto">.</span>
           </h1>
+          <p class="oi-hero-bajada"><span data-i18n="heroBajada1"></span> <strong data-i18n="heroBajada2"></strong></p>
           <p class="oi-hero-parrafo-capsula">
             <span data-i18n="heroParrafoPre"></span>
             <span class="oi-capsula oi-capsula-tema" id="oi-word-tema"></span>
             <span data-i18n="heroParrafoMid"></span>
-            <span class="oi-capsula oi-capsula-industria" id="oi-word-industria"></span><br class="oi-salto-forzado" />
-            <span data-i18n="heroParrafoPost"></span>
+            <span class="oi-capsula oi-capsula-industria" id="oi-word-industria"></span>
           </p>
+          <div class="oi-hero-ctas">
+            <a href="#entender" class="oi-boton oi-boton-primario" data-i18n="heroCtaPrimario"></a>
+            <a href="#sobre" class="oi-boton oi-boton-secundario" data-i18n="heroCtaSecundario"></a>
+          </div>
           <button type="button" id="senal-vida" class="oi-senal-vida" hidden>
             <span class="oi-punto-vivo" aria-hidden="true"></span>
             <span id="senal-vida-texto"></span>
           </button>
-          <div class="oi-bio-fila">
-            <img class="oi-foto-perfil oi-foto-hero" src="img/desiree-hero.jpg?v=2" alt="Desiree Solano" width="88" height="88" />
-            <div class="oi-bio-texto">
-              <p class="oi-bio-nombre" data-i18n="heroSaludo"></p>
-              <p class="oi-bio-cargo" data-i18n="heroCargo"></p>
-            </div>
-          </div>
-          <div class="oi-contacto-fila">
-            <a href="mailto:desireesolanochang27@gmail.com" class="oi-contacto-enlace oi-contacto-correo">
-              <svg class="oi-contacto-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                <path d="M3 7l9 6 9-6"></path>
-              </svg>
-              <span>desireesolanochang27@gmail.com</span>
-            </a>
-            <button type="button" id="boton-copiar-correo" class="oi-contacto-copiar" data-correo="desireesolanochang27@gmail.com" data-i18n="copiarCorreo"></button>
-            <a href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener" class="oi-contacto-enlace oi-contacto-linkedin">
-              <svg class="oi-contacto-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="3"></rect>
-                <line x1="8" y1="11" x2="8" y2="16"></line>
-                <circle cx="8" cy="8" r="0.6" fill="currentColor" stroke="none"></circle>
-                <path d="M12 16v-3.2a1.8 1.8 0 0 1 3.6 0V16"></path>
-                <line x1="12" y1="12.8" x2="12" y2="16"></line>
-              </svg>
-              <span data-i18n="linkedinFooter"></span>
-            </a>
-          </div>
-          <div class="oi-hero-narrativa">
-            <p data-i18n="heroParrafo1"></p>
-            <p data-i18n="heroParrafo2"></p>
-          </div>
-          <div class="oi-hero-ctas">
-            <a href="#entender" class="oi-boton oi-boton-primario" data-i18n="heroCtaPrimario"></a>
-            <a href="#asi-automatice" class="oi-boton oi-boton-secundario" data-i18n="heroCtaSecundario"></a>
-          </div>
         </div>
         <div class="oi-hero-diagrama" aria-hidden="true">
           <svg id="oi-svg-diagrama" class="oi-svg-diagrama" viewBox="0 0 290 290">
@@ -146,34 +113,50 @@
       </div>
     </section>
 
-    <!-- 01 SOBRE -->
+    <!-- QUÉ ES OUTSIDE-IN + CÓMO FUNCIONA -->
     <section id="sobre" class="oi-sobre">
-      <div class="oi-sobre-inner">
+      <div class="oi-sobre-inner oi-sobre-queEs">
         <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="sobreEtiqueta"></div>
-        <div class="oi-sobre-fotos oi-reveal">
-          <div class="oi-sobre-circulo" aria-hidden="true"></div>
-          <img class="oi-sobre-recorte" src="img/desiree-recorte.webp" alt="Desiree Solano" width="742" height="760" loading="lazy" />
-          <p class="oi-sobre-foto-pie"><strong data-i18n="nombreCompleto">Desirée Solano</strong><span data-i18n="sobreFotoPie"></span></p>
-        </div>
+        <blockquote class="oi-sobre-cita oi-reveal" data-i18n="sobreCita"></blockquote>
         <div class="oi-sobre-contenido">
-          <blockquote class="oi-sobre-cita oi-reveal" data-i18n="sobreCita"></blockquote>
           <p class="oi-sobre-parrafo oi-reveal" id="sobre-parrafo"></p>
           <button type="button" id="boton-sobre" class="oi-boton oi-boton-claro" data-i18n="sobreBoton"></button>
         </div>
         <div class="oi-sobre-guia">
+          <h3 class="oi-sobre-guia-titulo oi-reveal" data-i18n="comoFuncionaTitulo"></h3>
+          <div class="oi-sobre-guia-grid oi-pasos-grid">
+            <div class="oi-sobre-guia-item oi-paso-item">
+              <span class="oi-sobre-guia-num">01</span>
+              <span class="oi-sobre-guia-nombre" data-i18n="paso1Titulo"></span>
+              <span class="oi-sobre-guia-texto" data-i18n="paso1Desc"></span>
+            </div>
+            <div class="oi-sobre-guia-item oi-paso-item">
+              <span class="oi-sobre-guia-num">02</span>
+              <span class="oi-sobre-guia-nombre" data-i18n="paso2Titulo"></span>
+              <span class="oi-sobre-guia-texto" data-i18n="paso2Desc"></span>
+            </div>
+            <div class="oi-sobre-guia-item oi-paso-item">
+              <span class="oi-sobre-guia-num">03</span>
+              <span class="oi-sobre-guia-nombre" data-i18n="paso3Titulo"></span>
+              <span class="oi-sobre-guia-texto" data-i18n="paso3Desc"></span>
+            </div>
+          </div>
+          <a href="detras-de-outside-in.html" class="oi-sobre-historia oi-reveal" data-i18n="asiAutomaticeLeerMas"></a>
+        </div>
+        <div class="oi-sobre-guia">
           <h3 class="oi-sobre-guia-titulo oi-reveal" data-i18n="guiaTitulo"></h3>
           <div class="oi-sobre-guia-grid">
-            <a href="#entender" class="oi-sobre-guia-item oi-reveal">
+            <a href="#entender" class="oi-sobre-guia-item">
               <span class="oi-sobre-guia-num">01</span>
               <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra1"></span>
               <span class="oi-sobre-guia-texto" data-i18n="guiaEntender"></span>
             </a>
-            <a href="#aterrizar" class="oi-sobre-guia-item oi-reveal">
+            <a href="#aterrizar" class="oi-sobre-guia-item">
               <span class="oi-sobre-guia-num">02</span>
               <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra2"></span>
               <span class="oi-sobre-guia-texto" data-i18n="guiaConectar"></span>
             </a>
-            <a href="#descubrir" class="oi-sobre-guia-item oi-reveal">
+            <a href="#descubrir" class="oi-sobre-guia-item">
               <span class="oi-sobre-guia-num">03</span>
               <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra3"></span>
               <span class="oi-sobre-guia-texto" data-i18n="guiaAnticipar"></span>
@@ -260,72 +243,30 @@
       </div>
     </section>
 
-    <!-- 04 ASÍ AUTOMATICÉ OUTSIDE-IN -->
-    <section id="asi-automatice" class="oi-seccion-ancha">
-      <div class="oi-seccion-cabecera-col">
-        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="asiAutomaticeEtiqueta"></div>
-        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="asiAutomaticeTitulo"></h2>
-        <div class="oi-firma oi-reveal">
-          <img class="oi-foto-perfil oi-foto-firma" src="img/desiree-proceso.jpg?v=3" alt="Desiree Solano" width="64" height="64" loading="lazy" />
-          <p data-i18n="firmaProceso"></p>
+    <!-- CONÓCEME -->
+    <section id="conoceme" class="oi-conoceme">
+      <div class="oi-conoceme-inner">
+        <div class="oi-conoceme-foto oi-reveal">
+          <div class="oi-sobre-circulo" aria-hidden="true"></div>
+          <img class="oi-sobre-recorte" src="img/desiree-recorte.webp" alt="Desiree Solano" width="742" height="760" loading="lazy" />
+          <div class="oi-conoceme-difuminado" aria-hidden="true"></div>
+          <p class="oi-conoceme-pie"><strong data-i18n="nombreCompleto">Desirée Solano</strong><span data-i18n="heroCargo"></span></p>
+        </div>
+        <div class="oi-conoceme-texto">
+          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="conocemeEtiqueta"></div>
+          <h2 class="oi-conoceme-titulo oi-reveal" data-i18n="conocemeTitulo"></h2>
+          <p class="oi-reveal" data-i18n="conocemeP1"></p>
+          <p class="oi-reveal" data-i18n="conocemeP2"></p>
+          <p class="oi-reveal" data-i18n="conocemeP3"></p>
+          <p class="oi-reveal" data-i18n="conocemeP4"></p>
         </div>
       </div>
-
-      <div id="cf-pin-contenedor" class="oi-cf-pin-contenedor">
-        <div class="oi-cf-pin">
-          <div class="oi-cf-progreso" role="tablist">
-            <button type="button" class="oi-cf-progreso-boton" data-etapa="0">01</button>
-            <button type="button" class="oi-cf-progreso-boton" data-etapa="1">02</button>
-            <button type="button" class="oi-cf-progreso-boton" data-etapa="2">03</button>
-          </div>
-
-          <div class="oi-cf-pin-cuerpo">
-            <div class="oi-cf-pasos">
-              <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="0">
-                <span class="oi-paso-numero">01</span>
-                <span class="oi-paso-titulo" data-i18n="paso1Titulo"></span>
-                <span class="oi-paso-desc" data-i18n="paso1Desc"></span>
-              </button>
-              <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="1">
-                <span class="oi-paso-numero">02</span>
-                <span class="oi-paso-titulo" data-i18n="paso2Titulo"></span>
-                <span class="oi-paso-desc" data-i18n="paso2Desc"></span>
-              </button>
-              <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="2">
-                <span class="oi-paso-numero">03</span>
-                <span class="oi-paso-titulo" data-i18n="paso3Titulo"></span>
-                <span class="oi-paso-desc" data-i18n="paso3Desc"></span>
-              </button>
-            </div>
-
-            <div class="oi-cf-escenario">
-              <div class="oi-cf-etapa oi-cf-etapa-rastreo" data-etapa="0">
-                <div id="cf-chips-rastreo" class="oi-cf-chips"></div>
-              </div>
-              <div class="oi-cf-etapa oi-cf-etapa-curaduria" data-etapa="1">
-                <div class="oi-cf-filtro"></div>
-                <div id="cf-chips-curaduria" class="oi-cf-chips"></div>
-              </div>
-              <div class="oi-cf-etapa oi-cf-etapa-lectura" data-etapa="2">
-                <a id="cf-ficha-real" class="oi-cf-ficha-ejemplo" href="#entender">
-                  <span id="cf-ficha-etiqueta" class="oi-insignia-nuevo" style="position: static; display: inline-block; margin-bottom: 8px"></span>
-                  <div id="cf-ficha-titulo" class="oi-cf-ficha-titulo"></div>
-                  <div id="cf-ficha-fuente" class="oi-cf-ficha-fuente"></div>
-                  <div class="oi-cf-ficha-capsulas">
-                    <span class="oi-capsula oi-capsula-tema" id="cf-capsula-tema"></span>
-                    <span class="oi-capsula oi-capsula-industria" id="cf-capsula-industria"></span>
-                  </div>
-                  <div id="cf-ficha-lectura" class="oi-cf-ficha-lectura"></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div id="recomendaciones" class="oi-recomendaciones"></div>
+      <div class="oi-conoceme-ctas">
+        <a href="mailto:desireesolanochang27@gmail.com" class="oi-boton oi-boton-primario" data-i18n="conocemeEscribeme"></a>
+        <button type="button" id="boton-copiar-correo" class="oi-contacto-copiar" data-correo="desireesolanochang27@gmail.com" data-i18n="copiarCorreo"></button>
+        <a href="https://www.linkedin.com/in/desiree-solano-baba59131/details/recommendations/" target="_blank" rel="noopener" class="oi-boton oi-boton-secundario" data-i18n="conocemeVerRecos"></a>
       </div>
-
-      <p class="oi-paso-cierre oi-reveal" data-i18n="asiAutomaticeCierre"></p>
-      <div id="contador-numeros-cf" class="oi-contador-numeros oi-reveal"></div>
-      <a href="detras-de-outside-in.html" class="oi-ver-todos oi-reveal" data-i18n="asiAutomaticeLeerMas"></a>
     </section>
   </main>
 
@@ -334,10 +275,9 @@
       <div class="oi-footer-top">
         <div class="oi-footer-marca">Outside-In</div>
         <div class="oi-footer-nav">
-          <a href="#entender" data-i18n="navEntender"></a>
-          <a href="#aterrizar" data-i18n="navConectar"></a>
-          <a href="#descubrir" data-i18n="navAnticipar"></a>
-          <a href="#asi-automatice" data-i18n="navAsiAutomatice"></a>
+          <a href="#sobre" data-i18n="navQueEs"></a>
+          <a href="#entender" data-i18n="navExplora"></a>
+          <a href="#conoceme" data-i18n="navConoceme"></a>
           <a id="link-linkedin-footer" href="#" target="_blank" rel="noopener" data-i18n="linkedinFooter"></a>
         </div>
       </div>
@@ -364,15 +304,15 @@
     <div id="modal-sobre-cuerpo" class="modal-cuerpo carta"></div>
   </dialog>
 
-  <script src="js/config.js?v=202610220209"></script>
-  <script src="js/textos.js?v=202610220209"></script>
-  <script src="js/datos.js?v=202610220209"></script>
-  <script src="js/radar.js?v=202610220209"></script>
-  <script src="js/contador.js?v=202610220209"></script>
-  <script src="js/imagenes.js?v=202610220209"></script>
-  <script src="js/vista-previa.js?v=202610220209"></script>
-  <script src="js/app.js?v=202610220209"></script>
-  <script src="js/buscador.js?v=202610220209"></script>
-  <script src="js/metricas.js?v=202610220209"></script>
+  <script src="js/config.js?v=202610232025"></script>
+  <script src="js/textos.js?v=202610232025"></script>
+  <script src="js/datos.js?v=202610232025"></script>
+  <script src="js/radar.js?v=202610232025"></script>
+  <script src="js/contador.js?v=202610232025"></script>
+  <script src="js/imagenes.js?v=202610232025"></script>
+  <script src="js/vista-previa.js?v=202610232025"></script>
+  <script src="js/app.js?v=202610232025"></script>
+  <script src="js/buscador.js?v=202610232025"></script>
+  <script src="js/metricas.js?v=202610232025"></script>
 </body>
 </html>
