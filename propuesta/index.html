@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Propuesta · Outside-In</title>
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Propuesta de rediseño. Bloques de color + una historia que se construye al bajar. */
+:root{
+  --azul:#2440F0;--negro:#111214;--naranja:#FF6B2C;--lila:#C9CCFF;--blanco:#FFFFFF;
+  --alt:#F2F2F0;--borde:#E4E4E1;--gris:#55575C;--durazno:#FFF1EA;
+  --t:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --x:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--blanco);color:var(--negro);font-family:var(--x)}
+img{max-width:100%;display:block}
+.envoltura{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:999px;font:600 15px var(--x);border:1.5px solid currentColor;color:inherit;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--azul);border-color:var(--azul);color:var(--blanco)}
+.btn.n{background:var(--naranja);border-color:var(--naranja);color:var(--negro)}
+
+/* Encabezado */
+.cab{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--borde)}
+.cab .envoltura{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font:800 21px var(--t);white-space:nowrap;color:var(--negro);text-decoration:none}
+.logo i{width:22px;height:22px;border:3.5px solid var(--negro);border-radius:50%;display:grid;place-items:center}
+.logo i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--azul)}
+.cab nav{display:flex;gap:26px;font-size:15px}
+.cab nav a{color:var(--negro);text-decoration:none}
+.cab nav a:hover{color:var(--azul)}
+.cab .idioma{border:1.5px solid var(--negro);border-radius:999px;padding:8px 15px;font-weight:600;font-size:14px}
+
+/* 1 · Portada: texto a la izquierda, imagen en un anillo a la derecha */
+.portada{position:relative;overflow:hidden;min-height:calc(100svh - 72px);display:flex;align-items:center}
+.portada .envoltura{position:relative;z-index:2;width:100%}
+.portada-txt{max-width:560px;display:flex;flex-direction:column;gap:22px;padding-block:56px}
+.pill{align-self:flex-start;margin:0;font:600 14px var(--x);color:var(--azul);background:#EEF0FF;padding:7px 14px;border-radius:999px}
+.marca{margin:0;font:800 clamp(56px,7vw,112px)/.88 var(--t);letter-spacing:-.05em;white-space:nowrap}
+.marca b{color:var(--naranja)}
+.lema{margin:0;font:700 clamp(22px,2.2vw,30px)/1.25 var(--t);letter-spacing:-.015em;max-width:22ch}
+.lema span{color:var(--azul)}
+.sellos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.sellos li{font:600 13px var(--x);padding:7px 12px;border-radius:999px;background:var(--alt)}
+.anillo{position:absolute;right:-8vw;top:50%;width:min(62vw,820px);aspect-ratio:1;transform:translateY(-50%);z-index:1}
+.anillo .foto{position:absolute;inset:9%;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--azul),var(--lila))}
+.anillo .foto img{width:100%;height:100%;object-fit:cover;animation:respira 18s ease-in-out infinite alternate}
+@keyframes respira{to{transform:scale(1.12)}}
+.anillo svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.arco{fill:none;stroke-width:10;stroke-linecap:round;transform-origin:50% 50%}
+.arco.a1{stroke:var(--naranja);animation:gira 26s linear infinite}
+.arco.a2{stroke:var(--azul);animation:gira 34s linear infinite reverse}
+.chispa{fill:var(--naranja);animation:titila 3s ease-in-out infinite}
+.chispa:nth-child(even){fill:var(--azul);animation-delay:-1.5s}
+@keyframes gira{to{transform:rotate(360deg)}}
+@keyframes titila{50%{opacity:.2}}
+.dato-flota{position:absolute;z-index:3;background:var(--blanco);border-radius:14px;padding:12px 16px;box-shadow:0 14px 34px rgba(17,18,20,.16);font-size:13px;line-height:1.35;max-width:210px;animation:flota 7s ease-in-out infinite}
+.dato-flota b{display:block;font:800 13px var(--t);color:var(--azul);margin-bottom:2px}
+.dato-flota.d1{left:6%;top:20%}
+.dato-flota.d2{left:-2%;bottom:16%;animation-delay:-3.5s}
+.dato-flota.d2 b{color:var(--naranja)}
+@keyframes flota{50%{transform:translateY(-12px)}}
+.bajar{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;font:600 13px var(--x);color:var(--gris);display:flex;flex-direction:column;align-items:center;gap:8px}
+.bajar::after{content:"";width:2px;height:34px;background:linear-gradient(var(--naranja),transparent);animation:baja 1.8s ease-in-out infinite}
+@keyframes baja{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* 2 · La historia: una ventana que se agranda y cuenta qué es Outside-In */
+.historia{position:relative;height:460vh;background:var(--blanco)}
+.historia-fija{position:sticky;top:72px;height:calc(100svh - 72px);overflow:hidden}
+.ventana{position:absolute;inset:0;clip-path:inset(var(--recorte,18%) var(--recorte-x,22%) round var(--radio,32px));background:var(--negro);will-change:clip-path}
+.escena{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.escena.activa{opacity:1}
+.escena img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 6s ease-out}
+.escena.activa img{transform:scale(1.14)}
+.escena::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,20,.25),rgba(17,18,20,.6))}
+.escena .fallback{position:absolute;inset:0}
+.frases{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 8vw;pointer-events:none;z-index:3}
+.frase{grid-area:1/1;margin:0;max-width:22ch;font:700 clamp(30px,4.2vw,62px)/1.12 var(--t);letter-spacing:-.025em;color:var(--blanco);opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;text-wrap:balance;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.frase.activa{opacity:1;transform:none}
+.frase em{font-style:normal;color:var(--naranja)}
+.frase .cta-final{display:flex;gap:12px;justify-content:center;margin-top:30px;pointer-events:auto;flex-wrap:wrap}
+.puntos{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:4;display:flex;gap:8px}
+.puntos span{width:26px;height:4px;border-radius:2px;background:rgba(255,255,255,.35);transition:background .4s ease}
+.puntos span.on{background:var(--naranja)}
+
+/* Títulos de sección: la palabra gigante que se arma al bajar */
+.sec{padding-block:112px;scroll-margin-top:72px}
+.sec{overflow-x:clip}
+.palabra{margin:0;font:800 clamp(64px,11vw,168px)/.85 var(--t);letter-spacing:-.05em;white-space:nowrap;color:var(--naranja);transition:color .6s ease}
+.palabra::before{content:attr(data-numero) " —";display:block;font:700 max(13px,.075em) var(--x);letter-spacing:.12em;margin:0 0 .45em .06em;color:currentColor}
+.palabra.armada{color:var(--final)}
+.palabra .l{display:inline-block;will-change:transform,opacity}
+.palabra.armada .l{transform:none!important;opacity:1!important}
+.sub{margin:26px 0 0;font:700 clamp(20px,2vw,26px)/1.35 var(--t);letter-spacing:-.01em;max-width:40ch}
+
+/* 3 · Estudios (gris) */
+.estudios{background:var(--alt);--final:var(--azul)}
+.pestanas{display:flex;gap:8px;flex-wrap:wrap;margin:40px 0 28px}
+.pestanas span{font:600 14px var(--x);padding:10px 18px;border-radius:999px;border:1.5px solid var(--borde);background:var(--blanco)}
+.pestanas span.on{background:var(--negro);color:var(--blanco);border-color:var(--negro)}
+.tarjetas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tarjeta{background:var(--blanco);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;color:var(--negro);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease}
+.tarjeta:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(17,18,20,.1)}
+.tarjeta .img{aspect-ratio:16/10;overflow:hidden;background:linear-gradient(135deg,var(--lila),var(--azul))}
+.tarjeta .img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.tarjeta:hover .img img{transform:scale(1.06)}
+.tarjeta .cuerpo{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tarjeta small{font:700 11.5px var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+.tarjeta h3{margin:0;font:800 19px/1.3 var(--t);letter-spacing:-.01em}
+.tarjeta .ir{margin-top:auto;font-weight:600;font-size:14px}
+
+/* 4 · Insights (azul) */
+.insights{background:var(--azul);color:var(--blanco);--final:var(--blanco)}
+.insights .sub{color:#E3E6FF}
+.destacado{margin-top:48px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:20px;overflow:hidden;background:var(--blanco);color:var(--negro)}
+.destacado .img{position:relative;min-height:420px;background:linear-gradient(135deg,var(--naranja),var(--lila))}
+.destacado .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.destacado .fuentes{position:absolute;left:20px;bottom:20px;display:flex;gap:8px;flex-wrap:wrap}
+.destacado .fuentes span{background:var(--blanco);border-radius:999px;padding:7px 13px;font:700 13px var(--x)}
+.destacado .txt{padding:44px;display:flex;flex-direction:column;gap:18px;justify-content:center}
+.destacado small{font:700 12px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--azul)}
+.destacado h3{margin:0;font:800 clamp(26px,2.8vw,38px)/1.1 var(--t);letter-spacing:-.025em;text-wrap:balance}
+.destacado p{margin:0;font-size:17px;line-height:1.6;color:var(--gris)}
+.destacado .btn{align-self:flex-start}
+.proximo{margin-top:18px;display:flex;align-items:center;gap:14px;font-size:15px;color:#E3E6FF}
+.proximo::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--naranja);animation:titila 1.6s ease-in-out infinite}
+
+/* 5 · Mi mirada (durazno) */
+.mi{background:var(--durazno);--final:var(--negro)}
+.mirada{margin-top:48px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:20px}
+.columna{position:relative;border-radius:20px;overflow:hidden;min-height:400px;background:var(--negro);color:var(--blanco);display:flex;align-items:flex-end}
+.columna img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.columna .txt{position:relative;padding:36px;display:flex;flex-direction:column;gap:12px}
+.columna small{font:700 12px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--naranja)}
+.columna h3{margin:0;font:800 clamp(24px,2.4vw,32px)/1.15 var(--t);letter-spacing:-.02em}
+.columna p{margin:0;font-size:16px;line-height:1.55;color:#E4E5EA;max-width:44ch}
+.piezas-caja{border-radius:20px;background:var(--blanco);padding:36px;display:flex;flex-direction:column;gap:14px}
+.piezas{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:120px;height:120px}
+.piezas span{border-radius:12px;animation:pieza 6s ease-in-out infinite}
+.piezas span:nth-child(1){background:var(--azul)}.piezas span:nth-child(2){background:var(--naranja);animation-delay:-1.5s}.piezas span:nth-child(3){background:var(--lila);animation-delay:-3s}.piezas span:nth-child(4){background:var(--negro);animation-delay:-4.5s}
+@keyframes pieza{50%{transform:translate(5px,-5px) rotate(4deg)}}
+.piezas-caja small{font:700 12px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--naranja)}
+.piezas-caja h3{margin:0;font:800 26px/1.15 var(--t);letter-spacing:-.02em}
+.piezas-caja p{margin:0;font-size:16px;line-height:1.55;color:var(--gris)}
+
+/* 6 · Sobre mí (negro) */
+.yo{background:var(--negro);color:var(--blanco);--final:var(--lila)}
+.yo-grid{margin-top:48px;display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:64px;align-items:center}
+.yo-foto{position:relative;display:grid;place-items:center}
+.yo-foto .c{position:absolute;width:88%;aspect-ratio:1;border-radius:50%;background:var(--naranja);top:36px}
+.yo-foto img{position:relative;width:100%;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
+.yo h3{margin:0;font:800 clamp(26px,2.8vw,40px)/1.12 var(--t);letter-spacing:-.025em;text-wrap:balance}
+.yo p{margin:16px 0 0;font-size:17px;line-height:1.65;color:#D4D5DA;max-width:58ch}
+.recos{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.reco{margin:0;background:#1D1E22;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.reco blockquote{margin:0;font-size:15px;line-height:1.55}
+.reco blockquote::before{content:"“";display:block;font:800 48px/.6 var(--t);color:var(--naranja);height:22px}
+.reco figcaption{font-size:13px;color:#A9ABB2}
+.reco figcaption b{display:block;color:var(--blanco);font-size:14.5px}
+.yo-ctas{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* Entradas suaves */
+.entra{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.entra.visible{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .cab nav{display:none}
+  .portada{min-height:auto}
+  .portada-txt{padding-block:40px 380px}
+  .anillo{width:120vw;right:-30vw;top:auto;bottom:-18vw;transform:none}
+  .dato-flota{display:none}
+  .bajar{display:none}
+  .historia{height:420vh}
+  .ventana{--recorte-x:6%}
+  .tarjetas,.destacado,.mirada,.yo-grid,.recos{grid-template-columns:1fr}
+  .destacado .img{min-height:240px}
+  .destacado .txt{padding:28px}
+  .palabra{font-size:clamp(52px,16vw,96px)}
+  .sec{padding-block:80px}
+  .yo-foto{max-width:300px;margin:0 auto}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .entra{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="cab">
+  <div class="envoltura">
+    <a class="logo" href="#inicio"><i></i>Outside-In</a>
+    <nav><a href="#inicio">Qué es Outside-In</a><a href="#estudios">Estudios</a><a href="#insights">Insights</a><a href="#mirada">Mi mirada</a><a href="#yo">Sobre mí</a></nav>
+    <span class="idioma">English</span>
+  </div>
+</header>
+
+<main>
+  <!-- 1 · QUÉ ES OUTSIDE-IN: portada -->
+  <section class="portada" id="inicio">
+    <div class="envoltura">
+      <div class="portada-txt">
+        <p class="pill">¿List@ para ponerte al día?</p>
+        <h1 class="marca">Outside-In<b>.</b></h1>
+        <p class="lema">Las nuevas tendencias en las organizaciones, <span>en un solo lugar.</span></p>
+        <ul class="sellos"><li>Al día cada lunes</li><li>Data que coincide y que choca</li><li>Con mirada de consultora</li></ul>
+        <div><a class="btn p" href="#historia">Descubre cómo funciona ↓</a></div>
+      </div>
+    </div>
+    <div class="anillo" aria-hidden="true">
+      <div class="foto"><img src="https://images.unsplash.com/photo-1758691737543-09a1b2b715fa?auto=format&fit=crop&w=1400&q=70" alt="" /></div>
+      <svg viewBox="0 0 100 100">
+        <circle class="arco a1" cx="50" cy="50" r="46" stroke-dasharray="120 170" pathLength="290" style="stroke-width:1.1"></circle>
+        <circle class="arco a2" cx="50" cy="50" r="49.5" stroke-dasharray="80 230" pathLength="310" style="stroke-width:.8"></circle>
+        <g><circle class="chispa" cx="8" cy="30" r=".7"></circle><circle class="chispa" cx="14" cy="18" r=".5"></circle><circle class="chispa" cx="4" cy="52" r=".6"></circle><circle class="chispa" cx="22" cy="8" r=".5"></circle><circle class="chispa" cx="10" cy="74" r=".6"></circle><circle class="chispa" cx="30" cy="94" r=".5"></circle></g>
+      </svg>
+    </div>
+    <div class="dato-flota d1" aria-hidden="true" style="left:auto;right:30%"><b>Deloitte · IA</b>Solo 11% ya usa agentes de IA en producción.</div>
+    <div class="dato-flota d2" aria-hidden="true" style="left:auto;right:44%;bottom:12%"><b>EY · Consumo</b>94% decide su compra en la tienda.</div>
+    <span class="bajar">Baja para descubrirlo</span>
+  </section>
+
+  <!-- La historia que se construye al bajar (es la bajada de la portada, contada en escenas) -->
+  <section class="historia" id="historia" aria-label="Qué es Outside-In">
+    <div class="historia-fija">
+      <div class="ventana" id="ventana">
+        <div class="escena activa"><div class="fallback" style="background:linear-gradient(135deg,#1b2fb8,#2440F0)"></div><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+        <div class="escena"><div class="fallback" style="background:linear-gradient(135deg,#2440F0,#C9CCFF)"></div><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+        <div class="escena"><div class="fallback" style="background:linear-gradient(135deg,#111214,#2440F0)"></div><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+        <div class="escena"><div class="fallback" style="background:linear-gradient(135deg,#FF6B2C,#2440F0)"></div><img src="https://images.unsplash.com/photo-1758518731706-be5d5230e5a5?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+        <div class="escena"><div class="fallback" style="background:linear-gradient(135deg,#2440F0,#111214)"></div><img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+      </div>
+      <div class="frases">
+        <p class="frase activa">¿Te pasa que salen tantos estudios que es imposible leerlos todos?</p>
+        <p class="frase"><em>A mí también.</em></p>
+        <p class="frase">Por eso creé Outside-In: un solo lugar donde mi sistema encuentra <em>cada semana</em> las nuevas tendencias en las organizaciones.</p>
+        <p class="frase">Y donde yo cruzo la data para contarte dónde coinciden, dónde se contradicen <em>y qué significa para ti.</em></p>
+        <div class="frase">Bienvenid@ a Outside-In.<div class="cta-final"><a class="btn n" href="#estudios">Explora los estudios →</a><a class="btn" style="color:#fff" href="#insights">Ver los insights</a></div></div>
+      </div>
+      <div class="puntos" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span></div>
+    </div>
+  </section>
+
+  <!-- 2 · ESTUDIOS -->
+  <section class="sec estudios" id="estudios">
+    <div class="envoltura">
+      <h2 class="palabra" data-numero="01">Estudios</h2>
+      <p class="sub">Cada estudio que mi sistema encuentra, resumido con sus cifras clave y el enlace al original.</p>
+      <div class="pestanas"><span class="on">Todos los estudios</span><span>Por tema e industria</span><span>Recién detectados</span></div>
+      <div class="tarjetas">
+        <a class="tarjeta entra" href="../hallazgo.html?id=h-2026-10-deloitte-agentic"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1694903089438-bf28d4697d9a?auto=format&fit=crop&w=900&q=70" alt="" /></div><div class="cuerpo"><small>Deloitte · IA y personas</small><h3>Solo 11% de las organizaciones ya usa agentes de IA en producción, y 35% ni siquiera tiene una estrategia formal</h3><span class="ir">Leer el estudio completo →</span></div></a>
+        <a class="tarjeta entra" href="../hallazgo.html?id=h-2026-10-ey-tiendas"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1670684684445-a4504dca0bbc?auto=format&fit=crop&w=900&q=70" alt="" /></div><div class="cuerpo"><small>EY · Consumo masivo</small><h3>94% de los consumidores termina decidiendo su compra en la tienda, aunque haya investigado en otros canales</h3><span class="ir">Leer el estudio completo →</span></div></a>
+        <a class="tarjeta entra" href="../hallazgo.html?id=h-2026-10-pwc-fs-ia"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=70" alt="" /></div><div class="cuerpo"><small>PwC · Servicios financieros</small><h3>8 de cada 10 líderes financieros esperan que su plantilla sea al menos 20% más pequeña en cinco años</h3><span class="ir">Leer el estudio completo →</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · INSIGHTS -->
+  <section class="sec insights" id="insights">
+    <div class="envoltura">
+      <h2 class="palabra" data-numero="02">Insights</h2>
+      <p class="sub">Las grandes consultoras estudian los mismos temas, pero no siempre llegan a las mismas conclusiones. Aquí los pongo a conversar.</p>
+      <a class="destacado entra" href="../insight.html?id=i-2026-10-ia-roles" style="text-decoration:none">
+        <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1758519289074-9de36003622b?auto=format&fit=crop&w=1200&q=70" alt="" /><div class="fuentes"><span>Deloitte</span><span>Bain</span><span>PwC</span></div></div>
+        <div class="txt">
+          <small>IA y personas · 3 estudios</small>
+          <h3>Las empresas ya dieron acceso a la IA. ¿Le explicaron a su gente qué cambia?</h3>
+          <p>Tres estudios en consumo masivo, salud y banca llegan a la misma tensión: la tecnología avanza más rápido que la conversación sobre cómo cambia el trabajo de cada persona.</p>
+          <span class="btn p">Leer el insight completo →</span>
+        </div>
+      </a>
+      <p class="proximo">Mi sistema ya está buscando el próximo cruce.</p>
+    </div>
+  </section>
+
+  <!-- 4 · MI MIRADA -->
+  <section class="sec mi" id="mirada">
+    <div class="envoltura">
+      <h2 class="palabra" data-numero="03">Mi mirada</h2>
+      <p class="sub">Los datos cuentan una parte de la historia. Aquí te cuento lo que veo yo.</p>
+      <div class="mirada">
+        <article class="columna entra">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&fit=crop&w=1200&q=70" alt="" />
+          <div class="txt">
+            <small>Mis columnas · Muy pronto</small>
+            <h3>Cada columna parte de un insight y te cuenta qué significa para quienes lideran.</h3>
+            <p>En primera persona, cortas y con una pregunta para seguir la conversación en LinkedIn.</p>
+          </div>
+        </article>
+        <article class="piezas-caja entra">
+          <div class="piezas" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <small>Cada trimestre · Primera edición muy pronto</small>
+          <h3>Juntando las piezas</h3>
+          <p>Mi propio estudio de estudios: lo que dicen decenas de investigaciones sobre las tendencias en las organizaciones, con una mirada especial en Latinoamérica.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · SOBRE MÍ -->
+  <section class="sec yo" id="yo">
+    <div class="envoltura">
+      <h2 class="palabra" data-numero="04">Sobre mí</h2>
+      <div class="yo-grid">
+        <div class="yo-foto entra"><div class="c"></div><img src="../img/desiree-recorte.webp" alt="Desirée Solano" /></div>
+        <div class="entra">
+          <h3>¿Eres de las personas que no puede quedarse con una pregunta sin responder? Yo tampoco.</h3>
+          <p>Necesito entender por qué pasan las cosas y armar el rompecabezas hasta que todo encaje. Esa curiosidad me ha acompañado durante más de 7 años en transformaciones de empresas, desde Accenture y APOYO Comunicación, con clientes Fortune 500.</p>
+          <p>Si te gusta conversar de cultura, comunicación, IA… o de perros, escríbeme. ☕</p>
+          <div class="yo-ctas"><a class="btn n" href="mailto:desireesolanochang27@gmail.com">Escríbeme</a><a class="btn" href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener">LinkedIn →</a></div>
+        </div>
+      </div>
+      <div class="recos">
+        <figure class="reco entra"><blockquote>Rápidamente se convirtió en una de las personas en las que más confiaba para el trabajo con clientes.</blockquote><figcaption><b>Tanesia Leflore</b>Fue su líder directa en Accenture</figcaption></figure>
+        <figure class="reco entra"><blockquote>Desi es reflexiva, colaborativa, muy receptiva y una gran comunicadora.</blockquote><figcaption><b>Vishnu Rao</b>Novartis · desde el lado del cliente</figcaption></figure>
+        <figure class="reco entra"><blockquote>Su capacidad para liderar, escuchar y potenciar a las personas hace que trabajar con ella sea realmente un placer.</blockquote><figcaption><b>Inés Weiss</b>Formó parte de su equipo en Accenture</figcaption></figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Imágenes que no cargan: se queda el degradado de marca detrás.
+  document.querySelectorAll('img').forEach(i=>i.addEventListener('error',()=>{i.style.visibility='hidden';}));
+
+  // La historia: la ventana se agranda hasta ocupar toda la pantalla y las escenas cambian.
+  const historia=document.getElementById('historia');
+  const ventana=document.getElementById('ventana');
+  const escenas=[...document.querySelectorAll('.escena')];
+  const frases=[...document.querySelectorAll('.frase')];
+  const puntos=[...document.querySelectorAll('.puntos span')];
+  function historiaAvance(){
+    const r=historia.getBoundingClientRect();
+    const total=historia.offsetHeight-innerHeight;
+    const p=Math.min(1,Math.max(0,-r.top/total));
+    const abre=reducido?1:Math.min(1,p/0.16);
+    const movil=innerWidth<900;
+    ventana.style.setProperty('--recorte',`${(18*(1-abre)).toFixed(2)}%`);
+    ventana.style.setProperty('--recorte-x',`${((movil?6:22)*(1-abre)).toFixed(2)}%`);
+    ventana.style.setProperty('--radio',`${(32*(1-abre)).toFixed(1)}px`);
+    const n=Math.min(frases.length-1,Math.floor(Math.max(0,p-0.04)/(0.96/frases.length)));
+    frases.forEach((f,i)=>f.classList.toggle('activa',i===n));
+    escenas.forEach((e,i)=>e.classList.toggle('activa',i===n));
+    puntos.forEach((d,i)=>d.classList.toggle('on',i<=n));
+  }
+
+  // Palabras gigantes: se arman letra por letra al llegar a cada sección.
+  const palabras=[...document.querySelectorAll('.palabra')];
+  palabras.forEach((el,n)=>{
+    const texto=el.textContent; el.textContent='';
+    let s=7+n*13; const az=()=>{s=(s*9301+49297)%233280;return s/233280;};
+    [...texto].forEach((c,i)=>{const l=document.createElement('span');l.className='l';l.textContent=c===' '?' ':c;
+      Object.assign(l.dataset,{i,dx:Math.round((az()-.5)*700),dy:Math.round((az()-.5)*260),r:Math.round((az()-.5)*200),e:(.3+az()*1.8).toFixed(2)});el.appendChild(l);});
+    el.dataset.total=texto.length;
+  });
+  function palabrasAvance(){
+    palabras.forEach(el=>{
+      if(reducido){el.classList.add('armada');return;}
+      const r=el.getBoundingClientRect();
+      const p=Math.min(1,Math.max(0,(innerHeight-r.top)/(innerHeight*.7)));
+      el.classList.toggle('armada',p>=1);
+      const t=+el.dataset.total||1;
+      el.querySelectorAll('.l').forEach(l=>{
+        const loc=Math.min(1,Math.max(0,(p-(+l.dataset.i/t)*.35)/.6));const su=1-Math.pow(1-loc,3);const f=1-su;
+        l.style.transform=`translate(${(l.dataset.dx*f).toFixed(1)}px,${(l.dataset.dy*f).toFixed(1)}px) rotate(${(l.dataset.r*f).toFixed(1)}deg) scale(${(1+(l.dataset.e-1)*f).toFixed(3)})`;
+        l.style.opacity=(0.08+0.92*su).toFixed(2);
+      });
+    });
+  }
+
+  // Tarjetas que entran suave
+  const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.15}):null;
+  document.querySelectorAll('.entra').forEach((el,i)=>{el.style.transitionDelay=`${(i%3)*90}ms`;io?io.observe(el):el.classList.add('visible');});
+
+  let tick=false;
+  function todo(){historiaAvance();palabrasAvance();tick=false;}
+  addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(todo);}},{passive:true});
+  addEventListener('resize',todo);
+  todo();
+})();
+</script>
+</body>
+</html>
