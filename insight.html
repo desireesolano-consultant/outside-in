@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insight · Outside-In</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/estilos.css?v=202610232202" />
+</head>
+<body>
+  <div id="franja-vista-previa" class="oi-franja-vista-previa" data-i18n="franjaVistaPrevia" hidden></div>
+  <header class="oi-header">
+    <div class="oi-header-inner">
+      <a href="index.html#inicio" class="oi-logo">
+        <span class="oi-logo-circulo"><span class="oi-logo-punto"></span></span>
+        Outside-In
+      </a>
+      <nav id="oi-nav" class="oi-nav">
+        <a href="index.html#insights" data-i18n="navInsights"></a>
+        <a href="index.html#estudios" data-i18n="navEstudios"></a>
+        <a href="index.html#mi-estudio" data-i18n="navMiEstudio"></a>
+        <a href="index.html#conoceme" data-i18n="navSobreMi"></a>
+      </nav>
+      <div class="oi-header-acciones">
+        <button id="boton-idioma" class="boton-idioma" type="button"></button>
+        <button id="boton-menu" class="oi-boton-menu" type="button" aria-expanded="false" aria-controls="oi-nav">
+          <span class="oi-menu-linea"></span>
+          <span class="oi-menu-linea"></span>
+          <span class="oi-menu-linea"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article id="insight" class="oi-insight">
+      <section class="oi-insight-hero">
+        <div class="oi-insight-hero-inner">
+          <a href="index.html#insights" class="oi-hallazgo-volver" data-i18n="insightVolver"></a>
+          <p class="oi-insight-etiqueta"><span data-i18n="insightEtiqueta"></span> · <span id="insight-meta"></span></p>
+          <h1 id="insight-titulo" class="oi-insight-titulo"></h1>
+          <p id="insight-bajada" class="oi-insight-bajada"></p>
+        </div>
+      </section>
+
+      <section class="oi-insight-cuerpo">
+        <h2 class="oi-insight-h2" data-i18n="insightDicen"></h2>
+        <div id="insight-dicen" class="oi-insight-dicen"></div>
+
+        <div class="oi-insight-dos">
+          <div class="oi-insight-bloque oi-insight-coinciden">
+            <h2 class="oi-insight-h2"><span class="oi-insight-marca oi-marca-azul" aria-hidden="true">=</span><span data-i18n="insightCoinciden"></span></h2>
+            <ul id="insight-coinciden"></ul>
+          </div>
+          <div class="oi-insight-bloque oi-insight-chocan">
+            <h2 class="oi-insight-h2"><span class="oi-insight-marca oi-marca-naranja" aria-hidden="true">≠</span><span data-i18n="insightChocan"></span></h2>
+            <ul id="insight-chocan"></ul>
+          </div>
+        </div>
+
+        <div class="oi-insight-porque">
+          <h2 class="oi-insight-h2" data-i18n="insightPorque"></h2>
+          <p id="insight-porque"></p>
+        </div>
+
+        <div id="insight-mirada" class="oi-insight-mirada"></div>
+
+        <div class="oi-insight-preguntas">
+          <h2 class="oi-insight-h2" data-i18n="insightPreguntas"></h2>
+          <ol id="insight-preguntas"></ol>
+        </div>
+
+        <div class="oi-insight-acciones">
+          <a id="insight-compartir" class="oi-boton oi-boton-primario" target="_blank" rel="noopener" data-i18n="compartirLinkedin"></a>
+          <a href="index.html#estudios" class="oi-boton oi-boton-secundario" data-i18n="insightVerEstudios"></a>
+        </div>
+      </section>
+    </article>
+
+    <section id="insight-no-encontrado" class="oi-seccion-ancha oi-pagina-hero" hidden>
+      <h1 class="oi-titulo-pagina" data-i18n="insightNoEncontrado"></h1>
+      <a href="index.html#insights" class="oi-boton oi-boton-primario" data-i18n="insightVolver"></a>
+    </section>
+  </main>
+
+  <footer class="oi-footer">
+    <div class="oi-footer-inner">
+      <div class="oi-footer-top">
+        <div class="oi-footer-marca">Outside-In</div>
+        <div class="oi-footer-nav">
+          <a href="index.html#insights" data-i18n="navInsights"></a>
+          <a href="index.html#estudios" data-i18n="navEstudios"></a>
+          <a href="index.html#mi-estudio" data-i18n="navMiEstudio"></a>
+          <a href="index.html#conoceme" data-i18n="navSobreMi"></a>
+          <a id="link-linkedin-footer" href="#" target="_blank" rel="noopener" data-i18n="linkedinFooter"></a>
+        </div>
+      </div>
+      <div class="oi-footer-bottom" data-i18n="subtitulo"></div>
+      <div class="oi-footer-firma" data-i18n="footerFirma"></div>
+    </div>
+  </footer>
+
+  <script src="js/config.js?v=202610232202"></script>
+  <script src="js/textos.js?v=202610232202"></script>
+  <script src="js/datos.js?v=202610232202"></script>
+  <script src="js/insights.js?v=202610232202"></script>
+  <script src="js/imagenes.js?v=202610232202"></script>
+  <script src="js/pagina-insight.js?v=202610232202"></script>
+  <script src="js/buscador.js?v=202610232202"></script>
+  <script src="js/metricas.js?v=202610232202"></script>
+</body>
+</html>

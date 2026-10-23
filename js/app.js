@@ -44,6 +44,7 @@ function init() {
   renderizarDescubrir();
   renderizarBannerCita();
   renderizarRecomendaciones();
+  renderizarInsightsPortada();
   renderizarChipsAsiAutomatice();
   renderizarFichaEjemploAsiAutomatice();
   configurarContadorInlineAsiAutomatice();
@@ -150,6 +151,7 @@ function cambiarIdioma() {
   renderizarDescubrir();
   renderizarBannerCita();
   renderizarRecomendaciones();
+  renderizarInsightsPortada();
   renderizarChipsAsiAutomatice();
   renderizarFichaEjemploAsiAutomatice();
   configurarContadorInlineAsiAutomatice();
@@ -279,6 +281,66 @@ function configurarMenuMovil() {
       document.body.classList.remove("oi-menu-bloqueo");
     });
   });
+}
+
+// ---- Insights en la portada: tarjetas de los cruces publicados ----
+
+function renderizarInsightsPortada() {
+  const contenedor = document.getElementById("insights-lista");
+  if (!contenedor || typeof INSIGHTS === "undefined") return;
+  const t = TEXTOS[idioma];
+  contenedor.innerHTML = "";
+  INSIGHTS.slice()
+    .sort((a, b) => String(b.publicado).localeCompare(String(a.publicado)))
+    .forEach((ins, n) => {
+      const fuentes = ins.estudios.map((id) => HALLAZGOS.find((h) => h.id === id)).filter(Boolean);
+      const tarjeta = document.createElement("a");
+      tarjeta.className = `oi-insight-tarjeta${n === 0 ? " oi-insight-destacado" : ""}`;
+      tarjeta.href = `insight.html?id=${encodeURIComponent(ins.id)}`;
+      const meta = document.createElement("p");
+      meta.className = "oi-insight-tarjeta-meta";
+      const tema = TEMAS.find((x) => x.id === ins.tema);
+      meta.textContent = `${tema ? tema[idioma] : ""} · ${fuentes.length} ${t.insightEstudios}`;
+      const titulo = document.createElement("h3");
+      titulo.textContent = idioma === "es" ? ins.titulo_es : ins.titulo_en;
+      const bajada = document.createElement("p");
+      bajada.className = "oi-insight-tarjeta-bajada";
+      bajada.textContent = idioma === "es" ? ins.bajada_es : ins.bajada_en;
+      const cruce = document.createElement("div");
+      cruce.className = "oi-insight-cruce";
+      fuentes.forEach((h, i) => {
+        const d = ins.dicen.find((x) => x.id === h.id);
+        const nodo = document.createElement("div");
+        nodo.className = "oi-insight-nodo";
+        const dato = document.createElement("strong");
+        dato.textContent = d ? (idioma === "es" ? d.dato_es : d.dato_en) : "";
+        const fuente = document.createElement("span");
+        fuente.textContent = h.fuente.replace(" & Company", "").replace(" AI Institute", "");
+        nodo.append(dato, fuente);
+        cruce.appendChild(nodo);
+        if (i < fuentes.length - 1) {
+          const linea = document.createElement("i");
+          linea.setAttribute("aria-hidden", "true");
+          cruce.appendChild(linea);
+        }
+      });
+      const leer = document.createElement("span");
+      leer.className = "oi-insight-leer";
+      leer.textContent = t.insightLeer;
+      tarjeta.append(meta, titulo, bajada, cruce, leer);
+      contenedor.appendChild(tarjeta);
+    });
+  const proximo = document.createElement("div");
+  proximo.className = "oi-insight-tarjeta oi-insight-proximo";
+  const pt = document.createElement("p");
+  pt.className = "oi-insight-tarjeta-meta";
+  pt.textContent = t.insightProximo;
+  const pp = document.createElement("p");
+  pp.className = "oi-insight-tarjeta-bajada";
+  pp.textContent = t.insightProximoTexto;
+  proximo.append(pt, pp);
+  contenedor.appendChild(proximo);
+  if (typeof animarEntradas === "function") animarEntradas();
 }
 
 // ---- Conóceme: recomendaciones reales de LinkedIn ----
@@ -1238,6 +1300,7 @@ const SELECTOR_ENTRADAS = [
   ".oi-contacto-fila > *",
   ".oi-hero-ctas > *",
   ".oi-recomendacion",
+  ".oi-insight-tarjeta",
   ".oi-footer-nav > *",
 ].join(", ");
 

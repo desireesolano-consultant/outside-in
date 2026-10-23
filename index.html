@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="css/estilos.css?v=202610232025" />
+  <link rel="stylesheet" href="css/estilos.css?v=202610232202" />
 </head>
 <body>
   <div id="franja-vista-previa" class="oi-franja-vista-previa" data-i18n="franjaVistaPrevia" hidden></div>
@@ -23,9 +23,10 @@
         Outside-In
       </a>
       <nav id="oi-nav" class="oi-nav">
-        <a href="#sobre" data-i18n="navQueEs"></a>
-        <a href="#entender" data-i18n="navExplora"></a>
-        <a href="#conoceme" data-i18n="navConoceme"></a>
+        <a href="#insights" data-i18n="navInsights"></a>
+        <a href="#estudios" data-i18n="navEstudios"></a>
+        <a href="#mi-estudio" data-i18n="navMiEstudio"></a>
+        <a href="#conoceme" data-i18n="navSobreMi"></a>
       </nav>
       <div class="oi-header-acciones">
         <button id="boton-en-vivo" class="oi-boton-en-vivo" type="button" aria-expanded="false" aria-controls="panel-en-vivo" hidden>
@@ -64,20 +65,20 @@
       <div class="oi-hero-grid">
         <div class="oi-hero-texto">
           <p class="oi-hero-pregunta" data-i18n="heroPregunta"></p>
-          <h1 class="oi-hero-titular">
-            <span data-i18n="heroTitular1"></span>
-            <span class="oi-hero-titular-azul" data-i18n="heroTitular2"></span>
-            <span class="oi-hero-titular-naranja" data-i18n="heroTitular3"></span><span class="oi-headline-punto">.</span>
-          </h1>
-          <p class="oi-hero-bajada"><span data-i18n="heroBajada1"></span> <strong data-i18n="heroBajada2"></strong></p>
-          <p class="oi-hero-parrafo-capsula">
-            <span data-i18n="heroParrafoPre"></span>
+          <h1 class="oi-hero-marca">Outside-In<span class="oi-headline-punto">.</span></h1>
+          <p class="oi-hero-bajada" data-i18n="heroBajada"></p>
+          <ul class="oi-hero-sellos">
+            <li data-i18n="sello1"></li>
+            <li data-i18n="sello2"></li>
+            <li data-i18n="sello3"></li>
+            <li data-i18n="sello4"></li>
+          </ul>
+          <p class="oi-hero-parrafo-capsula" hidden>
             <span class="oi-capsula oi-capsula-tema" id="oi-word-tema"></span>
-            <span data-i18n="heroParrafoMid"></span>
             <span class="oi-capsula oi-capsula-industria" id="oi-word-industria"></span>
           </p>
           <div class="oi-hero-ctas">
-            <a href="#entender" class="oi-boton oi-boton-primario" data-i18n="heroCtaPrimario"></a>
+            <a href="#insights" class="oi-boton oi-boton-primario" data-i18n="heroCtaPrimario"></a>
             <a href="#sobre" class="oi-boton oi-boton-secundario" data-i18n="heroCtaSecundario"></a>
           </div>
           <button type="button" id="senal-vida" class="oi-senal-vida" hidden>
@@ -113,6 +114,76 @@
       </div>
     </section>
 
+    <!-- INSIGHTS: cruces entre estudios -->
+    <section id="insights" class="oi-insights">
+      <div class="oi-insights-inner">
+        <div class="oi-insights-cabecera">
+          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="insightsEtiqueta"></div>
+          <h2 class="oi-titulo-seccion oi-reveal" data-i18n="insightsTitulo"></h2>
+          <p class="oi-insights-intro oi-reveal" data-i18n="insightsIntro"></p>
+        </div>
+        <div id="insights-lista" class="oi-insights-lista"></div>
+      </div>
+    </section>
+
+    <div id="estudios">
+    <!-- 01 ENTENDER: lecturas individuales, scroll horizontal anclado -->
+    <section id="entender" class="oi-entender oi-scrollx-section">
+      <div class="oi-entender-cabecera oi-cabecera-dos">
+        <div class="oi-palabra-gigante oi-palabra-gigante-clara" data-palabra="palabraEstudios" data-numero="01" aria-hidden="true"></div>
+        <div class="oi-cabecera-izq">
+          <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="entenderEtiqueta"></div>
+          <h2 class="oi-titulo-seccion oi-titulo-claro oi-reveal" data-i18n="entenderTitulo"></h2>
+        </div>
+        <p class="oi-bajada-clara oi-reveal" data-i18n="entenderBajada"></p>
+      </div>
+      <div class="oi-scrollx-sticky">
+        <div id="grid-entender" class="oi-scrollx-track"></div>
+      </div>
+    </section>
+
+    <!-- 02 ATERRIZAR: frase interactiva con desplegables -->
+    <section id="aterrizar" class="oi-seccion-ancha">
+      <div class="oi-seccion-cabecera-col oi-cabecera-simple">
+        <div class="oi-cabecera-izq">
+          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="conectarEtiqueta"></div>
+          <h2 class="oi-titulo-seccion oi-reveal" data-i18n="conectarTitulo"></h2>
+        </div>
+        <p class="ayuda oi-reveal" data-i18n="conectarBajada"></p>
+      </div>
+
+      <p class="oi-aterrizar-frase">
+        <span data-i18n="aterrizarFrasePre"></span>
+        <span class="oi-select-envoltorio">
+          <select id="aterrizar-select-tema" class="oi-select-capsula oi-select-capsula-tema"></select>
+        </span>
+        <span data-i18n="aterrizarFraseMid"></span>
+        <span class="oi-select-envoltorio">
+          <select id="aterrizar-select-industria" class="oi-select-capsula oi-select-capsula-industria"></select>
+        </span>
+      </p>
+
+      <div>
+        <p id="aterrizar-conteo" class="oi-aterrizar-conteo"></p>
+        <div id="aterrizar-tarjetas" class="oi-grid-resultados"></div>
+      </div>
+    </section>
+
+    <!-- 03 DESCUBRIR: estudios en el radar -->
+    <div class="oi-banda-alt">
+    <section id="descubrir" class="oi-seccion-ancha" hidden>
+      <div class="oi-seccion-cabecera-col oi-cabecera-simple">
+        <div class="oi-cabecera-izq">
+          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="anticiparEtiqueta"></div>
+          <h2 class="oi-titulo-seccion oi-reveal" data-i18n="anticiparTitulo"></h2>
+        </div>
+        <p class="ayuda oi-reveal" data-i18n="anticiparBajada"></p>
+      </div>
+      <div id="lista-radar" class="oi-lista-radar"></div>
+    </section>
+    </div>
+    </div>
+
     <!-- QUÉ ES OUTSIDE-IN + CÓMO FUNCIONA -->
     <section id="sobre" class="oi-sobre">
       <div class="oi-sobre-inner oi-sobre-queEs">
@@ -143,93 +214,28 @@
           </div>
           <a href="detras-de-outside-in.html" class="oi-sobre-historia oi-reveal" data-i18n="asiAutomaticeLeerMas"></a>
         </div>
-        <div class="oi-sobre-guia">
-          <h3 class="oi-sobre-guia-titulo oi-reveal" data-i18n="guiaTitulo"></h3>
-          <div class="oi-sobre-guia-grid">
-            <a href="#entender" class="oi-sobre-guia-item">
-              <span class="oi-sobre-guia-num">01</span>
-              <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra1"></span>
-              <span class="oi-sobre-guia-texto" data-i18n="guiaEntender"></span>
-            </a>
-            <a href="#aterrizar" class="oi-sobre-guia-item">
-              <span class="oi-sobre-guia-num">02</span>
-              <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra2"></span>
-              <span class="oi-sobre-guia-texto" data-i18n="guiaConectar"></span>
-            </a>
-            <a href="#descubrir" class="oi-sobre-guia-item">
-              <span class="oi-sobre-guia-num">03</span>
-              <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra3"></span>
-              <span class="oi-sobre-guia-texto" data-i18n="guiaAnticipar"></span>
-            </a>
-          </div>
-          <p class="oi-sobre-guia-nota oi-reveal" data-i18n="guiaMirada"></p>
-        </div>
       </div>
     </section>
 
-    <!-- 01 ENTENDER: lecturas individuales, scroll horizontal anclado -->
-    <section id="entender" class="oi-entender oi-scrollx-section">
-      <div class="oi-entender-cabecera oi-cabecera-dos">
-        <div class="oi-palabra-gigante oi-palabra-gigante-clara" data-palabra="heroPalabra1" data-numero="01" aria-hidden="true"></div>
-        <div class="oi-cabecera-izq">
-          <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="entenderEtiqueta"></div>
-          <h2 class="oi-titulo-seccion oi-titulo-claro oi-reveal" data-i18n="entenderTitulo"></h2>
+    <!-- MI ESTUDIO: Juntando las piezas -->
+    <section id="mi-estudio" class="oi-mi-estudio">
+      <div class="oi-mi-estudio-inner">
+        <div class="oi-mi-estudio-piezas" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="oi-mi-estudio-texto">
+          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="miEstudioEtiqueta"></div>
+          <h2 class="oi-titulo-seccion oi-reveal" data-i18n="miEstudioTitulo"></h2>
+          <p class="oi-reveal" data-i18n="miEstudioTexto"></p>
+          <p class="oi-mi-estudio-sello oi-reveal" data-i18n="miEstudioSello"></p>
+          <a href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener" class="oi-boton oi-boton-secundario" data-i18n="miEstudioCta"></a>
         </div>
-        <p class="oi-bajada-clara oi-reveal" data-i18n="entenderBajada"></p>
-      </div>
-      <div class="oi-scrollx-sticky">
-        <div id="grid-entender" class="oi-scrollx-track"></div>
       </div>
     </section>
-
-    <!-- 02 ATERRIZAR: frase interactiva con desplegables -->
-    <section id="aterrizar" class="oi-seccion-ancha">
-      <div class="oi-seccion-cabecera-col oi-cabecera-dos">
-        <div class="oi-palabra-gigante" data-palabra="heroPalabra2" data-numero="02" aria-hidden="true"></div>
-        <div class="oi-cabecera-izq">
-          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="conectarEtiqueta"></div>
-          <h2 class="oi-titulo-seccion oi-reveal" data-i18n="conectarTitulo"></h2>
-        </div>
-        <p class="ayuda oi-reveal" data-i18n="conectarBajada"></p>
-      </div>
-
-      <p class="oi-aterrizar-frase">
-        <span data-i18n="aterrizarFrasePre"></span>
-        <span class="oi-select-envoltorio">
-          <select id="aterrizar-select-tema" class="oi-select-capsula oi-select-capsula-tema"></select>
-        </span>
-        <span data-i18n="aterrizarFraseMid"></span>
-        <span class="oi-select-envoltorio">
-          <select id="aterrizar-select-industria" class="oi-select-capsula oi-select-capsula-industria"></select>
-        </span>
-      </p>
-
-      <div>
-        <p id="aterrizar-conteo" class="oi-aterrizar-conteo"></p>
-        <div id="aterrizar-tarjetas" class="oi-grid-resultados"></div>
-      </div>
-    </section>
-
-    <!-- 03 DESCUBRIR: estudios en el radar -->
-    <div class="oi-banda-alt">
-    <section id="descubrir" class="oi-seccion-ancha" hidden>
-      <div class="oi-seccion-cabecera-col oi-cabecera-dos">
-        <div class="oi-palabra-gigante" data-palabra="heroPalabra3" data-numero="03" aria-hidden="true"></div>
-        <div class="oi-cabecera-izq">
-          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="anticiparEtiqueta"></div>
-          <h2 class="oi-titulo-seccion oi-reveal" data-i18n="anticiparTitulo"></h2>
-        </div>
-        <p class="ayuda oi-reveal" data-i18n="anticiparBajada"></p>
-      </div>
-      <div id="lista-radar" class="oi-lista-radar"></div>
-    </section>
-    </div>
 
     <!-- BANNER: cita que crece con el scroll -->
     <section id="banner-cita" class="oi-banner-seccion">
       <div id="banner-cita-caja" class="oi-banner-caja">
         <div class="oi-banner-pieza oi-banner-foto-marco" data-pieza="foto">
-          <img class="oi-banner-foto" src="img/desiree-banner.jpg?v=3" alt="Desiree Solano" width="720" height="720" loading="lazy" />
+          <img class="oi-banner-foto" src="img/desiree-banner.jpg?v=202610232202" alt="Desiree Solano" width="720" height="720" loading="lazy" />
         </div>
         <span class="oi-banner-pieza oi-banner-barra" data-pieza="barra" aria-hidden="true"></span>
         <figure class="oi-banner-contenido">
@@ -275,9 +281,10 @@
       <div class="oi-footer-top">
         <div class="oi-footer-marca">Outside-In</div>
         <div class="oi-footer-nav">
-          <a href="#sobre" data-i18n="navQueEs"></a>
-          <a href="#entender" data-i18n="navExplora"></a>
-          <a href="#conoceme" data-i18n="navConoceme"></a>
+          <a href="#insights" data-i18n="navInsights"></a>
+          <a href="#estudios" data-i18n="navEstudios"></a>
+          <a href="#mi-estudio" data-i18n="navMiEstudio"></a>
+          <a href="#conoceme" data-i18n="navSobreMi"></a>
           <a id="link-linkedin-footer" href="#" target="_blank" rel="noopener" data-i18n="linkedinFooter"></a>
         </div>
       </div>
@@ -304,15 +311,16 @@
     <div id="modal-sobre-cuerpo" class="modal-cuerpo carta"></div>
   </dialog>
 
-  <script src="js/config.js?v=202610232025"></script>
-  <script src="js/textos.js?v=202610232025"></script>
-  <script src="js/datos.js?v=202610232025"></script>
-  <script src="js/radar.js?v=202610232025"></script>
-  <script src="js/contador.js?v=202610232025"></script>
-  <script src="js/imagenes.js?v=202610232025"></script>
-  <script src="js/vista-previa.js?v=202610232025"></script>
-  <script src="js/app.js?v=202610232025"></script>
-  <script src="js/buscador.js?v=202610232025"></script>
-  <script src="js/metricas.js?v=202610232025"></script>
+  <script src="js/config.js?v=202610232202"></script>
+  <script src="js/textos.js?v=202610232202"></script>
+  <script src="js/datos.js?v=202610232202"></script>
+  <script src="js/insights.js?v=202610232202"></script>
+  <script src="js/radar.js?v=202610232202"></script>
+  <script src="js/contador.js?v=202610232202"></script>
+  <script src="js/imagenes.js?v=202610232202"></script>
+  <script src="js/vista-previa.js?v=202610232202"></script>
+  <script src="js/app.js?v=202610232202"></script>
+  <script src="js/buscador.js?v=202610232202"></script>
+  <script src="js/metricas.js?v=202610232202"></script>
 </body>
 </html>
