@@ -37,6 +37,23 @@ img{max-width:100%;display:block}
 .cab nav{display:flex;gap:26px;font-size:15px}
 .cab nav a{color:var(--negro);text-decoration:none}
 .cab nav a:hover{color:var(--azul)}
+.acciones{display:flex;align-items:center;gap:10px}
+.lupa{width:40px;height:40px;border-radius:50%;border:1px solid var(--borde);background:var(--blanco);color:var(--negro);display:grid;place-items:center;cursor:pointer}
+.lupa:hover,.lupa[aria-expanded="true"]{border-color:var(--negro)}
+.lupa:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+.buscador{border-top:1px solid var(--borde);background:var(--blanco);box-shadow:0 18px 30px rgba(17,18,20,.12)}
+.cab .buscador .envoltura{display:block;height:auto;padding-block:22px 26px;max-width:820px}
+.atajos[hidden]{display:none}
+.caja-busca{display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--negro);padding-bottom:10px}
+.caja-busca input{flex:1;min-width:0;border:0;outline:0;font:600 22px var(--t);background:transparent;color:var(--negro)}
+.atajos{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.atajos button{font:600 13.5px var(--x);padding:7px 13px;border-radius:999px;border:1px solid var(--borde);background:var(--alt);cursor:pointer}
+.conteo{margin:12px 0 4px;font-size:13px;color:var(--gris)}
+.conteo:empty{display:none}
+.resultados{list-style:none;margin:0;padding:0;max-height:50vh;overflow:auto}
+.resultados a{display:flex;flex-direction:column;gap:3px;padding:12px 0;border-bottom:1px solid var(--borde);color:var(--negro);text-decoration:none}
+.resultados a small{font:700 11.5px var(--x);letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+.resultados a:hover span{color:var(--azul)}
 .cab .idioma{border:1.5px solid var(--negro);border-radius:999px;padding:8px 15px;font-weight:600;font-size:14px}
 
 /* 1 · Portada: texto a la izquierda, imagen en un anillo a la derecha */
@@ -48,11 +65,20 @@ img{max-width:100%;display:block}
 .marca b{color:var(--naranja)}
 .lema{margin:0;font:700 clamp(22px,2.2vw,30px)/1.25 var(--t);letter-spacing:-.015em;max-width:22ch}
 .lema span{color:var(--azul)}
+.ctas-portada{display:flex;gap:12px;flex-wrap:wrap}
+.vivo{margin:0;font-size:13.5px;line-height:1.5;color:var(--gris)}
+.vivo::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--naranja);margin-right:9px;vertical-align:1px;animation:titila 1.6s ease-in-out infinite}
+.firma{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;background:var(--negro);color:var(--blanco);text-decoration:none;font-size:14px}
+.firma b{color:var(--naranja-claro,#FFB38A)}
+.firma-punto{width:22px;height:22px;border-radius:50%;border:3px solid var(--blanco);display:grid;place-items:center}
+.firma-punto::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--naranja)}
 .sellos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .sellos li{font:600 13px var(--x);padding:7px 12px;border-radius:999px;background:var(--alt)}
 .anillo{position:absolute;right:-8vw;top:50%;width:min(62vw,820px);aspect-ratio:1;transform:translateY(-50%);z-index:1}
 .anillo .foto{position:absolute;inset:9%;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--azul),var(--lila))}
-.anillo .foto img{width:100%;height:100%;object-fit:cover;animation:respira 18s ease-in-out infinite alternate}
+.anillo .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity 1.4s ease,transform 7s ease-out}
+.anillo .foto img.on{opacity:1;transform:scale(1.16)}
+.anillo .etiqueta-rota{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);z-index:3;background:var(--blanco);border-radius:999px;padding:8px 16px;font:700 13px var(--x);white-space:nowrap;box-shadow:0 10px 26px rgba(17,18,20,.15);transition:opacity .5s ease}
 @keyframes respira{to{transform:scale(1.12)}}
 .anillo svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .arco{fill:none;stroke-width:10;stroke-linecap:round;transform-origin:50% 50%}
@@ -62,11 +88,6 @@ img{max-width:100%;display:block}
 .chispa:nth-child(even){fill:var(--azul);animation-delay:-1.5s}
 @keyframes gira{to{transform:rotate(360deg)}}
 @keyframes titila{50%{opacity:.2}}
-.dato-flota{position:absolute;z-index:3;background:var(--blanco);border-radius:14px;padding:12px 16px;box-shadow:0 14px 34px rgba(17,18,20,.16);font-size:13px;line-height:1.35;max-width:210px;animation:flota 7s ease-in-out infinite}
-.dato-flota b{display:block;font:800 13px var(--t);color:var(--azul);margin-bottom:2px}
-.dato-flota.d1{left:6%;top:20%}
-.dato-flota.d2{left:-2%;bottom:16%;animation-delay:-3.5s}
-.dato-flota.d2 b{color:var(--naranja)}
 @keyframes flota{50%{transform:translateY(-12px)}}
 .bajar{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;font:600 13px var(--x);color:var(--gris);display:flex;flex-direction:column;align-items:center;gap:8px}
 .bajar::after{content:"";width:2px;height:34px;background:linear-gradient(var(--naranja),transparent);animation:baja 1.8s ease-in-out infinite}
@@ -165,7 +186,23 @@ img{max-width:100%;display:block}
 .reco blockquote::before{content:"“";display:block;font:800 48px/.6 var(--t);color:var(--naranja);height:22px}
 .reco figcaption{font-size:13px;color:#A9ABB2}
 .reco figcaption b{display:block;color:var(--blanco);font-size:14.5px}
-.yo-ctas{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}
+.contacto{margin-top:30px;display:flex;flex-direction:column;gap:16px}
+.correo{margin:0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font:600 17px var(--x);color:var(--blanco)}
+.correo button{font:600 13px var(--x);background:transparent;border:1px solid #3a3b42;color:#D4D5DA;border-radius:999px;padding:6px 12px;cursor:pointer}
+.correo button:hover{border-color:var(--blanco);color:var(--blanco)}
+.yo-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn.li{background:var(--azul);border-color:var(--azul);color:var(--blanco)}
+
+/* Pie */
+.pie{background:var(--negro);color:var(--blanco);border-top:1px solid #26272c}
+.pie .envoltura{padding-block:72px 40px}
+.pie-arriba{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid #34353b}
+.pie-marca{margin:0;font:800 clamp(56px,7vw,100px)/.9 var(--t);letter-spacing:-.045em}
+.pie nav{display:flex;gap:26px;flex-wrap:wrap;font:600 16px var(--x)}
+.pie nav a{color:var(--blanco);text-decoration:none}
+.pie nav a:hover{color:var(--naranja)}
+.pie-sub{margin:26px 0 0;font-size:15px;color:#B5B7BC}
+.pie-legal{margin:28px 0 0;font-size:13px;color:#6E7076}
 
 /* Entradas suaves */
 .entra{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -173,11 +210,11 @@ img{max-width:100%;display:block}
 
 @media (max-width:900px){
   .cab nav{display:none}
+  .vivo{font-size:12.5px}
   .portada{min-height:auto}
   .portada-txt{padding-block:40px 380px}
   .anillo{width:120vw;right:-30vw;top:auto;bottom:-18vw;transform:none}
-  .dato-flota{display:none}
-  .bajar{display:none}
+    .bajar{display:none}
   .historia{height:420vh}
   .ventana{--recorte-x:6%}
   .tarjetas,.destacado,.mirada,.yo-grid,.recos{grid-template-columns:1fr}
@@ -199,7 +236,15 @@ img{max-width:100%;display:block}
   <div class="envoltura">
     <a class="logo" href="#inicio"><i></i>Outside-In</a>
     <nav><a href="#inicio">Qué es Outside-In</a><a href="#estudios">Estudios</a><a href="#insights">Insights</a><a href="#mirada">Mi mirada</a><a href="#yo">Sobre mí</a></nav>
-    <span class="idioma">English</span>
+    <div class="acciones"><button type="button" class="lupa" id="lupa" aria-label="Buscar estudios" aria-expanded="false"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><span class="idioma">English</span></div>
+  </div>
+  <div class="buscador" id="buscador" hidden>
+    <div class="envoltura">
+      <label class="caja-busca"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg><input id="busca" type="search" placeholder="Busca un tema: IA, banca, cultura…" autocomplete="off" /></label>
+      <div class="atajos" id="atajos"></div>
+      <p class="conteo" id="conteo"></p>
+      <ul class="resultados" id="resultados"></ul>
+    </div>
   </div>
 </header>
 
@@ -212,19 +257,20 @@ img{max-width:100%;display:block}
         <h1 class="marca">Outside-In<b>.</b></h1>
         <p class="lema">Las nuevas tendencias en las organizaciones, <span>en un solo lugar.</span></p>
         <ul class="sellos"><li>Al día cada lunes</li><li>Data que coincide y que choca</li><li>Con mirada de consultora</li></ul>
-        <div><a class="btn p" href="#historia">Descubre cómo funciona ↓</a></div>
+        <div class="ctas-portada"><a class="btn p" href="#historia">Descubre cómo funciona ↓</a><a class="btn" href="#estudios">Ver los estudios</a></div>
+        <p class="vivo" id="vivo">Actualizado el miércoles 21 de octubre · 17 estudios leídos · 10 estudios publicados · 1 insight</p>
+        <a class="firma" href="#yo"><span class="firma-punto" aria-hidden="true"></span><span>Creado, diseñado y automatizado por <b>Desirée Solano</b></span></a>
       </div>
     </div>
     <div class="anillo" aria-hidden="true">
-      <div class="foto"><img src="https://images.unsplash.com/photo-1758691737543-09a1b2b715fa?auto=format&fit=crop&w=1400&q=70" alt="" /></div>
+      <div class="foto"><img class="rota on" src="https://images.unsplash.com/photo-1758691737543-09a1b2b715fa?auto=format&fit=crop&w=1400&q=70" alt="" /><img class="rota" src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?auto=format&fit=crop&w=1400&q=70" alt="" /><img class="rota" src="https://images.unsplash.com/photo-1670684684445-a4504dca0bbc?auto=format&fit=crop&w=1400&q=70" alt="" /><img class="rota" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=70" alt="" /><img class="rota" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70" alt="" /></div>
       <svg viewBox="0 0 100 100">
         <circle class="arco a1" cx="50" cy="50" r="46" stroke-dasharray="120 170" pathLength="290" style="stroke-width:1.1"></circle>
         <circle class="arco a2" cx="50" cy="50" r="49.5" stroke-dasharray="80 230" pathLength="310" style="stroke-width:.8"></circle>
         <g><circle class="chispa" cx="8" cy="30" r=".7"></circle><circle class="chispa" cx="14" cy="18" r=".5"></circle><circle class="chispa" cx="4" cy="52" r=".6"></circle><circle class="chispa" cx="22" cy="8" r=".5"></circle><circle class="chispa" cx="10" cy="74" r=".6"></circle><circle class="chispa" cx="30" cy="94" r=".5"></circle></g>
       </svg>
+      <span class="etiqueta-rota" id="etiqueta-rota">IA y personas</span>
     </div>
-    <div class="dato-flota d1" aria-hidden="true" style="left:auto;right:30%"><b>Deloitte · IA</b>Solo 11% ya usa agentes de IA en producción.</div>
-    <div class="dato-flota d2" aria-hidden="true" style="left:auto;right:44%;bottom:12%"><b>EY · Consumo</b>94% decide su compra en la tienda.</div>
     <span class="bajar">Baja para descubrirlo</span>
   </section>
 
@@ -315,7 +361,10 @@ img{max-width:100%;display:block}
           <h3>¿Eres de las personas que no puede quedarse con una pregunta sin responder? Yo tampoco.</h3>
           <p>Necesito entender por qué pasan las cosas y armar el rompecabezas hasta que todo encaje. Esa curiosidad me ha acompañado durante más de 7 años en transformaciones de empresas, desde Accenture y APOYO Comunicación, con clientes Fortune 500.</p>
           <p>Si te gusta conversar de cultura, comunicación, IA… o de perros, escríbeme. ☕</p>
-          <div class="yo-ctas"><a class="btn n" href="mailto:desireesolanochang27@gmail.com">Escríbeme</a><a class="btn" href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener">LinkedIn →</a></div>
+          <div class="contacto">
+            <p class="correo"><span>desireesolanochang27@gmail.com</span><button type="button" id="copiar">Copiar correo</button></p>
+            <div class="yo-ctas"><a class="btn n" href="mailto:desireesolanochang27@gmail.com">Escríbeme</a><a class="btn li" href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.12V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg>Conectemos en LinkedIn</a></div>
+          </div>
         </div>
       </div>
       <div class="recos">
@@ -327,6 +376,22 @@ img{max-width:100%;display:block}
   </section>
 </main>
 
+<footer class="pie">
+  <div class="envoltura">
+    <div class="pie-arriba">
+      <p class="pie-marca">Outside-In</p>
+      <nav><a href="#inicio">Qué es Outside-In</a><a href="#estudios">Estudios</a><a href="#insights">Insights</a><a href="#mirada">Mi mirada</a><a href="#yo">Sobre mí</a><a href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener">LinkedIn</a></nav>
+    </div>
+    <p class="pie-sub">Las nuevas tendencias en las organizaciones · por Desirée Solano</p>
+    <p class="pie-legal">© 2026 Desirée Solano. Outside-In: concepto, diseño, textos y sistema. Todos los derechos reservados. Diseñado y construido con Claude Code.</p>
+  </div>
+</footer>
+
+<script src="../js/config.js"></script>
+<script src="../js/textos.js"></script>
+<script src="../js/datos.js"></script>
+<script src="../js/contador.js"></script>
+<script src="../js/buscador.js"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -381,6 +446,40 @@ img{max-width:100%;display:block}
   // Tarjetas que entran suave
   const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.15}):null;
   document.querySelectorAll('.entra').forEach((el,i)=>{el.style.transitionDelay=`${(i%3)*90}ms`;io?io.observe(el):el.classList.add('visible');});
+
+  // Anillo de la portada: las imágenes cambian solas, con su tema
+  const rotas=[...document.querySelectorAll('.anillo img.rota')];
+  const temasRota=['IA y personas','Salud y farmacéutica','Consumo masivo','Servicios financieros','Liderazgo y cultura'];
+  const etq=document.getElementById('etiqueta-rota');
+  let ir=0;
+  if(!reducido&&rotas.length>1) setInterval(()=>{rotas[ir].classList.remove('on');ir=(ir+1)%rotas.length;rotas[ir].classList.add('on');etq.style.opacity=0;setTimeout(()=>{etq.textContent=temasRota[ir];etq.style.opacity=1;},400);},4200);
+
+  // Línea de actualización, con los números reales del sistema
+  try{
+    const reales=(typeof HALLAZGOS!=='undefined'?HALLAZGOS:[]).filter(h=>h.esEjemplo===false).length;
+    const f=new Date((CONTADOR.actualizado||'2026-10-21')+'T00:00:00');
+    const fecha=new Intl.DateTimeFormat('es-PE',{weekday:'long',day:'numeric',month:'long'}).format(f);
+    document.getElementById('vivo').textContent=`Actualizado el ${fecha} · ${CONTADOR.desdeInicio.revisados} estudios leídos · ${reales} estudios publicados · 1 insight`;
+  }catch(e){}
+
+  // Buscador (lupa)
+  const lupa=document.getElementById('lupa'),panel=document.getElementById('buscador'),entrada=document.getElementById('busca');
+  const lista=document.getElementById('resultados'),conteo=document.getElementById('conteo'),atajos=document.getElementById('atajos');
+  ['IA y personas','Gestión del cambio','Liderazgo','Salud','Banca','Consumo masivo'].forEach(t=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.addEventListener('click',()=>{entrada.value=t;pinta();});atajos.appendChild(b);});
+  function pinta(){
+    lista.innerHTML='';const q=entrada.value.trim();
+    if(q.length<2||typeof buscarEstudios!=='function'){conteo.textContent='';atajos.hidden=false;return;}
+    atajos.hidden=true;const r=buscarEstudios(q);
+    conteo.textContent=r.length?`${r.length} ${r.length===1?'estudio':'estudios'}`:'No encontré estudios sobre eso todavía. Prueba con IA, cambio, cultura, banca, salud o consumo.';
+    r.slice(0,8).forEach(h=>{const li=document.createElement('li');const a=document.createElement('a');a.href=`../hallazgo.html?id=${encodeURIComponent(h.id)}`;const sm=document.createElement('small');sm.textContent=h.fuente;const sp=document.createElement('span');sp.textContent=h.hallazgo_es;a.append(sm,sp);li.appendChild(a);lista.appendChild(li);});
+  }
+  entrada.addEventListener('input',pinta);
+  lupa.addEventListener('click',()=>{const abre=panel.hidden;panel.hidden=!abre;lupa.setAttribute('aria-expanded',String(abre));if(abre)setTimeout(()=>entrada.focus(),30);});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){panel.hidden=true;lupa.setAttribute('aria-expanded','false');}});
+
+  // Copiar correo
+  const copiar=document.getElementById('copiar');
+  copiar.addEventListener('click',async()=>{const c='desireesolanochang27@gmail.com';try{await navigator.clipboard.writeText(c);}catch(e){const t=document.createElement('textarea');t.value=c;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();}copiar.textContent='¡Copiado!';setTimeout(()=>copiar.textContent='Copiar correo',1800);});
 
   let tick=false;
   function todo(){historiaAvance();palabrasAvance();tick=false;}
