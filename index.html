@@ -272,6 +272,11 @@ img{max-width:100%;display:block}
 .gigante-card p{margin:0;font-size:clamp(16px,1.3vw,19px);line-height:1.55;color:#E7E8EE;max-width:52ch}
 .gigante-card .btn{align-self:flex-start;background:var(--blanco);color:var(--negro);border-color:var(--blanco)}
 
+.mirada-cab{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:end}
+.autora{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.autora img{width:clamp(180px,18vw,260px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;border:6px solid var(--blanco);box-shadow:0 20px 50px rgba(17,18,20,.12)}
+.autora figcaption{font:600 15px var(--x);background:var(--blanco);padding:8px 16px;border-radius:999px}
+.autora figcaption b{color:var(--naranja)}
 /* Mi mirada: columnas en tarjetas grandes con foto; la que tocas se agranda */
 .columnas{display:flex;gap:18px;margin-top:52px;padding:0 max(24px,calc((100vw - 1240px)/2 + 24px));height:min(72vh,640px)}
 .columna-c{position:relative;flex:1 1 0;min-width:0;border-radius:28px;overflow:hidden;color:var(--blanco);text-decoration:none;background:linear-gradient(135deg,var(--naranja),var(--azul));transition:flex-grow .7s cubic-bezier(.2,.7,.2,1)}
@@ -311,6 +316,9 @@ img{max-width:100%;display:block}
   .flechas-c{display:none}
   .ficha:nth-child(3n+2) .foto{aspect-ratio:4/5;margin-top:0}
   .gigante-card{min-height:72svh;border-radius:22px}
+  .mirada-cab{grid-template-columns:1fr;gap:28px}
+  .autora{flex-direction:row;justify-content:flex-start}
+  .autora img{width:88px;border-width:4px}
   .columnas{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
   .columnas::-webkit-scrollbar{display:none}
   .columna-c{flex:0 0 82vw;height:62svh;scroll-snap-align:start}
@@ -450,8 +458,13 @@ img{max-width:100%;display:block}
   <!-- 4 · MI MIRADA -->
   <section class="sec mi" id="mirada">
     <div class="envoltura">
-      <h2 class="palabra" data-numero="03">Mi mirada</h2>
-      <p class="sub">Mis artículos. En cada uno junto la data de distintos estudios y te cuento lo que veo yo: qué significa para las organizaciones y para quienes las lideran.</p>
+      <div class="mirada-cab">
+        <div>
+          <h2 class="palabra" data-numero="03">Mi mirada</h2>
+          <p class="sub">Mis artículos. En cada uno junto la data de distintos estudios y te cuento lo que veo yo: qué significa para las organizaciones y para quienes las lideran.</p>
+        </div>
+        <figure class="autora entra"><img src="img/desiree-columnista.webp" alt="Desirée Solano" width="800" height="800" /><figcaption>Por <b>Desirée Solano</b></figcaption></figure>
+      </div>
     </div>
     <div class="columnas" id="columnas"></div>
   </section>

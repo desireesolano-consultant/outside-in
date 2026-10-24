@@ -95,6 +95,7 @@ const TRADUCCION_EN = {
   "Gestión del cambio": "Change management",
   "Reportes": "Reports",
 
+  "Por": "By",
   // Sobre mí
   "Cómo funciona →": "How it works →",
   "Mis artículos. En cada uno junto la data de distintos estudios y te cuento lo que veo yo: qué significa para las organizaciones y para quienes las lideran.": "My articles. In each one I bring together data from different studies and tell you what I see: what it means for organizations and for those who lead them.",
