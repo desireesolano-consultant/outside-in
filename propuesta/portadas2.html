@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Portadas II · Outside-In</title>
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+:root{--azul:#2440F0;--negro:#111214;--naranja:#FF6B2C;--naranja-claro:#FFB38A;--lila:#C9CCFF;--blanco:#FFFFFF;--crema:#F6F3EC;--borde:#E4E4E1;--gris:#55575C;
+--t:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;--x:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--s:"Instrument Serif",Georgia,serif;color-scheme:light}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:#E7E7EA;color:var(--negro);font-family:var(--x)}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.rotulo{position:sticky;top:0;z-index:40;background:var(--negro);color:var(--blanco);padding:12px 18px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.rotulo b{font:800 17px var(--t)}
+.rotulo span{font-size:13px;color:#B5B7BC}
+.portada{position:relative;overflow:hidden;min-height:100svh;display:flex;flex-direction:column}
+.cab{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;position:relative;z-index:5}
+.logo{display:flex;align-items:center;gap:9px;font:800 18px var(--t);white-space:nowrap}
+.logo i{width:20px;height:20px;border:3px solid currentColor;border-radius:50%;display:grid;place-items:center}
+.logo i::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--naranja)}
+.acc{display:flex;gap:8px;align-items:center}
+.acc span{width:36px;height:36px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;opacity:.8}
+.acc em{font-style:normal;font:600 13px var(--x);border:1.5px solid currentColor;border-radius:999px;padding:7px 12px}
+.pill{align-self:flex-start;margin:0;font:600 13.5px var(--x);color:var(--azul);background:#EEF0FF;padding:7px 13px;border-radius:999px}
+.marca b,.marca-b{color:var(--naranja)}
+.btn{display:inline-block;padding:13px 20px;border-radius:999px;font:600 14.5px var(--x);border:1.5px solid currentColor;color:inherit;text-decoration:none;white-space:nowrap}
+.btn.p{background:var(--azul);border-color:var(--azul);color:var(--blanco)}
+.btn.n{background:var(--naranja);border-color:var(--naranja);color:var(--negro)}
+.vivo{margin:0;font-size:12.5px;line-height:1.5;opacity:.85}
+.vivo::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--naranja);margin-right:8px;vertical-align:1px;animation:tit 1.6s ease-in-out infinite}
+@keyframes tit{50%{opacity:.25}}
+.firma{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;padding:8px 14px 8px 9px;border-radius:999px;font-size:12.5px;background:var(--negro);color:var(--blanco)}
+.firma b{color:var(--naranja-claro);white-space:nowrap}
+.firma i{width:20px;height:20px;border-radius:50%;border:3px solid var(--blanco);display:grid;place-items:center;flex-shrink:0}
+.firma i::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--naranja)}
+.firma.clara{background:var(--blanco);color:var(--negro)}
+.firma.clara i{border-color:var(--negro)}
+.firma.clara b{color:var(--naranja)}
+
+/* ============ A · De afuera hacia adentro ============ */
+.pa{background:var(--blanco)}
+.pa .escena{position:relative;flex:1;min-height:58svh;display:grid;place-items:center}
+.pa .palabra{position:absolute;left:50%;top:50%;white-space:nowrap;font:600 14px var(--x);padding:6px 12px;border-radius:999px;border:1px solid var(--borde);background:var(--blanco);color:var(--gris);
+  transform:translate(-50%,-50%) translate(var(--dx),var(--dy));opacity:0;animation:entra var(--dur) cubic-bezier(.55,0,.3,1) var(--del) infinite}
+.pa .palabra.f{color:var(--azul);border-color:#D6DAFF;font-weight:700}
+@keyframes entra{
+  0%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) scale(1)}
+  12%{opacity:1}
+  70%{opacity:1}
+  100%{opacity:0;transform:translate(-50%,-50%) translate(0,0) scale(.35)}}
+.pa .centro{position:relative;z-index:3;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px}
+.pa .centro .pill{align-self:center}
+.pa .marca{margin:0;font:800 clamp(54px,14vw,128px)/.88 var(--t);letter-spacing:-.05em;white-space:nowrap;background:radial-gradient(closest-side,#fff 60%,rgba(255,255,255,0));padding:14px 18px}
+.pa .lema{margin:0;font:700 clamp(19px,2.4vw,26px)/1.3 var(--t);letter-spacing:-.015em;max-width:21ch;background:rgba(255,255,255,.92);border-radius:12px;padding:2px 8px}
+.pa .pie{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:14px;padding:6px 20px 34px;text-align:center}
+.pa .pie .firma{align-self:center}
+.pa .ctas{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+
+/* ============ B · La edición de la semana ============ */
+.pb{background:var(--crema)}
+.pb .cuerpo{padding:4px 20px 34px;display:flex;flex-direction:column;gap:16px;max-width:1100px;width:100%;margin:0 auto}
+.pb .cabecera{border-top:3px solid var(--negro);border-bottom:1px solid var(--negro);padding:10px 0 12px;display:flex;flex-direction:column;gap:6px}
+.pb .datos-ed{display:flex;justify-content:space-between;gap:10px;font:700 11px var(--x);letter-spacing:.08em;text-transform:uppercase}
+.pb .marca{margin:0;font:800 clamp(62px,17vw,180px)/.85 var(--t);letter-spacing:-.055em;white-space:nowrap}
+.pb .lema{margin:0;font:400 italic clamp(21px,2.6vw,30px)/1.25 var(--s);max-width:28ch}
+.pb .esta{font:700 11px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--naranja);margin:0}
+.pb .nota{display:grid;gap:14px}
+.pb .foto{aspect-ratio:16/10;border-radius:4px;overflow:hidden;background:linear-gradient(135deg,var(--lila),var(--azul))}
+.pb .foto img{width:100%;height:100%;object-fit:cover;animation:respira 14s ease-in-out infinite alternate}
+@keyframes respira{to{transform:scale(1.1)}}
+.pb .nota h2{margin:0;font:800 clamp(24px,3.4vw,40px)/1.15 var(--t);letter-spacing:-.025em}
+.pb .nota p{margin:0;color:var(--gris);font-size:15px;line-height:1.55}
+.pb .leer{font:700 14px var(--x);color:var(--azul);text-decoration:none}
+.pb .tambien{border-top:1px solid var(--negro);padding-top:12px;display:flex;flex-direction:column;gap:0}
+.pb .tambien li{list-style:none;display:flex;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid #D9D5CB;font-size:14.5px;line-height:1.35}
+.pb .tambien ul{margin:0;padding:0}
+.pb .tambien small{font:700 11px var(--x);letter-spacing:.06em;text-transform:uppercase;color:var(--azul);min-width:84px}
+.pb .bajo{display:flex;flex-direction:column;gap:12px}
+@media (min-width:900px){
+  .pb .cuerpo{padding-inline:56px}
+  .pb .grilla{display:grid;grid-template-columns:1.6fr 1fr;gap:40px}
+}
+
+/* ============ C · Tu frase ============ */
+.pc{background:var(--negro);color:var(--blanco)}
+.pc .cuerpo{margin-block:auto;padding:10px 20px 36px;display:flex;flex-direction:column;gap:18px;max-width:900px}
+.pc .pill{background:rgba(255,255,255,.12);color:var(--blanco)}
+.pc .marca{margin:0;font:800 clamp(52px,13vw,120px)/.88 var(--t);letter-spacing:-.05em;white-space:nowrap}
+.pc .frase{margin:0;font:700 clamp(28px,6.6vw,60px)/1.18 var(--t);letter-spacing:-.025em}
+.pc .chip{display:inline-flex;align-items:center;gap:.25em;color:var(--negro);background:var(--naranja);padding:0 .22em;border-radius:.16em;font-weight:800;transition:background .2s}
+.pc .chip.ind{background:var(--lila)}
+.pc .chip::after{content:"↻";font-size:.5em;opacity:.7}
+.pc .chip:active{transform:scale(.97)}
+.pc .ayuda{margin:-6px 0 0;font-size:13px;color:#A9ABB1}
+.pc .resultado{display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(255,255,255,.18);padding-top:16px;min-height:120px}
+.pc .resultado small{font:700 11px var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--naranja-claro)}
+.pc .resultado a{color:var(--blanco);text-decoration:none;font:600 15px/1.35 var(--x);display:flex;gap:10px}
+.pc .resultado a::before{content:"→";color:var(--naranja)}
+.pc .resultado em{font-style:normal;color:#A9ABB1}
+.pc .ctas{display:flex;gap:8px;flex-wrap:wrap}
+@media (min-width:900px){.cab{padding-inline:56px}.pc .cuerpo{padding-inline:56px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.pa .palabra{opacity:.6}}
+</style>
+</head>
+<body>
+
+<!-- A -->
+<div class="rotulo"><b>A · De afuera hacia adentro</b><span>El nombre hecho animación: fuentes y temas llegan desde los bordes y se juntan en Outside-In.</span></div>
+<section class="portada pa">
+  <div class="cab"><div class="logo"><i></i>Outside-In</div><div class="acc"><span>⌕</span><em>English</em></div></div>
+  <div class="escena" id="escena">
+    <div class="centro">
+      <p class="pill">¿List@ para ponerte al día?</p>
+      <h1 class="marca">Outside-In<b>.</b></h1>
+      <p class="lema">Las nuevas tendencias en las organizaciones, en un solo lugar.</p>
+    </div>
+  </div>
+  <div class="pie">
+    <div class="ctas"><a class="btn p">Cómo funciona ↓</a><a class="btn">Ver los estudios</a></div>
+    <p class="vivo" data-vivo></p>
+    <span class="firma"><i></i>Creado, diseñado y automatizado por <b>Desirée Solano</b></span>
+  </div>
+</section>
+
+<!-- B -->
+<div class="rotulo"><b>B · La edición de la semana</b><span>Como la tapa de una revista de negocios: cada lunes cambia sola con lo nuevo.</span></div>
+<section class="portada pb">
+  <div class="cab"><div class="logo"><i></i>Outside-In</div><div class="acc"><span>⌕</span><em>English</em></div></div>
+  <div class="cuerpo">
+    <div class="cabecera">
+      <div class="datos-ed"><span data-edicion>Edición del 21 de octubre</span><span>Por Desirée Solano</span></div>
+      <h1 class="marca">Outside-In<b class="marca-b">.</b></h1>
+    </div>
+    <p class="lema">Las nuevas tendencias en las organizaciones, en un solo lugar.</p>
+    <div class="grilla">
+      <div class="nota">
+        <p class="esta">El insight de la semana</p>
+        <div class="foto"><img src="https://images.unsplash.com/photo-1758691737543-09a1b2b715fa?auto=format&fit=crop&w=1400&q=70" alt="" /></div>
+        <h2>Las empresas ya dieron acceso a la IA. ¿Le explicaron a su gente qué cambia?</h2>
+        <p>Tres estudios, tres industrias y una misma tensión: la tecnología llega más rápido que la conversación sobre cómo cambia el trabajo.</p>
+        <a class="leer">Leer el insight →</a>
+      </div>
+      <div class="bajo">
+        <div class="tambien">
+          <p class="esta">Nuevos estudios</p>
+          <ul id="lista-b"></ul>
+        </div>
+        <p class="pill">¿List@ para ponerte al día?</p>
+        <div class="ctas" style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn p">Cómo funciona ↓</a><a class="btn">Ver los estudios</a></div>
+        <p class="vivo" data-vivo></p>
+        <span class="firma"><i></i>Creado, diseñado y automatizado por <b>Desirée Solano</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- C -->
+<div class="rotulo"><b>C · Tu frase</b><span>La portada te pregunta qué buscas. Toca las palabras de color y cambian los estudios.</span></div>
+<section class="portada pc">
+  <div class="cab"><div class="logo"><i></i>Outside-In</div><div class="acc"><span>⌕</span><em>English</em></div></div>
+  <div class="cuerpo">
+    <p class="pill">¿List@ para ponerte al día?</p>
+    <h1 class="marca">Outside-In<b>.</b></h1>
+    <p class="frase">Quiero entender qué está pasando con <button class="chip" id="chip-tema"></button> en <button class="chip ind" id="chip-ind"></button></p>
+    <p class="ayuda">Toca las palabras de color para cambiarlas.</p>
+    <div class="resultado" id="resultado"></div>
+    <div class="ctas"><a class="btn n">Cómo funciona ↓</a><a class="btn">Ver los estudios</a></div>
+    <p class="vivo" data-vivo></p>
+    <span class="firma clara"><i></i>Creado, diseñado y automatizado por <b>Desirée Solano</b></span>
+  </div>
+</section>
+
+<script src="../js/config.js"></script>
+<script src="../js/textos.js"></script>
+<script src="../js/datos.js"></script>
+<script src="../js/contador.js"></script>
+<script>
+(function(){
+  const reducido=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('img').forEach(i=>i.addEventListener('error',()=>{i.style.visibility='hidden';}));
+  const H=(typeof HALLAZGOS!=='undefined'?HALLAZGOS:[]).filter(h=>!h.esEjemplo);
+
+  // Línea de actualización con datos reales
+  const meses=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const f=CONTADOR.actualizado.split('-'); const fecha=`${+f[2]} de ${meses[+f[1]-1]}`;
+  document.querySelectorAll('[data-vivo]').forEach(e=>e.textContent=`Actualizado el ${fecha} · ${CONTADOR.desdeInicio.revisados} estudios leídos · ${H.length} publicados · 1 insight`);
+  document.querySelectorAll('[data-edicion]').forEach(e=>e.textContent=`Edición del ${fecha}`);
+
+  // A · palabras que llegan desde afuera
+  const escena=document.getElementById('escena');
+  const fuentes=[...new Set(H.map(h=>h.fuente))];
+  const temas=['IA y personas','Gestión del cambio','Cultura','Liderazgo','Comunicación interna','Banca','Salud y farma','Consumo masivo','Adopción','Propósito'];
+  const todas=[...fuentes.map(t=>[t,1]),...temas.map(t=>[t,0])];
+  const n=todas.length;
+  todas.forEach(([t,esFuente],i)=>{
+    const s=document.createElement('span'); s.className='palabra'+(esFuente?' f':''); s.textContent=t;
+    const ang=(i/n)*Math.PI*2+(i%2?.25:0);
+    const rx=Math.min(window.innerWidth*.62,560), ry=Math.min(window.innerHeight*.36,330);
+    s.style.setProperty('--dx',`${Math.cos(ang)*rx}px`); s.style.setProperty('--dy',`${Math.sin(ang)*ry}px`);
+    s.style.setProperty('--dur',`${7+(i%4)}s`); s.style.setProperty('--del',`${-(i*0.9)}s`);
+    escena.appendChild(s);
+  });
+
+  // B · lista de estudios nuevos (nombres reales)
+  const nomInd={life_sciences:'Salud y farma',servicios_financieros:'Banca',consumo_masivo:'Consumo'};
+  const nomTema={gestion_cambio:'Cambio',ia_personas:'IA',liderazgo_cultura:'Cultura'};
+  const lista=document.getElementById('lista-b');
+  H.slice().sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||'')).slice(0,4).forEach(h=>{
+    const li=document.createElement('li'); const sm=document.createElement('small'); sm.textContent=h.fuente;
+    const sp=document.createElement('span'); sp.textContent=h.estudio_es; li.append(sm,sp); lista.appendChild(li);
+  });
+
+  // C · frase interactiva
+  const T=[['ia_personas','la IA y las personas'],['gestion_cambio','la gestión del cambio'],['liderazgo_cultura','el liderazgo y la cultura']];
+  const I=[['servicios_financieros','la banca'],['life_sciences','salud y farma'],['consumo_masivo','el consumo masivo'],[null,'todas las industrias']];
+  let ti=0, ii=0;
+  const ct=document.getElementById('chip-tema'), ci=document.getElementById('chip-ind'), res=document.getElementById('resultado');
+  function pinta(){
+    ct.textContent=T[ti][1]; ci.textContent=I[ii][1];
+    const t=T[ti][0], ind=I[ii][0];
+    let r=H.filter(h=>h.tema===t&&(ind===null||h.industria===ind));
+    let aviso='';
+    if(!r.length){ r=H.filter(h=>h.tema===t).slice(0,2); aviso='Todavía no hay estudios de ese cruce. Mientras tanto, sobre este tema:'; }
+    res.innerHTML='';
+    const sm=document.createElement('small'); sm.textContent=aviso||`${r.length} ${r.length===1?'estudio':'estudios'} para ti`; res.appendChild(sm);
+    r.slice(0,3).forEach(h=>{const a=document.createElement('a'); a.href='../hallazgo.html?id='+h.id; a.target='_blank';
+      const sp=document.createElement('span'); sp.innerHTML=''; sp.textContent=h.hallazgo_es+' '; const em=document.createElement('em'); em.textContent='· '+h.fuente; sp.appendChild(em); a.appendChild(sp); res.appendChild(a);});
+  }
+  ct.onclick=()=>{ti=(ti+1)%T.length;pinta();};
+  ci.onclick=()=>{ii=(ii+1)%I.length;pinta();};
+  pinta();
+})();
+</script>
+</body>
+</html>
