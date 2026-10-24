@@ -56,37 +56,29 @@ img{max-width:100%;display:block}
 .resultados a:hover span{color:var(--azul)}
 .cab .idioma{border:1.5px solid var(--negro);border-radius:999px;padding:8px 15px;font-weight:600;font-size:14px}
 
-/* 1 · Portada: texto a la izquierda, imagen en un anillo a la derecha */
-.portada{position:relative;overflow:hidden;min-height:calc(100svh - 72px);display:flex;align-items:center}
-.portada .envoltura{position:relative;z-index:2;width:100%}
-.portada-txt{max-width:560px;display:flex;flex-direction:column;gap:22px;padding-block:56px}
-.pill{align-self:flex-start;margin:0;font:600 14px var(--x);color:var(--azul);background:#EEF0FF;padding:7px 14px;border-radius:999px}
-.marca{margin:0;font:800 clamp(56px,7vw,112px)/.88 var(--t);letter-spacing:-.05em;white-space:nowrap}
+/* 1 · Portada A: de afuera hacia adentro */
+.portada{position:relative;overflow:hidden;min-height:calc(100svh - 72px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 0 90px;background:var(--blanco)}
+.escena-afuera{position:absolute;inset:0;z-index:1;pointer-events:none}
+.flota{position:absolute;left:var(--cx,50%);top:var(--cy,44%);white-space:nowrap;font:600 14px var(--x);padding:7px 13px;border-radius:999px;border:1px solid var(--borde);background:var(--blanco);color:var(--gris);
+  transform:translate(-50%,-50%) translate(var(--dx),var(--dy));opacity:0;animation:llega var(--dur) cubic-bezier(.55,0,.3,1) var(--del) infinite}
+.flota.fuente{color:var(--azul);border-color:#D6DAFF;font-weight:700}
+.flota.industria{color:#9A3B12;border-color:#FFD9C6;background:#FFF6F1}
+@keyframes llega{0%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy))}8%{opacity:1}78%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) translate(0,0) scale(.35)}}
+.portada-centro{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:26px;padding:0 16px;text-align:center}
+.velo{display:flex;flex-direction:column;align-items:center;gap:16px;padding:30px 34px 32px;border-radius:32px;background:rgba(255,255,255,.74);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);border:1px solid rgba(255,255,255,.9);box-shadow:0 24px 60px rgba(17,18,20,.08)}
+.pill{margin:0;font:700 clamp(16px,1.5vw,19px) var(--x);color:var(--azul);background:#EEF0FF;padding:10px 20px;border-radius:999px}
+.marca{margin:0;font:800 clamp(58px,9vw,140px)/.88 var(--t);letter-spacing:-.05em;white-space:nowrap}
 .marca b{color:var(--naranja)}
-.lema{margin:0;font:700 clamp(22px,2.2vw,30px)/1.25 var(--t);letter-spacing:-.015em;max-width:22ch}
+.lema{margin:0;font:700 clamp(21px,2.2vw,30px)/1.28 var(--t);letter-spacing:-.015em;max-width:27ch}
 .lema span{color:var(--azul)}
-.ctas-portada{display:flex;gap:12px;flex-wrap:wrap}
-.vivo{margin:0;font-size:13.5px;line-height:1.5;color:var(--gris)}
+.ctas-portada{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.ctas-portada .btn:not(.p){background:var(--blanco)}
+.vivo{margin:0;font-size:13.5px;line-height:1.5;color:var(--gris);background:rgba(255,255,255,.85);border-radius:999px;padding:2px 10px}
 .vivo::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--naranja);margin-right:9px;vertical-align:1px;animation:titila 1.6s ease-in-out infinite}
-.firma{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;background:var(--negro);color:var(--blanco);text-decoration:none;font-size:14px}
+.firma{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;background:var(--negro);color:var(--blanco);text-decoration:none;font-size:14px}
 .firma b{color:var(--naranja-claro,#FFB38A)}
-.firma-punto{width:22px;height:22px;border-radius:50%;border:3px solid var(--blanco);display:grid;place-items:center}
+.firma-punto{width:22px;height:22px;border-radius:50%;border:3px solid var(--blanco);display:grid;place-items:center;flex-shrink:0}
 .firma-punto::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--naranja)}
-.sellos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.sellos li{font:600 13px var(--x);padding:7px 12px;border-radius:999px;background:var(--alt)}
-.anillo{position:absolute;right:-8vw;top:50%;width:min(62vw,820px);aspect-ratio:1;transform:translateY(-50%);z-index:1}
-.anillo .foto{position:absolute;inset:9%;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--azul),var(--lila))}
-.anillo .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity 1.4s ease,transform 7s ease-out}
-.anillo .foto img.on{opacity:1;transform:scale(1.16)}
-.anillo .etiqueta-rota{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);z-index:3;background:var(--blanco);border-radius:999px;padding:8px 16px;font:700 13px var(--x);white-space:nowrap;box-shadow:0 10px 26px rgba(17,18,20,.15);transition:opacity .5s ease}
-@keyframes respira{to{transform:scale(1.12)}}
-.anillo svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.arco{fill:none;stroke-width:10;stroke-linecap:round;transform-origin:50% 50%}
-.arco.a1{stroke:var(--naranja);animation:gira 26s linear infinite}
-.arco.a2{stroke:var(--azul);animation:gira 34s linear infinite reverse}
-.chispa{fill:var(--naranja);animation:titila 3s ease-in-out infinite}
-.chispa:nth-child(even){fill:var(--azul);animation-delay:-1.5s}
-@keyframes gira{to{transform:rotate(360deg)}}
 @keyframes titila{50%{opacity:.2}}
 @keyframes flota{50%{transform:translateY(-12px)}}
 .bajar{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;font:600 13px var(--x);color:var(--gris);display:flex;flex-direction:column;align-items:center;gap:8px}
@@ -211,22 +203,18 @@ img{max-width:100%;display:block}
 @media (max-width:900px){
   .cab nav{display:none}
   .vivo{font-size:12.5px}
-  /* Celular: la imagen en círculo arriba y centrada, el texto debajo */
-  .portada{min-height:auto;flex-direction:column;align-items:stretch}
-  .anillo{position:relative;order:-1;width:min(62vw,300px);margin:22px auto 0;right:auto;top:auto;bottom:auto;transform:none}
-  .anillo .etiqueta-rota{bottom:2%;font-size:12px;padding:7px 13px}
-  .portada-txt{padding-block:18px 52px;gap:16px;align-items:center;text-align:center;max-width:none}
-  .portada-txt .pill,.firma{align-self:center}
-  .marca{font-size:clamp(52px,15vw,76px)}
-  .lema{font-size:21px;max-width:20ch;margin-inline:auto}
-  .sellos{display:none}
-  .ctas-portada{justify-content:center;flex-wrap:nowrap;gap:8px}
+  /* Celular: palabras alrededor, título con su capa al centro */
+  .portada{min-height:calc(100svh - 64px);padding:28px 0 40px}
+  .velo{padding:22px 18px 24px;border-radius:26px;gap:12px}
+  .pill{font-size:16px;padding:9px 17px}
+  .marca{font-size:clamp(50px,15vw,76px)}
+  .lema{font-size:20px;max-width:19ch}
+  .flota{font-size:12.5px;padding:6px 11px}
+  .ctas-portada{flex-wrap:nowrap;gap:8px}
   .ctas-portada .btn{padding:12px 16px;font-size:14px;white-space:nowrap}
-  .vivo{text-align:center}
+  .vivo{font-size:12.5px}
   .firma{font-size:12.5px;padding:8px 14px 8px 10px}
   .firma b{white-space:nowrap}
-  .portada-txt{padding-block:14px 40px}
-  .marca{margin-top:2px}
     .bajar{display:none}
   .historia{height:420vh}
   .ventana{--recorte-x:6%}
@@ -240,6 +228,7 @@ img{max-width:100%;display:block}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .entra{opacity:1;transform:none}
+  .flota{opacity:.55}
 }
 </style>
 </head>
@@ -264,25 +253,16 @@ img{max-width:100%;display:block}
 <main>
   <!-- 1 · QUÉ ES OUTSIDE-IN: portada -->
   <section class="portada" id="inicio">
-    <div class="envoltura">
-      <div class="portada-txt">
+    <div class="escena-afuera" id="escena-afuera" aria-hidden="true"></div>
+    <div class="portada-centro">
+      <div class="velo">
         <p class="pill">¿List@ para ponerte al día?</p>
         <h1 class="marca">Outside-In<b>.</b></h1>
         <p class="lema">Las nuevas tendencias en las organizaciones, <span>en un solo lugar.</span></p>
-        <ul class="sellos"><li>Al día cada lunes</li><li>Data que coincide y que choca</li><li>Con mirada de consultora</li></ul>
-        <div class="ctas-portada"><a class="btn p" href="#historia">Cómo funciona ↓</a><a class="btn" href="#estudios">Ver los estudios</a></div>
-        <p class="vivo" id="vivo">Actualizado el miércoles 21 de octubre · 17 estudios leídos · 10 estudios publicados · 1 insight</p>
-        <a class="firma" href="#yo"><span class="firma-punto" aria-hidden="true"></span><span>Creado, diseñado y automatizado por <b>Desirée Solano</b></span></a>
       </div>
-    </div>
-    <div class="anillo" aria-hidden="true">
-      <div class="foto"><img class="rota on" src="https://images.unsplash.com/photo-1758691737543-09a1b2b715fa?auto=format&fit=crop&w=1400&q=70" alt="" /><img class="rota" src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?auto=format&fit=crop&w=1400&q=70" alt="" /><img class="rota" src="https://images.unsplash.com/photo-1670684684445-a4504dca0bbc?auto=format&fit=crop&w=1400&q=70" alt="" /><img class="rota" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=70" alt="" /><img class="rota" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70" alt="" /></div>
-      <svg viewBox="0 0 100 100">
-        <circle class="arco a1" cx="50" cy="50" r="46" stroke-dasharray="120 170" pathLength="290" style="stroke-width:1.1"></circle>
-        <circle class="arco a2" cx="50" cy="50" r="49.5" stroke-dasharray="80 230" pathLength="310" style="stroke-width:.8"></circle>
-        <g><circle class="chispa" cx="8" cy="30" r=".7"></circle><circle class="chispa" cx="14" cy="18" r=".5"></circle><circle class="chispa" cx="4" cy="52" r=".6"></circle><circle class="chispa" cx="22" cy="8" r=".5"></circle><circle class="chispa" cx="10" cy="74" r=".6"></circle><circle class="chispa" cx="30" cy="94" r=".5"></circle></g>
-      </svg>
-      <span class="etiqueta-rota" id="etiqueta-rota">IA y personas</span>
+      <div class="ctas-portada"><a class="btn p" href="#historia">Cómo funciona ↓</a><a class="btn" href="#estudios">Ver los estudios</a></div>
+      <p class="vivo" id="vivo">Actualizado el miércoles 21 de octubre · 17 estudios leídos · 10 estudios publicados · 1 insight</p>
+      <a class="firma" href="#yo"><span class="firma-punto" aria-hidden="true"></span><span>Creado, diseñado y automatizado por <b>Desirée Solano</b></span></a>
     </div>
     <span class="bajar">Baja para descubrirlo</span>
   </section>
@@ -460,12 +440,35 @@ img{max-width:100%;display:block}
   const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.15}):null;
   document.querySelectorAll('.entra').forEach((el,i)=>{el.style.transitionDelay=`${(i%3)*90}ms`;io?io.observe(el):el.classList.add('visible');});
 
-  // Anillo de la portada: las imágenes cambian solas, con su tema
-  const rotas=[...document.querySelectorAll('.anillo img.rota')];
-  const temasRota=['IA y personas','Salud y farmacéutica','Consumo masivo','Servicios financieros','Liderazgo y cultura'];
-  const etq=document.getElementById('etiqueta-rota');
-  let ir=0;
-  if(!reducido&&rotas.length>1) setInterval(()=>{rotas[ir].classList.remove('on');ir=(ir+1)%rotas.length;rotas[ir].classList.add('on');etq.style.opacity=0;setTimeout(()=>{etq.textContent=temasRota[ir];etq.style.opacity=1;},400);},4200);
+  // Portada A: fuentes, temas e industrias llegan desde afuera y se juntan en Outside-In
+  (function(){
+    const esc=document.getElementById('escena-afuera'); if(!esc) return;
+    const reales=(typeof HALLAZGOS!=='undefined'?HALLAZGOS:[]).filter(h=>h.esEjemplo===false);
+    // Fuentes: solo las que tienen estudios publicados (se actualiza sola cada semana)
+    const fuentes=[...new Set(reales.map(h=>h.fuente.replace(' AI Institute','')))];
+    const temas=['Gestión del cambio','IA y personas','Liderazgo','Cultura','Comunicación interna','Propósito','Adopción'];
+    const industrias=['Salud y farma','Banca y seguros','Consumo masivo'];
+    // Se intercalan para que nunca vayan dos del mismo tipo seguidas
+    const grupos=[fuentes.map(t=>[t,'fuente']),temas.map(t=>[t,'tema']),industrias.map(t=>[t,'industria'])];
+    const todas=[]; for(let i=0;todas.length<fuentes.length+temas.length+industrias.length;i++) grupos.forEach(g=>{if(g[i]) todas.push(g[i]);});
+    const n=todas.length, movil=window.innerWidth<700;
+    // El punto de llegada es el centro del título (no el centro de la pantalla)
+    const velo=document.querySelector('.velo'), caja=esc.getBoundingClientRect(), v=velo.getBoundingClientRect();
+    esc.style.setProperty('--cx',`${v.left+v.width/2-caja.left}px`); esc.style.setProperty('--cy',`${v.top+v.height/2-caja.top}px`);
+    const alto=caja.height;
+    // Dos rondas desfasadas, para que siempre haya varias palabras en camino
+    const lista=[...todas,...todas.slice(Math.floor(n/2)),...todas.slice(0,Math.floor(n/2))];
+    const total=lista.length;
+    lista.forEach(([t,tipo],i)=>{
+      const el=document.createElement('span'); el.className='flota'+(tipo==='tema'?'':' '+tipo); el.textContent=t;
+      const ang=(i/total)*Math.PI*2*2+(i>=n?Math.PI/n:0);
+      const rx=movil?window.innerWidth*.62:Math.min(window.innerWidth*.52,720);
+      const ry=Math.min(alto*.46,420);
+      el.style.setProperty('--dx',`${Math.cos(ang)*rx}px`); el.style.setProperty('--dy',`${Math.sin(ang)*ry}px`);
+      const dur=12; el.style.setProperty('--dur',`${dur}s`); el.style.setProperty('--del',`${-(i*dur/total)}s`);
+      esc.appendChild(el);
+    });
+  })();
 
   // Línea de actualización, con los números reales del sistema
   try{
