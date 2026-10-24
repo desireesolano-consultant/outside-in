@@ -211,9 +211,22 @@ img{max-width:100%;display:block}
 @media (max-width:900px){
   .cab nav{display:none}
   .vivo{font-size:12.5px}
-  .portada{min-height:auto}
-  .portada-txt{padding-block:40px 380px}
-  .anillo{width:120vw;right:-30vw;top:auto;bottom:-18vw;transform:none}
+  /* Celular: la imagen en círculo arriba y centrada, el texto debajo */
+  .portada{min-height:auto;flex-direction:column;align-items:stretch}
+  .anillo{position:relative;order:-1;width:min(62vw,300px);margin:22px auto 0;right:auto;top:auto;bottom:auto;transform:none}
+  .anillo .etiqueta-rota{bottom:2%;font-size:12px;padding:7px 13px}
+  .portada-txt{padding-block:18px 52px;gap:16px;align-items:center;text-align:center;max-width:none}
+  .portada-txt .pill,.firma{align-self:center}
+  .marca{font-size:clamp(52px,15vw,76px)}
+  .lema{font-size:21px;max-width:20ch;margin-inline:auto}
+  .sellos{display:none}
+  .ctas-portada{justify-content:center;flex-wrap:nowrap;gap:8px}
+  .ctas-portada .btn{padding:12px 16px;font-size:14px;white-space:nowrap}
+  .vivo{text-align:center}
+  .firma{font-size:12.5px;padding:8px 14px 8px 10px}
+  .firma b{white-space:nowrap}
+  .portada-txt{padding-block:14px 40px}
+  .marca{margin-top:2px}
     .bajar{display:none}
   .historia{height:420vh}
   .ventana{--recorte-x:6%}
@@ -257,7 +270,7 @@ img{max-width:100%;display:block}
         <h1 class="marca">Outside-In<b>.</b></h1>
         <p class="lema">Las nuevas tendencias en las organizaciones, <span>en un solo lugar.</span></p>
         <ul class="sellos"><li>Al día cada lunes</li><li>Data que coincide y que choca</li><li>Con mirada de consultora</li></ul>
-        <div class="ctas-portada"><a class="btn p" href="#historia">Descubre cómo funciona ↓</a><a class="btn" href="#estudios">Ver los estudios</a></div>
+        <div class="ctas-portada"><a class="btn p" href="#historia">Cómo funciona ↓</a><a class="btn" href="#estudios">Ver los estudios</a></div>
         <p class="vivo" id="vivo">Actualizado el miércoles 21 de octubre · 17 estudios leídos · 10 estudios publicados · 1 insight</p>
         <a class="firma" href="#yo"><span class="firma-punto" aria-hidden="true"></span><span>Creado, diseñado y automatizado por <b>Desirée Solano</b></span></a>
       </div>
