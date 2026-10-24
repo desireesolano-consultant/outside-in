@@ -59,11 +59,11 @@ img{max-width:100%;display:block}
 /* 1 · Portada A: de afuera hacia adentro */
 .portada{position:relative;overflow:hidden;min-height:calc(100svh - 72px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 0 90px;background:var(--blanco)}
 .escena-afuera{position:absolute;inset:0;z-index:1;pointer-events:none}
-.flota{position:absolute;left:var(--cx,50%);top:var(--cy,44%);white-space:nowrap;font:700 clamp(18px,2vw,26px) var(--t);letter-spacing:-.01em;color:var(--negro);
+.flota{position:absolute;left:var(--cx,50%);top:var(--cy,44%);white-space:nowrap;font:700 clamp(18px,2vw,26px) var(--t);letter-spacing:-.01em;color:rgba(17,18,20,.55);
   transform:translate(-50%,-50%) translate(var(--dx),var(--dy));opacity:0;animation:llega var(--dur) cubic-bezier(.55,0,.3,1) var(--del) infinite}
-.flota.acento{color:var(--azul)}
+.flota.acento{color:rgba(36,64,240,.7)}
 /* Capa opaca sobre TODO el fondo: las palabras se ven suaves y el título queda adelante */
-.portada::before{content:"";position:absolute;inset:0;z-index:2;background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);pointer-events:none}
+.portada::before{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 46% 40% at 50% 46%,rgba(246,243,238,.92),rgba(246,243,238,0));pointer-events:none}
 @keyframes llega{0%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy))}8%{opacity:1}78%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) translate(0,0) scale(.35)}}
 .portada-centro{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:26px;padding:0 16px;text-align:center}
 .velo{display:flex;flex-direction:column;align-items:center;gap:18px}
@@ -207,7 +207,7 @@ img{max-width:100%;display:block}
 .manchas span:nth-child(2){width:40vw;height:40vw;right:-4%;top:-8%;background:#FFC9AE;animation-duration:22s}
 .manchas span:nth-child(3){width:34vw;height:34vw;left:38%;bottom:-14%;background:#F2E3C6;animation-duration:26s}
 @keyframes deriva{to{transform:translate(6vw,4vh) scale(1.12)}}
-.portada::before{background:rgba(246,243,238,.35)!important}
+
 
 /* Franja de palabras grandes que corre */
 .cinta-palabras{overflow:hidden;padding:34px 0;background:var(--blanco);border-block:1px solid var(--borde)}
@@ -399,7 +399,7 @@ img{max-width:100%;display:block}
   <section class="sec insights" id="insights">
     <div class="envoltura">
       <h2 class="palabra" data-numero="02">Insights</h2>
-      <p class="sub">Las grandes consultoras estudian los mismos temas, pero no siempre llegan a las mismas conclusiones. Aquí los pongo a conversar.</p>
+      <p class="sub">Muchos estudios miran los mismos temas, pero no siempre llegan a las mismas conclusiones. Aquí los pongo a conversar.</p>
       <a class="gigante-card" id="gigante" href="../insight.html?id=i-2026-10-ia-roles">
         <img loading="lazy" src="https://images.unsplash.com/photo-1758519289074-9de36003622b?auto=format&fit=crop&w=2000&q=70" alt="" />
         <div class="arriba"><span>IA y personas</span><span class="b">Deloitte</span><span class="b">Bain</span><span class="b">PwC</span></div>
