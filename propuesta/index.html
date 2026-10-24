@@ -197,6 +197,70 @@ img{max-width:100%;display:block}
 .pie-sub{margin:26px 0 0;font-size:15px;color:#B5B7BC}
 .pie-legal{margin:28px 0 0;font-size:13px;color:#6E7076}
 
+
+/* ===== Recursos nuevos (referencias Coca-Cola, Bluepoint, Accenture) ===== */
+/* Portada: fondo suave con manchas de color difuminadas que se mueven */
+.portada{background:#F6F3EE}
+.manchas{position:absolute;inset:-10%;z-index:0;filter:blur(70px);opacity:.75;pointer-events:none}
+.manchas span{position:absolute;border-radius:50%;animation:deriva 18s ease-in-out infinite alternate}
+.manchas span:nth-child(1){width:46vw;height:46vw;left:-6%;top:6%;background:#C9CCFF}
+.manchas span:nth-child(2){width:40vw;height:40vw;right:-4%;top:-8%;background:#FFC9AE;animation-duration:22s}
+.manchas span:nth-child(3){width:34vw;height:34vw;left:38%;bottom:-14%;background:#F2E3C6;animation-duration:26s}
+@keyframes deriva{to{transform:translate(6vw,4vh) scale(1.12)}}
+.portada::before{background:rgba(246,243,238,.35)!important}
+
+/* Franja de palabras grandes que corre */
+.cinta-palabras{overflow:hidden;padding:34px 0;background:var(--blanco);border-block:1px solid var(--borde)}
+.cinta-palabras.oscura{background:var(--negro);color:var(--blanco);border:0}
+.pista{display:flex;align-items:center;width:max-content;animation:corre 46s linear infinite}
+.pista span{font:800 clamp(46px,8vw,124px)/1 var(--t);letter-spacing:-.04em;padding:0 .28em;white-space:nowrap}
+.pista span.hueca{color:transparent;-webkit-text-stroke:1.5px currentColor}
+.cinta-palabras:not(.oscura) .pista span.hueca{-webkit-text-stroke-color:var(--negro)}
+.pista i{font-style:normal;color:var(--naranja);font:800 clamp(28px,4vw,56px) var(--t)}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+/* Estudios: carrusel horizontal de tarjetas con foto */
+.carrusel-cab{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:40px 0 26px}
+.carrusel-cab .pestanas{margin:0}
+.flechas-c{display:flex;gap:8px}
+.flechas-c button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--negro);background:var(--blanco);font:700 18px var(--x);cursor:pointer}
+.flechas-c button:hover{background:var(--negro);color:var(--blanco)}
+.carrusel{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px max(24px,calc((100vw - 1240px)/2 + 24px)) 12px;margin:0}
+.carrusel::-webkit-scrollbar{display:none}
+.ficha{flex:0 0 min(400px,80vw);scroll-snap-align:start;color:var(--negro);text-decoration:none;display:flex;flex-direction:column;gap:16px}
+.ficha .foto{position:relative;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:linear-gradient(135deg,var(--lila),var(--azul))}
+.ficha:nth-child(3n+2) .foto{aspect-ratio:4/4.4;margin-top:36px}
+.ficha .foto img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.ficha:hover .foto img{transform:scale(1.07)}
+.ficha .tag{position:absolute;left:18px;top:18px;background:var(--negro);color:var(--blanco);font:700 13px var(--x);padding:8px 14px;border-radius:999px}
+.ficha .chips{display:flex;gap:8px;align-items:center;padding-inline:6px}
+.ficha .chips span{background:var(--blanco);border-radius:999px;padding:6px 12px;font:700 13px var(--x)}
+.ficha h3{margin:0;padding-inline:6px;font:800 clamp(20px,1.7vw,24px)/1.22 var(--t);letter-spacing:-.015em}
+
+/* Insights: tarjeta gigante con foto que crece al bajar */
+.gigante-card{display:block;position:relative;margin-top:48px;border-radius:30px;overflow:hidden;min-height:min(78vh,720px);color:var(--blanco);text-decoration:none;transform:scale(var(--crece,.9));transform-origin:center top;transition:transform .1s linear;background:linear-gradient(135deg,var(--naranja),var(--azul))}
+.gigante-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gigante-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,20,.15) 0%,rgba(17,18,20,.35) 45%,rgba(17,18,20,.85) 100%)}
+.gigante-card .dentro{position:absolute;inset:auto 0 0 0;z-index:2;padding:clamp(26px,4vw,56px);display:flex;flex-direction:column;gap:18px}
+.gigante-card .arriba{position:absolute;left:clamp(26px,4vw,56px);top:clamp(22px,3vw,40px);z-index:2;display:flex;gap:8px;flex-wrap:wrap}
+.gigante-card .arriba span{background:var(--negro);color:var(--blanco);border-radius:999px;padding:8px 14px;font:700 13px var(--x)}
+.gigante-card .arriba span.b{background:var(--blanco);color:var(--negro)}
+.gigante-card h3{margin:0;font:800 clamp(32px,4.6vw,72px)/1.02 var(--t);letter-spacing:-.035em;max-width:18ch;text-wrap:balance}
+.gigante-card p{margin:0;font-size:clamp(16px,1.3vw,19px);line-height:1.55;color:#E7E8EE;max-width:52ch}
+.gigante-card .btn{align-self:flex-start;background:var(--blanco);color:var(--negro);border-color:var(--blanco)}
+
+/* Mi mirada: la foto empieza a pantalla completa y se achica para dejar lugar al texto */
+.encoge{position:relative;height:230vh;margin-top:48px}
+.encoge-fija{position:sticky;top:72px;height:calc(100svh - 72px);overflow:hidden}
+.encoge .foto{position:absolute;left:0;top:0;bottom:0;width:var(--ancho,100%);border-radius:var(--radio-f,0px);overflow:hidden;background:var(--negro)}
+.encoge .foto img{width:100%;height:100%;object-fit:cover;opacity:.8}
+.encoge .foto .sobre{position:absolute;left:clamp(24px,4vw,56px);bottom:clamp(24px,4vw,56px);color:var(--blanco);font:800 clamp(40px,6vw,96px)/.95 var(--t);letter-spacing:-.045em;opacity:var(--sobre,1);text-shadow:0 6px 30px rgba(0,0,0,.35)}
+.encoge .lado{position:absolute;right:0;top:0;bottom:0;width:44%;display:flex;flex-direction:column;justify-content:center;gap:34px;padding-left:24px;opacity:var(--lado,0);transform:translateY(calc((1 - var(--lado,0)) * 40px))}
+.encoge .item small{font:700 12px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--naranja)}
+.encoge .item h3{margin:8px 0 10px;font:800 clamp(26px,2.6vw,38px)/1.1 var(--t);letter-spacing:-.025em}
+.encoge .item p{margin:0;font-size:16.5px;line-height:1.6;color:var(--gris);max-width:44ch}
+.encoge .item + .item{border-top:1px solid #E8D8CE;padding-top:30px}
+
 /* Entradas suaves */
 .entra{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .entra.visible{opacity:1;transform:none}
@@ -218,6 +282,19 @@ img{max-width:100%;display:block}
   .firma b{white-space:nowrap}
     .bajar{display:none}
   .historia{height:420vh}
+  .carrusel-cab{margin:30px 0 20px}
+  .flechas-c{display:none}
+  .ficha:nth-child(3n+2) .foto{aspect-ratio:4/5;margin-top:0}
+  .gigante-card{min-height:72svh;border-radius:22px}
+  .encoge{height:200vh}
+  .encoge .foto{right:0;width:auto;bottom:auto;height:var(--alto-m,100%)}
+  .encoge .lado{left:0;right:0;width:auto;top:auto;bottom:0;height:calc(100% - 38%);padding:22px 24px 10px;gap:20px;justify-content:flex-start}
+  .encoge .item p{font-size:15px}
+  .encoge .item h3{font-size:24px}
+  .manchas span:nth-child(1){width:90vw;height:90vw}
+  .manchas span:nth-child(2){width:80vw;height:80vw}
+  .manchas span:nth-child(3){width:70vw;height:70vw}
+
   .ventana{--recorte-x:6%}
   .tarjetas,.destacado,.mirada,.yo-grid,.recos{grid-template-columns:1fr}
   .destacado .img{min-height:240px}
@@ -231,6 +308,18 @@ img{max-width:100%;display:block}
   .entra{opacity:1;transform:none}
   .flota{opacity:.55}
 }
+
+/* Menú del celular */
+.menu-btn{display:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--borde);background:var(--negro);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.menu-btn span{width:16px;height:2px;background:var(--blanco);border-radius:2px;transition:transform .25s ease}
+.menu-btn[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+@media (max-width:900px){
+  .menu-btn{display:flex}
+  .cab .idioma{padding:7px 12px;font-size:13px}
+  .cab nav.abierto{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--blanco);border-bottom:1px solid var(--borde);box-shadow:0 18px 30px rgba(17,18,20,.12);padding:8px 24px 18px}
+  .cab nav.abierto a{font:800 26px var(--t);letter-spacing:-.02em;padding:14px 0;border-bottom:1px solid var(--borde)}
+}
 </style>
 </head>
 <body>
@@ -239,7 +328,7 @@ img{max-width:100%;display:block}
   <div class="envoltura">
     <a class="logo" href="#inicio"><i></i>Outside-In</a>
     <nav><a href="que-es.html">Qué es Outside-In</a><a href="#estudios">Estudios</a><a href="#insights">Insights</a><a href="#mirada">Mi mirada</a><a href="#yo">Sobre mí</a></nav>
-    <div class="acciones"><button type="button" class="lupa" id="lupa" aria-label="Buscar estudios" aria-expanded="false"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><span class="idioma">English</span></div>
+    <div class="acciones"><button type="button" class="lupa" id="lupa" aria-label="Buscar estudios" aria-expanded="false"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><span class="idioma">English</span><button type="button" class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button></div>
   </div>
   <div class="buscador" id="buscador" hidden>
     <div class="envoltura">
@@ -254,6 +343,7 @@ img{max-width:100%;display:block}
 <main>
   <!-- 1 · QUÉ ES OUTSIDE-IN: portada -->
   <section class="portada" id="inicio">
+    <div class="manchas" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="escena-afuera" id="escena-afuera" aria-hidden="true"></div>
     <div class="portada-centro">
       <div class="velo">
@@ -289,18 +379,20 @@ img{max-width:100%;display:block}
     </div>
   </section>
 
+  <!-- Franja de palabras grandes -->
+  <div class="cinta-palabras" aria-hidden="true"><div class="pista"><span class="">Tendencias</span><i>+</i><span class="hueca">Data</span><i>+</i><span class="">Transformación</span><i>+</i><span class="hueca">Organizaciones</span><i>+</i><span class="">Estudios</span><i>+</i><span class="hueca">Insights</span><i>+</i><span class="">Tendencias</span><i>+</i><span class="hueca">Data</span><i>+</i><span class="">Transformación</span><i>+</i><span class="hueca">Organizaciones</span><i>+</i><span class="">Estudios</span><i>+</i><span class="hueca">Insights</span><i>+</i></div></div>
+
   <!-- 2 · ESTUDIOS -->
   <section class="sec estudios" id="estudios">
     <div class="envoltura">
       <h2 class="palabra" data-numero="01">Estudios</h2>
       <p class="sub">Cada estudio que mi sistema encuentra, resumido con sus cifras clave y el enlace al original.</p>
-      <div class="pestanas"><span class="on">Todos los estudios</span><span>Por tema e industria</span><span>Recién detectados</span></div>
-      <div class="tarjetas">
-        <a class="tarjeta entra" href="../hallazgo.html?id=h-2026-10-deloitte-agentic"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1694903089438-bf28d4697d9a?auto=format&fit=crop&w=900&q=70" alt="" /></div><div class="cuerpo"><small>Deloitte · IA y personas</small><h3>Solo 11% de las organizaciones ya usa agentes de IA en producción, y 35% ni siquiera tiene una estrategia formal</h3><span class="ir">Leer el estudio completo →</span></div></a>
-        <a class="tarjeta entra" href="../hallazgo.html?id=h-2026-10-ey-tiendas"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1670684684445-a4504dca0bbc?auto=format&fit=crop&w=900&q=70" alt="" /></div><div class="cuerpo"><small>EY · Consumo masivo</small><h3>94% de los consumidores termina decidiendo su compra en la tienda, aunque haya investigado en otros canales</h3><span class="ir">Leer el estudio completo →</span></div></a>
-        <a class="tarjeta entra" href="../hallazgo.html?id=h-2026-10-pwc-fs-ia"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=70" alt="" /></div><div class="cuerpo"><small>PwC · Servicios financieros</small><h3>8 de cada 10 líderes financieros esperan que su plantilla sea al menos 20% más pequeña en cinco años</h3><span class="ir">Leer el estudio completo →</span></div></a>
+      <div class="carrusel-cab">
+        <div class="pestanas"><span class="on">Todos los estudios</span><span>Por tema e industria</span><span>Recién detectados</span></div>
+        <div class="flechas-c"><button type="button" id="c-izq" aria-label="Anteriores">←</button><button type="button" id="c-der" aria-label="Siguientes">→</button></div>
       </div>
     </div>
+    <div class="carrusel" id="carrusel"></div>
   </section>
 
   <!-- 3 · INSIGHTS -->
@@ -308,13 +400,13 @@ img{max-width:100%;display:block}
     <div class="envoltura">
       <h2 class="palabra" data-numero="02">Insights</h2>
       <p class="sub">Las grandes consultoras estudian los mismos temas, pero no siempre llegan a las mismas conclusiones. Aquí los pongo a conversar.</p>
-      <a class="destacado entra" href="../insight.html?id=i-2026-10-ia-roles" style="text-decoration:none">
-        <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1758519289074-9de36003622b?auto=format&fit=crop&w=1200&q=70" alt="" /><div class="fuentes"><span>Deloitte</span><span>Bain</span><span>PwC</span></div></div>
-        <div class="txt">
-          <small>IA y personas · 3 estudios</small>
+      <a class="gigante-card" id="gigante" href="../insight.html?id=i-2026-10-ia-roles">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1758519289074-9de36003622b?auto=format&fit=crop&w=2000&q=70" alt="" />
+        <div class="arriba"><span>IA y personas</span><span class="b">Deloitte</span><span class="b">Bain</span><span class="b">PwC</span></div>
+        <div class="dentro">
           <h3>Las empresas ya dieron acceso a la IA. ¿Le explicaron a su gente qué cambia?</h3>
           <p>Tres estudios en consumo masivo, salud y banca llegan a la misma tensión: la tecnología avanza más rápido que la conversación sobre cómo cambia el trabajo de cada persona.</p>
-          <span class="btn p">Leer el insight completo →</span>
+          <span class="btn">Leer el insight completo →</span>
         </div>
       </a>
       <p class="proximo">Mi sistema ya está buscando el próximo cruce.</p>
@@ -326,24 +418,19 @@ img{max-width:100%;display:block}
     <div class="envoltura">
       <h2 class="palabra" data-numero="03">Mi mirada</h2>
       <p class="sub">Los datos cuentan una parte de la historia. Aquí te cuento lo que veo yo.</p>
-      <div class="mirada">
-        <article class="columna entra">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&fit=crop&w=1200&q=70" alt="" />
-          <div class="txt">
-            <small>Mis columnas · Muy pronto</small>
-            <h3>Cada columna parte de un insight y te cuenta qué significa para quienes lideran.</h3>
-            <p>En primera persona, cortas y con una pregunta para seguir la conversación en LinkedIn.</p>
-          </div>
-        </article>
-        <article class="piezas-caja entra">
-          <div class="piezas" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <small>Cada trimestre · Primera edición muy pronto</small>
-          <h3>Juntando las piezas</h3>
-          <p>Mi propio estudio de estudios: lo que dicen decenas de investigaciones sobre las tendencias en las organizaciones, con una mirada especial en Latinoamérica.</p>
-        </article>
+    </div>
+    <div class="encoge" id="encoge">
+      <div class="encoge-fija envoltura">
+        <div class="foto"><img loading="lazy" src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&fit=crop&w=2000&q=70" alt="" /><span class="sobre">Lo que veo yo.</span></div>
+        <div class="lado">
+          <div class="item"><small>Mis columnas · Muy pronto</small><h3>Cada columna parte de un insight.</h3><p>Te cuento qué significa para quienes lideran: en primera persona, breve y con una pregunta para seguir la conversación en LinkedIn.</p></div>
+          <div class="item"><small>Cada trimestre · Primera edición muy pronto</small><h3>Juntando las piezas</h3><p>Mi propio estudio de estudios: lo que dicen decenas de investigaciones sobre las tendencias en las organizaciones, con una mirada especial en Latinoamérica.</p></div>
+        </div>
       </div>
     </div>
   </section>
+
+  <div class="cinta-palabras oscura" aria-hidden="true"><div class="pista" style="animation-direction:reverse"><span class="">Banca</span><i>+</i><span class="hueca">Salud y farmacéutica</span><i>+</i><span class="">Consumo masivo</span><i>+</i><span class="hueca">Liderazgo</span><i>+</i><span class="">Cultura</span><i>+</i><span class="hueca">Inteligencia artificial</span><i>+</i><span class="">Gestión del cambio</span><i>+</i><span class="">Banca</span><i>+</i><span class="hueca">Salud y farmacéutica</span><i>+</i><span class="">Consumo masivo</span><i>+</i><span class="hueca">Liderazgo</span><i>+</i><span class="">Cultura</span><i>+</i><span class="hueca">Inteligencia artificial</span><i>+</i><span class="">Gestión del cambio</span><i>+</i></div></div>
 
   <!-- 5 · SOBRE MÍ -->
   <section class="sec yo" id="yo">
@@ -386,6 +473,7 @@ img{max-width:100%;display:block}
 <script src="../js/datos.js"></script>
 <script src="../js/contador.js"></script>
 <script src="../js/buscador.js"></script>
+<script src="../js/imagenes.js"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -492,12 +580,53 @@ img{max-width:100%;display:block}
   const copiar=document.getElementById('copiar');
   copiar.addEventListener('click',async()=>{const c='desireesolanochang27@gmail.com';try{await navigator.clipboard.writeText(c);}catch(e){const t=document.createElement('textarea');t.value=c;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();}copiar.textContent='¡Copiado!';setTimeout(()=>copiar.textContent='Copiar correo',1800);});
 
+
+  // Estudios: carrusel con todos los estudios reales publicados
+  (function(){
+    const c=document.getElementById('carrusel'); if(!c||typeof HALLAZGOS==='undefined') return;
+    const nombres={life_sciences:'Salud y farmacéutica',servicios_financieros:'Servicios financieros',consumo_masivo:'Consumo masivo',gestion_cambio:'Gestión del cambio',ia_personas:'IA y personas',liderazgo_cultura:'Liderazgo y cultura'};
+    HALLAZGOS.filter(h=>h.esEjemplo===false).sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||'')).forEach(h=>{
+      const a=document.createElement('a'); a.className='ficha'; a.href='../hallazgo.html?id='+encodeURIComponent(h.id);
+      const f=document.createElement('div'); f.className='foto';
+      if(typeof imagenDeHallazgo==='function'){const im=document.createElement('img');im.loading='lazy';im.alt='';im.src=urlImagen(imagenDeHallazgo(h),900);im.addEventListener('error',()=>im.style.visibility='hidden');f.appendChild(im);}
+      const t=document.createElement('span'); t.className='tag'; t.textContent=nombres[h.tema]||nombres[h.industria]||''; f.appendChild(t);
+      const ch=document.createElement('div'); ch.className='chips'; const s1=document.createElement('span'); s1.textContent=h.fuente; ch.appendChild(s1);
+      if(h.tema&&h.industria){const s2=document.createElement('span'); s2.textContent=nombres[h.industria]; ch.appendChild(s2);}
+      const h3=document.createElement('h3'); h3.textContent=h.hallazgo_es;
+      a.append(f,ch,h3); c.appendChild(a);
+    });
+    const paso=()=>Math.min(420,innerWidth*.8)+22;
+    document.getElementById('c-izq').onclick=()=>c.scrollBy({left:-paso(),behavior:'smooth'});
+    document.getElementById('c-der').onclick=()=>c.scrollBy({left:paso(),behavior:'smooth'});
+  })();
+
+  // Insights: la tarjeta crece al bajar. Mi mirada: la foto se achica y aparece el texto.
+  const gigante=document.getElementById('gigante'), encoge=document.getElementById('encoge');
+  function escalas(){
+    if(gigante){const r=gigante.getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight-r.top)/(innerHeight*.9)));gigante.style.setProperty('--crece',reducido?1:(.88+.12*p).toFixed(3));}
+    if(encoge){
+      const r=encoge.getBoundingClientRect();const total=encoge.offsetHeight-innerHeight;
+      const p=reducido?1:Math.min(1,Math.max(0,(-r.top+innerHeight*.1)/total));
+      const k=Math.min(1,p/0.7), movil=innerWidth<900;
+      encoge.style.setProperty('--ancho',`${(100-48*k).toFixed(2)}%`);
+      encoge.style.setProperty('--alto-m',`${(100-62*k).toFixed(2)}%`);
+      encoge.style.setProperty('--radio-f',`${(24*k).toFixed(1)}px`);
+      encoge.style.setProperty('--sobre',(1-k*1.6).toFixed(2));
+      encoge.style.setProperty('--lado',Math.max(0,(k-.45)/.55).toFixed(2));
+    }
+  }
+
   let tick=false;
-  function todo(){historiaAvance();palabrasAvance();tick=false;}
+  function todo(){historiaAvance();palabrasAvance();escalas();tick=false;}
   addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(todo);}},{passive:true});
   addEventListener('resize',todo);
   todo();
 })();
+</script>
+<script>
+(function(){const b=document.getElementById('menu-btn'),n=document.querySelector('.cab nav');if(!b||!n)return;
+b.addEventListener('click',()=>{const a=!n.classList.contains('abierto');n.classList.toggle('abierto',a);b.setAttribute('aria-expanded',String(a));});
+n.querySelectorAll('a').forEach(x=>x.addEventListener('click',()=>{n.classList.remove('abierto');b.setAttribute('aria-expanded','false');}));})();
 </script>
 </body>
 </html>
