@@ -59,7 +59,7 @@ const TRADUCCION_EN = {
   "Ver los insights": "See the insights",
 
   // Estudios
-  "Cada estudio que mi sistema encuentra, resumido con su data clave y el enlace al original.": "Every study my system finds, summarized with its key data and a link to the original.",
+  "Cada semana se publican estudios valiosos que casi nadie alcanza a leer. Aquí te cuento lo esencial de cada uno, con los datos que más importan para las organizaciones y el enlace al estudio completo.": "Valuable studies are published every week, and almost no one has time to read them. Here I share the essentials of each one, with the data that matters most for organizations and a link to the full study.",
   "Todos los estudios": "All studies",
   "Por tema e industria": "By topic and industry",
   "Recién detectados": "Just detected",
@@ -98,7 +98,7 @@ const TRADUCCION_EN = {
   "Por": "By",
   // Sobre mí
   "Cómo funciona →": "How it works →",
-  "Mis artículos. En cada uno junto la data de distintos estudios y te cuento lo que veo yo: qué significa para las organizaciones y para quienes las lideran.": "My articles. In each one I bring together data from different studies and tell you what I see: what it means for organizations and for those who lead them.",
+  "Los estudios cuentan qué está pasando. Aquí te comparto cómo lo leo yo: las conexiones que veo, lo que me sorprende y las preguntas que me deja.": "Studies tell us what's happening. Here I share how I read it: the connections I see, what surprises me and the questions it leaves me with.",
   "Pero lo que más disfruto no está en las presentaciones: está en las personas. Sentarme a escuchar, entender qué les preocupa y encontrar la forma de contarlo para que todos se suban al cambio.": "But what I enjoy most isn't in the slides: it's in the people. Sitting down to listen, understanding what worries them and finding the way to tell it so everyone gets on board with the change.",
   "He vivido en Perú, Argentina y Estados Unidos, y cada mudanza me enseñó lo mismo: primero se entiende el contexto, después se opina. De ahí nació Outside-In: para leer lo que nadie tiene tiempo de leer, encontrar dónde coinciden y dónde se contradicen los estudios, y contártelo en simple.": "I've lived in Peru, Argentina and the United States, and every move taught me the same thing: first you understand the context, then you give an opinion. That's where Outside-In was born: to read what no one has time to read, find where studies agree and where they contradict each other, and tell you about it simply.",
   "Si te gusta conversar de cultura, comunicación, IA… o de perros, escríbeme. Me encanta conocer gente nueva. ☕": "If you like talking about culture, communication, AI… or dogs, write to me. I love meeting new people. ☕",
