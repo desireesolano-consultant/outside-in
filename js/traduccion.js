@@ -97,6 +97,15 @@ const TRADUCCION_EN = {
 
   "Por": "By",
   // Sobre mí
+  "¿Puedo hacer una pregunta más?": "Can I ask one more question?",
+  "(Spoiler: siempre puedo).": "(Spoiler: I always can.)",
+  "Quienes me conocen lo saben: pregunto hasta lo más chiquito. Para mí, cada pregunta es una forma de entender mejor qué está pasando y a quién le importa.": "Those who know me know it: I ask about even the smallest things. For me, every question is a way to better understand what's happening and who it matters to.",
+  "(adaptarse también es aprender que en Argentina ya no es canchita ni popcorn: son pochoclos)": "(adapting also means learning that in Argentina popcorn isn't popcorn anymore: it's pochoclo)",
+  ". Quizás por eso, en cada proyecto, lo primero que pienso es a quién le impacta el cambio. Para mí, empatizar es escuchar y entender antes de proponer.": ". Maybe that's why, in every project, the first thing I think about is who the change affects. For me, empathy means listening and understanding before proposing.",
+  "Me adapté a nuevos países, nuevas palabras y nuevos equipos; lo que nunca cambió fue mi manera de mirar a las personas": "I adapted to new countries, new words and new teams; what never changed was the way I look at people",
+  "(ni las ganas de adoptar a cada perrito que veo… ¿algún animal lover por aquí?)": "(nor the urge to adopt every pup I see… any animal lovers out there?)",
+  "Si quieres sumar una mirada externa a lo que está viviendo tu organización, con contexto y con foco en las personas, ¡escríbeme!": "If you'd like to add an outside perspective to what your organization is going through, with context and a focus on people, write to me!",
+  "Conversemos sobre cómo puedo ayudarte. ☕": "Let's talk about how I can help. ☕",
   "Hace más de 7 años acompaño a líderes de empresas de Latinoamérica y Estados Unidos en momentos de cambio: una fusión, una cultura que se transforma, un propósito que hay que llevar a toda la organización, una marca empleadora que construir.": "For more than 7 years I've worked alongside leaders at companies across Latin America and the United States in moments of change: a merger, a culture in transformation, a purpose that has to reach the whole organization, an employer brand to build.",
   "Los cambios no solo los he acompañado: también los he vivido. Perú, Argentina y Estados Unidos me enseñaron, en carne propia, lo que significa empezar de nuevo": "I haven't only accompanied change: I've lived it. Peru, Argentina and the United States taught me, firsthand, what it means to start over",
   "(spoiler: adaptarse también es aprender que la canchita ahora se llama pochoclo… y pedirlo salado, porque si no te lo dan dulce)": "(spoiler: adapting also means learning that popcorn has a new name in Argentina… and ordering it salty, because otherwise it comes sweet)",
