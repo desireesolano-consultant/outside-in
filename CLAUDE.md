@@ -12,17 +12,18 @@
 - La magia de Outside-In es que se renueva sola: una búsqueda automática semanal publica estudios nuevos.
 
 ## Estructura del sitio
-- Portada con titular clicable (Entender / Conectar / Anticipar), mi foto, mi presentación, mi correo y LinkedIn.
-- Buscador en el encabezado (lupa): busca estudios por tema, industria, fuente o palabra.
-- "Sobre Outside-In": carta de bienvenida, mis fotos y la guía "Cómo leer Outside-In" (qué es Entender, Conectar y Anticipar).
-- "Entender": los estudios uno por uno, cuando un hallazgo tiene solo tema o solo industria.
-- "Conectar": frase interactiva con desplegables de tema e industria; muestra los hallazgos que cruzan ambos.
-- "Anticipar": estudios detectados que todavía no tienen hallazgo publicado (el radar). No se muestra si no hay ninguno.
-- "Así automaticé Outside-In": cómo funciona el sistema, con enlace a la página "Detrás de Outside-In".
+- Menú: Qué es Outside-In · Estudios · Insights · Mi mirada · Sobre mí, más la lupa (buscador) y el botón English.
+- Portada (index.html): "¿List@ para ponerte al día?", título "Outside-In.", bajada corta, palabras que llegan desde afuera, línea de última actualización y firma "Creado, diseñado y automatizado por Desirée Solano".
+- Historia al bajar (index.html#historia): la ventana que se agranda y cuenta qué es Outside-In en frases.
+- Estudios (index.html#estudios): carrusel con pestañas "Todos los estudios", "Por tema e industria" (frase con desplegables que muestra los estudios que cruzan ambos) y "Recién detectados" (el radar; la pestaña no se muestra si está vacío).
+- Insights (index.html#insights): el insight más reciente de js/insights.js; cada insight tiene su página (insight.html).
+- Mi mirada (index.html#mirada): mis columnas y "Juntando las piezas" (mi estudio de estudios trimestral).
+- Sobre mí (index.html#yo): mi foto, presentación, correo, LinkedIn y recomendaciones.
+- "Qué es Outside-In" (que-es.html): por qué existe, cómo está estructurado, cómo funciona (línea de tiempo semanal), criterios y por qué se llama así. Enlaza a "Detrás de Outside-In".
 - Cada estudio tiene su página completa (hallazgo.html): bajada, 4-5 párrafos, cifras clave, una cita breve, preguntas abiertas, sobre el estudio, link al original y el espacio "Mi mirada".
 - "Mi mirada" es mi análisis. Si todavía no lo escribí, se muestra "Mi lectura: en camino".
-- Contador "En vivo" (js/contador.js) con la fecha de la última búsqueda y sus números.
-- Botón para cambiar todo el contenido entre español e inglés.
+- La línea de actualización usa js/contador.js, HALLAZGOS e INSIGHTS.
+- Todo el contenido existe en español e inglés. Los textos fijos de index.html y que-es.html se traducen en js/traduccion.js; si cambias un texto en español, actualiza también su traducción ahí.
 
 ## Industrias
 - Salud y farmacéutica (Life Sciences en inglés), servicios financieros (banca, pagos y seguros), consumo masivo.
