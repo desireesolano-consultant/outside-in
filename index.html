@@ -104,6 +104,10 @@ img{max-width:100%;display:block}
 .frase.activa{opacity:1;transform:none}
 .frase em{font-style:normal;color:var(--naranja)}
 .frase .cta-final{display:flex;gap:12px;justify-content:center;margin-top:30px;pointer-events:auto;flex-wrap:wrap}
+/* Botones del final de la historia: letra propia, sin heredar el espaciado apretado de la frase */
+.frase .cta-final .btn{font:600 16px/1 var(--x);letter-spacing:0;word-spacing:normal;text-shadow:none;padding:17px 30px;gap:10px}
+.frase .cta-final .btn.vidrio{color:var(--blanco);border-color:rgba(255,255,255,.85);background:rgba(17,18,20,.28);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.frase .cta-final .btn.vidrio:hover{background:var(--blanco);color:var(--negro)}
 .puntos{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:4;display:flex;gap:8px}
 .puntos span{width:26px;height:4px;border-radius:2px;background:rgba(255,255,255,.35);transition:background .4s ease}
 .puntos span.on{background:var(--naranja)}
@@ -296,6 +300,7 @@ img{max-width:100%;display:block}
 .entra.visible{opacity:1;transform:none}
 
 @media (max-width:900px){
+  .frase .cta-final .btn{font-size:15px;padding:15px 22px}
   .cab nav{display:none}
   .vivo{font-size:12.5px}
   /* Celular: palabras alrededor, título con su capa al centro */
@@ -405,7 +410,7 @@ img{max-width:100%;display:block}
         <p class="frase"><em>A mí también.</em></p>
         <p class="frase">Por eso creé Outside-In: un solo lugar donde mi sistema encuentra <em>cada semana</em> las nuevas tendencias en las organizaciones.</p>
         <p class="frase">Y donde yo cruzo la data para contarte dónde coinciden, dónde se contradicen <em>y qué significa para ti.</em></p>
-        <div class="frase">Bienvenid@ a Outside-In.<div class="cta-final"><a class="btn n" href="#estudios">Explora los estudios →</a><a class="btn" style="color:#fff" href="#insights">Ver los insights</a></div></div>
+        <div class="frase">Bienvenid@ a Outside-In.<div class="cta-final"><a class="btn n" href="#estudios">Explora los estudios →</a><a class="btn vidrio" href="#insights">Ver los insights</a></div></div>
       </div>
       <div class="puntos" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span></div>
     </div>
