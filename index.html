@@ -182,23 +182,30 @@ img{max-width:100%;display:block}
 .piezas-caja p{margin:0;font-size:16px;line-height:1.55;color:var(--gris)}
 
 /* 6 · Sobre mí (negro) */
-.yo{background:var(--negro);color:var(--blanco);--final:var(--lila)}
+.yo{background:#E9EBFF;color:var(--negro);--final:var(--azul)}
 .yo-grid{margin-top:48px;display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:64px;align-items:center}
-.yo-foto{position:relative;display:grid;place-items:center}
-.yo-foto .c{position:absolute;width:88%;aspect-ratio:1;border-radius:50%;background:var(--naranja);top:36px}
-.yo-foto img{position:relative;width:100%;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
+.yo-foto{position:relative;container-type:inline-size;--r:44cqw;width:100%;max-width:380px;margin:0 auto}
+.yo-foto .c{position:absolute;left:6%;right:6%;bottom:0;aspect-ratio:1;border-radius:50%;background:var(--naranja)}
+/* La foto se recorta con la forma del círculo abajo: sin desvanecer la ropa */
+.yo-foto img{position:relative;width:100%;display:block;
+  -webkit-mask-image:linear-gradient(#000,#000),radial-gradient(circle at 50% calc(100% - var(--r)),#000 calc(var(--r) - .5px),transparent var(--r));
+  -webkit-mask-size:100% calc(100% - var(--r)),100% 100%;-webkit-mask-position:top,center;-webkit-mask-repeat:no-repeat;
+  mask-image:linear-gradient(#000,#000),radial-gradient(circle at 50% calc(100% - var(--r)),#000 calc(var(--r) - .5px),transparent var(--r));
+  mask-size:100% calc(100% - var(--r)),100% 100%;mask-position:top,center;mask-repeat:no-repeat}
 .yo h3{margin:0;font:800 clamp(26px,2.8vw,40px)/1.12 var(--t);letter-spacing:-.025em;text-wrap:balance}
-.yo p{margin:16px 0 0;font-size:17px;line-height:1.65;color:#D4D5DA;max-width:58ch}
-.recos{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.reco{margin:0;background:#1D1E22;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.yo p{margin:16px 0 0;font-size:17px;line-height:1.65;color:#3B3E52;max-width:58ch}
+.yo .recos-titulo{margin:84px 0 0;font:800 clamp(24px,2.4vw,32px)/1.2 var(--t);letter-spacing:-.02em}
+.ver-recos{display:inline-block;margin-top:22px;font:700 15px var(--x);color:var(--azul);text-decoration:none}
+.recos{margin-top:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.reco{margin:0;background:var(--blanco);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
 .reco blockquote{margin:0;font-size:15px;line-height:1.55}
 .reco blockquote::before{content:"“";display:block;font:800 48px/.6 var(--t);color:var(--naranja);height:22px}
-.reco figcaption{font-size:13px;color:#A9ABB2}
-.reco figcaption b{display:block;color:var(--blanco);font-size:14.5px}
+.reco figcaption{font-size:13px;color:var(--gris)}
+.reco figcaption b{display:block;color:var(--negro);font-size:14.5px}
 .contacto{margin-top:30px;display:flex;flex-direction:column;gap:16px}
-.correo{margin:0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font:600 17px var(--x);color:var(--blanco)}
-.correo button{font:600 13px var(--x);background:transparent;border:1px solid #3a3b42;color:#D4D5DA;border-radius:999px;padding:6px 12px;cursor:pointer}
-.correo button:hover{border-color:var(--blanco);color:var(--blanco)}
+.correo{margin:0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font:600 17px var(--x);color:var(--negro)}
+.correo button{font:600 13px var(--x);background:var(--blanco);border:1px solid #C9CBD1;color:var(--negro);border-radius:999px;padding:6px 12px;cursor:pointer}
+.correo button:hover{border-color:var(--negro)}
 .yo-ctas{display:flex;gap:12px;flex-wrap:wrap}
 .btn.li{background:var(--azul);border-color:var(--azul);color:var(--blanco)}
 
@@ -265,17 +272,19 @@ img{max-width:100%;display:block}
 .gigante-card p{margin:0;font-size:clamp(16px,1.3vw,19px);line-height:1.55;color:#E7E8EE;max-width:52ch}
 .gigante-card .btn{align-self:flex-start;background:var(--blanco);color:var(--negro);border-color:var(--blanco)}
 
-/* Mi mirada: la foto empieza a pantalla completa y se achica para dejar lugar al texto */
-.encoge{position:relative;height:230vh;margin-top:48px}
-.encoge-fija{position:sticky;top:72px;height:calc(100svh - 72px);overflow:hidden}
-.encoge .foto{position:absolute;left:0;top:0;bottom:0;width:var(--ancho,100%);border-radius:var(--radio-f,0px);overflow:hidden;background:var(--negro)}
-.encoge .foto img{width:100%;height:100%;object-fit:cover;opacity:.8}
-.encoge .foto .sobre{position:absolute;left:clamp(24px,4vw,56px);bottom:clamp(24px,4vw,56px);color:var(--blanco);font:800 clamp(40px,6vw,96px)/.95 var(--t);letter-spacing:-.045em;opacity:var(--sobre,1);text-shadow:0 6px 30px rgba(0,0,0,.35)}
-.encoge .lado{position:absolute;right:0;top:0;bottom:0;width:44%;display:flex;flex-direction:column;justify-content:center;gap:34px;padding-left:24px;opacity:var(--lado,0);transform:translateY(calc((1 - var(--lado,0)) * 40px))}
-.encoge .item small{font:700 12px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--naranja)}
-.encoge .item h3{margin:8px 0 10px;font:800 clamp(26px,2.6vw,38px)/1.1 var(--t);letter-spacing:-.025em}
-.encoge .item p{margin:0;font-size:16.5px;line-height:1.6;color:var(--gris);max-width:44ch}
-.encoge .item + .item{border-top:1px solid #E8D8CE;padding-top:30px}
+/* Mi mirada: columnas en tarjetas grandes con foto; la que tocas se agranda */
+.columnas{display:flex;gap:18px;margin-top:52px;padding:0 max(24px,calc((100vw - 1240px)/2 + 24px));height:min(72vh,640px)}
+.columna-c{position:relative;flex:1 1 0;min-width:0;border-radius:28px;overflow:hidden;color:var(--blanco);text-decoration:none;background:linear-gradient(135deg,var(--naranja),var(--azul));transition:flex-grow .7s cubic-bezier(.2,.7,.2,1)}
+.columna-c.abierta{flex-grow:2.2}
+.columna-c:not(.abierta) h3{font-size:clamp(22px,2.2vw,32px)}
+.columna-c img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.columna-c:hover img{transform:scale(1.05)}
+.columna-c::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,20,.55) 0%,rgba(17,18,20,.15) 45%,rgba(17,18,20,.35) 100%)}
+.columna-c .txt{position:absolute;z-index:2;left:clamp(22px,3vw,44px);right:clamp(22px,3vw,44px);top:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:14px}
+.columna-c small{align-self:flex-start;background:var(--blanco);color:var(--negro);border-radius:999px;padding:7px 13px;font:700 12.5px var(--x)}
+.columna-c h3{margin:0;font:800 clamp(28px,3.4vw,52px)/1.02 var(--t);letter-spacing:-.035em;text-shadow:0 4px 24px rgba(0,0,0,.25)}
+.columna-c .flecha-c{position:absolute;z-index:2;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:var(--negro);color:var(--blanco);display:grid;place-items:center;font:700 20px var(--x);transition:background .3s ease,color .3s ease}
+.columna-c.abierta .flecha-c{background:var(--blanco);color:var(--negro)}
 
 /* Entradas suaves */
 .entra{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -302,11 +311,10 @@ img{max-width:100%;display:block}
   .flechas-c{display:none}
   .ficha:nth-child(3n+2) .foto{aspect-ratio:4/5;margin-top:0}
   .gigante-card{min-height:72svh;border-radius:22px}
-  .encoge{height:200vh}
-  .encoge .foto{right:0;width:auto;bottom:auto;height:var(--alto-m,100%)}
-  .encoge .lado{left:0;right:0;width:auto;top:auto;bottom:0;height:calc(100% - 38%);padding:22px 24px 10px;gap:20px;justify-content:flex-start}
-  .encoge .item p{font-size:15px}
-  .encoge .item h3{font-size:24px}
+  .columnas{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
+  .columnas::-webkit-scrollbar{display:none}
+  .columna-c{flex:0 0 82vw;height:62svh;scroll-snap-align:start}
+  .columna-c.abierta{flex-grow:0}
   .manchas span:nth-child(1){width:90vw;height:90vw}
   .manchas span:nth-child(2){width:80vw;height:80vw}
   .manchas span:nth-child(3){width:70vw;height:70vw}
@@ -317,7 +325,7 @@ img{max-width:100%;display:block}
   .destacado .txt{padding:28px}
   .palabra{font-size:clamp(52px,16vw,96px)}
   .sec{padding-block:80px}
-  .yo-foto{max-width:300px;margin:0 auto}
+  .yo-foto{max-width:300px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -367,7 +375,7 @@ img{max-width:100%;display:block}
         <h1 class="marca">Outside-In<b>.</b></h1>
         <p class="lema">Las nuevas tendencias en las organizaciones, <span>en un solo lugar.</span></p>
       </div>
-      <div class="ctas-portada"><a class="btn p" href="#historia">Cómo funciona ↓</a><a class="btn" href="#estudios">Ver los estudios</a></div>
+      <div class="ctas-portada"><a class="btn p" href="que-es.html">Cómo funciona →</a><a class="btn" href="#estudios">Ver los estudios</a></div>
       <p class="vivo" id="vivo">Actualizado el miércoles 21 de octubre · 17 estudios leídos · 10 estudios publicados · 1 insight</p>
       <a class="firma" href="#yo"><span class="firma-punto" aria-hidden="true"></span><span>Creado, diseñado y automatizado por <b>Desirée Solano</b></span></a>
     </div>
@@ -443,17 +451,9 @@ img{max-width:100%;display:block}
   <section class="sec mi" id="mirada">
     <div class="envoltura">
       <h2 class="palabra" data-numero="03">Mi mirada</h2>
-      <p class="sub">Los datos cuentan una parte de la historia. Aquí te cuento lo que veo yo.</p>
+      <p class="sub">Mis artículos. En cada uno junto la data de distintos estudios y te cuento lo que veo yo: qué significa para las organizaciones y para quienes las lideran.</p>
     </div>
-    <div class="encoge" id="encoge">
-      <div class="encoge-fija envoltura">
-        <div class="foto"><img loading="lazy" src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&fit=crop&w=2000&q=70" alt="" /><span class="sobre">Lo que veo yo.</span></div>
-        <div class="lado">
-          <div class="item"><small>Mis columnas · Muy pronto</small><h3>Cada columna parte de un insight.</h3><p>Te cuento qué significa para quienes lideran: en primera persona, breve y con una pregunta para seguir la conversación en LinkedIn.</p></div>
-          <div class="item"><small>Cada trimestre · Primera edición muy pronto</small><h3>Juntando las piezas</h3><p>Mi propio estudio de estudios: lo que dicen decenas de investigaciones sobre las tendencias en las organizaciones, con una mirada especial en Latinoamérica.</p></div>
-        </div>
-      </div>
-    </div>
+    <div class="columnas" id="columnas"></div>
   </section>
 
   <div class="cinta-palabras oscura" aria-hidden="true"><div class="pista" style="animation-direction:reverse"><span class="">Banca</span><i>+</i><span class="hueca">Salud y farmacéutica</span><i>+</i><span class="">Consumo masivo</span><i>+</i><span class="hueca">Liderazgo</span><i>+</i><span class="">Cultura</span><i>+</i><span class="hueca">Inteligencia artificial</span><i>+</i><span class="">Gestión del cambio</span><i>+</i><span class="">Banca</span><i>+</i><span class="hueca">Salud y farmacéutica</span><i>+</i><span class="">Consumo masivo</span><i>+</i><span class="hueca">Liderazgo</span><i>+</i><span class="">Cultura</span><i>+</i><span class="hueca">Inteligencia artificial</span><i>+</i><span class="">Gestión del cambio</span><i>+</i></div></div>
@@ -467,14 +467,18 @@ img{max-width:100%;display:block}
         <div class="entra">
           <h3>¿Eres de las personas que no puede quedarse con una pregunta sin responder? Yo tampoco.</h3>
           <p>Necesito entender por qué pasan las cosas y armar el rompecabezas hasta que todo encaje. Esa curiosidad me ha acompañado durante más de 7 años en transformaciones de empresas, desde Accenture y APOYO Comunicación, con clientes Fortune 500.</p>
-          <p>Si te gusta conversar de cultura, comunicación, IA… o de perros, escríbeme. ☕</p>
+          <p>Pero lo que más disfruto no está en las presentaciones: está en las personas. Sentarme a escuchar, entender qué les preocupa y encontrar la forma de contarlo para que todos se suban al cambio.</p>
+          <p>He vivido en Perú, Argentina y Estados Unidos, y cada mudanza me enseñó lo mismo: primero se entiende el contexto, después se opina. De ahí nació Outside-In: para leer lo que nadie tiene tiempo de leer, encontrar dónde coinciden y dónde se contradicen los estudios, y contártelo en simple.</p>
+          <p>Si te gusta conversar de cultura, comunicación, IA… o de perros, escríbeme. Me encanta conocer gente nueva. ☕</p>
           <div class="contacto">
             <p class="correo"><span>desireesolanochang27@gmail.com</span><button type="button" id="copiar">Copiar correo</button></p>
             <div class="yo-ctas"><a class="btn n" href="mailto:desireesolanochang27@gmail.com">Escríbeme</a><a class="btn li" href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.12V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg>Conectemos en LinkedIn</a></div>
           </div>
         </div>
       </div>
+      <h3 class="recos-titulo">Lo que dicen de mi trabajo</h3>
       <div class="recos" id="recos"></div>
+      <a class="ver-recos" href="https://www.linkedin.com/in/desiree-solano-baba59131/details/recommendations/" target="_blank" rel="noopener">Ver todas las recomendaciones en LinkedIn →</a>
     </div>
   </section>
 </main>
@@ -490,16 +494,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202610240000"></script>
-<script src="js/textos.js?v=202610240000"></script>
-<script src="js/datos.js?v=202610240000"></script>
-<script src="js/contador.js?v=202610240000"></script>
-<script src="js/buscador.js?v=202610240000"></script>
-<script src="js/imagenes.js?v=202610240000"></script>
-<script src="js/insights.js?v=202610240000"></script>
-<script src="js/radar.js?v=202610240000"></script>
-<script src="js/traduccion.js?v=202610240000"></script>
-<script src="js/metricas.js?v=202610240000"></script>
+<script src="js/config.js?v=202610240100"></script>
+<script src="js/textos.js?v=202610240100"></script>
+<script src="js/datos.js?v=202610240100"></script>
+<script src="js/contador.js?v=202610240100"></script>
+<script src="js/buscador.js?v=202610240100"></script>
+<script src="js/imagenes.js?v=202610240100"></script>
+<script src="js/insights.js?v=202610240100"></script>
+<script src="js/columnas.js?v=202610240100"></script>
+<script src="js/radar.js?v=202610240100"></script>
+<script src="js/traduccion.js?v=202610240100"></script>
+<script src="js/metricas.js?v=202610240100"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -689,6 +694,25 @@ img{max-width:100%;display:block}
       .forEach(fu=>{const s=document.createElement('span');s.className='b';s.textContent=fu;et.appendChild(s);});
   })();
 
+  // Mi mirada: columnas de js/columnas.js. Si todavía no hay, se muestran las próximas por tema.
+  (function(){
+    const box=document.getElementById('columnas'); if(!box) return;
+    const lista=(typeof COLUMNAS!=='undefined'?COLUMNAS:[]).slice().sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||''));
+    const fotosTema={ia_personas:'photo-1606836591695-4d58a73eba1e',gestion_cambio:'photo-1517048676732-d65bc937f952',liderazgo_cultura:'photo-1758518731706-be5d5230e5a5'};
+    const tarjetas=lista.length?lista.slice(0,3).map(c=>({href:c.link,etq:nombreDe(c.tema)||(EN?'Column':'Columna'),titulo:EN?c.titulo_en:c.titulo_es,foto:c.foto||fotosTema[c.tema],fuera:true}))
+      :TEMAS.map(t=>({href:null,etq:EN?'Next column · Coming soon':'Próxima columna · Muy pronto',titulo:EN?t.en:t.es,foto:fotosTema[t.id]}));
+    tarjetas.forEach((t,i)=>{
+      const a=document.createElement(t.href?'a':'div'); a.className='columna-c'+(i===0?' abierta':'');
+      if(t.href){a.href=t.href;a.target='_blank';a.rel='noopener';}
+      if(t.foto){const im=document.createElement('img');im.loading='lazy';im.alt='';im.src=`https://images.unsplash.com/${t.foto}?auto=format&fit=crop&w=1400&q=70`;im.addEventListener('error',()=>im.style.visibility='hidden');a.appendChild(im);}
+      const tx=document.createElement('div');tx.className='txt';const sm=document.createElement('small');sm.textContent=t.etq;const h3=document.createElement('h3');h3.textContent=t.titulo;tx.append(sm,h3);
+      const fl=document.createElement('span');fl.className='flecha-c';fl.textContent='→';
+      a.append(tx,fl);box.appendChild(a);
+      const abre=()=>box.querySelectorAll('.columna-c').forEach(x=>x.classList.toggle('abierta',x===a));
+      a.addEventListener('mouseenter',abre);a.addEventListener('focus',abre);
+    });
+  })();
+
   // Recomendaciones reales de LinkedIn (js/datos.js)
   (function(){
     const box=document.getElementById('recos'); if(!box||typeof RECOMENDACIONES==='undefined') return;
@@ -702,19 +726,9 @@ img{max-width:100%;display:block}
   })();
 
   // Insights: la tarjeta crece al bajar. Mi mirada: la foto se achica y aparece el texto.
-  const gigante=document.getElementById('gigante'), encoge=document.getElementById('encoge');
+  const gigante=document.getElementById('gigante');
   function escalas(){
     if(gigante){const r=gigante.getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight-r.top)/(innerHeight*.9)));gigante.style.setProperty('--crece',reducido?1:(.88+.12*p).toFixed(3));}
-    if(encoge){
-      const r=encoge.getBoundingClientRect();const total=encoge.offsetHeight-innerHeight;
-      const p=reducido?1:Math.min(1,Math.max(0,(-r.top+innerHeight*.1)/total));
-      const k=Math.min(1,p/0.7), movil=innerWidth<900;
-      encoge.style.setProperty('--ancho',`${(100-48*k).toFixed(2)}%`);
-      encoge.style.setProperty('--alto-m',`${(100-62*k).toFixed(2)}%`);
-      encoge.style.setProperty('--radio-f',`${(24*k).toFixed(1)}px`);
-      encoge.style.setProperty('--sobre',(1-k*1.6).toFixed(2));
-      encoge.style.setProperty('--lado',Math.max(0,(k-.45)/.55).toFixed(2));
-    }
   }
 
   let tick=false;
