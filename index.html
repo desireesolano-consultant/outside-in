@@ -1,378 +1,733 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Outside-In</title>
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32" />
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="css/estilos.css?v=202610220209" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Outside-In · Las nuevas tendencias en las organizaciones</title>
+<meta name="description" content="Outside-In, por Desirée Solano: los estudios públicos sobre las nuevas tendencias en las organizaciones, en un solo lugar. Se actualiza cada semana." />
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Portada de Outside-In. Bloques de color + una historia que se construye al bajar. */
+:root{
+  --azul:#2440F0;--negro:#111214;--naranja:#FF6B2C;--lila:#C9CCFF;--blanco:#FFFFFF;
+  --alt:#F2F2F0;--borde:#E4E4E1;--gris:#55575C;--durazno:#FFF1EA;
+  --t:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --x:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--blanco);color:var(--negro);font-family:var(--x)}
+img{max-width:100%;display:block}
+.envoltura{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:999px;font:600 15px var(--x);border:1.5px solid currentColor;color:inherit;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--azul);border-color:var(--azul);color:var(--blanco)}
+.btn.n{background:var(--naranja);border-color:var(--naranja);color:var(--negro)}
+
+/* Encabezado */
+.cab{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--borde)}
+.cab .envoltura{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font:800 21px var(--t);white-space:nowrap;color:var(--negro);text-decoration:none}
+.logo i{width:22px;height:22px;border:3.5px solid var(--negro);border-radius:50%;display:grid;place-items:center}
+.logo i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--azul)}
+.cab nav{display:flex;gap:26px;font-size:15px}
+.cab nav a{color:var(--negro);text-decoration:none}
+.cab nav a:hover{color:var(--azul)}
+.acciones{display:flex;align-items:center;gap:10px}
+.lupa{width:40px;height:40px;border-radius:50%;border:1px solid var(--borde);background:var(--blanco);color:var(--negro);display:grid;place-items:center;cursor:pointer}
+.lupa:hover,.lupa[aria-expanded="true"]{border-color:var(--negro)}
+.lupa:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+.buscador{border-top:1px solid var(--borde);background:var(--blanco);box-shadow:0 18px 30px rgba(17,18,20,.12)}
+.cab .buscador .envoltura{display:block;height:auto;padding-block:22px 26px;max-width:820px}
+.atajos[hidden]{display:none}
+.caja-busca{display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--negro);padding-bottom:10px}
+.caja-busca input{flex:1;min-width:0;border:0;outline:0;font:600 22px var(--t);background:transparent;color:var(--negro)}
+.atajos{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.atajos button{font:600 13.5px var(--x);padding:7px 13px;border-radius:999px;border:1px solid var(--borde);background:var(--alt);cursor:pointer}
+.conteo{margin:12px 0 4px;font-size:13px;color:var(--gris)}
+.conteo:empty{display:none}
+.resultados{list-style:none;margin:0;padding:0;max-height:50vh;overflow:auto}
+.resultados a{display:flex;flex-direction:column;gap:3px;padding:12px 0;border-bottom:1px solid var(--borde);color:var(--negro);text-decoration:none}
+.resultados a small{font:700 11.5px var(--x);letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+.resultados a:hover span{color:var(--azul)}
+.cab .idioma{border:1.5px solid var(--negro);border-radius:999px;padding:8px 15px;font:600 14px var(--x);background:transparent;color:var(--negro);cursor:pointer}
+.cab .idioma:hover{background:var(--negro);color:var(--blanco)}
+
+/* 1 · Portada A: de afuera hacia adentro */
+.portada{position:relative;overflow:hidden;min-height:calc(100svh - 72px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 0 90px;background:var(--blanco)}
+.escena-afuera{position:absolute;inset:0;z-index:1;pointer-events:none}
+.flota{position:absolute;left:var(--cx,50%);top:var(--cy,44%);white-space:nowrap;font:700 clamp(18px,2vw,26px) var(--t);letter-spacing:-.01em;color:rgba(17,18,20,.55);
+  transform:translate(-50%,-50%) translate(var(--dx),var(--dy));opacity:0;animation:llega var(--dur) cubic-bezier(.55,0,.3,1) var(--del) infinite}
+.flota.acento{color:rgba(36,64,240,.7)}
+/* Capa opaca sobre TODO el fondo: las palabras se ven suaves y el título queda adelante */
+.portada::before{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 46% 40% at 50% 46%,rgba(246,243,238,.92),rgba(246,243,238,0));pointer-events:none}
+@keyframes llega{0%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy))}8%{opacity:1}78%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) translate(0,0) scale(.35)}}
+.portada-centro{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:26px;padding:0 16px;text-align:center}
+.velo{display:flex;flex-direction:column;align-items:center;gap:18px}
+.pill{margin:0;font:700 clamp(16px,1.5vw,19px) var(--x);color:var(--azul);background:#EEF0FF;padding:10px 20px;border-radius:999px}
+.marca{margin:0;font:800 clamp(58px,9vw,140px)/.88 var(--t);letter-spacing:-.05em;white-space:nowrap}
+.marca b{color:var(--naranja)}
+.lema{margin:0;font:700 clamp(21px,2.2vw,30px)/1.28 var(--t);letter-spacing:-.015em;max-width:27ch}
+.lema span{color:var(--azul)}
+.ctas-portada{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.ctas-portada .btn:not(.p){background:var(--blanco)}
+.vivo{margin:0;font-size:13.5px;line-height:1.5;color:var(--gris)}
+.vivo::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--naranja);margin-right:9px;vertical-align:1px;animation:titila 1.6s ease-in-out infinite}
+.firma{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;background:var(--negro);color:var(--blanco);text-decoration:none;font-size:14px}
+.firma b{color:var(--naranja-claro,#FFB38A)}
+.firma-punto{width:22px;height:22px;border-radius:50%;border:3px solid var(--blanco);display:grid;place-items:center;flex-shrink:0}
+.firma-punto::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--naranja)}
+@keyframes titila{50%{opacity:.2}}
+@keyframes flota{50%{transform:translateY(-12px)}}
+.bajar{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;font:600 13px var(--x);color:var(--gris);display:flex;flex-direction:column;align-items:center;gap:8px}
+.bajar::after{content:"";width:2px;height:34px;background:linear-gradient(var(--naranja),transparent);animation:baja 1.8s ease-in-out infinite}
+@keyframes baja{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* 2 · La historia: una ventana que se agranda y cuenta qué es Outside-In */
+.historia{position:relative;height:460vh;background:var(--blanco)}
+.historia-fija{position:sticky;top:72px;height:calc(100svh - 72px);overflow:hidden}
+.ventana{position:absolute;inset:0;clip-path:inset(var(--recorte,18%) var(--recorte-x,22%) round var(--radio,32px));background:var(--negro);will-change:clip-path}
+.escena{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.escena.activa{opacity:1}
+.escena img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 6s ease-out}
+.escena.activa img{transform:scale(1.14)}
+.escena::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,20,.25),rgba(17,18,20,.6))}
+.escena .fallback{position:absolute;inset:0}
+.frases{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 8vw;pointer-events:none;z-index:3}
+.frase{grid-area:1/1;margin:0;max-width:22ch;font:700 clamp(30px,4.2vw,62px)/1.12 var(--t);letter-spacing:-.025em;color:var(--blanco);opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;text-wrap:balance;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.frase.activa{opacity:1;transform:none}
+.frase em{font-style:normal;color:var(--naranja)}
+.frase .cta-final{display:flex;gap:12px;justify-content:center;margin-top:30px;pointer-events:auto;flex-wrap:wrap}
+.puntos{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:4;display:flex;gap:8px}
+.puntos span{width:26px;height:4px;border-radius:2px;background:rgba(255,255,255,.35);transition:background .4s ease}
+.puntos span.on{background:var(--naranja)}
+
+/* Títulos de sección: la palabra gigante que se arma al bajar */
+.sec{padding-block:112px;scroll-margin-top:72px}
+.sec{overflow-x:clip}
+.palabra{margin:0;font:800 clamp(64px,11vw,168px)/.85 var(--t);letter-spacing:-.05em;white-space:nowrap;color:var(--naranja);transition:color .6s ease}
+.palabra::before{content:attr(data-numero) " —";display:block;font:700 max(13px,.075em) var(--x);letter-spacing:.12em;margin:0 0 .45em .06em;color:currentColor}
+.palabra.armada{color:var(--final)}
+.palabra .l{display:inline-block;will-change:transform,opacity}
+.palabra.armada .l{transform:none!important;opacity:1!important}
+.sub{margin:26px 0 0;font:700 clamp(20px,2vw,26px)/1.35 var(--t);letter-spacing:-.01em;max-width:40ch}
+
+/* 3 · Estudios (gris) */
+.estudios{background:var(--alt);--final:var(--azul)}
+.pestanas{display:flex;gap:8px;flex-wrap:wrap;margin:40px 0 28px}
+.pestanas button{font:600 14px var(--x);padding:10px 18px;border-radius:999px;border:1.5px solid var(--borde);background:var(--blanco);color:var(--negro);cursor:pointer}
+.pestanas button.on{background:var(--negro);color:var(--blanco);border-color:var(--negro)}
+.pestanas button[hidden]{display:none}
+.cruce{margin:0 0 26px}
+.cruce[hidden],.radar[hidden],.carrusel[hidden]{display:none}
+.frase-cruce{margin:0;font:800 clamp(24px,3vw,40px)/1.35 var(--t);letter-spacing:-.02em;max-width:30ch}
+.frase-cruce select{font:800 inherit;font-size:.82em;color:var(--azul);background:var(--blanco);border:2px solid var(--azul);border-radius:14px;padding:2px 12px;max-width:100%;cursor:pointer}
+.aviso-cruce{margin:14px 0 0;font-size:15.5px;color:var(--gris)}
+.radar{padding-bottom:20px}
+.radar-intro{margin:0 0 18px;font-size:16.5px;color:var(--gris);max-width:58ch}
+.radar-lista{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.radar-lista li{background:var(--blanco);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:10px;border:1.5px dashed #C9CBD1}
+.radar-lista small{font:700 12px var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--naranja)}
+.radar-lista h3{margin:0;font:800 20px/1.25 var(--t)}
+.radar-lista span{font-size:14px;color:var(--gris)}
+.tarjetas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tarjeta{background:var(--blanco);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;color:var(--negro);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease}
+.tarjeta:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(17,18,20,.1)}
+.tarjeta .img{aspect-ratio:16/10;overflow:hidden;background:linear-gradient(135deg,var(--lila),var(--azul))}
+.tarjeta .img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.tarjeta:hover .img img{transform:scale(1.06)}
+.tarjeta .cuerpo{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tarjeta small{font:700 11.5px var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+.tarjeta h3{margin:0;font:800 19px/1.3 var(--t);letter-spacing:-.01em}
+.tarjeta .ir{margin-top:auto;font-weight:600;font-size:14px}
+
+/* 4 · Insights (azul) */
+.insights{background:var(--azul);color:var(--blanco);--final:var(--blanco)}
+.insights .sub{color:#E3E6FF}
+.destacado{margin-top:48px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:20px;overflow:hidden;background:var(--blanco);color:var(--negro)}
+.destacado .img{position:relative;min-height:420px;background:linear-gradient(135deg,var(--naranja),var(--lila))}
+.destacado .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.destacado .fuentes{position:absolute;left:20px;bottom:20px;display:flex;gap:8px;flex-wrap:wrap}
+.destacado .fuentes span{background:var(--blanco);border-radius:999px;padding:7px 13px;font:700 13px var(--x)}
+.destacado .txt{padding:44px;display:flex;flex-direction:column;gap:18px;justify-content:center}
+.destacado small{font:700 12px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--azul)}
+.destacado h3{margin:0;font:800 clamp(26px,2.8vw,38px)/1.1 var(--t);letter-spacing:-.025em;text-wrap:balance}
+.destacado p{margin:0;font-size:17px;line-height:1.6;color:var(--gris)}
+.destacado .btn{align-self:flex-start}
+.proximo{margin-top:18px;display:flex;align-items:center;gap:14px;font-size:15px;color:#E3E6FF}
+.proximo::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--naranja);animation:titila 1.6s ease-in-out infinite}
+
+/* 5 · Mi mirada (durazno) */
+.mi{background:var(--durazno);--final:var(--negro)}
+.mirada{margin-top:48px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:20px}
+.columna{position:relative;border-radius:20px;overflow:hidden;min-height:400px;background:var(--negro);color:var(--blanco);display:flex;align-items:flex-end}
+.columna img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.columna .txt{position:relative;padding:36px;display:flex;flex-direction:column;gap:12px}
+.columna small{font:700 12px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--naranja)}
+.columna h3{margin:0;font:800 clamp(24px,2.4vw,32px)/1.15 var(--t);letter-spacing:-.02em}
+.columna p{margin:0;font-size:16px;line-height:1.55;color:#E4E5EA;max-width:44ch}
+.piezas-caja{border-radius:20px;background:var(--blanco);padding:36px;display:flex;flex-direction:column;gap:14px}
+.piezas{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:120px;height:120px}
+.piezas span{border-radius:12px;animation:pieza 6s ease-in-out infinite}
+.piezas span:nth-child(1){background:var(--azul)}.piezas span:nth-child(2){background:var(--naranja);animation-delay:-1.5s}.piezas span:nth-child(3){background:var(--lila);animation-delay:-3s}.piezas span:nth-child(4){background:var(--negro);animation-delay:-4.5s}
+@keyframes pieza{50%{transform:translate(5px,-5px) rotate(4deg)}}
+.piezas-caja small{font:700 12px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--naranja)}
+.piezas-caja h3{margin:0;font:800 26px/1.15 var(--t);letter-spacing:-.02em}
+.piezas-caja p{margin:0;font-size:16px;line-height:1.55;color:var(--gris)}
+
+/* 6 · Sobre mí (negro) */
+.yo{background:var(--negro);color:var(--blanco);--final:var(--lila)}
+.yo-grid{margin-top:48px;display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:64px;align-items:center}
+.yo-foto{position:relative;display:grid;place-items:center}
+.yo-foto .c{position:absolute;width:88%;aspect-ratio:1;border-radius:50%;background:var(--naranja);top:36px}
+.yo-foto img{position:relative;width:100%;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
+.yo h3{margin:0;font:800 clamp(26px,2.8vw,40px)/1.12 var(--t);letter-spacing:-.025em;text-wrap:balance}
+.yo p{margin:16px 0 0;font-size:17px;line-height:1.65;color:#D4D5DA;max-width:58ch}
+.recos{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.reco{margin:0;background:#1D1E22;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.reco blockquote{margin:0;font-size:15px;line-height:1.55}
+.reco blockquote::before{content:"“";display:block;font:800 48px/.6 var(--t);color:var(--naranja);height:22px}
+.reco figcaption{font-size:13px;color:#A9ABB2}
+.reco figcaption b{display:block;color:var(--blanco);font-size:14.5px}
+.contacto{margin-top:30px;display:flex;flex-direction:column;gap:16px}
+.correo{margin:0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font:600 17px var(--x);color:var(--blanco)}
+.correo button{font:600 13px var(--x);background:transparent;border:1px solid #3a3b42;color:#D4D5DA;border-radius:999px;padding:6px 12px;cursor:pointer}
+.correo button:hover{border-color:var(--blanco);color:var(--blanco)}
+.yo-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn.li{background:var(--azul);border-color:var(--azul);color:var(--blanco)}
+
+/* Pie */
+.pie{background:var(--negro);color:var(--blanco);border-top:1px solid #26272c}
+.pie .envoltura{padding-block:72px 40px}
+.pie-arriba{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid #34353b}
+.pie-marca{margin:0;font:800 clamp(56px,7vw,100px)/.9 var(--t);letter-spacing:-.045em}
+.pie nav{display:flex;gap:26px;flex-wrap:wrap;font:600 16px var(--x)}
+.pie nav a{color:var(--blanco);text-decoration:none}
+.pie nav a:hover{color:var(--naranja)}
+.pie-sub{margin:26px 0 0;font-size:15px;color:#B5B7BC}
+.pie-legal{margin:28px 0 0;font-size:13px;color:#6E7076}
+
+
+/* ===== Recursos nuevos (referencias Coca-Cola, Bluepoint, Accenture) ===== */
+/* Portada: fondo suave con manchas de color difuminadas que se mueven */
+.portada{background:#F6F3EE}
+.manchas{position:absolute;inset:-10%;z-index:0;filter:blur(70px);opacity:.75;pointer-events:none}
+.manchas span{position:absolute;border-radius:50%;animation:deriva 18s ease-in-out infinite alternate}
+.manchas span:nth-child(1){width:46vw;height:46vw;left:-6%;top:6%;background:#C9CCFF}
+.manchas span:nth-child(2){width:40vw;height:40vw;right:-4%;top:-8%;background:#FFC9AE;animation-duration:22s}
+.manchas span:nth-child(3){width:34vw;height:34vw;left:38%;bottom:-14%;background:#F2E3C6;animation-duration:26s}
+@keyframes deriva{to{transform:translate(6vw,4vh) scale(1.12)}}
+
+
+/* Franja de palabras grandes que corre */
+.cinta-palabras{overflow:hidden;padding:34px 0;background:var(--blanco);border-block:1px solid var(--borde)}
+.cinta-palabras.oscura{background:var(--negro);color:var(--blanco);border:0}
+.pista{display:flex;align-items:center;width:max-content;animation:corre 46s linear infinite}
+.pista span{font:800 clamp(46px,8vw,124px)/1 var(--t);letter-spacing:-.04em;padding:0 .28em;white-space:nowrap}
+.pista span.hueca{color:transparent;-webkit-text-stroke:1.5px currentColor}
+.cinta-palabras:not(.oscura) .pista span.hueca{-webkit-text-stroke-color:var(--negro)}
+.pista i{font-style:normal;color:var(--naranja);font:800 clamp(28px,4vw,56px) var(--t)}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+/* Estudios: carrusel horizontal de tarjetas con foto */
+.carrusel-cab{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:40px 0 26px}
+.carrusel-cab .pestanas{margin:0}
+.flechas-c{display:flex;gap:8px}
+.flechas-c button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--negro);background:var(--blanco);font:700 18px var(--x);cursor:pointer}
+.flechas-c button:hover{background:var(--negro);color:var(--blanco)}
+.carrusel{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px max(24px,calc((100vw - 1240px)/2 + 24px)) 12px;margin:0}
+.carrusel::-webkit-scrollbar{display:none}
+.ficha{flex:0 0 min(400px,80vw);scroll-snap-align:start;color:var(--negro);text-decoration:none;display:flex;flex-direction:column;gap:16px}
+.ficha .foto{position:relative;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:linear-gradient(135deg,var(--lila),var(--azul))}
+.ficha:nth-child(3n+2) .foto{aspect-ratio:4/4.4;margin-top:36px}
+.ficha .foto img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.ficha:hover .foto img{transform:scale(1.07)}
+.ficha .tag{position:absolute;left:18px;top:18px;background:var(--negro);color:var(--blanco);font:700 13px var(--x);padding:8px 14px;border-radius:999px}
+.ficha .chips{display:flex;gap:8px;align-items:center;padding-inline:6px}
+.ficha .chips span{background:var(--blanco);border-radius:999px;padding:6px 12px;font:700 13px var(--x)}
+.ficha h3{margin:0;padding-inline:6px;font:800 clamp(20px,1.7vw,24px)/1.22 var(--t);letter-spacing:-.015em}
+
+/* Insights: tarjeta gigante con foto que crece al bajar */
+.gigante-card{display:block;position:relative;margin-top:48px;border-radius:30px;overflow:hidden;min-height:min(78vh,720px);color:var(--blanco);text-decoration:none;transform:scale(var(--crece,.9));transform-origin:center top;transition:transform .1s linear;background:linear-gradient(135deg,var(--naranja),var(--azul))}
+.gigante-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gigante-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,20,.15) 0%,rgba(17,18,20,.35) 45%,rgba(17,18,20,.85) 100%)}
+.gigante-card .dentro{position:absolute;inset:auto 0 0 0;z-index:2;padding:clamp(26px,4vw,56px);display:flex;flex-direction:column;gap:18px}
+.gigante-card .arriba{position:absolute;left:clamp(26px,4vw,56px);top:clamp(22px,3vw,40px);z-index:2;display:flex;gap:8px;flex-wrap:wrap}
+.gigante-card .arriba span{background:var(--negro);color:var(--blanco);border-radius:999px;padding:8px 14px;font:700 13px var(--x)}
+.gigante-card .arriba span.b{background:var(--blanco);color:var(--negro)}
+.gigante-card h3{margin:0;font:800 clamp(32px,4.6vw,72px)/1.02 var(--t);letter-spacing:-.035em;max-width:18ch;text-wrap:balance}
+.gigante-card p{margin:0;font-size:clamp(16px,1.3vw,19px);line-height:1.55;color:#E7E8EE;max-width:52ch}
+.gigante-card .btn{align-self:flex-start;background:var(--blanco);color:var(--negro);border-color:var(--blanco)}
+
+/* Mi mirada: la foto empieza a pantalla completa y se achica para dejar lugar al texto */
+.encoge{position:relative;height:230vh;margin-top:48px}
+.encoge-fija{position:sticky;top:72px;height:calc(100svh - 72px);overflow:hidden}
+.encoge .foto{position:absolute;left:0;top:0;bottom:0;width:var(--ancho,100%);border-radius:var(--radio-f,0px);overflow:hidden;background:var(--negro)}
+.encoge .foto img{width:100%;height:100%;object-fit:cover;opacity:.8}
+.encoge .foto .sobre{position:absolute;left:clamp(24px,4vw,56px);bottom:clamp(24px,4vw,56px);color:var(--blanco);font:800 clamp(40px,6vw,96px)/.95 var(--t);letter-spacing:-.045em;opacity:var(--sobre,1);text-shadow:0 6px 30px rgba(0,0,0,.35)}
+.encoge .lado{position:absolute;right:0;top:0;bottom:0;width:44%;display:flex;flex-direction:column;justify-content:center;gap:34px;padding-left:24px;opacity:var(--lado,0);transform:translateY(calc((1 - var(--lado,0)) * 40px))}
+.encoge .item small{font:700 12px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--naranja)}
+.encoge .item h3{margin:8px 0 10px;font:800 clamp(26px,2.6vw,38px)/1.1 var(--t);letter-spacing:-.025em}
+.encoge .item p{margin:0;font-size:16.5px;line-height:1.6;color:var(--gris);max-width:44ch}
+.encoge .item + .item{border-top:1px solid #E8D8CE;padding-top:30px}
+
+/* Entradas suaves */
+.entra{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.entra.visible{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .cab nav{display:none}
+  .vivo{font-size:12.5px}
+  /* Celular: palabras alrededor, título con su capa al centro */
+  .portada{min-height:calc(100svh - 64px);padding:28px 0 40px}
+  .velo{gap:14px}
+  .pill{font-size:16px;padding:9px 17px}
+  .marca{font-size:clamp(50px,15vw,76px)}
+  .lema{font-size:20px;max-width:19ch}
+  .flota{font-size:17px}
+  .ctas-portada{flex-wrap:nowrap;gap:8px}
+  .ctas-portada .btn{padding:12px 16px;font-size:14px;white-space:nowrap}
+  .vivo{font-size:12.5px}
+  .firma{font-size:12.5px;padding:8px 14px 8px 10px}
+  .firma b{white-space:nowrap}
+    .bajar{display:none}
+  .historia{height:420vh}
+  .carrusel-cab{margin:30px 0 20px}
+  .flechas-c{display:none}
+  .ficha:nth-child(3n+2) .foto{aspect-ratio:4/5;margin-top:0}
+  .gigante-card{min-height:72svh;border-radius:22px}
+  .encoge{height:200vh}
+  .encoge .foto{right:0;width:auto;bottom:auto;height:var(--alto-m,100%)}
+  .encoge .lado{left:0;right:0;width:auto;top:auto;bottom:0;height:calc(100% - 38%);padding:22px 24px 10px;gap:20px;justify-content:flex-start}
+  .encoge .item p{font-size:15px}
+  .encoge .item h3{font-size:24px}
+  .manchas span:nth-child(1){width:90vw;height:90vw}
+  .manchas span:nth-child(2){width:80vw;height:80vw}
+  .manchas span:nth-child(3){width:70vw;height:70vw}
+
+  .ventana{--recorte-x:6%}
+  .tarjetas,.destacado,.mirada,.yo-grid,.recos{grid-template-columns:1fr}
+  .destacado .img{min-height:240px}
+  .destacado .txt{padding:28px}
+  .palabra{font-size:clamp(52px,16vw,96px)}
+  .sec{padding-block:80px}
+  .yo-foto{max-width:300px;margin:0 auto}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .entra{opacity:1;transform:none}
+  .flota{opacity:.55}
+}
+
+/* Menú del celular */
+.menu-btn{display:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--borde);background:var(--negro);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.menu-btn span{width:16px;height:2px;background:var(--blanco);border-radius:2px;transition:transform .25s ease}
+.menu-btn[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+@media (max-width:900px){
+  .menu-btn{display:flex}
+  .cab .idioma{padding:7px 12px;font-size:13px}
+  .cab nav.abierto{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--blanco);border-bottom:1px solid var(--borde);box-shadow:0 18px 30px rgba(17,18,20,.12);padding:8px 24px 18px}
+  .cab nav.abierto a{font:800 26px var(--t);letter-spacing:-.02em;padding:14px 0;border-bottom:1px solid var(--borde)}
+}
+</style>
 </head>
 <body>
-  <div id="franja-vista-previa" class="oi-franja-vista-previa" data-i18n="franjaVistaPrevia" hidden></div>
-  <header class="oi-header">
-    <div class="oi-header-inner">
-      <a href="#inicio" class="oi-logo">
-        <span class="oi-logo-circulo"><span class="oi-logo-punto"></span></span>
-        Outside-In
+
+<header class="cab">
+  <div class="envoltura">
+    <a class="logo" href="#inicio"><i></i>Outside-In</a>
+    <nav><a href="que-es.html">Qué es Outside-In</a><a href="#estudios">Estudios</a><a href="#insights">Insights</a><a href="#mirada">Mi mirada</a><a href="#yo">Sobre mí</a></nav>
+    <div class="acciones"><button type="button" class="lupa" id="lupa" aria-label="Buscar estudios" aria-expanded="false"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><button type="button" class="idioma" id="boton-idioma">English</button><button type="button" class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button></div>
+  </div>
+  <div class="buscador" id="buscador" hidden>
+    <div class="envoltura">
+      <label class="caja-busca"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg><input id="busca" type="search" placeholder="Busca un tema: IA, banca, cultura…" autocomplete="off" /></label>
+      <div class="atajos" id="atajos"></div>
+      <p class="conteo" id="conteo"></p>
+      <ul class="resultados" id="resultados"></ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 1 · QUÉ ES OUTSIDE-IN: portada -->
+  <section class="portada" id="inicio">
+    <div class="manchas" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="escena-afuera" id="escena-afuera" aria-hidden="true"></div>
+    <div class="portada-centro">
+      <div class="velo">
+        <p class="pill">¿List@ para ponerte al día?</p>
+        <h1 class="marca">Outside-In<b>.</b></h1>
+        <p class="lema">Las nuevas tendencias en las organizaciones, <span>en un solo lugar.</span></p>
+      </div>
+      <div class="ctas-portada"><a class="btn p" href="#historia">Cómo funciona ↓</a><a class="btn" href="#estudios">Ver los estudios</a></div>
+      <p class="vivo" id="vivo">Actualizado el miércoles 21 de octubre · 17 estudios leídos · 10 estudios publicados · 1 insight</p>
+      <a class="firma" href="#yo"><span class="firma-punto" aria-hidden="true"></span><span>Creado, diseñado y automatizado por <b>Desirée Solano</b></span></a>
+    </div>
+    <span class="bajar">Baja para descubrirlo</span>
+  </section>
+
+  <!-- La historia que se construye al bajar (es la bajada de la portada, contada en escenas) -->
+  <section class="historia" id="historia" aria-label="Qué es Outside-In">
+    <div class="historia-fija">
+      <div class="ventana" id="ventana">
+        <div class="escena activa"><div class="fallback" style="background:linear-gradient(135deg,#1b2fb8,#2440F0)"></div><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+        <div class="escena"><div class="fallback" style="background:linear-gradient(135deg,#2440F0,#C9CCFF)"></div><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+        <div class="escena"><div class="fallback" style="background:linear-gradient(135deg,#111214,#2440F0)"></div><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+        <div class="escena"><div class="fallback" style="background:linear-gradient(135deg,#FF6B2C,#2440F0)"></div><img src="https://images.unsplash.com/photo-1758518731706-be5d5230e5a5?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+        <div class="escena"><div class="fallback" style="background:linear-gradient(135deg,#2440F0,#111214)"></div><img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+      </div>
+      <div class="frases">
+        <p class="frase activa">¿Te pasa que salen tantos estudios que es imposible leerlos todos?</p>
+        <p class="frase"><em>A mí también.</em></p>
+        <p class="frase">Por eso creé Outside-In: un solo lugar donde mi sistema encuentra <em>cada semana</em> las nuevas tendencias en las organizaciones.</p>
+        <p class="frase">Y donde yo cruzo la data para contarte dónde coinciden, dónde se contradicen <em>y qué significa para ti.</em></p>
+        <div class="frase">Bienvenid@ a Outside-In.<div class="cta-final"><a class="btn n" href="#estudios">Explora los estudios →</a><a class="btn" style="color:#fff" href="#insights">Ver los insights</a></div></div>
+      </div>
+      <div class="puntos" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span></div>
+    </div>
+  </section>
+
+  <!-- Franja de palabras grandes -->
+  <div class="cinta-palabras" aria-hidden="true"><div class="pista"><span class="">Tendencias</span><i>+</i><span class="hueca">Data</span><i>+</i><span class="">Transformación</span><i>+</i><span class="hueca">Organizaciones</span><i>+</i><span class="">Estudios</span><i>+</i><span class="hueca">Insights</span><i>+</i><span class="">Tendencias</span><i>+</i><span class="hueca">Data</span><i>+</i><span class="">Transformación</span><i>+</i><span class="hueca">Organizaciones</span><i>+</i><span class="">Estudios</span><i>+</i><span class="hueca">Insights</span><i>+</i></div></div>
+
+  <!-- 2 · ESTUDIOS -->
+  <section class="sec estudios" id="estudios">
+    <div class="envoltura">
+      <h2 class="palabra" data-numero="01">Estudios</h2>
+      <p class="sub">Cada estudio que mi sistema encuentra, resumido con su data clave y el enlace al original.</p>
+      <div class="carrusel-cab">
+        <div class="pestanas" role="tablist"><button type="button" class="on" data-pest="todos">Todos los estudios</button><button type="button" data-pest="cruce">Por tema e industria</button><button type="button" data-pest="radar" id="pest-radar">Recién detectados</button></div>
+        <div class="flechas-c"><button type="button" id="c-izq" aria-label="Anteriores">←</button><button type="button" id="c-der" aria-label="Siguientes">→</button></div>
+      </div>
+    </div>
+    <div class="envoltura">
+      <div class="cruce" id="cruce" hidden>
+        <p class="frase-cruce"><span>Quiero ver qué dicen los estudios sobre</span> <select id="sel-tema" aria-label="Tema"></select> <span>en</span> <select id="sel-industria" aria-label="Industria"></select></p>
+        <p class="aviso-cruce" id="aviso-cruce" hidden></p>
+      </div>
+      <div class="radar" id="radar" hidden>
+        <p class="radar-intro" id="radar-intro"></p>
+        <ul class="radar-lista" id="radar-lista"></ul>
+      </div>
+    </div>
+    <div class="carrusel" id="carrusel"></div>
+  </section>
+
+  <!-- 3 · INSIGHTS -->
+  <section class="sec insights" id="insights">
+    <div class="envoltura">
+      <h2 class="palabra" data-numero="02">Insights</h2>
+      <p class="sub">Muchos estudios miran los mismos temas, pero no siempre llegan a las mismas conclusiones. Aquí los pongo a conversar.</p>
+      <a class="gigante-card" id="gigante" href="insight.html">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1758519289074-9de36003622b?auto=format&fit=crop&w=2000&q=70" alt="" />
+        <div class="arriba" id="gigante-etiquetas"></div>
+        <div class="dentro">
+          <h3 id="gigante-titulo"></h3>
+          <p id="gigante-bajada"></p>
+          <span class="btn">Leer el insight completo →</span>
+        </div>
       </a>
-      <nav id="oi-nav" class="oi-nav">
-        <a href="#sobre" data-i18n="navSobre"></a>
-        <a href="#entender" data-i18n="navEntender"></a>
-        <a href="#aterrizar" data-i18n="navConectar"></a>
-        <a href="#descubrir" data-i18n="navAnticipar"></a>
-        <a href="#asi-automatice" data-i18n="navAsiAutomatice"></a>
-      </nav>
-      <div class="oi-header-acciones">
-        <button id="boton-en-vivo" class="oi-boton-en-vivo" type="button" aria-expanded="false" aria-controls="panel-en-vivo" hidden>
-          <span class="oi-punto-vivo" aria-hidden="true"></span>
-          <span data-i18n="navEnVivo"></span>
-        </button>
-        <button id="boton-idioma" class="boton-idioma" type="button"></button>
-        <button id="boton-menu" class="oi-boton-menu" type="button" aria-expanded="false" aria-controls="oi-nav">
-          <span class="oi-menu-linea"></span>
-          <span class="oi-menu-linea"></span>
-          <span class="oi-menu-linea"></span>
-        </button>
+      <p class="proximo">Mi sistema ya está buscando el próximo cruce.</p>
+    </div>
+  </section>
+
+  <!-- 4 · MI MIRADA -->
+  <section class="sec mi" id="mirada">
+    <div class="envoltura">
+      <h2 class="palabra" data-numero="03">Mi mirada</h2>
+      <p class="sub">Los datos cuentan una parte de la historia. Aquí te cuento lo que veo yo.</p>
+    </div>
+    <div class="encoge" id="encoge">
+      <div class="encoge-fija envoltura">
+        <div class="foto"><img loading="lazy" src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&fit=crop&w=2000&q=70" alt="" /><span class="sobre">Lo que veo yo.</span></div>
+        <div class="lado">
+          <div class="item"><small>Mis columnas · Muy pronto</small><h3>Cada columna parte de un insight.</h3><p>Te cuento qué significa para quienes lideran: en primera persona, breve y con una pregunta para seguir la conversación en LinkedIn.</p></div>
+          <div class="item"><small>Cada trimestre · Primera edición muy pronto</small><h3>Juntando las piezas</h3><p>Mi propio estudio de estudios: lo que dicen decenas de investigaciones sobre las tendencias en las organizaciones, con una mirada especial en Latinoamérica.</p></div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div id="panel-en-vivo" class="oi-panel-en-vivo" hidden>
-      <div class="oi-panel-en-vivo-inner">
-        <button type="button" id="panel-en-vivo-cerrar" class="oi-panel-en-vivo-cerrar">&times;</button>
-        <div class="oi-panel-en-vivo-cabecera">
-          <span class="oi-punto-vivo" aria-hidden="true"></span>
-          <span id="panel-en-vivo-actualizado"></span>
+  <div class="cinta-palabras oscura" aria-hidden="true"><div class="pista" style="animation-direction:reverse"><span class="">Banca</span><i>+</i><span class="hueca">Salud y farmacéutica</span><i>+</i><span class="">Consumo masivo</span><i>+</i><span class="hueca">Liderazgo</span><i>+</i><span class="">Cultura</span><i>+</i><span class="hueca">Inteligencia artificial</span><i>+</i><span class="">Gestión del cambio</span><i>+</i><span class="">Banca</span><i>+</i><span class="hueca">Salud y farmacéutica</span><i>+</i><span class="">Consumo masivo</span><i>+</i><span class="hueca">Liderazgo</span><i>+</i><span class="">Cultura</span><i>+</i><span class="hueca">Inteligencia artificial</span><i>+</i><span class="">Gestión del cambio</span><i>+</i></div></div>
+
+  <!-- 5 · SOBRE MÍ -->
+  <section class="sec yo" id="yo">
+    <div class="envoltura">
+      <h2 class="palabra" data-numero="04">Sobre mí</h2>
+      <div class="yo-grid">
+        <div class="yo-foto entra"><div class="c"></div><img src="img/desiree-recorte.webp" alt="Desirée Solano" /></div>
+        <div class="entra">
+          <h3>¿Eres de las personas que no puede quedarse con una pregunta sin responder? Yo tampoco.</h3>
+          <p>Necesito entender por qué pasan las cosas y armar el rompecabezas hasta que todo encaje. Esa curiosidad me ha acompañado durante más de 7 años en transformaciones de empresas, desde Accenture y APOYO Comunicación, con clientes Fortune 500.</p>
+          <p>Si te gusta conversar de cultura, comunicación, IA… o de perros, escríbeme. ☕</p>
+          <div class="contacto">
+            <p class="correo"><span>desireesolanochang27@gmail.com</span><button type="button" id="copiar">Copiar correo</button></p>
+            <div class="yo-ctas"><a class="btn n" href="mailto:desireesolanochang27@gmail.com">Escríbeme</a><a class="btn li" href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.12V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg>Conectemos en LinkedIn</a></div>
+          </div>
         </div>
-        <div class="oi-panel-tabs" role="tablist">
-          <button type="button" class="oi-panel-tab oi-cf-activo" data-rango="semana" data-i18n="contadorSemana"></button>
-          <button type="button" class="oi-panel-tab" data-rango="inicio" data-i18n="contadorInicio"></button>
-        </div>
-        <h3 class="oi-panel-en-vivo-titulo" data-i18n="contadorTitulo"></h3>
-        <div id="contador-numeros-panel" class="oi-contador-numeros"></div>
       </div>
+      <div class="recos" id="recos"></div>
     </div>
-  </header>
+  </section>
+</main>
 
-  <main>
-    <!-- PORTADA -->
-    <section id="inicio" class="oi-hero">
-      <div class="oi-hero-grid">
-        <div class="oi-hero-texto">
-          <p class="oi-tagline" data-i18n="heroTagline"></p>
-          <h1 class="oi-headline">
-            <a href="#entender" class="oi-headline-enlace"><span data-i18n="heroPalabra1"></span></a>.<br />
-            <a href="#aterrizar" class="oi-headline-enlace"><span data-i18n="heroPalabra2"></span></a>.<br />
-            <a href="#descubrir" class="oi-headline-enlace"><span class="oi-headline-acento" data-i18n="heroPalabra3"></span></a><span class="oi-headline-punto">.</span>
-          </h1>
-          <p class="oi-hero-parrafo-capsula">
-            <span data-i18n="heroParrafoPre"></span>
-            <span class="oi-capsula oi-capsula-tema" id="oi-word-tema"></span>
-            <span data-i18n="heroParrafoMid"></span>
-            <span class="oi-capsula oi-capsula-industria" id="oi-word-industria"></span><br class="oi-salto-forzado" />
-            <span data-i18n="heroParrafoPost"></span>
-          </p>
-          <button type="button" id="senal-vida" class="oi-senal-vida" hidden>
-            <span class="oi-punto-vivo" aria-hidden="true"></span>
-            <span id="senal-vida-texto"></span>
-          </button>
-          <div class="oi-bio-fila">
-            <img class="oi-foto-perfil oi-foto-hero" src="img/desiree-hero.jpg?v=2" alt="Desiree Solano" width="88" height="88" />
-            <div class="oi-bio-texto">
-              <p class="oi-bio-nombre" data-i18n="heroSaludo"></p>
-              <p class="oi-bio-cargo" data-i18n="heroCargo"></p>
-            </div>
-          </div>
-          <div class="oi-contacto-fila">
-            <a href="mailto:desireesolanochang27@gmail.com" class="oi-contacto-enlace oi-contacto-correo">
-              <svg class="oi-contacto-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                <path d="M3 7l9 6 9-6"></path>
-              </svg>
-              <span>desireesolanochang27@gmail.com</span>
-            </a>
-            <button type="button" id="boton-copiar-correo" class="oi-contacto-copiar" data-correo="desireesolanochang27@gmail.com" data-i18n="copiarCorreo"></button>
-            <a href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener" class="oi-contacto-enlace oi-contacto-linkedin">
-              <svg class="oi-contacto-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="3"></rect>
-                <line x1="8" y1="11" x2="8" y2="16"></line>
-                <circle cx="8" cy="8" r="0.6" fill="currentColor" stroke="none"></circle>
-                <path d="M12 16v-3.2a1.8 1.8 0 0 1 3.6 0V16"></path>
-                <line x1="12" y1="12.8" x2="12" y2="16"></line>
-              </svg>
-              <span data-i18n="linkedinFooter"></span>
-            </a>
-          </div>
-          <div class="oi-hero-narrativa">
-            <p data-i18n="heroParrafo1"></p>
-            <p data-i18n="heroParrafo2"></p>
-          </div>
-          <div class="oi-hero-ctas">
-            <a href="#entender" class="oi-boton oi-boton-primario" data-i18n="heroCtaPrimario"></a>
-            <a href="#asi-automatice" class="oi-boton oi-boton-secundario" data-i18n="heroCtaSecundario"></a>
-          </div>
-        </div>
-        <div class="oi-hero-diagrama" aria-hidden="true">
-          <svg id="oi-svg-diagrama" class="oi-svg-diagrama" viewBox="0 0 290 290">
-            <circle class="oi-svg-circulo-1" cx="145" cy="145" r="78"></circle>
-            <circle class="oi-svg-circulo-2" cx="145" cy="145" r="53"></circle>
-
-            <circle class="oi-svg-particula" data-lado="arriba" cx="145" cy="51" style="--dx: 0px; --dy: 94px; animation-delay: 0s"></circle>
-            <circle class="oi-svg-particula" data-lado="derecha" cx="239" cy="70" style="--dx: -94px; --dy: 75px; animation-delay: 1s"></circle>
-            <circle class="oi-svg-particula oi-svg-particula-llega" data-lado="derecha" cx="239" cy="145" style="--dx: -94px; --dy: 0px; animation-delay: 2s"></circle>
-            <circle class="oi-svg-particula" data-lado="derecha" cx="239" cy="220" style="--dx: -94px; --dy: -75px; animation-delay: 3s"></circle>
-            <circle class="oi-svg-particula" data-lado="izquierda" cx="51" cy="220" style="--dx: 94px; --dy: -75px; animation-delay: 4s"></circle>
-            <circle class="oi-svg-particula oi-svg-particula-llega" data-lado="izquierda" cx="51" cy="145" style="--dx: 94px; --dy: 0px; animation-delay: 5s"></circle>
-            <circle class="oi-svg-particula" data-lado="izquierda" cx="51" cy="70" style="--dx: 94px; --dy: 75px; animation-delay: 6s"></circle>
-
-            <circle class="oi-svg-centro-circulo" cx="145" cy="145" r="34"></circle>
-            <text class="oi-svg-centro-texto" x="145" y="148" text-anchor="middle" style="text-anchor: middle" data-i18n="diagramaCentro"></text>
-
-            <text class="oi-svg-etiqueta" data-lado="arriba" x="145" y="44" text-anchor="middle" style="text-anchor: middle" data-i18n="diagramaEstudios"></text>
-            <text class="oi-svg-etiqueta" data-lado="derecha" x="239" y="70" text-anchor="start" style="text-anchor: start" data-i18n="diagramaReportes"></text>
-            <text class="oi-svg-etiqueta" data-lado="derecha" x="239" y="145" text-anchor="start" style="text-anchor: start" data-i18n="diagramaEncuestas"></text>
-            <text class="oi-svg-etiqueta" data-lado="derecha" x="239" y="220" text-anchor="start" style="text-anchor: start" data-i18n="diagramaRankings"></text>
-            <text class="oi-svg-etiqueta" data-lado="izquierda" x="51" y="220" text-anchor="end" style="text-anchor: end" data-i18n="diagramaDatos"></text>
-            <text class="oi-svg-etiqueta" data-lado="izquierda" x="51" y="145" text-anchor="end" style="text-anchor: end" data-i18n="diagramaInvestigacion"></text>
-            <text class="oi-svg-etiqueta" data-lado="izquierda" x="51" y="70" text-anchor="end" style="text-anchor: end" data-i18n="diagramaTendencias"></text>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <!-- 01 SOBRE -->
-    <section id="sobre" class="oi-sobre">
-      <div class="oi-sobre-inner">
-        <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="sobreEtiqueta"></div>
-        <div class="oi-sobre-fotos oi-reveal">
-          <div class="oi-sobre-circulo" aria-hidden="true"></div>
-          <img class="oi-sobre-recorte" src="img/desiree-recorte.webp" alt="Desiree Solano" width="742" height="760" loading="lazy" />
-          <p class="oi-sobre-foto-pie"><strong data-i18n="nombreCompleto">Desirée Solano</strong><span data-i18n="sobreFotoPie"></span></p>
-        </div>
-        <div class="oi-sobre-contenido">
-          <blockquote class="oi-sobre-cita oi-reveal" data-i18n="sobreCita"></blockquote>
-          <p class="oi-sobre-parrafo oi-reveal" id="sobre-parrafo"></p>
-          <button type="button" id="boton-sobre" class="oi-boton oi-boton-claro" data-i18n="sobreBoton"></button>
-        </div>
-        <div class="oi-sobre-guia">
-          <h3 class="oi-sobre-guia-titulo oi-reveal" data-i18n="guiaTitulo"></h3>
-          <div class="oi-sobre-guia-grid">
-            <a href="#entender" class="oi-sobre-guia-item oi-reveal">
-              <span class="oi-sobre-guia-num">01</span>
-              <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra1"></span>
-              <span class="oi-sobre-guia-texto" data-i18n="guiaEntender"></span>
-            </a>
-            <a href="#aterrizar" class="oi-sobre-guia-item oi-reveal">
-              <span class="oi-sobre-guia-num">02</span>
-              <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra2"></span>
-              <span class="oi-sobre-guia-texto" data-i18n="guiaConectar"></span>
-            </a>
-            <a href="#descubrir" class="oi-sobre-guia-item oi-reveal">
-              <span class="oi-sobre-guia-num">03</span>
-              <span class="oi-sobre-guia-nombre" data-i18n="heroPalabra3"></span>
-              <span class="oi-sobre-guia-texto" data-i18n="guiaAnticipar"></span>
-            </a>
-          </div>
-          <p class="oi-sobre-guia-nota oi-reveal" data-i18n="guiaMirada"></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 01 ENTENDER: lecturas individuales, scroll horizontal anclado -->
-    <section id="entender" class="oi-entender oi-scrollx-section">
-      <div class="oi-entender-cabecera oi-cabecera-dos">
-        <div class="oi-palabra-gigante oi-palabra-gigante-clara" data-palabra="heroPalabra1" data-numero="01" aria-hidden="true"></div>
-        <div class="oi-cabecera-izq">
-          <div class="oi-etiqueta-seccion oi-etiqueta-clara oi-reveal" data-i18n="entenderEtiqueta"></div>
-          <h2 class="oi-titulo-seccion oi-titulo-claro oi-reveal" data-i18n="entenderTitulo"></h2>
-        </div>
-        <p class="oi-bajada-clara oi-reveal" data-i18n="entenderBajada"></p>
-      </div>
-      <div class="oi-scrollx-sticky">
-        <div id="grid-entender" class="oi-scrollx-track"></div>
-      </div>
-    </section>
-
-    <!-- 02 ATERRIZAR: frase interactiva con desplegables -->
-    <section id="aterrizar" class="oi-seccion-ancha">
-      <div class="oi-seccion-cabecera-col oi-cabecera-dos">
-        <div class="oi-palabra-gigante" data-palabra="heroPalabra2" data-numero="02" aria-hidden="true"></div>
-        <div class="oi-cabecera-izq">
-          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="conectarEtiqueta"></div>
-          <h2 class="oi-titulo-seccion oi-reveal" data-i18n="conectarTitulo"></h2>
-        </div>
-        <p class="ayuda oi-reveal" data-i18n="conectarBajada"></p>
-      </div>
-
-      <p class="oi-aterrizar-frase">
-        <span data-i18n="aterrizarFrasePre"></span>
-        <span class="oi-select-envoltorio">
-          <select id="aterrizar-select-tema" class="oi-select-capsula oi-select-capsula-tema"></select>
-        </span>
-        <span data-i18n="aterrizarFraseMid"></span>
-        <span class="oi-select-envoltorio">
-          <select id="aterrizar-select-industria" class="oi-select-capsula oi-select-capsula-industria"></select>
-        </span>
-      </p>
-
-      <div>
-        <p id="aterrizar-conteo" class="oi-aterrizar-conteo"></p>
-        <div id="aterrizar-tarjetas" class="oi-grid-resultados"></div>
-      </div>
-    </section>
-
-    <!-- 03 DESCUBRIR: estudios en el radar -->
-    <div class="oi-banda-alt">
-    <section id="descubrir" class="oi-seccion-ancha" hidden>
-      <div class="oi-seccion-cabecera-col oi-cabecera-dos">
-        <div class="oi-palabra-gigante" data-palabra="heroPalabra3" data-numero="03" aria-hidden="true"></div>
-        <div class="oi-cabecera-izq">
-          <div class="oi-etiqueta-seccion oi-reveal" data-i18n="anticiparEtiqueta"></div>
-          <h2 class="oi-titulo-seccion oi-reveal" data-i18n="anticiparTitulo"></h2>
-        </div>
-        <p class="ayuda oi-reveal" data-i18n="anticiparBajada"></p>
-      </div>
-      <div id="lista-radar" class="oi-lista-radar"></div>
-    </section>
+<footer class="pie">
+  <div class="envoltura">
+    <div class="pie-arriba">
+      <p class="pie-marca">Outside-In</p>
+      <nav><a href="que-es.html">Qué es Outside-In</a><a href="#estudios">Estudios</a><a href="#insights">Insights</a><a href="#mirada">Mi mirada</a><a href="#yo">Sobre mí</a><a href="detras-de-outside-in.html">Detrás de Outside-In</a><a href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener">LinkedIn</a></nav>
     </div>
+    <p class="pie-sub">Las nuevas tendencias en las organizaciones · por Desirée Solano</p>
+    <p class="pie-legal">© 2026 Desirée Solano. Outside-In: concepto, diseño, textos y sistema. Todos los derechos reservados. Diseñado y construido con Claude Code.</p>
+  </div>
+</footer>
 
-    <!-- BANNER: cita que crece con el scroll -->
-    <section id="banner-cita" class="oi-banner-seccion">
-      <div id="banner-cita-caja" class="oi-banner-caja">
-        <div class="oi-banner-pieza oi-banner-foto-marco" data-pieza="foto">
-          <img class="oi-banner-foto" src="img/desiree-banner.jpg?v=3" alt="Desiree Solano" width="720" height="720" loading="lazy" />
-        </div>
-        <span class="oi-banner-pieza oi-banner-barra" data-pieza="barra" aria-hidden="true"></span>
-        <figure class="oi-banner-contenido">
-          <span class="oi-banner-pieza oi-banner-comillas" data-pieza="comillas" aria-hidden="true">“</span>
-          <blockquote id="banner-cita-texto" class="oi-banner-pieza oi-banner-texto" data-pieza="texto"></blockquote>
-          <figcaption class="oi-banner-pieza oi-banner-firma" data-pieza="firma">
-            <strong data-i18n="nombreCompleto">Desirée Solano</strong>
-            <span data-i18n="bannerFirmaCargo"></span>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
+<script src="js/config.js?v=202610240000"></script>
+<script src="js/textos.js?v=202610240000"></script>
+<script src="js/datos.js?v=202610240000"></script>
+<script src="js/contador.js?v=202610240000"></script>
+<script src="js/buscador.js?v=202610240000"></script>
+<script src="js/imagenes.js?v=202610240000"></script>
+<script src="js/insights.js?v=202610240000"></script>
+<script src="js/radar.js?v=202610240000"></script>
+<script src="js/traduccion.js?v=202610240000"></script>
+<script src="js/metricas.js?v=202610240000"></script>
+<script>
+(function(){
+  const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Idioma: primero se traduce la página (antes de armar las palabras gigantes)
+  const EN = idiomaActual()==='en';
+  traducirPagina();
+  document.getElementById('boton-idioma').addEventListener('click',cambiarIdiomaPagina);
+  const nombreDe=id=>{const c=[...TEMAS,...INDUSTRIAS].find(x=>x.id===id);return c?(EN?c.en:c.es):'';};
+  const reales=(typeof HALLAZGOS!=='undefined'?HALLAZGOS:[]).filter(h=>h.esEjemplo===false).sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||''));
+  // Imágenes que no cargan: se queda el degradado de marca detrás.
+  document.querySelectorAll('img').forEach(i=>i.addEventListener('error',()=>{i.style.visibility='hidden';}));
 
-    <!-- 04 ASÍ AUTOMATICÉ OUTSIDE-IN -->
-    <section id="asi-automatice" class="oi-seccion-ancha">
-      <div class="oi-seccion-cabecera-col">
-        <div class="oi-etiqueta-seccion oi-reveal" data-i18n="asiAutomaticeEtiqueta"></div>
-        <h2 class="oi-titulo-seccion oi-reveal" data-i18n="asiAutomaticeTitulo"></h2>
-        <div class="oi-firma oi-reveal">
-          <img class="oi-foto-perfil oi-foto-firma" src="img/desiree-proceso.jpg?v=3" alt="Desiree Solano" width="64" height="64" loading="lazy" />
-          <p data-i18n="firmaProceso"></p>
-        </div>
-      </div>
+  // La historia: la ventana se agranda hasta ocupar toda la pantalla y las escenas cambian.
+  const historia=document.getElementById('historia');
+  const ventana=document.getElementById('ventana');
+  const escenas=[...document.querySelectorAll('.escena')];
+  const frases=[...document.querySelectorAll('.frase')];
+  const puntos=[...document.querySelectorAll('.puntos span')];
+  function historiaAvance(){
+    const r=historia.getBoundingClientRect();
+    const total=historia.offsetHeight-innerHeight;
+    const p=Math.min(1,Math.max(0,-r.top/total));
+    const abre=reducido?1:Math.min(1,p/0.16);
+    const movil=innerWidth<900;
+    ventana.style.setProperty('--recorte',`${(18*(1-abre)).toFixed(2)}%`);
+    ventana.style.setProperty('--recorte-x',`${((movil?6:22)*(1-abre)).toFixed(2)}%`);
+    ventana.style.setProperty('--radio',`${(32*(1-abre)).toFixed(1)}px`);
+    const n=Math.min(frases.length-1,Math.floor(Math.max(0,p-0.04)/(0.96/frases.length)));
+    frases.forEach((f,i)=>f.classList.toggle('activa',i===n));
+    escenas.forEach((e,i)=>e.classList.toggle('activa',i===n));
+    puntos.forEach((d,i)=>d.classList.toggle('on',i<=n));
+  }
 
-      <div id="cf-pin-contenedor" class="oi-cf-pin-contenedor">
-        <div class="oi-cf-pin">
-          <div class="oi-cf-progreso" role="tablist">
-            <button type="button" class="oi-cf-progreso-boton" data-etapa="0">01</button>
-            <button type="button" class="oi-cf-progreso-boton" data-etapa="1">02</button>
-            <button type="button" class="oi-cf-progreso-boton" data-etapa="2">03</button>
-          </div>
+  // Palabras gigantes: se arman letra por letra al llegar a cada sección.
+  const palabras=[...document.querySelectorAll('.palabra')];
+  palabras.forEach((el,n)=>{
+    const texto=el.textContent; el.textContent='';
+    let s=7+n*13; const az=()=>{s=(s*9301+49297)%233280;return s/233280;};
+    [...texto].forEach((c,i)=>{const l=document.createElement('span');l.className='l';l.textContent=c===' '?' ':c;
+      Object.assign(l.dataset,{i,dx:Math.round((az()-.5)*700),dy:Math.round((az()-.5)*260),r:Math.round((az()-.5)*200),e:(.3+az()*1.8).toFixed(2)});el.appendChild(l);});
+    el.dataset.total=texto.length;
+  });
+  function palabrasAvance(){
+    palabras.forEach(el=>{
+      if(reducido){el.classList.add('armada');return;}
+      const r=el.getBoundingClientRect();
+      const p=Math.min(1,Math.max(0,(innerHeight-r.top)/(innerHeight*.7)));
+      el.classList.toggle('armada',p>=1);
+      const t=+el.dataset.total||1;
+      el.querySelectorAll('.l').forEach(l=>{
+        const loc=Math.min(1,Math.max(0,(p-(+l.dataset.i/t)*.35)/.6));const su=1-Math.pow(1-loc,3);const f=1-su;
+        l.style.transform=`translate(${(l.dataset.dx*f).toFixed(1)}px,${(l.dataset.dy*f).toFixed(1)}px) rotate(${(l.dataset.r*f).toFixed(1)}deg) scale(${(1+(l.dataset.e-1)*f).toFixed(3)})`;
+        l.style.opacity=(0.08+0.92*su).toFixed(2);
+      });
+    });
+  }
 
-          <div class="oi-cf-pin-cuerpo">
-            <div class="oi-cf-pasos">
-              <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="0">
-                <span class="oi-paso-numero">01</span>
-                <span class="oi-paso-titulo" data-i18n="paso1Titulo"></span>
-                <span class="oi-paso-desc" data-i18n="paso1Desc"></span>
-              </button>
-              <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="1">
-                <span class="oi-paso-numero">02</span>
-                <span class="oi-paso-titulo" data-i18n="paso2Titulo"></span>
-                <span class="oi-paso-desc" data-i18n="paso2Desc"></span>
-              </button>
-              <button type="button" class="oi-cf-paso-boton oi-reveal" data-etapa="2">
-                <span class="oi-paso-numero">03</span>
-                <span class="oi-paso-titulo" data-i18n="paso3Titulo"></span>
-                <span class="oi-paso-desc" data-i18n="paso3Desc"></span>
-              </button>
-            </div>
+  // Tarjetas que entran suave
+  const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.15}):null;
+  document.querySelectorAll('.entra').forEach((el,i)=>{el.style.transitionDelay=`${(i%3)*90}ms`;io?io.observe(el):el.classList.add('visible');});
 
-            <div class="oi-cf-escenario">
-              <div class="oi-cf-etapa oi-cf-etapa-rastreo" data-etapa="0">
-                <div id="cf-chips-rastreo" class="oi-cf-chips"></div>
-              </div>
-              <div class="oi-cf-etapa oi-cf-etapa-curaduria" data-etapa="1">
-                <div class="oi-cf-filtro"></div>
-                <div id="cf-chips-curaduria" class="oi-cf-chips"></div>
-              </div>
-              <div class="oi-cf-etapa oi-cf-etapa-lectura" data-etapa="2">
-                <a id="cf-ficha-real" class="oi-cf-ficha-ejemplo" href="#entender">
-                  <span id="cf-ficha-etiqueta" class="oi-insignia-nuevo" style="position: static; display: inline-block; margin-bottom: 8px"></span>
-                  <div id="cf-ficha-titulo" class="oi-cf-ficha-titulo"></div>
-                  <div id="cf-ficha-fuente" class="oi-cf-ficha-fuente"></div>
-                  <div class="oi-cf-ficha-capsulas">
-                    <span class="oi-capsula oi-capsula-tema" id="cf-capsula-tema"></span>
-                    <span class="oi-capsula oi-capsula-industria" id="cf-capsula-industria"></span>
-                  </div>
-                  <div id="cf-ficha-lectura" class="oi-cf-ficha-lectura"></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  // Portada A: fuentes, temas e industrias llegan desde afuera y se juntan en Outside-In
+  (function(){
+    const esc=document.getElementById('escena-afuera'); if(!esc) return;
+    // Palabras generales y profesionales (las de azul son las industrias)
+    const todas=[['Tendencias'],['Banca','acento'],['Estudios'],['Transformación'],['Salud y farmacéutica','acento'],['Reportes'],['Organizaciones'],['Consumo masivo','acento'],['Data'],['Liderazgo'],['Insights'],['Cultura'],['Inteligencia artificial'],['Gestión del cambio']];
+    const n=todas.length, movil=window.innerWidth<700;
+    // El punto de llegada es el centro del título (no el centro de la pantalla)
+    const velo=document.querySelector('.velo'), caja=esc.getBoundingClientRect(), v=velo.getBoundingClientRect();
+    esc.style.setProperty('--cx',`${v.left+v.width/2-caja.left}px`); esc.style.setProperty('--cy',`${v.top+v.height/2-caja.top}px`);
+    const alto=caja.height;
+    // Dos rondas desfasadas, para que siempre haya varias palabras en camino
+    const lista=[...todas,...todas.slice(Math.floor(n/2)),...todas.slice(0,Math.floor(n/2))];
+    const total=lista.length;
+    lista.forEach(([t,tipo],i)=>{
+      const el=document.createElement('span'); el.className='flota'+(tipo?' '+tipo:''); el.textContent=tr(t);
+      const ang=(i/total)*Math.PI*2*2+(i>=n?Math.PI/n:0);
+      const rx=movil?window.innerWidth*.62:Math.min(window.innerWidth*.52,720);
+      const ry=Math.min(alto*.46,420);
+      el.style.setProperty('--dx',`${Math.cos(ang)*rx}px`); el.style.setProperty('--dy',`${Math.sin(ang)*ry}px`);
+      const dur=12; el.style.setProperty('--dur',`${dur}s`); el.style.setProperty('--del',`${-(i*dur/total)}s`);
+      esc.appendChild(el);
+    });
+  })();
 
-      <p class="oi-paso-cierre oi-reveal" data-i18n="asiAutomaticeCierre"></p>
-      <div id="contador-numeros-cf" class="oi-contador-numeros oi-reveal"></div>
-      <a href="detras-de-outside-in.html" class="oi-ver-todos oi-reveal" data-i18n="asiAutomaticeLeerMas"></a>
-    </section>
-  </main>
+  // Línea de actualización, con los números reales del sistema
+  try{
+    const f=new Date((CONTADOR.actualizado||'2026-10-21')+'T00:00:00');
+    const fecha=new Intl.DateTimeFormat(EN?'en-US':'es-PE',{weekday:'long',day:'numeric',month:'long'}).format(f);
+    const ni=typeof INSIGHTS!=='undefined'?INSIGHTS.length:0;
+    document.getElementById('vivo').textContent=EN
+      ?`Updated ${fecha} · ${CONTADOR.desdeInicio.revisados} studies read · ${reales.length} studies published · ${ni} ${ni===1?'insight':'insights'}`
+      :`Actualizado el ${fecha} · ${CONTADOR.desdeInicio.revisados} estudios leídos · ${reales.length} estudios publicados · ${ni} ${ni===1?'insight':'insights'}`;
+  }catch(e){}
 
-  <footer class="oi-footer">
-    <div class="oi-footer-inner">
-      <div class="oi-footer-top">
-        <div class="oi-footer-marca">Outside-In</div>
-        <div class="oi-footer-nav">
-          <a href="#entender" data-i18n="navEntender"></a>
-          <a href="#aterrizar" data-i18n="navConectar"></a>
-          <a href="#descubrir" data-i18n="navAnticipar"></a>
-          <a href="#asi-automatice" data-i18n="navAsiAutomatice"></a>
-          <a id="link-linkedin-footer" href="#" target="_blank" rel="noopener" data-i18n="linkedinFooter"></a>
-        </div>
-      </div>
-      <div class="oi-footer-bottom" data-i18n="subtitulo"></div>
-      <div class="oi-footer-firma" data-i18n="footerFirma"></div>
-    </div>
-  </footer>
+  // Buscador (lupa)
+  const lupa=document.getElementById('lupa'),panel=document.getElementById('buscador'),entrada=document.getElementById('busca');
+  const lista=document.getElementById('resultados'),conteo=document.getElementById('conteo'),atajos=document.getElementById('atajos');
+  (EN?['AI and people','Change management','Leadership','Life Sciences','Banking','Consumer goods']:['IA y personas','Gestión del cambio','Liderazgo','Salud','Banca','Consumo masivo']).forEach(t=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.addEventListener('click',()=>{entrada.value=t;pinta();});atajos.appendChild(b);});
+  function pinta(){
+    lista.innerHTML='';const q=entrada.value.trim();
+    if(q.length<2||typeof buscarEstudios!=='function'){conteo.textContent='';atajos.hidden=false;return;}
+    atajos.hidden=true;const r=buscarEstudios(q);
+    conteo.textContent=r.length?(EN?`${r.length} ${r.length===1?'study':'studies'}`:`${r.length} ${r.length===1?'estudio':'estudios'}`):(EN?"I haven't found studies on that yet. Try AI, change, culture, banking, health or consumer.":'No encontré estudios sobre eso todavía. Prueba con IA, cambio, cultura, banca, salud o consumo.');
+    r.slice(0,8).forEach(h=>{const li=document.createElement('li');const a=document.createElement('a');a.href=`hallazgo.html?id=${encodeURIComponent(h.id)}`;const sm=document.createElement('small');sm.textContent=h.fuente;const sp=document.createElement('span');sp.textContent=EN?h.hallazgo_en:h.hallazgo_es;a.append(sm,sp);li.appendChild(a);lista.appendChild(li);});
+  }
+  entrada.addEventListener('input',pinta);
+  lupa.addEventListener('click',()=>{const abre=panel.hidden;panel.hidden=!abre;lupa.setAttribute('aria-expanded',String(abre));if(abre)setTimeout(()=>entrada.focus(),30);});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){panel.hidden=true;lupa.setAttribute('aria-expanded','false');}});
 
-  <!-- MODAL: ficha(s) de hallazgo -->
-  <dialog id="modal-fichas" class="modal">
-    <div class="modal-cabecera">
-      <h2 id="modal-titulo"></h2>
-      <button id="modal-cerrar" class="modal-cerrar" type="button">&times;</button>
-    </div>
-    <div id="modal-cuerpo" class="modal-cuerpo"></div>
-  </dialog>
+  // Copiar correo
+  const copiar=document.getElementById('copiar');
+  copiar.addEventListener('click',async()=>{const c='desireesolanochang27@gmail.com';try{await navigator.clipboard.writeText(c);}catch(e){const t=document.createElement('textarea');t.value=c;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();}copiar.textContent=EN?'Copied!':'¡Copiado!';setTimeout(()=>copiar.textContent=tr('Copiar correo'),1800);});
 
-  <!-- MODAL: carta de bienvenida completa -->
-  <dialog id="modal-sobre" class="modal">
-    <div class="modal-cabecera">
-      <h2 id="modal-sobre-titulo"></h2>
-      <button id="modal-sobre-cerrar" class="modal-cerrar" type="button">&times;</button>
-    </div>
-    <div id="modal-sobre-cuerpo" class="modal-cuerpo carta"></div>
-  </dialog>
 
-  <script src="js/config.js?v=202610220209"></script>
-  <script src="js/textos.js?v=202610220209"></script>
-  <script src="js/datos.js?v=202610220209"></script>
-  <script src="js/radar.js?v=202610220209"></script>
-  <script src="js/contador.js?v=202610220209"></script>
-  <script src="js/imagenes.js?v=202610220209"></script>
-  <script src="js/vista-previa.js?v=202610220209"></script>
-  <script src="js/app.js?v=202610220209"></script>
-  <script src="js/buscador.js?v=202610220209"></script>
-  <script src="js/metricas.js?v=202610220209"></script>
+  // Estudios: carrusel con los estudios reales publicados y tres pestañas
+  (function(){
+    const c=document.getElementById('carrusel'); if(!c) return;
+    function ficha(h){
+      const a=document.createElement('a'); a.className='ficha'; a.href='hallazgo.html?id='+encodeURIComponent(h.id);
+      const f=document.createElement('div'); f.className='foto';
+      if(typeof imagenDeHallazgo==='function'){const im=document.createElement('img');im.loading='lazy';im.alt='';im.src=urlImagen(imagenDeHallazgo(h),900);im.addEventListener('error',()=>im.style.visibility='hidden');f.appendChild(im);}
+      const t=document.createElement('span'); t.className='tag'; t.textContent=nombreDe(h.tema)||nombreDe(h.industria); f.appendChild(t);
+      const ch=document.createElement('div'); ch.className='chips'; const s1=document.createElement('span'); s1.textContent=h.fuente; ch.appendChild(s1);
+      if(h.tema&&h.industria){const s2=document.createElement('span'); s2.textContent=nombreDe(h.industria); ch.appendChild(s2);}
+      const h3=document.createElement('h3'); h3.textContent=EN?h.hallazgo_en:h.hallazgo_es;
+      a.append(f,ch,h3); return a;
+    }
+    function mostrar(lista){c.innerHTML='';lista.forEach(h=>c.appendChild(ficha(h)));c.scrollLeft=0;}
+    mostrar(reales);
+    const paso=()=>Math.min(420,innerWidth*.8)+22;
+    document.getElementById('c-izq').onclick=()=>c.scrollBy({left:-paso(),behavior:'smooth'});
+    document.getElementById('c-der').onclick=()=>c.scrollBy({left:paso(),behavior:'smooth'});
+
+    // Por tema e industria: muestra los estudios que cruzan ambos
+    const st=document.getElementById('sel-tema'), si=document.getElementById('sel-industria'), aviso=document.getElementById('aviso-cruce');
+    const op=(sel,val,txt)=>{const o=document.createElement('option');o.value=val;o.textContent=txt;sel.appendChild(o);};
+    TEMAS.forEach(t=>op(st,t.id,EN?t.frase_en:t.frase_es));
+    INDUSTRIAS.forEach(i=>op(si,i.id,EN?i.frase_en:i.frase_es));
+    op(si,'',EN?'all industries':'todas las industrias');
+    function cruce(){
+      const t=st.value, i=si.value;
+      let r=reales.filter(h=>h.tema===t&&(!i||h.industria===i));
+      aviso.hidden=true;
+      if(!r.length){
+        r=reales.filter(h=>h.tema===t||h.industria===i);
+        aviso.hidden=false;
+        aviso.textContent=EN?"There are no studies that cross both yet. Meanwhile, here are the ones about each of them.":"Todavía no hay estudios que crucen los dos. Mientras tanto, aquí tienes los que hablan de cada uno.";
+      }
+      mostrar(r);
+    }
+    // De entrada, se elige una combinación que sí tenga estudios
+    const primero=reales.find(h=>h.tema&&h.industria); if(primero){st.value=primero.tema;si.value=primero.industria;}
+    st.addEventListener('change',cruce); si.addEventListener('change',cruce);
+
+    // Recién detectados (radar): si no hay ninguno, la pestaña no se muestra
+    const radar=typeof RADAR_ESTUDIOS!=='undefined'?RADAR_ESTUDIOS:[];
+    if(!radar.length) document.getElementById('pest-radar').hidden=true;
+    document.getElementById('radar-intro').textContent=EN?"Studies my system already found and that I'm reading. Their summary is coming soon.":"Estudios que mi sistema ya encontró y que estoy leyendo. Pronto tendrán su resumen.";
+    const rl=document.getElementById('radar-lista');
+    radar.forEach(r=>{const li=document.createElement('li');const sm=document.createElement('small');sm.textContent=r.fuente;const h3=document.createElement('h3');h3.textContent=EN?r.titulo_en:r.titulo_es;const sp=document.createElement('span');
+      const f=new Date(r.fecha_detectado+'T00:00:00');sp.textContent=(EN?'Detected on ':'Detectado el ')+new Intl.DateTimeFormat(EN?'en-US':'es-PE',{day:'numeric',month:'long'}).format(f);li.append(sm,h3,sp);rl.appendChild(li);});
+
+    // Pestañas
+    const pest=[...document.querySelectorAll('.pestanas button')], flechas=document.querySelector('.flechas-c');
+    pest.forEach(b=>b.addEventListener('click',()=>{
+      pest.forEach(x=>x.classList.toggle('on',x===b));
+      const v=b.dataset.pest;
+      document.getElementById('cruce').hidden=v!=='cruce';
+      document.getElementById('radar').hidden=v!=='radar';
+      c.hidden=v==='radar'; flechas.style.visibility=v==='radar'?'hidden':'';
+      if(v==='todos'){aviso.hidden=true;mostrar(reales);}
+      if(v==='cruce') cruce();
+    }));
+  })();
+
+  // Insight destacado: el más reciente de js/insights.js
+  (function(){
+    const g=document.getElementById('gigante'); if(!g||typeof INSIGHTS==='undefined'||!INSIGHTS.length){if(g)g.closest('section').hidden=true;return;}
+    const ins=[...INSIGHTS].sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||''))[0];
+    g.href='insight.html?id='+encodeURIComponent(ins.id);
+    document.getElementById('gigante-titulo').textContent=EN?ins.titulo_en:ins.titulo_es;
+    document.getElementById('gigante-bajada').textContent=EN?ins.bajada_en:ins.bajada_es;
+    const et=document.getElementById('gigante-etiquetas');
+    const s0=document.createElement('span');s0.textContent=nombreDe(ins.tema);et.appendChild(s0);
+    [...new Set(ins.estudios.map(id=>{const h=HALLAZGOS.find(x=>x.id===id);return h?h.fuente.replace(' AI Institute',''):null;}).filter(Boolean))]
+      .forEach(fu=>{const s=document.createElement('span');s.className='b';s.textContent=fu;et.appendChild(s);});
+  })();
+
+  // Recomendaciones reales de LinkedIn (js/datos.js)
+  (function(){
+    const box=document.getElementById('recos'); if(!box||typeof RECOMENDACIONES==='undefined') return;
+    const elegidas=['Tanesia Leflore','Vishnu Rao','Inés Weiss'];
+    RECOMENDACIONES.filter(r=>elegidas.includes(r.nombre)).forEach(r=>{
+      const fi=document.createElement('figure');fi.className='reco entra visible';
+      const bq=document.createElement('blockquote');bq.textContent=EN?r.texto_en:r.texto_es;
+      const fc=document.createElement('figcaption');const b=document.createElement('b');b.textContent=r.nombre;fc.append(b,document.createTextNode(EN?r.rol_en:r.rol_es));
+      fi.append(bq,fc);box.appendChild(fi);
+    });
+  })();
+
+  // Insights: la tarjeta crece al bajar. Mi mirada: la foto se achica y aparece el texto.
+  const gigante=document.getElementById('gigante'), encoge=document.getElementById('encoge');
+  function escalas(){
+    if(gigante){const r=gigante.getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight-r.top)/(innerHeight*.9)));gigante.style.setProperty('--crece',reducido?1:(.88+.12*p).toFixed(3));}
+    if(encoge){
+      const r=encoge.getBoundingClientRect();const total=encoge.offsetHeight-innerHeight;
+      const p=reducido?1:Math.min(1,Math.max(0,(-r.top+innerHeight*.1)/total));
+      const k=Math.min(1,p/0.7), movil=innerWidth<900;
+      encoge.style.setProperty('--ancho',`${(100-48*k).toFixed(2)}%`);
+      encoge.style.setProperty('--alto-m',`${(100-62*k).toFixed(2)}%`);
+      encoge.style.setProperty('--radio-f',`${(24*k).toFixed(1)}px`);
+      encoge.style.setProperty('--sobre',(1-k*1.6).toFixed(2));
+      encoge.style.setProperty('--lado',Math.max(0,(k-.45)/.55).toFixed(2));
+    }
+  }
+
+  let tick=false;
+  function todo(){historiaAvance();palabrasAvance();escalas();tick=false;}
+  addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(todo);}},{passive:true});
+  addEventListener('resize',todo);
+  todo();
+})();
+</script>
+<script>
+(function(){const b=document.getElementById('menu-btn'),n=document.querySelector('.cab nav');if(!b||!n)return;
+b.addEventListener('click',()=>{const a=!n.classList.contains('abierto');n.classList.toggle('abierto',a);b.setAttribute('aria-expanded',String(a));});
+n.querySelectorAll('a').forEach(x=>x.addEventListener('click',()=>{n.classList.remove('abierto');b.setAttribute('aria-expanded','false');}));})();
+</script>
 </body>
 </html>

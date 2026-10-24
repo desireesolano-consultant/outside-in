@@ -43,6 +43,8 @@ function init() {
   configurarAterrizar();
   renderizarDescubrir();
   renderizarBannerCita();
+  renderizarRecomendaciones();
+  renderizarInsightsPortada();
   renderizarChipsAsiAutomatice();
   renderizarFichaEjemploAsiAutomatice();
   configurarContadorInlineAsiAutomatice();
@@ -98,13 +100,10 @@ function init() {
   });
 
   document.getElementById("senal-vida").addEventListener("click", () => {
-    if (tieneDatosEnVivo()) {
-      abrirPanelEnVivo();
-      return;
-    }
-    const seccion = document.getElementById("asi-automatice");
+    const seccion = document.getElementById("sobre");
     if (seccion) seccion.scrollIntoView({ behavior: prefiereMovimientoReducido() ? "auto" : "smooth" });
   });
+
 
   let tickeando = false;
   window.addEventListener(
@@ -151,6 +150,8 @@ function cambiarIdioma() {
   actualizarResultadosAterrizar();
   renderizarDescubrir();
   renderizarBannerCita();
+  renderizarRecomendaciones();
+  renderizarInsightsPortada();
   renderizarChipsAsiAutomatice();
   renderizarFichaEjemploAsiAutomatice();
   configurarContadorInlineAsiAutomatice();
@@ -255,7 +256,7 @@ function renderizarSenalVida() {
 
   const t = TEXTOS[idioma];
   const etiquetaNuevos = senales.hallazgosNuevos === 1 ? t.senalNuevoSingular : t.senalNuevoPlural;
-  texto.textContent = `${t.senalActualizadoPrefijo} ${senales.fechaTexto} · ${senales.estudiosRevisados} ${t.senalEstudiosLabel} · ${senales.hallazgosNuevos} ${etiquetaNuevos}`;
+  texto.textContent = `${t.senalCadaLunes} · ${t.senalUltimaLectura} ${senales.fechaTexto}`;
   enlace.hidden = false;
 }
 
@@ -280,6 +281,96 @@ function configurarMenuMovil() {
       document.body.classList.remove("oi-menu-bloqueo");
     });
   });
+}
+
+// ---- Insights en la portada: tarjetas de los cruces publicados ----
+
+function renderizarInsightsPortada() {
+  const contenedor = document.getElementById("insights-lista");
+  if (!contenedor || typeof INSIGHTS === "undefined") return;
+  const t = TEXTOS[idioma];
+  contenedor.innerHTML = "";
+  INSIGHTS.slice()
+    .sort((a, b) => String(b.publicado).localeCompare(String(a.publicado)))
+    .forEach((ins, n) => {
+      const fuentes = ins.estudios.map((id) => HALLAZGOS.find((h) => h.id === id)).filter(Boolean);
+      const tarjeta = document.createElement("a");
+      tarjeta.className = `oi-insight-tarjeta${n === 0 ? " oi-insight-destacado" : ""}`;
+      tarjeta.href = `insight.html?id=${encodeURIComponent(ins.id)}`;
+      const meta = document.createElement("p");
+      meta.className = "oi-insight-tarjeta-meta";
+      const tema = TEMAS.find((x) => x.id === ins.tema);
+      meta.textContent = `${tema ? tema[idioma] : ""} · ${fuentes.length} ${t.insightEstudios}`;
+      const titulo = document.createElement("h3");
+      titulo.textContent = idioma === "es" ? ins.titulo_es : ins.titulo_en;
+      const bajada = document.createElement("p");
+      bajada.className = "oi-insight-tarjeta-bajada";
+      bajada.textContent = idioma === "es" ? ins.bajada_es : ins.bajada_en;
+      const cruce = document.createElement("div");
+      cruce.className = "oi-insight-cruce";
+      fuentes.forEach((h, i) => {
+        const d = ins.dicen.find((x) => x.id === h.id);
+        const nodo = document.createElement("div");
+        nodo.className = "oi-insight-nodo";
+        const dato = document.createElement("strong");
+        dato.textContent = d ? (idioma === "es" ? d.dato_es : d.dato_en) : "";
+        const fuente = document.createElement("span");
+        fuente.textContent = h.fuente.replace(" & Company", "").replace(" AI Institute", "");
+        nodo.append(dato, fuente);
+        cruce.appendChild(nodo);
+        if (i < fuentes.length - 1) {
+          const linea = document.createElement("i");
+          linea.setAttribute("aria-hidden", "true");
+          cruce.appendChild(linea);
+        }
+      });
+      const leer = document.createElement("span");
+      leer.className = "oi-insight-leer";
+      leer.textContent = t.insightLeer;
+      tarjeta.append(meta, titulo, bajada, cruce, leer);
+      contenedor.appendChild(tarjeta);
+    });
+  const proximo = document.createElement("div");
+  proximo.className = "oi-insight-tarjeta oi-insight-proximo";
+  const pt = document.createElement("p");
+  pt.className = "oi-insight-tarjeta-meta";
+  pt.textContent = t.insightProximo;
+  const pp = document.createElement("p");
+  pp.className = "oi-insight-tarjeta-bajada";
+  pp.textContent = t.insightProximoTexto;
+  proximo.append(pt, pp);
+  contenedor.appendChild(proximo);
+  if (typeof animarEntradas === "function") animarEntradas();
+}
+
+// ---- Conóceme: recomendaciones reales de LinkedIn ----
+
+function renderizarRecomendaciones() {
+  const contenedor = document.getElementById("recomendaciones");
+  if (!contenedor || typeof RECOMENDACIONES === "undefined") return;
+  const t = TEXTOS[idioma];
+  contenedor.innerHTML = "";
+  const titulo = document.createElement("h3");
+  titulo.className = "oi-recomendaciones-titulo";
+  titulo.textContent = t.conocemeRecosTitulo;
+  const grilla = document.createElement("div");
+  grilla.className = "oi-recomendaciones-grilla";
+  RECOMENDACIONES.forEach((r) => {
+    const tarjeta = document.createElement("figure");
+    tarjeta.className = "oi-recomendacion";
+    const cita = document.createElement("blockquote");
+    cita.textContent = idioma === "es" ? r.texto_es : r.texto_en;
+    const autor = document.createElement("figcaption");
+    const nombre = document.createElement("strong");
+    nombre.textContent = r.nombre;
+    const rol = document.createElement("span");
+    rol.textContent = idioma === "es" ? r.rol_es : r.rol_en;
+    autor.append(nombre, rol);
+    tarjeta.append(cita, autor);
+    grilla.appendChild(tarjeta);
+  });
+  contenedor.append(titulo, grilla);
+  if (typeof animarEntradas === "function") animarEntradas();
 }
 
 // ---- Sección "Sobre Outside-In" + modal con la carta completa ----
@@ -1208,6 +1299,8 @@ const SELECTOR_ENTRADAS = [
   ".oi-radar-item",
   ".oi-contacto-fila > *",
   ".oi-hero-ctas > *",
+  ".oi-recomendacion",
+  ".oi-insight-tarjeta",
   ".oi-footer-nav > *",
 ].join(", ");
 
