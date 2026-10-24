@@ -59,13 +59,14 @@ img{max-width:100%;display:block}
 /* 1 · Portada A: de afuera hacia adentro */
 .portada{position:relative;overflow:hidden;min-height:calc(100svh - 72px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 0 90px;background:var(--blanco)}
 .escena-afuera{position:absolute;inset:0;z-index:1;pointer-events:none}
-.flota{position:absolute;left:var(--cx,50%);top:var(--cy,44%);white-space:nowrap;font:600 14px var(--x);padding:7px 13px;border-radius:999px;border:1px solid var(--borde);background:var(--blanco);color:var(--gris);
+.flota{position:absolute;left:var(--cx,50%);top:var(--cy,44%);white-space:nowrap;font:700 clamp(18px,2vw,26px) var(--t);letter-spacing:-.01em;color:var(--negro);
   transform:translate(-50%,-50%) translate(var(--dx),var(--dy));opacity:0;animation:llega var(--dur) cubic-bezier(.55,0,.3,1) var(--del) infinite}
-.flota.fuente{color:var(--azul);border-color:#D6DAFF;font-weight:700}
-.flota.industria{color:#9A3B12;border-color:#FFD9C6;background:#FFF6F1}
+.flota.acento{color:var(--azul)}
+/* Capa opaca sobre TODO el fondo: las palabras se ven suaves y el título queda adelante */
+.portada::before{content:"";position:absolute;inset:0;z-index:2;background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);pointer-events:none}
 @keyframes llega{0%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy))}8%{opacity:1}78%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) translate(0,0) scale(.35)}}
 .portada-centro{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:26px;padding:0 16px;text-align:center}
-.velo{display:flex;flex-direction:column;align-items:center;gap:16px;padding:30px 34px 32px;border-radius:32px;background:rgba(255,255,255,.74);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);border:1px solid rgba(255,255,255,.9);box-shadow:0 24px 60px rgba(17,18,20,.08)}
+.velo{display:flex;flex-direction:column;align-items:center;gap:18px}
 .pill{margin:0;font:700 clamp(16px,1.5vw,19px) var(--x);color:var(--azul);background:#EEF0FF;padding:10px 20px;border-radius:999px}
 .marca{margin:0;font:800 clamp(58px,9vw,140px)/.88 var(--t);letter-spacing:-.05em;white-space:nowrap}
 .marca b{color:var(--naranja)}
@@ -73,7 +74,7 @@ img{max-width:100%;display:block}
 .lema span{color:var(--azul)}
 .ctas-portada{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .ctas-portada .btn:not(.p){background:var(--blanco)}
-.vivo{margin:0;font-size:13.5px;line-height:1.5;color:var(--gris);background:rgba(255,255,255,.85);border-radius:999px;padding:2px 10px}
+.vivo{margin:0;font-size:13.5px;line-height:1.5;color:var(--gris)}
 .vivo::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--naranja);margin-right:9px;vertical-align:1px;animation:titila 1.6s ease-in-out infinite}
 .firma{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;background:var(--negro);color:var(--blanco);text-decoration:none;font-size:14px}
 .firma b{color:var(--naranja-claro,#FFB38A)}
@@ -205,11 +206,11 @@ img{max-width:100%;display:block}
   .vivo{font-size:12.5px}
   /* Celular: palabras alrededor, título con su capa al centro */
   .portada{min-height:calc(100svh - 64px);padding:28px 0 40px}
-  .velo{padding:22px 18px 24px;border-radius:26px;gap:12px}
+  .velo{gap:14px}
   .pill{font-size:16px;padding:9px 17px}
   .marca{font-size:clamp(50px,15vw,76px)}
   .lema{font-size:20px;max-width:19ch}
-  .flota{font-size:12.5px;padding:6px 11px}
+  .flota{font-size:17px}
   .ctas-portada{flex-wrap:nowrap;gap:8px}
   .ctas-portada .btn{padding:12px 16px;font-size:14px;white-space:nowrap}
   .vivo{font-size:12.5px}
@@ -237,7 +238,7 @@ img{max-width:100%;display:block}
 <header class="cab">
   <div class="envoltura">
     <a class="logo" href="#inicio"><i></i>Outside-In</a>
-    <nav><a href="#inicio">Qué es Outside-In</a><a href="#estudios">Estudios</a><a href="#insights">Insights</a><a href="#mirada">Mi mirada</a><a href="#yo">Sobre mí</a></nav>
+    <nav><a href="que-es.html">Qué es Outside-In</a><a href="#estudios">Estudios</a><a href="#insights">Insights</a><a href="#mirada">Mi mirada</a><a href="#yo">Sobre mí</a></nav>
     <div class="acciones"><button type="button" class="lupa" id="lupa" aria-label="Buscar estudios" aria-expanded="false"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><span class="idioma">English</span></div>
   </div>
   <div class="buscador" id="buscador" hidden>
@@ -373,7 +374,7 @@ img{max-width:100%;display:block}
   <div class="envoltura">
     <div class="pie-arriba">
       <p class="pie-marca">Outside-In</p>
-      <nav><a href="#inicio">Qué es Outside-In</a><a href="#estudios">Estudios</a><a href="#insights">Insights</a><a href="#mirada">Mi mirada</a><a href="#yo">Sobre mí</a><a href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener">LinkedIn</a></nav>
+      <nav><a href="que-es.html">Qué es Outside-In</a><a href="#estudios">Estudios</a><a href="#insights">Insights</a><a href="#mirada">Mi mirada</a><a href="#yo">Sobre mí</a><a href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener">LinkedIn</a></nav>
     </div>
     <p class="pie-sub">Las nuevas tendencias en las organizaciones · por Desirée Solano</p>
     <p class="pie-legal">© 2026 Desirée Solano. Outside-In: concepto, diseño, textos y sistema. Todos los derechos reservados. Diseñado y construido con Claude Code.</p>
@@ -443,14 +444,8 @@ img{max-width:100%;display:block}
   // Portada A: fuentes, temas e industrias llegan desde afuera y se juntan en Outside-In
   (function(){
     const esc=document.getElementById('escena-afuera'); if(!esc) return;
-    const reales=(typeof HALLAZGOS!=='undefined'?HALLAZGOS:[]).filter(h=>h.esEjemplo===false);
-    // Fuentes: solo las que tienen estudios publicados (se actualiza sola cada semana)
-    const fuentes=[...new Set(reales.map(h=>h.fuente.replace(' AI Institute','')))];
-    const temas=['Gestión del cambio','IA y personas','Liderazgo','Cultura','Comunicación interna','Propósito','Adopción'];
-    const industrias=['Salud y farma','Banca y seguros','Consumo masivo'];
-    // Se intercalan para que nunca vayan dos del mismo tipo seguidas
-    const grupos=[fuentes.map(t=>[t,'fuente']),temas.map(t=>[t,'tema']),industrias.map(t=>[t,'industria'])];
-    const todas=[]; for(let i=0;todas.length<fuentes.length+temas.length+industrias.length;i++) grupos.forEach(g=>{if(g[i]) todas.push(g[i]);});
+    // Palabras generales y profesionales (las de azul son las industrias)
+    const todas=[['Tendencias'],['Banca','acento'],['Estudios'],['Transformación'],['Salud y farmacéutica','acento'],['Reportes'],['Organizaciones'],['Consumo masivo','acento'],['Data'],['Liderazgo'],['Insights'],['Cultura'],['Inteligencia artificial'],['Gestión del cambio']];
     const n=todas.length, movil=window.innerWidth<700;
     // El punto de llegada es el centro del título (no el centro de la pantalla)
     const velo=document.querySelector('.velo'), caja=esc.getBoundingClientRect(), v=velo.getBoundingClientRect();
@@ -460,7 +455,7 @@ img{max-width:100%;display:block}
     const lista=[...todas,...todas.slice(Math.floor(n/2)),...todas.slice(0,Math.floor(n/2))];
     const total=lista.length;
     lista.forEach(([t,tipo],i)=>{
-      const el=document.createElement('span'); el.className='flota'+(tipo==='tema'?'':' '+tipo); el.textContent=t;
+      const el=document.createElement('span'); el.className='flota'+(tipo?' '+tipo:''); el.textContent=t;
       const ang=(i/total)*Math.PI*2*2+(i>=n?Math.PI/n:0);
       const rx=movil?window.innerWidth*.62:Math.min(window.innerWidth*.52,720);
       const ry=Math.min(alto*.46,420);

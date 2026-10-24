@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Qué es Outside-In</title>
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --azul:#2440F0;--negro:#111214;--naranja:#FF6B2C;--naranja-claro:#FFB38A;--lila:#C9CCFF;--blanco:#FFFFFF;
+  --alt:#F2F2F0;--borde:#E4E4E1;--gris:#55575C;--durazno:#FFF1EA;
+  --t:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --x:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--blanco);color:var(--negro);font-family:var(--x)}
+img{max-width:100%;display:block}
+.envoltura{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:999px;font:600 15px var(--x);border:1.5px solid currentColor;color:inherit;text-decoration:none;transition:transform .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--azul);border-color:var(--azul);color:var(--blanco)}
+.btn.n{background:var(--naranja);border-color:var(--naranja);color:var(--negro)}
+
+/* Encabezado (igual al de la portada) */
+.cab{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--borde)}
+.cab .envoltura{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font:800 21px var(--t);white-space:nowrap;color:var(--negro);text-decoration:none}
+.logo i{width:22px;height:22px;border:3.5px solid var(--negro);border-radius:50%;display:grid;place-items:center}
+.logo i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--azul)}
+.cab nav{display:flex;gap:26px;font-size:15px}
+.cab nav a{color:var(--negro);text-decoration:none}
+.cab nav a:hover,.cab nav a.aqui{color:var(--azul)}
+.cab nav a.aqui{font-weight:700}
+.acciones{display:flex;align-items:center;gap:10px}
+.lupa{width:40px;height:40px;border-radius:50%;border:1px solid var(--borde);background:var(--blanco);color:var(--negro);display:grid;place-items:center}
+.idioma{border:1.5px solid var(--negro);border-radius:999px;padding:8px 15px;font-weight:600;font-size:14px}
+
+/* Elementos comunes */
+.sec{padding-block:120px;position:relative}
+.num{font:700 14px var(--x);letter-spacing:.08em;color:var(--naranja);margin:0 0 14px}
+.h2{margin:0;font:800 clamp(38px,5.4vw,76px)/1 var(--t);letter-spacing:-.04em;max-width:16ch}
+.h2 b{color:var(--naranja)}
+.parrafo{font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--gris);max-width:58ch;margin:22px 0 0}
+.entra{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.entra.visible{opacity:1;transform:none}
+
+/* 1 · Apertura */
+.apertura{padding-block:110px 90px}
+.apertura .eti{display:inline-block;margin:0 0 22px;font:700 15px var(--x);color:var(--azul);background:#EEF0FF;padding:9px 18px;border-radius:999px}
+.apertura h1{margin:0;font:800 clamp(44px,7vw,108px)/.95 var(--t);letter-spacing:-.045em;max-width:15ch}
+.apertura h1 b{color:var(--naranja)}
+.apertura .bajada{margin:34px 0 0;font:500 clamp(20px,2vw,26px)/1.5 var(--x);max-width:46ch}
+.apertura .bajada em{font-style:normal;color:var(--azul);font-weight:700}
+.apertura .foto{margin-top:64px;height:clamp(240px,42vw,520px);border-radius:28px;overflow:hidden;background:linear-gradient(135deg,var(--azul),var(--lila))}
+.apertura .foto img{width:100%;height:100%;object-fit:cover;animation:respira 16s ease-in-out infinite alternate}
+@keyframes respira{to{transform:scale(1.08)}}
+
+/* 2 · Por qué existe (azul) */
+.porque{background:var(--azul);color:var(--blanco)}
+.porque .num{color:var(--naranja-claro)}
+.porque .parrafo{color:#DCE0FF}
+.dolores{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.dolores li{border-top:2px solid rgba(255,255,255,.4);padding-top:18px;font:700 clamp(20px,1.8vw,24px)/1.3 var(--t)}
+.dolores li span{display:block;margin-top:10px;font:400 15.5px/1.55 var(--x);color:#DCE0FF}
+
+/* 3 · Qué encuentras */
+.encuentras{background:var(--blanco)}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.bloque{border-radius:24px;padding:34px 30px 32px;display:flex;flex-direction:column;gap:14px;min-height:340px}
+.bloque.e{background:var(--alt)}
+.bloque.i{background:#EEF0FF}
+.bloque.m{background:var(--durazno)}
+.bloque small{font:700 13px var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+.bloque h3{margin:0;font:800 clamp(30px,2.8vw,40px)/1 var(--t);letter-spacing:-.03em}
+.bloque p{margin:0;font-size:16px;line-height:1.6;color:var(--gris)}
+.bloque a{margin-top:auto;font:700 15px var(--x);color:var(--azul);text-decoration:none}
+
+/* 4 · Cómo funciona (negro) */
+.funciona{background:var(--negro);color:var(--blanco)}
+.funciona .parrafo{color:#B5B7BC}
+.pasos{list-style:none;margin:60px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:p}
+.pasos li{position:relative;padding:28px 24px 0 0;border-top:1px solid rgba(255,255,255,.22)}
+.pasos li::before{counter-increment:p;content:"0" counter(p);display:block;font:800 14px var(--x);color:var(--naranja);margin-bottom:18px}
+.pasos li::after{content:"";position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--naranja)}
+.pasos h3{margin:0 0 10px;font:800 26px/1.1 var(--t);letter-spacing:-.02em}
+.pasos p{margin:0;font-size:15.5px;line-height:1.6;color:#B5B7BC}
+.pasos li.yo h3{color:var(--naranja-claro)}
+.cada-lunes{margin-top:56px;display:inline-flex;align-items:center;gap:10px;font:600 14.5px var(--x);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:10px 18px}
+.cada-lunes::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--naranja);animation:titila 1.6s ease-in-out infinite}
+@keyframes titila{50%{opacity:.25}}
+
+/* 5 · Criterios */
+.criterios{background:var(--alt)}
+.reglas{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.reglas li{background:var(--blanco);border-radius:20px;padding:26px 26px 24px;display:flex;gap:18px}
+.reglas li i{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:#EEF0FF;color:var(--azul);display:grid;place-items:center;font:800 16px var(--t);font-style:normal}
+.reglas h3{margin:0 0 6px;font:800 19px/1.25 var(--t)}
+.reglas p{margin:0;font-size:15px;line-height:1.55;color:var(--gris)}
+.mapa{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.mapa div{background:var(--blanco);border-radius:20px;padding:26px}
+.mapa small{font:700 12px var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+.mapa ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.mapa li{font:600 14.5px var(--x);padding:8px 14px;border-radius:999px;background:var(--alt)}
+
+/* 6 · El nombre */
+.nombre{background:var(--durazno);overflow:hidden}
+.flechas{display:flex;align-items:center;gap:clamp(10px,2vw,28px);margin-top:48px;font:800 clamp(34px,6vw,90px)/1 var(--t);letter-spacing:-.04em;flex-wrap:wrap}
+.flechas .afuera{color:var(--gris);opacity:.55}
+.flechas .flecha{color:var(--naranja);animation:empuja 2.4s ease-in-out infinite}
+@keyframes empuja{50%{transform:translateX(12px)}}
+.flechas .adentro{color:var(--negro)}
+
+/* 7 · Cierre */
+.cierre{background:var(--blanco);text-align:center}
+.cierre .h2{margin-inline:auto}
+.cierre .firma-frase{margin:22px auto 0;font:500 clamp(18px,1.6vw,22px)/1.5 var(--x);color:var(--gris);max-width:44ch}
+.cierre .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+.firma{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;background:var(--negro);color:var(--blanco);text-decoration:none;font-size:14px;margin-top:34px}
+.firma b{color:var(--naranja-claro)}
+.firma-punto{width:22px;height:22px;border-radius:50%;border:3px solid var(--blanco);display:grid;place-items:center;flex-shrink:0}
+.firma-punto::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--naranja)}
+
+/* Pie */
+.pie{background:var(--negro);color:var(--blanco);padding-block:70px 40px}
+.pie .gigante{font:800 clamp(56px,12vw,180px)/.85 var(--t);letter-spacing:-.05em;margin:0}
+.pie .gigante b{color:var(--naranja)}
+.pie nav{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px}
+.pie nav a{color:#B5B7BC;text-decoration:none}
+.pie p{margin:28px 0 0;font-size:13px;color:#6E7076}
+
+@media (max-width:900px){
+  .cab nav{display:none}
+  .sec{padding-block:84px}
+  .apertura{padding-block:56px 60px}
+  .apertura .foto{margin-top:40px;border-radius:20px}
+  .dolores,.tres,.pasos,.reglas,.mapa{grid-template-columns:1fr}
+  .dolores{gap:26px;margin-top:40px}
+  .tres{margin-top:40px}
+  .bloque{min-height:0;padding:28px 24px}
+  .pasos{gap:34px;margin-top:44px}
+  .reglas{margin-top:40px}
+  .cierre .ctas .btn{padding:13px 20px}
+  .firma{font-size:12.5px;padding:8px 14px 8px 10px}
+  .firma b{white-space:nowrap}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.entra{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="cab">
+  <div class="envoltura">
+    <a class="logo" href="index.html"><i></i>Outside-In</a>
+    <nav><a class="aqui" href="que-es.html">Qué es Outside-In</a><a href="index.html#estudios">Estudios</a><a href="index.html#insights">Insights</a><a href="index.html#mirada">Mi mirada</a><a href="index.html#yo">Sobre mí</a></nav>
+    <div class="acciones"><a class="lupa" href="index.html#estudios" aria-label="Buscar estudios"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></a><span class="idioma">English</span></div>
+  </div>
+</header>
+
+<main>
+  <!-- 1 · Apertura -->
+  <section class="apertura">
+    <div class="envoltura">
+      <p class="eti">Qué es Outside-In</p>
+      <h1 class="entra">Un solo lugar para entender hacia dónde van las organizaciones<b>.</b></h1>
+      <p class="bajada entra">Outside-In reúne los estudios públicos más relevantes sobre <em>tendencias, data y transformación</em> en las organizaciones. Un sistema automatizado los detecta cada semana. Yo los cruzo y les doy contexto para que puedas tomar mejores decisiones.</p>
+      <div class="foto entra"><img src="https://images.unsplash.com/photo-1758691737543-09a1b2b715fa?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
+    </div>
+  </section>
+
+  <!-- 2 · Por qué existe -->
+  <section class="sec porque">
+    <div class="envoltura">
+      <p class="num">01 — Por qué existe</p>
+      <h2 class="h2 entra">Hay más estudios que tiempo para leerlos<b>.</b></h2>
+      <p class="parrafo entra">Consultoras, bancos e institutos publican investigaciones valiosas todo el tiempo. El problema no es la falta de información: es encontrarla, leerla completa y entender qué significa cuando un estudio dice una cosa y otro, lo contrario.</p>
+      <ul class="dolores">
+        <li class="entra">Están dispersos<span>Cada fuente publica en su propio sitio, con su propio formato y su propio calendario.</span></li>
+        <li class="entra">Son extensos<span>Suelen ser documentos largos, y lo más importante no siempre está al inicio.</span></li>
+        <li class="entra">No conversan entre sí<span>Cada estudio mira su parte. Nadie los pone lado a lado para ver dónde coinciden y dónde se contradicen.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3 · Qué encuentras -->
+  <section class="sec encuentras">
+    <div class="envoltura">
+      <p class="num">02 — Qué encuentras</p>
+      <h2 class="h2 entra">Tres formas de ponerte al día<b>.</b></h2>
+      <div class="tres">
+        <article class="bloque e entra">
+          <small>Lo que dicen</small>
+          <h3>Estudios</h3>
+          <p>Cada estudio, resumido en su propia página: el hallazgo principal, las cifras clave, las preguntas que abre y el enlace al documento original. Puedes buscarlos por tema, industria o fuente.</p>
+          <a href="index.html#estudios">Ver los estudios →</a>
+        </article>
+        <article class="bloque i entra">
+          <small>Lo que significan juntos</small>
+          <h3>Insights</h3>
+          <p>Artículos que cruzan varios estudios sobre un mismo tema: en qué coinciden, en qué se contradicen y por qué. Es la parte que no encuentras leyendo un estudio por separado.</p>
+          <a href="index.html#insights">Ver los insights →</a>
+        </article>
+        <article class="bloque m entra">
+          <small>Lo que yo veo</small>
+          <h3>Mi mirada</h3>
+          <p>Mi lectura como consultora en comunicación y transformación: qué implican estas tendencias para las organizaciones y para quienes las lideran.</p>
+          <a href="index.html#mirada">Ver mi mirada →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Cómo funciona -->
+  <section class="sec funciona">
+    <div class="envoltura">
+      <p class="num">03 — Cómo funciona</p>
+      <h2 class="h2 entra">Un sistema que trabaja cada semana<b>.</b></h2>
+      <p class="parrafo entra">Diseñé y automaticé un proceso que se renueva solo. La tecnología hace el trabajo de buscar, revisar y resumir. El análisis es mío.</p>
+      <ol class="pasos">
+        <li class="entra"><h3>Detecta</h3><p>Cada lunes, el sistema busca estudios nuevos en las fuentes que más pesan en el mundo de las organizaciones.</p></li>
+        <li class="entra"><h3>Filtra</h3><p>Revisa cada estudio contra criterios claros: que sea público, que la fuente sea sólida y que la muestra sea grande.</p></li>
+        <li class="entra"><h3>Resume</h3><p>Los que cumplen se publican en español y en inglés, con su hallazgo, sus datos clave y el enlace a la fuente original.</p></li>
+        <li class="entra yo"><h3>Cruza</h3><p>Ahí entro yo: pongo los estudios lado a lado, encuentro los patrones y escribo los insights y mi mirada.</p></li>
+      </ol>
+      <span class="cada-lunes">Se actualiza cada lunes</span>
+    </div>
+  </section>
+
+  <!-- 5 · Criterios -->
+  <section class="sec criterios">
+    <div class="envoltura">
+      <p class="num">04 — Los criterios</p>
+      <h2 class="h2 entra">No todo estudio entra<b>.</b></h2>
+      <p class="parrafo entra">La confianza es lo más importante. Por eso cada estudio pasa por las mismas reglas antes de publicarse.</p>
+      <ul class="reglas">
+        <li class="entra"><i>1</i><div><h3>Fuentes de peso</h3><p>Consultoras, consultoras de personas, instituciones financieras, cámaras de comercio e institutos de investigación.</p></div></li>
+        <li class="entra"><i>2</i><div><h3>Solo estudios públicos</h3><p>Cualquiera puede acceder al original. Nunca estudios pagos.</p></div></li>
+        <li class="entra"><i>3</i><div><h3>Muestras grandes</h3><p>Al menos 1,000 trabajadores o 100 ejecutivos encuestados.</p></div></li>
+        <li class="entra"><i>4</i><div><h3>Datos verificables</h3><p>Cada cifra viene del estudio original, con su enlace. Si un dato no se puede verificar, no se publica.</p></div></li>
+      </ul>
+      <div class="mapa">
+        <div class="entra"><small>Temas</small><ul><li>Gestión del cambio y transformación</li><li>Inteligencia artificial y personas</li><li>Liderazgo, cultura y comunicación</li></ul></div>
+        <div class="entra"><small>Industrias y geografía</small><ul><li>Salud y farmacéutica</li><li>Servicios financieros</li><li>Consumo masivo</li><li>América primero, y estudios globales</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · El nombre -->
+  <section class="sec nombre">
+    <div class="envoltura">
+      <p class="num">05 — Por qué Outside-In</p>
+      <h2 class="h2 entra">Mirar afuera para entender adentro<b>.</b></h2>
+      <p class="parrafo entra">Lo que pasa en el mercado, en otras industrias y en otras organizaciones ayuda a entender lo que está pasando dentro de la tuya. Outside-In trae esa mirada externa, con data, a un solo lugar.</p>
+      <div class="flechas entra" aria-hidden="true"><span class="afuera">Afuera</span><span class="flecha">→</span><span class="adentro">Adentro.</span></div>
+    </div>
+  </section>
+
+  <!-- 7 · Cierre -->
+  <section class="sec cierre">
+    <div class="envoltura">
+      <h2 class="h2 entra">Bienvenid@ a Outside-In<b>.</b></h2>
+      <p class="firma-frase entra">Creé, diseñé y automaticé este espacio para que ponerte al día sea simple.</p>
+      <div class="ctas"><a class="btn p" href="index.html#estudios">Explora los estudios →</a><a class="btn" href="index.html#yo">Conóceme</a></div>
+      <a class="firma" href="index.html#yo"><span class="firma-punto" aria-hidden="true"></span><span>Creado, diseñado y automatizado por <b>Desirée Solano</b></span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="envoltura">
+    <p class="gigante">Outside-In<b>.</b></p>
+    <nav><a href="que-es.html">Qué es Outside-In</a><a href="index.html#estudios">Estudios</a><a href="index.html#insights">Insights</a><a href="index.html#mirada">Mi mirada</a><a href="index.html#yo">Sobre mí</a><a href="https://www.linkedin.com/in/desiree-solano-baba59131/" target="_blank" rel="noopener">LinkedIn</a></nav>
+    <p>© 2026 Desirée Solano · Outside-In</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.querySelectorAll('img').forEach(i=>i.addEventListener('error',()=>{i.style.visibility='hidden';}));
+  const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.12}):null;
+  document.querySelectorAll('.entra').forEach((el,i)=>{el.style.transitionDelay=`${(i%3)*90}ms`;io?io.observe(el):el.classList.add('visible');});
+})();
+</script>
+</body>
+</html>
