@@ -71,6 +71,8 @@ const TRADUCCION_EN = {
   "Industria": "Industry",
   "Fecha": "Date",
   "Limpiar filtros": "Clear filters",
+  "Filtrar": "Filter",
+  "Antigüedad del estudio": "Study age",
   // Insights
   "Muchos estudios miran los mismos temas, pero no siempre llegan a las mismas conclusiones. Aquí los pongo a conversar.": "Many studies look at the same topics, but they don't always reach the same conclusions. Here I put them in conversation.",
   "Leer el insight completo →": "Read the full insight →",
