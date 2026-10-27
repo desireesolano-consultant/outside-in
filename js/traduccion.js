@@ -150,6 +150,8 @@ const TRADUCCION_EN = {
   "En mis años como consultora aprendí algo: las mejores decisiones no salen de tener más respuestas, sino de entender bien lo que está pasando alrededor. Qué están viviendo otras organizaciones, otras industrias, otros mercados.": "In my years as a consultant I learned something: the best decisions don't come from having more answers, but from truly understanding what's happening around you. What other organizations, other industries and other markets are going through.",
   "Esa información existe. Cada semana se publican estudios valiosos sobre las organizaciones. Pero llegar a ellos, leerlos y conectarlos toma un tiempo que casi nadie tiene. A mí también me pasaba.": "That information exists. Valuable studies about organizations are published every week. But finding them, reading them and connecting them takes time that almost no one has. It happened to me too.",
   "LO QUE ME PASABA": "WHAT HAPPENED TO ME",
+  "“Los mejores jugadores son los que estudian bien la cancha.”": "“The best players are the ones who study the field well.”",
+  "Lo que me pasaba:": "What was happening to me:",
   "Los estudios estaban dispersos": "Studies were scattered",
   "Cada uno se publica en un sitio distinto, con su propio formato y su propio calendario.": "Each one is published on a different site, with its own format and its own calendar.",
   "No tenía tiempo para leerlos completos": "I didn't have time to read them in full",
