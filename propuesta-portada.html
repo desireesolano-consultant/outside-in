@@ -758,7 +758,7 @@ img{max-width:100%;display:block}
 
     // Filtros: botón que abre un panel; se puede elegir más de una opción por grupo
     const sel={tema:new Set(),industria:new Set(),fecha:''};
-    const RANGOS=[['7',EN?'This week':'Esta semana'],['30',EN?'Last month':'Último mes'],['90',EN?'Last 3 months':'Últimos 3 meses'],['180',EN?'Last 6 months':'Últimos 6 meses'],['365',EN?'Last year':'Último año'],['mas',EN?'More than a year ago':'Hace más de un año']];
+    const RANGOS=[['7',EN?'This week':'Esta semana'],['14',EN?'Last 2 weeks':'Últimas 2 semanas'],['30',EN?'Last month':'Último mes'],['90',EN?'Last 3 months':'Últimos 3 meses'],['180',EN?'Last 6 months':'Últimos 6 meses'],['365',EN?'Last year':'Último año'],['mas',EN?'More than a year ago':'Hace más de un año']];
     const nombreRango=v=>(RANGOS.find(r=>r[0]===v)||['',''])[1];
     function chip(cont,txt,onClick){const b=document.createElement('button');b.type='button';b.textContent=txt;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{onClick(b);});cont.appendChild(b);return b;}
     const gT=document.getElementById('g-tema'), gI=document.getElementById('g-industria'), gF=document.getElementById('g-fecha');
