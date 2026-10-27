@@ -13,9 +13,9 @@
 
 ## Estructura del sitio
 - Menú: Qué es Outside-In · Estudios · Insights · Mi mirada · Sobre mí, más la lupa (buscador) y el botón English.
-- Portada (index.html): "¿List@ para ponerte al día?", título "Outside-In.", bajada corta, palabras que llegan desde afuera, línea de última actualización y firma "Creado, diseñado y automatizado por Desirée Solano".
+- Portada (index.html): a la izquierda "¿List@ para ponerte al día?", título "Outside-In.", bajada corta, botones, línea de última actualización y firma "Creado, diseñado y automatizado por Desirée Solano"; a la derecha un carrusel 3D lento con los 6 hallazgos más recientes que tienen cifra (fuente, cifra, frase completa y fecha).
 - Historia al bajar (index.html#historia): la ventana que se agranda y cuenta qué es Outside-In en frases.
-- Estudios (index.html#estudios): carrusel con pestañas "Todos los estudios", "Por tema e industria" (frase con desplegables que muestra los estudios que cruzan ambos) y "Recién detectados" (el radar; la pestaña no se muestra si está vacío).
+- Estudios (index.html#estudios): carrusel ordenado del estudio más nuevo al menos nuevo (por la fecha del estudio), con fecha de publicación, antigüedad ("hace 2 semanas") y etiqueta "Nuevo" para lo que sumó la última búsqueda. Botón "Filtrar" que abre un panel con tema, industria y antigüedad. Pestañas "Todos los estudios" y "Recién detectados" (el radar; no se muestra si está vacío).
 - Insights (index.html#insights): el insight más reciente de js/insights.js; cada insight tiene su página (insight.html).
 - Mi mirada (index.html#mirada): mis columnas y "Juntando las piezas" (mi estudio de estudios trimestral).
 - Sobre mí (index.html#yo): mi foto, presentación, correo, LinkedIn y recomendaciones.
