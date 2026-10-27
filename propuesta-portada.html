@@ -314,7 +314,7 @@ img{max-width:100%;display:block}
 .portada-grid .ctas-portada{justify-content:flex-start}
 .carrusel3d{height:560px;perspective:1800px;display:grid;place-items:center;position:relative;z-index:1}
 .portada-grid .portada-centro{position:relative;z-index:2}
-.anillo3d{position:relative;width:240px;height:340px;transform-style:preserve-3d;animation:gira3d 70s linear infinite}
+.anillo3d{position:relative;width:240px;height:340px;transform-style:preserve-3d;animation:gira3d 120s linear infinite}
 .carrusel3d:hover .anillo3d{animation-play-state:paused}
 @keyframes gira3d{to{transform:rotateY(-360deg)}}
 .cara3d{position:absolute;inset:0;border-radius:22px;padding:24px 22px;display:flex;flex-direction:column;gap:12px;color:var(--blanco);backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 24px 50px rgba(17,18,20,.18);text-decoration:none}
@@ -337,6 +337,23 @@ img{max-width:100%;display:block}
 .historia{background:#F6F3EE}
 .historia-fija{background:#F6F3EE}
 .historia-fija::before{content:"";position:absolute;inset:-10%;background:radial-gradient(40% 40% at 15% 30%,#C9CCFF,transparent 70%),radial-gradient(35% 35% at 85% 20%,#FFC9AE,transparent 70%),radial-gradient(35% 35% at 55% 90%,#F2E3C6,transparent 70%);filter:blur(30px);opacity:.8}
+
+
+/* Filtros de estudios */
+.filtros{margin:0 0 26px;background:var(--blanco);border-radius:22px;padding:22px 24px}
+.filtros[hidden]{display:none}
+.filtros-bajada{margin:0 0 14px;font:700 17px var(--t)}
+.filtros-fila{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.filtros label{display:flex;flex-direction:column;gap:6px;flex:1 1 200px;min-width:0}
+.filtros select{width:100%;min-width:0;text-overflow:ellipsis}
+.filtros label span{font:700 12px var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+.filtros select{font:600 15px var(--x);color:var(--negro);background:var(--alt);border:1.5px solid transparent;border-radius:14px;padding:12px 14px;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--negro) 50%),linear-gradient(135deg,var(--negro) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+.filtros select:focus{outline:none;border-color:var(--azul)}
+.filtros select.activo{background-color:#EEF0FF;border-color:var(--azul);color:var(--azul)}
+.f-limpiar{font:700 14px var(--x);background:none;border:0;color:var(--azul);padding:12px 6px;cursor:pointer;text-decoration:underline}
+.f-limpiar[hidden]{display:none}
+.f-conteo{margin:12px 0 0;font:600 14px var(--x);color:var(--gris)}
+.sin-resultados{flex:0 0 min(400px,80vw);padding:40px 6px;font:600 16px var(--x);color:var(--gris)}
 
 /* Entradas suaves */
 .entra{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -470,14 +487,20 @@ img{max-width:100%;display:block}
       <h2 class="palabra" data-numero="01">Estudios</h2>
       <p class="sub">Cada semana se publican estudios valiosos que casi nadie alcanza a leer. Aquí te cuento lo esencial de cada uno, con los datos que más importan para las organizaciones y el enlace al estudio completo.</p>
       <div class="carrusel-cab">
-        <div class="pestanas" role="tablist"><button type="button" class="on" data-pest="todos">Todos los estudios</button><button type="button" data-pest="cruce">Por tema e industria</button><button type="button" data-pest="radar" id="pest-radar">Recién detectados</button></div>
+        <div class="pestanas" role="tablist"><button type="button" class="on" data-pest="todos">Todos los estudios</button><button type="button" data-pest="radar" id="pest-radar">Recién detectados</button></div>
         <div class="flechas-c"><button type="button" id="c-izq" aria-label="Anteriores">←</button><button type="button" id="c-der" aria-label="Siguientes">→</button></div>
       </div>
     </div>
     <div class="envoltura">
-      <div class="cruce" id="cruce" hidden>
-        <p class="frase-cruce"><span>Quiero ver qué dicen los estudios sobre</span> <select id="sel-tema" aria-label="Tema"></select> <span>en</span> <select id="sel-industria" aria-label="Industria"></select></p>
-        <p class="aviso-cruce" id="aviso-cruce" hidden></p>
+      <div class="filtros" id="filtros">
+        <p class="filtros-bajada">Filtra y encuentra más rápido los estudios que te interesan.</p>
+        <div class="filtros-fila">
+          <label><span>Tema</span><select id="f-tema"></select></label>
+          <label><span>Industria</span><select id="f-industria"></select></label>
+          <label><span>Fecha</span><select id="f-fecha"></select></label>
+          <button type="button" class="f-limpiar" id="f-limpiar" hidden>Limpiar filtros</button>
+        </div>
+        <p class="f-conteo" id="f-conteo"></p>
       </div>
       <div class="radar" id="radar" hidden>
         <p class="radar-intro" id="radar-intro"></p>
@@ -715,26 +738,25 @@ img{max-width:100%;display:block}
     document.getElementById('c-izq').onclick=()=>c.scrollBy({left:-paso(),behavior:'smooth'});
     document.getElementById('c-der').onclick=()=>c.scrollBy({left:paso(),behavior:'smooth'});
 
-    // Por tema e industria: muestra los estudios que cruzan ambos
-    const st=document.getElementById('sel-tema'), si=document.getElementById('sel-industria'), aviso=document.getElementById('aviso-cruce');
+    // Filtros: tema, industria y fecha (se combinan entre sí)
+    const ft=document.getElementById('f-tema'), fi=document.getElementById('f-industria'), ff=document.getElementById('f-fecha');
+    const fc=document.getElementById('f-conteo'), fl=document.getElementById('f-limpiar');
     const op=(sel,val,txt)=>{const o=document.createElement('option');o.value=val;o.textContent=txt;sel.appendChild(o);};
-    TEMAS.forEach(t=>op(st,t.id,EN?t.frase_en:t.frase_es));
-    INDUSTRIAS.forEach(i=>op(si,i.id,EN?i.frase_en:i.frase_es));
-    op(si,'',EN?'all industries':'todas las industrias');
-    function cruce(){
-      const t=st.value, i=si.value;
-      let r=reales.filter(h=>h.tema===t&&(!i||h.industria===i));
-      aviso.hidden=true;
-      if(!r.length){
-        r=reales.filter(h=>h.tema===t||h.industria===i);
-        aviso.hidden=false;
-        aviso.textContent=EN?"There are no studies that cross both yet. Meanwhile, here are the ones about each of them.":"Todavía no hay estudios que crucen los dos. Mientras tanto, aquí tienes los que hablan de cada uno.";
-      }
-      mostrar(r);
+    op(ft,'',EN?'All topics':'Todos los temas'); TEMAS.forEach(t=>op(ft,t.id,EN?t.en:t.es));
+    op(fi,'',EN?'All industries':'Todas las industrias'); INDUSTRIAS.forEach(i=>op(fi,i.id,EN?i.en:i.es));
+    [['',EN?'Any date':'Cualquier fecha'],['30',EN?'Last month':'Último mes'],['90',EN?'Last 3 months':'Últimos 3 meses'],['180',EN?'Last 6 months':'Últimos 6 meses'],['365',EN?'Last year':'Último año']].forEach(([v,t])=>op(ff,v,t));
+    function filtrar(){
+      const t=ft.value, i=fi.value, d=+ff.value||0;
+      const r=reales.filter(h=>(!t||h.tema===t)&&(!i||h.industria===i)&&(!d||(hoy-aFecha(h.fecha))/86400000<=d));
+      [ft,fi,ff].forEach(x=>x.classList.toggle('activo',!!x.value));
+      fl.hidden=!(t||i||d);
+      fc.textContent=EN?`${r.length} ${r.length===1?'study':'studies'}`:`${r.length} ${r.length===1?'estudio':'estudios'}`;
+      if(r.length){mostrar(r);} else {c.innerHTML='';const v=document.createElement('p');v.className='sin-resultados';v.textContent=EN?'There are no studies with these filters yet. Try another combination.':'Todavía no hay estudios con estos filtros. Prueba con otra combinación.';c.appendChild(v);}
     }
-    // De entrada, se elige una combinación que sí tenga estudios
-    const primero=reales.find(h=>h.tema&&h.industria); if(primero){st.value=primero.tema;si.value=primero.industria;}
-    st.addEventListener('change',cruce); si.addEventListener('change',cruce);
+    [ft,fi,ff].forEach(x=>x.addEventListener('change',filtrar));
+    fl.addEventListener('click',()=>{ft.value='';fi.value='';ff.value='';filtrar();});
+    filtrar();
+    const aviso={hidden:true};
 
     // Recién detectados (radar): si no hay ninguno, la pestaña no se muestra
     const radar=typeof RADAR_ESTUDIOS!=='undefined'?RADAR_ESTUDIOS:[];
@@ -749,11 +771,10 @@ img{max-width:100%;display:block}
     pest.forEach(b=>b.addEventListener('click',()=>{
       pest.forEach(x=>x.classList.toggle('on',x===b));
       const v=b.dataset.pest;
-      document.getElementById('cruce').hidden=v!=='cruce';
+      document.getElementById('filtros').hidden=v==='radar';
       document.getElementById('radar').hidden=v!=='radar';
       c.hidden=v==='radar'; flechas.style.visibility=v==='radar'?'hidden':'';
-      if(v==='todos'){aviso.hidden=true;mostrar(reales);}
-      if(v==='cruce') cruce();
+      if(v==='todos') filtrar();
     }));
   })();
 
