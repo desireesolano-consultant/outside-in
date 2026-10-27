@@ -322,7 +322,12 @@ img{max-width:100%;display:block}
 .cara3d b{font:800 64px/1 var(--t);letter-spacing:-.04em;margin-top:auto}
 .cara3d p{margin:0;font:600 15px/1.42 var(--x)}
 .cara3d .fecha3d{font:600 12px var(--x);opacity:.8}
-.cara3d.c1{background:var(--azul)}.cara3d.c2{background:var(--naranja);color:var(--negro)}.cara3d.c3{background:var(--negro)}.cara3d.c4{background:var(--lila);color:var(--negro)}
+.cara3d.blanco{background:var(--blanco);color:var(--negro);border:1px solid var(--borde)}
+.cara3d.negro{background:var(--negro)}
+.cara3d.azul{background:var(--azul)}
+.cara3d.naranja{background:var(--naranja);color:var(--negro)}
+.cara3d.durazno{background:#FFE3D4;color:var(--negro)}
+.cara3d.lila{background:var(--lila);color:var(--negro)}
 @media (max-width:900px){
   .portada{padding:24px 0 40px}
   .portada-grid{grid-template-columns:1fr;gap:0}
@@ -692,7 +697,7 @@ img{max-width:100%;display:block}
     const elegidos=reales.filter(h=>cifraDe(h)).slice(0,6);
     const n=elegidos.length, paso=360/n, radio=Math.round(120/Math.tan(Math.PI/n))+30;
     elegidos.forEach((h,i)=>{
-      const a=document.createElement('a'); a.className='cara3d c'+(i%4+1); a.href='hallazgo.html?id='+encodeURIComponent(h.id);
+      const a=document.createElement('a'); a.className='cara3d '+['blanco','negro','azul','naranja','durazno','lila'][i%6]; a.href='hallazgo.html?id='+encodeURIComponent(h.id);
       a.style.transform=`rotateY(${i*paso}deg) translateZ(${radio}px)`;
       const sm=document.createElement('small'); sm.textContent=h.fuente+' · '+(nombreDe(h.tema)||nombreDe(h.industria));
       const b=document.createElement('b'); b.textContent=cifraDe(h); if(b.textContent.length>4) b.style.fontSize='50px';
