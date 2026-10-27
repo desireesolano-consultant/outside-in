@@ -937,6 +937,627 @@ const HALLAZGOS = [
     lecturaEstado: "pendiente",
     estado: "PUBLICADO",
   },
+  // ---------- Búsqueda semanal del 26 de octubre de 2026 ----------
+  {
+    id: "h-2026-10-deloitte-cambio",
+    industria: null,
+    tema: "gestion_cambio",
+    subtema: "Gestión del cambio",
+    esEjemplo: false,
+    publicado: "2026-10-26",
+    fecha: "2026-10-19",
+    anio: "2026",
+    fuente: "Deloitte",
+    estudio_es: "Estudio de Gestión del Cambio 2026: el retorno de la inversión en el cambio",
+    estudio_en: "2026 Change Management Study: The ROI of change",
+    link: "https://www.deloitte.com/global/en/insights/topics/business-strategy-growth/change-management-roi.html",
+    region_es: "Estados Unidos, Reino Unido, Australia y Canadá",
+    region_en: "United States, United Kingdom, Australia and Canada",
+    hallazgo_es: "70% de los líderes de cambio dice que su transformación más reciente no entregó el valor de negocio previsto",
+    hallazgo_en: "70% of change leaders say their latest transformation fell short of its intended business value",
+    dato_clave_es: "70% dice que su última transformación no entregó el valor previsto y 83% atribuye parte de esa brecha a una mala gestión del cambio. La mediana del retorno es 4:1: cada US$1 invertido en gestión del cambio se asocia con US$4 de valor realizado. Encuesta a 1,000 líderes, junio–julio de 2026.",
+    dato_clave_en: "70% say their latest transformation fell short of its intended value, and 83% say poor change management contributed to that gap. The median return is 4:1: every US$1 invested in change management is associated with US$4 in realized value. Survey of 1,000 leaders, June–July 2026.",
+    contexto_es: "Encuesta de Deloitte, desarrollada con Workplace Intelligence y aplicada por Walr en junio y julio de 2026, a 1,000 líderes de gestión del cambio en roles ejecutivos (51% C-level, 37% director o VP, 12% otros ejecutivos) de Estados Unidos, Reino Unido, Australia y Canadá. Todos habían liderado al menos una iniciativa de gran escala en los últimos dos años (presupuesto de US$1 millón o más, o que abarcara varios equipos, funciones o unidades); la mediana del presupuesto de la iniciativa más reciente fue de US$10.6 millones.",
+    contexto_en: "Deloitte survey, developed with Workplace Intelligence and fielded by Walr in June and July 2026, of 1,000 change management leaders in executive roles (51% C-suite, 37% director or VP, 12% other executive leadership) in the United States, United Kingdom, Australia and Canada. All had led at least one large-scale initiative in the past two years (a budget of US$1 million or more, or spanning multiple teams, functions or units); the median budget of the most recent initiative was US$10.6 million.",
+    puntos_es: [
+      "70% dice que su transformación más reciente no entregó el valor de negocio previsto, y 55% tuvo que reiniciarla o corregir el rumbo de forma importante.",
+      "La mediana del retorno de la gestión del cambio es 4:1; las empresas que más invierten tienen 1.7 veces más probabilidades de reportar una adopción por encima de lo esperado.",
+      "60% dice que su empresa trata la gestión del cambio como un costo de proyecto y no como una capacidad del negocio.",
+      "73% reporta fatiga de cambio en sus colaboradores; con cuatro o más iniciativas simultáneas, la probabilidad de fatiga alta se multiplica por 6.4.",
+      "61% siente que la transformación con IA avanza más rápido de lo que sus colaboradores pueden manejar, y 43% no sabe cómo la IA está afectando a su gente.",
+      "Donde los líderes modelan el cambio, la probabilidad de reportar un retorno claramente positivo y una adopción superior a lo esperado es al menos el doble."
+    ],
+    puntos_en: [
+      "70% say their latest transformation fell short of its intended business value, and 55% needed a major restart or course correction.",
+      "The median return on change management is 4:1; the companies that invest most are 1.7 times more likely to report adoption exceeding expectations.",
+      "60% say their company treats change management as a project cost rather than a business capability.",
+      "73% report change fatigue among employees; with four or more concurrent initiatives, the likelihood of high fatigue rises 6.4 times.",
+      "61% feel AI transformation is moving faster than employees can handle, and 43% don't know how AI is affecting their people.",
+      "Where leaders model change, organizations are at least twice as likely to report strong positive ROI and adoption exceeding expectations."
+    ],
+    articulo_es: {
+      "bajada": "Deloitte le puso cifra al retorno de gestionar bien el cambio. El problema es que la mayoría de empresas todavía lo trata como un gasto de proyecto, mientras apila transformaciones una sobre otra.",
+      "parrafos": [
+        "El estudio de Deloitte parte de una constatación incómoda: entre 1,000 ejecutivos que lideran grandes transformaciones en Estados Unidos, Reino Unido, Australia y Canadá, 70% dice que su iniciativa más reciente no entregó el valor de negocio que se esperaba. Menos de la mitad ve mejoras significativas en las áreas que buscaba transformar, y 55% tuvo que reiniciar o corregir el rumbo de forma importante. No se trata de proyectos pequeños: la mediana del presupuesto fue de US$10.6 millones.",
+        "Lo novedoso es el intento de medir el lado positivo. La mediana del retorno de la inversión en gestión del cambio fue de 4:1, es decir, cada US$1 se asocia con US$4 de valor realizado, y las empresas que más invierten tienen 1.7 veces más probabilidades de decir que la adopción superó las expectativas. Es una asociación, no una prueba de causa, pero contrasta con otro dato: 60% de los líderes dice que su empresa sigue tratando la gestión del cambio como un costo de proyecto y no como una capacidad permanente. Y 83% cree que una mala gestión del cambio contribuyó a que su última iniciativa se quedara corta.",
+        "El contexto explica la presión. 83% de las organizaciones lleva varias iniciativas grandes al mismo tiempo y 84% dice que los colaboradores asumen tareas de transformación encima de su carga habitual. El costo humano aparece en los números: 73% reporta fatiga de cambio, 69% dice que la última iniciativa aumentó la carga y el desgaste, y 66% vio salir gente por un cambio mal gestionado, con un costo estimado de reemplazo de US$20.5 millones en promedio. Con cuatro o más iniciativas en paralelo, la probabilidad de fatiga alta se multiplica por 6.4.",
+        "La IA intensifica el cuadro. 61% siente que la transformación con IA avanza más rápido de lo que su gente puede manejar, casi la mitad cree que ya contribuyó al desgaste, la rotación o la pérdida de confianza, y en las iniciativas de IA el costo estimado de rotación sube a US$25.5 millones. Aun así, 43% de los líderes de cambio admite no saber cómo la IA está afectando a sus colaboradores, y más de la mitad dice que nadie tiene autoridad para pausar una iniciativa por falta de capacidad.",
+        "El estudio también apunta a la conducta de quienes dirigen. Un tercio reconoce que los líderes no modelan de forma consistente los comportamientos que piden, y donde sí lo hacen, la probabilidad de reportar un retorno claramente positivo y una adopción superior a lo esperado es al menos el doble. Deloitte describe el reto como pasar de un cambio episódico a uno continuo, con sistemas de gestión que todavía no se han puesto al día."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Deloitte put a number on the return of managing change well. The problem is that most companies still treat it as a project expense while stacking transformations on top of each other.",
+      "parrafos": [
+        "Deloitte's study starts from an uncomfortable finding: among 1,000 executives leading large transformations in the United States, United Kingdom, Australia and Canada, 70% say their most recent initiative fell short of the business value it was meant to deliver. Fewer than half see significant improvement in the areas they set out to transform, and 55% needed a major restart or course correction. These aren't small projects: the median budget was US$10.6 million.",
+        "What's new is the attempt to measure the upside. The median return on investment in change management was 4:1, meaning every US$1 is associated with US$4 in realized value, and the companies that invest most are 1.7 times more likely to say adoption exceeded expectations. It's an association, not proof of cause, but it contrasts with another figure: 60% of leaders say their company still treats change management as a project cost rather than a lasting capability. And 83% believe poor change management contributed to their latest initiative falling short.",
+        "The context explains the pressure. 83% of organizations are running several large initiatives at once, and 84% say employees take on transformation tasks on top of their usual workload. The human cost shows up in the numbers: 73% report change fatigue, 69% say the latest initiative increased workload and burnout, and 66% saw people leave because of poorly managed change, at an estimated average replacement cost of US$20.5 million. With four or more initiatives running in parallel, the likelihood of high fatigue rises 6.4 times.",
+        "AI intensifies the picture. 61% feel AI transformation is moving faster than their people can handle, nearly half believe it has already contributed to burnout, turnover or lost trust, and for AI initiatives the estimated turnover cost rises to US$25.5 million. Even so, 43% of change leaders admit they don't know how AI is affecting their employees, and more than half say no one has the authority to pause an initiative for lack of capacity.",
+        "The study also points to the behavior of those in charge. A third acknowledge that leaders don't consistently model the behaviors they ask for, and where they do, organizations are at least twice as likely to report strong positive ROI and adoption exceeding expectations. Deloitte frames the challenge as moving from episodic to continuous change, with management systems that haven't yet caught up."
+      ]
+    },
+    cita: {
+      "original": "treating change management as a durable, always-on capability, not a one-off project cost",
+      "traduccion_es": "tratar la gestión del cambio como una capacidad duradera y siempre activa, no como un costo puntual de proyecto",
+      "autor_es": "Deloitte, 2026 Change Management Study",
+      "autor_en": "Deloitte, 2026 Change Management Study"
+    },
+    preguntas_es: [
+      "¿Qué cambiaría en una organización si la gestión del cambio se presupuestara como una capacidad permanente y no como una partida de cada proyecto?",
+      "¿Quién decide cuánto cambio simultáneo puede absorber la gente, y con qué información lo decide?",
+      "¿Qué señales concretas recibe hoy un equipo de que sus líderes viven el cambio que piden?"
+    ],
+    preguntas_en: [
+      "What would change in an organization if change management were budgeted as a permanent capability rather than a line item in each project?",
+      "Who decides how much simultaneous change people can absorb, and with what information?",
+      "What concrete signals does a team get today that its leaders are living the change they ask for?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-10-sia-cambio",
+    industria: null,
+    tema: "gestion_cambio",
+    subtema: "Gestión del cambio",
+    esEjemplo: false,
+    publicado: "2026-10-26",
+    fecha: "2026-10-02",
+    anio: "2026",
+    fuente: "Sia",
+    estudio_es: "The Change Report 2026",
+    estudio_en: "The Change Report 2026",
+    link: "https://www.sia-partners.com/en/insights/publications/change-report-0",
+    region_es: "Norteamérica, Asia-Pacífico, Europa, Reino Unido e Irlanda y Emiratos Árabes Unidos",
+    region_en: "North America, Asia-Pacific, Europe, UK and Ireland and the UAE",
+    hallazgo_es: "85% de los colaboradores atraviesa al menos un cambio en su trabajo y 30% vive entre 3 y 5 a la vez",
+    hallazgo_en: "85% of employees are going through at least one workplace change, and 30% are living through 3 to 5 at once",
+    dato_clave_es: "85% vive al menos un cambio y 30% enfrenta entre 3 y 5 simultáneos. 41% dice que su organización intenta hacer todo a la vez y solo 18% cree que maneja \"extremadamente bien\" los resultados y su sostenibilidad. Encuesta a 1,450 personas, inicios de 2026.",
+    dato_clave_en: "85% are going through at least one change and 30% face 3 to 5 simultaneously. 41% say their organization tries to do everything at once, and only 18% say it handles outcomes and sustainability \"extremely well\". Survey of 1,450 people, early 2026.",
+    contexto_es: "Encuesta de Sia a inicios de 2026 a 1,450 colaboradores y líderes: 30% colaboradores individuales, 23% jefes de equipo, 25% líderes senior y 22% altos ejecutivos. Por región: Norteamérica 30%, Asia-Pacífico 30%, Europa 26%, Reino Unido e Irlanda 8% y Emiratos Árabes Unidos 6%.",
+    contexto_en: "Sia survey conducted in early 2026 of 1,450 employees and leaders: 30% individual contributors, 23% people managers, 25% senior leaders and 22% senior executives. By region: North America 30%, Asia-Pacific 30%, Europe 26%, UK and Ireland 8% and UAE 6%.",
+    puntos_es: [
+      "85% atraviesa actualmente al menos un cambio en su trabajo y 30% vive entre 3 y 5 cambios simultáneos.",
+      "23% ya vive una transformación importante ligada a IA, datos o analítica, una de las categorías de cambio que más crece.",
+      "41% dice que su organización intenta \"hacer todo a la vez\" y 22% que hay iniciativas pausadas o retrasadas.",
+      "21% dice que los equipos quedan solos para resolver qué priorizar cuando las demandas chocan.",
+      "Solo 18% cree que su organización maneja \"extremadamente bien\" los resultados y su sostenibilidad; 35% dice que lo hace apenas de forma adecuada.",
+      "33% se define como entusiasta del cambio y 15% como impulsor, frente a 28% de escépticos y 24% de espectadores."
+    ],
+    puntos_en: [
+      "85% are currently going through at least one workplace change, and 30% are experiencing 3 to 5 simultaneous changes.",
+      "23% are already experiencing major AI, data or analytics-related transformation, one of the fastest-growing categories of change.",
+      "41% say their organization tries to \"do everything at once\" and 22% that initiatives are paused or delayed.",
+      "21% say teams are left to figure out tradeoffs on their own when demands collide.",
+      "Only 18% say their organization handles outcomes and sustainability \"extremely well\"; 35% say it does so only adequately.",
+      "33% identify as enthusiasts of change and 15% as champions, versus 28% skeptics and 24% bystanders."
+    ],
+    articulo_es: {
+      "bajada": "El informe de Sia describe una fuerza laboral dispuesta a cambiar, pero atrapada en cambios que chocan entre sí y en organizaciones que lanzan bien y sostienen mal.",
+      "parrafos": [
+        "Sia encuestó a 1,450 colaboradores y líderes de Norteamérica, Asia-Pacífico, Europa, Reino Unido e Irlanda y Emiratos Árabes Unidos, desde personal sin equipo a cargo hasta altos ejecutivos. La primera foto es de volumen: 85% atraviesa al menos un cambio en su trabajo y 30% vive entre 3 y 5 al mismo tiempo. La consultora no lo llama sobrecarga sino \"colisión\": reorganizaciones, nuevas tecnologías, cambios de liderazgo e IA llegan superpuestos, no en fila, y el desafío está en cómo interactúan.",
+        "El diagnóstico central es que las organizaciones no fallan por falta de esfuerzo sino de foco. 41% dice que su empresa intenta \"hacer todo a la vez\", 22% que hay iniciativas pausadas o retrasadas y 21% que los equipos quedan solos para resolver qué priorizar cuando las demandas chocan. En ese vacío, los mandos medios cargan buena parte de la complejidad: traducen la disrupción en instrucciones diarias mientras enfrentan la misma ambigüedad que sus equipos.",
+        "La IA acelera la presión. 23% ya vive una transformación importante ligada a IA, datos o analítica, y Sia describe una brecha entre la velocidad con que las personas adoptan la tecnología y la velocidad con que la organización ajusta procesos, gobierno y roles. Las lecturas varían por región: en Asia-Pacífico predomina la IA como oportunidad de productividad, mientras en Norteamérica aparecen más la carga de trabajo, las expectativas poco claras y los cambios de rol.",
+        "El punto más débil está después del lanzamiento. Solo 18% cree que su organización maneja \"extremadamente bien\" los resultados y su sostenibilidad, y 35% dice que apenas lo hace de forma adecuada. Los sistemas se implementan rápido, pero el refuerzo, la capacitación, el retiro de procesos antiguos y la formación de hábitos se quedan atrás, lo que según el informe produce actividad costosa y temporal más que transformación duradera.",
+        "El matiz interesante está en la disposición de la gente. 33% se define como entusiasta del cambio y 15% como impulsor, frente a 28% de escépticos y 24% de espectadores. Para Sia, la fuerza laboral puede estar más lista que las organizaciones que la conducen: lo que pide son prioridades más claras, más apoyo de sus jefes, capacitación práctica y reglas transparentes, sobre todo frente a la IA."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Sia's report describes a workforce willing to change but caught in colliding changes, inside organizations that launch well and sustain poorly.",
+      "parrafos": [
+        "Sia surveyed 1,450 employees and leaders across North America, Asia-Pacific, Europe, the UK and Ireland and the UAE, from individual contributors to senior executives. The first picture is one of volume: 85% are going through at least one workplace change, and 30% are living through 3 to 5 at the same time. The firm doesn't call it overload but \"collision\": reorganizations, new technology, leadership transitions and AI arrive overlapping rather than in sequence, and the challenge lies in how they interact.",
+        "The core diagnosis is that organizations fail not for lack of effort but for lack of focus. 41% say their company tries to \"do everything at once\", 22% that initiatives are paused or delayed, and 21% that teams are left to figure out tradeoffs on their own when demands collide. In that vacuum, managers absorb much of the complexity: they translate disruption into daily guidance while facing the same ambiguity as their teams.",
+        "AI adds to the pressure. 23% are already experiencing a major AI, data or analytics-related transformation, and Sia describes a gap between how quickly people adopt the technology and how quickly organizations adjust processes, governance and roles. Views vary by region: in Asia-Pacific, AI is seen mainly as a productivity opportunity, while in North America workload, unclear expectations and role changes come up more often.",
+        "The weakest point comes after launch. Only 18% say their organization handles outcomes and sustainability \"extremely well\", and 35% say it does so only adequately. Systems go live quickly, but reinforcement, training, retiring legacy processes and building habits lag behind, which according to the report produces costly, temporary activity rather than lasting transformation.",
+        "The interesting nuance lies in people's willingness. 33% identify as enthusiasts of change and 15% as champions, versus 28% skeptics and 24% bystanders. For Sia, the workforce may be more ready than the organizations leading it: what it asks for is clearer priorities, more support from managers, practical training and transparent rules, especially around AI."
+      ]
+    },
+    cita: {
+      "original": "Launching transformation is easier than sustaining it.",
+      "traduccion_es": "Lanzar una transformación es más fácil que sostenerla.",
+      "autor_es": "Sia, The Change Report 2026",
+      "autor_en": "Sia, The Change Report 2026"
+    },
+    preguntas_es: [
+      "¿Quién tiene hoy la visión completa de todos los cambios que vive un mismo equipo al mismo tiempo?",
+      "¿Qué pasa con una iniciativa el día después de su lanzamiento, y quién se hace cargo de que se sostenga?",
+      "Si la gente está más dispuesta al cambio que la organización, ¿dónde se origina realmente la resistencia?"
+    ],
+    preguntas_en: [
+      "Who today has the full view of every change a single team is living through at the same time?",
+      "What happens to an initiative the day after launch, and who owns making it stick?",
+      "If people are more ready for change than the organization, where does resistance really come from?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-10-edelman-confianza",
+    industria: null,
+    tema: "liderazgo_cultura",
+    subtema: "Comunicación interna",
+    esEjemplo: false,
+    publicado: "2026-10-26",
+    fecha: "2026-10-06",
+    anio: "2026",
+    fuente: "Edelman",
+    estudio_es: "2026 Edelman Trust Barometer Special Report: Trust at Work",
+    estudio_en: "2026 Edelman Trust Barometer Special Report: Trust at Work",
+    link: "https://www.edelman.com/trust/2026/trust-barometer/special-report-work",
+    region_es: "Global (10 países, incluidos Brasil, Canadá y EE.UU.)",
+    region_en: "Global (10 countries, including Brazil, Canada and the US)",
+    hallazgo_es: "76% de los colaboradores vivió al menos una transformación importante en el último año, y cuando la experiencia es negativa la confianza en el CEO cae de 82% a 49%",
+    hallazgo_en: "76% of employees went through at least one major transformation in the past year, and when the experience is negative, trust in the CEO falls from 82% to 49%",
+    dato_clave_es: "76% vivió al menos una transformación en el último año; la integración de IA fue la más frecuente (53%). Tras una transformación negativa, la confianza en el CEO baja de 82% a 49% y en el jefe directo de 85% a 60%. Encuesta a 10,018 colaboradores, agosto de 2026.",
+    dato_clave_en: "76% went through at least one transformation in the past year; AI integration was the most common (53%). After a negative transformation, trust in the CEO drops from 82% to 49% and in the direct manager from 85% to 60%. Survey of 10,018 employees, August 2026.",
+    contexto_es: "Encuesta en línea del Edelman Trust Institute a 10,018 colaboradores (unos 1,000 por país) en 10 mercados: Brasil, Canadá, China, Alemania, India, Japón, Sudáfrica, Emiratos Árabes Unidos, Reino Unido y EE.UU. Campo del 14 al 31 de agosto de 2026. Quinta edición del reporte.",
+    contexto_en: "Online survey by the Edelman Trust Institute of 10,018 employees (about 1,000 per country) in 10 markets: Brazil, Canada, China, Germany, India, Japan, South Africa, the UAE, the UK and the US. Fieldwork August 14–31, 2026. Fifth edition of the report.",
+    puntos_es: [
+      "76% vivió al menos una transformación importante en el trabajo en los últimos 12 meses, y 42% vivió tres o más.",
+      "La integración de IA fue la transformación más frecuente (53%), seguida por cambios de estrategia (47%) y de cultura (45%).",
+      "Tras una transformación negativa, la confianza en el CEO cae de 82% a 49% y en el jefe directo de 85% a 60%.",
+      "57% prefiere que el CEO comparta lo que sabe y lo que aún no sabe con certeza, y 64% que reconozca lo que sienten los colaboradores.",
+      "77% teme perder su empleo, 4 puntos más que en agosto de 2024.",
+      "La confianza en el propio empleador se ubica en 74%, 5 puntos menos que en agosto de 2024 (promedio de 7 mercados)."
+    ],
+    puntos_en: [
+      "76% went through at least one major workplace transformation in the past 12 months, and 42% went through three or more.",
+      "AI integration was the most common transformation (53%), followed by strategy shifts (47%) and culture shifts (45%).",
+      "After a negative transformation, trust in the CEO falls from 82% to 49% and in the direct manager from 85% to 60%.",
+      "57% prefer that the CEO share what they do and don't yet know for certain, and 64% that they acknowledge what employees are feeling.",
+      "77% worry about losing their job, up 4 points since August 2024.",
+      "Trust in one's own employer stands at 74%, down 5 points since August 2024 (7-market average)."
+    ],
+    articulo_es: {
+      "bajada": "El cambio ya es la condición normal del trabajo. Lo que define si erosiona o fortalece la confianza es cómo lo viven las personas, y quién se los explica.",
+      "parrafos": [
+        "El nuevo reporte especial de Edelman sobre confianza en el trabajo parte de una constatación: la transformación ya no es un episodio, es el día a día. 76% de los más de 10,000 colaboradores encuestados en 10 países vivió al menos una transformación importante en el último año, y 42% atravesó tres o más. La más frecuente fue la integración de IA (53%), por delante de los cambios de estrategia (47%) y de cultura (45%).",
+        "El dato más revelador no es cuánto cambio hay, sino lo que deja. Cerca de un tercio describe su experiencia como no positiva, y la diferencia en confianza es enorme: tras una transformación negativa, la confianza en el CEO baja de 82% a 49% y en el jefe directo de 85% a 60%. La disposición a abrazar un mayor uso de IA también se desploma, de 40% a 18%. Según Edelman, la carga de trabajo es el principal factor que inclina la balanza hacia una buena o mala experiencia.",
+        "El contexto ayuda a entender por qué esto importa ahora. 77% teme perder su empleo, 4 puntos más que en agosto de 2024, y la confianza en el propio empleador, aunque todavía alta, cae a 74%, 5 puntos menos que hace dos años. El reporte también muestra una brecha marcada en cómo se percibe la comunicación: los ejecutivos creen mucho más que los colaboradores de base que la gerencia dice la verdad y comunica con regularidad.",
+        "En cuanto a qué esperan de sus líderes, los colaboradores piden honestidad sobre la incertidumbre. 57% prefiere que el CEO comparta lo que sabe y también lo que aún no sabe con certeza, y 64% quiere que reconozca lo que sienten los equipos en lugar de centrarse solo en el negocio. Y cuando se pregunta en quién confiarían más para conocer la verdad sobre por qué ocurre un cambio, el jefe directo aparece primero, por encima del CEO, en los cinco tipos de transformación evaluados.",
+        "El mensaje de fondo es que la confianza no se pierde por el cambio en sí, sino por cómo se ejecuta y se comunica. Para Edelman, la transformación tiene que hacerse a escala humana, y el CEO y los mandos directos comparten la responsabilidad de explicarla."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Change is now the normal condition of work. What decides whether it erodes or builds trust is how people experience it, and who explains it to them.",
+      "parrafos": [
+        "Edelman's new special report on trust at work starts from a simple observation: transformation is no longer an episode, it is everyday life. 76% of the more than 10,000 employees surveyed in 10 countries went through at least one major transformation in the past year, and 42% went through three or more. The most common was AI integration (53%), ahead of strategy shifts (47%) and culture shifts (45%).",
+        "The most telling data point is not how much change there is, but what it leaves behind. About a third describe their experience as not positive, and the trust gap is huge: after a negative transformation, trust in the CEO drops from 82% to 49% and in the direct manager from 85% to 60%. Willingness to embrace greater AI use also collapses, from 40% to 18%. According to Edelman, workload is the top factor tipping the balance toward a good or bad experience.",
+        "The backdrop explains why this matters now. 77% worry about losing their job, up 4 points since August 2024, and trust in one's own employer, while still high, falls to 74%, 5 points lower than two years ago. The report also shows a sharp gap in how communication is perceived: executives are far more likely than frontline associates to believe management tells the truth and communicates regularly.",
+        "As for what they expect from leaders, employees ask for honesty about uncertainty. 57% prefer that the CEO share what they know and also what they don't yet know for certain, and 64% want the CEO to acknowledge what teams are feeling rather than focus only on the business. And when asked whom they would most trust to tell them the truth about why a change is happening, the direct manager comes first, ahead of the CEO, across all five types of transformation assessed.",
+        "The underlying message is that trust is not lost because of change itself, but because of how it is carried out and communicated. For Edelman, transformation has to happen at a human scale, and CEOs and direct managers share the responsibility for explaining it."
+      ]
+    },
+    cita: {
+      "original": "Employees are not opposed to change, but how they experience it matters.",
+      "traduccion_es": "Los colaboradores no se oponen al cambio, pero importa cómo lo viven.",
+      "autor_es": "Edelman, reporte Trust at Work 2026",
+      "autor_en": "Edelman, 2026 Trust at Work report"
+    },
+    preguntas_es: [
+      "¿Qué tanto de la desconfianza que deja una transformación se explica por la carga de trabajo que trae, más que por el cambio en sí?",
+      "¿Cómo cambia la conversación cuando un líder admite lo que todavía no sabe?",
+      "Si el jefe directo es la voz más creíble del cambio, ¿qué información y respaldo recibe para explicarlo?"
+    ],
+    preguntas_en: [
+      "How much of the distrust a transformation leaves behind comes from the workload it brings, rather than the change itself?",
+      "How does the conversation change when a leader admits what they don't yet know?",
+      "If the direct manager is the most credible voice of change, what information and support do they get to explain it?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-10-gallagher-comunicacion",
+    industria: null,
+    tema: "liderazgo_cultura",
+    subtema: "Comunicación interna",
+    esEjemplo: false,
+    publicado: "2026-10-26",
+    fecha: "2026-03-10",
+    anio: "2026",
+    fuente: "Gallagher",
+    estudio_es: "Employee Communications Report 2026 (State of the Sector)",
+    estudio_en: "Employee Communications Report 2026 (State of the Sector)",
+    link: "https://www.ajg.com/employeeexperience/-/media/files/gallaghercomms/gcommssite/state-of-the-sector/gallagher-employee-communications-report-2026-global.pdf",
+    region_es: "Global (40 países; 51% Norteamérica)",
+    region_en: "Global (40 countries; 51% North America)",
+    hallazgo_es: "61% de las organizaciones no tiene un enfoque formal para comunicar el cambio, aunque la gestión del cambio es la habilidad más buscada en comunicación interna",
+    hallazgo_en: "61% of organizations have no formal approach to change communication, even though change management is the most sought-after skill in internal comms",
+    dato_clave_es: "61% no tiene un enfoque formal de comunicación del cambio, el principal riesgo del informe. 87% ve la capacidad de los mandos como un riesgo y solo 21% usa activamente kits para mandos. Encuesta a más de 1,300 profesionales de comunicación y RR.HH., noviembre de 2025.",
+    dato_clave_en: "61% have no formal change communication approach, the report's top risk. 87% see manager capability as a risk and only 21% actively use manager toolkits. Survey of more than 1,300 comms and HR professionals, November 2025.",
+    contexto_es: "Informe anual de Gallagher (serie State of the Sector) basado en más de 1,300 profesionales de comunicación interna y RR.HH. de 40 países: 51% de Norteamérica, 36% de Reino Unido y Europa, 9% de Australia y Nueva Zelanda, 2% de Latinoamérica y 2% de Asia, África y Medio Oriente. Mesas redondas y focus groups en septiembre y octubre de 2025; encuesta abierta en noviembre de 2025.",
+    contexto_en: "Gallagher's annual report (State of the Sector series) based on more than 1,300 internal comms and HR professionals in 40 countries: 51% North America, 36% UK and Europe, 9% Australia and New Zealand, 2% Latin America and 2% Asia, Africa and the Middle East. Roundtables and focus groups in September and October 2025; survey open in November 2025.",
+    puntos_es: [
+      "61% no tiene un enfoque formal para comunicar el cambio, el riesgo número uno del informe.",
+      "87% considera la capacidad de los mandos como un riesgo moderado o significativo, y solo 21% usa activamente kits de apoyo para ellos.",
+      "73% quiere que su área opere como una consultoría estratégica, pero solo 18% dice que esa es su realidad actual.",
+      "Solo 36% siente que tiene las habilidades para usar bien la IA, y 75% está en etapas reactivas o improvisadas de madurez en IA.",
+      "81% ve el agotamiento de los colaboradores como un riesgo moderado o significativo, y 83% dice que la sobrecarga de información es un problema creciente."
+    ],
+    puntos_en: [
+      "61% have no formal approach to change communication, the report's number one risk.",
+      "87% see manager capability as a moderate or significant risk, and only 21% actively use manager toolkits.",
+      "73% want their function to operate as a strategic consultancy, but only 18% say that is their current reality.",
+      "Only 36% feel they have the skills to use AI effectively, and 75% are at reactive or ad-hoc stages of AI maturity.",
+      "81% see employee burnout as a moderate or significant risk, and 83% say information overload is a growing problem."
+    ],
+    articulo_es: {
+      "bajada": "Los equipos de comunicación interna saben que el cambio es su tarea central, pero la mayoría lo enfrenta sin método, con mandos poco preparados y audiencias saturadas.",
+      "parrafos": [
+        "El informe anual de Gallagher sobre comunicación interna, basado en más de 1,300 profesionales de comunicación y RR.HH. de 40 países, muestra una contradicción de fondo. La gestión del cambio es la habilidad que más quieren desarrollar en los próximos 12 meses, y la habilitación del cambio está entre las tres prioridades de 63% de los encuestados. Sin embargo, 61% no tiene un enfoque formal para comunicarlo, lo que el propio informe identifica como el principal riesgo de la función.",
+        "El volumen agrava el problema. 81% ve el agotamiento de los colaboradores como un riesgo moderado o significativo y 83% dice que la sobrecarga de información va en aumento. Según Gallagher, pasar de un volumen medio a uno alto de cambios eleva el riesgo de pérdida de confianza en los líderes en 30% y el de agotamiento en 24%. Es decir, comunicar más no equivale a comunicar mejor.",
+        "Los mandos aparecen como el eslabón débil, o como el canal que falta, en palabras del informe. 87% considera su capacidad un riesgo moderado o significativo, pero solo 21% usa activamente kits de apoyo para ellos y 37% no tiene ninguno. Además, 38% no mide si la comunicación a través de los mandos funciona. El informe advierte que muchas organizaciones los tratan como un canal uniforme, pese a las grandes diferencias de experiencia, confianza y carga de trabajo entre ellos.",
+        "La función también está lejos de la posición que aspira tener. 73% quiere operar como una consultoría estratégica, pero solo 18% dice lograrlo; el modelo más común sigue siendo la difusión centralizada de mensajes (49%). En IA, la brecha se repite: solo 36% siente que tiene las habilidades para usarla bien y 75% está en etapas reactivas o improvisadas, aunque los equipos con gobierno, políticas y formación claras avanzan mucho más rápido.",
+        "Un matiz importante para leer estas cifras: la muestra está formada por los propios profesionales de comunicación y RR.HH., no por colaboradores en general, y más de la mitad trabaja en Norteamérica. Es, por tanto, una mirada desde dentro de la función sobre sus propias capacidades y límites."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Internal comms teams know change is their core job, but most face it without a method, with underprepared managers and saturated audiences.",
+      "parrafos": [
+        "Gallagher's annual internal communications report, based on more than 1,300 comms and HR professionals in 40 countries, reveals a deep contradiction. Change management is the skill they most want to build over the next 12 months, and change enablement is among the top three priorities for 63% of respondents. Yet 61% have no formal approach to communicating it, which the report itself identifies as the function's top risk.",
+        "Volume makes the problem worse. 81% see employee burnout as a moderate or significant risk and 83% say information overload is growing. According to Gallagher, moving from medium to high change volume raises the risk of lost trust in leaders by 30% and burnout risk by 24%. In other words, communicating more is not the same as communicating better.",
+        "Managers emerge as the weak link, or the missing channel, in the report's words. 87% consider their capability a moderate or significant risk, yet only 21% actively use manager toolkits and 37% have none at all. Moreover, 38% don't measure whether communication through managers works. The report warns that many organizations treat managers as a uniform channel, despite wide differences in their experience, confidence and workload.",
+        "The function is also far from the position it aspires to. 73% want to operate as a strategic consultancy, but only 18% say they do; the most common model is still centralized broadcast (49%). On AI, the gap repeats: only 36% feel they have the skills to use it well and 75% are at reactive or ad-hoc stages, although teams with clear governance, policies and training move much faster.",
+        "An important caveat when reading these figures: the sample is made up of comms and HR professionals themselves, not employees in general, and more than half work in North America. It is, therefore, a view from inside the function about its own capabilities and limits."
+      ]
+    },
+    cita: {
+      "original": "Change is no longer a specialty; it's the job.",
+      "traduccion_es": "El cambio ya no es una especialidad; es el trabajo.",
+      "autor_es": "Gallagher, Employee Communications Report 2026",
+      "autor_en": "Gallagher, Employee Communications Report 2026"
+    },
+    preguntas_es: [
+      "¿Qué distingue a un enfoque formal de comunicación del cambio de una suma de anuncios urgentes?",
+      "¿Qué necesitan los mandos para dejar de ser el canal que falta?",
+      "¿Hasta qué punto el volumen de mensajes de cambio está erosionando la atención que se busca captar?"
+    ],
+    preguntas_en: [
+      "What separates a formal change communication approach from a string of urgent announcements?",
+      "What do managers need to stop being the missing channel?",
+      "To what extent is the volume of change messages eroding the very attention it seeks to capture?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-10-pwc-hopes-fears",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "IA y trabajo",
+    esEjemplo: false,
+    publicado: "2026-10-26",
+    fecha: "2026-09-29",
+    anio: "2026",
+    fuente: "PwC",
+    estudio_es: "Global Workforce Hopes and Fears Survey 2026",
+    estudio_en: "Global Workforce Hopes and Fears Survey 2026",
+    link: "https://www.pwc.com/gx/en/1/issues/workforce/hopes-and-fears.html",
+    region_es: "Global",
+    region_en: "Global",
+    hallazgo_es: "El 64% de los trabajadores ya usa IA en su trabajo, 10 puntos más que hace un año, pero la confianza en la gerencia cayó 7 puntos",
+    hallazgo_en: "64% of workers now use AI at work, up 10 points in a year, yet trust in management fell 7 points",
+    dato_clave_es: "64% usó IA en el trabajo en los últimos 12 meses (+10 puntos) y el uso diario de IA generativa pasó de 14% a 22%. Pero la confianza en la gerencia cayó 7 puntos y menos de la mitad confía en la alta dirección. Encuesta a 49,364 trabajadores de 48 países y regiones, mayo–junio de 2026.",
+    dato_clave_en: "64% used AI at work in the past 12 months (+10 points) and daily GenAI use rose from 14% to 22%. But trust in management fell 7 points and less than half trust top management. Survey of 49,364 workers in 48 countries and regions, May–June 2026.",
+    contexto_es: "Encuesta global de PwC a 49,364 trabajadores de 48 países y regiones y 29 sectores, realizada en mayo y junio de 2026 y ponderada por género y edad. El estudio agrupa a los trabajadores en cohortes según la demanda de sus habilidades y el beneficio que obtienen de la IA.",
+    contexto_en: "PwC global survey of 49,364 workers across 48 countries and regions and 29 sectors, conducted in May and June 2026 and weighted by gender and age. The study groups workers into cohorts based on demand for their skills and the benefit they get from AI.",
+    puntos_es: [
+      "64% de los trabajadores usó IA en el trabajo en el último año, 10 puntos más que el año anterior.",
+      "El uso diario de IA generativa subió de 14% a 22% de la fuerza laboral.",
+      "La confianza en la gerencia cayó 7 puntos en un año; menos de la mitad confía en la alta dirección.",
+      "1 de cada 5 trabajadores dice que le cuesta manejar el cambio y 18% no entiende sus razones.",
+      "La valoración del acceso a recursos de aprendizaje y desarrollo bajó de 59% a 51%.",
+      "En el \"engine room\" (56% de la fuerza laboral) solo 33% confía en la alta dirección y 11% usa IA generativa a diario."
+    ],
+    puntos_en: [
+      "64% of workers used AI at work in the past year, up 10 points year-on-year.",
+      "Daily GenAI use rose from 14% to 22% of the workforce.",
+      "Trust in management fell 7 points in a year; less than half trust top management.",
+      "1 in 5 workers say they find change difficult to manage, and 18% don't understand the reasons for it.",
+      "Ratings of access to learning and development resources fell from 59% to 51%.",
+      "In the \"engine room\" (56% of the workforce), only 33% trust top management and 11% use GenAI daily."
+    ],
+    articulo_es: {
+      "bajada": "La IA ya es parte del día a día de dos de cada tres trabajadores en el mundo. Lo que no está creciendo al mismo ritmo es la confianza en quienes conducen ese cambio.",
+      "parrafos": [
+        "La edición 2026 de la encuesta Hopes and Fears de PwC, con casi 50,000 trabajadores de 48 países y regiones, confirma que la adopción de IA dejó de ser un experimento. 64% dice haberla usado en el trabajo en los últimos 12 meses, diez puntos más que un año antes, y el uso diario de IA generativa pasó de 14% a 22%. Sin embargo, PwC advierte que solo una minoría está obteniendo beneficios reales.",
+        "El dato que más incomoda está en la relación con el liderazgo. La confianza en la gerencia cayó siete puntos en un año y menos de la mitad de la fuerza laboral confía hoy en la alta dirección. La adopción avanza, pero el vínculo con quienes deciden cómo se usa la tecnología se debilita.",
+        "Para entender esa brecha, el estudio separa a los trabajadores en cohortes. Los \"front-runners\", 14% del total, combinan habilidades muy demandadas con ventaja en IA: 51% usa IA generativa a diario y 75% confía en la alta dirección. En el otro extremo está el \"engine room\", 56% de la fuerza laboral, que sostiene la operación pero se siente cada vez más presionado: solo 11% usa IA generativa a diario y apenas 33% confía en la alta dirección.",
+        "El cambio también está pasando factura. Uno de cada cinco trabajadores dice que le cuesta manejarlo y 18% no entiende sus razones; 27% menciona la fatiga y el agotamiento como un límite para su productividad. No es solo un tema de la base: 31% de los altos ejecutivos y 24% de los gerentes reconocen que el cambio les resulta difícil de gestionar.",
+        "A eso se suma una señal contradictoria en el desarrollo de habilidades. Mientras la IA redefine tareas, la valoración del acceso a recursos de aprendizaje bajó de 59% a 51%. Para PwC, el mensaje de fondo es que meter IA en modelos operativos heredados no alcanza: la ganancia depende de que las personas entiendan el cambio, puedan aprender y confíen en quienes lo dirigen."
+      ]
+    },
+    articulo_en: {
+      "bajada": "AI is now part of daily work for two in three workers worldwide. What isn't growing at the same pace is trust in the people leading that change.",
+      "parrafos": [
+        "The 2026 edition of PwC's Hopes and Fears survey, covering nearly 50,000 workers in 48 countries and regions, confirms that AI adoption is no longer an experiment. 64% say they used it at work in the past 12 months, ten points more than a year earlier, and daily GenAI use rose from 14% to 22%. Yet PwC warns that only a minority are reaping real benefits.",
+        "The most uncomfortable finding concerns leadership. Trust in management fell seven points in a year, and less than half of the workforce now trusts top management. Adoption is moving forward, but the bond with those deciding how the technology is used is weakening.",
+        "To explain that gap, the study splits workers into cohorts. \"Front-runners\", 14% of the total, combine in-demand skills with an AI advantage: 51% use GenAI daily and 75% trust top management. At the other end is the \"engine room\", 56% of the workforce, which keeps operations running but feels increasingly squeezed: only 11% use GenAI daily and just 33% trust top management.",
+        "Change is also taking its toll. One in five workers say they find it difficult to manage, and 18% don't understand the reasons for it; 27% cite fatigue and burnout as a limit on their productivity. It's not only a frontline issue: 31% of senior executives and 24% of managers admit they find change difficult to manage.",
+        "Add to that a contradictory signal on skills. While AI reshapes tasks, ratings of access to learning resources fell from 59% to 51%. PwC's underlying message is that injecting AI into legacy operating models isn't enough: the payoff depends on people understanding the change, being able to learn and trusting those who lead it."
+      ]
+    },
+    cita: {
+      "original": "Injecting AI into legacy operating models isn't enough.",
+      "traduccion_es": "Inyectar IA en modelos operativos heredados no es suficiente.",
+      "autor_es": "PwC, Global Workforce Hopes and Fears Survey 2026",
+      "autor_en": "PwC, Global Workforce Hopes and Fears Survey 2026"
+    },
+    preguntas_es: [
+      "¿Qué explica que la confianza en la dirección caiga justo cuando más personas adoptan la IA?",
+      "¿Cuánto del cambio que se comunica llega con sus razones, y no solo con sus instrucciones?",
+      "¿Qué pasa con la mayoría que sostiene la operación cuando los beneficios de la IA se concentran en unos pocos?"
+    ],
+    preguntas_en: [
+      "Why would trust in leadership fall just as more people adopt AI?",
+      "How much of the change being communicated arrives with its reasons, not just its instructions?",
+      "What happens to the majority that keeps operations running when AI's benefits concentrate in a few?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-10-ey-ceo",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "Rediseño de roles y habilidades",
+    esEjemplo: false,
+    publicado: "2026-10-26",
+    fecha: "2026-10-01",
+    anio: "2026",
+    fuente: "EY-Parthenon",
+    estudio_es: "CEO Outlook Survey, octubre 2026",
+    estudio_en: "CEO Outlook Survey, October 2026",
+    link: "https://www.ey.com/en_gl/ceo/ceo-outlook-global-report",
+    region_es: "Global (21 países, incl. Brasil, Canadá, México y EE.UU.)",
+    region_en: "Global (21 countries, incl. Brazil, Canada, Mexico and the US)",
+    hallazgo_es: "El 80% de los CEOs cree que la IA cambiará más los roles y las habilidades que el número de personas, pero solo 15% reinvierte las ganancias de productividad en su gente",
+    hallazgo_en: "80% of CEOs believe AI will change roles and skills more than headcount, yet only 15% reinvest productivity gains in their people",
+    dato_clave_es: "80% cree que en tres años la IA impactará más en roles, habilidades y forma de trabajar que en el tamaño de la plantilla. 47% admite que no desarrolla habilidades al ritmo de la IA y 72% prevé que la escasez de habilidades frenará más el crecimiento que el acceso a capital. Solo 15% destina las ganancias de productividad a desarrollar a su gente. Encuesta a 1,200 CEOs, agosto–septiembre de 2026.",
+    dato_clave_en: "80% believe that within three years AI will affect roles, skills and ways of working more than workforce size. 47% admit they aren't building skills fast enough to keep pace with AI, and 72% expect skills shortages to hold back growth more than access to capital. Only 15% put productivity gains toward developing their people. Survey of 1,200 CEOs, August–September 2026.",
+    contexto_es: "Encuesta online y anónima de EY-Parthenon a 1,200 CEOs de grandes empresas de 21 países (entre ellos Brasil, Canadá, México y EE.UU.) y cinco industrias, realizada en agosto y septiembre de 2026. 30% de las empresas factura más de US$5,000 millones al año.",
+    contexto_en: "Anonymous online EY-Parthenon survey of 1,200 CEOs of large companies across 21 countries (including Brazil, Canada, Mexico and the US) and five industries, conducted in August and September 2026. 30% of the companies have annual revenue above US$5 billion.",
+    puntos_es: [
+      "80% cree que en tres años la IA impactará más en roles, habilidades y forma de trabajar que en el tamaño de la plantilla.",
+      "47% reconoce que su organización no desarrolla habilidades al ritmo de la innovación en IA.",
+      "72% cree que en tres años la escasez de habilidades será una barrera mayor para crecer que el acceso a capital.",
+      "Solo 15% dice que las ganancias de productividad se reinvierten en el desarrollo de su gente.",
+      "50% señala a la IA como el principal motor de sus ganancias de productividad; 33% menciona la recapacitación.",
+      "23% dice que las ganancias de la IA suelen diluirse antes de llegar al resultado final."
+    ],
+    puntos_en: [
+      "80% believe that within three years AI will affect roles, skills and ways of working more than workforce size.",
+      "47% admit their organization isn't developing skills fast enough to keep pace with AI innovation.",
+      "72% believe skills shortages will become a bigger barrier to growth than access to capital within three years.",
+      "Only 15% say productivity gains are reinvested in developing their workforce.",
+      "50% cite AI as the top driver of their productivity gains; 33% cite reskilling.",
+      "23% say AI gains are often absorbed before reaching the bottom line."
+    ],
+    articulo_es: {
+      "bajada": "Los CEOs ya ven la productividad que trae la IA y saben que el gran cambio será en los roles y las habilidades. Lo que casi ninguno hace es reinvertir esas ganancias en su gente.",
+      "parrafos": [
+        "La edición de octubre del CEO Outlook de EY-Parthenon, con 1,200 CEOs de grandes empresas de 21 países, muestra que la IA ya produce resultados medibles: 50% la señala como el principal motor de sus ganancias de productividad, por delante del rediseño de procesos (46%). El problema, según EY, es convertir esa eficiencia en crecimiento.",
+        "En materia de personas, el diagnóstico de los propios CEOs es claro. Cuatro de cada cinco (80%) creen que, en los próximos tres años, la IA tendrá un efecto mayor en los roles, las habilidades y la forma de organizar el trabajo que en el tamaño de la plantilla. Es decir, la conversación de fondo no sería cuántas personas, sino qué harán y con qué capacidades.",
+        "Esa lectura viene acompañada de una alerta. 47% admite que su organización no desarrolla habilidades al ritmo de la innovación en IA, y 72% anticipa que en tres años la escasez de habilidades será una barrera mayor para crecer que el acceso a capital. Para líderes acostumbrados a pensar en el capital como el recurso escaso, es un cambio de prioridad notable.",
+        "La contradicción aparece en dónde ponen el dinero. Solo 15% dice que las ganancias de productividad se reinvierten en el desarrollo de su gente, frente a 48% que las destina a innovación y transformación. Y aunque 33% reconoce a la recapacitación como fuente de productividad, 23% admite que parte de lo ganado con IA se diluye antes de llegar al resultado.",
+        "El estudio deja así una brecha a la vista: los CEOs identifican las habilidades como el próximo cuello de botella, pero la inversión en ellas sigue siendo marginal. Como resume Andrea Guerzoni, vicepresidente global de EY-Parthenon, la productividad sola no es una estrategia."
+      ]
+    },
+    articulo_en: {
+      "bajada": "CEOs are already seeing AI's productivity gains and know the big shift will be in roles and skills. Almost none of them are reinvesting those gains in their people.",
+      "parrafos": [
+        "The October edition of EY-Parthenon's CEO Outlook, covering 1,200 CEOs of large companies in 21 countries, shows AI is already delivering measurable results: 50% name it as the biggest driver of their productivity gains, ahead of business process redesign (46%). The problem, according to EY, is turning that efficiency into growth.",
+        "On people, CEOs' own diagnosis is clear. Four in five (80%) believe that over the next three years AI will have a greater effect on roles, skills and how work is organized than on workforce size. In other words, the underlying question isn't how many people, but what they'll do and with which capabilities.",
+        "That view comes with a warning. 47% admit their organization isn't developing skills fast enough to keep pace with AI innovation, and 72% expect skills shortages to become a bigger barrier to growth than access to capital within three years. For leaders used to treating capital as the scarce resource, it's a notable shift in priorities.",
+        "The contradiction shows up in where the money goes. Only 15% say productivity gains are reinvested in workforce development, compared with 48% who channel them into innovation and transformation. And while 33% recognize reskilling as a source of productivity, 23% admit some AI gains are absorbed before reaching the bottom line.",
+        "The study thus exposes a visible gap: CEOs identify skills as the next bottleneck, yet investment in them remains marginal. As Andrea Guerzoni, EY-Parthenon Global Vice Chair, puts it, productivity alone is not a strategy."
+      ]
+    },
+    cita: {
+      "original": "AI is creating real productivity gains, but productivity alone is not a strategy.",
+      "traduccion_es": "La IA está generando ganancias reales de productividad, pero la productividad por sí sola no es una estrategia.",
+      "autor_es": "Andrea Guerzoni, vicepresidente global de EY-Parthenon",
+      "autor_en": "Andrea Guerzoni, EY-Parthenon Global Vice Chair"
+    },
+    preguntas_es: [
+      "¿Qué significa para la organización que la IA cambie más los roles que la cantidad de personas?",
+      "¿Por qué las habilidades se reconocen como cuello de botella, pero reciben tan poca inversión?",
+      "¿Cómo se explica a los equipos hacia dónde van las ganancias de productividad que ayudan a generar?"
+    ],
+    preguntas_en: [
+      "What does it mean for an organization when AI changes roles more than headcount?",
+      "Why are skills recognized as a bottleneck yet receive so little investment?",
+      "How do you explain to teams where the productivity gains they help create are going?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-10-kpmg-ceo-eeuu",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "Rediseño de roles y habilidades",
+    esEjemplo: false,
+    publicado: "2026-10-26",
+    fecha: "2026-10-15",
+    anio: "2026",
+    fuente: "KPMG",
+    estudio_es: "2026 US CEO Outlook",
+    estudio_en: "2026 US CEO Outlook",
+    link: "https://kpmg.com/us/en/media/news/kpmg-us-ceo-outlook-2026.html",
+    region_es: "Estados Unidos",
+    region_en: "United States",
+    hallazgo_es: "86% de los CEOs de grandes empresas de EE.UU. está rediseñando roles, trayectorias y equipos para la colaboración entre personas e IA",
+    hallazgo_en: "86% of CEOs at large US companies are redesigning roles, career paths and team structures for human-AI collaboration",
+    dato_clave_es: "86% rediseña roles, trayectorias de carrera y estructura de equipos pensando en la colaboración persona-IA; 81% dice que la IA lo llevó a repensar cómo forma a su gente y 75% qué habilidades exige en puestos de entrada. La brecha de habilidades (60%) es el principal desafío de talento. Encuesta a 400 CEOs de EE.UU.",
+    dato_clave_en: "86% are redesigning roles, career paths and team structure to reflect human-AI collaboration; 81% say AI has made them rethink how they train and develop employees, and 75% the skills required for entry-level roles. The skills gap (60%) is the top workforce challenge. Survey of 400 US CEOs.",
+    contexto_es: "Estudio anual de KPMG a 400 CEOs de empresas de EE.UU. con ingresos anuales superiores a US$500 millones (más de un tercio supera los US$10,000 millones), parte de una encuesta global a más de 1,300 CEOs de grandes empresas. Publicado el 15 de octubre de 2026; KPMG no detalla fechas de campo.",
+    contexto_en: "KPMG's annual study of 400 CEOs at US companies with annual revenues above US$500 million (more than a third exceed US$10 billion), part of a global survey of more than 1,300 CEOs at large companies. Published October 15, 2026; KPMG does not disclose fieldwork dates.",
+    puntos_es: [
+      "86% está rediseñando roles, trayectorias de carrera y estructura de equipos para reflejar la colaboración persona-IA.",
+      "83% se enfoca en retener y reentrenar a su talento de alto potencial; 79% en contratar talento con capacidades de IA y tecnología.",
+      "53% planea reducir su plantilla en algunas áreas.",
+      "81% dice que la integración de la IA lo llevó a repensar cómo forma y desarrolla a sus colaboradores, y 75% qué habilidades exige para los puestos de entrada.",
+      "La brecha de habilidades (60%) encabeza los desafíos de talento, seguida de capacitar en sistemas de IA (55%) y atraer y retener talento (49%).",
+      "84% dice que la IA es una de sus principales prioridades de inversión para los próximos tres años, pero solo 9% afirma que los agentes de IA ya son transformadores para su organización."
+    ],
+    puntos_en: [
+      "86% are redesigning roles, career paths and team structure to reflect human-AI collaboration.",
+      "83% are focusing on retaining and retraining high-potential talent; 79% on hiring new talent with AI and tech capabilities.",
+      "53% are planning for workforce reduction in some areas.",
+      "81% say integrating AI has made them rethink how they train and develop employees, and 75% the skills required for entry-level roles.",
+      "The skills gap (60%) tops the list of workforce challenges, followed by upskilling employees on AI systems (55%) and attracting and retaining talent (49%).",
+      "84% say AI is a top investment priority over the next three years, yet only 9% say AI agents are already transformational for their organization."
+    ],
+    articulo_es: {
+      "bajada": "Los CEOs de las grandes empresas de EE.UU. ya no discuten si la IA cambiará el trabajo, sino cómo rearmar roles, carreras y equipos alrededor de ella. El cuello de botella son las habilidades.",
+      "parrafos": [
+        "El 2026 US CEO Outlook de KPMG retrata a líderes confiados en la IA como motor de negocio. 84% de los 400 CEOs consultados dice que es una de sus principales prioridades de inversión para los próximos tres años y 65% planea destinarle al menos 10% de su presupuesto de capital el próximo año. Pero la conversación más profunda del estudio no es sobre tecnología, sino sobre cómo se organiza el trabajo.",
+        "Al preguntarles cómo cambia su estrategia de talento a dos a cinco años por efecto de la IA, 86% dice estar rediseñando roles, trayectorias de carrera y estructura de equipos para reflejar la colaboración entre personas e IA. 83% se concentra en retener y reentrenar a su talento de alto potencial y 79% en contratar perfiles con capacidades de IA y tecnología. Al mismo tiempo, 53% planea reducir plantilla en algunas áreas: rediseño y recorte conviven en la misma agenda.",
+        "La señal más llamativa está en la puerta de entrada. 75% dice que la IA lo llevó a repensar qué habilidades exige en los puestos de nivel inicial, y 81% a repensar cómo forma y desarrolla a sus colaboradores. Si las tareas con las que tradicionalmente aprendía un profesional junior se automatizan, la pregunta deja de ser solo qué se enseña, sino dónde y cuándo se aprende el oficio. El propio presidente de KPMG en EE.UU., Timothy J. Walsh, plantea en el estudio distinguir qué debe aprenderse antes de entrar al mundo laboral y qué se adquiere con la experiencia.",
+        "El diagnóstico de los propios CEOs confirma que ahí está el cuello de botella: la brecha de habilidades (60%) es su principal desafío de talento, por encima de capacitar a la gente en sistemas de IA (55%) y de atraer y retener talento (49%).",
+        "Hay además un contraste que matiza el entusiasmo. Pese a la apuesta inversora, solo 9% dice que los agentes de IA ya son transformadores para su organización, y 68% espera retorno de la IA recién en uno a tres años. El rediseño organizacional avanza antes de que el valor esté plenamente probado, lo que pone a las áreas de personas en el centro de una transición que todavía se está definiendo."
+      ]
+    },
+    articulo_en: {
+      "bajada": "CEOs at large US companies are no longer debating whether AI will change work, but how to rebuild roles, careers and teams around it. The bottleneck is skills.",
+      "parrafos": [
+        "KPMG's 2026 US CEO Outlook portrays leaders confident in AI as a business engine. 84% of the 400 CEOs surveyed say it is a top investment priority over the next three years, and 65% plan to spend at least 10% of their capital budget on it next year. But the study's deeper conversation isn't about technology; it's about how work gets organized.",
+        "Asked how their two-to-five-year workforce strategies are changing in response to AI, 86% say they are redesigning roles, career paths and team structure to reflect human-AI collaboration. 83% are focusing on retaining and retraining high-potential talent, and 79% on hiring people with AI and tech capabilities. At the same time, 53% plan workforce reductions in some areas: redesign and cuts sit on the same agenda.",
+        "The most striking signal is at the entry point. 75% say AI has made them rethink the skills required for entry-level roles, and 81% how they train and develop employees. If the tasks through which junior professionals traditionally learned are automated, the question is no longer just what gets taught, but where and when the craft is learned. KPMG US Chairman and CEO Timothy J. Walsh writes in the study about separating what should be learned before entering the workforce from what is acquired on the job.",
+        "CEOs' own diagnosis confirms that this is the bottleneck: the skills gap (60%) is their biggest workforce challenge, ahead of upskilling people on AI systems (55%) and attracting and retaining talent (49%).",
+        "There is also a contrast that tempers the enthusiasm. Despite the investment push, only 9% say AI agents are already transformational for their organization, and 68% expect AI returns only in one to three years. Organizational redesign is moving ahead before the value is fully proven, which puts people functions at the center of a transition that is still taking shape."
+      ]
+    },
+    cita: {
+      "original": "rethink how skills are developed, including what should be learned before entering the workforce",
+      "traduccion_es": "repensar cómo se desarrollan las habilidades, incluido lo que debe aprenderse antes de entrar al mundo laboral",
+      "autor_es": "Timothy J. Walsh, presidente y CEO de KPMG LLP",
+      "autor_en": "Timothy J. Walsh, Chairman and CEO, KPMG LLP"
+    },
+    preguntas_es: [
+      "Si los puestos de entrada cambian, ¿cómo aprenderán el oficio quienes recién llegan a la organización?",
+      "¿Cómo se comunica un rediseño de roles cuando, al mismo tiempo, se planean reducciones en algunas áreas?",
+      "¿Qué significa en la práctica una trayectoria de carrera pensada para la colaboración entre personas e IA?"
+    ],
+    preguntas_en: [
+      "If entry-level roles change, how will newcomers learn the craft?",
+      "How do you communicate a redesign of roles when workforce reductions are also planned in some areas?",
+      "What does a career path designed for human-AI collaboration look like in practice?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-10-jll-latam-ia",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "IA y trabajo",
+    esEjemplo: false,
+    publicado: "2026-10-26",
+    fecha: "2026-08-25",
+    anio: "2026",
+    fuente: "JLL",
+    estudio_es: "Encuesta sobre el futuro del trabajo en Latinoamérica 2026",
+    estudio_en: "2026 Latin America Future of Work Survey",
+    link: "https://www.jll.com/es-mx/insights/latam-future-of-work-survey-es",
+    region_es: "Latinoamérica (Argentina, Brasil, Colombia y México)",
+    region_en: "Latin America (Argentina, Brazil, Colombia and Mexico)",
+    hallazgo_es: "En Latinoamérica, 47% pone la transformación de la fuerza laboral impulsada por IA como su principal prioridad, pero es el escenario para el que se sienten menos preparados",
+    hallazgo_en: "In Latin America, 47% name AI-driven workforce transformation as their top priority, yet it is the scenario they feel least ready for",
+    dato_clave_es: "47% de los líderes latinoamericanos ubica la transformación de la fuerza laboral impulsada por IA como prioridad estratégica número uno, con el nivel de preparación más bajo de los ocho escenarios evaluados. 49% ve la incertidumbre sobre el impacto de la IA en el espacio de trabajo como un riesgo, frente a 40% a nivel global.",
+    dato_clave_en: "47% of Latin American leaders rank AI-driven workforce transformation as their number one strategic priority, with the lowest readiness of the eight scenarios evaluated. 49% see uncertainty about AI's impact on the workplace as a risk, versus 40% globally.",
+    contexto_es: "Capítulo latinoamericano de la encuesta global bienal de JLL sobre el futuro del trabajo, que se realiza desde 2011 entre tomadores de decisión de bienes raíces corporativos. La edición 2026 reúne a más de 2,200 participantes de 21 mercados, de los cuales 150 son de Latinoamérica, con representación de Argentina, Brasil, Colombia y México. Datos recogidos en el primer trimestre de 2026.",
+    contexto_en: "Latin American chapter of JLL's biennial global Future of Work Survey, conducted since 2011 among corporate real estate decision-makers. The 2026 edition gathers more than 2,200 participants across 21 markets, 150 of them in Latin America, with representation from Argentina, Brazil, Colombia and Mexico. Data collected in the first quarter of 2026.",
+    puntos_es: [
+      "47% pone la transformación de la fuerza laboral impulsada por IA como su principal prioridad estratégica; es, a la vez, el escenario con menor preparación de los ocho evaluados.",
+      "49% de los encuestados latinoamericanos ve la incertidumbre sobre el impacto de la IA en el espacio de trabajo como un riesgo para su cartera, frente a 40% a nivel global.",
+      "35% señala la complejidad regulatoria y de cumplimiento como la principal barrera en la región.",
+      "33% apunta a la escasez de mano de obra técnica especializada como segunda barrera.",
+      "65% de las organizaciones prioriza el posicionamiento estratégico a largo plazo y 64% la inversión transformadora en sus inmuebles corporativos."
+    ],
+    puntos_en: [
+      "47% name AI-driven workforce transformation as their top strategic priority; it is also the scenario with the lowest readiness of the eight evaluated.",
+      "49% of Latin American respondents see uncertainty about AI's impact on the workplace as a risk to their portfolio, versus 40% globally.",
+      "35% cite regulatory and compliance complexity as the main barrier in the region.",
+      "33% point to a shortage of specialized technical labor as the second barrier.",
+      "65% of organizations prioritize long-term strategic positioning and 64% transformational investment in their corporate real estate."
+    ],
+    articulo_es: {
+      "bajada": "Los líderes de la región ya decidieron que la IA va a cambiar cómo se trabaja. Lo que no tienen resuelto es cómo llegar ahí, ni qué pasará con los espacios donde su gente trabaja.",
+      "parrafos": [
+        "La encuesta de JLL a responsables de bienes raíces corporativos deja una paradoja nítida en Latinoamérica. La transformación de la fuerza laboral impulsada por IA es la principal prioridad estratégica de la región, señalada por 47% de los encuestados. Pero de los ocho escenarios que la consultora puso a prueba, es justamente el que muestra el nivel de preparación más bajo. La apuesta está hecha; la capacidad para ejecutarla, todavía no.",
+        "El dato importa porque viene de quienes deciden dónde y en qué condiciones trabaja la gente. El capítulo regional reúne a 150 tomadores de decisión de Argentina, Brasil, Colombia y México, dentro de una muestra global de más de 2,200 participantes en 21 mercados, encuestados durante el primer trimestre de 2026. Es decir, la IA dejó de ser solo un tema de tecnología o de recursos humanos: también está entrando en las conversaciones sobre oficinas, carteras inmobiliarias e inversión.",
+        "La región, además, se siente más expuesta que el resto del mundo. 49% de los latinoamericanos ve la incertidumbre sobre el impacto de la IA en el espacio de trabajo como un riesgo para su cartera, frente a 40% a nivel global. Nadie sabe todavía cuántas personas, con qué roles y en qué espacios trabajarán dentro de unos años, y esa duda pesa más aquí.",
+        "Los frenos también son distintos. A nivel global, JLL identifica la escasez de habilidades en IA como la principal limitación. En Latinoamérica, en cambio, el primer obstáculo es la complejidad regulatoria y de cumplimiento (35%), seguida de la escasez de mano de obra técnica especializada (33%). El talento sigue en la lista, pero el entorno normativo aparece antes, lo que sugiere que el ritmo del cambio no depende solo de lo que las empresas decidan puertas adentro.",
+        "Aun con esa incertidumbre, las organizaciones no están en modo de espera: 65% prioriza el posicionamiento estratégico a largo plazo y 64% la inversión transformadora en sus inmuebles corporativos. El cuadro que deja el estudio es el de una región que quiere moverse rápido hacia un trabajo rediseñado por la IA, pero que todavía tiene que construir las capacidades, en personas y en reglas, para sostener ese cambio."
+      ]
+    },
+    articulo_en: {
+      "bajada": "The region's leaders have already decided AI will change how work gets done. What they haven't worked out is how to get there, or what happens to the spaces where their people work.",
+      "parrafos": [
+        "JLL's survey of corporate real estate decision-makers reveals a clear paradox in Latin America. AI-driven workforce transformation is the region's top strategic priority, named by 47% of respondents. Yet of the eight scenarios the firm tested, it is precisely the one with the lowest readiness. The bet has been placed; the capacity to deliver on it has not caught up.",
+        "That matters because the data comes from the people who decide where and under what conditions others work. The regional chapter covers 150 decision-makers from Argentina, Brazil, Colombia and Mexico, part of a global sample of more than 2,200 participants across 21 markets, surveyed in the first quarter of 2026. In other words, AI is no longer just a technology or HR topic: it is entering conversations about offices, real estate portfolios and investment.",
+        "The region also feels more exposed than the rest of the world. 49% of Latin Americans see uncertainty about AI's impact on the workplace as a risk to their portfolio, compared with 40% globally. No one yet knows how many people, in what roles and in which spaces, will be working a few years from now, and that doubt weighs more heavily here.",
+        "The brakes are different too. Globally, JLL identifies the AI skills shortage as the main constraint. In Latin America, by contrast, the top obstacle is regulatory and compliance complexity (35%), followed by a shortage of specialized technical labor (33%). Talent is still on the list, but the regulatory environment comes first, suggesting that the pace of change does not depend only on what companies decide internally.",
+        "Despite that uncertainty, organizations are not standing still: 65% prioritize long-term strategic positioning and 64% transformational investment in their corporate real estate. The picture the study paints is of a region that wants to move fast toward work redesigned by AI, but still has to build the capabilities, in people and in rules, to sustain that change."
+      ]
+    },
+    cita: {
+      "original": "La IA es una prioridad, pero la preparación es desigual.",
+      "traduccion_es": "La IA es una prioridad, pero la preparación es desigual.",
+      "autor_es": "JLL, principales hallazgos de la encuesta",
+      "autor_en": "JLL, key findings of the survey"
+    },
+    preguntas_es: [
+      "¿Qué significa para los equipos que la IA sea la prioridad número uno y, a la vez, aquello para lo que la organización está menos preparada?",
+      "¿Cómo se conversa con las personas sobre un futuro del trabajo que ni siquiera los líderes tienen claro?",
+      "¿Qué papel juegan el espacio físico y sus cambios en la manera en que la gente vive la llegada de la IA?"
+    ],
+    preguntas_en: [
+      "What does it mean for teams when AI is the number one priority and, at the same time, what the organization is least prepared for?",
+      "How do you talk with people about a future of work that even leaders don't have clear?",
+      "What role does physical space, and changes to it, play in how people experience the arrival of AI?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
 ];
 
 
