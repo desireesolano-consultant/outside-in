@@ -333,6 +333,15 @@ img{max-width:100%;display:block}
   .portada-grid .marca{font-size:clamp(50px,15vw,76px)}
   .carrusel3d{height:420px;transform:scale(.78);margin:-30px 0 -50px}
 }
+/* La portada se adapta al alto de la pantalla (laptops): todo entra y queda centrado */
+@media (min-width:901px){
+  .portada{min-height:calc(100svh - 72px);padding:20px 0 64px}
+  .portada-grid .marca{font-size:clamp(56px,min(7.4vw,13svh),118px)}
+  .portada-grid .portada-centro{gap:clamp(14px,2.6svh,24px)}
+  .carrusel3d{height:clamp(380px,calc(100svh - 200px),560px)}
+}
+@media (min-width:901px) and (max-height:820px){.carrusel3d{transform:scale(.86)}}
+@media (min-width:901px) and (max-height:720px){.carrusel3d{transform:scale(.76)}.portada-grid .lema{font-size:20px}.bajar{bottom:12px}}
 /* Estudios: fecha y etiqueta en cada tarjeta */
 .ficha .meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-inline:6px;font:600 13px var(--x);color:var(--gris)}
 .ficha .nuevo{position:absolute;right:18px;top:18px;background:var(--naranja);color:var(--negro);font:800 12px var(--x);letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
@@ -605,17 +614,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202610270015"></script>
-<script src="js/textos.js?v=202610270015"></script>
-<script src="js/datos.js?v=202610270015"></script>
-<script src="js/contador.js?v=202610270015"></script>
-<script src="js/buscador.js?v=202610270015"></script>
-<script src="js/imagenes.js?v=202610270015"></script>
-<script src="js/insights.js?v=202610270015"></script>
-<script src="js/columnas.js?v=202610270015"></script>
-<script src="js/radar.js?v=202610270015"></script>
-<script src="js/traduccion.js?v=202610270015"></script>
-<script src="js/metricas.js?v=202610270015"></script>
+<script src="js/config.js?v=202610270020"></script>
+<script src="js/textos.js?v=202610270020"></script>
+<script src="js/datos.js?v=202610270020"></script>
+<script src="js/contador.js?v=202610270020"></script>
+<script src="js/buscador.js?v=202610270020"></script>
+<script src="js/imagenes.js?v=202610270020"></script>
+<script src="js/insights.js?v=202610270020"></script>
+<script src="js/columnas.js?v=202610270020"></script>
+<script src="js/radar.js?v=202610270020"></script>
+<script src="js/traduccion.js?v=202610270020"></script>
+<script src="js/metricas.js?v=202610270020"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
