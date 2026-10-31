@@ -4,7 +4,7 @@
 // automatización solo necesita escribir aquí, sin tocar datos.js.
 //
 // Si este array está vacío, la sección "En mi radar" no se muestra
-// (ver app.js). Campos de cada estudio, documentados en README.md:
+// (ver app.js). Campos de cada estudio, documentados en web/README.md (repositorio privado):
 //   id, titulo_es, titulo_en, fuente, fecha_detectado ("AAAA-MM-DD")
 
 const RADAR_ESTUDIOS = [

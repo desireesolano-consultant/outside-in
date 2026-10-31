@@ -163,7 +163,7 @@ const TENDENCIAS = [
 
 
 // HALLAZGOS REALES. Cada uno viene de un estudio público, verificado en su
-// fuente original. La lista completa de campos está en README.md.
+// fuente original. La lista completa de campos está en web/README.md (repositorio privado).
 //
 // "tema" e "industria" son OPCIONALES, pero un hallazgo necesita al menos
 // uno de los dos:

@@ -891,7 +891,7 @@ function renderizarFichaEjemploAsiAutomatice() {
 // automaticé Outside-In" comparten esta misma lógica. El embudo
 // (revisados → seleccionados → publicados) solo existe en vista previa:
 // todavía no hay una forma real de medir "revisados" y "seleccionados"
-// hasta que la automatización esté funcionando — ver README.md.
+// hasta que la automatización esté funcionando — ver web/README.md (repositorio privado).
 
 function tieneDatosEnVivo() {
   if (MODO_VISTA_PREVIA) return true;
