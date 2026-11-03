@@ -131,7 +131,9 @@ const TEXTOS = {
     hallazgoContextoTitulo: "Sobre el estudio",
     hallazgoLeerOriginal: "Leer el estudio original →",
     hallazgoNotaPublica: "Estudio público, disponible en el sitio de quien lo publicó. Aquí resumo sus datos con mis propias palabras.",
-    hallazgoFechaLabel: "Publicado",
+    hallazgoFechaLabel: "Publicado en Outside-In",
+    hallazgoFechaEstudioLabel: "Fecha del estudio",
+    hallazgoPublicadoEnWeb: "Publicado en Outside-In el",
     hallazgoNoEncontrado: "No encontré este hallazgo.",
 
     conectarEtiqueta: "Conectar",
@@ -348,7 +350,9 @@ const TEXTOS = {
     hallazgoContextoTitulo: "About the study",
     hallazgoLeerOriginal: "Read the original study →",
     hallazgoNotaPublica: "Public study, available on the publisher's website. Here I summarize its data in my own words.",
-    hallazgoFechaLabel: "Published",
+    hallazgoFechaLabel: "Published on Outside-In",
+    hallazgoFechaEstudioLabel: "Study date",
+    hallazgoPublicadoEnWeb: "Published on Outside-In on",
     hallazgoNoEncontrado: "I couldn't find this finding.",
 
     conectarEtiqueta: "Connect",

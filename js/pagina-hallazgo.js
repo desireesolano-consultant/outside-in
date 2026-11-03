@@ -94,6 +94,8 @@ function renderizarHallazgo() {
   document.title = `${titulo} · Outside-In`;
   document.getElementById("hallazgo-titulo").textContent = titulo;
   document.getElementById("hallazgo-fuente-linea").textContent = `${h.fuente} · ${texto(h, "estudio")}`;
+  const lineaPublicado = document.getElementById("hallazgo-publicado");
+  if (lineaPublicado) lineaPublicado.textContent = h.publicado ? `${t.hallazgoPublicadoEnWeb} ${formatearFechaLarga(h.publicado)}` : "";
 
   const figura = document.getElementById("hallazgo-foto");
   const imagen = typeof imagenDeHallazgo === "function" ? imagenDeHallazgo(h) : null;
@@ -206,7 +208,9 @@ function renderizarHallazgo() {
   metadatos.innerHTML = "";
   agregarMetadato(metadatos, t.fuenteLabel, h.fuente);
   agregarMetadato(metadatos, t.estudioLabel, texto(h, "estudio"));
-  agregarMetadato(metadatos, t.hallazgoFechaLabel, formatearFechaLarga(h.fecha));
+  // "Publicado" = el día en que apareció en Outside-In; aparte, la fecha del estudio original.
+  agregarMetadato(metadatos, t.hallazgoFechaLabel, formatearFechaLarga(h.publicado || h.fecha));
+  if (h.publicado && h.fecha) agregarMetadato(metadatos, t.hallazgoFechaEstudioLabel, formatearFechaLarga(h.fecha));
   agregarMetadato(metadatos, t.regionLabel, texto(h, "region"));
 
   document.getElementById("hallazgo-link").href = h.link;

@@ -1836,6 +1836,12 @@ body.oi-menu-bloqueo {
   font-size: 17px;
   margin: 0;
 }
+.oi-hallazgo-publicado {
+  color: var(--oi-texto-gris);
+  font-size: 15px;
+  margin: 0 0 6px;
+}
+.oi-hallazgo-publicado:empty { display: none; }
 .oi-hallazgo-cuerpo {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;

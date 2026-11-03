@@ -614,17 +614,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611031200"></script>
-<script src="js/textos.js?v=202611031200"></script>
-<script src="js/datos.js?v=202611031200"></script>
-<script src="js/contador.js?v=202611031200"></script>
-<script src="js/buscador.js?v=202611031200"></script>
-<script src="js/imagenes.js?v=202611031200"></script>
-<script src="js/insights.js?v=202611031200"></script>
-<script src="js/columnas.js?v=202611031200"></script>
-<script src="js/radar.js?v=202611031200"></script>
-<script src="js/traduccion.js?v=202611031200"></script>
-<script src="js/metricas.js?v=202611031200"></script>
+<script src="js/config.js?v=202611021300"></script>
+<script src="js/textos.js?v=202611021300"></script>
+<script src="js/datos.js?v=202611021300"></script>
+<script src="js/contador.js?v=202611021300"></script>
+<script src="js/buscador.js?v=202611021300"></script>
+<script src="js/imagenes.js?v=202611021300"></script>
+<script src="js/insights.js?v=202611021300"></script>
+<script src="js/columnas.js?v=202611021300"></script>
+<script src="js/radar.js?v=202611021300"></script>
+<script src="js/traduccion.js?v=202611021300"></script>
+<script src="js/metricas.js?v=202611021300"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -633,7 +633,9 @@ img{max-width:100%;display:block}
   traducirPagina();
   document.getElementById('boton-idioma').addEventListener('click',cambiarIdiomaPagina);
   const nombreDe=id=>{const c=[...TEMAS,...INDUSTRIAS].find(x=>x.id===id);return c?(EN?c.en:c.es):'';};
-  const reales=(typeof HALLAZGOS!=='undefined'?HALLAZGOS:[]).filter(h=>h.esEjemplo===false).sort((a,b)=>(b.fecha||'').localeCompare(a.fecha||'')||(b.publicado||'').localeCompare(a.publicado||''));
+  // Orden: primero lo último que se publicó en Outside-In ("publicado"); a igual fecha, el estudio más nuevo.
+  const fechaWeb=h=>h.publicado||h.fecha;
+  const reales=(typeof HALLAZGOS!=='undefined'?HALLAZGOS:[]).filter(h=>h.esEjemplo===false).sort((a,b)=>(fechaWeb(b)||'').localeCompare(fechaWeb(a)||'')||(b.fecha||'').localeCompare(a.fecha||''));
   // Fechas: "19 de octubre de 2026" y "hace 1 semana"
   const hoy=new Date(); const aFecha=f=>new Date(f+'T12:00:00');
   const fechaLarga=f=>new Intl.DateTimeFormat(EN?'en-US':'es-PE',{day:'numeric',month:'short',year:'numeric'}).format(aFecha(f));
@@ -710,7 +712,7 @@ img{max-width:100%;display:block}
       const sm=document.createElement('small'); sm.textContent=h.fuente+' · '+(nombreDe(h.tema)||nombreDe(h.industria));
       const b=document.createElement('b'); b.textContent=cifraDe(h); if(b.textContent.length>4) b.style.fontSize='50px';
       const p=document.createElement('p'); p.textContent=EN?h.hallazgo_en:h.hallazgo_es;
-      const fe=document.createElement('span'); fe.className='fecha3d'; fe.textContent=fechaLarga(h.fecha);
+      const fe=document.createElement('span'); fe.className='fecha3d'; fe.textContent=fechaLarga(fechaWeb(h));
       a.append(sm,b,p,fe); anillo.appendChild(a);
     });
   })();
@@ -758,8 +760,8 @@ img{max-width:100%;display:block}
       const h3=document.createElement('h3'); h3.textContent=EN?h.hallazgo_en:h.hallazgo_es;
       if(esNuevo(h)){const nu=document.createElement('span');nu.className='nuevo';nu.textContent=EN?'New':'Nuevo';f.appendChild(nu);}
       const me=document.createElement('div'); me.className='meta';
-      const fe=document.createElement('span'); fe.textContent=(EN?'Published ':'Publicado el ')+fechaLarga(h.fecha);
-      const ha=document.createElement('span'); ha.className='hace'; ha.textContent=hace(h.fecha);
+      const fe=document.createElement('span'); fe.textContent=(EN?'Published ':'Publicado el ')+fechaLarga(fechaWeb(h));
+      const ha=document.createElement('span'); ha.className='hace'; ha.textContent=hace(fechaWeb(h));
       me.append(fe,ha);
       a.append(f,ch,me,h3); return a;
     }
@@ -780,7 +782,7 @@ img{max-width:100%;display:block}
     RANGOS.forEach(([v,t])=>chip(gF,t,b=>{sel.fecha=sel.fecha===v?'':v;gF.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b&&sel.fecha===v)));filtrar();}));
     const fc=document.getElementById('f-conteo'), fnum=document.getElementById('f-num'), act=document.getElementById('f-activos');
     const boton=document.getElementById('f-boton'), panel=document.getElementById('f-panel');
-    const dias=h=>(hoy-aFecha(h.fecha))/86400000;
+    const dias=h=>(hoy-aFecha(fechaWeb(h)))/86400000;
     function filtrar(){
       const r=reales.filter(h=>(!sel.tema.size||sel.tema.has(h.tema))&&(!sel.industria.size||sel.industria.has(h.industria))&&(!sel.fecha||(sel.fecha==='mas'?dias(h)>365:dias(h)<=+sel.fecha)));
       const total=sel.tema.size+sel.industria.size+(sel.fecha?1:0);
