@@ -1416,7 +1416,7 @@ const HALLAZGOS = [
     fuente: "KPMG",
     estudio_es: "2026 US CEO Outlook",
     estudio_en: "2026 US CEO Outlook",
-    link: "https://kpmg.com/us/en/media/news/kpmg-us-ceo-outlook-2026.html",
+    link: "https://kpmg.com/kpmg-us/content/dam/kpmg/pdf/gated/2026/kpmg-2026-ceo-outlook.pdf",
     region_es: "Estados Unidos",
     region_en: "United States",
     hallazgo_es: "86% de los CEOs de grandes empresas de EE.UU. está rediseñando roles, trayectorias y equipos para la colaboración entre personas e IA",
@@ -1800,68 +1800,68 @@ const HALLAZGOS = [
     fecha: "2026-09-08",
     anio: "2026",
     fuente: "Korn Ferry",
-    estudio_es: "Workforce 2026: crecer exige repensar cómo se hace el trabajo",
-    estudio_en: "Workforce 2026: Unlocking Growth Requires Rethinking How Work Gets Done",
-    link: "https://www.kornferry.com/about-us/press/korn-ferry-workforce-2026-report-unlocking-growth-requires-rethinking-how-work-gets-done",
+    estudio_es: "Workforce 2026: crecer sin avanzar",
+    estudio_en: "Workforce 2026: Growing Nowhere",
+    link: "https://www.kornferry.com/insights/featured-topics/workforce-management-articles/workforce-planning-insights#findings",
     region_es: "Global (11 mercados, incluidos EE.UU. y Brasil)",
     region_en: "Global (11 markets, including the U.S. and Brazil)",
-    hallazgo_es: "62% de los profesionales dice que su carga de trabajo aumentó mucho en los últimos dos años, y la motivación cayó de 71% a 61%",
-    hallazgo_en: "62% of professionals say their workload has grown significantly over the past two years, and motivation fell from 71% to 61%",
-    dato_clave_es: "62% de los empleados reporta una carga de trabajo mucho más pesada en los últimos dos años. La motivación bajó de 71% en 2024 a 61% en 2026, y 55% de los jefes que quedan dice estar agotado.",
-    dato_clave_en: "62% of employees report a significantly heavier workload over the past two years. Motivation dropped from 71% in 2024 to 61% in 2026, and 55% of remaining managers say they are exhausted.",
-    contexto_es: "Tercera encuesta global anual de Korn Ferry sobre la fuerza laboral, publicada el 8 de septiembre de 2026. Más de 16,000 profesionales de todos los niveles, desde colaboradores individuales hasta CEO, en 11 mercados: Australia, Brasil, Francia, Alemania, India, Japón, Arabia Saudita, Singapur, Emiratos Árabes Unidos, Reino Unido y Estados Unidos. No se indican las fechas del trabajo de campo.",
-    contexto_en: "Korn Ferry's third annual global workforce survey, published September 8, 2026. More than 16,000 professionals at every level, from individual contributors to CEOs, across 11 markets: Australia, Brazil, France, Germany, India, Japan, Saudi Arabia, Singapore, the UAE, the UK and the United States. Fieldwork dates are not stated.",
+    hallazgo_es: "La motivación de los profesionales cayó 9 puntos en un año y hoy solo 61% se siente motivado, mientras 61% hace el trabajo de más de un rol",
+    hallazgo_en: "Professionals' motivation fell 9 points in a year and only 61% now feel motivated, while 61% do the work of more than one role",
+    dato_clave_es: "La motivación cayó 9 puntos en un año: hoy 61% de los profesionales se siente motivado. Al mismo tiempo, 61% dice que hace el trabajo de más de un rol y más de la mitad de los jefes dice estar agotada.",
+    dato_clave_en: "Motivation fell 9 points in one year: 61% of professionals now feel motivated. At the same time, 61% say they do the work of more than one role, and more than half of managers say they are exhausted.",
+    contexto_es: "Tercera encuesta global anual de Korn Ferry sobre la fuerza laboral, publicada el 8 de septiembre de 2026. Más de 16,000 profesionales de todos los niveles, desde puestos de entrada hasta CEO, en 11 mercados: Australia, Brasil, Francia, Alemania, India, Japón, Arabia Saudita, Singapur, Emiratos Árabes Unidos, Reino Unido y Estados Unidos. El informe no indica las fechas del trabajo de campo.",
+    contexto_en: "Korn Ferry's third annual global workforce survey, published September 8, 2026. More than 16,000 professionals at every level, from entry-level roles to CEOs, across 11 markets: Australia, Brazil, France, Germany, India, Japan, Saudi Arabia, Singapore, the UAE, the UK and the United States. The report does not state fieldwork dates.",
     puntos_es: [
-      "62% reporta una carga de trabajo mucho más pesada en los últimos dos años; 45% dice estar demasiado ocupado para lograr resultados que aporten al crecimiento.",
-      "61% cumple las responsabilidades de más de un rol y 44% siente que lo exigen más allá de sus capacidades.",
-      "42% de las organizaciones recortó puestos de jefatura en el último año; 55% de los jefes que quedan dice estar agotado.",
-      "39% dice que la falta de jefes lo deja sin rumbo.",
-      "51% de los colaboradores individuales ve mejoras de eficiencia con la IA, frente a 79% de los CEO.",
-      "La motivación cayó de 71% en 2024 a 61% en 2026."
+      "La motivación de la fuerza laboral global cayó 9 puntos en un año; hoy 61% se siente motivado.",
+      "61% dice que hace el trabajo de más de un rol.",
+      "Más de la mitad de los jefes dice estar agotada, y solo 52% de los profesionales dice que su jefe lo anima a experimentar.",
+      "63% dice que la IA aumenta su eficiencia, pero solo 52% se siente bien formado para usarla.",
+      "En EE.UU., 55% de los jefes de primera línea cree que la IA o la tecnología reemplazará su rol en tres años, frente a 30% de los colaboradores individuales.",
+      "En EE.UU., 85% de los CEO dice que su organización se preocupa por su gente, frente a 46% de los colaboradores individuales."
     ],
     puntos_en: [
-      "62% report a significantly heavier workload over the past two years; 45% say they are too busy to deliver results that contribute to growth.",
-      "61% perform the responsibilities of more than one role, and 44% feel stretched beyond their capabilities.",
-      "42% of organizations cut management roles in the past year; 55% of remaining managers say they are exhausted.",
-      "39% say the lack of managers leaves them feeling directionless.",
-      "51% of individual contributors see efficiency gains from AI, compared with 79% of CEOs.",
-      "Motivation fell from 71% in 2024 to 61% in 2026."
+      "Motivation across the global workforce fell 9 points in one year; 61% now feel motivated.",
+      "61% say they do the work of more than one role.",
+      "More than half of managers say they are exhausted, and only 52% of professionals say their manager encourages them to experiment.",
+      "63% say AI increases their efficiency, but only 52% feel adequately trained to use it.",
+      "In the U.S., 55% of first-level managers expect AI or technology to replace their role within three years, compared with 30% of individual contributors.",
+      "In the U.S., 85% of CEOs say their organization cares about its people, compared with 46% of individual contributors."
     ],
     articulo_es: {
-      "bajada": "Las organizaciones quieren crecer con menos jefes y más tecnología, pero la gente que debería impulsar ese crecimiento está sobrecargada y menos motivada.",
+      "bajada": "Las organizaciones invierten en IA y recortan costos para crecer, pero su gente está más cargada, menos motivada y con jefes al límite.",
       "parrafos": [
-        "Korn Ferry encuestó a más de 16,000 profesionales de 11 mercados, entre ellos Estados Unidos y Brasil. 62% dice que su carga de trabajo aumentó mucho en los últimos dos años, y la motivación cayó de 71% en 2024 a 61% en 2026. Las empresas buscan crecimiento, pero su gente llega a ese desafío con menos energía. Esa tensión es el centro del estudio.",
-        "La evidencia muestra equipos estirados al límite. 61% cumple las tareas de más de un rol, 44% siente que lo exigen más allá de sus capacidades y 45% dice estar demasiado ocupado para lograr resultados que aporten al crecimiento. Juntas, estas cifras muestran que el exceso de trabajo no es un problema de bienestar aislado. También frena el desempeño que las organizaciones esperan.",
-        "El matiz está en los jefes. 42% de las organizaciones recortó puestos de jefatura en el último año, y 55% de los jefes que quedan dice estar agotado. Del otro lado, 39% de los empleados siente que la falta de jefes lo deja sin rumbo. Aplanar la estructura ahorra costos en el papel, pero traslada la carga y deja a muchas personas sin guía.",
-        "Lo que está en juego también incluye a la IA. 79% de los CEO ve mejoras de eficiencia con la tecnología, pero solo 51% de los colaboradores individuales dice lo mismo. Esa distancia sugiere que la experiencia de la IA desde la cima no coincide con la de quienes hacen el trabajo. Korn Ferry plantea que sumar tecnología sin ampliar la capacidad de las personas no resuelve el problema.",
-        "El estudio describe un modelo de crecimiento que se apoya en pedir más a menos gente. Sus datos muestran que ese modelo tiene un límite, y que muchos equipos ya lo están tocando."
+        "Korn Ferry encuestó a más de 16,000 profesionales de 11 mercados, entre ellos Estados Unidos y Brasil. Su hallazgo central es que la motivación de la fuerza laboral cayó 9 puntos en un solo año, y hoy solo 61% se siente motivado. El informe se titula \"crecer sin avanzar\" por una razón: las empresas buscan crecimiento, pero su gente llega a ese desafío con menos energía.",
+        "La evidencia apunta a una carga que se acumula. 61% dice que hace el trabajo de más de un rol, porque cuando un puesto se recorta o se \"reemplaza con IA\", sus tareas suelen pasar a quienes se quedan. Korn Ferry advierte que la gente acepta un esfuerzo extra temporal, pero no uno permanente sin reconocimiento ni rumbo claro. Lo que empieza como ajuste termina en desgaste y rotación.",
+        "El matiz está en la IA. 63% dice que la IA aumenta su eficiencia, pero solo 52% se siente bien formado para usarla. El informe sostiene que, para muchos, la IA suma tiempo en lugar de ahorrarlo, porque se agrega sobre el trabajo de siempre. La herramienta promete alivio, pero sin rediseñar el trabajo se convierte en una tarea más.",
+        "Lo que está en juego son los jefes. Más de la mitad dice estar agotada, presionada desde arriba y con equipos cansados debajo. Y solo 52% de los profesionales dice que su jefe lo anima a experimentar, justo cuando crecer exige probar cosas nuevas. En Estados Unidos, la distancia también es de percepción: 85% de los CEO cree que su organización se preocupa por su gente, frente a 46% de los colaboradores individuales.",
+        "El estudio muestra que la eficiencia sola no genera crecimiento. Sin capacidad, sin motivación y sin jefes con aire para conducir, el esfuerzo se mueve mucho pero avanza poco."
       ]
     },
     articulo_en: {
-      "bajada": "Organizations want to grow with fewer managers and more technology, but the people meant to drive that growth are overloaded and less motivated.",
+      "bajada": "Organizations are investing in AI and cutting costs to grow, but their people are more loaded, less motivated and led by managers at their limit.",
       "parrafos": [
-        "Korn Ferry surveyed more than 16,000 professionals across 11 markets, including the United States and Brazil. 62% say their workload has grown significantly over the past two years, and motivation fell from 71% in 2024 to 61% in 2026. Companies are seeking growth, but their people are meeting that challenge with less energy. That tension is at the heart of the study.",
-        "The evidence shows teams stretched to the limit. 61% perform the duties of more than one role, 44% feel stretched beyond their capabilities, and 45% say they are too busy to deliver results that contribute to growth. Together, these figures show that overwork is not an isolated well-being issue. It also holds back the performance organizations expect.",
-        "The nuance lies with managers. 42% of organizations cut management roles in the past year, and 55% of remaining managers say they are exhausted. On the other side, 39% of employees feel the lack of managers leaves them directionless. Flattening the structure saves costs on paper, but it shifts the load and leaves many people without guidance.",
-        "What's at stake also includes AI. 79% of CEOs see efficiency gains from the technology, but only 51% of individual contributors say the same. That gap suggests the experience of AI from the top does not match that of the people doing the work. Korn Ferry argues that adding technology without expanding people's capacity does not solve the problem.",
-        "The study describes a growth model that relies on asking more of fewer people. Its data show that this model has a limit, and that many teams are already reaching it."
+        "Korn Ferry surveyed more than 16,000 professionals across 11 markets, including the United States and Brazil. Its central finding is that workforce motivation fell 9 points in a single year, and only 61% now feel motivated. The report is titled \"Growing Nowhere\" for a reason: companies are seeking growth, but their people are meeting that challenge with less energy.",
+        "The evidence points to a load that keeps piling up. 61% say they do the work of more than one role, because when a position is cut or \"replaced by AI,\" its tasks usually shift to those who remain. Korn Ferry warns that people accept temporary extra effort, but not a permanent one without recognition or clear direction. What starts as an adjustment ends in burnout and attrition.",
+        "The nuance lies in AI. 63% say AI increases their efficiency, but only 52% feel adequately trained to use it. The report argues that for many people AI adds time rather than saving it, because it is layered on top of existing work. The tool promises relief, but without redesigning work it becomes one more task.",
+        "What's at stake is managers. More than half say they are exhausted, pressured from above and leading tired teams below. And only 52% of professionals say their manager encourages them to experiment, just when growth requires trying new things. In the United States, the gap is also one of perception: 85% of CEOs believe their organization cares about its people, compared with 46% of individual contributors.",
+        "The study shows that efficiency alone does not create growth. Without capacity, motivation and managers with room to lead, effort moves a lot but gets little done."
       ]
     },
     cita: {
-      "original": "Growth doesn't come from just asking people to do more.",
-      "traduccion_es": "El crecimiento no viene solo de pedirle a la gente que haga más.",
-      "autor_es": "Lesley Uren, CEO de Korn Ferry Consulting",
-      "autor_en": "Lesley Uren, CEO, Korn Ferry Consulting"
+      "original": "When managers burn out, you lose the glue that holds everything together.",
+      "traduccion_es": "Cuando los jefes se agotan, se pierde el pegamento que mantiene todo unido.",
+      "autor_es": "Roger Philby, líder global de Estrategia y Desempeño de Personas, Korn Ferry",
+      "autor_en": "Roger Philby, Global Lead, People Strategy and Performance, Korn Ferry"
     },
     preguntas_es: [
-      "¿Qué pasó con la carga de trabajo de los equipos después de los últimos recortes o reestructuras?",
-      "¿Quién guía hoy a las personas que se quedaron sin un jefe directo cercano?",
-      "¿Cómo se conversa sobre la IA cuando la cúpula y los equipos la viven de forma tan distinta?"
+      "¿Qué pasó con las tareas de los puestos que se recortaron o se automatizaron en tu organización?",
+      "¿Quién cuida hoy a los jefes que sostienen a equipos cansados?",
+      "¿Cómo se explica a la gente para qué sirve la IA cuando, en el día a día, se siente como una tarea más?"
     ],
     preguntas_en: [
-      "What happened to teams' workload after the latest cuts or restructurings?",
-      "Who guides the people who no longer have a close direct manager?",
-      "How do you talk about AI when leadership and teams experience it so differently?"
+      "What happened to the tasks of the roles that were cut or automated in your organization?",
+      "Who looks after the managers who hold up tired teams today?",
+      "How do you explain what AI is for when, day to day, it feels like one more task?"
     ],
     implicancia_es: null,
     implicancia_en: null,
@@ -1880,7 +1880,7 @@ const HALLAZGOS = [
     fuente: "Deloitte",
     estudio_es: "Encuesta Global Gen Z y Millennials 2026",
     estudio_en: "2026 Gen Z and Millennial Survey",
-    link: "https://www.deloitte.com/global/en/about/press-room/deloitte-2026-gen-z-and-millennial-survey.html",
+    link: "https://www.deloitte.com/content/dam/assets-shared/docs/campaigns/2026/2026-genz-millennial-survey.pdf",
     region_es: "Global (44 países, incluidos Norteamérica y Latinoamérica)",
     region_en: "Global (44 countries, including North America and Latin America)",
     hallazgo_es: "Solo 6% de la Gen Z y los millennials tiene el liderazgo como su principal meta profesional; prefieren un progreso estable a los ascensos rápidos",
@@ -1926,10 +1926,10 @@ const HALLAZGOS = [
       ]
     },
     cita: {
-      "original": "These generations are adaptable, pragmatic, and intentional about progress",
-      "traduccion_es": "Estas generaciones son adaptables, pragmáticas e intencionales respecto de su progreso.",
-      "autor_es": "Elizabeth Faber, Chief People & Purpose Officer de Deloitte Global",
-      "autor_en": "Elizabeth Faber, Deloitte Global Chief People & Purpose Officer"
+      "original": "Progress on Their Own Terms",
+      "traduccion_es": "Progresar en sus propios términos",
+      "autor_es": "Informe Deloitte 2026 Gen Z and Millennial Survey (subtítulo)",
+      "autor_en": "Deloitte 2026 Gen Z and Millennial Survey report (subtitle)"
     },
     preguntas_es: [
       "¿Qué imagen del liderazgo transmite hoy tu organización a quienes podrían ser sus próximos jefes?",
@@ -2018,80 +2018,6 @@ const HALLAZGOS = [
       "Who looks after managers' engagement in your organization today?",
       "What signals show that middle managers' disconnection is already reaching their teams?",
       "How do you communicate change when those who must cascade it to teams are exhausted?"
-    ],
-    implicancia_es: null,
-    implicancia_en: null,
-    lecturaEstado: "pendiente",
-    estado: "PUBLICADO",
-  },
-  {
-    id: "h-2026-11-rgp-fusiones",
-    industria: null,
-    tema: "gestion_cambio",
-    subtema: "M&A e integraciones",
-    esEjemplo: false,
-    publicado: "2026-11-02",
-    fecha: "2026-03-31",
-    anio: "2026",
-    fuente: "RGP",
-    estudio_es: "La brecha de valor humano en las fusiones y adquisiciones (M&A) 2026",
-    estudio_en: "The Human Value Gap in M&A 2026",
-    link: "https://rgp.com/press/rgp-releases-new-ma-research-report-highlighting-the-human-value-gap-as-a-critical-driver-of-deal-success/",
-    region_es: "Estados Unidos y México",
-    region_en: "United States and Mexico",
-    hallazgo_es: "81% de los CFO dice que la cultura, el talento y el conocimiento son clave para el éxito de una adquisición, pero solo 18% cree que su organización los protege bien",
-    hallazgo_en: "81% of CFOs say culture, talent and knowledge are critical to deal success, but only 18% believe their organization protects them effectively",
-    dato_clave_es: "81% de los CFO considera que los activos intangibles (cultura, talento y conocimiento) son clave para el éxito de una operación; solo 18% cree que su organización es eficaz para protegerlos. 74% reporta una rotación moderada o alta de líderes o talento crítico en el primer año.",
-    dato_clave_en: "81% of CFOs consider intangible assets (culture, talent and knowledge) critical to deal success; only 18% believe their organization is effective at protecting them. 74% report moderate to high turnover of leaders or critical talent in the first year.",
-    contexto_es: "Informe de RGP publicado el 31 de marzo de 2026. Encuesta a 120 directores financieros (CFO), en su mayoría de Estados Unidos y con representación de México, complementada con entrevistas en profundidad a 15 directores de recursos humanos (CHRO). El comunicado no indica las fechas del trabajo de campo.",
-    contexto_en: "RGP report published March 31, 2026. Survey of 120 chief financial officers (CFOs), mostly based in the United States with representation from Mexico, complemented by in-depth interviews with 15 chief human resources officers (CHROs). The release does not state fieldwork dates.",
-    puntos_es: [
-      "81% de los CFO dice que la cultura, el talento y el conocimiento son clave para el éxito de una adquisición.",
-      "Solo 18% cree que su organización es eficaz para proteger esos activos intangibles.",
-      "74% reporta una rotación moderada o alta de líderes o talento crítico en el primer año después de una adquisición.",
-      "La mayoría mide el éxito de una operación a los dos o tres años, mientras que la integración cultural y organizacional suele tomar de cinco a siete."
-    ],
-    puntos_en: [
-      "81% of CFOs say culture, talent and knowledge are critical to deal success.",
-      "Only 18% believe their organization is effective at protecting those intangible assets.",
-      "74% report moderate to high turnover of leaders or critical talent in the first year after an acquisition.",
-      "Most measure deal success at two to three years, while cultural and organizational integration often takes five to seven."
-    ],
-    articulo_es: {
-      "bajada": "Los directores financieros saben que el valor de una adquisición depende de las personas y la cultura, pero casi ninguno siente que su organización sepa protegerlos.",
-      "parrafos": [
-        "RGP encuestó a 120 directores financieros (CFO), en su mayoría de Estados Unidos y con representación de México, y entrevistó a 15 directores de recursos humanos. 81% de los CFO dice que la cultura, el talento y el conocimiento son clave para el éxito de una fusión o adquisición. Pero solo 18% cree que su organización es eficaz para protegerlos. Esa distancia entre lo que se sabe y lo que se hace es lo que RGP llama la brecha de valor humano.",
-        "La evidencia muestra que esa brecha tiene un costo visible. 74% reporta una rotación moderada o alta de líderes o talento crítico durante el primer año después de una adquisición. Es decir, las personas que sostenían el valor de la empresa comprada se van justo cuando más se las necesita. Lo que se pagó en la operación empieza a perderse en la integración.",
-        "El matiz está en el tiempo. La mayoría de las organizaciones mide el éxito de una operación a los dos o tres años, pero la integración cultural y organizacional suele tomar de cinco a siete. Así, se evalúa el resultado antes de que el cambio de fondo haya terminado. Lo que no se mide en ese plazo, como la cultura, tiende a quedar fuera de la conversación.",
-        "Lo que está en juego es la manera de gestionar las integraciones. Por décadas se trataron como un ejercicio financiero, y el estudio sugiere que eso deja sin atender lo que más pesa en el resultado. En industrias como la farmacéutica, donde un CHRO entrevistado advierte que estos factores suelen medirse poco, el riesgo es perder conocimiento difícil de reemplazar.",
-        "El estudio plantea que el valor de una adquisición no se define solo al firmar. Se juega en los años siguientes, en la capacidad de retener a las personas y unir culturas."
-      ]
-    },
-    articulo_en: {
-      "bajada": "CFOs know that the value of an acquisition depends on people and culture, but almost none feel their organization knows how to protect them.",
-      "parrafos": [
-        "RGP surveyed 120 chief financial officers (CFOs), mostly based in the United States with representation from Mexico, and interviewed 15 chief human resources officers. 81% of CFOs say culture, talent and knowledge are critical to the success of a merger or acquisition. But only 18% believe their organization is effective at protecting them. That distance between what is known and what is done is what RGP calls the human value gap.",
-        "The evidence shows this gap has a visible cost. 74% report moderate to high turnover of leaders or critical talent during the first year after an acquisition. In other words, the people who sustained the acquired company's value leave just when they are most needed. What was paid for in the deal starts to slip away during integration.",
-        "The nuance lies in timing. Most organizations measure deal success at two to three years, but cultural and organizational integration often takes five to seven. As a result, outcomes are judged before the deeper change is complete. What is not measured in that window, such as culture, tends to fall out of the conversation.",
-        "What's at stake is how integrations are managed. For decades they were treated as a financial exercise, and the study suggests this leaves unattended what weighs most on the outcome. In industries such as pharmaceuticals, where one CHRO interviewed warns that these factors are often under-measured, the risk is losing knowledge that is hard to replace.",
-        "The study argues that the value of an acquisition is not defined at signing. It is decided in the years that follow, through the ability to retain people and bring cultures together."
-      ]
-    },
-    cita: {
-      "original": "deal value is rarely lost in the spreadsheet; it's lost in the organization",
-      "traduccion_es": "el valor de una operación rara vez se pierde en la hoja de cálculo; se pierde en la organización",
-      "autor_es": "Daniel Boyer, vicepresidente sénior y líder de M&A, RGP",
-      "autor_en": "Daniel Boyer, Senior Vice President, Head of M&A, RGP"
-    },
-    preguntas_es: [
-      "¿Quién se ocupa de la cultura y el talento clave cuando la conversación de una adquisición está dominada por las finanzas?",
-      "¿Qué se le comunica a las personas de la empresa adquirida en el primer año, cuando el riesgo de que se vayan es mayor?",
-      "¿Cómo se mide el avance de una integración cultural que toma más tiempo que el horizonte de evaluación?"
-    ],
-    preguntas_en: [
-      "Who looks after culture and key talent when the conversation about an acquisition is dominated by finance?",
-      "What is communicated to people at the acquired company in the first year, when the risk of them leaving is highest?",
-      "How do you measure progress on a cultural integration that takes longer than the evaluation horizon?"
     ],
     implicancia_es: null,
     implicancia_en: null,
