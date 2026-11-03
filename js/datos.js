@@ -1558,6 +1558,546 @@ const HALLAZGOS = [
     lecturaEstado: "pendiente",
     estado: "PUBLICADO",
   },
+  {
+    id: "h-2026-11-gallup-compromiso-eeuu",
+    industria: null,
+    tema: "liderazgo_cultura",
+    subtema: "Liderazgo",
+    esEjemplo: false,
+    publicado: "2026-11-03",
+    fecha: "2026-10-28",
+    anio: "2026",
+    fuente: "Gallup",
+    estudio_es: "El compromiso de los empleados en EE.UU. cae por debajo de 30% por primera vez en 15 años",
+    estudio_en: "U.S. Employee Engagement Below 30% for First Time in 15 Years",
+    link: "https://gallup.com/workplace/716117/employee-engagement-below-30-first-time-years.aspx",
+    region_es: "Estados Unidos",
+    region_en: "United States",
+    hallazgo_es: "El compromiso de los empleados en EE.UU. bajó a 29% en el tercer trimestre de 2026, su nivel más bajo desde 2011",
+    hallazgo_en: "U.S. employee engagement fell to 29% in the third quarter of 2026, its lowest level since 2011",
+    dato_clave_es: "29% de los empleados en EE.UU. está comprometido con su trabajo (tercer trimestre de 2026), 2 puntos menos que en el trimestre anterior. Equivale a unos 3.2 millones de trabajadores comprometidos menos.",
+    dato_clave_en: "29% of U.S. employees are engaged at work (Q3 2026), down 2 points from the previous quarter. That equals about 3.2 million fewer engaged workers.",
+    contexto_es: "Medición trimestral de Gallup, escrita por Jim Harter, su científico jefe de lugar de trabajo. Encuesta web a 21,648 adultos del Gallup Panel (muestra probabilística) en Estados Unidos, realizada del 5 al 19 de agosto de 2026; el compromiso se mide entre quienes trabajan. Se compara con las olas de febrero y mayo de 2026. Publicado el 28 de octubre de 2026.",
+    contexto_en: "Gallup's quarterly measurement, written by Jim Harter, its chief scientist for workplace. Web survey of 21,648 adults from the Gallup Panel (probability-based sample) in the United States, conducted August 5-19, 2026; engagement is measured among employed respondents. It is compared with the February and May 2026 waves. Published October 28, 2026.",
+    puntos_es: [
+      "29% de los empleados está comprometido, 2 puntos menos que en el segundo trimestre y el nivel más bajo desde 2011.",
+      "Los empleados activamente desconectados subieron a 18% (desde 17%) y 53% está no comprometido.",
+      "Solo 46% sabe con claridad qué se espera de él en el trabajo, frente a 49% en el primer semestre de 2026 y 61% en 2015.",
+      "37% siente que un jefe o alguien en el trabajo se preocupa por él, frente a 40% en el primer semestre y 47% en marzo de 2020.",
+      "El compromiso cayó 5 puntos entre quienes trabajan 100% remoto y 2 puntos entre los híbridos; entre los presenciales casi no cambió.",
+      "Según un análisis previo de Gallup, el compromiso es 15 puntos mayor donde hay un plan claro de IA y 18 puntos mayor cuando los jefes apoyan activamente su uso."
+    ],
+    puntos_en: [
+      "29% of employees are engaged, 2 points lower than in the second quarter and the lowest level since 2011.",
+      "Actively disengaged employees rose to 18% (from 17%), and 53% are not engaged.",
+      "Only 46% clearly know what is expected of them at work, down from 49% in the first half of 2026 and 61% in 2015.",
+      "37% feel that a supervisor or someone at work cares about them, down from 40% in the first half and 47% in March 2020.",
+      "Engagement fell 5 points among fully remote workers and 2 points among hybrid workers; it barely moved among on-site workers.",
+      "According to an earlier Gallup analysis, engagement is 15 points higher where there is a clear AI plan and 18 points higher when managers actively support its use."
+    ],
+    articulo_es: {
+      "bajada": "El compromiso en Estados Unidos tocó su punto más bajo en 15 años, y lo que más se resiente son dos cosas básicas: saber qué se espera y sentirse cuidado.",
+      "parrafos": [
+        "Gallup midió en agosto de 2026 el compromiso de los trabajadores estadounidenses con una muestra de 21,648 adultos. El resultado: solo 29% está comprometido con su trabajo, 2 puntos menos que en el trimestre anterior y el nivel más bajo desde 2011. Solo en ese trimestre, la caída equivale a unos 3.2 millones de trabajadores comprometidos menos. Es una señal de que el vínculo entre las personas y su trabajo se está debilitando a escala.",
+        "La evidencia apunta a la base de la relación con el trabajo. Solo 46% sabe con claridad qué se espera de él, 3 puntos menos que en el primer semestre y lejos del 61% de 2015. Y apenas 37% siente que un jefe o alguien en el trabajo se preocupa por él. Juntas, estas cifras muestran que el desgaste no viene de grandes beneficios ausentes, sino de lo cotidiano: claridad y cuidado.",
+        "El matiz está en dónde se trabaja. El compromiso cayó 5 puntos entre quienes trabajan 100% remoto y 2 puntos entre los híbridos, mientras que entre los presenciales casi no se movió. Gallup recuerda que, entre 2020 y 2023, la claridad de expectativas ya había caído el doble en los equipos remotos e híbridos. La distancia física, sin una gestión que la compense, parece tener un costo en el vínculo.",
+        "Lo que está en juego también toca a la IA. Un análisis previo de Gallup encontró que el compromiso es 15 puntos mayor cuando hay un plan claro de IA y 18 puntos mayor cuando los jefes apoyan activamente su uso. Eso pone a los mandos medios en el centro: son quienes traducen expectativas, acompañan los cambios y hacen sentir a las personas que alguien las ve.",
+        "El dato de 29% no habla solo de ánimo, habla de conducción. Cuando el trabajo cambia rápido, lo que sostiene el compromiso sigue siendo lo más simple: saber hacia dónde se va y sentir que a alguien le importa."
+      ]
+    },
+    articulo_en: {
+      "bajada": "U.S. engagement hit a 15-year low, and what is suffering most are two basics: knowing what is expected and feeling cared about.",
+      "parrafos": [
+        "In August 2026, Gallup measured U.S. worker engagement with a sample of 21,648 adults. The result: only 29% are engaged in their work, 2 points lower than the previous quarter and the lowest level since 2011. In that quarter alone, the drop equals roughly 3.2 million fewer engaged workers. It is a sign that the bond between people and their work is weakening at scale.",
+        "The evidence points to the foundations of that bond. Only 46% clearly know what is expected of them, 3 points lower than in the first half of the year and far from 61% in 2015. And just 37% feel that a supervisor or someone at work cares about them. Together, these figures show that the erosion is not about missing perks but about everyday basics: clarity and care.",
+        "The nuance lies in where people work. Engagement fell 5 points among fully remote workers and 2 points among hybrid workers, while it barely moved among on-site employees. Gallup notes that between 2020 and 2023, clarity of expectations had already fallen twice as much in remote and hybrid teams. Physical distance, without management that compensates for it, seems to take a toll on the bond.",
+        "What's at stake also involves AI. An earlier Gallup analysis found engagement is 15 points higher when there is a clear AI plan and 18 points higher when managers actively support its use. That puts middle managers at the center: they are the ones who translate expectations, guide people through change and make them feel seen.",
+        "The 29% figure is not only about morale; it is about direction. When work changes fast, what sustains engagement is still the simplest thing: knowing where things are headed and feeling that someone cares."
+      ]
+    },
+    cita: {
+      "original": "U.S. employee engagement fell to 29% in the third quarter of 2026.",
+      "traduccion_es": "El compromiso de los empleados en EE.UU. cayó a 29% en el tercer trimestre de 2026.",
+      "autor_es": "Jim Harter, científico jefe de lugar de trabajo, Gallup",
+      "autor_en": "Jim Harter, Chief Scientist, Workplace, Gallup"
+    },
+    preguntas_es: [
+      "¿Qué tan claro tienen hoy las personas de tu organización qué se espera de ellas, y cómo lo sabes?",
+      "¿Qué gestos cotidianos hacen que alguien sienta que a su jefe le importa, sobre todo en equipos remotos o híbridos?",
+      "¿Cómo se prepara a los mandos medios para sostener el compromiso mientras el trabajo cambia con la IA?"
+    ],
+    preguntas_en: [
+      "How clear are people in your organization today about what is expected of them, and how do you know?",
+      "What everyday gestures make someone feel their manager cares, especially in remote or hybrid teams?",
+      "How are middle managers being prepared to sustain engagement while work changes with AI?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-gallup-ia-beneficios",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "IA y trabajo",
+    esEjemplo: false,
+    publicado: "2026-11-03",
+    fecha: "2026-10-06",
+    anio: "2026",
+    fuente: "Gallup",
+    estudio_es: "Los beneficios de la IA en el trabajo se reparten de forma desigual",
+    estudio_en: "AI Benefits at Work Unevenly Distributed",
+    link: "https://news.gallup.com/poll/714602/benefits-work-unevenly-distributed.aspx",
+    region_es: "Estados Unidos",
+    region_en: "United States",
+    hallazgo_es: "63% de quienes usan IA en el trabajo dice que les permite trabajar más rápido, pero 31% afirma que eso llevó a su empleador a darles más responsabilidades",
+    hallazgo_en: "63% of those who use AI at work say it helps them work faster, but 31% say this led their employer to give them more responsibilities",
+    dato_clave_es: "63% de los usuarios de IA dice que trabaja más rápido gracias a ella; 31% señala que su empleador le pidió asumir más responsabilidades por eso. Solo 28% de los empleados usa IA al menos una vez por semana.",
+    dato_clave_en: "63% of AI users say it helps them work faster; 31% say their employer asked them to take on more responsibilities as a result. Only 28% of employees use AI at least weekly.",
+    contexto_es: "Análisis de Gallup firmado por Jeffrey M. Jones, parte del American Job Quality Study (alianza con Jobs for the Future y The Families & Workers Fund). Encuestas web y por correo a 15,482 trabajadores de Estados Unidos, de los cuales 7,845 usaron IA en su trabajo, realizadas del 26 de enero al 24 de marzo de 2026. Publicado el 6 de octubre de 2026.",
+    contexto_en: "Gallup analysis by Jeffrey M. Jones, part of the American Job Quality Study (a partnership with Jobs for the Future and The Families & Workers Fund). Web and mail surveys of 15,482 U.S. workers, 7,845 of whom have used AI in their job, conducted January 26 to March 24, 2026. Published October 6, 2026.",
+    puntos_es: [
+      "Entre quienes usan IA: 63% trabaja más rápido, 56% encuentra soluciones más creativas y 46% hace un trabajo de mayor calidad.",
+      "31% dice que la IA llevó a su empleador a pedirle más responsabilidades; entre los usuarios de 18 a 24 años, la cifra sube a 38%.",
+      "Solo 28% de los empleados usa IA al menos una vez por semana y 54% no la ha usado en su puesto.",
+      "Usan IA a diario o cada semana 40% de los graduados universitarios, frente a 17% de quienes no lo son.",
+      "52% de los usuarios semanales tiene un empleo de calidad, frente a 32% de quienes no usan IA."
+    ],
+    puntos_en: [
+      "Among AI users: 63% work faster, 56% find more creative solutions and 46% produce higher-quality work.",
+      "31% say AI led their employer to ask for more responsibilities; among users aged 18 to 24, the figure rises to 38%.",
+      "Only 28% of employees use AI at least weekly, and 54% have not used it in their role.",
+      "40% of college graduates use AI daily or weekly, compared with 17% of non-graduates.",
+      "52% of weekly users hold a quality job, compared with 32% of non-users."
+    ],
+    articulo_es: {
+      "bajada": "La IA hace el trabajo más rápido y creativo para quienes la usan, pero esos beneficios no llegan a todos, y a veces vienen con más carga.",
+      "parrafos": [
+        "Gallup preguntó a 15,482 trabajadores de Estados Unidos cómo la IA está cambiando su trabajo. Entre quienes la usan, 63% dice que les permite trabajar más rápido y 56% que les ayuda a encontrar soluciones más creativas. Pero 31% afirma que esa rapidez llevó a su empleador a pedirles más responsabilidades. La ganancia de productividad existe, aunque no siempre se traduce en alivio para la persona.",
+        "La evidencia muestra que los beneficios se concentran. Solo 28% de los empleados usa IA al menos una vez por semana, y 54% nunca la ha usado en su puesto. El uso frecuente llega a 40% entre graduados universitarios y cae a 17% entre quienes no lo son. Juntas, estas cifras dibujan una adopción que avanza más rápido entre quienes ya tenían ventajas.",
+        "El matiz está en la calidad del empleo. 52% de los usuarios semanales tiene lo que Gallup considera un empleo de calidad, frente a 32% de quienes no usan IA. Gallup aclara que se trata de percepciones de los propios trabajadores y que no prueba causa y efecto. Aun así, sugiere que la IA puede ampliar brechas que ya existían dentro de las organizaciones.",
+        "Lo que está en juego es quién captura el valor de la IA. Si el tiempo ahorrado se convierte solo en más tareas, el beneficio se diluye; entre los más jóvenes, 38% ya reporta más responsabilidades. Y si el acceso y la formación se concentran en algunos perfiles, la tecnología puede dividir a los equipos en vez de fortalecerlos.",
+        "El estudio muestra que adoptar IA no es solo una cuestión de herramientas. También es una decisión sobre cómo se reparten el tiempo, la carga y las oportunidades que esa tecnología genera."
+      ]
+    },
+    articulo_en: {
+      "bajada": "AI makes work faster and more creative for those who use it, but those benefits do not reach everyone, and sometimes they come with a heavier load.",
+      "parrafos": [
+        "Gallup asked 15,482 U.S. workers how AI is changing their jobs. Among those who use it, 63% say it helps them work faster and 56% say it helps them find more creative solutions. But 31% say that speed led their employer to ask them to take on more responsibilities. The productivity gain is real, though it does not always translate into relief for the individual.",
+        "The evidence shows the benefits are concentrated. Only 28% of employees use AI at least weekly, and 54% have never used it in their role. Frequent use reaches 40% among college graduates and drops to 17% among non-graduates. Together, these figures describe an adoption curve that moves faster among those who already had advantages.",
+        "The nuance lies in job quality. 52% of weekly users hold what Gallup considers a quality job, compared with 32% of non-users. Gallup notes these are workers' own assessments and do not prove cause and effect. Even so, it suggests AI can widen gaps that already existed inside organizations.",
+        "What's at stake is who captures the value of AI. If saved time simply turns into more tasks, the benefit fades; among the youngest workers, 38% already report more responsibilities. And if access and training concentrate in certain profiles, the technology can split teams rather than strengthen them.",
+        "The study shows that adopting AI is not just a matter of tools. It is also a decision about how the time, workload and opportunities that technology creates are shared."
+      ]
+    },
+    cita: {
+      "original": "Regular AI users are substantially more likely to have quality jobs",
+      "traduccion_es": "Los usuarios frecuentes de IA tienen muchas más probabilidades de tener empleos de calidad.",
+      "autor_es": "Jeffrey M. Jones, Gallup",
+      "autor_en": "Jeffrey M. Jones, Gallup"
+    },
+    preguntas_es: [
+      "¿Qué pasa hoy en tu organización con el tiempo que la IA ahorra: se convierte en aprendizaje, en descanso o en más tareas?",
+      "¿Quiénes están quedando fuera del uso de la IA y qué mensaje reciben de eso?",
+      "¿Cómo se conversa con los equipos sobre la carga de trabajo cuando la productividad sube?"
+    ],
+    preguntas_en: [
+      "What happens today in your organization with the time AI saves: does it become learning, rest or more tasks?",
+      "Who is being left out of AI use, and what message do they take from that?",
+      "How do you talk with teams about workload when productivity goes up?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-bcg-ia-trabajo",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "Rediseño de roles y habilidades",
+    esEjemplo: false,
+    publicado: "2026-11-03",
+    fecha: "2026-06-03",
+    anio: "2026",
+    fuente: "BCG",
+    estudio_es: "AI at Work 2026: la estrategia importa más que las herramientas",
+    estudio_en: "AI at Work 2026: Why Strategy Matters More Than Tools",
+    link: "https://www.bcg.com/publications/2026/ai-at-work-why-strategy-matters-more-than-tools",
+    region_es: "Global (14 mercados, incluidos EE.UU. y Brasil)",
+    region_en: "Global (14 markets, including the U.S. and Brazil)",
+    hallazgo_es: "74% de los empleados de primera línea ya usa IA con regularidad, pero solo 36% siente que recibió la formación suficiente",
+    hallazgo_en: "74% of frontline employees now use AI regularly, but only 36% feel they received sufficient training",
+    dato_clave_es: "74% de los empleados de primera línea usa IA a diario o varias veces por semana, 23 puntos más que en 2025. 72% dice que cambiaron las habilidades que se esperan de ellos, pero solo 36% se siente bien formado.",
+    dato_clave_en: "74% of frontline employees use AI daily or several times a week, up 23 points from 2025. 72% say the skills expected of them have changed, but only 36% feel properly trained.",
+    contexto_es: "Cuarta edición del estudio AI at Work de Boston Consulting Group (BCG), publicada en junio de 2026. Encuesta a 11,749 líderes, mandos medios y empleados de primera línea (oficinistas sin personal a cargo) en 14 mercados: Australia, Reino Unido, EE.UU., España, India, Japón, Brasil, Alemania, Francia, Italia, países nórdicos, Sudáfrica, Medio Oriente y Benelux. El informe no indica las fechas del trabajo de campo.",
+    contexto_en: "Fourth edition of Boston Consulting Group's (BCG) AI at Work study, published in June 2026. Survey of 11,749 leaders, managers and frontline employees (white-collar staff with no direct reports) across 14 markets: Australia, the UK, the U.S., Spain, India, Japan, Brazil, Germany, France, Italy, the Nordics, South Africa, the Middle East and Benelux. The report does not state fieldwork dates.",
+    puntos_es: [
+      "74% de los empleados de primera línea usa IA con regularidad, 23 puntos más que en 2025.",
+      "66% recibe poca o ninguna orientación sobre qué hacer con el tiempo que ahorra gracias a la IA.",
+      "72% dice que cambiaron las habilidades que se esperan de su rol; solo 36% siente que recibió la formación suficiente.",
+      "Solo 33% de los empleados de primera línea dice que el liderazgo comunica con claridad sobre la IA; 28% ve una conexión fuerte entre lo que los líderes dicen y lo que la organización hace.",
+      "41% de los usuarios frecuentes reporta más carga mental asociada al uso de la IA.",
+      "30% de las organizaciones ya integró agentes de IA en sus procesos, frente a 13% el año anterior."
+    ],
+    puntos_en: [
+      "74% of frontline employees use AI regularly, up 23 points from 2025.",
+      "66% receive limited or no guidance on what to do with the time AI saves them.",
+      "72% say the skills expected in their role have changed; only 36% feel they received sufficient training.",
+      "Only 33% of frontline employees say leadership communicates clearly about AI; 28% see strong alignment between what leaders say and what the organization does.",
+      "41% of regular users report increased mental strain associated with AI use.",
+      "30% of organizations have integrated AI agents into their workflows, up from 13% the year before."
+    ],
+    articulo_es: {
+      "bajada": "La IA ya está en el día a día de casi todos los empleados, pero la formación, la orientación y la comunicación de los líderes no avanzan al mismo ritmo.",
+      "parrafos": [
+        "BCG encuestó a 11,749 líderes, mandos medios y empleados de 14 mercados, entre ellos Estados Unidos y Brasil. El hallazgo central es que 74% de los empleados de primera línea ya usa IA a diario o varias veces por semana, 23 puntos más que en 2025. La adopción individual dejó de ser el problema. La pregunta ahora es si las organizaciones saben qué hacer con ella.",
+        "La evidencia muestra un desfase entre uso y acompañamiento. 72% dice que cambiaron las habilidades que se esperan de su rol, pero solo 36% siente que recibió la formación suficiente. Además, 66% recibe poca o ninguna orientación sobre qué hacer con el tiempo que ahorra. Juntas, estas cifras indican que la gente usa la herramienta sin un rumbo claro sobre para qué.",
+        "El matiz está en el liderazgo. Solo 33% de los empleados de primera línea dice que sus líderes comunican con claridad sobre la IA, y 28% ve una conexión fuerte entre lo que los líderes dicen y lo que la organización hace. A eso se suma que 41% de los usuarios frecuentes reporta más carga mental. El costo de la falta de claridad no es solo estratégico, también es humano.",
+        "Lo que está en juego crece con los agentes de IA, que ya están integrados en los procesos de 30% de las organizaciones, frente a 13% el año anterior. BCG sostiene que el valor no viene de sumar herramientas, sino de tener claridad estratégica sobre dónde y cómo se usa la IA. Para las personas, eso significa saber qué se espera de ellas en un trabajo que cambia rápido.",
+        "El estudio describe una brecha que no es tecnológica. La IA ya llegó a los equipos; lo que todavía falta es una dirección clara que le dé sentido."
+      ]
+    },
+    articulo_en: {
+      "bajada": "AI is now part of almost every employee's day, but training, guidance and leadership communication are not keeping pace.",
+      "parrafos": [
+        "BCG surveyed 11,749 leaders, managers and employees across 14 markets, including the United States and Brazil. The central finding is that 74% of frontline employees now use AI daily or several times a week, up 23 points from 2025. Individual adoption is no longer the problem. The question now is whether organizations know what to do with it.",
+        "The evidence shows a gap between use and support. 72% say the skills expected in their role have changed, but only 36% feel they received sufficient training. In addition, 66% receive limited or no guidance on what to do with the time they save. Together, these figures suggest people are using the tool without a clear sense of what it is for.",
+        "The nuance lies in leadership. Only 33% of frontline employees say their leaders communicate clearly about AI, and 28% see strong alignment between what leaders say and what the organization does. On top of that, 41% of regular users report increased mental strain. The cost of unclear direction is not only strategic; it is also human.",
+        "What's at stake grows with AI agents, which are already integrated into the workflows of 30% of organizations, up from 13% the year before. BCG argues that value comes not from adding tools but from strategic clarity about where and how AI is used. For people, that means knowing what is expected of them in work that is changing fast.",
+        "The study describes a gap that is not technological. AI has already reached teams; what is still missing is a clear direction that gives it meaning."
+      ]
+    },
+    cita: {
+      "original": "Adoption tells you that people use AI, not whether it pays off.",
+      "traduccion_es": "La adopción te dice que la gente usa IA, no si eso rinde frutos.",
+      "autor_es": "Informe AI at Work 2026, BCG",
+      "autor_en": "AI at Work 2026 report, BCG"
+    },
+    preguntas_es: [
+      "¿Qué saben hoy los equipos sobre para qué quiere la organización que usen la IA?",
+      "¿Cómo se acompaña a las personas cuando cambian las habilidades que se esperan de su rol?",
+      "¿Qué tanto coincide lo que los líderes dicen sobre la IA con lo que los equipos ven que pasa?"
+    ],
+    preguntas_en: [
+      "What do teams know today about why the organization wants them to use AI?",
+      "How are people supported when the skills expected in their role change?",
+      "How closely does what leaders say about AI match what teams see happening?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-kornferry-workforce",
+    industria: null,
+    tema: "liderazgo_cultura",
+    subtema: "Liderazgo",
+    esEjemplo: false,
+    publicado: "2026-11-03",
+    fecha: "2026-09-08",
+    anio: "2026",
+    fuente: "Korn Ferry",
+    estudio_es: "Workforce 2026: crecer exige repensar cómo se hace el trabajo",
+    estudio_en: "Workforce 2026: Unlocking Growth Requires Rethinking How Work Gets Done",
+    link: "https://www.kornferry.com/about-us/press/korn-ferry-workforce-2026-report-unlocking-growth-requires-rethinking-how-work-gets-done",
+    region_es: "Global (11 mercados, incluidos EE.UU. y Brasil)",
+    region_en: "Global (11 markets, including the U.S. and Brazil)",
+    hallazgo_es: "62% de los profesionales dice que su carga de trabajo aumentó mucho en los últimos dos años, y la motivación cayó de 71% a 61%",
+    hallazgo_en: "62% of professionals say their workload has grown significantly over the past two years, and motivation fell from 71% to 61%",
+    dato_clave_es: "62% de los empleados reporta una carga de trabajo mucho más pesada en los últimos dos años. La motivación bajó de 71% en 2024 a 61% en 2026, y 55% de los jefes que quedan dice estar agotado.",
+    dato_clave_en: "62% of employees report a significantly heavier workload over the past two years. Motivation dropped from 71% in 2024 to 61% in 2026, and 55% of remaining managers say they are exhausted.",
+    contexto_es: "Tercera encuesta global anual de Korn Ferry sobre la fuerza laboral, publicada el 8 de septiembre de 2026. Más de 16,000 profesionales de todos los niveles, desde colaboradores individuales hasta CEO, en 11 mercados: Australia, Brasil, Francia, Alemania, India, Japón, Arabia Saudita, Singapur, Emiratos Árabes Unidos, Reino Unido y Estados Unidos. No se indican las fechas del trabajo de campo.",
+    contexto_en: "Korn Ferry's third annual global workforce survey, published September 8, 2026. More than 16,000 professionals at every level, from individual contributors to CEOs, across 11 markets: Australia, Brazil, France, Germany, India, Japan, Saudi Arabia, Singapore, the UAE, the UK and the United States. Fieldwork dates are not stated.",
+    puntos_es: [
+      "62% reporta una carga de trabajo mucho más pesada en los últimos dos años; 45% dice estar demasiado ocupado para lograr resultados que aporten al crecimiento.",
+      "61% cumple las responsabilidades de más de un rol y 44% siente que lo exigen más allá de sus capacidades.",
+      "42% de las organizaciones recortó puestos de jefatura en el último año; 55% de los jefes que quedan dice estar agotado.",
+      "39% dice que la falta de jefes lo deja sin rumbo.",
+      "51% de los colaboradores individuales ve mejoras de eficiencia con la IA, frente a 79% de los CEO.",
+      "La motivación cayó de 71% en 2024 a 61% en 2026."
+    ],
+    puntos_en: [
+      "62% report a significantly heavier workload over the past two years; 45% say they are too busy to deliver results that contribute to growth.",
+      "61% perform the responsibilities of more than one role, and 44% feel stretched beyond their capabilities.",
+      "42% of organizations cut management roles in the past year; 55% of remaining managers say they are exhausted.",
+      "39% say the lack of managers leaves them feeling directionless.",
+      "51% of individual contributors see efficiency gains from AI, compared with 79% of CEOs.",
+      "Motivation fell from 71% in 2024 to 61% in 2026."
+    ],
+    articulo_es: {
+      "bajada": "Las organizaciones quieren crecer con menos jefes y más tecnología, pero la gente que debería impulsar ese crecimiento está sobrecargada y menos motivada.",
+      "parrafos": [
+        "Korn Ferry encuestó a más de 16,000 profesionales de 11 mercados, entre ellos Estados Unidos y Brasil. 62% dice que su carga de trabajo aumentó mucho en los últimos dos años, y la motivación cayó de 71% en 2024 a 61% en 2026. Las empresas buscan crecimiento, pero su gente llega a ese desafío con menos energía. Esa tensión es el centro del estudio.",
+        "La evidencia muestra equipos estirados al límite. 61% cumple las tareas de más de un rol, 44% siente que lo exigen más allá de sus capacidades y 45% dice estar demasiado ocupado para lograr resultados que aporten al crecimiento. Juntas, estas cifras muestran que el exceso de trabajo no es un problema de bienestar aislado. También frena el desempeño que las organizaciones esperan.",
+        "El matiz está en los jefes. 42% de las organizaciones recortó puestos de jefatura en el último año, y 55% de los jefes que quedan dice estar agotado. Del otro lado, 39% de los empleados siente que la falta de jefes lo deja sin rumbo. Aplanar la estructura ahorra costos en el papel, pero traslada la carga y deja a muchas personas sin guía.",
+        "Lo que está en juego también incluye a la IA. 79% de los CEO ve mejoras de eficiencia con la tecnología, pero solo 51% de los colaboradores individuales dice lo mismo. Esa distancia sugiere que la experiencia de la IA desde la cima no coincide con la de quienes hacen el trabajo. Korn Ferry plantea que sumar tecnología sin ampliar la capacidad de las personas no resuelve el problema.",
+        "El estudio describe un modelo de crecimiento que se apoya en pedir más a menos gente. Sus datos muestran que ese modelo tiene un límite, y que muchos equipos ya lo están tocando."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Organizations want to grow with fewer managers and more technology, but the people meant to drive that growth are overloaded and less motivated.",
+      "parrafos": [
+        "Korn Ferry surveyed more than 16,000 professionals across 11 markets, including the United States and Brazil. 62% say their workload has grown significantly over the past two years, and motivation fell from 71% in 2024 to 61% in 2026. Companies are seeking growth, but their people are meeting that challenge with less energy. That tension is at the heart of the study.",
+        "The evidence shows teams stretched to the limit. 61% perform the duties of more than one role, 44% feel stretched beyond their capabilities, and 45% say they are too busy to deliver results that contribute to growth. Together, these figures show that overwork is not an isolated well-being issue. It also holds back the performance organizations expect.",
+        "The nuance lies with managers. 42% of organizations cut management roles in the past year, and 55% of remaining managers say they are exhausted. On the other side, 39% of employees feel the lack of managers leaves them directionless. Flattening the structure saves costs on paper, but it shifts the load and leaves many people without guidance.",
+        "What's at stake also includes AI. 79% of CEOs see efficiency gains from the technology, but only 51% of individual contributors say the same. That gap suggests the experience of AI from the top does not match that of the people doing the work. Korn Ferry argues that adding technology without expanding people's capacity does not solve the problem.",
+        "The study describes a growth model that relies on asking more of fewer people. Its data show that this model has a limit, and that many teams are already reaching it."
+      ]
+    },
+    cita: {
+      "original": "Growth doesn't come from just asking people to do more.",
+      "traduccion_es": "El crecimiento no viene solo de pedirle a la gente que haga más.",
+      "autor_es": "Lesley Uren, CEO de Korn Ferry Consulting",
+      "autor_en": "Lesley Uren, CEO, Korn Ferry Consulting"
+    },
+    preguntas_es: [
+      "¿Qué pasó con la carga de trabajo de los equipos después de los últimos recortes o reestructuras?",
+      "¿Quién guía hoy a las personas que se quedaron sin un jefe directo cercano?",
+      "¿Cómo se conversa sobre la IA cuando la cúpula y los equipos la viven de forma tan distinta?"
+    ],
+    preguntas_en: [
+      "What happened to teams' workload after the latest cuts or restructurings?",
+      "Who guides the people who no longer have a close direct manager?",
+      "How do you talk about AI when leadership and teams experience it so differently?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-deloitte-genz",
+    industria: null,
+    tema: "liderazgo_cultura",
+    subtema: "Propuesta de valor al colaborador (EVP)",
+    esEjemplo: false,
+    publicado: "2026-11-03",
+    fecha: "2026-05-13",
+    anio: "2026",
+    fuente: "Deloitte",
+    estudio_es: "Encuesta Global Gen Z y Millennials 2026",
+    estudio_en: "2026 Gen Z and Millennial Survey",
+    link: "https://www.deloitte.com/global/en/about/press-room/deloitte-2026-gen-z-and-millennial-survey.html",
+    region_es: "Global (44 países, incluidos Norteamérica y Latinoamérica)",
+    region_en: "Global (44 countries, including North America and Latin America)",
+    hallazgo_es: "Solo 6% de la Gen Z y los millennials tiene el liderazgo como su principal meta profesional; prefieren un progreso estable a los ascensos rápidos",
+    hallazgo_en: "Only 6% of Gen Zs and millennials name leadership as their main career goal; they prefer steady progress over fast promotions",
+    dato_clave_es: "Solo 6% de la Gen Z y los millennials pone el liderazgo como su principal meta profesional. 44% de la Gen Z y 45% de los millennials prefiere un progreso estable, frente a 25% y 21% que busca ascensos rápidos.",
+    dato_clave_en: "Only 6% of Gen Zs and millennials name leadership as their main career goal. 44% of Gen Zs and 45% of millennials prefer steady progress, versus 25% and 21% who seek rapid promotions.",
+    contexto_es: "Decimoquinta edición de la encuesta anual de Deloitte Global, publicada el 13 de mayo de 2026. 22,595 personas (14,384 de la Gen Z y 8,211 millennials) en 44 países de Norteamérica, Latinoamérica, Europa Occidental y del Este, Medio Oriente, África y Asia-Pacífico. Encuesta en línea del 24 de noviembre de 2025 al 15 de enero de 2026, más entrevistas cualitativas.",
+    contexto_en: "Fifteenth edition of Deloitte Global's annual survey, published May 13, 2026. 22,595 people (14,384 Gen Zs and 8,211 millennials) in 44 countries across North America, Latin America, Western and Eastern Europe, the Middle East, Africa and Asia-Pacific. Online survey conducted November 24, 2025 to January 15, 2026, plus qualitative interviews.",
+    puntos_es: [
+      "Solo 6% de la Gen Z y los millennials tiene el liderazgo como principal meta profesional.",
+      "44% de la Gen Z y 45% de los millennials prefiere un progreso estable; 25% y 21% busca ascensos rápidos.",
+      "Los frenos para liderar: estrés y agotamiento (50% de la Gen Z y 49% de los millennials) y exceso de responsabilidad (50% y 48%).",
+      "Aun así, 76% de la Gen Z y 67% de los millennials quiere llegar a un puesto de alta dirección en algún momento.",
+      "74% ya usa IA en su trabajo diario, frente a 57% de la Gen Z y 56% de los millennials el año anterior.",
+      "58% de la Gen Z y 54% de los millennials siente fatiga digital."
+    ],
+    puntos_en: [
+      "Only 6% of Gen Zs and millennials name leadership as their main career goal.",
+      "44% of Gen Zs and 45% of millennials prefer steady progress; 25% and 21% seek rapid promotions.",
+      "Barriers to leading: stress and burnout (50% of Gen Zs and 49% of millennials) and excessive responsibility (50% and 48%).",
+      "Even so, 76% of Gen Zs and 67% of millennials want to reach a senior leadership role at some point.",
+      "74% already use AI in their day-to-day work, up from 57% of Gen Zs and 56% of millennials the year before.",
+      "58% of Gen Zs and 54% of millennials experience digital fatigue."
+    ],
+    articulo_es: {
+      "bajada": "Las generaciones más jóvenes no rechazan liderar, pero no quieren pagar el precio de estrés que hoy ven asociado a ese rol.",
+      "parrafos": [
+        "Deloitte encuestó a 22,595 personas de la Gen Z y millennials en 44 países, incluidos Norteamérica y Latinoamérica. Solo 6% pone el liderazgo como su principal meta profesional. En cambio, 44% de la Gen Z y 45% de los millennials prefiere un progreso estable antes que ascensos rápidos. Para las organizaciones, esto cambia la idea de qué motiva a quienes serán sus próximos líderes.",
+        "La evidencia muestra que el freno no es la falta de ambición, sino el costo que se percibe. La mitad de la Gen Z menciona el estrés y el agotamiento (50%) y el exceso de responsabilidad (50%) como barreras para liderar. Sin embargo, 76% de la Gen Z y 67% de los millennials quiere llegar a la alta dirección en algún momento. El deseo está, lo que no convence es la forma en que hoy se vive el rol.",
+        "El matiz está en la tecnología. 74% ya usa IA en su trabajo diario, frente a 57% de la Gen Z y 56% de los millennials el año anterior. A la vez, 58% de la Gen Z y 54% de los millennials siente fatiga digital. Estas generaciones adoptan la tecnología con rapidez, pero también sienten su peso.",
+        "Lo que está en juego es la sucesión del liderazgo. Si los puestos de jefatura siguen asociados a sobrecarga, será más difícil atraer a los mejores talentos jóvenes hacia ellos. Al mismo tiempo, la encuesta ubica el costo de vida como la principal preocupación por quinto año consecutivo, lo que explica por qué la estabilidad pesa tanto en sus decisiones.",
+        "El estudio no retrata una generación desmotivada, sino una que negocia sus propios términos. Para ellos, progresar significa crecer de forma sostenible, no a cualquier costo."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Younger generations are not rejecting leadership, but they do not want to pay the price in stress they now associate with the role.",
+      "parrafos": [
+        "Deloitte surveyed 22,595 Gen Zs and millennials in 44 countries, including North America and Latin America. Only 6% name leadership as their main career goal. Instead, 44% of Gen Zs and 45% of millennials prefer steady progress over rapid promotions. For organizations, this changes assumptions about what motivates the people who will be their next leaders.",
+        "The evidence shows the obstacle is not a lack of ambition but the perceived cost. Half of Gen Zs cite stress and burnout (50%) and excessive responsibility (50%) as barriers to leading. Yet 76% of Gen Zs and 67% of millennials want to reach senior leadership at some point. The desire is there; what fails to convince is how the role is experienced today.",
+        "The nuance lies in technology. 74% already use AI in their day-to-day work, up from 57% of Gen Zs and 56% of millennials the year before. At the same time, 58% of Gen Zs and 54% of millennials experience digital fatigue. These generations adopt technology quickly, but they also feel its weight.",
+        "What's at stake is leadership succession. If management roles remain associated with overload, it will be harder to draw the best young talent toward them. The survey also ranks cost of living as the top concern for the fifth year in a row, which explains why stability weighs so heavily in their choices.",
+        "The study does not portray an unmotivated generation but one negotiating its own terms. For them, progress means growing sustainably, not at any cost."
+      ]
+    },
+    cita: {
+      "original": "These generations are adaptable, pragmatic, and intentional about progress",
+      "traduccion_es": "Estas generaciones son adaptables, pragmáticas e intencionales respecto de su progreso.",
+      "autor_es": "Elizabeth Faber, Chief People & Purpose Officer de Deloitte Global",
+      "autor_en": "Elizabeth Faber, Deloitte Global Chief People & Purpose Officer"
+    },
+    preguntas_es: [
+      "¿Qué imagen del liderazgo transmite hoy tu organización a quienes podrían ser sus próximos jefes?",
+      "¿Cómo se puede rediseñar el rol de jefatura para que no se asocie solo con estrés y sobrecarga?",
+      "¿Qué caminos de crecimiento existen para quienes prefieren avanzar de forma estable o lateral?"
+    ],
+    preguntas_en: [
+      "What image of leadership does your organization convey today to those who could be its next managers?",
+      "How could the manager role be redesigned so it is not associated only with stress and overload?",
+      "What growth paths exist for those who prefer steady or lateral progress?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-gallup-sogw",
+    industria: null,
+    tema: "liderazgo_cultura",
+    subtema: "Liderazgo",
+    esEjemplo: false,
+    publicado: "2026-11-03",
+    fecha: "2026-04-07",
+    anio: "2026",
+    fuente: "Gallup",
+    estudio_es: "State of the Global Workplace 2026",
+    estudio_en: "State of the Global Workplace 2026",
+    link: "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx",
+    region_es: "Global (más de 140 países y territorios, incluida América)",
+    region_en: "Global (more than 140 countries and territories, including the Americas)",
+    hallazgo_es: "El compromiso de los empleados en el mundo bajó a 20% en 2025, y el de los jefes cayó a 22%, nueve puntos menos que en 2022",
+    hallazgo_en: "Global employee engagement fell to 20% in 2025, and manager engagement dropped to 22%, nine points lower than in 2022",
+    dato_clave_es: "20% de los empleados en el mundo está comprometido (2025), el nivel más bajo desde 2020. El compromiso de los jefes bajó a 22%, nueve puntos menos que en 2022. Gallup estima el costo en unos 10 billones de dólares en productividad perdida, cerca de 9% del PBI mundial.",
+    dato_clave_en: "20% of employees worldwide are engaged (2025), the lowest level since 2020. Manager engagement fell to 22%, nine points lower than in 2022. Gallup estimates the cost at about $10 trillion in lost productivity, roughly 9% of global GDP.",
+    contexto_es: "Informe anual de Gallup, publicado el 7 de abril de 2026. Se basa en 263,810 encuestados en 2025 (141,444 con empleo) en más de 140 países y territorios, con datos recogidos de enero a diciembre de 2025. La serie histórica cubre 2009 a 2025.",
+    contexto_en: "Gallup's annual report, published April 7, 2026. It is based on 263,810 respondents in 2025 (141,444 employed) in more than 140 countries and territories, with data collected January to December 2025. The trend series covers 2009 to 2025.",
+    puntos_es: [
+      "20% de los empleados del mundo está comprometido, frente a un máximo de 23% en 2022.",
+      "El compromiso de los jefes bajó a 22%, nueve puntos menos que en 2022.",
+      "La baja de compromiso cuesta unos 10 billones de dólares en productividad perdida, cerca de 9% del PBI mundial.",
+      "34% de los empleados dice estar prosperando en su vida, un punto más que el año anterior.",
+      "En EE.UU. y Canadá, el optimismo sobre el mercado laboral cayó 10 puntos en 2025 y 23 puntos desde 2019.",
+      "Algunas organizaciones logran que sus jefes estén comprometidos al cuádruple del promedio mundial."
+    ],
+    puntos_en: [
+      "20% of employees worldwide are engaged, down from a peak of 23% in 2022.",
+      "Manager engagement fell to 22%, nine points lower than in 2022.",
+      "Low engagement costs about $10 trillion in lost productivity, roughly 9% of global GDP.",
+      "34% of employees say they are thriving in their lives, up one point from the year before.",
+      "In the U.S. and Canada, job market optimism fell 10 points in 2025 and 23 points since 2019.",
+      "Some organizations engage their managers at four times the global average."
+    ],
+    articulo_es: {
+      "bajada": "El compromiso en el mundo sigue cayendo, y la caída más fuerte está en quienes deberían sostener el de los demás: los jefes.",
+      "parrafos": [
+        "Gallup analizó las respuestas de más de 140,000 personas con empleo en más de 140 países y territorios. En 2025, solo 20% de los empleados del mundo estaba comprometido con su trabajo, el nivel más bajo desde 2020. Gallup estima que esa falta de compromiso cuesta unos 10 billones de dólares en productividad perdida, cerca de 9% del PBI mundial. Es un problema de personas con un impacto económico de escala global.",
+        "La evidencia apunta a los mandos medios. El compromiso de los jefes bajó a 22%, nueve puntos menos que en 2022, una caída mayor que la de los colaboradores individuales, que incluso tuvieron un leve repunte. Esto importa porque el compromiso de un equipo depende en gran medida de su jefe. Si quienes conducen están desconectados, la desconexión se contagia.",
+        "El matiz está en que el bienestar no se movió en la misma dirección. 34% de los empleados dice estar prosperando en su vida, un punto más que el año anterior. Pero en Estados Unidos y Canadá el optimismo sobre el mercado laboral cayó 10 puntos en 2025 y 23 puntos desde 2019. Las personas pueden sentirse bien en su vida y, a la vez, menos conectadas con su trabajo y menos seguras de sus opciones.",
+        "Lo que está en juego es la capacidad de las organizaciones para atravesar cambios con equipos que todavía crean en lo que hacen. Gallup señala que ninguna región del mundo aumentó su compromiso en el último año. Al mismo tiempo, destaca que algunas organizaciones logran que sus jefes estén comprometidos al cuádruple del promedio mundial, lo que muestra que el resultado no es inevitable.",
+        "El informe deja una idea central: el compromiso no se gana con programas aislados, sino a través de quienes lideran cada día. Cuando los jefes se desgastan, toda la organización lo siente."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Global engagement keeps falling, and the steepest drop is among those who are supposed to sustain everyone else's: managers.",
+      "parrafos": [
+        "Gallup analyzed responses from more than 140,000 employed people in more than 140 countries and territories. In 2025, only 20% of employees worldwide were engaged in their work, the lowest level since 2020. Gallup estimates this lack of engagement costs about $10 trillion in lost productivity, roughly 9% of global GDP. It is a people problem with a global economic impact.",
+        "The evidence points to middle management. Manager engagement fell to 22%, nine points lower than in 2022, a steeper drop than among individual contributors, who even saw a slight rebound. This matters because a team's engagement depends largely on its manager. When those who lead are disconnected, the disconnection spreads.",
+        "The nuance is that well-being did not move in the same direction. 34% of employees say they are thriving in their lives, up one point from the year before. But in the United States and Canada, job market optimism fell 10 points in 2025 and 23 points since 2019. People can feel good about their lives and, at the same time, less connected to their work and less sure of their options.",
+        "What's at stake is organizations' ability to navigate change with teams that still believe in what they do. Gallup notes that no region of the world increased engagement in the past year. At the same time, it highlights that some organizations engage their managers at four times the global average, showing the outcome is not inevitable.",
+        "The report leaves one central idea: engagement is not won through isolated programs but through those who lead every day. When managers burn out, the whole organization feels it."
+      ]
+    },
+    cita: {
+      "original": "No region of the world increased engagement in the past year.",
+      "traduccion_es": "Ninguna región del mundo aumentó su compromiso en el último año.",
+      "autor_es": "Informe State of the Global Workplace 2026, Gallup",
+      "autor_en": "State of the Global Workplace 2026 report, Gallup"
+    },
+    preguntas_es: [
+      "¿Quién se ocupa hoy del compromiso de los jefes en tu organización?",
+      "¿Qué señales indican que la desconexión de los mandos medios ya está llegando a sus equipos?",
+      "¿Cómo se comunica el cambio cuando quienes deben bajarlo a los equipos están agotados?"
+    ],
+    preguntas_en: [
+      "Who looks after managers' engagement in your organization today?",
+      "What signals show that middle managers' disconnection is already reaching their teams?",
+      "How do you communicate change when those who must cascade it to teams are exhausted?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-rgp-fusiones",
+    industria: null,
+    tema: "gestion_cambio",
+    subtema: "M&A e integraciones",
+    esEjemplo: false,
+    publicado: "2026-11-03",
+    fecha: "2026-03-31",
+    anio: "2026",
+    fuente: "RGP",
+    estudio_es: "La brecha de valor humano en las fusiones y adquisiciones (M&A) 2026",
+    estudio_en: "The Human Value Gap in M&A 2026",
+    link: "https://rgp.com/press/rgp-releases-new-ma-research-report-highlighting-the-human-value-gap-as-a-critical-driver-of-deal-success/",
+    region_es: "Estados Unidos y México",
+    region_en: "United States and Mexico",
+    hallazgo_es: "81% de los CFO dice que la cultura, el talento y el conocimiento son clave para el éxito de una adquisición, pero solo 18% cree que su organización los protege bien",
+    hallazgo_en: "81% of CFOs say culture, talent and knowledge are critical to deal success, but only 18% believe their organization protects them effectively",
+    dato_clave_es: "81% de los CFO considera que los activos intangibles (cultura, talento y conocimiento) son clave para el éxito de una operación; solo 18% cree que su organización es eficaz para protegerlos. 74% reporta una rotación moderada o alta de líderes o talento crítico en el primer año.",
+    dato_clave_en: "81% of CFOs consider intangible assets (culture, talent and knowledge) critical to deal success; only 18% believe their organization is effective at protecting them. 74% report moderate to high turnover of leaders or critical talent in the first year.",
+    contexto_es: "Informe de RGP publicado el 31 de marzo de 2026. Encuesta a 120 directores financieros (CFO), en su mayoría de Estados Unidos y con representación de México, complementada con entrevistas en profundidad a 15 directores de recursos humanos (CHRO). El comunicado no indica las fechas del trabajo de campo.",
+    contexto_en: "RGP report published March 31, 2026. Survey of 120 chief financial officers (CFOs), mostly based in the United States with representation from Mexico, complemented by in-depth interviews with 15 chief human resources officers (CHROs). The release does not state fieldwork dates.",
+    puntos_es: [
+      "81% de los CFO dice que la cultura, el talento y el conocimiento son clave para el éxito de una adquisición.",
+      "Solo 18% cree que su organización es eficaz para proteger esos activos intangibles.",
+      "74% reporta una rotación moderada o alta de líderes o talento crítico en el primer año después de una adquisición.",
+      "La mayoría mide el éxito de una operación a los dos o tres años, mientras que la integración cultural y organizacional suele tomar de cinco a siete."
+    ],
+    puntos_en: [
+      "81% of CFOs say culture, talent and knowledge are critical to deal success.",
+      "Only 18% believe their organization is effective at protecting those intangible assets.",
+      "74% report moderate to high turnover of leaders or critical talent in the first year after an acquisition.",
+      "Most measure deal success at two to three years, while cultural and organizational integration often takes five to seven."
+    ],
+    articulo_es: {
+      "bajada": "Los directores financieros saben que el valor de una adquisición depende de las personas y la cultura, pero casi ninguno siente que su organización sepa protegerlos.",
+      "parrafos": [
+        "RGP encuestó a 120 directores financieros (CFO), en su mayoría de Estados Unidos y con representación de México, y entrevistó a 15 directores de recursos humanos. 81% de los CFO dice que la cultura, el talento y el conocimiento son clave para el éxito de una fusión o adquisición. Pero solo 18% cree que su organización es eficaz para protegerlos. Esa distancia entre lo que se sabe y lo que se hace es lo que RGP llama la brecha de valor humano.",
+        "La evidencia muestra que esa brecha tiene un costo visible. 74% reporta una rotación moderada o alta de líderes o talento crítico durante el primer año después de una adquisición. Es decir, las personas que sostenían el valor de la empresa comprada se van justo cuando más se las necesita. Lo que se pagó en la operación empieza a perderse en la integración.",
+        "El matiz está en el tiempo. La mayoría de las organizaciones mide el éxito de una operación a los dos o tres años, pero la integración cultural y organizacional suele tomar de cinco a siete. Así, se evalúa el resultado antes de que el cambio de fondo haya terminado. Lo que no se mide en ese plazo, como la cultura, tiende a quedar fuera de la conversación.",
+        "Lo que está en juego es la manera de gestionar las integraciones. Por décadas se trataron como un ejercicio financiero, y el estudio sugiere que eso deja sin atender lo que más pesa en el resultado. En industrias como la farmacéutica, donde un CHRO entrevistado advierte que estos factores suelen medirse poco, el riesgo es perder conocimiento difícil de reemplazar.",
+        "El estudio plantea que el valor de una adquisición no se define solo al firmar. Se juega en los años siguientes, en la capacidad de retener a las personas y unir culturas."
+      ]
+    },
+    articulo_en: {
+      "bajada": "CFOs know that the value of an acquisition depends on people and culture, but almost none feel their organization knows how to protect them.",
+      "parrafos": [
+        "RGP surveyed 120 chief financial officers (CFOs), mostly based in the United States with representation from Mexico, and interviewed 15 chief human resources officers. 81% of CFOs say culture, talent and knowledge are critical to the success of a merger or acquisition. But only 18% believe their organization is effective at protecting them. That distance between what is known and what is done is what RGP calls the human value gap.",
+        "The evidence shows this gap has a visible cost. 74% report moderate to high turnover of leaders or critical talent during the first year after an acquisition. In other words, the people who sustained the acquired company's value leave just when they are most needed. What was paid for in the deal starts to slip away during integration.",
+        "The nuance lies in timing. Most organizations measure deal success at two to three years, but cultural and organizational integration often takes five to seven. As a result, outcomes are judged before the deeper change is complete. What is not measured in that window, such as culture, tends to fall out of the conversation.",
+        "What's at stake is how integrations are managed. For decades they were treated as a financial exercise, and the study suggests this leaves unattended what weighs most on the outcome. In industries such as pharmaceuticals, where one CHRO interviewed warns that these factors are often under-measured, the risk is losing knowledge that is hard to replace.",
+        "The study argues that the value of an acquisition is not defined at signing. It is decided in the years that follow, through the ability to retain people and bring cultures together."
+      ]
+    },
+    cita: {
+      "original": "deal value is rarely lost in the spreadsheet; it's lost in the organization",
+      "traduccion_es": "el valor de una operación rara vez se pierde en la hoja de cálculo; se pierde en la organización",
+      "autor_es": "Daniel Boyer, vicepresidente sénior y líder de M&A, RGP",
+      "autor_en": "Daniel Boyer, Senior Vice President, Head of M&A, RGP"
+    },
+    preguntas_es: [
+      "¿Quién se ocupa de la cultura y el talento clave cuando la conversación de una adquisición está dominada por las finanzas?",
+      "¿Qué se le comunica a las personas de la empresa adquirida en el primer año, cuando el riesgo de que se vayan es mayor?",
+      "¿Cómo se mide el avance de una integración cultural que toma más tiempo que el horizonte de evaluación?"
+    ],
+    preguntas_en: [
+      "Who looks after culture and key talent when the conversation about an acquisition is dominated by finance?",
+      "What is communicated to people at the acquired company in the first year, when the risk of them leaving is highest?",
+      "How do you measure progress on a cultural integration that takes longer than the evaluation horizon?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
 ];
 
 

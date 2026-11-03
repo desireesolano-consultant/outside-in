@@ -10,13 +10,13 @@
 const CONTADOR = {
   actualizado: "2026-11-03",
   semana: {
-    revisados: 0,
-    seleccionados: 0,
-    publicados: 0,
+    revisados: 11,
+    seleccionados: 8,
+    publicados: 7,
   },
   desdeInicio: {
-    revisados: 68,
-    seleccionados: 26,
-    publicados: 17,
+    revisados: 71,
+    seleccionados: 28,
+    publicados: 24,
   },
 };
