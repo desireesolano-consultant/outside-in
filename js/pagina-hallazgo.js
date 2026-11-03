@@ -179,30 +179,7 @@ function renderizarHallazgo() {
   contexto.textContent = texto(h, "contexto") || "";
   contexto.parentElement.hidden = !texto(h, "contexto");
 
-  // "Mi mirada": solo aparece cuando Desiree escribió su lectura de este
-  // hallazgo (implicancia_es / implicancia_en). Si no hay lectura, el
-  // bloque no se muestra (decisión de Desiree, 30-oct-2026).
-  const lectura = document.getElementById("hallazgo-lectura");
-  lectura.innerHTML = "";
-  const textoLectura = texto(h, "implicancia");
-  lectura.hidden = !textoLectura;
-  if (textoLectura) {
-    const tituloLectura = document.createElement("h2");
-    tituloLectura.className = "oi-hallazgo-subtitulo";
-    tituloLectura.textContent = t.miMiradaTitulo;
-    const cabeceraLectura = document.createElement("div");
-    cabeceraLectura.className = "oi-mirada-cabecera";
-    const fotoLectura = document.createElement("img");
-    fotoLectura.className = "oi-foto-perfil oi-foto-mirada";
-    fotoLectura.src = "img/desiree-mirada.jpg";
-    fotoLectura.alt = "Desiree Solano";
-    fotoLectura.width = 56;
-    fotoLectura.height = 56;
-    cabeceraLectura.append(fotoLectura, tituloLectura);
-    const p = document.createElement("p");
-    p.textContent = textoLectura;
-    lectura.append(cabeceraLectura, p);
-  }
+  // "Mi mirada" NO va dentro de los estudios: vive solo en la sección Mi mirada (decisión de Desiree, 2-nov-2026).
 
   const metadatos = document.getElementById("hallazgo-metadatos");
   metadatos.innerHTML = "";

@@ -614,17 +614,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611021400"></script>
-<script src="js/textos.js?v=202611021400"></script>
-<script src="js/datos.js?v=202611021400"></script>
-<script src="js/contador.js?v=202611021400"></script>
-<script src="js/buscador.js?v=202611021400"></script>
-<script src="js/imagenes.js?v=202611021400"></script>
-<script src="js/insights.js?v=202611021400"></script>
-<script src="js/columnas.js?v=202611021400"></script>
-<script src="js/radar.js?v=202611021400"></script>
-<script src="js/traduccion.js?v=202611021400"></script>
-<script src="js/metricas.js?v=202611021400"></script>
+<script src="js/config.js?v=202611021500"></script>
+<script src="js/textos.js?v=202611021500"></script>
+<script src="js/datos.js?v=202611021500"></script>
+<script src="js/contador.js?v=202611021500"></script>
+<script src="js/buscador.js?v=202611021500"></script>
+<script src="js/imagenes.js?v=202611021500"></script>
+<script src="js/insights.js?v=202611021500"></script>
+<script src="js/columnas.js?v=202611021500"></script>
+<script src="js/radar.js?v=202611021500"></script>
+<script src="js/traduccion.js?v=202611021500"></script>
+<script src="js/metricas.js?v=202611021500"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -645,9 +645,10 @@ img{max-width:100%;display:block}
     if(EN){ if(d<1)return 'today'; if(d<7)return t(d,'day','days')+' ago'; if(d<30)return t(Math.round(d/7),'week','weeks')+' ago'; if(d<365)return t(Math.round(d/30),'month','months')+' ago'; return t(Math.round(d/365),'year','years')+' ago'; }
     if(d<1)return 'hoy'; if(d<7)return 'hace '+t(d,'día','días'); if(d<30)return 'hace '+t(Math.round(d/7),'semana','semanas'); if(d<365)return 'hace '+t(Math.round(d/30),'mes','meses'); return 'hace '+t(Math.round(d/365),'año','años');
   }
-  // "Nuevo": los que sumó la última búsqueda semanal
+  // "Nuevo": SOLO los estudios publicados en la última búsqueda semanal (el lunes de CONTADOR.actualizado).
+  // Se apaga solo: cuando corre la búsqueda siguiente, o si pasan 7 días desde esa publicación.
   const ultima=(typeof CONTADOR!=='undefined'&&CONTADOR.actualizado)||'';
-  const esNuevo=h=>ultima&&h.publicado&&(aFecha(ultima)-aFecha(h.publicado))<7*86400000;
+  const esNuevo=h=>Boolean(ultima&&h.publicado&&h.publicado>=ultima&&(hoy-aFecha(h.publicado))<7*86400000);
   // Imágenes que no cargan: se queda el degradado de marca detrás.
   document.querySelectorAll('img').forEach(i=>i.addEventListener('error',()=>{i.style.visibility='hidden';}));
 

@@ -127,36 +127,7 @@ function renderizarInsight() {
   document.getElementById("insight-porque").textContent = campo(ins, "porque");
   llenarLista("insight-preguntas", campo(ins, "preguntas"));
 
-  // Mi mirada: solo Desirée la escribe
-  const mirada = document.getElementById("insight-mirada");
-  mirada.innerHTML = "";
-  const cabecera = document.createElement("div");
-  cabecera.className = "oi-insight-mirada-cabecera";
-  const foto = document.createElement("img");
-  foto.src = "img/desiree-mirada.jpg";
-  foto.alt = "Desirée Solano";
-  foto.width = 64;
-  foto.height = 64;
-  foto.className = "oi-foto-perfil";
-  const titulos = document.createElement("div");
-  const h2 = document.createElement("h2");
-  h2.className = "oi-insight-h2";
-  h2.textContent = t.miMiradaTitulo;
-  const firma = document.createElement("p");
-  firma.className = "oi-insight-firma";
-  firma.textContent = `${t.nombreCompleto} · ${t.heroCargo}`;
-  titulos.append(h2, firma);
-  cabecera.append(foto, titulos);
-  mirada.appendChild(cabecera);
-  const textoMirada = campo(ins, "mirada");
-  const p = document.createElement("p");
-  if (textoMirada) {
-    p.textContent = textoMirada;
-  } else {
-    p.className = "oi-insight-mirada-pendiente";
-    p.textContent = t.insightMiradaPendiente;
-  }
-  mirada.appendChild(p);
+  // "Mi mirada" NO va dentro de los insights: vive solo en la sección Mi mirada (decisión de Desiree, 2-nov-2026).
 
   const url = `https://desireesolano-consultant.github.io/outside-in/insight.html?id=${encodeURIComponent(ins.id)}&ref=linkedin`;
   document.getElementById("insight-compartir").href =

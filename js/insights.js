@@ -1,8 +1,8 @@
 // =====================================================================
 // INSIGHTS de Outside-In: cruces entre estudios.
 // El sistema arma la parte de datos (qué dice cada estudio, dónde
-// coinciden, dónde chocan y por qué). "Mi mirada" la escribe SOLO
-// Desirée: mientras esté en null, la página muestra "Mi mirada: en camino".
+// coinciden, dónde chocan y por qué). Los insights NO llevan "Mi mirada":
+// esa vive solo en su sección (decisión de Desiree, 2-nov-2026).
 // Cada estudio citado se toma de HALLAZGOS (js/datos.js) por su id, así
 // las cifras y los links son siempre los mismos que en la biblioteca.
 // =====================================================================
