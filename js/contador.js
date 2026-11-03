@@ -8,7 +8,7 @@
 // - publicados: estudios publicados como hallazgo en la web.
 
 const CONTADOR = {
-  actualizado: "2026-11-02",
+  actualizado: "2026-11-03",
   semana: {
     revisados: 0,
     seleccionados: 0,
