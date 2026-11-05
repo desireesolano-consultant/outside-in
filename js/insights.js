@@ -18,15 +18,17 @@ const INSIGHTS = [
     titulo_es: "Acceso a la IA, sin rediseño del trabajo",
     titulo_en: "AI access, without work redesign",
     bajada_es:
-      "Tres estudios, tres industrias y una misma tensión: la tecnología llega más rápido que la conversación sobre cómo cambia el trabajo.",
+      "Tres estudios en tres industrias coinciden: la tecnología llega a los equipos más rápido que la conversación sobre cómo cambia su trabajo.",
     bajada_en:
-      "Three studies, three industries and one shared tension: technology is arriving faster than the conversation about how work changes.",
+      "Three studies across three industries agree: technology is reaching teams faster than the conversation about how their work changes.",
 
     dicen: [
       {
         id: "h-2026-10-deloitte-consumo-ia",
         dato_es: "82%",
         dato_en: "82%",
+        etiqueta_es: "de las empresas de consumo no ha rediseñado sus puestos en torno a la IA",
+        etiqueta_en: "of consumer companies have not redesigned jobs around AI",
         frase_es: "de las empresas de consumo no rediseñó sus puestos en torno a la IA, aunque el acceso a herramientas aprobadas pasó de menos de 30% a cerca de 60% de los colaboradores.",
         frase_en: "of consumer companies have not redesigned roles around AI, even though access to approved tools rose from under 30% to about 60% of employees.",
       },
@@ -34,6 +36,10 @@ const INSIGHTS = [
         id: "h-2026-10-bain-life-sciences",
         dato_es: "80% vs. 7%",
         dato_en: "80% vs. 7%",
+        cifra_es: "80%",
+        cifra_en: "80%",
+        etiqueta_es: "de las empresas de ciencias de la vida que escalan la IA explica cómo cambiarán los roles (frente a 7% de las que recién la exploran)",
+        etiqueta_en: "of life sciences companies scaling AI explain how roles will change (vs. 7% of those just exploring it)",
         frase_es: "En ciencias de la vida, 80% de las empresas que escalan IA comunica con claridad cómo cambiarán los roles. Entre las que recién exploran, solo 7%.",
         frase_en: "In life sciences, 80% of companies scaling AI clearly communicate how roles will change. Among those still exploring, only 7%.",
       },
@@ -41,6 +47,8 @@ const INSIGHTS = [
         id: "h-2026-10-pwc-fs-cambio",
         dato_es: "4 de 10",
         dato_en: "4 in 10",
+        etiqueta_es: "líderes de servicios financieros ven a sus equipos abrumados por el ritmo de cambio de la IA",
+        etiqueta_en: "financial services leaders see their teams overwhelmed by the pace of AI-driven change",
         frase_es: "líderes de servicios financieros dicen que su gente se siente abrumada por el ritmo del cambio con IA; 44% ve miedo a perder el trabajo o a que el rol cambie.",
         frase_en: "financial services leaders say their people feel overwhelmed by the pace of AI-driven change; 44% see fear of job loss or role change.",
       },

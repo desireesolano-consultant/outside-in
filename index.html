@@ -97,12 +97,13 @@ img{max-width:100%;display:block}
 .escena.activa{opacity:1}
 .escena img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 6s ease-out}
 .escena.activa img{transform:scale(1.14)}
-.escena::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,20,.25),rgba(17,18,20,.6))}
+.escena::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,20,.62),rgba(17,18,20,.78))}
 .escena .fallback{position:absolute;inset:0}
 .frases{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 8vw;pointer-events:none;z-index:3}
 .frase{grid-area:1/1;margin:0;max-width:22ch;font:700 clamp(30px,4.2vw,62px)/1.12 var(--t);letter-spacing:-.025em;color:var(--blanco);opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;text-wrap:balance;text-shadow:0 4px 30px rgba(0,0,0,.35)}
 .frase.activa{opacity:1;transform:none}
-.frase em{font-style:normal;color:var(--naranja)}
+.frase em{font-style:normal;color:#FFB38A}
+.frase{text-shadow:0 2px 18px rgba(0,0,0,.45)}
 .frase .cta-final{display:flex;gap:12px;justify-content:center;margin-top:30px;pointer-events:auto;flex-wrap:wrap}
 /* Botones del final de la historia: letra propia, sin heredar el espaciado apretado de la frase */
 .frase .cta-final .btn{font:600 16px/1 var(--x);letter-spacing:0;word-spacing:normal;text-shadow:none;padding:17px 30px;gap:10px}
@@ -465,8 +466,15 @@ img{max-width:100%;display:block}
 .cifras-i{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;border-top:1px solid var(--borde);padding-top:20px}
 .cifras-i div{display:flex;flex-direction:column;gap:4px;min-width:0}
 .cifras-i b{font:800 clamp(24px,2.2vw,32px)/1 var(--t);letter-spacing:-.03em;color:var(--azul)}
-.cifras-i small{font:600 12.5px/1.35 var(--x);color:var(--gris)}
+.cifras-i span{font:500 14px/1.45 var(--x);color:var(--negro)}
+.cifras-i small{font:700 11.5px/1.3 var(--x);letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+.gigante-card .arriba{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font:600 13px var(--x);color:var(--gris)}
+.gigante-card .arriba span{background:none!important;color:var(--gris)!important;padding:0!important;border-radius:0!important;font:600 13px var(--x)!important}
+.gigante-card .arriba span:first-child{color:var(--azul)!important;text-transform:uppercase;letter-spacing:.08em;font-size:12px!important}
+.gigante-card .arriba span+span::before{content:'·';margin-right:6px;color:var(--borde)}
 .columna-c.pronto{cursor:default;flex-grow:.8}
+.columna-c .sub-col{margin:0;font:600 clamp(17px,1.5vw,21px)/1.4 var(--x);color:#F2F2F0;max-width:28ch;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.columna-c:not(.pronto)::after{background:linear-gradient(180deg,rgba(17,18,20,.72) 0%,rgba(17,18,20,.35) 55%,rgba(17,18,20,.5) 100%)}
 .columna-c.pronto img{filter:grayscale(1);opacity:.55}
 .columna-c.pronto::after{background:rgba(17,18,20,.55)}
 .columna-c.pronto small{background:transparent;color:var(--blanco);border:1.5px solid rgba(255,255,255,.7)}
@@ -531,10 +539,10 @@ img{max-width:100%;display:block}
         <div class="escena"><div class="fallback" style="background:linear-gradient(135deg,#2440F0,#111214)"></div><img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=2000&q=70" alt="" /></div>
       </div>
       <div class="frases">
-        <p class="frase activa">Cada semana se publican nuevos estudios sobre organizaciones.</p>
-        <p class="frase"><em>Pocos equipos directivos tienen tiempo para leerlos.</em></p>
-        <p class="frase">Outside-In los reúne <em>en un solo lugar,</em> con su data verificada.</p>
-        <p class="frase">Y los cruza para mostrar <em>qué implican para las organizaciones.</em></p>
+        <p class="frase activa">Cada semana se publican nuevos estudios sobre el mundo organizacional.</p>
+        <p class="frase">Cada uno en un sitio distinto, <em>con su propio formato y calendario.</em></p>
+        <p class="frase">Leerlos todos toma un tiempo <em>que pocas personas tienen.</em></p>
+        <p class="frase">Outside-In los reúne <em>en un solo lugar,</em> resumidos en lo esencial.</p>
         <div class="frase">Outside-In: contexto para decidir mejor.<div class="cta-final"><a class="btn n" href="#estudios">Explorar los estudios →</a><a class="btn vidrio" href="#insights">Ver los insights</a></div></div>
       </div>
       <div class="puntos" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span></div>
@@ -548,9 +556,9 @@ img{max-width:100%;display:block}
   <section class="sec estudios" id="estudios">
     <div class="envoltura">
       <div class="sec-cab"><h2 class="palabra" data-numero="01">Estudios</h2>
-      <p class="sub">Lo esencial de cada estudio: los datos más relevantes para las organizaciones y el enlace al estudio completo.</p></div>
+      <p class="sub">Los últimos estudios sobre el mundo organizacional, actualizados cada lunes y resumidos en lo esencial.</p></div>
       <div class="controles">
-        <div class="pestanas" role="tablist"><button type="button" class="on" data-pest="todos">Todos los estudios</button><button type="button" data-pest="radar" id="pest-radar">Recién detectados</button></div>
+        <div class="pestanas" role="tablist"><button type="button" class="on" data-pest="todos">Todos los estudios</button><button type="button" data-pest="nuevos" id="pest-nuevos">Publicados esta semana</button></div>
         <button type="button" class="f-boton" id="f-boton" aria-expanded="false" aria-controls="f-panel">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="17" x2="14" y2="17"/></svg>
             <span>Filtrar</span><em class="f-num" id="f-num" hidden></em>
@@ -580,7 +588,7 @@ img{max-width:100%;display:block}
   <section class="sec insights" id="insights">
     <div class="envoltura">
       <div class="sec-cab"><h2 class="palabra" data-numero="02">Insights</h2>
-      <p class="sub">El cruce de varios estudios sobre un mismo tema: en qué coinciden, en qué difieren y qué implica para las organizaciones.</p></div>
+      <p class="sub">Varios estudios, un mismo tema: en qué coinciden y qué significa para las organizaciones.</p></div>
       <a class="gigante-card" id="gigante" href="insight.html">
         <div class="foto-i"><img loading="lazy" src="https://images.unsplash.com/photo-1758519289074-9de36003622b?auto=format&fit=crop&w=1400&q=70" alt="" /></div>
         <div class="dentro">
@@ -601,7 +609,7 @@ img{max-width:100%;display:block}
       <div class="mirada-cab">
         <div>
           <h2 class="palabra" data-numero="03">Mi mirada</h2>
-          <p class="sub">Los estudios muestran qué está pasando. En sus columnas, Desirée Solano analiza qué significa para las organizaciones: las conexiones entre los datos, las tensiones que revelan y las preguntas que dejan abiertas.</p>
+          <p class="sub">Columnas de análisis que conectan lo que dicen los estudios con lo que significa para las organizaciones y para quienes las lideran.</p>
         </div>
         <figure class="autora entra"><img src="img/desiree-columnista.webp" alt="Desirée Solano" width="800" height="800" /><figcaption>Por <b>Desirée Solano</b></figcaption></figure>
       </div>
@@ -649,17 +657,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611060100"></script>
-<script src="js/textos.js?v=202611060100"></script>
-<script src="js/datos.js?v=202611060100"></script>
-<script src="js/contador.js?v=202611060100"></script>
-<script src="js/buscador.js?v=202611060100"></script>
-<script src="js/imagenes.js?v=202611060100"></script>
-<script src="js/insights.js?v=202611060100"></script>
-<script src="js/columnas.js?v=202611060100"></script>
-<script src="js/radar.js?v=202611060100"></script>
-<script src="js/traduccion.js?v=202611060100"></script>
-<script src="js/metricas.js?v=202611060100"></script>
+<script src="js/config.js?v=202611060300"></script>
+<script src="js/textos.js?v=202611060300"></script>
+<script src="js/datos.js?v=202611060300"></script>
+<script src="js/contador.js?v=202611060300"></script>
+<script src="js/buscador.js?v=202611060300"></script>
+<script src="js/imagenes.js?v=202611060300"></script>
+<script src="js/insights.js?v=202611060300"></script>
+<script src="js/columnas.js?v=202611060300"></script>
+<script src="js/radar.js?v=202611060300"></script>
+<script src="js/traduccion.js?v=202611060300"></script>
+<script src="js/metricas.js?v=202611060300"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -808,6 +816,7 @@ img{max-width:100%;display:block}
     document.getElementById('c-der').onclick=()=>c.scrollBy({left:paso(),behavior:'smooth'});
 
     // Filtros: botón que abre un panel; se puede elegir más de una opción por grupo
+    let soloNuevos=false;
     const sel={tema:new Set(),industria:new Set(),fecha:''};
     const RANGOS=[['hoy',EN?'Today':'Hoy'],['7',EN?'This week':'Esta semana'],['14',EN?'Last 2 weeks':'Últimas 2 semanas'],['30',EN?'Last month':'Último mes'],['90',EN?'Last 3 months':'Últimos 3 meses'],['180',EN?'Last 6 months':'Últimos 6 meses'],['365',EN?'Last year':'Último año'],['mas',EN?'More than a year ago':'Hace más de un año']];
     const nombreRango=v=>(RANGOS.find(r=>r[0]===v)||['',''])[1];
@@ -822,7 +831,7 @@ img{max-width:100%;display:block}
     const hoyIso=hoy.toLocaleDateString('en-CA');
     const pasaFecha=h=>!sel.fecha||(sel.fecha==='hoy'?fechaWeb(h)===hoyIso:sel.fecha==='mas'?dias(h)>365:dias(h)<=+sel.fecha);
     function filtrar(){
-      const r=reales.filter(h=>(!sel.tema.size||sel.tema.has(h.tema))&&(!sel.industria.size||sel.industria.has(h.industria))&&pasaFecha(h));
+      const r=reales.filter(h=>(!soloNuevos||esNuevo(h))&&(!sel.tema.size||sel.tema.has(h.tema))&&(!sel.industria.size||sel.industria.has(h.industria))&&pasaFecha(h));
       const total=sel.tema.size+sel.industria.size+(sel.fecha?1:0);
       fnum.hidden=!total; fnum.textContent=total;
       act.innerHTML='';
@@ -847,7 +856,7 @@ img{max-width:100%;display:block}
 
     // Recién detectados (radar): si no hay ninguno, la pestaña no se muestra
     const radar=typeof RADAR_ESTUDIOS!=='undefined'?RADAR_ESTUDIOS:[];
-    if(!radar.length) document.getElementById('pest-radar').hidden=true;
+    if(!reales.some(esNuevo)) document.getElementById('pest-nuevos').hidden=true;
     document.getElementById('radar-intro').textContent=EN?"Studies identified by the system that are under review. Their summaries will be published soon.":"Estudios identificados por el sistema que están en revisión. Su resumen se publicará próximamente.";
     const rl=document.getElementById('radar-lista');
     radar.forEach(r=>{const li=document.createElement('li');const sm=document.createElement('small');sm.textContent=r.fuente;const h3=document.createElement('h3');h3.textContent=EN?r.titulo_en:r.titulo_es;const sp=document.createElement('span');
@@ -857,7 +866,7 @@ img{max-width:100%;display:block}
     const pest=[...document.querySelectorAll('.pestanas button')], flechas=document.querySelector('.flechas-c');
     pest.forEach(b=>b.addEventListener('click',()=>{
       pest.forEach(x=>x.classList.toggle('on',x===b));
-      const v=b.dataset.pest;
+      const v=b.dataset.pest; soloNuevos=v==='nuevos'; filtrar();
       document.getElementById('filtros').hidden=v==='radar'; document.getElementById('f-boton').hidden=v==='radar';
       document.getElementById('radar').hidden=v!=='radar';
       c.hidden=v==='radar'; flechas.style.visibility=v==='radar'?'hidden':'';
@@ -872,7 +881,7 @@ img{max-width:100%;display:block}
     g.href='insight.html?id='+encodeURIComponent(ins.id);
     document.getElementById('gigante-titulo').textContent=EN?ins.titulo_en:ins.titulo_es;
     document.getElementById('gigante-bajada').textContent=EN?ins.bajada_en:ins.bajada_es;
-    const gc=document.getElementById('gigante-cifras'); if(gc&&ins.dicen) ins.dicen.forEach(d=>{const h=typeof HALLAZGOS!=='undefined'?HALLAZGOS.find(x=>x.id===d.id):null;const dv=document.createElement('div');const b=document.createElement('b');b.textContent=EN?d.dato_en:d.dato_es;const sm=document.createElement('small');sm.textContent=h?h.fuente:'';dv.append(b,sm);gc.appendChild(dv);});
+    const gc=document.getElementById('gigante-cifras'); if(gc&&ins.dicen) ins.dicen.forEach(d=>{const h=typeof HALLAZGOS!=='undefined'?HALLAZGOS.find(x=>x.id===d.id):null;const dv=document.createElement('div');const b=document.createElement('b');b.textContent=EN?(d.cifra_en||d.dato_en):(d.cifra_es||d.dato_es);const ds=document.createElement('span');ds.textContent=EN?(d.etiqueta_en||''):(d.etiqueta_es||'');const sm=document.createElement('small');sm.textContent=h?h.fuente:'';dv.append(b,ds,sm);gc.appendChild(dv);});
     const et=document.getElementById('gigante-etiquetas');
     const s0=document.createElement('span');s0.textContent=nombreDe(ins.tema);et.appendChild(s0);
     [...new Set(ins.estudios.map(id=>{const h=HALLAZGOS.find(x=>x.id===id);return h?h.fuente.replace(' AI Institute',''):null;}).filter(Boolean))]
@@ -891,7 +900,7 @@ img{max-width:100%;display:block}
       const a=document.createElement(t.href?'a':'div'); a.className='columna-c'+(i===0?' abierta':'')+(t.href?'':' pronto');
       if(t.href){a.href=t.href;if(t.fuera){a.target='_blank';a.rel='noopener';}}
       if(t.foto){const im=document.createElement('img');im.loading='lazy';im.alt='';im.src=`https://images.unsplash.com/${t.foto}?auto=format&fit=crop&w=1400&q=70`;im.addEventListener('error',()=>im.style.visibility='hidden');a.appendChild(im);}
-      const tx=document.createElement('div');tx.className='txt';const sm=document.createElement('small');sm.textContent=t.etq;const h3=document.createElement('h3');h3.textContent=t.titulo;tx.append(sm,h3);
+      const tx=document.createElement('div');tx.className='txt';const sm=document.createElement('small');sm.textContent=t.etq;const h3=document.createElement('h3');const partes=String(t.titulo).split(': ');h3.textContent=partes[0];tx.append(sm,h3);if(partes.length>1&&t.href){const st=document.createElement('p');st.className='sub-col';st.textContent=partes.slice(1).join(': ');tx.appendChild(st);}
       const fl=document.createElement('span');fl.className='flecha-c';fl.textContent='→';
       if(t.href) a.append(tx,fl); else a.append(tx); box.appendChild(a);
       const abre=()=>box.querySelectorAll('.columna-c').forEach(x=>x.classList.toggle('abierta',x===a));
