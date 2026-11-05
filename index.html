@@ -463,11 +463,11 @@ img{max-width:100%;display:block}
 .gigante-card h3{font-size:clamp(28px,3vw,44px);max-width:20ch}
 .gigante-card p{color:var(--gris);font-size:16.5px}
 .gigante-card .btn{background:var(--azul);color:var(--blanco);border-color:var(--azul)}
-.cifras-i{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;border-top:1px solid var(--borde);padding-top:20px}
-.cifras-i div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.cifras-i{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;border-top:1px solid var(--borde);padding-top:22px;align-items:stretch}
+.cifras-i div{display:grid;grid-template-rows:auto 1fr auto;gap:8px;min-width:0}
 .cifras-i b{font:800 clamp(24px,2.2vw,32px)/1 var(--t);letter-spacing:-.03em;color:var(--azul)}
 .cifras-i span{font:500 14px/1.45 var(--x);color:var(--negro)}
-.cifras-i small{font:700 11.5px/1.3 var(--x);letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+.cifras-i small{font:700 11px/1.3 var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris);padding-top:10px;margin-top:6px;border-top:1px solid var(--borde)}
 .gigante-card .arriba{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font:600 13px var(--x);color:var(--gris)}
 .gigante-card .arriba span{background:none!important;color:var(--gris)!important;padding:0!important;border-radius:0!important;font:600 13px var(--x)!important}
 .gigante-card .arriba span:first-child{color:var(--gris)!important}
@@ -494,6 +494,27 @@ img{max-width:100%;display:block}
 .reco blockquote p{margin:0 0 .8em}
 .reco blockquote p:last-child{margin-bottom:0}
 .reco .trad{display:block;margin-top:6px;font:500 12px var(--x);color:var(--gris);font-style:italic}
+.recos2{margin-top:26px;display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:24px;align-items:start}
+.recos2-lista{display:flex;flex-direction:column;gap:6px}
+.recos2-lista button{display:flex;align-items:center;gap:14px;text-align:left;background:transparent;border:0;border-radius:14px;padding:12px 14px;cursor:pointer;font:inherit;color:var(--negro);transition:background .2s}
+.recos2-lista button:hover{background:rgba(255,255,255,.6)}
+.recos2-lista button[aria-selected="true"]{background:var(--blanco);box-shadow:0 8px 24px rgba(17,18,20,.08)}
+.recos2-lista b{display:block;font:700 15px var(--x)}
+.recos2-lista small{display:block;font:500 13px/1.35 var(--x);color:var(--gris)}
+.recos2-av{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:var(--blanco);font:800 14px var(--t);letter-spacing:.02em}
+.recos2-panel{margin:0;background:var(--blanco);border-radius:22px;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:26px;min-height:420px}
+.recos2-panel blockquote{margin:0;font:500 clamp(17px,1.35vw,19px)/1.65 var(--x);color:var(--negro)}
+.recos2-panel blockquote::before{content:"“";display:block;font:800 72px/.5 var(--t);color:var(--naranja);height:34px}
+.recos2-panel blockquote p{margin:0 0 .9em;max-width:62ch}
+.recos2-panel blockquote p:last-child{margin-bottom:0}
+.recos2-panel figcaption{display:flex;align-items:center;gap:14px;border-top:1px solid var(--borde);padding-top:20px}
+.recos2-panel figcaption b{display:block;font:700 16px var(--x)}
+.recos2-panel figcaption small{display:block;font:500 13.5px/1.4 var(--x);color:var(--gris)}
+.recos2-panel figcaption em{display:block;font:500 12px var(--x);color:var(--gris);margin-top:2px}
+.recos2-nav{display:flex;align-items:center;gap:14px;margin-top:auto;font:600 14px var(--x);color:var(--gris)}
+.recos2-nav button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--negro);background:var(--blanco);font:700 16px var(--x);cursor:pointer}
+.recos2-nav button:hover{background:var(--negro);color:var(--blanco)}
+@media (max-width:860px){.recos2{grid-template-columns:1fr}.recos2-lista{flex-direction:row;overflow-x:auto;padding-bottom:4px}.recos2-lista button{flex:none}.recos2-lista small{display:none}.recos2-panel{min-height:0}}
 .mirada-cab .sub{font:600 clamp(17px,1.35vw,19px)/1.55 var(--x);letter-spacing:0;max-width:52ch}
 @media (max-width:860px){
   .sec-cab{grid-template-columns:1fr}
@@ -653,7 +674,7 @@ img{max-width:100%;display:block}
         </div>
       </div>
       <h3 class="recos-titulo">Lo que dicen de mi trabajo</h3>
-      <div class="recos" id="recos"></div>
+      <div class="recos2" id="recos"><div class="recos2-lista" id="recos-lista" role="tablist" aria-label="Recomendaciones"></div><figure class="recos2-panel" id="recos-panel" aria-live="polite"></figure></div>
       <a class="ver-recos" href="https://www.linkedin.com/in/desiree-solano-baba59131/details/recommendations/" target="_blank" rel="noopener">Ver todas las recomendaciones en LinkedIn →</a>
     </div>
   </section>
@@ -670,17 +691,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611061000"></script>
-<script src="js/textos.js?v=202611061000"></script>
-<script src="js/datos.js?v=202611061000"></script>
-<script src="js/contador.js?v=202611061000"></script>
-<script src="js/buscador.js?v=202611061000"></script>
-<script src="js/imagenes.js?v=202611061000"></script>
-<script src="js/insights.js?v=202611061000"></script>
-<script src="js/columnas.js?v=202611061000"></script>
-<script src="js/radar.js?v=202611061000"></script>
-<script src="js/traduccion.js?v=202611061000"></script>
-<script src="js/metricas.js?v=202611061000"></script>
+<script src="js/config.js?v=202611061200"></script>
+<script src="js/textos.js?v=202611061200"></script>
+<script src="js/datos.js?v=202611061200"></script>
+<script src="js/contador.js?v=202611061200"></script>
+<script src="js/buscador.js?v=202611061200"></script>
+<script src="js/imagenes.js?v=202611061200"></script>
+<script src="js/insights.js?v=202611061200"></script>
+<script src="js/columnas.js?v=202611061200"></script>
+<script src="js/radar.js?v=202611061200"></script>
+<script src="js/traduccion.js?v=202611061200"></script>
+<script src="js/metricas.js?v=202611061200"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -924,16 +945,35 @@ img{max-width:100%;display:block}
   // Recomendaciones reales de LinkedIn (js/datos.js)
   (function(){
     const box=document.getElementById('recos'); if(!box||typeof RECOMENDACIONES==='undefined') return;
-    const elegidas=['Tanesia Leflore','Vishnu Rao','Inés Weiss'];
-    RECOMENDACIONES.forEach(r=>{
-      const fi=document.createElement('figure');fi.className='reco entra visible';
+    const lista=document.getElementById('recos-lista'), panel=document.getElementById('recos-panel');
+    const colores=['var(--azul)','var(--naranja)','var(--negro)'];
+    const ini=n=>n.split(' ').filter(Boolean).slice(0,2).map(x=>x[0]).join('').toUpperCase();
+    const botones=[];
+    function ver(k){
+      const r=RECOMENDACIONES[k];
+      botones.forEach((b,i)=>{b.setAttribute('aria-selected',String(i===k));b.tabIndex=i===k?0:-1;});
+      panel.innerHTML='';
       const bq=document.createElement('blockquote');
       String(EN?r.texto_en:r.texto_es).split('\n\n').forEach(t=>{const p=document.createElement('p');p.textContent=t;bq.appendChild(p);});
-      const fc=document.createElement('figcaption');const b=document.createElement('b');b.textContent=r.nombre;fc.append(b,document.createTextNode(EN?r.rol_en:r.rol_es));
-      const trad=(EN&&r.original==='es')||(!EN&&r.original==='en');
-      if(trad){const n=document.createElement('small');n.className='trad';n.textContent=EN?'Translated from Spanish':'Traducción del original en inglés';fc.appendChild(n);}
-      fi.append(bq,fc);box.appendChild(fi);
+      const fc=document.createElement('figcaption');
+      const av=document.createElement('span');av.className='recos2-av';av.textContent=ini(r.nombre);av.style.background=colores[k%3];
+      const tx=document.createElement('span');const b=document.createElement('b');b.textContent=r.nombre;const rol=document.createElement('small');rol.textContent=EN?r.rol_en:r.rol_es;tx.append(b,rol);
+      if((EN&&r.original==='es')||(!EN&&r.original==='en')){const n=document.createElement('em');n.textContent=EN?'Translated from Spanish':'Traducción del original en inglés';tx.appendChild(n);}
+      fc.append(av,tx);
+      const nav=document.createElement('div');nav.className='recos2-nav';
+      const prev=document.createElement('button');prev.type='button';prev.textContent='←';prev.setAttribute('aria-label',EN?'Previous':'Anterior');prev.onclick=()=>ver((k+RECOMENDACIONES.length-1)%RECOMENDACIONES.length);
+      const cont=document.createElement('span');cont.textContent=`${k+1} / ${RECOMENDACIONES.length}`;
+      const next=document.createElement('button');next.type='button';next.textContent='→';next.setAttribute('aria-label',EN?'Next':'Siguiente');next.onclick=()=>ver((k+1)%RECOMENDACIONES.length);
+      nav.append(prev,cont,next);
+      panel.append(bq,fc,nav);
+    }
+    RECOMENDACIONES.forEach((r,k)=>{
+      const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');
+      const av=document.createElement('span');av.className='recos2-av';av.textContent=ini(r.nombre);av.style.background=colores[k%3];
+      const tx=document.createElement('span');const n=document.createElement('b');n.textContent=r.nombre;const rel=document.createElement('small');const partes=String(EN?r.rol_en:r.rol_es).split(' · ');rel.textContent=partes[partes.length-1];tx.append(n,rel);
+      b.append(av,tx);b.onclick=()=>ver(k);lista.appendChild(b);botones.push(b);
     });
+    ver(0);
   })();
 
   // Insights: la tarjeta crece al bajar. Mi mirada: la foto se achica y aparece el texto.

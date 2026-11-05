@@ -18,28 +18,28 @@ const INSIGHTS = [
     titulo_es: "Acceso a la IA, sin rediseño del trabajo",
     titulo_en: "AI access, without work redesign",
     bajada_es:
-      "Tres estudios en tres industrias coinciden: la tecnología llega a los equipos más rápido que la conversación sobre cómo cambia su trabajo.",
+      "Las empresas ya dieron a sus equipos acceso a la IA, pero muchas todavía no explican qué cambia en cada puesto. Tres estudios, en tres industrias, muestran el efecto de esa brecha.",
     bajada_en:
-      "Three studies across three industries agree: technology is reaching teams faster than the conversation about how their work changes.",
+      "Companies have already given their teams access to AI, but many still do not explain what changes in each role. Three studies, across three industries, show the effect of that gap.",
 
     dicen: [
       {
         id: "h-2026-10-deloitte-consumo-ia",
         dato_es: "82%",
         dato_en: "82%",
-        etiqueta_es: "de las empresas de consumo no ha rediseñado sus puestos en torno a la IA",
-        etiqueta_en: "of consumer companies have not redesigned jobs around AI",
-        frase_es: "de las empresas de consumo no ha rediseñado sus puestos en torno a la IA, aunque en un año el acceso de los colaboradores a herramientas aprobadas pasó de menos de 30% a cerca de 60%.",
-        frase_en: "of consumer companies have not redesigned jobs around AI, even though, in one year, employee access to approved tools rose from under 30% to about 60%.",
+        etiqueta_es: "de las empresas de consumo masivo no ha rediseñado sus puestos de trabajo en torno a la IA",
+        etiqueta_en: "of consumer goods companies have not redesigned their jobs around AI",
+        frase_es: "de las empresas de consumo masivo no ha rediseñado sus puestos de trabajo en torno a la IA, aunque en un año duplicó el acceso de sus colaboradores a estas herramientas.",
+        frase_en: "of consumer goods companies have not redesigned their jobs around AI, even though they doubled employee access to these tools in one year.",
       },
       {
         id: "h-2026-10-bain-life-sciences",
         dato_es: "80%",
         dato_en: "80%",
-        etiqueta_es: "de las empresas de ciencias de la vida que escalan la IA explica cómo cambiarán los roles (frente a 7% de las que recién la exploran)",
-        etiqueta_en: "of life sciences companies scaling AI explain how roles will change (vs. 7% of those just exploring it)",
-        frase_es: "de las empresas de ciencias de la vida que escalan la IA explica con claridad cómo cambiarán los roles, frente a solo 7% de las que recién la exploran.",
-        frase_en: "of life sciences companies scaling AI clearly explain how roles will change, compared with only 7% of those just exploring it.",
+        etiqueta_es: "de las empresas farmacéuticas y de salud que ya escalan la IA explica a sus equipos cómo cambiarán sus roles; entre las que recién la exploran, solo 7%",
+        etiqueta_en: "of pharmaceutical and health companies already scaling AI explain to their teams how their roles will change; among those just exploring it, only 7% do",
+        frase_es: "de las empresas farmacéuticas y de salud que ya escalan la IA explica a sus equipos cómo cambiarán sus roles. Entre las que recién la exploran, solo 7% lo hace.",
+        frase_en: "of pharmaceutical and health companies already scaling AI explain to their teams how their roles will change. Among those just exploring it, only 7% do.",
       },
       {
         id: "h-2026-10-pwc-fs-cambio",
@@ -47,47 +47,47 @@ const INSIGHTS = [
         dato_en: "44%",
         etiqueta_es: "de los ejecutivos de servicios financieros en EE.UU. señala que sus colaboradores temen perder el empleo o que la IA cambie su rol",
         etiqueta_en: "of US financial services executives say their employees fear losing their jobs or having their roles changed by AI",
-        frase_es: "de los ejecutivos de servicios financieros en EE.UU. señala que sus colaboradores temen perder el empleo o que la IA cambie su rol, y 43% indica que sus equipos solo la usan cuando se les exige. Sin claridad sobre qué cambia en cada puesto, la incertidumbre ocupa ese espacio.",
-        frase_en: "of US financial services executives say their employees fear losing their jobs or having their roles changed by AI, and 43% say their teams use it only when required. Without clarity on what changes in each role, uncertainty fills the gap.",
+        frase_es: "de los ejecutivos de servicios financieros en EE.UU. señala que sus colaboradores temen perder el empleo o que la IA cambie su rol.",
+        frase_en: "of US financial services executives say their employees fear losing their jobs or having their roles changed by AI.",
       },
     ],
 
     coinciden_es: [
-      "El acceso a la IA avanza más rápido que el rediseño del trabajo: las herramientas llegan a los equipos, pero los puestos y las rutinas se mantienen casi sin cambios.",
-      "Las empresas que más avanzan son las que explican qué cambia en cada rol. En consecuencia, la distancia entre escalar la IA y quedarse en pilotos es, en buena medida, una brecha de comunicación.",
-      "Tener acceso a la IA no equivale a adoptarla. En consumo, solo 25% de quienes tienen acceso la utiliza en más del 60% de su trabajo diario; en servicios financieros, 43% la usa solo cuando se le exige.",
+      "Las herramientas llegan antes que el rediseño del trabajo. Las empresas amplían el acceso a la IA, pero los puestos y las rutinas se mantienen casi iguales.",
+      "Explicar el cambio marca la diferencia. Las empresas que más avanzan con la IA son las que explican a sus equipos qué cambia en cada rol.",
+      "Sin esa explicación, el uso se queda corto. En consumo masivo, solo 25% de quienes tienen acceso usa la IA en más del 60% de su trabajo diario; en servicios financieros, 43% la usa solo cuando se le exige.",
     ],
     coinciden_en: [
-      "Access to AI is moving faster than work redesign: the tools reach teams, but roles and routines remain almost unchanged.",
-      "The companies that move furthest are the ones that explain what changes in each role. As a result, the distance between scaling AI and staying in pilots is, to a large extent, a communication gap.",
-      "Having access to AI is not the same as adopting it. In consumer goods, only 25% of those with access use it for more than 60% of their daily work; in financial services, 43% use it only when required.",
+      "The tools arrive before work is redesigned. Companies are expanding access to AI, but roles and routines remain almost the same.",
+      "Explaining the change makes the difference. The companies that move furthest with AI are the ones that explain to their teams what changes in each role.",
+      "Without that explanation, use falls short. In consumer goods, only 25% of those with access use AI for more than 60% of their daily work; in financial services, 43% use it only when required.",
     ],
 
     chocan_es: [
-      "Bain identifica la comunicación de la visión como el factor que distingue a las empresas que escalan la IA. Sin embargo, el mismo estudio muestra que solo 20% de ellas convirtió esa visión en decisiones concretas: comunicar no es suficiente si la visión no se traduce en cambios dentro de la organización.",
-      "PwC aporta un matiz: más cambio, comunicado con rapidez, también puede saturar a los equipos. De hecho, 34% de los líderes de servicios financieros considera la fatiga de cambio, es decir, el desgaste por la acumulación de cambios, una barrera para escalar la IA.",
+      "Comunicar la visión no es suficiente. Bain muestra que solo 20% de las empresas que escalan la IA convirtió esa visión en decisiones concretas sobre el trabajo.",
+      "Comunicar más tampoco es la solución. PwC advierte que muchos cambios en poco tiempo también saturan a los equipos: 34% de los ejecutivos de servicios financieros considera la fatiga de cambio, es decir, el desgaste por la acumulación de cambios, una barrera para escalar la IA.",
     ],
     chocan_en: [
-      "Bain identifies communicating the vision as the factor that distinguishes the companies that scale AI. However, the same study shows that only 20% of them have turned that vision into concrete decisions: communicating is not enough if the vision does not translate into changes within the organization.",
-      "PwC adds a nuance: more change, communicated quickly, can also saturate teams. In fact, 34% of financial services leaders see change fatigue, meaning the strain of accumulated change, as a barrier to scaling AI.",
+      "Communicating the vision is not enough. Bain shows that only 20% of the companies scaling AI have turned that vision into concrete decisions about work.",
+      "Communicating more is not the answer either. PwC warns that many changes in a short time also saturate teams: 34% of financial services executives see change fatigue, meaning the strain of accumulated change, as a barrier to scaling AI.",
     ],
 
     porque_es:
-      "Los tres estudios analizan industrias distintas (consumo, ciencias de la vida y servicios financieros) y etapas distintas de adopción. Sin embargo, comparten un rasgo: los tres encuestan a líderes, no a colaboradores. Por eso, muestran cómo ven el cambio quienes lo dirigen, pero dicen poco sobre cómo lo viven quienes lo atraviesan.",
+      "Los tres estudios analizan industrias distintas (consumo masivo, salud y farmacéutica, y servicios financieros) y encuestan a líderes, no a colaboradores. Por eso muestran cómo ven el cambio quienes lo dirigen, pero no cómo lo viven los equipos.",
     porque_en:
-      "The three studies look at different industries (consumer goods, life sciences and financial services) and different stages of adoption. However, they share one trait: all three survey leaders, not employees. As a result, they show how those leading the change see it, but say little about how those going through it experience it.",
+      "The three studies look at different industries (consumer goods, pharmaceuticals and health, and financial services) and survey leaders, not employees. As a result, they show how those leading the change see it, but not how teams experience it.",
 
     mirada_es: null,
     mirada_en: null,
 
     preguntas_es: [
-      "¿Los equipos saben qué cambiará en su rol con la IA, o solo saben que ya tienen acceso a una herramienta?",
-      "¿Quién está traduciendo la visión en decisiones concretas: Recursos Humanos, Tecnología o cada líder de área?",
+      "¿Los equipos saben qué cambiará en su rol con la IA, o solo que ya tienen acceso a una herramienta?",
+      "¿Quién traduce la visión de la IA en decisiones concretas sobre cada puesto: Recursos Humanos, Tecnología o cada líder de área?",
       "¿Cómo se mide la fatiga de cambio antes de lanzar la siguiente iniciativa?",
     ],
     preguntas_en: [
       "Do teams know what will change in their role with AI, or only that they now have access to a tool?",
-      "Who is turning the vision into concrete decisions: HR, Technology or each area leader?",
+      "Who turns the AI vision into concrete decisions about each role: HR, Technology or each area leader?",
       "How is change fatigue measured before launching the next initiative?",
     ],
   },
