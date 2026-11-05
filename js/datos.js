@@ -821,7 +821,7 @@ const HALLAZGOS = [
       "**Talent scarcity remains the main constraint.** The global shortage of AI specialists is one of the biggest obstacles to scaling."
     ],
     articulo_es: {
-      "bajada": "En ciencias de la vida, las empresas que escalan la IA explican a sus equipos cómo cambiarán sus roles, pero pocas han traducido esa visión en decisiones concretas.",
+      "bajada": "En el sector farmacéutico y de salud, las empresas que escalan la IA explican a sus equipos cómo cambiarán sus roles, pero pocas han traducido esa visión en decisiones concretas.",
       "parrafos": [
         "Explicar el futuro de los roles distingue a las empresas que logran escalar la IA. La investigación Life Sciences' AI Momentum Requires a Workforce Redesign, de Bain & Company, se basa en una encuesta a 133 ejecutivos del sector. Entre las empresas que escalan con éxito, 80% comunica cómo evolucionarán los roles, las habilidades y los equipos mixtos de personas e IA; entre las que recién exploran, solo 7% lo hace. La comunicación sobre el trabajo aparece así como una de las diferencias más marcadas entre ambos grupos.",
         "Esa visión va acompañada de decisiones sobre el talento. Más de la mitad de las empresas que escalan ya capacitó a sus equipos, contrató talento en IA o trasladó personas entre áreas, frente a 20% o menos de las que exploran. Ante la escasez global de especialistas en IA, uno de los principales obstáculos para escalar, las más avanzadas no esperan a contratar: también forman. Explicar el rumbo y movilizar a las personas avanzan de manera conjunta.",
@@ -897,9 +897,9 @@ const HALLAZGOS = [
       "**Agent adoption is moving faster than governance.** 73% plan to use AI agents within two years, but only 20% have a mature model to govern them."
     ],
     articulo_es: {
-      "bajada": "Las empresas de consumo ampliaron con rapidez el acceso de sus colaboradores a la IA, pero casi ninguna cambió la forma en que se organiza el trabajo.",
+      "bajada": "Las empresas de consumo masivo ampliaron con rapidez el acceso de sus colaboradores a la IA, pero casi ninguna cambió la forma en que se organiza el trabajo.",
       "parrafos": [
-        "Las empresas de consumo entregan herramientas de IA sin rediseñar el trabajo que las rodea. La edición para la industria de consumo masivo del informe State of AI in the Enterprise de Deloitte, basada en 963 líderes de negocio y de tecnología, muestra que 82% no ha rediseñado sus puestos en torno a la IA. La acción más frecuente, adoptada por 54%, es capacitar a los colaboradores. Esa respuesta es necesaria, pero no modifica por sí sola cómo se organiza el trabajo diario.",
+        "Las empresas de consumo masivo entregan herramientas de IA sin rediseñar el trabajo que las rodea. La edición para la industria de consumo masivo del informe State of AI in the Enterprise de Deloitte, basada en 963 líderes de negocio y de tecnología, muestra que 82% no ha rediseñado sus puestos en torno a la IA. La acción más frecuente, adoptada por 54%, es capacitar a los colaboradores. Esa respuesta es necesaria, pero no modifica por sí sola cómo se organiza el trabajo diario.",
         "El acceso creció mucho más que el uso. En un año, las herramientas de IA aprobadas pasaron de llegar a menos de 30% a cerca de 60% de los colaboradores. Sin embargo, solo 25% de quienes tienen acceso utiliza la IA en más del 60% de su trabajo diario. En conjunto, estas cifras muestran que el acceso se duplicó mientras el uso intensivo sigue siendo minoritario.",
         "La brecha no responde a un rechazo generalizado de las personas. Entre los colaboradores no técnicos, 69% está entusiasmado o abierto a explorar la IA, mientras que 24% la usa solo si se le exige o la evita. El informe señala además que, aunque la dirección identifica la falta de habilidades como la principal barrera, menos de la mitad de las empresas hace ajustes importantes en su estrategia de talento. La distancia entre acceso y uso refleja, sobre todo, puestos que no han cambiado.",
         "Para el negocio, el impacto alcanza la estructura de puestos y las trayectorias profesionales. 82% espera que al menos 10% de sus puestos se automatice por completo en tres años, comenzando por tareas de entrada como el registro de datos o la atención básica al cliente. Los líderes entrevistados se preguntan dónde comenzarán entonces las carreras que antes empezaban en esos puestos. Para quienes permanecen, el trabajo ya cambia: un responsable de categoría recibe ahora recomendaciones de precio y surtido de la IA y debe decidir cuándo confiar en ellas.",
@@ -2032,48 +2032,48 @@ const HALLAZGOS = [
 const RECOMENDACIONES = [
   {
     nombre: "Tanesia Leflore",
-    rol_es: "Fundadora, consultora de RR.HH. y coach ejecutiva · Fue su líder directa en Accenture",
-    rol_en: "Founder, HR Consultant & Executive Coach · Managed Desirée directly at Accenture",
+    rol_es: "Fundadora, consultora de RR.HH. y coach ejecutiva",
+    rol_en: "Founder, HR Consultant & Executive Coach",
     original: "en",
     texto_es: "Fui su líder directa en Accenture, y rápidamente se convirtió en una de las personas en las que más confiaba para el trabajo con clientes.\n\nAprende rápido: es de las personas que hacen preguntas precisas y oportunas, y que vuelven con soluciones reales en lugar de limitarse a seguir instrucciones. Confiaba en ella lo suficiente como para que me reemplazara en llamadas con clientes; dominaba el material y se adaptaba a lo que cada momento requería.\n\nDesiree también fue un gran aporte para el equipo de consultoría. Cuando encontrábamos obstáculos, trabajaba con sus colegas para resolver problemas y hacer avanzar el trabajo, no solo en su propio frente, sino en el de todo el equipo.\n\nDesiree aporta adaptabilidad, criterio agudo y un compromiso genuino con hacer lo correcto por el cliente y por el equipo. Cualquier organización tendría suerte de contar con ella.",
     texto_en: "I managed Desiree directly at Accenture, and she quickly became one of the people I trusted most on client work.\n\nShe is a fast learner, the kind who asks sharp, well-timed questions and comes back with real solutions instead of just following along. I trusted her enough to have her step in for me on client calls; she knew the material cold and adapted to whatever the moment needed.\n\nDesiree was also great to have on the broader consulting team. When we hit roadblocks, she worked well with colleagues to problem-solve and push things forward, not just for her own workstream but for the team's.\n\nDesiree brings adaptability, sharp judgment, and genuine investment in doing right by the client and the team. Any organization would be lucky to have her.",
   },
   {
     nombre: "Vishnu Rao",
-    rol_es: "Head of Enterprise Platforms, Novartis Patient Support · Trabajaron juntos desde empresas distintas",
-    rol_en: "Head of Enterprise Platforms, Novartis Patient Support · Worked together from different companies",
+    rol_es: "Head of Enterprise Platforms, Novartis Patient Support",
+    rol_en: "Head of Enterprise Platforms, Novartis Patient Support",
     original: "en",
     texto_es: "Tuve la oportunidad de trabajar de cerca con Desi en iniciativas de contenido y comunicación para nuestra plataforma de nueva generación. Hizo un excelente trabajo al traducir conceptos complejos de producto y de experiencia en piezas visuales y videos atractivos, que ayudaron a comunicar nuestra visión y a impulsar esfuerzos más amplios de transformación y gestión del cambio.\n\nDesi es reflexiva, colaborativa, muy receptiva y una gran comunicadora. Entiende a su audiencia, gestiona extremadamente bien la relación con los distintos grupos de interés y convierte las ideas en historias convincentes. Disfruté mucho trabajar con ella y la recomendaría con gusto.",
     texto_en: "I had the opportunity to work closely with Desi on content and communication initiatives supporting our next-generation platform. She did an excellent job translating complex product and experience concepts into engaging visuals and videos that helped communicate our vision and support broader transformation and change-management efforts.\n\nDesi is thoughtful, collaborative, highly responsive, and a strong communicator. She understands her audience, manages stakeholder relationships extremely well, and consistently turns ideas into compelling stories. I really enjoyed working with her and would gladly recommend her.",
   },
   {
     nombre: "Diego Florez Hernandez",
-    rol_es: "Insights y Knowledge Management · Trabajaron juntos en APOYO Comunicación, en equipos distintos",
-    rol_en: "Insights & Knowledge Management · Worked together at APOYO Comunicación, on different teams",
+    rol_es: "Insights, Knowledge Management, Project Management e Innovación",
+    rol_en: "Insights, Knowledge Management, Project Management & Innovation",
     original: "en",
     texto_es: "Tuve el gusto de trabajar junto a Desiree en APOYO Comunicación, donde ella formaba parte del equipo de Cultura y Comunicación Interna y yo trabajaba en Insights. Colaboramos en varios proyectos de diagnóstico y estrategia para clientes de distintos sectores.\n\nLo que más destacaba de Desi era su excepcional atención al detalle y su capacidad para liderar proyectos con eficacia, aun teniendo relativamente poca experiencia en ese momento: siempre tuvo la sabiduría de buscar la orientación de quienes confiaban en su trabajo. A eso se sumaba un don natural para crear ambientes de trabajo cordiales y de confianza, que hacían notablemente más llevadero el trabajo bajo presión para todo el equipo.\n\nEstoy seguro de que llevará esa misma combinación de rigor y calidez a cualquier equipo al que se sume, y la recomiendo sin dudarlo.",
     texto_en: "I had the pleasure of working alongside Desiree at APOYO Comunicación, where she was part of the Culture and Internal Communication team while I worked within Insights, collaborating on several projects supporting diagnostics and strategy needs for clients across a range of sectors.\n\nWhat stood out most about Desi was her exceptional attention to detail and her ability to lead projects effectively despite having relatively limited experience at the time — she consistently showed the wisdom to seek guidance from those who trusted her work — combined with a natural gift for creating friendly, trust-filled work environments that made working under pressure noticeably easier for everyone on the team.\n\nI'm confident she'd bring that same combination of rigor and warmth to any team she joins, and I recommend her without hesitation.",
   },
   {
     nombre: "Katherine Furze",
-    rol_es: "Analista senior de Aprendizaje y Desarrollo · Fue su líder directa",
-    rol_en: "Senior Learning & Development Analyst · Managed Desirée directly",
+    rol_es: "Analista senior de Aprendizaje y Desarrollo",
+    rol_en: "Senior Learning & Development Analyst",
     original: "es",
     texto_es: "Tuve la oportunidad de trabajar con Desiree en un proyecto importante y de alta complejidad, en el que brindó soporte desde Change Management y Comunicaciones a un proceso de adquisición.\n\nDesiree se destacó especialmente por sus habilidades en comunicación estratégica y corporativa. Lideró planes de comunicación para distintos públicos, adaptando mensajes y canales según las necesidades de cada audiencia. Además, participó en el desarrollo de estrategias de comunicación, la coordinación de reuniones de entendimiento y la creación de materiales de capacitación claros, relevantes y orientados a facilitar la adopción del cambio.\n\nCuenta con una gran capacidad para transformar información compleja en mensajes accesibles, organizar contenidos y comunicar de manera efectiva con diferentes grupos de interés. Su criterio, atención al detalle y capacidad para trabajar colaborativamente le permiten desarrollar comunicaciones consistentes y alineadas con los objetivos del proyecto.\n\nDesiree es una profesional comprometida, proactiva y creativa, siempre dispuesta a aportar ideas y colaborar con el equipo.",
     texto_en: "I had the opportunity to work with Desiree on an important, highly complex project, in which she provided Change Management and Communications support for an acquisition process.\n\nDesiree stood out especially for her strategic and corporate communication skills. She led communication plans for different audiences, adapting messages and channels to the needs of each one. She also took part in developing communication strategies, coordinating alignment meetings and creating clear, relevant training materials designed to support the adoption of change.\n\nShe has a great ability to turn complex information into accessible messages, organize content and communicate effectively with different stakeholder groups. Her judgment, attention to detail and ability to work collaboratively allow her to develop communications that are consistent and aligned with the project's goals.\n\nDesiree is a committed, proactive and creative professional, always ready to contribute ideas and collaborate with the team.",
   },
   {
     nombre: "Valeria Martínez Pereyra",
-    rol_es: "Compañera de equipo en un proyecto de transformación organizacional",
-    rol_en: "Teammate on an organizational transformation project",
+    rol_es: "Comunicaciones Corporativas y Sustentabilidad",
+    rol_en: "Corporate Communications & Sustainability",
     original: "es",
-    texto_es: "Rápidamente encontré en ella equipo, colaboración, profesionalismo y una gran capacidad de análisis del cliente.",
-    texto_en: "I quickly found in her teamwork, collaboration, professionalism and a great ability to analyze the client.",
+    texto_es: "¡Qué placer trabajar con Desiree! Compartimos la gestión de un proyecto complejo de transformación organizacional y rápidamente encontré en ella equipo, colaboración, profesionalismo y una gran capacidad de análisis del cliente. Su expertise de change management y comunicaciones hicieron mucho más sencillo el desarrollo y cumplimiento del proyecto. Una de las mejores personas que tuve la suerte de conocer en mi camino profesional.",
+    texto_en: "What a pleasure to work with Desiree! We co-managed a complex organizational transformation project, and I quickly found in her teamwork, collaboration, professionalism and a great ability to analyze the client. Her change management and communications expertise made developing and delivering the project much easier. One of the best people I have been lucky enough to meet on my professional path.",
   },
   {
     nombre: "Ines Weiss",
-    rol_es: "Senior Analyst, Accenture · Formó parte de su equipo",
-    rol_en: "Senior Analyst, Accenture · Reported to Desirée directly",
+    rol_es: "Senior Analyst, Accenture",
+    rol_en: "Senior Analyst, Accenture",
     original: "es",
     texto_es: "Tuve el placer de trabajar con Desiree como mi People Lead en Accenture, y fue una experiencia sumamente enriquecedora tanto a nivel profesional como humano. Siempre se destacó por su profesionalismo, empatía y compromiso, acompañándome de manera cercana y brindándome herramientas, confianza y oportunidades para seguir creciendo en mi carrera. Su capacidad para liderar, escuchar y potenciar a las personas hace que trabajar con ella sea realmente un placer. Sin dudas, es de esas profesionales que dejan una huella muy positiva en los equipos y en las personas con las que trabajan.",
     texto_en: "I had the pleasure of working with Desiree as my People Lead at Accenture, and it was an extremely enriching experience, both professionally and personally. She always stood out for her professionalism, empathy and commitment, supporting me closely and giving me the tools, confidence and opportunities to keep growing in my career. Her ability to lead, listen to and empower people makes working with her a real pleasure. Without a doubt, she is one of those professionals who leave a very positive mark on the teams and the people they work with.",

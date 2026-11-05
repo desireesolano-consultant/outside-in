@@ -2586,3 +2586,11 @@ a.oi-insight-tarjeta:hover { border-color: var(--oi-azul); transform: translateY
   .oi-insight-hero { padding: 40px 20px 48px; }
 }
 #insight[hidden], #insight-no-encontrado[hidden] { display: none !important; }
+
+/* Insight: postura de cada estudio y puntos con subtítulo (5-nov-2026) */
+.oi-insight-estudio-postura { margin: 6px 0 4px; font: 800 clamp(19px, 1.6vw, 22px)/1.25 var(--oi-fuente-titulo); letter-spacing: -0.01em; color: var(--oi-negro); text-wrap: balance; }
+.oi-insight-punto { list-style: none; margin: 0 0 22px; padding: 0; }
+.oi-insight-punto:last-child { margin-bottom: 0; }
+.oi-insight-punto h3 { margin: 0 0 6px; font: 800 18px/1.3 var(--oi-fuente-titulo); letter-spacing: -0.01em; color: var(--oi-negro); }
+.oi-insight-punto p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--oi-texto-gris-2); }
+ul:has(> .oi-insight-punto) { padding-left: 0; }

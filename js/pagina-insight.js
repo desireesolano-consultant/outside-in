@@ -61,9 +61,18 @@ function nombreCategoria(id) {
 function llenarLista(idLista, items) {
   const lista = document.getElementById(idLista);
   lista.innerHTML = "";
-  (items || []).forEach((texto) => {
+  (items || []).forEach((item) => {
     const li = document.createElement("li");
-    li.textContent = texto;
+    if (item && typeof item === "object") {
+      li.className = "oi-insight-punto";
+      const h = document.createElement("h3");
+      h.textContent = item.titulo;
+      const p = document.createElement("p");
+      p.textContent = item.texto;
+      li.append(h, p);
+    } else {
+      li.textContent = item;
+    }
     lista.appendChild(li);
   });
 }
@@ -101,6 +110,9 @@ function renderizarInsight() {
     const fuente = document.createElement("p");
     fuente.className = "oi-insight-estudio-fuente";
     fuente.textContent = `${h.fuente} · ${nombreCategoria(h.industria) || nombreCategoria(h.tema)}`;
+    const postura = document.createElement("h3");
+    postura.className = "oi-insight-estudio-postura";
+    postura.textContent = campo(d, "postura") || "";
     const dato = document.createElement("p");
     dato.className = "oi-insight-estudio-dato";
     dato.textContent = campo(d, "dato");
@@ -118,7 +130,7 @@ function renderizarInsight() {
     original.rel = "noopener";
     original.textContent = t.insightVerOriginal;
     pie.append(resumen, original);
-    tarjeta.append(fuente, dato, frase, pie);
+    tarjeta.append(fuente, postura, dato, frase, pie);
     dicen.appendChild(tarjeta);
   });
 

@@ -466,7 +466,7 @@ img{max-width:100%;display:block}
 .cifras-i{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;border-top:1px solid var(--borde);padding-top:22px;align-items:stretch}
 .cifras-i div{display:grid;grid-template-rows:auto 1fr auto;gap:8px;min-width:0}
 .cifras-i b{font:800 clamp(24px,2.2vw,32px)/1 var(--t);letter-spacing:-.03em;color:var(--azul)}
-.cifras-i span{font:500 14px/1.45 var(--x);color:var(--negro)}
+.cifras-i span{font:700 15px/1.4 var(--x);color:var(--negro)}
 .cifras-i small{font:700 11px/1.3 var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris);padding-top:10px;margin-top:6px;border-top:1px solid var(--borde)}
 .gigante-card .arriba{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font:600 13px var(--x);color:var(--gris)}
 .gigante-card .arriba span{background:none!important;color:var(--gris)!important;padding:0!important;border-radius:0!important;font:600 13px var(--x)!important}
@@ -691,17 +691,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611061200"></script>
-<script src="js/textos.js?v=202611061200"></script>
-<script src="js/datos.js?v=202611061200"></script>
-<script src="js/contador.js?v=202611061200"></script>
-<script src="js/buscador.js?v=202611061200"></script>
-<script src="js/imagenes.js?v=202611061200"></script>
-<script src="js/insights.js?v=202611061200"></script>
-<script src="js/columnas.js?v=202611061200"></script>
-<script src="js/radar.js?v=202611061200"></script>
-<script src="js/traduccion.js?v=202611061200"></script>
-<script src="js/metricas.js?v=202611061200"></script>
+<script src="js/config.js?v=202611061400"></script>
+<script src="js/textos.js?v=202611061400"></script>
+<script src="js/datos.js?v=202611061400"></script>
+<script src="js/contador.js?v=202611061400"></script>
+<script src="js/buscador.js?v=202611061400"></script>
+<script src="js/imagenes.js?v=202611061400"></script>
+<script src="js/insights.js?v=202611061400"></script>
+<script src="js/columnas.js?v=202611061400"></script>
+<script src="js/radar.js?v=202611061400"></script>
+<script src="js/traduccion.js?v=202611061400"></script>
+<script src="js/metricas.js?v=202611061400"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -915,7 +915,7 @@ img{max-width:100%;display:block}
     g.href='insight.html?id='+encodeURIComponent(ins.id);
     document.getElementById('gigante-titulo').textContent=EN?ins.titulo_en:ins.titulo_es;
     document.getElementById('gigante-bajada').textContent=EN?ins.bajada_en:ins.bajada_es;
-    const gc=document.getElementById('gigante-cifras'); if(gc&&ins.dicen) ins.dicen.forEach(d=>{const h=typeof HALLAZGOS!=='undefined'?HALLAZGOS.find(x=>x.id===d.id):null;const dv=document.createElement('div');const b=document.createElement('b');b.textContent=EN?(d.cifra_en||d.dato_en):(d.cifra_es||d.dato_es);const ds=document.createElement('span');ds.textContent=EN?(d.etiqueta_en||''):(d.etiqueta_es||'');const sm=document.createElement('small');sm.textContent=h?h.fuente:'';dv.append(b,ds,sm);gc.appendChild(dv);});
+    const gc=document.getElementById('gigante-cifras'); if(gc&&ins.dicen) ins.dicen.forEach(d=>{const h=typeof HALLAZGOS!=='undefined'?HALLAZGOS.find(x=>x.id===d.id):null;const dv=document.createElement('div');const b=document.createElement('b');b.textContent=EN?(d.cifra_en||d.dato_en):(d.cifra_es||d.dato_es);const ds=document.createElement('span');ds.textContent=EN?(d.postura_en||d.etiqueta_en||''):(d.postura_es||d.etiqueta_es||'');const sm=document.createElement('small');sm.textContent=h?h.fuente:'';dv.append(b,ds,sm);gc.appendChild(dv);});
     const et=document.getElementById('gigante-etiquetas');
     const s0=document.createElement('span');s0.textContent=nombreDe(ins.tema);et.appendChild(s0);
     [...new Set(ins.estudios.map(id=>{const h=HALLAZGOS.find(x=>x.id===id);return h?h.fuente.replace(' AI Institute',''):null;}).filter(Boolean))]
