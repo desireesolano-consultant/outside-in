@@ -145,7 +145,15 @@ function renderizarHallazgo() {
   lista.innerHTML = "";
   (texto(h, "puntos") || []).forEach((punto) => {
     const li = document.createElement("li");
-    li.textContent = punto;
+    // Formato "**Idea principal.** Dato que la sostiene": la idea va en negrita.
+    const m = /^\*\*(.+?)\*\*\s*(.*)$/.exec(punto);
+    if (m) {
+      const fuerte = document.createElement("strong");
+      fuerte.textContent = m[1];
+      li.append(fuerte, document.createTextNode(" " + m[2]));
+    } else {
+      li.textContent = punto;
+    }
     lista.appendChild(li);
   });
   lista.parentElement.hidden = lista.children.length === 0;
