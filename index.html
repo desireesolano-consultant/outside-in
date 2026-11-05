@@ -614,17 +614,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611021700"></script>
-<script src="js/textos.js?v=202611021700"></script>
-<script src="js/datos.js?v=202611021700"></script>
-<script src="js/contador.js?v=202611021700"></script>
-<script src="js/buscador.js?v=202611021700"></script>
-<script src="js/imagenes.js?v=202611021700"></script>
-<script src="js/insights.js?v=202611021700"></script>
-<script src="js/columnas.js?v=202611021700"></script>
-<script src="js/radar.js?v=202611021700"></script>
-<script src="js/traduccion.js?v=202611021700"></script>
-<script src="js/metricas.js?v=202611021700"></script>
+<script src="js/config.js?v=202611051500"></script>
+<script src="js/textos.js?v=202611051500"></script>
+<script src="js/datos.js?v=202611051500"></script>
+<script src="js/contador.js?v=202611051500"></script>
+<script src="js/buscador.js?v=202611051500"></script>
+<script src="js/imagenes.js?v=202611051500"></script>
+<script src="js/insights.js?v=202611051500"></script>
+<script src="js/columnas.js?v=202611051500"></script>
+<script src="js/radar.js?v=202611051500"></script>
+<script src="js/traduccion.js?v=202611051500"></script>
+<script src="js/metricas.js?v=202611051500"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -848,11 +848,12 @@ img{max-width:100%;display:block}
     const box=document.getElementById('columnas'); if(!box) return;
     const lista=(typeof COLUMNAS!=='undefined'?COLUMNAS:[]).slice().sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||''));
     const fotosTema={ia_personas:'photo-1606836591695-4d58a73eba1e',gestion_cambio:'photo-1517048676732-d65bc937f952',liderazgo_cultura:'photo-1758518731706-be5d5230e5a5'};
-    const tarjetas=lista.length?lista.slice(0,3).map(c=>({href:c.link,etq:nombreDe(c.tema)||(EN?'Column':'Columna'),titulo:EN?c.titulo_en:c.titulo_es,foto:c.foto||fotosTema[c.tema],fuera:true}))
-      :TEMAS.map(t=>({href:null,etq:EN?'Next column · Coming soon':'Próxima columna · Muy pronto',titulo:EN?t.en:t.es,foto:fotosTema[t.id]}));
+    const publicadas=lista.slice(0,3).map(c=>({href:c.link,etq:nombreDe(c.tema)||(EN?'Column':'Columna'),titulo:EN?c.titulo_en:c.titulo_es,foto:c.foto||fotosTema[c.tema],fuera:/^https?:/.test(c.link||'')}));
+    const proximas=TEMAS.filter(t=>!lista.some(c=>c.tema===t.id)).map(t=>({href:null,etq:EN?'Next column · Coming soon':'Próxima columna · Muy pronto',titulo:EN?t.en:t.es,foto:fotosTema[t.id]}));
+    const tarjetas=publicadas.concat(proximas).slice(0,3);
     tarjetas.forEach((t,i)=>{
       const a=document.createElement(t.href?'a':'div'); a.className='columna-c'+(i===0?' abierta':'');
-      if(t.href){a.href=t.href;a.target='_blank';a.rel='noopener';}
+      if(t.href){a.href=t.href;if(t.fuera){a.target='_blank';a.rel='noopener';}}
       if(t.foto){const im=document.createElement('img');im.loading='lazy';im.alt='';im.src=`https://images.unsplash.com/${t.foto}?auto=format&fit=crop&w=1400&q=70`;im.addEventListener('error',()=>im.style.visibility='hidden');a.appendChild(im);}
       const tx=document.createElement('div');tx.className='txt';const sm=document.createElement('small');sm.textContent=t.etq;const h3=document.createElement('h3');h3.textContent=t.titulo;tx.append(sm,h3);
       const fl=document.createElement('span');fl.className='flecha-c';fl.textContent='→';

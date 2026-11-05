@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Cambiarlo todo, comunicarlo todo · Mi mirada · Outside-In</title>
+<meta name="description" content="Columna de Desirée Solano: el exceso de cambios y de comunicaciones que agota a las organizaciones, a partir de cinco estudios de 2026." />
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: columna de Outside-In con "hallazgos de un vistazo" + pestañas por hallazgo; texto a la izquierda, gráfico interactivo a la derecha */
+:root{
+  --azul:#2440F0; --naranja:#FF6B2C; --lila:#C9CCFF; --suave:#EEF0FF;
+  --bg:#FFFFFF; --alt:#F2F2F0; --fg:#111214; --gris:#55575C; --borde:#E4E4E1;
+  --barra:#2440F0; --pista:#E9E9E6; --franja:#FF6B2C; --franja-tx:#111214;
+  --t:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --x:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--x)}
+h1,h2,h3{font-family:var(--t);font-weight:800;margin:0;text-wrap:balance;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+.env{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:700px){.env{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+:focus-visible{outline:3px solid var(--naranja);outline-offset:2px}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+.franja{background:var(--franja);color:var(--franja-tx);text-align:center;font:700 12px/1 var(--x);letter-spacing:.08em;text-transform:uppercase;padding-block:9px}
+.cab{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--borde)}
+.cab .env{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font:800 21px var(--t);text-decoration:none;white-space:nowrap}
+.logo i{width:22px;height:22px;border:3.5px solid var(--fg);border-radius:50%;display:grid;place-items:center}
+.logo i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--azul)}
+.cab nav{display:flex;gap:26px;font-size:15px}
+.cab nav a{text-decoration:none}
+.cab nav a.act{color:var(--azul);font-weight:600}
+@media (max-width:860px){.cab nav{display:none}}
+
+/* Portada de la columna */
+.portada{padding-block:56px 48px}
+.ceja{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font:600 13px var(--x);letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+.pill{background:var(--suave);color:var(--azul);padding:7px 14px;border-radius:999px;letter-spacing:.04em}
+.portada h1{font-size:clamp(34px,4.8vw,60px);line-height:1.1;font-weight:700;letter-spacing:-.02em;max-width:22ch}
+.portada h1 span{color:var(--azul);display:block}
+.portada h1 b{color:var(--naranja)}
+.bajada{font:700 clamp(19px,2vw,23px)/1.45 var(--t);letter-spacing:-.01em;margin-top:26px;max-width:58ch}
+.firma{margin-top:24px;display:flex;align-items:center;gap:12px;font-size:14px;line-height:1.45;color:var(--gris)}
+.firma img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}
+.firma strong{color:var(--fg)}
+.intro{display:grid;gap:16px;margin-top:30px;max-width:66ch;color:var(--fg)}
+.intro .ml{border-top:2px solid var(--fg);padding-top:16px}
+.etq{font:700 12px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--naranja)}
+
+/* De un vistazo */
+.vistazo{background:var(--alt);padding-block:48px}
+.vistazo h2{font-size:clamp(24px,2.6vw,32px)}
+.grilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;margin-top:28px;background:var(--borde);border:2px solid var(--borde)}
+.tarjeta{all:unset;box-sizing:border-box;cursor:pointer;background:var(--bg);padding:26px 24px 28px;display:grid;grid-template-rows:auto auto 1fr auto;gap:10px;transition:background .2s}
+.tarjeta:hover{background:var(--suave)}
+.tarjeta:focus-visible{outline:3px solid var(--naranja);outline-offset:-3px}
+.num{font:800 52px/1 var(--t);letter-spacing:-.04em;color:var(--azul);font-variant-numeric:tabular-nums;padding-bottom:12px;margin-bottom:6px;border-bottom:2px solid var(--naranja);justify-self:start}
+.tarjeta h3{font-size:21px;line-height:1.15}
+.tarjeta p{font-size:15px;color:var(--gris)}
+.tarjeta .ir{font:600 14px var(--x);color:var(--azul);margin-top:10px;align-self:end}
+
+/* Hallazgos */
+.hallazgos{padding-block:56px 24px}
+.titulo-sec{font-size:clamp(34px,5vw,60px);letter-spacing:-.04em;font-style:italic;text-transform:uppercase}
+.tabs-wrap{position:sticky;top:calc(env(safe-area-inset-top,0px) + 64px);z-index:40;background:var(--bg);margin-top:26px;border-bottom:2px solid var(--fg)}
+.tabs{display:flex;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;border:0;background:transparent;color:var(--gris);font:700 13px var(--x);letter-spacing:.08em;text-transform:uppercase;padding:16px 20px;cursor:pointer;white-space:nowrap;border-bottom:4px solid transparent;margin-bottom:-2px}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected="true"]{color:var(--azul);border-bottom-color:var(--azul)}
+
+.panel{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;padding-block:44px 32px}
+@media (max-width:900px){.panel{grid-template-columns:1fr;gap:32px}}
+.texto{display:grid;gap:18px;align-content:start;min-width:0}
+.gran-num{font:800 clamp(80px,10vw,128px)/.85 var(--t);letter-spacing:-.06em}
+.texto h3{font-size:clamp(28px,3vw,40px);line-height:1.05}
+.sub{font:600 18px var(--x);color:var(--naranja)}
+.texto p{max-width:62ch}
+.lectura{margin-top:8px;padding-top:18px;border-top:2px solid var(--fg);display:grid;gap:8px}
+.lectura p{font:700 19px/1.45 var(--t);letter-spacing:-.01em}
+
+.grafico{background:var(--alt);border-radius:6px;padding:26px 26px 22px;display:grid;gap:22px;align-content:start;min-width:0}
+.vistas{display:grid;gap:10px}
+.vistas .etq{color:var(--fg)}
+.botones{display:flex;flex-wrap:wrap;gap:8px}
+.vista{border:1.5px solid var(--fg);background:transparent;color:var(--fg);font:600 14px var(--x);padding:9px 16px;border-radius:999px;cursor:pointer}
+.vista:hover{background:var(--suave)}
+.vista[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.eje-tit{font:700 11px var(--x);letter-spacing:.1em;text-transform:uppercase;color:var(--gris)}
+.chart{display:grid;gap:4px}
+.ticks{position:relative;height:22px;margin-right:52px;border-bottom:1px solid var(--gris)}
+.ticks span{position:absolute;bottom:4px;transform:translateX(-50%);font:500 12px var(--x);color:var(--gris);font-variant-numeric:tabular-nums}
+.ticks span:first-child{transform:none}
+.fila{display:grid;gap:8px;padding-block:14px 4px}
+.fila .lbl{font-size:15px;line-height:1.35}
+.fila .lbl small{display:block;font-size:12px;color:var(--gris)}
+.barra{display:flex;align-items:center;gap:10px}
+.pista{position:relative;flex:1;height:8px;background:var(--pista);border-radius:4px;background-image:repeating-linear-gradient(90deg,transparent 0 calc(20% - 1px),var(--borde) calc(20% - 1px) 20%)}
+.relleno{position:absolute;inset:0 auto 0 0;background:var(--barra);border-radius:4px;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.relleno::after{content:"";position:absolute;right:-8px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--naranja);border:3px solid var(--alt)}
+.valor{width:42px;text-align:right;font:800 20px var(--t);font-variant-numeric:tabular-nums}
+.nota{font-size:14px;color:var(--gris);border-top:1px solid var(--borde);padding-top:14px}
+.nota strong{color:var(--fg)}
+.fuente{font-size:13px;color:var(--gris)}
+@media (prefers-reduced-motion:reduce){.relleno{transition:none}}
+
+/* Reflexión */
+.reflexion{background:#2440F0;color:#FFFFFF;padding-block:64px}
+.reflexion .env{display:grid;gap:26px;max-width:1240px}
+.reflexion .etq{color:#FFB38A}
+.cita{font:800 clamp(30px,4.4vw,56px)/1.05 var(--t);letter-spacing:-.035em;max-width:20ch}
+.cita-tr{font-size:16px;opacity:.85}
+.reflexion p.cierre{font:600 19px/1.55 var(--x);max-width:62ch}
+
+/* Fuentes */
+.fuentes{padding-block:56px 72px}
+.fuentes h2{font-size:24px}
+.tabla-wrap{overflow-x:auto;margin-top:20px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:15px}
+th{text-align:left;font:700 12px var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris);padding:10px 12px 10px 0;border-bottom:2px solid var(--fg)}
+td{padding:14px 12px 14px 0;border-bottom:1px solid var(--borde);vertical-align:top}
+td a{color:var(--azul);font-weight:600}
+</style>
+</head>
+<body>
+<header class="cab"><div class="env">
+  <a class="logo" href="index.html#inicio"><i></i>Outside-In</a>
+  <nav aria-label="Secciones"><a href="que-es.html">Qué es Outside-In</a><a href="index.html#estudios">Estudios</a><a href="index.html#insights">Insights</a><a href="index.html#mirada" class="act">Mi mirada</a><a href="index.html#yo">Sobre mí</a></nav>
+</div></header>
+
+<main id="top">
+<section class="portada"><div class="env">
+  <h1><span>Cambiarlo todo, comunicarlo todo<b>:</b></span> el exceso que agota a las organizaciones</h1>
+  <p class="bajada">Las organizaciones nunca comunicaron tanto sobre el cambio, y rara vez sus equipos estuvieron tan saturados para procesarlo. Cinco estudios publicados en 2026 coinciden en un diagnóstico incómodo: el problema ya no es la falta de información, sino su exceso.</p>
+  <div class="firma"><img src="img/desiree-columnista.webp" alt="Desirée Solano" width="44" height="44"><p>Por <strong>Desirée Solano</strong>, estratega de comunicación organizacional<br><span>Noviembre de 2026 · 6 min de lectura</span></p></div>
+  <div class="intro">
+    <p>Inteligencia artificial, reestructuraciones, rediseño de procesos y repriorizaciones conviven hoy en una misma agenda, y cada iniciativa llega con su propio despliegue de anuncios, capacitaciones y recordatorios. La respuesta habitual ha sido intensificar la comunicación. Los estudios de Deloitte, Sia, Edelman, Gallagher y Korn Ferry indican que ese enfoque alcanzó su límite.</p>
+  </div>
+</div></section>
+
+<section class="vistazo" aria-labelledby="t-vistazo"><div class="env">
+  <h2 id="t-vistazo">Los cuatro hallazgos de un vistazo</h2>
+  <div class="grilla" id="grilla"></div>
+</div></section>
+
+<section class="hallazgos" id="hallazgos" aria-labelledby="t-hall"><div class="env">
+  <h2 class="titulo-sec" id="t-hall">Los hallazgos</h2>
+  <div class="tabs-wrap"><div class="tabs" role="tablist" id="tabs" aria-label="Hallazgos"></div></div>
+  <div id="panel" class="panel" role="tabpanel"></div>
+</div></section>
+
+<section class="reflexion" aria-labelledby="t-ref"><div class="env">
+  <span class="etq" id="t-ref">Reflexión final</span>
+  <p class="cita">“Change is no longer a specialty; it’s the job.”</p>
+  <p class="cita-tr">El cambio ya no es una especialidad: es el trabajo. · Gallagher, Employee Communications Report 2026. Aun así, 61% de los equipos de comunicación no cuenta con un enfoque definido para comunicarlo.</p>
+  <p class="cierre">Para mí, ese es el desafío que enfrentan hoy las organizaciones. No se trata de cambiar menos ni de comunicar más, sino de administrar la atención como un recurso estratégico: priorizar qué se comunica, adaptar el mensaje a cada rol e integrar el cambio en la operación en lugar de superponerlo a ella.</p>
+</div></section>
+
+<section class="fuentes" aria-labelledby="t-fu"><div class="env">
+  <h2 id="t-fu">Las cinco fuentes</h2>
+  <div class="tabla-wrap"><table>
+    <thead><tr><th>Estudio</th><th>A quién preguntó</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.deloitte.com/global/en/insights/topics/business-strategy-growth/change-management-roi.html" target="_blank" rel="noopener">Deloitte, 2026 Change Management Study</a></td><td>1,000 líderes de cambio (EE.UU., Reino Unido, Australia, Canadá)</td></tr>
+      <tr><td><a href="https://www.sia-partners.com/en/insights/publications/change-report-0" target="_blank" rel="noopener">Sia, The Change Report 2026</a></td><td>1,450 colaboradores y líderes</td></tr>
+      <tr><td><a href="https://www.edelman.com/trust/2026/trust-barometer/special-report-work" target="_blank" rel="noopener">Edelman, Trust at Work 2026</a></td><td>10,018 colaboradores, 10 países (incluye Brasil, Canadá y EE.UU.)</td></tr>
+      <tr><td><a href="https://www.ajg.com/employeeexperience/-/media/files/gallaghercomms/gcommssite/state-of-the-sector/gallagher-employee-communications-report-2026-global.pdf" target="_blank" rel="noopener">Gallagher, Employee Communications Report 2026</a></td><td>Más de 1,300 profesionales de comunicación interna y RR.HH., 40 países</td></tr>
+      <tr><td><a href="https://www.kornferry.com/insights/featured-topics/workforce-management-articles/workforce-planning-insights#findings" target="_blank" rel="noopener">Korn Ferry, Workforce 2026</a></td><td>Más de 16,000 profesionales, 11 mercados (incluye EE.UU. y Brasil)</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+</main>
+
+<script>
+const H=[
+ {t:"El cambio que no para de cambiar",s:"Las organizaciones ejecutan más transformaciones simultáneas de las que sus equipos pueden sostener.",
+  p:["El cambio ya no se presenta de forma secuencial. Según Sia, 30% de las personas atraviesa entre tres y cinco cambios en simultáneo; Edelman confirma que 42% de los colaboradores vivió tres o más transformaciones en el último año.",
+     "Deloitte cuantifica el impacto: con cuatro o más iniciativas grandes en paralelo, la probabilidad de una fatiga de cambio alta se multiplica por 6.4. Edelman agrega un matiz: los colaboradores no rechazan el cambio; lo que define cómo lo viven es la carga de trabajo."],
+  l:"Cada iniciativa se incorpora sobre la operación existente en lugar de reemplazar parte de ella, y el desgaste es el resultado acumulado de esa suma.",
+  v:[{n:"Sia",f:"Sia, The Change Report 2026",u:"% de personas",max:100,r:[["Vive entre 3 y 5 cambios al mismo tiempo",30],["Siente que su organización intenta hacer todo a la vez",41]]},
+     {n:"Edelman",f:"Edelman, Trust at Work 2026",u:"% de colaboradores",max:100,r:[["Atravesó tres o más transformaciones en el último año",42],["Señala la IA como la transformación más frecuente",53]]},
+     {n:"Deloitte",f:"Deloitte, 2026 Change Management Study",u:"% de organizaciones y líderes de cambio",max:100,r:[["Organizaciones con varias iniciativas grandes en paralelo",83],["Líderes de cambio que ya ven fatiga en sus equipos",73]],nota:"<strong>×6.4</strong> se multiplica la probabilidad de fatiga alta con cuatro o más iniciativas a la vez."}]},
+ {t:"El efecto bumerán de comunicar de más",s:"Intensificar los mensajes eleva la desconfianza, la fatiga y la incertidumbre.",
+  p:["Ante este volumen de cambios, la reacción de las organizaciones suele ser la misma: comunicar más. Cada iniciativa activa su propio ciclo de anuncios, capacitaciones y recordatorios, y ese flujo se convierte en saturación.",
+     "Gallagher comparó a los equipos que comunican de forma intensiva con los que lo hacen de manera moderada: el exceso eleva un riesgo distinto según el tema. En palabras del estudio, el volumen termina reemplazando a la claridad."],
+  l:"Proteger la atención exige un criterio editorial: definir qué necesita saber cada audiencia, en qué momento y por qué canal. Ese criterio solo es posible si la organización escucha antes de emitir.",
+  v:[{n:"Panorama",f:"Gallagher, Employee Communications Report 2026",u:"% de equipos de comunicación",max:100,r:[["Reporta un aumento de la sobrecarga de información",83],["Comunica mucho o bastante sobre estrategia",82],["Comunica intensivamente sobre IA",39]]},
+     {n:"Cambio",f:"Gallagher, Employee Communications Report 2026",u:"Aumento del riesgo al comunicar de más (%)",max:60,r:[["Desconfianza hacia los líderes",30],["Agotamiento",24],["Sobrecarga de información",16]],nota:"Estos valores son cuánto sube el riesgo frente a los equipos que comunican de forma moderada, no porcentajes de personas."},
+     {n:"Cultura",f:"Gallagher, Employee Communications Report 2026",u:"Aumento del riesgo al comunicar de más (%)",max:60,r:[["Crisis de confianza",25]],nota:"Aumento del riesgo frente a los equipos que comunican de forma moderada."},
+     {n:"Estrategia",f:"Gallagher, Employee Communications Report 2026",u:"Aumento del riesgo al comunicar de más (%)",max:60,r:[["Percepción de falta de dirección",12]],nota:"Es el tema más comunicado: 82% de los equipos lo aborda mucho o bastante."},
+     {n:"IA",f:"Gallagher, Employee Communications Report 2026",u:"Aumento del riesgo al comunicar de más (%)",max:60,r:[["Incertidumbre",56]],nota:"El mayor incremento registrado, aunque solo 39% de los equipos comunica intensivamente sobre IA."}]},
+ {t:"El mismo cambio, a dos velocidades",s:"La confianza, el respaldo y la energía se debilitan a medida que el cambio desciende en la estructura.",
+  p:["Un mismo cambio se anuncia de manera uniforme, pero cada rol lo procesa de forma distinta. Korn Ferry muestra brechas en tres dimensiones: la confianza en el resultado, el respaldo para lograrlo y la energía para sostenerlo.",
+     "La confianza se diluye a medida que el cambio desciende en la estructura, y los jefes de equipo, responsables de traducirlo en operación, son el rol más agotado por su ritmo. Sia, por su parte, muestra que la disposición al cambio existe."],
+  l:"El compromiso con un cambio nace de haber participado en su diseño. Quien recibe una decisión ya tomada, y debe sostenerla con desgaste, difícilmente replicará el entusiasmo de quienes la construyeron.",
+  v:[{n:"Confianza",f:"Korn Ferry, Workforce 2026",u:"% que duda de que la organización convierta ideas en cambios reales",max:100,r:[["CEOs",5],["Ejecutivos",14],["Colaboradores",20]]},
+     {n:"Respaldo",f:"Korn Ferry, Workforce 2026",u:"% por rol",max:100,r:[["CEOs que se sienten alentados a experimentar",78],["Colaboradores que se sienten alentados a experimentar",41],["CEOs que perciben falta de respaldo",6],["Colaboradores que perciben falta de respaldo",21]]},
+     {n:"Energía",f:"Korn Ferry, Workforce 2026",u:"% agotado por el ritmo del cambio",max:100,r:[["Jefes de equipo",55],["CEOs",49],["Colaboradores",44]]},
+     {n:"Disposición",f:"Sia, The Change Report 2026",u:"% de personas según su postura frente al cambio",max:100,r:[["Entusiasta",33],["Impulsora",15],["Escéptica",28]],nota:"Casi la mitad se declara entusiasta o impulsora: la disposición existe; lo que falta es respaldo."}]},
+ {t:"El cambio ya no puede interrumpir el trabajo",s:"Gestionado como campaña, el cambio compite con una agenda que ya no tiene espacio.",
+  p:["El último eslabón es quien recibe todos esos mensajes. Según Korn Ferry, dos de cada tres profesionales asumen responsabilidades de más de un puesto: cada capacitación o instructivo adicional compite con una agenda ya saturada.",
+     "Los líderes directos son el canal más creíble para entender un cambio, según Edelman, pero también uno de los más saturados. Y Deloitte advierte que 60% de las organizaciones aún trata la gestión del cambio como un costo de proyecto."],
+  l:"La gestión del cambio debe dejar de operar como una campaña con lanzamiento, capacitación y cierre, y pasar a integrarse en la operación diaria.",
+  v:[{n:"Personas",f:"Korn Ferry, Workforce 2026",u:"% de profesionales",max:100,r:[["Asume responsabilidades de más de un puesto",61],["Jefes de equipo demasiado ocupados para lograr resultados relevantes",50]]},
+     {n:"Líderes directos",f:"Gallagher, Employee Communications Report 2026",u:"% de equipos de comunicación",max:100,r:[["Ve la capacidad de los mandos como un riesgo",87],["Les da herramientas de apoyo",21]]},
+     {n:"Gestión del cambio",f:"Deloitte, 2026 Change Management Study · Gallagher, 2026",u:"% de organizaciones y equipos",max:100,r:[["Trata la gestión del cambio como un costo de proyecto (Deloitte)",60],["No tiene un enfoque definido para comunicar el cambio (Gallagher)",61]]}]}
+];
+const pad=n=>String(n).padStart(2,"0");
+const grilla=document.getElementById("grilla"),tabs=document.getElementById("tabs"),panel=document.getElementById("panel");
+let actual=0,vista=0;
+H.forEach((h,i)=>{
+  const b=document.createElement("button");b.className="tarjeta";b.type="button";
+  b.innerHTML=`<span class="num">${pad(i+1)}</span><h3>${h.t}</h3><p>${h.s}</p><span class="ir">Ver hallazgo →</span>`;
+  b.onclick=()=>{abrir(i);document.getElementById("hallazgos").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})};
+  grilla.appendChild(b);
+  const t=document.createElement("button");t.className="tab";t.type="button";t.role="tab";t.id="tab-"+i;
+  t.textContent="Hallazgo "+pad(i+1);t.onclick=()=>abrir(i);tabs.appendChild(t);
+});
+function abrir(i){
+  actual=i;vista=0;
+  [...tabs.children].forEach((t,k)=>t.setAttribute("aria-selected",k===i));
+  panel.setAttribute("aria-labelledby","tab-"+i);
+  const h=H[i];
+  panel.innerHTML=`<div class="texto"><span class="gran-num">${pad(i+1)}</span><h3>${h.t}</h3><p class="sub">${h.s}</p>${h.p.map(x=>`<p>${x}</p>`).join("")}
+  <div class="lectura"><span class="etq">Mi lectura</span><p>${h.l}</p></div></div>
+  <div class="grafico"><div class="vistas"><span class="etq">Selecciona la vista</span><div class="botones">${h.v.map((v,k)=>`<button type="button" class="vista" data-k="${k}">${v.n}</button>`).join("")}</div></div><div id="chart"></div></div>`;
+  panel.querySelectorAll(".vista").forEach(b=>b.onclick=()=>{vista=+b.dataset.k;pintar()});
+  pintar();
+}
+function pintar(){
+  const v=H[actual].v[vista];
+  panel.querySelectorAll(".vista").forEach((b,k)=>b.setAttribute("aria-pressed",k===vista));
+  const paso=v.max/(v.max===60?6:5),ticks=[];for(let x=0;x<=v.max;x+=paso)ticks.push(x);
+  const c=document.getElementById("chart");
+  c.innerHTML=`<div class="chart"><span class="eje-tit">${v.u}</span><div class="ticks">${ticks.map(x=>`<span style="left:${x/v.max*100}%">${x}%</span>`).join("")}</div>
+  ${v.r.map(([l,n])=>`<div class="fila"><span class="lbl">${l}</span><div class="barra"><div class="pista"><div class="relleno" style="width:0" data-w="${n/v.max*100}"></div></div><span class="valor">${n}%</span></div></div>`).join("")}</div>
+  ${v.nota?`<p class="nota" style="margin-top:18px">${v.nota}</p>`:""}<p class="fuente" style="margin-top:12px">Fuente: ${v.f}</p>`;
+  c.querySelector(".ticks span:last-child").style.transform="translateX(-100%)";
+  requestAnimationFrame(()=>requestAnimationFrame(()=>c.querySelectorAll(".relleno").forEach(r=>r.style.width=r.dataset.w+"%")));
+}
+abrir(0);
+</script>
+
+</body>
+</html>
