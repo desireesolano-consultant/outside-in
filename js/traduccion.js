@@ -227,6 +227,10 @@ const TRADUCCION_EN = {
   "© 2026 Desirée Solano · Outside-In": "© 2026 Desirée Solano · Outside-In",
 
   // Textos en tercera persona (guía de redacción, 5-nov-2026)
+  "con sus principales hallazgos.": "with their key findings.",
+  "Los últimos estudios sobre el mundo organizacional, con sus principales hallazgos. Se actualiza cada lunes.": "The latest studies on the organizational world, with their key findings. Updated every Monday.",
+  "La lectura de una especialista en comunicación organizacional sobre lo que los estudios revelan para las organizaciones.": "An organizational communication specialist's reading of what the studies reveal for organizations.",
+  "en las organizaciones. Cada semana, un sistema automatizado identifica los más recientes y presenta sus principales hallazgos, como insumo para la toma de decisiones.": "in organizations. Every week, an automated system identifies the most recent ones and presents their key findings, as input for decision-making.",
   "Cada semana se publican nuevos estudios sobre el mundo organizacional.": "New studies on the organizational world are published every week.",
   "Cada uno en un sitio distinto,": "Each one on a different site,",
   "con su propio formato y calendario.": "with its own format and calendar.",
