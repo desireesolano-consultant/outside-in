@@ -43,12 +43,12 @@ const INSIGHTS = [
       },
       {
         id: "h-2026-10-pwc-fs-cambio",
-        dato_es: "4 de 10",
-        dato_en: "4 in 10",
-        etiqueta_es: "líderes de servicios financieros ven a sus equipos abrumados por el ritmo de cambio de la IA",
-        etiqueta_en: "financial services leaders see their teams overwhelmed by the pace of AI-driven change",
-        frase_es: "líderes de servicios financieros en EE.UU. afirman que sus equipos se sienten abrumados por el ritmo de cambio de la IA. Además, 44% identifica temor a perder el empleo o a que el rol cambie.",
-        frase_en: "US financial services leaders say their teams feel overwhelmed by the pace of AI-driven change. In addition, 44% see fear of job loss or role change.",
+        dato_es: "44%",
+        dato_en: "44%",
+        etiqueta_es: "de los ejecutivos de servicios financieros en EE.UU. señala que sus colaboradores temen perder el empleo o que la IA cambie su rol",
+        etiqueta_en: "of US financial services executives say their employees fear losing their jobs or having their roles changed by AI",
+        frase_es: "de los ejecutivos de servicios financieros en EE.UU. señala que sus colaboradores temen perder el empleo o que la IA cambie su rol, y 43% indica que sus equipos solo la usan cuando se les exige. Sin claridad sobre qué cambia en cada puesto, la incertidumbre ocupa ese espacio.",
+        frase_en: "of US financial services executives say their employees fear losing their jobs or having their roles changed by AI, and 43% say their teams use it only when required. Without clarity on what changes in each role, uncertainty fills the gap.",
       },
     ],
 
