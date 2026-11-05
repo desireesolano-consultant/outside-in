@@ -670,17 +670,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611060500"></script>
-<script src="js/textos.js?v=202611060500"></script>
-<script src="js/datos.js?v=202611060500"></script>
-<script src="js/contador.js?v=202611060500"></script>
-<script src="js/buscador.js?v=202611060500"></script>
-<script src="js/imagenes.js?v=202611060500"></script>
-<script src="js/insights.js?v=202611060500"></script>
-<script src="js/columnas.js?v=202611060500"></script>
-<script src="js/radar.js?v=202611060500"></script>
-<script src="js/traduccion.js?v=202611060500"></script>
-<script src="js/metricas.js?v=202611060500"></script>
+<script src="js/config.js?v=202611060700"></script>
+<script src="js/textos.js?v=202611060700"></script>
+<script src="js/datos.js?v=202611060700"></script>
+<script src="js/contador.js?v=202611060700"></script>
+<script src="js/buscador.js?v=202611060700"></script>
+<script src="js/imagenes.js?v=202611060700"></script>
+<script src="js/insights.js?v=202611060700"></script>
+<script src="js/columnas.js?v=202611060700"></script>
+<script src="js/radar.js?v=202611060700"></script>
+<script src="js/traduccion.js?v=202611060700"></script>
+<script src="js/metricas.js?v=202611060700"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -792,7 +792,7 @@ img{max-width:100%;display:block}
     lista.innerHTML='';const q=entrada.value.trim();
     if(q.length<2||typeof buscarEstudios!=='function'){conteo.textContent='';atajos.hidden=false;return;}
     atajos.hidden=true;const r=buscarEstudios(q);
-    conteo.textContent=r.length?(EN?`${r.length} ${r.length===1?'study':'studies'}`:`${r.length} ${r.length===1?'estudio':'estudios'}`):(EN?"I haven't found studies on that yet. Try AI, change, culture, banking, health or consumer.":'No encontré estudios sobre eso todavía. Prueba con IA, cambio, cultura, banca, salud o consumo.');
+    conteo.textContent=r.length?(EN?`${r.length} ${r.length===1?'study':'studies'}`:`${r.length} ${r.length===1?'estudio':'estudios'}`):(EN?'There are no studies on that topic yet. Other possible searches: AI, change, culture, banking, health or consumer.':'Todavía no hay estudios sobre ese tema. Otras búsquedas posibles: IA, cambio, cultura, banca, salud o consumo.');
     r.slice(0,8).forEach(h=>{const li=document.createElement('li');const a=document.createElement('a');a.href=`hallazgo.html?id=${encodeURIComponent(h.id)}`;const sm=document.createElement('small');sm.textContent=h.fuente;const sp=document.createElement('span');sp.textContent=EN?h.hallazgo_en:h.hallazgo_es;a.append(sm,sp);li.appendChild(a);lista.appendChild(li);});
   }
   entrada.addEventListener('input',pinta);
@@ -854,7 +854,7 @@ img{max-width:100%;display:block}
       if(sel.fecha) quitar(nombreRango(sel.fecha),()=>{sel.fecha='';});
       fc.textContent=(EN?`Showing ${r.length} of ${reales.length} studies`:`Mostrando ${r.length} de ${reales.length} estudios`);
       document.getElementById('f-ver').textContent=EN?`See ${r.length} ${r.length===1?'study':'studies'}`:`Ver ${r.length} ${r.length===1?'estudio':'estudios'}`;
-      if(r.length){mostrar(r);} else {c.innerHTML='';const v=document.createElement('p');v.className='sin-resultados';v.textContent=sel.fecha==='hoy'&&!sel.tema.size&&!sel.industria.size?(EN?'No new studies were published today. The search runs every Monday: try "This week".':'Hoy no se publicaron estudios nuevos. La búsqueda corre cada lunes: prueba con "Esta semana".'):(EN?'There are no studies with these filters yet. Try another combination.':'Todavía no hay estudios con estos filtros. Prueba con otra combinación.');c.appendChild(v);}
+      if(r.length){mostrar(r);} else {c.innerHTML='';const v=document.createElement('p');v.className='sin-resultados';v.textContent=sel.fecha==='hoy'&&!sel.tema.size&&!sel.industria.size?(EN?'No new studies were published today. New studies are added every Monday; the "This week" option shows the most recent ones.':'Hoy no se publicaron estudios nuevos. Los estudios se actualizan cada lunes; la opción "Esta semana" muestra los más recientes.'):(EN?'There are no studies with these filters yet.':'Todavía no hay estudios con estos filtros.');c.appendChild(v);}
     }
     function sincronizar(){
       gT.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(sel.tema.has(b.dataset.id))));
