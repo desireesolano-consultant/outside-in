@@ -15,8 +15,8 @@ const INSIGHTS = [
     industrias: ["consumo_masivo", "life_sciences", "servicios_financieros"],
     estudios: ["h-2026-10-deloitte-consumo-ia", "h-2026-10-bain-life-sciences", "h-2026-10-pwc-fs-cambio"],
 
-    titulo_es: "La IA llega más rápido que la explicación de qué cambia en cada rol",
-    titulo_en: "AI is arriving faster than the explanation of what changes in each role",
+    titulo_es: "Acceso a la IA, sin rediseño del trabajo",
+    titulo_en: "AI access, without work redesign",
     bajada_es:
       "Tres estudios, tres industrias y una misma tensión: la tecnología llega más rápido que la conversación sobre cómo cambia el trabajo.",
     bajada_en:

@@ -227,6 +227,15 @@ const TRADUCCION_EN = {
   "© 2026 Desirée Solano · Outside-In": "© 2026 Desirée Solano · Outside-In",
 
   // Textos en tercera persona (guía de redacción, 5-nov-2026)
+  "Cada semana se publican nuevos estudios sobre organizaciones.": "New studies on organizations are published every week.",
+  "Pocos equipos directivos tienen tiempo para leerlos.": "Few leadership teams have time to read them.",
+  "Outside-In los reúne": "Outside-In brings them together",
+  "en un solo lugar,": "in one place,",
+  "con su data verificada.": "with verified data.",
+  "Y los cruza para mostrar": "And crosses them to show",
+  "qué implican para las organizaciones.": "what they mean for organizations.",
+  "Lo esencial de cada estudio: los datos más relevantes para las organizaciones y el enlace al estudio completo.": "The essentials of each study: the data most relevant to organizations and a link to the full study.",
+  "El cruce de varios estudios sobre un mismo tema: en qué coinciden, en qué difieren y qué implica para las organizaciones.": "Several studies on the same topic, side by side: where they agree, where they differ and what it means for organizations.",
   "Tendencias organizacionales, con data": "Organizational trends, backed by data",
   "Descubrir más": "Discover more",
   "Cada semana se publican más estudios sobre organizaciones de los que un equipo directivo alcanza a leer.": "Every week, more studies on organizations are published than any leadership team can read.",
