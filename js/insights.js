@@ -15,8 +15,8 @@ const INSIGHTS = [
     industrias: ["consumo_masivo", "life_sciences", "servicios_financieros"],
     estudios: ["h-2026-10-deloitte-consumo-ia", "h-2026-10-bain-life-sciences", "h-2026-10-pwc-fs-cambio"],
 
-    titulo_es: "Las empresas ya dieron acceso a la IA. ¿Le explicaron a su gente qué cambia?",
-    titulo_en: "Companies have already given people access to AI. Did they explain what changes?",
+    titulo_es: "La IA llega más rápido que la explicación de qué cambia en cada rol",
+    titulo_en: "AI is arriving faster than the explanation of what changes in each role",
     bajada_es:
       "Tres estudios, tres industrias y una misma tensión: la tecnología llega más rápido que la conversación sobre cómo cambia el trabajo.",
     bajada_en:
@@ -48,41 +48,41 @@ const INSIGHTS = [
 
     coinciden_es: [
       "El acceso a la IA avanza más rápido que el rediseño del trabajo: las herramientas llegan, pero los puestos y las rutinas siguen casi iguales.",
-      "Las empresas que más avanzan son las que explican qué cambia en cada rol. La diferencia entre escalar y quedarse en pilotos se parece mucho a una diferencia de comunicación.",
+      "Las empresas que más avanzan son las que explican qué cambia en cada rol. En consecuencia, la distancia entre escalar la IA y quedarse en pilotos es, en buena medida, una brecha de comunicación.",
       "Usar la IA no es lo mismo que adoptarla: en consumo, solo 25% de quienes tienen acceso la usa en más del 60% de su trabajo diario, y en banca 43% la usa solo cuando se le exige.",
     ],
     coinciden_en: [
       "Access to AI is moving faster than work redesign: the tools arrive, but roles and routines stay almost the same.",
-      "The companies that move furthest are the ones that explain what changes in each role. The gap between scaling and staying in pilots looks a lot like a communication gap.",
+      "The companies that move furthest are the ones that explain what changes in each role. As a result, the distance between scaling AI and staying in pilots is, to a large extent, a communication gap.",
       "Using AI is not the same as adopting it: in consumer goods only 25% of those with access use it for more than 60% of their daily work, and in banking 43% use it only when required.",
     ],
 
     chocan_es: [
-      "Bain sugiere que comunicar la visión es lo que separa a quienes escalan. Pero el mismo estudio muestra que solo 20% de esas empresas convirtió esa visión en decisiones concretas: comunicar no alcanza si no se baja a la organización.",
-      "PwC muestra el otro lado: más cambio, comunicado rápido, también puede abrumar. 34% de los líderes de banca ve la fatiga de cambio como una barrera para escalar la IA.",
+      "Bain sugiere que comunicar la visión es lo que distingue a las empresas que escalan. Sin embargo, el mismo estudio muestra que solo 20% de ellas convirtió esa visión en decisiones concretas: comunicar no es suficiente si la visión no se traduce en cambios dentro de la organización.",
+      "PwC muestra la otra cara: más cambio, comunicado con rapidez, también puede abrumar a los equipos. En efecto, 34% de los líderes de banca considera la fatiga de cambio una barrera para escalar la IA.",
     ],
     chocan_en: [
-      "Bain suggests that communicating the vision is what separates the companies that scale. Yet the same study shows only 20% of them have turned that vision into concrete decisions: communicating isn't enough unless it reaches the organization.",
-      "PwC shows the other side: more change, communicated fast, can also overwhelm. 34% of banking leaders see change fatigue as a barrier to scaling AI.",
+      "Bain suggests that communicating the vision is what distinguishes the companies that scale. However, the same study shows that only 20% of them have turned that vision into concrete decisions: communicating is not enough if the vision does not translate into changes within the organization.",
+      "PwC shows the other side: more change, communicated quickly, can also overwhelm teams. Indeed, 34% of banking leaders see change fatigue as a barrier to scaling AI.",
     ],
 
     porque_es:
-      "Miran industrias distintas (consumo, ciencias de la vida y banca) y momentos distintos de adopción. Y hay algo que comparten: los tres preguntan a líderes, no a colaboradores. Sabemos cómo ven el cambio quienes lo dirigen; todavía sabemos poco de cómo lo viven quienes lo atraviesan.",
+      "Los tres estudios analizan industrias distintas (consumo, ciencias de la vida y banca) y etapas distintas de adopción. Sin embargo, comparten un rasgo: los tres encuestan a líderes, no a colaboradores. Por eso, muestran cómo ven el cambio quienes lo dirigen, pero dicen poco sobre cómo lo viven quienes lo atraviesan.",
     porque_en:
-      "They look at different industries (consumer goods, life sciences and banking) and different stages of adoption. And they share one thing: all three ask leaders, not employees. We know how the people leading the change see it; we still know little about how the people living it experience it.",
+      "The three studies look at different industries (consumer goods, life sciences and banking) and different stages of adoption. However, they share one trait: all three survey leaders, not employees. As a result, they show how those leading the change see it, but say little about how those going through it experience it.",
 
     mirada_es: null,
     mirada_en: null,
 
     preguntas_es: [
-      "¿Tu gente sabe qué va a cambiar en su rol con la IA, o solo sabe que ya tiene acceso a una herramienta?",
+      "¿Los equipos saben qué cambiará en su rol con la IA, o solo saben que ya tienen acceso a una herramienta?",
       "¿Quién está traduciendo la visión en decisiones concretas: Recursos Humanos, Tecnología o cada líder de área?",
-      "¿Cómo estás midiendo la fatiga de cambio antes de lanzar la próxima ola?",
+      "¿Cómo se mide la fatiga de cambio antes de lanzar la siguiente iniciativa?",
     ],
     preguntas_en: [
-      "Do your people know what will change in their role with AI, or only that they now have access to a tool?",
+      "Do teams know what will change in their role with AI, or only that they now have access to a tool?",
       "Who is turning the vision into concrete decisions: HR, Technology or each area leader?",
-      "How are you measuring change fatigue before launching the next wave?",
+      "How is change fatigue measured before launching the next initiative?",
     ],
   },
 ];
