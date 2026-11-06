@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="css/estilos.css?v=202611061900" />
+  <link rel="stylesheet" href="css/estilos.css?v=202611062000" />
 </head>
 <body>
   <div id="franja-vista-previa" class="oi-franja-vista-previa" data-i18n="franjaVistaPrevia" hidden></div>
@@ -41,63 +41,66 @@
   </header>
 
   <main>
-    <article id="insight" class="oi-insight ic">
-      <section class="ic-apertura">
-        <div class="ic-env">
+    <article id="insight" class="oi-insight iv">
+      <section class="iv-portada">
+        <div class="iv-env">
           <a href="index.html#insights" class="oi-hallazgo-volver" data-i18n="insightVolver"></a>
-          <p class="ic-eti ic-az" id="insight-meta"></p>
-          <h1 id="insight-titulo" class="ic-titulo"></h1>
-          <p id="insight-bajada" class="ic-bajada"></p>
-          <div id="insight-fuentes" class="ic-meta"></div>
+          <div class="iv-ceja"><span class="iv-pill" id="insight-pill"></span><span id="insight-meta"></span></div>
+          <h1 id="insight-titulo" class="iv-titulo"></h1>
+          <p id="insight-tesis" class="iv-bajada"></p>
+          <div id="insight-estudios" class="iv-estudios"></div>
         </div>
       </section>
 
-      <section class="ic-sec">
-        <div class="ic-env">
-          <p class="ic-eti" data-i18n="insightTesis"></p>
-          <p id="insight-tesis" class="ic-tesis"></p>
+      <section class="iv-patron">
+        <div class="iv-env iv-rv">
+          <p class="iv-etq" data-i18n="insightPatronEtq"></p>
+          <h2 class="iv-sec-t" id="insight-patron-titulo"></h2>
+          <p class="iv-intro" id="insight-patron-intro"></p>
+          <div class="iv-pasos" role="tablist" id="insight-pasos"></div>
+          <div class="iv-detalle" id="insight-detalle" aria-live="polite"></div>
         </div>
       </section>
 
-      <section class="ic-sec ic-sin-arriba">
-        <div class="ic-env">
-          <h2 class="ic-h2" data-i18n="insightCoincidenTitulo"></h2>
-          <p class="ic-bajada-sec"><b data-i18n="insightCoinciden"></b><span id="insight-coinciden-intro"></span></p>
-          <div id="insight-cadena" class="ic-cadena"></div>
-          <div id="insight-coinciden" class="ic-cruces"></div>
+      <section class="iv-vistazo">
+        <div class="iv-env iv-rv">
+          <h2 class="iv-sec-t" data-i18n="insightVistazo"></h2>
+          <p class="iv-intro" data-i18n="insightVistazoIntro"></p>
+          <div class="iv-grilla" id="insight-grilla"></div>
         </div>
       </section>
 
-      <section class="ic-sec ic-alt">
-        <div class="ic-env">
-          <h2 class="ic-h2" data-i18n="insightDifierenTitulo"></h2>
-          <p class="ic-bajada-sec"><b data-i18n="insightChocan"></b><span id="insight-difieren-intro"></span></p>
-          <div id="insight-difieren" class="ic-cruces"></div>
+      <section class="iv-cruces" id="insight-cruces">
+        <div class="iv-env">
+          <div class="iv-tabs-wrap"><div class="iv-tabs" role="tablist" id="insight-tabs"></div></div>
+          <div id="insight-panel" role="tabpanel"></div>
         </div>
       </section>
 
-      <section class="ic-sec">
-        <div class="ic-env">
-          <h2 class="ic-h2" data-i18n="insightDicen"></h2>
-          <div id="insight-dicen" class="ic-posturas"></div>
+      <section class="iv-estudio-sec">
+        <div class="iv-env iv-rv">
+          <h2 class="iv-sec-t" data-i18n="insightDicen"></h2>
+          <div class="iv-posturas" id="insight-dicen"></div>
+          <p class="iv-alcance"><i aria-hidden="true">i</i><span><b data-i18n="insightPorque"></b><b>.</b> <span id="insight-porque"></span></span></p>
         </div>
       </section>
 
-      <section class="ic-sec ic-sin-arriba">
-        <div class="ic-env">
-          <div class="ic-ciego">
-            <div><p class="ic-eti" data-i18n="insightPorque"></p><h2 id="insight-alcance-titulo"></h2></div>
-            <p id="insight-porque"></p>
-          </div>
+      <section class="iv-preguntas">
+        <div class="iv-env iv-rv">
+          <p class="iv-etq" data-i18n="insightPreguntasEtq"></p>
+          <h2 class="iv-sec-t" data-i18n="insightPreguntas"></h2>
+          <ol id="insight-preguntas"></ol>
         </div>
       </section>
 
-      <section class="ic-sec ic-sin-arriba">
-        <div class="ic-env">
-          <h2 class="ic-h2" data-i18n="insightPreguntas"></h2>
-          <ol id="insight-preguntas" class="ic-preguntas"></ol>
-          <p id="insight-fuentes-pie" class="ic-fuentes"></p>
-          <div class="oi-insight-acciones">
+      <section class="iv-fuentes">
+        <div class="iv-env">
+          <h2 data-i18n="insightFuentesTitulo"></h2>
+          <div class="iv-tabla-wrap"><table>
+            <thead><tr><th data-i18n="fuenteLabel"></th><th data-i18n="estudioLabel"></th><th data-i18n="insightIndustria"></th><th data-i18n="insightMuestra"></th><th></th></tr></thead>
+            <tbody id="insight-fuentes-tabla"></tbody>
+          </table></div>
+          <div class="oi-insight-acciones iv-acciones">
             <a id="insight-compartir" class="oi-boton oi-boton-primario" target="_blank" rel="noopener" data-i18n="compartirLinkedin"></a>
             <a href="index.html#estudios" class="oi-boton oi-boton-secundario" data-i18n="insightVerEstudios"></a>
           </div>
@@ -129,13 +132,13 @@
     </div>
   </footer>
 
-  <script src="js/config.js?v=202611061900"></script>
-  <script src="js/textos.js?v=202611061900"></script>
-  <script src="js/datos.js?v=202611061900"></script>
-  <script src="js/insights.js?v=202611061900"></script>
-  <script src="js/imagenes.js?v=202611061900"></script>
-  <script src="js/pagina-insight.js?v=202611061900"></script>
-  <script src="js/buscador.js?v=202611061900"></script>
-  <script src="js/metricas.js?v=202611061900"></script>
+  <script src="js/config.js?v=202611062000"></script>
+  <script src="js/textos.js?v=202611062000"></script>
+  <script src="js/datos.js?v=202611062000"></script>
+  <script src="js/insights.js?v=202611062000"></script>
+  <script src="js/imagenes.js?v=202611062000"></script>
+  <script src="js/pagina-insight.js?v=202611062000"></script>
+  <script src="js/buscador.js?v=202611062000"></script>
+  <script src="js/metricas.js?v=202611062000"></script>
 </body>
 </html>
