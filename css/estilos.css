@@ -2594,3 +2594,72 @@ a.oi-insight-tarjeta:hover { border-color: var(--oi-azul); transform: translateY
 .oi-insight-punto h3 { margin: 0 0 6px; font: 800 18px/1.3 var(--oi-fuente-titulo); letter-spacing: -0.01em; color: var(--oi-negro); }
 .oi-insight-punto p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--oi-texto-gris-2); }
 ul:has(> .oi-insight-punto) { padding-left: 0; }
+
+/* =====================================================================
+   Insight como "cruce" de estudios (formato aprobado el 6-nov-2026).
+   Regla de color: todas las cifras en azul; el naranja solo como firma
+   (borde de la tesis, círculo vs./=, números de las preguntas).
+   ===================================================================== */
+.ic { background: var(--oi-blanco); }
+.ic-env { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+.ic-eti { margin: 0; font: 700 12px var(--oi-fuente-texto); letter-spacing: .12em; text-transform: uppercase; color: var(--oi-texto-gris); }
+.ic-az { color: var(--oi-azul); }
+.ic-apertura { background: var(--oi-fondo-alt); padding: 48px 0 64px; }
+.ic-apertura .ic-env { display: flex; flex-direction: column; gap: 14px; }
+.ic-titulo { margin: 4px 0 0; font: 800 clamp(38px, 5.4vw, 72px)/1.02 var(--oi-fuente-titulo); letter-spacing: -.035em; max-width: 16ch; text-wrap: balance; }
+.ic-titulo span { color: var(--oi-azul); }
+.ic-bajada { margin: 8px 0 0; font: 500 clamp(18px, 1.6vw, 21px)/1.6 var(--oi-fuente-texto); max-width: 60ch; }
+.ic-meta { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px 22px; font: 600 14px var(--oi-fuente-texto); color: var(--oi-texto-gris); }
+.ic-meta b { color: var(--oi-negro); }
+.ic-sec { padding: 64px 0; }
+.ic-sin-arriba { padding-top: 0; }
+.ic-alt { background: var(--oi-fondo-alt); }
+.ic-h2 { margin: 0; font: 800 clamp(26px, 2.8vw, 36px)/1.15 var(--oi-fuente-titulo); letter-spacing: -.02em; text-wrap: balance; }
+.ic-bajada-sec { margin: 12px 0 0; font: 400 18px/1.6 var(--oi-fuente-texto); color: var(--oi-texto-gris); max-width: 64ch; }
+.ic-bajada-sec b { display: block; color: var(--oi-negro); font: 700 18px var(--oi-fuente-texto); margin-bottom: 2px; }
+.ic-tesis { margin: 16px 0 0; border-left: 5px solid var(--oi-naranja); padding: 6px 0 6px 26px; max-width: 46ch; font: 800 clamp(24px, 2.6vw, 34px)/1.25 var(--oi-fuente-titulo); letter-spacing: -.02em; }
+.ic-cadena { margin-top: 40px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.ic-eslabon { position: relative; padding: 22px 18px 22px 0; border-top: 3px solid var(--oi-azul); }
+.ic-num { position: absolute; top: -12px; left: 0; background: var(--oi-blanco); padding-right: 10px; font: 800 13px var(--oi-fuente-titulo); color: var(--oi-azul); }
+.ic-eslabon h3 { margin: 0; font: 800 18px/1.25 var(--oi-fuente-titulo); }
+.ic-eslabon .ic-c { margin: 12px 0 0; font: 800 30px/1 var(--oi-fuente-titulo); letter-spacing: -.03em; color: var(--oi-azul); }
+.ic-eslabon p { margin: 8px 0 0; font-size: 14.5px; line-height: 1.5; }
+.ic-eslabon small, .ic-lado small { display: block; margin-top: 10px; font: 700 11px var(--oi-fuente-texto); letter-spacing: .08em; text-transform: uppercase; color: var(--oi-texto-gris); }
+.ic-cruces { margin-top: 32px; display: grid; gap: 22px; }
+.ic-cruce { background: var(--oi-blanco); border: 1px solid var(--oi-borde); border-radius: 22px; padding: clamp(22px, 3vw, 36px); display: grid; gap: 22px; }
+.ic-cruce h3 { margin: 0; font: 800 clamp(21px, 2vw, 26px)/1.25 var(--oi-fuente-titulo); letter-spacing: -.015em; text-wrap: balance; }
+.ic-duelo { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 18px; align-items: stretch; }
+.ic-lado { border: 1px solid var(--oi-borde); border-radius: 16px; padding: 20px 22px; }
+.ic-lado em { display: block; margin-bottom: 10px; font: 700 11px var(--oi-fuente-texto); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: var(--oi-texto-gris); }
+.ic-lado b { display: block; font: 800 clamp(38px, 4vw, 54px)/1 var(--oi-fuente-titulo); letter-spacing: -.035em; color: var(--oi-azul); }
+.ic-lado span { display: block; margin-top: 10px; font: 600 16px/1.45 var(--oi-fuente-texto); }
+.ic-vs { align-self: center; width: 46px; height: 46px; border-radius: 50%; background: var(--oi-naranja); color: var(--oi-negro); display: grid; place-items: center; font: 800 14px var(--oi-fuente-titulo); }
+.ic-lectura-eti { margin: 0 0 6px; font: 700 12px var(--oi-fuente-texto); letter-spacing: .12em; text-transform: uppercase; color: var(--oi-azul); }
+.ic-lectura { margin: 0; font-size: 16.5px; line-height: 1.7; max-width: 74ch; }
+.ic-nota { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--oi-texto-gris); }
+.ic-posturas { margin-top: 30px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.ic-postura { background: var(--oi-fondo-alt); border-radius: 20px; padding: 26px; display: grid; grid-template-rows: auto auto auto 1fr auto; gap: 12px; }
+.ic-postura p { margin: 0; }
+.ic-q { font: 800 20px/1.3 var(--oi-fuente-titulo); letter-spacing: -.01em; }
+.ic-postura .ic-c { margin-top: 6px; font: 800 40px/1 var(--oi-fuente-titulo); letter-spacing: -.03em; color: var(--oi-azul); }
+.ic-s { font-size: 15px; line-height: 1.5; }
+.ic-pie { display: flex; gap: 16px; flex-wrap: wrap; font: 700 14px var(--oi-fuente-texto); border-top: 1px solid var(--oi-borde); padding-top: 14px; }
+.ic-pie a { color: var(--oi-azul); text-decoration: none; }
+.ic-ciego { background: var(--oi-negro); color: #fff; border-radius: 26px; padding: clamp(28px, 4vw, 52px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 36px; align-items: center; }
+.ic-ciego .ic-eti { color: #FFB38A; }
+.ic-ciego h2 { margin: 10px 0 0; color: #fff; font: 800 clamp(26px, 3vw, 40px)/1.15 var(--oi-fuente-titulo); letter-spacing: -.02em; text-wrap: balance; }
+.ic-ciego p#insight-porque { margin: 0; color: #E3E4E8; font-size: 17px; line-height: 1.65; }
+.ic-preguntas { margin: 26px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; counter-reset: q; }
+.ic-preguntas li { list-style: none; border-top: 3px solid var(--oi-negro); padding-top: 16px; font: 700 17px/1.45 var(--oi-fuente-texto); }
+.ic-preguntas li::before { counter-increment: q; content: "0" counter(q); display: block; font: 800 13px var(--oi-fuente-titulo); color: var(--oi-naranja); margin-bottom: 8px; }
+.ic-fuentes { margin: 40px 0 28px; font-size: 14px; line-height: 1.6; color: var(--oi-texto-gris); border-top: 1px solid var(--oi-borde); padding-top: 20px; }
+.ic-fuentes b { color: var(--oi-negro); }
+.ic-fuentes a { color: var(--oi-texto-gris); }
+@media (max-width: 900px) {
+  .ic-env { padding: 0 16px; }
+  .ic-cadena { grid-template-columns: 1fr; gap: 26px; }
+  .ic-posturas, .ic-preguntas, .ic-ciego, .ic-duelo { grid-template-columns: 1fr; }
+  .ic-vs { justify-self: center; }
+  .ic-sec { padding: 48px 0; }
+  .ic-sin-arriba { padding-top: 0; }
+}

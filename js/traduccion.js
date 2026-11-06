@@ -76,6 +76,7 @@ const TRADUCCION_EN = {
   // Insights
   "Muchos estudios miran los mismos temas, pero no siempre llegan a las mismas conclusiones. Aquí los pongo a conversar.": "Many studies look at the same topics, but they don't always reach the same conclusions. Here I put them in conversation.",
   "Leer el insight completo →": "Read the full insight →",
+  "Leer el cruce completo →": "Read the full analysis →",
   "Mi sistema ya está buscando el próximo cruce.": "My system is already looking for the next crossover.",
 
   // Mi mirada

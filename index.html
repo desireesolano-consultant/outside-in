@@ -468,6 +468,14 @@ img{max-width:100%;display:block}
 .cifras-i b{font:800 clamp(24px,2.2vw,32px)/1 var(--t);letter-spacing:-.03em;color:var(--azul)}
 .cifras-i span{font:700 15px/1.4 var(--x);color:var(--negro)}
 .cifras-i small{font:700 11px/1.3 var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris);padding-top:10px;margin-top:6px;border-top:1px solid var(--borde)}
+/* Duelo de cifras del insight (formato "cruce", 6-nov-2026) */
+.cifras-i.duelo-i{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;border-top:0;padding-top:4px}
+.duelo-i div{background:var(--alt);border-radius:16px;padding:18px;grid-template-rows:auto auto 1fr auto;gap:6px}
+.duelo-i em{font:700 11px var(--x);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+.duelo-i b{font-size:clamp(34px,3.4vw,46px)}
+.duelo-i span{font:600 14.5px/1.4 var(--x)}
+.duelo-i small{border-top:0;padding-top:0}
+.duelo-i i{align-self:center;width:38px;height:38px;border-radius:50%;background:var(--naranja);color:var(--negro);display:grid;place-items:center;font:800 13px var(--t);font-style:normal}
 .gigante-card .arriba{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font:600 13px var(--x);color:var(--gris)}
 .gigante-card .arriba span{background:none!important;color:var(--gris)!important;padding:0!important;border-radius:0!important;font:600 13px var(--x)!important}
 .gigante-card .arriba span:first-child{color:var(--gris)!important}
@@ -521,6 +529,8 @@ img{max-width:100%;display:block}
   .gigante-card{grid-template-columns:1fr}
   .gigante-card .foto-i{min-height:220px}
   .cifras-i{grid-template-columns:1fr}
+  .cifras-i.duelo-i{grid-template-columns:1fr}
+  .duelo-i i{justify-self:center}
   .carrusel-wrap .flechas-c{display:none}
 }
 </style>
@@ -629,8 +639,8 @@ img{max-width:100%;display:block}
           <div class="arriba" id="gigante-etiquetas"></div>
           <h3 id="gigante-titulo"></h3>
           <p id="gigante-bajada"></p>
-          <div class="cifras-i" id="gigante-cifras"></div>
-          <span class="btn">Leer el insight completo →</span>
+          <div class="cifras-i duelo-i" id="gigante-cifras"></div>
+          <span class="btn">Leer el cruce completo →</span>
         </div>
       </a>
       <p class="proximo">El próximo cruce de estudios ya está en preparación.</p>
@@ -691,17 +701,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611061400"></script>
-<script src="js/textos.js?v=202611061400"></script>
-<script src="js/datos.js?v=202611061400"></script>
-<script src="js/contador.js?v=202611061400"></script>
-<script src="js/buscador.js?v=202611061400"></script>
-<script src="js/imagenes.js?v=202611061400"></script>
-<script src="js/insights.js?v=202611061400"></script>
-<script src="js/columnas.js?v=202611061400"></script>
-<script src="js/radar.js?v=202611061400"></script>
-<script src="js/traduccion.js?v=202611061400"></script>
-<script src="js/metricas.js?v=202611061400"></script>
+<script src="js/config.js?v=202611061730"></script>
+<script src="js/textos.js?v=202611061730"></script>
+<script src="js/datos.js?v=202611061730"></script>
+<script src="js/contador.js?v=202611061730"></script>
+<script src="js/buscador.js?v=202611061730"></script>
+<script src="js/imagenes.js?v=202611061730"></script>
+<script src="js/insights.js?v=202611061730"></script>
+<script src="js/columnas.js?v=202611061730"></script>
+<script src="js/radar.js?v=202611061730"></script>
+<script src="js/traduccion.js?v=202611061730"></script>
+<script src="js/metricas.js?v=202611061730"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -913,11 +923,13 @@ img{max-width:100%;display:block}
     const g=document.getElementById('gigante'); if(!g||typeof INSIGHTS==='undefined'||!INSIGHTS.length){if(g)g.closest('section').hidden=true;return;}
     const ins=[...INSIGHTS].sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||''))[0];
     g.href='insight.html?id='+encodeURIComponent(ins.id);
-    document.getElementById('gigante-titulo').textContent=EN?ins.titulo_en:ins.titulo_es;
-    document.getElementById('gigante-bajada').textContent=EN?ins.bajada_en:ins.bajada_es;
-    const gc=document.getElementById('gigante-cifras'); if(gc&&ins.dicen) ins.dicen.forEach(d=>{const h=typeof HALLAZGOS!=='undefined'?HALLAZGOS.find(x=>x.id===d.id):null;const dv=document.createElement('div');const b=document.createElement('b');b.textContent=EN?(d.cifra_en||d.dato_en):(d.cifra_es||d.dato_es);const ds=document.createElement('span');ds.textContent=EN?(d.postura_en||d.etiqueta_en||''):(d.postura_es||d.etiqueta_es||'');const sm=document.createElement('small');sm.textContent=h?h.fuente:'';dv.append(b,ds,sm);gc.appendChild(dv);});
+    const gt=document.getElementById('gigante-titulo'); gt.textContent=(EN?ins.titulo_en:ins.titulo_es)+' '+((EN?ins.titulo2_en:ins.titulo2_es)||'');
+    document.getElementById('gigante-bajada').textContent=EN?(ins.resumen_en||ins.bajada_en):(ins.resumen_es||ins.bajada_es);
+    // Duelo de cifras: dos estudios distintos, cada cifra con su sujeto completo.
+    const gc=document.getElementById('gigante-cifras');
+    if(gc&&ins.portada){ins.portada.forEach((d,i)=>{const h=typeof HALLAZGOS!=='undefined'?HALLAZGOS.find(x=>x.id===d.id):null;const dv=document.createElement('div');const em=document.createElement('em');{const ind=INDUSTRIAS.find(x=>x.id===d.industria);const f=ind?(EN?ind.frase_en:ind.frase_es):'';em.textContent=f.charAt(0).toUpperCase()+f.slice(1);}const b=document.createElement('b');b.textContent=EN?d.dato_en:d.dato_es;const ds=document.createElement('span');ds.textContent=EN?d.texto_en:d.texto_es;const sm=document.createElement('small');sm.textContent=h?h.fuente:'';dv.append(em,b,ds,sm);gc.appendChild(dv);if(i===0){const v=document.createElement('i');v.textContent='vs.';v.setAttribute('aria-hidden','true');gc.appendChild(v);}});}
     const et=document.getElementById('gigante-etiquetas');
-    const s0=document.createElement('span');s0.textContent=nombreDe(ins.tema);et.appendChild(s0);
+    const s0=document.createElement('span');s0.textContent=(EN?'Cross-study ':'El cruce ')+(ins.numero||'')+' · '+nombreDe(ins.tema);et.appendChild(s0);
     [...new Set(ins.estudios.map(id=>{const h=HALLAZGOS.find(x=>x.id===id);return h?h.fuente.replace(' AI Institute',''):null;}).filter(Boolean))]
       .forEach(fu=>{const s=document.createElement('span');s.className='b';s.textContent=fu;et.appendChild(s);});
   })();

@@ -53,28 +53,55 @@ function campo(obj, nombre) {
   return idioma === "es" ? obj[`${nombre}_es`] : obj[`${nombre}_en`];
 }
 
-function nombreCategoria(id) {
-  const c = [...TEMAS, ...INDUSTRIAS].find((x) => x.id === id);
+function nombreCortoInsight(id) {
+  const ind = INDUSTRIAS.find((x) => x.id === id);
+  if (ind) {
+    // Nombre corto de la industria ("Servicios financieros", no la versión con paréntesis)
+    const f = ind[`frase_${idioma}`] || ind[idioma];
+    return f.charAt(0).toUpperCase() + f.slice(1);
+  }
+  const c = TEMAS.find((x) => x.id === id);
   return c ? c[idioma] : "";
 }
 
-function llenarLista(idLista, items) {
-  const lista = document.getElementById(idLista);
-  lista.innerHTML = "";
-  (items || []).forEach((item) => {
-    const li = document.createElement("li");
-    if (item && typeof item === "object") {
-      li.className = "oi-insight-punto";
-      const h = document.createElement("h3");
-      h.textContent = item.titulo;
-      const p = document.createElement("p");
-      p.textContent = item.texto;
-      li.append(h, p);
-    } else {
-      li.textContent = item;
+function crear(tag, clase, texto) {
+  const el = document.createElement(tag);
+  if (clase) el.className = clase;
+  if (texto != null) el.textContent = texto;
+  return el;
+}
+
+function fuenteDe(id) {
+  const h = HALLAZGOS.find((x) => x.id === id);
+  return h ? h.fuente : "";
+}
+
+// Un cruce: título, dos datos de estudios distintos, la lectura y la nota.
+function tarjetaCruce(cruce, signo) {
+  const t = TEXTOS[idioma];
+  const art = crear("article", "ic-cruce");
+  art.appendChild(crear("h3", null, campo(cruce, "titulo")));
+  const duelo = crear("div", "ic-duelo");
+  cruce.lados.forEach((lado, i) => {
+    const caja = crear("div", "ic-lado");
+    caja.append(
+      crear("em", null, nombreCortoInsight(lado.industria)),
+      crear("b", null, campo(lado, "dato")),
+      crear("span", null, campo(lado, "texto")),
+      crear("small", null, fuenteDe(lado.id))
+    );
+    duelo.appendChild(caja);
+    if (i === 0) {
+      const vs = crear("div", "ic-vs", signo);
+      vs.setAttribute("aria-hidden", "true");
+      duelo.appendChild(vs);
     }
-    lista.appendChild(li);
   });
+  const lectura = crear("div");
+  lectura.append(crear("p", "ic-lectura-eti", t.insightLectura), crear("p", "ic-lectura", campo(cruce, "lectura")));
+  art.append(duelo, lectura);
+  if (campo(cruce, "nota")) art.appendChild(crear("p", "ic-nota", campo(cruce, "nota")));
+  return art;
 }
 
 function renderizarInsight() {
@@ -89,55 +116,109 @@ function renderizarInsight() {
   articulo.hidden = false;
   noEncontrado.hidden = true;
   const ins = insightActual;
-  document.title = `${campo(ins, "titulo")} · Outside-In`;
+  const titulo1 = campo(ins, "titulo");
+  const titulo2 = campo(ins, "titulo2") || "";
+  document.title = `${titulo1} ${titulo2} · Outside-In`.replace(/\s+·/, " ·");
 
-  const fuentes = ins.estudios
-    .map((id) => HALLAZGOS.find((h) => h.id === id))
-    .filter(Boolean);
+  const fuentes = ins.estudios.map((id) => HALLAZGOS.find((h) => h.id === id)).filter(Boolean);
   document.getElementById("insight-meta").textContent =
-    `${fuentes.length} ${t.insightEstudios} · ${[...new Set(fuentes.map((h) => h.fuente.replace(" & Company", "").replace(" AI Institute", "")))].join(", ")}`;
-  document.getElementById("insight-titulo").textContent = campo(ins, "titulo");
+    `${t.insightEtiqueta} · ${t.insightCruce} ${ins.numero || ""} · ${nombreCortoInsight(ins.tema)}`;
+
+  const h1 = document.getElementById("insight-titulo");
+  h1.textContent = `${titulo1} `;
+  if (titulo2) h1.appendChild(crear("span", null, titulo2));
   document.getElementById("insight-bajada").textContent = campo(ins, "bajada");
 
-  // Lo que dice cada estudio
+  // Estudios cruzados: fuente · industria (sin repetir)
+  const meta = document.getElementById("insight-fuentes");
+  meta.innerHTML = "";
+  const vistos = new Set();
+  fuentes.forEach((h) => {
+    const clave = `${h.fuente}|${h.industria}`;
+    if (vistos.has(clave)) return;
+    vistos.add(clave);
+    const s = crear("span");
+    s.append(crear("b", null, h.fuente), document.createTextNode(` · ${nombreCortoInsight(h.industria)}`));
+    meta.appendChild(s);
+  });
+
+  document.getElementById("insight-tesis").textContent = campo(ins, "tesis");
+
+  // Puntos de coincidencia: la secuencia y los cruces
+  const h2Coinciden = document.querySelector("[data-i18n='insightCoincidenTitulo']");
+  if (h2Coinciden && campo(ins, "coinciden_titulo")) h2Coinciden.textContent = campo(ins, "coinciden_titulo");
+  document.getElementById("insight-coinciden-intro").textContent = campo(ins, "coinciden_intro") || "";
+  const cadena = document.getElementById("insight-cadena");
+  cadena.innerHTML = "";
+  (ins.cadena || []).forEach((paso, i) => {
+    const d = crear("div", "ic-eslabon");
+    d.append(
+      crear("span", "ic-num", String(i + 1).padStart(2, "0")),
+      crear("h3", null, campo(paso, "titulo")),
+      crear("p", "ic-c", paso.dato),
+      crear("p", null, campo(paso, "texto")),
+      crear("small", null, fuenteDe(paso.id))
+    );
+    cadena.appendChild(d);
+  });
+  cadena.hidden = !cadena.children.length;
+  const coinciden = document.getElementById("insight-coinciden");
+  coinciden.innerHTML = "";
+  (ins.coinciden || []).forEach((c) => coinciden.appendChild(tarjetaCruce(c, "=")));
+
+  // Diferencias y matices: dato contra dato
+  document.getElementById("insight-difieren-intro").textContent = campo(ins, "difieren_intro") || "";
+  const difieren = document.getElementById("insight-difieren");
+  difieren.innerHTML = "";
+  (ins.difieren || []).forEach((c) => difieren.appendChild(tarjetaCruce(c, "vs.")));
+
+  // La postura de cada estudio
   const dicen = document.getElementById("insight-dicen");
   dicen.innerHTML = "";
   ins.dicen.forEach((d) => {
     const h = HALLAZGOS.find((x) => x.id === d.id);
     if (!h) return;
-    const tarjeta = document.createElement("article");
-    tarjeta.className = "oi-insight-estudio";
-    const fuente = document.createElement("p");
-    fuente.className = "oi-insight-estudio-fuente";
-    fuente.textContent = `${h.fuente} · ${nombreCategoria(h.industria) || nombreCategoria(h.tema)}`;
-    const postura = document.createElement("h3");
-    postura.className = "oi-insight-estudio-postura";
-    postura.textContent = campo(d, "postura") || "";
-    const dato = document.createElement("p");
-    dato.className = "oi-insight-estudio-dato";
-    dato.textContent = campo(d, "dato");
-    const frase = document.createElement("p");
-    frase.className = "oi-insight-estudio-frase";
-    frase.textContent = campo(d, "frase");
-    const pie = document.createElement("div");
-    pie.className = "oi-insight-estudio-pie";
-    const resumen = document.createElement("a");
+    const tarjeta = crear("article", "ic-postura");
+    const pie = crear("div", "ic-pie");
+    const resumen = crear("a", null, t.insightVerResumen);
     resumen.href = `hallazgo.html?id=${encodeURIComponent(h.id)}`;
-    resumen.textContent = t.insightVerResumen;
-    const original = document.createElement("a");
+    const original = crear("a", null, t.insightVerOriginal);
     original.href = h.link;
     original.target = "_blank";
     original.rel = "noopener";
-    original.textContent = t.insightVerOriginal;
     pie.append(resumen, original);
-    tarjeta.append(fuente, postura, dato, frase, pie);
+    tarjeta.append(
+      crear("p", "ic-eti ic-az", `${h.fuente} · ${nombreCortoInsight(h.industria) || nombreCortoInsight(h.tema)}`),
+      crear("p", "ic-q", campo(d, "postura")),
+      crear("p", "ic-c", campo(d, "dato")),
+      crear("p", "ic-s", campo(d, "frase")),
+      pie
+    );
     dicen.appendChild(tarjeta);
   });
 
-  llenarLista("insight-coinciden", campo(ins, "coinciden"));
-  llenarLista("insight-chocan", campo(ins, "chocan"));
-  document.getElementById("insight-porque").textContent = campo(ins, "porque");
-  llenarLista("insight-preguntas", campo(ins, "preguntas"));
+  document.getElementById("insight-alcance-titulo").textContent = campo(ins, "alcance_titulo") || "";
+  document.getElementById("insight-porque").textContent = campo(ins, "alcance") || campo(ins, "porque") || "";
+
+  const preguntas = document.getElementById("insight-preguntas");
+  preguntas.innerHTML = "";
+  (campo(ins, "preguntas") || []).forEach((q) => preguntas.appendChild(crear("li", null, q)));
+
+  const pieFuentes = document.getElementById("insight-fuentes-pie");
+  pieFuentes.innerHTML = "";
+  pieFuentes.appendChild(crear("b", null, `${t.insightFuentes}: `));
+  const usados = [...new Set([...ins.estudios, ...(ins.cadena || []).map((x) => x.id),
+    ...[...(ins.coinciden || []), ...(ins.difieren || [])].flatMap((c) => c.lados.map((l) => l.id))])]
+    .map((id) => HALLAZGOS.find((h) => h.id === id)).filter(Boolean)
+    .filter((h, i, arr) => arr.findIndex((x) => x.fuente === h.fuente && x.estudio_es === h.estudio_es) === i);
+  usados.forEach((h, i) => {
+    if (i) pieFuentes.appendChild(document.createTextNode(" · "));
+    const a = crear("a", null, `${h.fuente}, ${campo(h, "estudio")} (${h.anio})`);
+    a.href = h.link;
+    a.target = "_blank";
+    a.rel = "noopener";
+    pieFuentes.appendChild(a);
+  });
 
   // "Mi mirada" NO va dentro de los insights: vive solo en la sección Mi mirada (decisión de Desiree, 2-nov-2026).
 
