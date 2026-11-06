@@ -2701,3 +2701,13 @@ ul:has(> .oi-insight-punto) { padding-left: 0; }
   .ic-titulo { font-size: 32px; }
 }
 .ic-env { max-width: 1240px; }
+/* Cadena: alineación sin subgrid (funciona en todos los navegadores).
+   Título con alto fijo de dos líneas, así las cifras quedan a la misma altura;
+   la fuente se apoya abajo. */
+.ic-cadena { grid-template-rows: none; align-items: stretch; }
+.ic-eslabon { display: flex; flex-direction: column; grid-row: auto; grid-template-rows: none; row-gap: 0; padding-top: 28px; }
+.ic-eslabon h3 { min-height: calc(2 * 1.3em); align-self: stretch; margin: 0; }
+.ic-eslabon .ic-c { margin: 12px 0 0; }
+.ic-eslabon p:not(.ic-c) { margin: 10px 0 0; flex: 1 1 auto; }
+.ic-eslabon small { margin-top: 14px; align-self: stretch; }
+@media (max-width: 900px) { .ic-eslabon h3 { min-height: 0; } }
