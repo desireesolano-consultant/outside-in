@@ -181,7 +181,7 @@ function renderizarInsight() {
   document.title = `${titulo1} ${titulo2} · Outside-In`;
 
   const fuentes = ins.estudios.map((id) => HALLAZGOS.find((h) => h.id === id)).filter(Boolean);
-  document.getElementById("insight-pill").textContent = `${t.insightEtiqueta} · ${t.insightCruce} ${ins.numero || ""}`;
+  document.getElementById("insight-pill").textContent = `${t.insightCruce} ${ins.numero || ""}`.trim();
   document.getElementById("insight-meta").textContent =
     `${nombreCortoInsight(ins.tema)} · ${fuentes.length} ${t.insightEstudios}${ins.lectura_min ? ` · ${ins.lectura_min} ${t.insightMinLectura}` : ""}`;
   const h1 = document.getElementById("insight-titulo");
