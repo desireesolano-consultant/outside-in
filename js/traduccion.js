@@ -104,7 +104,22 @@ const TRADUCCION_EN = {
   "Reportes": "Reports",
 
   "Por": "By",
-  // Sobre mí
+  // Sobre mí (versión corporativa, 9-nov-2026)
+  "¿Quién está detrás de Outside-In?": "Who is behind Outside-In?",
+  "Desirée Solano. Consultora en comunicación organizacional y gestión del cambio, especializada en lo que define si una transformación funciona: las personas.": "Desiree Solano. Organizational communication and change management consultant, specialized in what determines whether a transformation works: people.",
+  "La comunicación no acompaña al negocio: es uno de sus pilares estratégicos. Y en un contexto en el que la tecnología y la inteligencia artificial transforman la forma de trabajar, las personas deben estar más que nunca en el centro.": "Communication does not simply support the business: it is one of its strategic pillars. And at a time when technology and artificial intelligence are transforming the way we work, people must be at the center more than ever.",
+  "— Desirée Solano": "— Desiree Solano",
+  "¿Qué la trajo hasta aquí?": "What brought her here?",
+  "Más de siete años en el centro de la transformación de grandes organizaciones. Primero, en la consultoría de cultura y comunicación interna, al frente de equipos y estrategias para grandes grupos empresariales de la región. Después, en proyectos de transformación global para compañías Fortune 500.": "More than seven years at the heart of the transformation of large organizations. First, in culture and internal communication consulting, leading teams and strategies for major business groups in the region. Then, in global transformation projects for Fortune 500 companies.",
+  "Fusiones. Cambios culturales. Nuevos propósitos. Marcas empleadoras. Y, en los últimos años, la inteligencia artificial aplicada a la gestión del cambio.": "Mergers. Cultural change. New purposes. Employer brands. And, in recent years, artificial intelligence applied to change management.",
+  "+7 años": "7+ years",
+  "en comunicación organizacional y gestión del cambio": "in organizational communication and change management",
+  "2 regiones": "2 regions",
+  "Latinoamérica y Estados Unidos, con proyectos liderados desde Perú y Argentina": "Latin America and the United States, with projects led from Peru and Argentina",
+  "compañías globales entre sus clientes": "global companies among her clients",
+  "¿Por qué Outside-In?": "Why Outside-In?",
+  "Porque los estudios que explican hacia dónde van las organizaciones existen, pero están dispersos y pocas veces se leen en conjunto. Desirée creó, diseñó y automatizó Outside-In para reunirlos cada semana y mostrar en qué coinciden, en qué difieren y qué implican para la toma de decisiones.": "Because the studies that explain where organizations are heading exist, but they are scattered and rarely read together. Desiree created, designed and automated Outside-In to bring them together every week and show where they agree, where they differ and what they mean for decision-making.",
+  // Sobre mí (versión anterior)
   "¿Puedo hacer una pregunta más?": "Can I ask one more question?",
   "(Spoiler: siempre puedo).": "(Spoiler: I always can.)",
   "Quienes me conocen lo saben: pregunto hasta lo más chiquito. Para mí, cada pregunta es una forma de entender mejor qué está pasando y a quién le importa.": "Those who know me know it: I ask about even the smallest things. For me, every question is a way to better understand what's happening and who it matters to.",
