@@ -11,12 +11,12 @@ const CONTADOR = {
   actualizado: "2026-11-09",
   semana: {
     revisados: 12,
-    seleccionados: 2,
-    publicados: 2,
+    seleccionados: 6,
+    publicados: 6,
   },
   desdeInicio: {
     revisados: 80,
-    seleccionados: 28,
-    publicados: 25,
+    seleccionados: 32,
+    publicados: 29,
   },
 };

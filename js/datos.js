@@ -2178,6 +2178,306 @@ const HALLAZGOS = [
     lecturaEstado: "pendiente",
     estado: "PUBLICADO",
   },
+  {
+    id: "h-2026-11-kpmg-global-ai-pulse",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "IA y trabajo",
+    esEjemplo: false,
+    publicado: "2026-11-09",
+    fecha: "2026-09-24",
+    anio: "2026",
+    fuente: "KPMG",
+    estudio_es: "IA a escala: responsabilidad, resiliencia y economía (Global AI Pulse, tercer trimestre de 2026)",
+    estudio_en: "AI at scale: Accountability, resilience and economics (Global AI Pulse Q3 2026)",
+    link: "https://assets.kpmg.com/content/dam/kpmgsites/xx/pdf/2026/09/global-ai-pulse.pdf",
+    region_es: "Global (20 países, incluidos EE.UU., Canadá, Brasil y México)",
+    region_en: "Global (20 countries, including the U.S., Canada, Brazil and Mexico)",
+    hallazgo_es: "34% de las empresas reporta una adopción significativa de agentes de IA entre sus empleados",
+    hallazgo_en: "34% of companies report significant employee adoption of AI agents",
+    dato_clave_es: "34% de las organizaciones reporta una adopción significativa de agentes de IA, es decir, de sistemas que ejecutan tareas de forma autónoma, por parte de sus empleados, frente a 25% en el primer trimestre de 2026. Para las organizaciones, el avance depende de la madurez: la adopción llega a 48% en las empresas que ya obtienen retorno y a 15% en las que siguen en etapa de prueba.",
+    dato_clave_en: "34% of organizations report significant employee adoption of AI agents, meaning systems that carry out tasks autonomously, up from 25% in the first quarter of 2026. For organizations, progress depends on maturity: adoption reaches 48% at companies already seeing returns and 15% at those still in the testing stage.",
+    contexto_es: "Encuesta trimestral Global AI Pulse de KPMG International a 2,131 líderes sénior responsables de la estrategia y las operaciones de sus organizaciones (Américas 670, Asia-Pacífico 540 y Europa, Medio Oriente y África 921), en 20 países y jurisdicciones, entre ellos Estados Unidos, Canadá, Brasil y México. Encuesta en línea del 23 de julio al 26 de agosto de 2026. Publicación: 24 de septiembre de 2026.",
+    contexto_en: "KPMG International's quarterly Global AI Pulse survey of 2,131 senior leaders responsible for their organizations' strategy and operations (Americas 670, Asia Pacific 540 and Europe, Middle East and Africa 921), in 20 countries and jurisdictions, including the United States, Canada, Brazil and Mexico. Online survey from July 23 to August 26, 2026. Published: September 24, 2026.",
+    puntos_es: [
+      "**La adopción de agentes de IA crece en los equipos.** 34% de las organizaciones reporta una adopción significativa por parte de los empleados, 9 puntos más que en el primer trimestre (25%), mientras la resistencia significativa disminuye.",
+      "**La madurez define la adopción.** En las organizaciones que ya obtienen resultados concretos de la IA, 48% reporta una adopción significativa y solo 3% alguna resistencia; en las que siguen en pilotos, las cifras son 15% y 26%.",
+      "**En EE.UU. el salto es mayor.** En la muestra de seguimiento de Estados Unidos, la adopción significativa por parte de los empleados pasó de 16% a 36%.",
+      "**La responsabilidad sube a la alta dirección.** 53% de las organizaciones ubica la responsabilidad por las decisiones basadas en IA en la alta dirección o por encima: 35% en un ejecutivo designado y 18% en el CEO o el comité ejecutivo.",
+      "**Las reglas de uso acompañan el retorno.** 86% de las organizaciones que ya obtienen retorno opera una estructura formal que define qué puede hacer la IA y dónde, frente a 31% de las que siguen en etapa de prueba."
+    ],
+    puntos_en: [
+      "**AI agent adoption is growing within teams.** 34% of organizations report significant employee adoption, 9 points more than in the first quarter (25%), while significant resistance has fallen.",
+      "**Maturity shapes adoption.** Among organizations already seeing concrete results from AI, 48% report significant adoption and only 3% any resistance; among those still running pilots, the figures are 15% and 26%.",
+      "**The jump is larger in the U.S.** In the U.S. tracking sample, significant employee adoption rose from 16% to 36%.",
+      "**Accountability is moving up to the C-suite.** 53% of organizations place accountability for AI-informed decisions at C-suite level or above: 35% with a named executive and 18% with the CEO or executive committee.",
+      "**Rules of use go hand in hand with returns.** 86% of organizations already seeing returns operate a formal structure that defines what AI can do and where, compared with 31% of those still in the testing stage."
+    ],
+    articulo_es: {
+      "bajada": "La adopción de agentes de IA entre los empleados avanza, pero se concentra en las organizaciones que ya definieron cómo se gobierna y quién responde por la tecnología.",
+      "parrafos": [
+        "El Global AI Pulse de KPMG del tercer trimestre de 2026 registra un avance en el uso de agentes de IA dentro de los equipos. 34% de las organizaciones reporta una adopción significativa de estos sistemas por parte de sus empleados, 9 puntos más que en el primer trimestre, mientras la resistencia significativa disminuye. En la muestra de seguimiento de Estados Unidos, la cifra pasó de 16% a 36%.",
+        "Sin embargo, el avance no es parejo. En las organizaciones que ya obtienen resultados concretos de la IA, 48% reporta una adopción significativa y solo 3% alguna resistencia. En las que siguen en etapa de pilotos, la adopción baja a 15% y la resistencia sube a 26%. Esta diferencia indica que la disposición de los equipos acompaña a la madurez de la organización.",
+        "El informe asocia esa madurez con decisiones de gestión. 86% de las organizaciones que ya obtienen retorno opera una estructura formal que define qué puede hacer la IA y dónde, frente a 31% de las que siguen probando. Además, 53% de las organizaciones ubica la responsabilidad por las decisiones basadas en IA en la alta dirección o por encima: 35% en un ejecutivo designado y 18% en el CEO o el comité ejecutivo.",
+        "Para la alta dirección, el punto central está en la secuencia. La adopción por parte de los empleados no aparece como un punto de partida, sino como el resultado de reglas claras de uso y de responsables definidos. Donde esas condiciones existen, la resistencia es marginal; donde faltan, uno de cada cuatro líderes la sigue observando."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Employee adoption of AI agents is advancing, but it is concentrated in organizations that have already defined how the technology is governed and who is accountable for it.",
+      "parrafos": [
+        "KPMG's Global AI Pulse for the third quarter of 2026 records progress in the use of AI agents within teams. 34% of organizations report significant employee adoption of these systems, 9 points more than in the first quarter, while significant resistance has fallen. In the U.S. tracking sample, the figure rose from 16% to 36%.",
+        "However, progress is uneven. Among organizations already seeing concrete results from AI, 48% report significant adoption and only 3% any resistance. Among those still at the pilot stage, adoption falls to 15% and resistance rises to 26%. This difference indicates that teams' willingness follows the organization's maturity.",
+        "The report links that maturity to management decisions. 86% of organizations already seeing returns operate a formal structure that defines what AI can do and where, compared with 31% of those still testing. In addition, 53% of organizations place accountability for AI-informed decisions at C-suite level or above: 35% with a named executive and 18% with the CEO or executive committee.",
+        "For the C-suite, the central issue is sequence. Employee adoption does not appear as a starting point but as the result of clear rules of use and defined accountability. Where those conditions exist, resistance is marginal; where they are missing, one in four leaders still observes it."
+      ]
+    },
+    cita: {
+      "original": "Nobody in a boardroom is asking whether to do AI.",
+      "traduccion_es": "En ningún directorio se discute ya si adoptar o no la IA.",
+      "autor_es": "Simon Benson, líder regional de IA para Asia-Pacífico, KPMG Australia",
+      "autor_en": "Simon Benson, Regional AI Lead for ASPAC, KPMG Australia"
+    },
+    preguntas_es: [
+      "¿Quién responde hoy, en la alta dirección, por las decisiones que se toman con apoyo de la IA?",
+      "¿Qué reglas definen qué tareas pueden delegarse en agentes de IA y cuáles requieren supervisión de una persona?",
+      "¿Qué indicadores muestran el nivel de adopción y de resistencia de los equipos frente a los agentes de IA?"
+    ],
+    preguntas_en: [
+      "Who in the C-suite is accountable today for decisions made with the support of AI?",
+      "Which rules define the tasks that can be delegated to AI agents and those that require human oversight?",
+      "Which indicators show teams' level of adoption of and resistance to AI agents?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-pwc-ia-rendimiento",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "IA y trabajo",
+    esEjemplo: false,
+    publicado: "2026-11-09",
+    fecha: "2026-04-13",
+    anio: "2026",
+    fuente: "PwC",
+    estudio_es: "¿Retorno de la IA? Apostar por el crecimiento (estudio de PwC sobre el rendimiento de la IA)",
+    estudio_en: "Want ROI from AI? Go for growth (PwC's AI performance study)",
+    link: "https://www.pwc.com/gx/en/so-you-can/2026/content/roi-from-ai.pdf",
+    region_es: "Global (África, Asia, Europa, Medio Oriente, Norteamérica y Sudamérica)",
+    region_en: "Global (Africa, Asia, Europe, the Middle East, North America and South America)",
+    hallazgo_es: "60% de las empresas líderes en IA tiene empleados que confían en sus análisis, frente a 29% del resto",
+    hallazgo_en: "60% of AI-leading companies have employees who trust its insights, versus 29% of other companies",
+    dato_clave_es: "En 60% de las empresas líderes en IA, sus ejecutivos afirman que los empleados confían en los análisis generados por la IA y actúan en consecuencia, frente a 29% en el resto de las empresas. Para las organizaciones, la confianza de los equipos es una condición de uso y de retorno: en este grupo líder, el 20% de las empresas, se concentra 74% de los retornos de la IA.",
+    dato_clave_en: "At 60% of AI-leading companies, executives say employees trust AI-generated insights and act on them, compared with 29% at other companies. For organizations, team trust is a condition for use and return: this leading group, 20% of companies, captures 74% of AI-driven returns.",
+    contexto_es: "Estudio de PwC sobre el rendimiento de la IA, elaborado por Joe Atkinson, Agnes Koops y Matt Wood. Encuesta a 1,217 ejecutivos sénior, todos de nivel director o superior, de empresas principalmente cotizadas en bolsa (91% de la muestra) y con ingresos de US$1,000 millones o más (76%), en 25 sectores de África, Asia, Europa, Medio Oriente, Norteamérica y Sudamérica. Las empresas líderes en IA son el 20% con mejor desempeño financiero asociado a la IA. Trabajo de campo: octubre y noviembre de 2025. Publicación: 13 de abril de 2026.",
+    contexto_en: "PwC's AI performance study, by Joe Atkinson, Agnes Koops and Matt Wood. Survey of 1,217 senior executives, all at director level or above, mainly from publicly listed companies (91% of the sample) with revenues of US$1 billion or more (76%), across 25 sectors in Africa, Asia, Europe, the Middle East, North America and South America. AI leaders are the top 20% by AI-driven financial performance. Fieldwork: October and November 2025. Published: April 13, 2026.",
+    puntos_es: [
+      "**Los retornos de la IA se concentran en pocas empresas.** 20% de las 1,217 empresas encuestadas captura 74% de los retornos generados por la IA.",
+      "**La confianza de los empleados marca la diferencia.** En 60% de las empresas líderes en IA, los empleados confían en los análisis de la IA y actúan en consecuencia, frente a 29% en el resto: 2.1 veces más.",
+      "**Los incentivos impulsan la experimentación.** 59% de las empresas líderes tiene incentivos de desempeño que alientan a los empleados a experimentar con la IA, frente a 32% del resto.",
+      "**El aprendizaje es continuo y según el rol.** En 62% de las empresas líderes, los empleados participan en sesiones de aprendizaje de IA adaptadas a su rol, frente a 36% en el resto.",
+      "**La dirección da el ejemplo.** En 60% de las empresas líderes, los directivos financian iniciativas, asisten a capacitaciones y usan herramientas de IA, frente a 38% en el resto."
+    ],
+    puntos_en: [
+      "**AI returns are concentrated in a few companies.** 20% of the 1,217 companies surveyed capture 74% of AI-driven returns.",
+      "**Employee trust makes the difference.** At 60% of AI-leading companies, employees trust AI insights and act on them, compared with 29% at other companies: 2.1 times as likely.",
+      "**Incentives drive experimentation.** 59% of leading companies have performance incentives that encourage employees to experiment with AI, compared with 32% of other companies.",
+      "**Learning is ongoing and role-based.** At 62% of leading companies, employees take part in ongoing, role-based AI learning sessions, compared with 36% at other companies.",
+      "**Leadership sets the example.** At 60% of leading companies, leaders fund initiatives, attend training and use AI tools, compared with 38% at other companies."
+    ],
+    articulo_es: {
+      "bajada": "El retorno de la inteligencia artificial se concentra en un grupo reducido de empresas, y una de sus diferencias principales está en la confianza de los empleados en la tecnología.",
+      "parrafos": [
+        "El estudio de PwC sobre el rendimiento de la IA, publicado en abril de 2026, muestra que el valor de la tecnología está muy concentrado. 20% de las 1,217 empresas encuestadas captura 74% de los retornos generados por la IA. La pregunta para la alta dirección, por lo tanto, no es solo cuánto se invierte, sino qué hacen distinto esas empresas.",
+        "Una de las diferencias más marcadas está en los equipos. En 60% de las empresas líderes en IA, sus ejecutivos afirman que los empleados confían en los análisis de la IA y actúan en consecuencia, frente a 29% en el resto. PwC lo resume en una relación directa: con poca confianza hay poco uso, y con poco uso el impacto es bajo.",
+        "Esa confianza se apoya en prácticas de gestión concretas. 59% de las empresas líderes tiene incentivos de desempeño que alientan a experimentar con la IA, frente a 32% del resto, y en 62% los empleados participan en un aprendizaje continuo adaptado a su rol, frente a 36%. Además, en 60% de las empresas líderes los directivos financian iniciativas, se capacitan y usan las herramientas, frente a 38% en el resto.",
+        "Para las organizaciones, la confianza deja de ser un tema secundario de la gestión del cambio y pasa a ser una condición del retorno. El estudio sugiere que incentivos, formación según el rol y el ejemplo de la dirección son las palancas que separan a las empresas que capturan valor de las que solo invierten en la tecnología.",
+        "Cabe precisar que la encuesta se realizó entre octubre y noviembre de 2025 y refleja la mirada de los ejecutivos, no la de los empleados. Aun así, la brecha de 60% frente a 29% indica que el retorno de la IA depende tanto de las personas que la usan como de la tecnología."
+      ]
+    },
+    articulo_en: {
+      "bajada": "The return on artificial intelligence is concentrated in a small group of companies, and one of their main differences lies in employees' trust in the technology.",
+      "parrafos": [
+        "PwC's AI performance study, published in April 2026, shows that the technology's value is highly concentrated. 20% of the 1,217 companies surveyed capture 74% of AI-driven returns. The question for the C-suite is therefore not only how much to invest, but what those companies do differently.",
+        "One of the sharpest differences lies in teams. At 60% of AI-leading companies, executives say employees trust AI insights and act on them, compared with 29% at other companies. PwC sums it up as a direct relationship: low trust means low use, and low use means low impact.",
+        "That trust rests on concrete management practices. 59% of leading companies have performance incentives that encourage experimentation with AI, compared with 32% of other companies, and at 62% employees take part in ongoing, role-based learning, compared with 36%. In addition, at 60% of leading companies leaders fund initiatives, attend training and use the tools, compared with 38% elsewhere.",
+        "For organizations, trust is no longer a secondary change management issue but a condition for return. The study suggests that incentives, role-based training and leadership example are the levers that separate companies capturing value from those that only invest in the technology.",
+        "It should be noted that the survey was conducted in October and November 2025 and reflects the view of executives, not employees. Even so, the 60% versus 29% gap indicates that the return on AI depends as much on the people who use it as on the technology."
+      ]
+    },
+    cita: {
+      "original": "Low trust means low use, which means low impact.",
+      "traduccion_es": "Poca confianza significa poco uso, y poco uso significa poco impacto.",
+      "autor_es": "Estudio de PwC sobre el rendimiento de la IA",
+      "autor_en": "PwC's AI performance study"
+    },
+    preguntas_es: [
+      "¿Qué evidencia existe hoy sobre el nivel de confianza de los equipos en los análisis que produce la IA?",
+      "¿Qué incentivos de desempeño alientan, o desalientan, el uso de la IA en el trabajo diario?",
+      "¿Qué tan visible es para los equipos el uso que la propia dirección hace de las herramientas de IA?"
+    ],
+    preguntas_en: [
+      "What evidence exists today about teams' level of trust in AI-generated insights?",
+      "Which performance incentives encourage, or discourage, the use of AI in daily work?",
+      "How visible to teams is leadership's own use of AI tools?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-pwc-confianza-ceo",
+    industria: null,
+    tema: "liderazgo_cultura",
+    subtema: "Liderazgo",
+    esEjemplo: false,
+    publicado: "2026-11-09",
+    fecha: "2026-10-29",
+    anio: "2026",
+    fuente: "PwC",
+    estudio_es: "Estudio 2026 de PwC sobre la confianza en el liderazgo en EE.UU.: lo que esperan los empleados",
+    estudio_en: "The 2026 PwC US Trust in Leadership Study: What employees expect",
+    link: "https://www.pwc.com/us/en/leadership-center/assets/pwc-2027ceo-trust-survey-final.pdf",
+    region_es: "Estados Unidos",
+    region_en: "United States",
+    hallazgo_es: "Solo 39% de los empleados confía plenamente en lo que su CEO informa sobre los resultados",
+    hallazgo_en: "Only 39% of employees fully trust what their CEO reports on company results",
+    dato_clave_es: "39% de los empleados de grandes empresas de EE.UU. confía por completo o casi por completo en lo que su CEO informa sobre las finanzas, las perspectivas y el desempeño de la empresa, mientras 90% considera importante la reputación del CEO para decidir si postula, se queda o se va. Para las organizaciones, la credibilidad de la comunicación del CEO pesa directamente en la atracción y la retención del talento.",
+    dato_clave_en: "39% of employees at large U.S. companies completely or nearly completely trust what their CEO reports on the company's financials, prospects and performance, while 90% consider the CEO's reputation important when deciding whether to apply, stay or leave. For organizations, the credibility of CEO communication weighs directly on attracting and retaining talent.",
+    contexto_es: "Estudio de PwC sobre la confianza de los empleados en el liderazgo, con Paul Leinwand, líder del PwC Leadership Center, y Kazi Islam, socio de Assurance de PwC US, como contactos. Encuesta realizada en junio de 2026 a 552 empleados de empresas de Estados Unidos, con y sin cargos de gestión; los resultados reflejan solo a los 128 que trabajan en empresas de 10,000 o más empleados. Publicación: 29 de octubre de 2026.",
+    contexto_en: "PwC study on employees' trust in leadership, with Paul Leinwand, PwC Leadership Center Leader, and Kazi Islam, Assurance Partner at PwC US, as contacts. Survey conducted in June 2026 among 552 employees at U.S. companies, in management and non-management roles; results reflect only the 128 who work at companies with 10,000 or more employees. Published: October 29, 2026.",
+    puntos_es: [
+      "**La comunicación sobre resultados tiene un margen de credibilidad.** 39% de los empleados confía por completo o casi por completo en lo que su CEO informa sobre finanzas, perspectivas y desempeño, y 43% confía en que comunica con honestidad los desafíos y riesgos.",
+      "**La verdad se percibe como parcial.** 66% de los empleados cree que su CEO dice la verdad sobre el desempeño de la empresa la mayor parte del tiempo, pero solo 29% cree que lo hace siempre.",
+      "**La reputación del CEO influye en el talento.** 90% de los empleados considera importante o muy importante la reputación y la trayectoria de su CEO para decidir si postula a una empresa, se queda o se va.",
+      "**Los empleados ven más claro el lado de la eficiencia.** 70% afirma que su CEO conoce a fondo cómo la IA mejorará la eficiencia, frente a 57% sobre su efecto en el empleo y 52% sobre cómo establecer límites para su uso.",
+      "**Crecimiento, retención y confianza encabezan las expectativas.** 64% de los empleados ubica el crecimiento de largo plazo entre las responsabilidades del CEO y 60%, la retención de los empleados; 65% menciona construir confianza con los empleados como prioridad ética."
+    ],
+    puntos_en: [
+      "**Communication about results has a credibility margin.** 39% of employees completely or nearly completely trust what their CEO reports on financials, prospects and performance, and 43% trust that the CEO communicates honestly about challenges and risks.",
+      "**The truth is seen as partial.** 66% of employees believe their CEO tells the truth about company performance most of the time, but only 29% believe the CEO does so all the time.",
+      "**The CEO's reputation shapes talent decisions.** 90% of employees consider their CEO's reputation and track record important or extremely important when deciding whether to apply to, stay at or leave a company.",
+      "**Employees see the efficiency side more clearly.** 70% say their CEO is fully knowledgeable about how AI will improve efficiency, compared with 57% on its effect on employment and 52% on how to establish AI guardrails.",
+      "**Growth, retention and trust top expectations.** 64% of employees list long-term growth among the CEO's responsibilities and 60% employee retention; 65% cite building trust with employees as an ethical priority."
+    ],
+    articulo_es: {
+      "bajada": "Los empleados de las grandes empresas confían en general en su CEO, pero la credibilidad de lo que comunica sobre resultados, riesgos e inteligencia artificial tiene todavía un margen amplio.",
+      "parrafos": [
+        "El estudio 2026 de PwC sobre la confianza en el liderazgo muestra que la credibilidad del CEO se juega dentro de la propia empresa. 39% de los empleados de grandes compañías de Estados Unidos confía por completo o casi por completo en lo que su CEO informa sobre finanzas, perspectivas y desempeño. En el caso de los desafíos y riesgos, la cifra llega a 43%.",
+        "La percepción sobre la verdad es parcial, más que negativa. 66% de los empleados cree que su CEO dice la verdad sobre el desempeño la mayor parte del tiempo, pero solo 29% cree que lo hace siempre. Esta diferencia indica que la confianza existe, aunque condicionada a la forma en que se comunican los resultados.",
+        "La inteligencia artificial agrega un matiz. 70% de los empleados afirma que su CEO conoce a fondo cómo la IA mejorará la eficiencia, pero la proporción baja a 57% cuando se trata de su efecto en el empleo y a 52% cuando se trata de los límites para su uso. Es decir, los empleados perciben con más claridad la promesa de la tecnología que su impacto en las personas.",
+        "Para el negocio, la credibilidad tiene un efecto directo en el talento. 90% de los empleados considera importante la reputación y la trayectoria del CEO para decidir si postula a una empresa, se queda o se va. Además, 64% ubica el crecimiento de largo plazo entre sus responsabilidades y 60%, la retención de los empleados.",
+        "Los resultados se basan en una muestra acotada, de 128 empleados de empresas con 10,000 o más colaboradores. Aun así, señalan un desafío claro para la comunicación del CEO: la confianza interna depende de explicar con la misma precisión los resultados, los riesgos y los efectos de la IA en el trabajo."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Employees at large companies generally trust their CEO, but the credibility of what the CEO communicates about results, risks and artificial intelligence still has considerable room to grow.",
+      "parrafos": [
+        "PwC's 2026 Trust in Leadership Study shows that CEO credibility is tested inside the company itself. 39% of employees at large U.S. companies completely or nearly completely trust what their CEO reports on financials, prospects and performance. When it comes to challenges and risks, the figure reaches 43%.",
+        "Perceptions of truthfulness are partial rather than negative. 66% of employees believe their CEO tells the truth about performance most of the time, but only 29% believe the CEO does so all the time. This difference indicates that trust exists, although it depends on how results are communicated.",
+        "Artificial intelligence adds nuance. 70% of employees say their CEO is fully knowledgeable about how AI will improve efficiency, but the share falls to 57% regarding its effect on employment and to 52% regarding guardrails for its use. In other words, employees perceive the technology's promise more clearly than its impact on people.",
+        "For the business, credibility has a direct effect on talent. 90% of employees consider the CEO's reputation and track record important when deciding whether to apply to, stay at or leave a company. In addition, 64% list long-term growth among the CEO's responsibilities and 60% employee retention.",
+        "The results are based on a limited sample of 128 employees at companies with 10,000 or more employees. Even so, they point to a clear challenge for CEO communication: internal trust depends on explaining results, risks and the effects of AI on work with the same precision."
+      ]
+    },
+    cita: {
+      "original": "Employees who don't trust you won't be willing to support your growth agenda.",
+      "traduccion_es": "Los empleados que no confían en el CEO no estarán dispuestos a respaldar su agenda de crecimiento.",
+      "autor_es": "Estudio 2026 de PwC sobre la confianza en el liderazgo",
+      "autor_en": "The 2026 PwC US Trust in Leadership Study"
+    },
+    preguntas_es: [
+      "¿Con qué frecuencia y nivel de detalle se comunican a los empleados los resultados, los desafíos y los riesgos de la empresa?",
+      "¿Qué ha explicado la dirección sobre el efecto de la IA en el empleo y sobre los límites de su uso?",
+      "¿Cómo se mide la confianza de los empleados en la comunicación de la alta dirección?"
+    ],
+    preguntas_en: [
+      "How often and in how much detail are the company's results, challenges and risks communicated to employees?",
+      "What has leadership explained about AI's effect on employment and the limits on its use?",
+      "How is employee trust in senior leadership communication measured?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-gptw-latam",
+    industria: null,
+    tema: "liderazgo_cultura",
+    subtema: "Cultura",
+    esEjemplo: false,
+    publicado: "2026-11-09",
+    fecha: "2026-08-12",
+    anio: "2026",
+    fuente: "Great Place to Work",
+    estudio_es: "Los Mejores Lugares para Trabajar en América Latina 2026",
+    estudio_en: "Best Workplaces in Latin America 2026",
+    link: "https://www.greatplacetowork.com/images/word-docs/2026-Best-Workplaces-Latin-America-Report-English.pdf",
+    region_es: "Latinoamérica y el Caribe (más de 30 países)",
+    region_en: "Latin America and the Caribbean (more than 30 countries)",
+    hallazgo_es: "En las mejores empresas de Latinoamérica, casi 90% ve coherencia entre lo que dice y hace la dirección",
+    hallazgo_en: "At Latin America's best workplaces, nearly 90% see consistency between what management says and does",
+    dato_clave_es: "Casi 90% de los empleados de las 200 mejores empresas para trabajar de Latinoamérica afirma que las acciones de la dirección coinciden con sus palabras, 37 puntos más que en las empresas típicas de la región (52%). Para las organizaciones, la coherencia del liderazgo es uno de los rasgos que más separa a las culturas de alta confianza del resto.",
+    dato_clave_en: "Nearly 90% of employees at Latin America's 200 best workplaces say management's actions match its words, 37 points higher than at typical workplaces in the region (52%). For organizations, leadership consistency is one of the traits that most clearly separates high-trust cultures from the rest.",
+    contexto_es: "Informe de Great Place to Work basado en su encuesta Trust Index, de 60 afirmaciones, respondida por más de 2.4 millones de empleados de Latinoamérica, que representan a unos 4.5 millones de trabajadores. Reconoce a 200 empresas (100 pequeñas y medianas y 100 grandes) con empleados en más de 30 países de Latinoamérica y el Caribe. La comparación con las empresas típicas de la región proviene de un estudio de mercado global de Great Place to Work de marzo de 2024, con más de 5,000 respuestas. Publicación: 12 de agosto de 2026.",
+    contexto_en: "Great Place to Work report based on its 60-statement Trust Index survey, answered by more than 2.4 million employees in Latin America, representing about 4.5 million workers. It recognizes 200 companies (100 small and medium-sized and 100 large) with employees in more than 30 countries in Latin America and the Caribbean. The comparison with typical workplaces in the region comes from a Great Place to Work global market study from March 2024, with more than 5,000 responses. Published: August 12, 2026.",
+    puntos_es: [
+      "**La coherencia de la dirección es la mayor diferencia.** Casi 90% de los empleados de las mejores empresas afirma que las acciones de la dirección coinciden con sus palabras, frente a 52% en las empresas típicas de la región: 37 puntos más.",
+      "**La claridad de expectativas parte del liderazgo.** 90% de los empleados de las mejores empresas afirma que la dirección establece expectativas claras, frente a 63% en las empresas típicas.",
+      "**La ética sostiene la confianza.** 94% de los empleados de las mejores empresas considera que la dirección es honesta y ética en sus prácticas de negocio, frente a 63% en las empresas típicas.",
+      "**La confianza acompaña la adaptación al cambio.** 92% de los empleados de las mejores empresas afirma que las personas se adaptan rápido a los cambios, 28 puntos más que en las empresas típicas (64%).",
+      "**La confianza también retiene.** 92% de los empleados de las mejores empresas tiene la intención de quedarse por mucho tiempo, frente a 64% en las empresas típicas de Latinoamérica."
+    ],
+    puntos_en: [
+      "**Leadership consistency is the largest difference.** Nearly 90% of employees at the best workplaces say management's actions match its words, compared with 52% at typical workplaces in the region: 37 points higher.",
+      "**Clear expectations start with leadership.** 90% of employees at the best workplaces say leadership sets clear expectations, compared with 63% at typical workplaces.",
+      "**Ethics underpins trust.** 94% of employees at the best workplaces consider leadership honest and ethical in its business practices, compared with 63% at typical workplaces.",
+      "**Trust goes hand in hand with adapting to change.** 92% of employees at the best workplaces say people adapt quickly to change, 28 points higher than at typical workplaces (64%).",
+      "**Trust also retains people.** 92% of employees at the best workplaces intend to stay with their company for a long time, compared with 64% at typical workplaces in Latin America."
+    ],
+    articulo_es: {
+      "bajada": "En las empresas con mayor confianza de Latinoamérica, la diferencia principal no está en los beneficios, sino en la coherencia entre lo que la dirección dice y lo que hace.",
+      "parrafos": [
+        "El informe 2026 de Great Place to Work sobre los mejores lugares para trabajar en Latinoamérica, basado en la experiencia de más de 2.4 millones de empleados, identifica a la coherencia del liderazgo como el rasgo que más distingue a estas empresas. Casi 90% de sus empleados afirma que las acciones de la dirección coinciden con sus palabras, frente a 52% en las empresas típicas de la región: una diferencia de 37 puntos.",
+        "Esa coherencia se refleja en otros indicadores de gestión. 90% de los empleados de las mejores empresas afirma que la dirección establece expectativas claras, frente a 63% en las empresas típicas, y 94% la considera honesta y ética en sus prácticas de negocio, frente a 63%. La confianza, en este caso, se construye con prácticas concretas y visibles.",
+        "El dato tiene una lectura directa para la gestión del cambio. 92% de los empleados de las mejores empresas afirma que las personas se adaptan rápido a los cambios, 28 puntos más que en las empresas típicas (64%). Es decir, las culturas de alta confianza no solo retienen mejor, también procesan los cambios con mayor rapidez.",
+        "Para el negocio, la diferencia también se ve en la permanencia del talento: 92% de los empleados de las mejores empresas tiene la intención de quedarse por mucho tiempo, frente a 64% en las empresas típicas. Cabe precisar que la comparación se hace con un estudio de mercado de 2024 y que el informe mide solo a empresas reconocidas. Aun así, los resultados indican que la coherencia entre el discurso y la acción de la dirección es una condición para la confianza, la adaptación y la retención."
+      ]
+    },
+    articulo_en: {
+      "bajada": "At Latin America's highest-trust companies, the main difference lies not in benefits but in the consistency between what management says and what it does.",
+      "parrafos": [
+        "Great Place to Work's 2026 report on the best workplaces in Latin America, based on the experience of more than 2.4 million employees, identifies leadership consistency as the trait that most clearly distinguishes these companies. Nearly 90% of their employees say management's actions match its words, compared with 52% at typical workplaces in the region: a 37-point difference.",
+        "That consistency is reflected in other management indicators. 90% of employees at the best workplaces say leadership sets clear expectations, compared with 63% at typical workplaces, and 94% consider it honest and ethical in its business practices, compared with 63%. Trust, in this case, is built through concrete and visible practices.",
+        "The data has a direct implication for change management. 92% of employees at the best workplaces say people adapt quickly to change, 28 points higher than at typical workplaces (64%). In other words, high-trust cultures not only retain people better but also absorb change more quickly.",
+        "For the business, the difference also shows in talent retention: 92% of employees at the best workplaces intend to stay for a long time, compared with 64% at typical workplaces. It should be noted that the comparison draws on a 2024 market study and that the report measures only recognized companies. Even so, the results indicate that consistency between leadership's words and actions is a condition for trust, adaptation and retention."
+      ]
+    },
+    cita: {
+      "original": "These companies are supporting their workers through challenging times",
+      "traduccion_es": "Estas empresas acompañan a sus trabajadores en tiempos difíciles.",
+      "autor_es": "Michael C. Bush, CEO de Great Place to Work",
+      "autor_en": "Michael C. Bush, CEO, Great Place to Work"
+    },
+    preguntas_es: [
+      "¿Qué tan coherentes perciben los equipos las decisiones de la dirección con lo que esta comunica?",
+      "¿Qué mecanismos permiten verificar que las expectativas de cada rol estén claras para los equipos?",
+      "¿Qué relación existe hoy entre los indicadores de confianza y la velocidad con que la organización adopta los cambios?"
+    ],
+    preguntas_en: [
+      "How consistent do teams perceive leadership's decisions to be with what it communicates?",
+      "Which mechanisms verify that the expectations for each role are clear to teams?",
+      "What is the relationship today between trust indicators and the speed at which the organization adopts change?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
 ];
 
 
