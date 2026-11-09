@@ -857,8 +857,9 @@ img{max-width:100%;display:block}
       const a=document.createElement('a'); a.className='ficha'; a.href='hallazgo.html?id='+encodeURIComponent(h.id);
       const f=document.createElement('div'); f.className='foto';
       if(typeof imagenDeHallazgo==='function'){const im=document.createElement('img');im.loading='lazy';im.alt='';im.src=urlImagen(imagenDeHallazgo(h),900);im.addEventListener('error',()=>im.style.visibility='hidden');f.appendChild(im);}
-      const t=document.createElement('span'); t.className='tag'; t.textContent=nombreDe(h.tema)||nombreDe(h.industria); f.appendChild(t);
-      const ch=document.createElement('div'); ch.className='chips'; const s1=document.createElement('span'); s1.textContent=h.fuente; ch.appendChild(s1);
+      const t=document.createElement('span'); t.className='tag'; t.textContent=h.fuente; f.appendChild(t);
+      // Desiree (9-nov-2026): la fuente va destacada sobre la foto; tema e industria, debajo.
+      const ch=document.createElement('div'); ch.className='chips'; const s1=document.createElement('span'); s1.textContent=nombreDe(h.tema)||nombreDe(h.industria); ch.appendChild(s1);
       if(h.tema&&h.industria){const s2=document.createElement('span'); s2.textContent=nombreDe(h.industria); ch.appendChild(s2);}
       const h3=document.createElement('h3'); h3.textContent=EN?h.hallazgo_en:h.hallazgo_es;
       if(esNuevo(h)){const nu=document.createElement('span');nu.className='nuevo';nu.textContent=EN?'New':'Nuevo';f.appendChild(nu);}
