@@ -22,6 +22,21 @@ const IMAGENES_POR_HALLAZGO = {
   "h-2026-10-pwc-fs-ia": { foto: "photo-1563013544-824ae1b704d3", autor: "rupixen" },
   "h-2026-10-bain-life-sciences": { foto: "photo-1614935151651-0bea6508db6b", autor: "Julia Koblitz" },
   "h-2026-10-deloitte-consumo-ia": { foto: "photo-1601600576337-c1d8a0d1373c", autor: "Eduardo Soares" },
+  // Fotos fijadas el 9-nov-2026 para que los estudios ya publicados conserven la suya al sumar fotos a los grupos.
+  "h-2026-10-deloitte-cambio": { foto: "photo-1758873269013-d914addd5d3b", autor: "Vitaly Gariev" },
+  "h-2026-10-sia-cambio": { foto: "photo-1517245386807-bb43f82c33c4", autor: "Headway" },
+  "h-2026-10-edelman-confianza": { foto: "photo-1758611972678-bc3b29b4718f", autor: "Vitaly Gariev" },
+  "h-2026-10-gallagher-comunicacion": { foto: "photo-1551836022-b06985bceb24", autor: "Amy Hirschi" },
+  "h-2026-10-pwc-hopes-fears": { foto: "photo-1764452008254-eed469a4fad3", autor: "Chirayu Trivedi" },
+  "h-2026-10-ey-ceo": { foto: "photo-1758626099012-2904337e9c60", autor: "Jo Lin" },
+  "h-2026-10-kpmg-ceo-eeuu": { foto: "photo-1553877522-43269d4ea984", autor: "charlesdeluvio" },
+  "h-2026-10-jll-latam-ia": { foto: "photo-1677442136019-21780ecad995", autor: "Steve A Johnson" },
+  "h-2026-11-gallup-compromiso-eeuu": { foto: "photo-1568992688065-536aad8a12f6", autor: "Redd Francisco" },
+  "h-2026-11-gallup-ia-beneficios": { foto: "photo-1758626104169-6835c0bd03e3", autor: "Jo Lin" },
+  "h-2026-11-bcg-ia-trabajo": { foto: "photo-1677442135131-4d7c123aef1c", autor: "Steve A Johnson" },
+  "h-2026-11-kornferry-workforce": { foto: "photo-1573164574572-cb89e39749b4", autor: "Christina @ wocintechchat.com" },
+  "h-2026-11-deloitte-genz": { foto: "photo-1758520144437-f068ecaf0d83", autor: "Vitaly Gariev" },
+  "h-2026-11-gallup-sogw": { foto: "photo-1758873269811-4e62e346b4b7", autor: "Vitaly Gariev" },
 };
 
 // Grupos de fotos por industria y por tema (para hallazgos nuevos).
@@ -87,6 +102,10 @@ const IMAGENES_POR_CATEGORIA = {
     { foto: "photo-1653566031504-17467a0429b0", autor: "UK Black Tech" },
     { foto: "photo-1758873268695-1b55590e507a", autor: "Vitaly Gariev" },
     { foto: "photo-1596722350768-24e1bd412882", autor: "Amy Hirschi" },
+    { foto: "photo-1646583288948-24548aedffd8", autor: "Markus Spiske" },
+    { foto: "photo-1770171323762-7b9a517a7094", autor: "Zach M" },
+    { foto: "photo-1724754608848-cdd8d5cd8538", autor: "Swello" },
+    { foto: "photo-1706466614967-f4f14a3d9d08", autor: "Neeqolah Creative Works" },
   ],
   liderazgo_cultura: [
     { foto: "photo-1758691737543-09a1b2b715fa", autor: "Vitaly Gariev" },

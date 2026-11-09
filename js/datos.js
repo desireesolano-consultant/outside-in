@@ -2024,6 +2024,160 @@ const HALLAZGOS = [
     lecturaEstado: "pendiente",
     estado: "PUBLICADO",
   },
+  {
+    id: "h-2026-11-accenture-pulso-cambio",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "IA y trabajo",
+    esEjemplo: false,
+    publicado: "2026-11-09",
+    fecha: "2026-10-19",
+    anio: "2026",
+    fuente: "Accenture",
+    estudio_es: "Accenture Pulse of Change (octubre de 2026)",
+    estudio_en: "Accenture Pulse of Change (October 2026)",
+    link: "https://www.accenture.com/en/insights/pulse-of-change",
+    region_es: "Global (21 países, incluidos EE.UU., Canadá y Brasil)",
+    region_en: "Global (21 countries, including the U.S., Canada and Brazil)",
+    hallazgo_es: "Solo 15% de la alta dirección rediseña sus procesos de punta a punta mientras se extiende la IA",
+    hallazgo_en: "Only 15% of C-suite leaders are redesigning end-to-end processes as AI use spreads",
+    dato_clave_es: "15% de los líderes de alta dirección rediseña sus procesos de punta a punta, es decir, cambia la forma completa en que se hace el trabajo y no solo incorpora herramientas, mientras 53% espera un retorno medible de la IA en 12 meses. Para las organizaciones, la brecha indica que las expectativas de retorno avanzan más rápido que el rediseño del trabajo que debería sostenerlas.",
+    dato_clave_en: "15% of C-suite leaders are redesigning end-to-end processes, meaning they are changing the way work is done as a whole rather than only adding tools, while 53% expect measurable ROI from AI within 12 months. For organizations, the gap shows that return expectations are moving faster than the work redesign that should support them.",
+    contexto_es: "Pulse of Change de Accenture, compuesto por dos encuestas globales complementarias: una a 3,000 líderes de alta dirección y otra a 3,000 empleados que no forman parte de la alta dirección, en organizaciones con ingresos anuales superiores a US$300 millones. Abarca 19 industrias y 21 países, entre ellos Estados Unidos, Canadá y Brasil. Trabajo de campo: julio y agosto de 2026. Publicación: 19 de octubre de 2026.",
+    contexto_en: "Accenture's Pulse of Change, made up of two complementary global surveys: one of 3,000 C-suite leaders and another of 3,000 non-C-suite employees, at organizations with annual revenues above US$300 million. It covers 19 industries and 21 countries, including the United States, Canada and Brazil. Fieldwork: July and August 2026. Published: October 19, 2026.",
+    puntos_es: [
+      "**El rediseño del trabajo todavía es minoritario.** Solo 15% de los líderes de alta dirección rediseña sus procesos de punta a punta, y 20% despliega de forma activa agentes de IA en distintas funciones.",
+      "**Las expectativas de retorno avanzan más rápido que los resultados.** 53% de los líderes de alta dirección espera un retorno medible de la IA en 12 meses y 87%, en 24 meses; sin embargo, solo 25% reporta un valor amplio y sostenido de la IA.",
+      "**La IA ya forma parte del trabajo diario.** 43% de los empleados usa IA todos los días, frente a 30% en la medición de julio, y 50% trabaja de forma regular con agentes de IA.",
+      "**La productividad sube, y también la exigencia.** 82% de los empleados afirma que la IA aumentó su productividad y 75%, su satisfacción laboral; al mismo tiempo, 50% señala que elevó la velocidad esperada del trabajo y la necesidad de revisar lo que la IA produce.",
+      "**Mantenerse al día es un esfuerzo adicional.** 48% de los empleados indica que los cambios rápidos en las herramientas de IA dificultan mantenerse actualizado.",
+      "**La seguridad laboral percibida mejora.** 66% de los empleados se siente seguro en su puesto, frente a 48% en la medición de enero."
+    ],
+    puntos_en: [
+      "**Work redesign is still the exception.** Only 15% of C-suite leaders are redesigning end-to-end processes, and 20% are actively deploying AI agents across functions.",
+      "**Return expectations are moving faster than results.** 53% of C-suite leaders expect measurable ROI from AI within 12 months, rising to 87% within 24 months; however, only 25% report widespread and sustained value from AI.",
+      "**AI is already part of daily work.** 43% of employees use AI every day, up from 30% in the July survey, and 50% regularly work with AI agents.",
+      "**Productivity rises, and so do demands.** 82% of employees say AI has increased their productivity and 75% their job satisfaction; at the same time, 50% say it has raised the expected speed of work and the need to review what AI produces.",
+      "**Keeping up takes additional effort.** 48% of employees say rapidly changing AI tools make it difficult to stay current.",
+      "**Perceived job security is improving.** 66% of employees feel secure in their role, up from 48% in the January survey."
+    ],
+    articulo_es: {
+      "bajada": "Las organizaciones intensifican el uso de la inteligencia artificial, pero pocas rediseñan la forma en que se hace el trabajo, condición para que las ganancias de productividad se sostengan.",
+      "parrafos": [
+        "El Pulse of Change de Accenture, publicado en octubre de 2026, muestra que la IA avanza más rápido en el uso cotidiano que en la organización del trabajo. Solo 15% de los líderes de alta dirección rediseña sus procesos de punta a punta, y 20% despliega de forma activa agentes de IA en distintas funciones. Es decir, la mayoría de las empresas incorpora herramientas sin cambiar todavía cómo se organizan las tareas.",
+        "En los equipos, en cambio, la adopción ya es amplia. 43% de los empleados usa IA todos los días, frente a 30% en la medición de julio, y 50% trabaja de forma regular con agentes de IA. Además, 82% de los empleados afirma que la IA aumentó su productividad y 75%, que mejoró su satisfacción laboral. La experiencia de quienes la usan es, en general, positiva.",
+        "Sin embargo, el informe también registra un costo para las personas. 50% de los empleados señala que la IA elevó la velocidad esperada del trabajo y la necesidad de revisar lo que la herramienta produce, y 48% indica que los cambios constantes en las herramientas dificultan mantenerse actualizado. La productividad crece, pero también la exigencia sobre los equipos.",
+        "Para la alta dirección, el punto central está en las expectativas. 53% de los líderes espera un retorno medible de la IA en 12 meses y 87%, en 24 meses, pero solo 25% reporta hoy un valor amplio y sostenido. Accenture advierte que el uso extendido no basta: el valor depende de convertir ese uso frecuente en flujos de trabajo conectados, procesos rediseñados y nuevos modelos operativos.",
+        "La cifra de 15% sitúa el desafío de los próximos meses en la gestión del trabajo más que en la tecnología. Sin un rediseño de los procesos, las ganancias de productividad corren el riesgo de traducirse en más carga para los equipos y no en resultados sostenibles para el negocio."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Organizations are intensifying their use of artificial intelligence, but few are redesigning the way work gets done, a condition for productivity gains to last.",
+      "parrafos": [
+        "Accenture's Pulse of Change, published in October 2026, shows that AI is advancing faster in everyday use than in the organization of work. Only 15% of C-suite leaders are redesigning end-to-end processes, and 20% are actively deploying AI agents across functions. In other words, most companies are adding tools without yet changing how tasks are organized.",
+        "Within teams, by contrast, adoption is already broad. 43% of employees use AI every day, up from 30% in the July survey, and 50% regularly work with AI agents. In addition, 82% of employees say AI has increased their productivity and 75% say it has improved their job satisfaction. The experience of those who use it is largely positive.",
+        "However, the report also records a cost for people. 50% of employees say AI has raised the expected speed of work and the need to review what the tool produces, and 48% say constant changes in the tools make it difficult to stay current. Productivity is growing, but so are the demands on teams.",
+        "For the C-suite, the central issue lies in expectations. 53% of leaders expect measurable ROI from AI within 12 months and 87% within 24 months, yet only 25% report widespread and sustained value today. Accenture notes that widespread use is not enough: value depends on turning frequent use into connected workflows, redesigned processes and new operating models.",
+        "The 15% figure places the challenge of the coming months in the management of work rather than in technology. Without process redesign, productivity gains risk turning into a heavier workload for teams rather than sustainable business results."
+      ]
+    },
+    cita: {
+      "original": "Organizations will need to redesign how work gets done so that productivity gains remain sustainable.",
+      "traduccion_es": "Las organizaciones necesitarán rediseñar cómo se hace el trabajo para que las ganancias de productividad sean sostenibles.",
+      "autor_es": "Informe Accenture Pulse of Change",
+      "autor_en": "Accenture Pulse of Change report"
+    },
+    preguntas_es: [
+      "¿Qué procesos de la organización se rediseñaron de punta a punta con la IA y cuáles solo incorporaron herramientas nuevas?",
+      "¿Qué horizonte de retorno se fijó para la inversión en IA y qué cambios en el trabajo lo hacen alcanzable?",
+      "¿Cómo se mide el efecto de la IA en el ritmo y la carga de trabajo de los equipos?"
+    ],
+    preguntas_en: [
+      "Which of the organization's processes have been redesigned end to end with AI, and which have only added new tools?",
+      "What return horizon has been set for AI investment, and which changes to work make it achievable?",
+      "How is AI's effect on the pace and workload of teams being measured?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-mckinsey-estado-ia",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "IA y trabajo",
+    esEjemplo: false,
+    publicado: "2026-11-09",
+    fecha: "2026-08-25",
+    anio: "2026",
+    fuente: "McKinsey & Company",
+    estudio_es: "El estado de la IA en 2026: camino al retorno de la inversión",
+    estudio_en: "The state of AI in 2026: On the road to ROI",
+    link: "https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/the-state-of-ai-in-2026-on-the-road-to-roi.pdf",
+    region_es: "Global (97 países)",
+    region_en: "Global (97 countries)",
+    hallazgo_es: "47% de los mandos medios y colaboradores reporta efectos negativos de la IA, frente a 31% de los directivos",
+    hallazgo_en: "47% of middle managers and individual contributors report negative effects from AI, versus 31% of executives",
+    dato_clave_es: "47% de los mandos medios y colaboradores individuales que usan IA reporta al menos un efecto negativo, como más estrés, fatiga mental, presión para asumir más trabajo o ansiedad por su futuro profesional, frente a 31% de los ejecutivos y gerentes sénior. Para las organizaciones, significa que la IA no se vive igual en todos los roles y que su costo recae sobre todo en quienes ejecutan el trabajo.",
+    dato_clave_en: "47% of middle managers and individual contributors who use AI report at least one negative effect, such as more stress, mental fatigue, pressure to take on more work or anxiety about their career prospects, compared with 31% of executives and senior managers. For organizations, it means that AI is not experienced the same way across roles and that its cost falls mainly on those who carry out the work.",
+    contexto_es: "Encuesta global anual de McKinsey sobre inteligencia artificial, elaborada por Dan Tinkoff, Lieven Van der Veken, Michael Chui y Tara Balakrishnan. Encuesta en línea a 1,719 participantes de todos los niveles, de 97 países y de todas las regiones, industrias y tamaños de empresa; 36% trabaja en organizaciones con ingresos anuales superiores a US$1,000 millones. Los resultados se ponderan según el peso de cada país en el PIB mundial. Trabajo de campo: del 4 de mayo al 8 de junio de 2026. Publicación: 25 de agosto de 2026.",
+    contexto_en: "McKinsey's annual global survey on artificial intelligence, by Dan Tinkoff, Lieven Van der Veken, Michael Chui and Tara Balakrishnan. Online survey of 1,719 participants at all levels, from 97 countries and across all regions, industries and company sizes; 36% work at organizations with annual revenues above US$1 billion. Results are weighted by each country's share of global GDP. Fieldwork: May 4 to June 8, 2026. Published: August 25, 2026.",
+    puntos_es: [
+      "**La experiencia de la IA cambia según el rol.** 47% de los mandos medios y colaboradores individuales que usan IA reporta al menos un efecto negativo, frente a 31% de los ejecutivos y gerentes sénior: una diferencia de 16 puntos.",
+      "**La productividad individual mejora.** 80% de los encuestados afirma que la IA mejoró su productividad, y 50% señala que le ayuda a tomar mejores decisiones.",
+      "**Los recortes reales quedan por debajo de lo previsto.** Solo 14% de los encuestados de organizaciones que usan IA reporta que la tecnología contribuyó a reducir su plantilla en el último año, menos de la mitad del 32% que en la edición anterior anticipaba reducciones.",
+      "**Crece la expectativa de reducción de personal.** 39% espera que la IA reduzca la plantilla total de su organización el próximo año, frente a 32% en la edición anterior; 43% no espera cambios o prevé cambios menores.",
+      "**Las empresas que más valor obtienen rediseñan el trabajo.** Casi tres de cada cuatro organizaciones de alto desempeño en IA (6% de la muestra) rediseñaron a fondo sus flujos de trabajo, y tienen el doble de probabilidad de contar con altos directivos comprometidos con las iniciativas de IA."
+    ],
+    puntos_en: [
+      "**The experience of AI varies by role.** 47% of middle managers and individual contributors who use AI report at least one negative effect, compared with 31% of executives and senior managers: a 16-point gap.",
+      "**Individual productivity is improving.** 80% of respondents say AI has improved their productivity, and 50% say it helps them make better decisions.",
+      "**Actual cuts fall short of forecasts.** Only 14% of respondents from organizations using AI report that the technology contributed to a decline in their workforce over the past year, less than half the 32% who expected reductions in the previous edition.",
+      "**Expectations of headcount reduction are rising.** 39% expect AI to decrease their organization's overall headcount next year, up from 32% in the previous edition; 43% expect little or no change.",
+      "**The companies capturing the most value redesign work.** Nearly three in four AI high performers (6% of the sample) have fundamentally redesigned their workflows, and they are twice as likely to have senior leaders committed to AI initiatives."
+    ],
+    articulo_es: {
+      "bajada": "La inteligencia artificial mejora la productividad individual, pero su costo en estrés y carga de trabajo recae sobre todo en los mandos medios y los colaboradores.",
+      "parrafos": [
+        "El estudio anual de McKinsey sobre el estado de la IA en 2026 confirma que la tecnología ya forma parte del trabajo cotidiano y que sus beneficios se perciben con claridad. 80% de los encuestados afirma que la IA mejoró su productividad individual, y 50% señala que le ayuda a tomar mejores decisiones. La discusión, por lo tanto, ya no gira en torno a la utilidad de la herramienta.",
+        "La experiencia, sin embargo, no es la misma en todos los roles. 47% de los mandos medios y colaboradores individuales que usan IA reporta al menos un efecto negativo, frente a 31% de los ejecutivos y gerentes sénior. Entre esos efectos, el estudio incluye más estrés, mayor fatiga mental, presión para asumir más trabajo y ansiedad por el futuro profesional. Esta diferencia de 16 puntos muestra que el costo de la adopción se concentra en quienes ejecutan el trabajo.",
+        "Las cifras de empleo agregan un matiz. Solo 14% de los encuestados de organizaciones que usan IA reporta que la tecnología contribuyó a reducir su plantilla en el último año, menos de la mitad del 32% que lo anticipaba en la edición anterior. Aun así, la expectativa crece: 39% prevé que la IA reduzca la plantilla total de su organización el próximo año.",
+        "Para las organizaciones, el desafío pasa de la tecnología a la gestión. Casi tres de cada cuatro organizaciones de alto desempeño en IA rediseñaron a fondo sus flujos de trabajo, y tienen el doble de probabilidad de contar con altos directivos comprometidos con estas iniciativas. McKinsey señala que el principal límite para la adopción es, cada vez más, la capacidad de la organización para incorporar el cambio.",
+        "La brecha entre roles sitúa la conversación sobre la IA en el terreno de la gestión de personas. La productividad se gana en todos los niveles, pero la presión se concentra en los equipos que sostienen la operación diaria, y esa experiencia condiciona el ritmo al que la organización logra escalar la tecnología."
+      ]
+    },
+    articulo_en: {
+      "bajada": "Artificial intelligence improves individual productivity, but its cost in stress and workload falls mainly on middle managers and individual contributors.",
+      "parrafos": [
+        "McKinsey's annual study on the state of AI in 2026 confirms that the technology is already part of everyday work and that its benefits are clearly perceived. 80% of respondents say AI has improved their individual productivity, and 50% say it helps them make better decisions. The discussion is therefore no longer about the tool's usefulness.",
+        "The experience, however, is not the same across roles. 47% of middle managers and individual contributors who use AI report at least one negative effect, compared with 31% of executives and senior managers. Among these effects, the study includes more stress, greater mental fatigue, pressure to take on more work and anxiety about career prospects. This 16-point gap shows that the cost of adoption is concentrated among those who carry out the work.",
+        "Employment figures add nuance. Only 14% of respondents from organizations using AI report that the technology contributed to a decline in their workforce over the past year, less than half the 32% who expected it in the previous edition. Even so, expectations are rising: 39% expect AI to decrease their organization's overall headcount next year.",
+        "For organizations, the challenge is shifting from technology to management. Nearly three in four AI high performers have fundamentally redesigned their workflows, and they are twice as likely to have senior leaders committed to these initiatives. McKinsey notes that the main constraint on adoption is increasingly the organization's ability to absorb change.",
+        "The gap between roles places the conversation about AI in the realm of people management. Productivity gains reach every level, but the pressure is concentrated in the teams that sustain day-to-day operations, and that experience shapes the pace at which the organization can scale the technology."
+      ]
+    },
+    cita: {
+      "original": "The limiting factor is increasingly the organization's ability to absorb change.",
+      "traduccion_es": "El factor limitante es, cada vez más, la capacidad de la organización para incorporar el cambio.",
+      "autor_es": "Tara Balakrishnan, socia asociada de McKinsey",
+      "autor_en": "Tara Balakrishnan, Associate Partner, McKinsey"
+    },
+    preguntas_es: [
+      "¿Qué indicadores muestran hoy cómo viven la IA los mandos medios y los colaboradores, además de la dirección?",
+      "¿Qué tareas se retiran de cada rol cuando se incorpora la IA, para que la mayor productividad no se convierta en más carga?",
+      "¿Cómo se comunica a los equipos el efecto esperado de la IA sobre la plantilla y sobre cada rol?"
+    ],
+    preguntas_en: [
+      "Which indicators show today how middle managers and individual contributors experience AI, beyond leadership?",
+      "Which tasks are removed from each role when AI is introduced, so that higher productivity does not become a heavier workload?",
+      "How is the expected effect of AI on headcount and on each role communicated to teams?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
 ];
 
 
