@@ -945,7 +945,7 @@ img{max-width:100%;display:block}
     const gc=document.getElementById('gigante-cifras');
     if(gc&&ins.portada){ins.portada.forEach((d,i)=>{const h=typeof HALLAZGOS!=='undefined'?HALLAZGOS.find(x=>x.id===d.id):null;const dv=document.createElement('div');const em=document.createElement('em');{const ind=INDUSTRIAS.find(x=>x.id===d.industria);const f=ind?(EN?ind.frase_en:ind.frase_es):'';em.textContent=f.charAt(0).toUpperCase()+f.slice(1);}const b=document.createElement('b');b.textContent=EN?d.dato_en:d.dato_es;const ds=document.createElement('span');ds.textContent=EN?d.texto_en:d.texto_es;const sm=document.createElement('small');sm.textContent=h?h.fuente:'';dv.append(em,b,ds,sm);gc.appendChild(dv);if(i===0){const v=document.createElement('i');v.textContent='vs.';v.setAttribute('aria-hidden','true');gc.appendChild(v);}});}
     const et=document.getElementById('gigante-etiquetas');
-    const s0=document.createElement('span');s0.textContent=(EN?'Cross-study ':'El cruce ')+(ins.numero||'')+' · '+nombreDe(ins.tema);et.appendChild(s0);
+    const s0=document.createElement('span');s0.textContent=(EN?'Cross-read ':'El cruce ')+(ins.numero||'')+' · '+nombreDe(ins.tema);et.appendChild(s0);
     [...new Set(ins.estudios.map(id=>{const h=HALLAZGOS.find(x=>x.id===id);return h?h.fuente.replace(' AI Institute',''):null;}).filter(Boolean))]
       .forEach(fu=>{const s=document.createElement('span');s.className='b';s.textContent=fu;et.appendChild(s);});
   })();

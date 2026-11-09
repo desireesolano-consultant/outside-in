@@ -367,7 +367,7 @@ const TEXTOS = {
     insightIndustria: "Industry",
     insightMuestra: "Sample",
     insightMinLectura: "min read",
-    insightCruce: "Cross-study",
+    insightCruce: "Cross-read",
     insightCoincidenTitulo: "What repeats across three industries",
     insightDifierenTitulo: "Data against data",
     insightLectura: "The reading",
