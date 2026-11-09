@@ -30,7 +30,7 @@ const TRADUCCION_EN = {
   // Encabezado y pie
   "Qué es Outside-In": "What is Outside-In",
   "Estudios": "Studies",
-  "Insights": "Insights",
+  "Cruces": "Cross-reads",
   "Mi mirada": "My view",
   "Sobre mí": "About me",
   "Detrás de Outside-In": "Behind Outside-In",
@@ -56,7 +56,7 @@ const TRADUCCION_EN = {
   "y qué significa para ti.": "and what it means for you.",
   "Bienvenid@ a Outside-In.": "Welcome to Outside-In.",
   "Explora los estudios →": "Explore the studies →",
-  "Ver los insights": "See the insights",
+  "Ver los cruces": "See the cross-reads",
 
   // Estudios
   "Cada semana se publican estudios valiosos que casi nadie alcanza a leer. Aquí te cuento lo esencial de cada uno, con los datos que más importan para las organizaciones y el enlace al estudio completo.": "Valuable studies are published every week, and almost no one has time to read them. Here I share the essentials of each one, with the data that matters most for organizations and a link to the full study.",
@@ -75,9 +75,8 @@ const TRADUCCION_EN = {
   "Antigüedad del estudio": "Study age",
   // Insights
   "Muchos estudios miran los mismos temas, pero no siempre llegan a las mismas conclusiones. Aquí los pongo a conversar.": "Many studies look at the same topics, but they don't always reach the same conclusions. Here I put them in conversation.",
-  "Leer el insight completo →": "Read the full insight →",
-  "Leer el cruce completo →": "Read the full analysis →",
-  "Mi sistema ya está buscando el próximo cruce.": "My system is already looking for the next crossover.",
+  "Leer el cruce completo →": "Read the full cross-read →",
+    "Mi sistema ya está buscando el próximo cruce.": "My system is already looking for the next crossover.",
 
   // Mi mirada
   "Los datos cuentan una parte de la historia. Aquí te cuento lo que veo yo.": "Data tells part of the story. Here I share what I see.",
@@ -194,7 +193,7 @@ const TRADUCCION_EN = {
   "Ver los estudios →": "See the studies →",
   "Lo que significan juntos": "What they mean together",
   "Artículos que cruzan varios estudios sobre un mismo tema: en qué coinciden, en qué se contradicen y por qué.": "Articles that cross several studies on the same topic: where they agree, where they contradict each other and why.",
-  "Ver los insights →": "See the insights →",
+  "Ver los cruces →": "See the cross-reads →",
   "Lo que veo yo": "What I see",
   "Mi lectura como consultora: qué implican estas tendencias para las organizaciones y para quienes las lideran.": "My reading as a consultant: what these trends imply for organizations and for those who lead them.",
   "Ver mi mirada →": "See my view →",
@@ -266,14 +265,14 @@ const TRADUCCION_EN = {
   "Cada lunes se suman los estudios más recientes, identificados por un sistema automatizado.": "The most recent studies are added every Monday, identified by an automated system.",
   "Solo estudios públicos de fuentes reconocidas, con cada dato vinculado al estudio original.": "Only public studies from recognized sources, with every data point linked to the original study.",
   "Estudios comparados": "Studies compared",
-  "Los insights comparan varios estudios sobre un mismo tema para mostrar en qué coinciden y en qué difieren.": "The insights compare several studies on the same topic to show where they agree and where they differ.",
+  "Los cruces comparan varios estudios sobre un mismo tema para mostrar en qué coinciden y en qué difieren.": "The cross-reads compare several studies on the same topic to show where they agree and where they differ.",
   "Columnas de análisis sobre lo que estas tendencias significan para quienes lideran.": "Analysis columns on what these trends mean for those who lead.",
   "Columnas de análisis sobre lo que estas tendencias significan para las organizaciones y para quienes las lideran.": "Analysis columns on what these trends mean for organizations and for those who lead them.",
   "El sistema identifica los estudios más recientes de consultoras, centros de investigación e instituciones de reconocida trayectoria.": "The system identifies the most recent studies from consulting firms, research centers and institutions with a recognized track record.",
   "Cada estudio se evalúa con los mismos criterios: acceso público, fuente reconocida y una muestra representativa. Lo que no puede verificarse no se publica.": "Every study is assessed against the same criteria: public access, a recognized source and a representative sample. Anything that cannot be verified is not published.",
   "Los estudios que cumplen los criterios se publican en español y en inglés, con su hallazgo principal, sus cifras más relevantes y el enlace al estudio completo.": "Studies that meet the criteria are published in Spanish and English, with their main finding, their most relevant figures and a link to the full study.",
   "Analiza": "Analyzes",
-  "Desirée Solano elabora los insights, que comparan varios estudios, y escribe columnas sobre lo que sucede en las organizaciones. Esta etapa no se automatiza.": "Desirée Solano develops the insights, which compare several studies, and writes columns on what is happening in organizations. This stage is not automated.",
+  "Desirée Solano elabora los cruces, que comparan varios estudios, y escribe columnas sobre lo que sucede en las organizaciones. Esta etapa no se automatiza.": "Desirée Solano develops the cross-reads, which compare several studies, and writes columns on what is happening in organizations. This stage is not automated.",
   "Cada estudio en una página: el hallazgo principal, las cifras más relevantes y el enlace al estudio completo.": "Each study on one page: the main finding, the most relevant figures and a link to the full study.",
   "Análisis que comparan varios estudios sobre un mismo tema: en qué coinciden y qué implican para las organizaciones.": "Analyses that compare several studies on the same topic: where they agree and what they mean for organizations.",
   "Cada semana se publican nuevos estudios sobre organizaciones.": "New studies on organizations are published every week.",
