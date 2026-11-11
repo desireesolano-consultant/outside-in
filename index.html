@@ -729,17 +729,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611091905"></script>
-<script src="js/textos.js?v=202611091905"></script>
-<script src="js/datos.js?v=202611091905"></script>
-<script src="js/contador.js?v=202611091905"></script>
-<script src="js/buscador.js?v=202611091905"></script>
-<script src="js/imagenes.js?v=202611091905"></script>
-<script src="js/insights.js?v=202611091905"></script>
-<script src="js/columnas.js?v=202611091905"></script>
-<script src="js/radar.js?v=202611091905"></script>
-<script src="js/traduccion.js?v=202611091905"></script>
-<script src="js/metricas.js?v=202611091905"></script>
+<script src="js/config.js?v=202611101930"></script>
+<script src="js/textos.js?v=202611101930"></script>
+<script src="js/datos.js?v=202611101930"></script>
+<script src="js/contador.js?v=202611101930"></script>
+<script src="js/buscador.js?v=202611101930"></script>
+<script src="js/imagenes.js?v=202611101930"></script>
+<script src="js/insights.js?v=202611101930"></script>
+<script src="js/columnas.js?v=202611101930"></script>
+<script src="js/radar.js?v=202611101930"></script>
+<script src="js/traduccion.js?v=202611101930"></script>
+<script src="js/metricas.js?v=202611101930"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -748,8 +748,11 @@ img{max-width:100%;display:block}
   traducirPagina();
   document.getElementById('boton-idioma').addEventListener('click',cambiarIdiomaPagina);
   const nombreDe=id=>{const c=[...TEMAS,...INDUSTRIAS].find(x=>x.id===id);return c?(EN?c.en:c.es):'';};
-  // Orden: primero lo último que se publicó en Outside-In ("publicado"); a igual fecha, el estudio más nuevo.
-  const fechaWeb=h=>h.publicado||h.fecha;
+  // Dos flujos (decidido por Desiree el 10-nov-2026):
+  // - Novedad: estudio que la fuente publicó en los 14 días previos a la búsqueda. Se ordena y se muestra por "publicado" (fecha en Outside-In).
+  // - Archivo (archivo: true): estudio de los últimos 12 meses cargado después. Se ordena y se muestra por "fecha" (fecha del estudio),
+  //   nunca lleva "Nuevo" y no desplaza a las novedades en la portada.
+  const fechaWeb=h=>h.archivo?(h.fecha||h.publicado):(h.publicado||h.fecha);
   const reales=(typeof HALLAZGOS!=='undefined'?HALLAZGOS:[]).filter(h=>h.esEjemplo===false).sort((a,b)=>(fechaWeb(b)||'').localeCompare(fechaWeb(a)||'')||(b.fecha||'').localeCompare(a.fecha||''));
   // Fechas: "19 de octubre de 2026" y "hace 1 semana"
   const hoy=new Date(); const aFecha=f=>new Date(f+'T12:00:00');
@@ -763,7 +766,7 @@ img{max-width:100%;display:block}
   // "Nuevo": SOLO los estudios publicados en la última búsqueda semanal (el lunes de CONTADOR.actualizado).
   // Se apaga solo: cuando corre la búsqueda siguiente, o si pasan 7 días desde esa publicación.
   const ultima=(typeof CONTADOR!=='undefined'&&CONTADOR.actualizado)||'';
-  const esNuevo=h=>Boolean(ultima&&h.publicado&&h.publicado>=ultima&&(hoy-aFecha(h.publicado))<7*86400000);
+  const esNuevo=h=>Boolean(!h.archivo&&ultima&&h.publicado&&h.publicado>=ultima&&(hoy-aFecha(h.publicado))<7*86400000);
   // Imágenes que no cargan: se queda el degradado de marca detrás.
   document.querySelectorAll('img').forEach(i=>i.addEventListener('error',()=>{i.style.visibility='hidden';}));
 
@@ -877,7 +880,7 @@ img{max-width:100%;display:block}
       const h3=document.createElement('h3'); h3.textContent=EN?h.hallazgo_en:h.hallazgo_es;
       if(esNuevo(h)){const nu=document.createElement('span');nu.className='nuevo';nu.textContent=EN?'New':'Nuevo';f.appendChild(nu);}
       const me=document.createElement('div'); me.className='meta';
-      const fe=document.createElement('span'); fe.textContent=(EN?'Published ':'Publicado el ')+fechaLarga(fechaWeb(h));
+      const fe=document.createElement('span'); fe.textContent=(h.archivo?(EN?'Study from ':'Estudio del '):(EN?'Published ':'Publicado el '))+fechaLarga(fechaWeb(h));
       const ha=document.createElement('span'); ha.className='hace'; ha.textContent=hace(fechaWeb(h));
       me.append(fe,ha);
       a.append(f,ch,me,h3); return a;

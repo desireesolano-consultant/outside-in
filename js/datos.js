@@ -182,6 +182,7 @@ const HALLAZGOS = [
     subtema: "Rediseño del trabajo",
     esEjemplo: false,
     publicado: "2026-10-21",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-05-14",
     anio: "2026",
     fuente: "Accenture",
@@ -258,6 +259,7 @@ const HALLAZGOS = [
     subtema: "IA y trabajo",
     esEjemplo: false,
     publicado: "2026-10-21",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2025-12-10",
     anio: "2025",
     fuente: "Deloitte",
@@ -334,6 +336,7 @@ const HALLAZGOS = [
     subtema: "Comunicación",
     esEjemplo: false,
     publicado: "2026-10-21",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-06-29",
     anio: "2026",
     fuente: "McKinsey & Company",
@@ -410,6 +413,7 @@ const HALLAZGOS = [
     subtema: null,
     esEjemplo: false,
     publicado: "2026-10-21",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-09-29",
     anio: "2026",
     fuente: "Deloitte",
@@ -486,6 +490,7 @@ const HALLAZGOS = [
     subtema: null,
     esEjemplo: false,
     publicado: "2026-10-21",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2025-06-25",
     anio: "2025",
     fuente: "EY",
@@ -562,6 +567,7 @@ const HALLAZGOS = [
     subtema: "Cultura",
     esEjemplo: false,
     publicado: "2026-10-21",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-03-04",
     anio: "2026",
     fuente: "Deloitte",
@@ -640,6 +646,7 @@ const HALLAZGOS = [
     subtema: "Adopción",
     esEjemplo: false,
     publicado: "2026-10-21",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-08-03",
     anio: "2026",
     fuente: "PwC",
@@ -716,6 +723,7 @@ const HALLAZGOS = [
     subtema: "Rediseño de roles y habilidades",
     esEjemplo: false,
     publicado: "2026-10-21",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-08-03",
     anio: "2026",
     fuente: "PwC",
@@ -792,6 +800,7 @@ const HALLAZGOS = [
     subtema: "Comunicación interna",
     esEjemplo: false,
     publicado: "2026-10-21",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-02-11",
     anio: "2026",
     fuente: "Bain & Company",
@@ -868,6 +877,7 @@ const HALLAZGOS = [
     subtema: "Rediseño de roles y habilidades",
     esEjemplo: false,
     publicado: "2026-10-21",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-03-01",
     anio: "2026",
     fuente: "Deloitte AI Institute",
@@ -1023,6 +1033,7 @@ const HALLAZGOS = [
     subtema: "Gestión del cambio",
     esEjemplo: false,
     publicado: "2026-10-26",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-10-02",
     anio: "2026",
     fuente: "Sia",
@@ -1101,6 +1112,7 @@ const HALLAZGOS = [
     subtema: "Comunicación interna",
     esEjemplo: false,
     publicado: "2026-10-26",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-10-06",
     anio: "2026",
     fuente: "Edelman",
@@ -1179,6 +1191,7 @@ const HALLAZGOS = [
     subtema: "Comunicación interna",
     esEjemplo: false,
     publicado: "2026-10-26",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-03-10",
     anio: "2026",
     fuente: "Gallagher",
@@ -1255,6 +1268,7 @@ const HALLAZGOS = [
     subtema: "IA y trabajo",
     esEjemplo: false,
     publicado: "2026-10-26",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-09-29",
     anio: "2026",
     fuente: "PwC",
@@ -1333,6 +1347,7 @@ const HALLAZGOS = [
     subtema: "Rediseño de roles y habilidades",
     esEjemplo: false,
     publicado: "2026-10-26",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-10-01",
     anio: "2026",
     fuente: "EY-Parthenon",
@@ -1489,6 +1504,7 @@ const HALLAZGOS = [
     subtema: "IA y trabajo",
     esEjemplo: false,
     publicado: "2026-10-26",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-08-25",
     anio: "2026",
     fuente: "JLL",
@@ -1643,6 +1659,7 @@ const HALLAZGOS = [
     subtema: "IA y trabajo",
     esEjemplo: false,
     publicado: "2026-11-02",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-10-06",
     anio: "2026",
     fuente: "Gallup",
@@ -1719,6 +1736,7 @@ const HALLAZGOS = [
     subtema: "Rediseño de roles y habilidades",
     esEjemplo: false,
     publicado: "2026-11-02",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-06-03",
     anio: "2026",
     fuente: "BCG",
@@ -1797,6 +1815,7 @@ const HALLAZGOS = [
     subtema: "Liderazgo",
     esEjemplo: false,
     publicado: "2026-11-02",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-09-08",
     anio: "2026",
     fuente: "Korn Ferry",
@@ -1875,6 +1894,7 @@ const HALLAZGOS = [
     subtema: "Propuesta de valor al colaborador (EVP)",
     esEjemplo: false,
     publicado: "2026-11-02",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-05-13",
     anio: "2026",
     fuente: "Deloitte",
@@ -1953,6 +1973,7 @@ const HALLAZGOS = [
     subtema: "Liderazgo",
     esEjemplo: false,
     publicado: "2026-11-02",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-04-07",
     anio: "2026",
     fuente: "Gallup",
@@ -2031,6 +2052,7 @@ const HALLAZGOS = [
     subtema: "IA y trabajo",
     esEjemplo: false,
     publicado: "2026-11-09",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-10-19",
     anio: "2026",
     fuente: "Accenture",
@@ -2109,6 +2131,7 @@ const HALLAZGOS = [
     subtema: "IA y trabajo",
     esEjemplo: false,
     publicado: "2026-11-09",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-08-25",
     anio: "2026",
     fuente: "McKinsey & Company",
@@ -2185,6 +2208,7 @@ const HALLAZGOS = [
     subtema: "IA y trabajo",
     esEjemplo: false,
     publicado: "2026-11-09",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-09-24",
     anio: "2026",
     fuente: "KPMG",
@@ -2259,6 +2283,7 @@ const HALLAZGOS = [
     subtema: "IA y trabajo",
     esEjemplo: false,
     publicado: "2026-11-09",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-04-13",
     anio: "2026",
     fuente: "PwC",
@@ -2411,6 +2436,7 @@ const HALLAZGOS = [
     subtema: "Cultura",
     esEjemplo: false,
     publicado: "2026-11-09",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
     fecha: "2026-08-12",
     anio: "2026",
     fuente: "Great Place to Work",

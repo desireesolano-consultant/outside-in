@@ -207,7 +207,7 @@ function diasDesde(fechaIso) {
 // no la fecha en que la consultora sacó el estudio ("fecha").
 function esReciente(h) {
   const fechaEnLaWeb = h.publicado || h.fecha;
-  if (h.esEjemplo !== false || !fechaEnLaWeb) return false;
+  if (h.esEjemplo !== false || h.archivo || !fechaEnLaWeb) return false;
   const dias = diasDesde(fechaEnLaWeb);
   return dias >= 0 && dias <= 7;
 }
