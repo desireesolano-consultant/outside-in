@@ -2845,3 +2845,33 @@ ul:has(> .oi-insight-punto) { padding-left: 0; }
   .iv-grilla, .iv-posturas, .iv-preguntas ol { grid-template-columns: 1fr; }
   .iv-panel { grid-template-columns: 1fr; gap: 24px; }
 }
+
+/* Botones de la ficha de cada estudio (10-nov-2026): misma altura, texto en una línea, más sobrios */
+.oi-hallazgo-ficha .oi-hallazgo-boton-fuente,
+.oi-hallazgo-ficha .oi-hallazgo-boton-compartir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 20px;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.oi-hallazgo-ficha .oi-hallazgo-boton-compartir { margin-top: 10px; }
+.oi-hallazgo-ficha .oi-hallazgo-boton-fuente { border: 1.5px solid var(--oi-azul); }
+.oi-hallazgo-ficha .oi-hallazgo-boton-fuente:hover,
+.oi-hallazgo-ficha .oi-hallazgo-boton-fuente:focus-visible {
+  background: var(--oi-negro);
+  border-color: var(--oi-negro);
+}
+.oi-hallazgo-ficha .oi-hallazgo-boton-compartir:hover,
+.oi-hallazgo-ficha .oi-hallazgo-boton-compartir:focus-visible {
+  background: var(--oi-negro);
+  color: var(--oi-blanco);
+}
