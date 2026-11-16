@@ -729,17 +729,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611161010"></script>
-<script src="js/textos.js?v=202611161010"></script>
-<script src="js/datos.js?v=202611161010"></script>
-<script src="js/contador.js?v=202611161010"></script>
-<script src="js/buscador.js?v=202611161010"></script>
-<script src="js/imagenes.js?v=202611161010"></script>
-<script src="js/insights.js?v=202611161010"></script>
-<script src="js/columnas.js?v=202611161010"></script>
-<script src="js/radar.js?v=202611161010"></script>
-<script src="js/traduccion.js?v=202611161010"></script>
-<script src="js/metricas.js?v=202611161010"></script>
+<script src="js/config.js?v=202611161233"></script>
+<script src="js/textos.js?v=202611161233"></script>
+<script src="js/datos.js?v=202611161233"></script>
+<script src="js/contador.js?v=202611161233"></script>
+<script src="js/buscador.js?v=202611161233"></script>
+<script src="js/imagenes.js?v=202611161233"></script>
+<script src="js/insights.js?v=202611161233"></script>
+<script src="js/columnas.js?v=202611161233"></script>
+<script src="js/radar.js?v=202611161233"></script>
+<script src="js/traduccion.js?v=202611161233"></script>
+<script src="js/metricas.js?v=202611161233"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -959,7 +959,7 @@ img{max-width:100%;display:block}
     document.getElementById('gigante-bajada').textContent=EN?(ins.resumen_en||ins.bajada_en):(ins.resumen_es||ins.bajada_es);
     // Duelo de cifras: dos estudios distintos, cada cifra con su sujeto completo.
     const gc=document.getElementById('gigante-cifras');
-    if(gc&&ins.portada){ins.portada.forEach((d,i)=>{const h=typeof HALLAZGOS!=='undefined'?HALLAZGOS.find(x=>x.id===d.id):null;const dv=document.createElement('div');const em=document.createElement('em');{const ind=INDUSTRIAS.find(x=>x.id===d.industria);const f=ind?(EN?ind.frase_en:ind.frase_es):'';em.textContent=f.charAt(0).toUpperCase()+f.slice(1);}const b=document.createElement('b');b.textContent=EN?d.dato_en:d.dato_es;const ds=document.createElement('span');ds.textContent=EN?d.texto_en:d.texto_es;const sm=document.createElement('small');sm.textContent=h?h.fuente:'';dv.append(em,b,ds,sm);gc.appendChild(dv);if(i===0){const v=document.createElement('i');v.textContent='vs.';v.setAttribute('aria-hidden','true');gc.appendChild(v);}});}
+    if(gc&&ins.portada){ins.portada.forEach((d,i)=>{const h=typeof HALLAZGOS!=='undefined'?HALLAZGOS.find(x=>x.id===d.id):null;const dv=document.createElement('div');const em=document.createElement('em');{const ind=INDUSTRIAS.find(x=>x.id===d.industria);const f=ind?(EN?ind.frase_en:ind.frase_es):((EN?d.etiqueta_en:d.etiqueta_es)||'');em.textContent=f.charAt(0).toUpperCase()+f.slice(1);}const b=document.createElement('b');b.textContent=EN?d.dato_en:d.dato_es;const ds=document.createElement('span');ds.textContent=EN?d.texto_en:d.texto_es;const sm=document.createElement('small');sm.textContent=h?h.fuente:'';dv.append(em,b,ds,sm);gc.appendChild(dv);if(i===0){const v=document.createElement('i');v.textContent='vs.';v.setAttribute('aria-hidden','true');gc.appendChild(v);}});}
     const et=document.getElementById('gigante-etiquetas');
     const s0=document.createElement('span');s0.textContent=(EN?'Cross-read ':'El cruce ')+(ins.numero||'')+' · '+nombreDe(ins.tema);et.appendChild(s0);
     [...new Set(ins.estudios.map(id=>{const h=HALLAZGOS.find(x=>x.id===id);return h?h.fuente.replace(' AI Institute',''):null;}).filter(Boolean))]

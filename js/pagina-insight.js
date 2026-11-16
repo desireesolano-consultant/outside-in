@@ -142,7 +142,7 @@ function verCruce(i, bajar) {
     const fila = crear("div", "iv-fila");
     const lbl = crear("div", "iv-lbl");
     const a = crear("span");
-    a.append(crear("b", null, nombreCortoInsight(lado.industria)), crear("small", null, fuenteDe(lado.id)));
+    a.append(crear("b", null, campo(lado, "etiqueta") || nombreCortoInsight(lado.industria)), crear("small", null, fuenteDe(lado.id)));
     lbl.append(a, crear("span", "iv-val", campo(lado, "dato")));
     const barra = crear("div", "iv-barra");
     const rel = crear("div", "iv-relleno");
@@ -197,7 +197,7 @@ function renderizarInsight() {
     a.href = `hallazgo.html?id=${encodeURIComponent(h.id)}`;
     const i = crear("i", null, h.fuente.charAt(0));
     i.setAttribute("aria-hidden", "true");
-    a.append(i, document.createTextNode(h.fuente), crear("small", null, ` · ${nombreCortoInsight(h.industria)}`));
+    a.append(i, document.createTextNode(h.fuente), crear("small", null, ` · ${nombreCortoInsight(h.industria || h.tema)}`));
     est.appendChild(a);
   });
 
@@ -267,7 +267,7 @@ function renderizarInsight() {
     const a = crear("a", "iv-postura");
     a.href = `hallazgo.html?id=${encodeURIComponent(h.id)}`;
     a.append(
-      crear("p", "iv-etq", `${h.fuente} · ${nombreCortoInsight(h.industria)}`),
+      crear("p", "iv-etq", `${h.fuente} · ${nombreCortoInsight(h.industria || h.tema)}`),
       crear("p", "iv-q", campo(d, "postura")),
       crear("span", "iv-ir", t.insightVerResumenEstudio)
     );
@@ -294,7 +294,7 @@ function renderizarInsight() {
     link.rel = "noopener";
     const tdLink = crear("td");
     tdLink.appendChild(link);
-    tr.append(crear("td", null, h.fuente), crear("td", null, `${campo(h, "estudio")} (${h.anio})`), crear("td", null, nombreCortoInsight(h.industria)), crear("td", null, muestra), tdLink);
+    tr.append(crear("td", null, h.fuente), crear("td", null, `${campo(h, "estudio")} (${h.anio})`), crear("td", null, nombreCortoInsight(h.industria || h.tema)), crear("td", null, muestra), tdLink);
     tabla.appendChild(tr);
   });
 

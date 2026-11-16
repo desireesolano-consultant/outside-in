@@ -282,5 +282,303 @@ const INSIGHTS = [
         "en": "1,004 executives"
       }
     }
+  },
+  {
+    "id": "i-2026-11-ia-direccion-equipos",
+    "numero": "02",
+    "publicado": "2026-11-16",
+    "tema": "ia_personas",
+    "industrias": [],
+    "estudios": [
+      "h-2026-11-deloitte-directorios-ia",
+      "h-2026-11-accenture-pulso-cambio",
+      "h-2026-11-bcg-ia-trabajo",
+      "h-2026-11-mckinsey-estado-ia"
+    ],
+    "titulo_es": "La IA se decide en la dirección.",
+    "titulo2_es": "Su efecto en los equipos todavía no entra en esa agenda.",
+    "titulo_en": "AI is decided at the top.",
+    "titulo2_en": "Its effect on teams has not yet made it onto that agenda.",
+    "resumen_es": "Deloitte, Accenture, BCG y McKinsey miran la IA desde el directorio, la alta dirección y los equipos. Leídos en conjunto, muestran que la organización avanza con la tecnología antes de definir qué cambia para las personas que la usan.",
+    "resumen_en": "Deloitte, Accenture, BCG and McKinsey look at AI from the board, senior leadership and teams. Read together, they show that organizations move ahead with the technology before defining what changes for the people who use it.",
+    "bajada_es": "Cuatro estudios recientes analizan la IA desde distintos niveles de la organización. Coinciden en que pocas empresas tienen una estrategia sobre su efecto en las personas o rediseñan sus procesos. Al mismo tiempo, los equipos reportan más ritmo, más carga y poca claridad, mientras el directorio dedica poca atención a su bienestar.",
+    "bajada_en": "Four recent studies analyze AI from different levels of the organization. They agree that few companies have a strategy for its effect on people or are redesigning their processes. At the same time, teams report a faster pace, a heavier load and little clarity, while boards give little attention to their well-being.",
+    "tesis_es": "Las organizaciones deciden e invierten en IA desde la dirección, pero la experiencia de quienes la usan cada día, con más ritmo, más carga y poca claridad, todavía no forma parte de la agenda que la gobierna.",
+    "tesis_en": "Organizations decide on and invest in AI from the top, but the experience of those who use it every day, with a faster pace, a heavier load and little clarity, is not yet part of the agenda that governs it.",
+    "portada": [
+      {
+        "id": "h-2026-11-mckinsey-estado-ia",
+        "industria": null,
+        "etiqueta_es": "Mandos medios y colaboradores",
+        "etiqueta_en": "Middle managers and employees",
+        "dato_es": "47%",
+        "dato_en": "47%",
+        "texto_es": "de los mandos medios y colaboradores que usan IA reporta al menos un efecto negativo, como estrés o más carga",
+        "texto_en": "of middle managers and individual contributors who use AI report at least one negative effect, such as stress or a heavier workload"
+      },
+      {
+        "id": "h-2026-11-deloitte-directorios-ia",
+        "industria": null,
+        "etiqueta_es": "Directorios",
+        "etiqueta_en": "Boards",
+        "dato_es": "9%",
+        "dato_en": "9%",
+        "texto_es": "es la frecuencia con que el bienestar de los empleados aparece cuando el directorio discute el efecto de la tecnología en la fuerza laboral",
+        "texto_en": "is how often employee well-being comes up when the board discusses technology's effect on the workforce"
+      }
+    ],
+    "coinciden_titulo_es": "Lo que se repite en cuatro estudios",
+    "coinciden_titulo_en": "What repeats across four studies",
+    "coinciden_intro_es": "Desde distintos niveles de la organización, los cuatro estudios describen las mismas cinco etapas: no hay estrategia sobre las personas, los procesos no se rediseñan, la comunicación no llega con claridad, la exigencia sube y la experiencia se vuelve más difícil en la base.",
+    "coinciden_intro_en": "From different levels of the organization, the four studies describe the same five stages: there is no people strategy, processes are not redesigned, communication does not land clearly, demands rise and the experience becomes harder at the base.",
+    "cadena": [
+      {
+        "id": "h-2026-11-deloitte-directorios-ia",
+        "dato": "16%",
+        "titulo_es": "Falta la estrategia sobre las personas",
+        "titulo_en": "The people strategy is missing",
+        "texto_es": "de los miembros de directorios y altos ejecutivos dice que su organización ya tiene una estrategia establecida sobre el impacto de la tecnología en su fuerza laboral.",
+        "texto_en": "of board members and senior executives say their organization already has an established strategy for technology's impact on its workforce."
+      },
+      {
+        "id": "h-2026-11-accenture-pulso-cambio",
+        "dato": "15%",
+        "titulo_es": "El trabajo no se rediseña",
+        "titulo_en": "Work is not redesigned",
+        "texto_es": "de los líderes de alta dirección rediseña sus procesos de punta a punta mientras la IA se extiende en la organización.",
+        "texto_en": "of C-suite leaders are redesigning their processes end to end as AI spreads across the organization."
+      },
+      {
+        "id": "h-2026-11-bcg-ia-trabajo",
+        "dato": "33%",
+        "titulo_es": "La comunicación no llega con claridad",
+        "titulo_en": "Communication does not land clearly",
+        "texto_es": "de los encuestados indica que la dirección comunica con claridad sobre la IA. Entre los empleados de primera línea, solo 36% se siente preparado para usarla.",
+        "texto_en": "of respondents say leadership communicates clearly about AI. Among frontline employees, only 36% feel prepared to use it."
+      },
+      {
+        "id": "h-2026-11-accenture-pulso-cambio",
+        "dato": "50%",
+        "titulo_es": "Sube la exigencia",
+        "titulo_en": "Demands rise",
+        "texto_es": "de los empleados señala que la IA elevó la velocidad esperada del trabajo y la necesidad de revisar lo que produce.",
+        "texto_en": "of employees say AI has raised the expected pace of work and the need to review what it produces."
+      },
+      {
+        "id": "h-2026-11-mckinsey-estado-ia",
+        "dato": "47% vs. 31%",
+        "titulo_es": "La experiencia se divide",
+        "titulo_en": "The experience splits",
+        "texto_es": "47% de los mandos medios y colaboradores que usan IA reporta al menos un efecto negativo, frente a 31% de los ejecutivos y gerentes sénior.",
+        "texto_en": "47% of middle managers and individual contributors who use AI report at least one negative effect, compared with 31% of executives and senior managers."
+      }
+    ],
+    "coinciden": [
+      {
+        "titulo_es": "Pocas organizaciones definieron qué cambia en el trabajo",
+        "titulo_en": "Few organizations have defined what changes in work",
+        "lados": [
+          {
+            "id": "h-2026-11-deloitte-directorios-ia",
+            "industria": null,
+            "etiqueta_es": "Directorios",
+            "etiqueta_en": "Boards",
+            "dato_es": "16%",
+            "dato_en": "16%",
+            "texto_es": "de los miembros de directorios y altos ejecutivos dice que su organización tiene una estrategia establecida sobre el impacto de la tecnología en su fuerza laboral",
+            "texto_en": "of board members and senior executives say their organization has an established strategy for technology's impact on its workforce",
+            "v": 16
+          },
+          {
+            "id": "h-2026-11-accenture-pulso-cambio",
+            "industria": null,
+            "etiqueta_es": "Alta dirección",
+            "etiqueta_en": "C-suite",
+            "dato_es": "15%",
+            "dato_en": "15%",
+            "texto_es": "de los líderes de alta dirección rediseña sus procesos de punta a punta",
+            "texto_en": "of C-suite leaders are redesigning their processes end to end",
+            "v": 15
+          }
+        ],
+        "lectura_es": "Desde el directorio, Deloitte encuentra que la estrategia sobre el efecto de la tecnología en las personas existe en una minoría de organizaciones; otro 51% todavía la está desarrollando. Desde la alta dirección, Accenture encuentra una proporción casi idéntica de líderes que rediseña sus procesos de punta a punta.\n\nLeídos juntos, los dos estudios describen el mismo punto de partida: la IA ya está en marcha, pero en más de 8 de cada 10 organizaciones todavía no se decidió cómo cambia el trabajo ni qué se espera de las personas.",
+        "lectura_en": "From the board, Deloitte finds that a strategy for technology's effect on people exists in a minority of organizations; another 51% are still developing one. From the C-suite, Accenture finds an almost identical share of leaders redesigning their processes end to end.\n\nRead together, the two studies describe the same starting point: AI is already under way, but in more than 8 in 10 organizations it has not yet been decided how work changes or what is expected of people.",
+        "nota_es": "Deloitte mide la proporción de organizaciones con una estrategia establecida, según sus directores y altos ejecutivos; Accenture, la proporción de líderes de alta dirección que rediseña procesos. Son medidas distintas de un mismo avance pendiente, no la misma cifra.",
+        "nota_en": "Deloitte measures the share of organizations with an established strategy, according to their directors and senior executives; Accenture, the share of C-suite leaders redesigning processes. They are different measures of the same pending step, not the same figure.",
+        "tarjeta_es": "Pocas organizaciones definieron qué cambia en el trabajo",
+        "tarjeta_en": "Few organizations have defined what changes in work",
+        "resumen_es": "Desde el directorio y desde la alta dirección, menos de 2 de cada 10 pasó de la tecnología a la definición del trabajo.",
+        "resumen_en": "From the board and from the C-suite, fewer than 2 in 10 have moved from technology to defining work.",
+        "eje_es": "Organizaciones o líderes que ya definieron cómo cambia el trabajo",
+        "eje_en": "Organizations or leaders that have already defined how work changes",
+        "sub_es": "Menos de 2 de cada 10 pasó de la tecnología a la definición del trabajo",
+        "sub_en": "Fewer than 2 in 10 have moved from technology to defining work"
+      }
+    ],
+    "difieren_intro_es": "Al comparar los estudios aparecen diferencias que ninguno muestra por separado.",
+    "difieren_intro_en": "Comparing the studies reveals differences that none of them shows on its own.",
+    "difieren": [
+      {
+        "titulo_es": "El costo para las personas casi no llega al directorio",
+        "titulo_en": "The cost to people barely reaches the board",
+        "lados": [
+          {
+            "id": "h-2026-11-mckinsey-estado-ia",
+            "industria": null,
+            "etiqueta_es": "Mandos medios y colaboradores",
+            "etiqueta_en": "Middle managers and employees",
+            "dato_es": "47%",
+            "dato_en": "47%",
+            "texto_es": "de los mandos medios y colaboradores que usan IA reporta al menos un efecto negativo, frente a 31% de los ejecutivos y gerentes sénior",
+            "texto_en": "of middle managers and individual contributors who use AI report at least one negative effect, compared with 31% of executives and senior managers",
+            "v": 47
+          },
+          {
+            "id": "h-2026-11-deloitte-directorios-ia",
+            "industria": null,
+            "etiqueta_es": "Directorios",
+            "etiqueta_en": "Boards",
+            "dato_es": "9%",
+            "dato_en": "9%",
+            "texto_es": "de las conversaciones del directorio sobre tecnología y fuerza laboral se centra en el bienestar de los empleados, frente a 42% en la productividad",
+            "texto_en": "of board conversations about technology and the workforce focus on employee well-being, compared with 42% on productivity",
+            "v": 9
+          }
+        ],
+        "lectura_es": "En los equipos, McKinsey encuentra que casi la mitad de los mandos medios y colaboradores que usan IA ya reporta efectos negativos, 16 puntos más que entre los ejecutivos. En el directorio, Deloitte encuentra que la conversación sobre tecnología y personas se concentra en la productividad y casi no aborda el bienestar ni la confianza de los empleados (6%).\n\nLa diferencia indica que los efectos de la IA se sienten con más fuerza en los niveles que ejecutan el trabajo, mientras el órgano que supervisa la transformación los discute poco.",
+        "lectura_en": "Within teams, McKinsey finds that almost half of middle managers and individual contributors who use AI already report negative effects, 16 points more than among executives. On the board, Deloitte finds that the conversation about technology and people centers on productivity and barely addresses employee well-being or trust (6%).\n\nThe difference indicates that AI's effects are felt most strongly at the levels that carry out the work, while the body that oversees the transformation rarely discusses them.",
+        "nota_es": "Las cifras no miden lo mismo: McKinsey mide la proporción de personas que reporta un efecto negativo; Deloitte, el peso de cada tema en las conversaciones del directorio. La comparación muestra una distancia de atención entre niveles, no una relación directa entre ambos datos.",
+        "nota_en": "The figures do not measure the same thing: McKinsey measures the share of people reporting a negative effect; Deloitte, the weight of each topic in board conversations. The comparison shows a gap in attention between levels, not a direct relationship between the two figures.",
+        "tarjeta_es": "El costo para las personas casi no llega al directorio",
+        "tarjeta_en": "The cost to people barely reaches the board",
+        "resumen_es": "Los efectos negativos de la IA crecen en la base, mientras el bienestar ocupa un lugar menor en la agenda del directorio.",
+        "resumen_en": "AI's negative effects grow at the base, while well-being holds a minor place on the board agenda.",
+        "sub_es": "Los efectos de la IA se sienten más en quienes ejecutan el trabajo que en quienes lo supervisan.",
+        "sub_en": "AI's effects are felt more by those who carry out the work than by those who oversee it.",
+        "eje_es": "Efectos negativos en los equipos frente a atención del directorio al bienestar",
+        "eje_en": "Negative effects on teams versus board attention to well-being"
+      },
+      {
+        "titulo_es": "La productividad sube junto con la carga",
+        "titulo_en": "Productivity rises along with the load",
+        "lados": [
+          {
+            "id": "h-2026-11-accenture-pulso-cambio",
+            "industria": null,
+            "etiqueta_es": "Empleados",
+            "etiqueta_en": "Employees",
+            "dato_es": "82%",
+            "dato_en": "82%",
+            "texto_es": "de los empleados afirma que la IA aumentó su productividad; al mismo tiempo, 50% señala que elevó la velocidad esperada y la revisión del trabajo",
+            "texto_en": "of employees say AI has increased their productivity; at the same time, 50% say it has raised the expected pace and the review of work",
+            "v": 82
+          },
+          {
+            "id": "h-2026-11-bcg-ia-trabajo",
+            "industria": null,
+            "etiqueta_es": "Usuarios frecuentes",
+            "etiqueta_en": "Frequent users",
+            "dato_es": "41%",
+            "dato_en": "41%",
+            "texto_es": "de los usuarios frecuentes de IA reporta una mayor carga mental asociada a su uso; 66% recibe poca o ninguna orientación sobre cómo usar el tiempo que ahorra",
+            "texto_en": "of frequent AI users report a heavier mental load associated with its use; 66% receive little or no guidance on how to use the time they save",
+            "v": 41
+          }
+        ],
+        "lectura_es": "Accenture muestra que la gran mayoría de los empleados percibe una mejora de productividad con la IA. BCG agrega el otro lado: cuatro de cada diez usuarios frecuentes siente más carga mental, y la mayoría no recibe orientación sobre qué hacer con el tiempo ahorrado.\n\nLa productividad y la carga conviven. Cuando la organización no define cómo se usa el tiempo liberado, la ganancia se traduce en más ritmo y más revisión, no en mejor trabajo.",
+        "lectura_en": "Accenture shows that the vast majority of employees perceive a productivity gain from AI. BCG adds the other side: four in ten frequent users feel a heavier mental load, and most receive no guidance on what to do with the time saved.\n\nProductivity and load coexist. When the organization does not define how freed-up time is used, the gain turns into a faster pace and more review, not better work.",
+        "nota_es": "Accenture mide a empleados de organizaciones grandes en 21 países; BCG, a usuarios frecuentes de IA en 14 mercados. Ambas cifras provienen de los propios trabajadores, pero de muestras distintas.",
+        "nota_en": "Accenture measures employees at large organizations in 21 countries; BCG, frequent AI users in 14 markets. Both figures come from workers themselves, but from different samples.",
+        "tarjeta_es": "La productividad sube junto con la carga",
+        "tarjeta_en": "Productivity rises along with the load",
+        "resumen_es": "La mayoría trabaja más rápido, y una parte importante siente más carga mental.",
+        "resumen_en": "Most work faster, and a significant share feel a heavier mental load.",
+        "sub_es": "Sin una definición sobre el tiempo ahorrado, la ganancia de productividad se convierte en más exigencia.",
+        "sub_en": "Without a decision on the time saved, the productivity gain becomes greater demands.",
+        "eje_es": "Productividad percibida frente a carga mental",
+        "eje_en": "Perceived productivity versus mental load"
+      }
+    ],
+    "dicen": [
+      {
+        "id": "h-2026-11-deloitte-directorios-ia",
+        "postura_es": "La IA entra al directorio antes que su efecto en las personas.",
+        "postura_en": "AI reaches the board before its effect on people does.",
+        "dato_es": "16%",
+        "dato_en": "16%",
+        "frase_es": "de las organizaciones tiene una estrategia establecida sobre el impacto de la tecnología en su fuerza laboral, según sus directores y altos ejecutivos.",
+        "frase_en": "of organizations have an established strategy for technology's impact on their workforce, according to their directors and senior executives."
+      },
+      {
+        "id": "h-2026-11-accenture-pulso-cambio",
+        "postura_es": "La IA se extiende sin rediseñar los procesos.",
+        "postura_en": "AI spreads without processes being redesigned.",
+        "dato_es": "15%",
+        "dato_en": "15%",
+        "frase_es": "de los líderes de alta dirección rediseña sus procesos de punta a punta, mientras 50% de los empleados percibe más velocidad y más revisión del trabajo.",
+        "frase_en": "of C-suite leaders are redesigning their processes end to end, while 50% of employees perceive a faster pace and more review of work."
+      },
+      {
+        "id": "h-2026-11-bcg-ia-trabajo",
+        "postura_es": "Los equipos usan la IA sin formación suficiente ni comunicación clara.",
+        "postura_en": "Teams use AI without enough training or clear communication.",
+        "dato_es": "33%",
+        "dato_en": "33%",
+        "frase_es": "de los encuestados indica que la dirección comunica con claridad sobre la IA; 74% de los empleados de primera línea ya la usa con regularidad.",
+        "frase_en": "of respondents say leadership communicates clearly about AI; 74% of frontline employees already use it regularly."
+      },
+      {
+        "id": "h-2026-11-mckinsey-estado-ia",
+        "postura_es": "La IA se vive peor en la base que en la cima.",
+        "postura_en": "AI is experienced worse at the base than at the top.",
+        "dato_es": "47% vs. 31%",
+        "dato_en": "47% vs. 31%",
+        "frase_es": "47% de los mandos medios y colaboradores que usan IA reporta un efecto negativo, frente a 31% de los ejecutivos y gerentes sénior.",
+        "frase_en": "47% of middle managers and individual contributors who use AI report a negative effect, compared with 31% of executives and senior managers."
+      }
+    ],
+    "alcance_titulo_es": "Un estudio mira desde el directorio; tres suman la voz de los equipos.",
+    "alcance_titulo_en": "One study looks from the board; three add the voice of teams.",
+    "alcance_es": "Deloitte encuestó a 806 miembros de directorios y altos ejecutivos de 53 países; Accenture, a 3,000 líderes de alta dirección y 3,000 empleados de 21 países; BCG, a 11,749 líderes, mandos medios y empleados de primera línea de 14 mercados; McKinsey, a 1,719 personas de todos los niveles de 97 países. A diferencia del cruce anterior, aquí la experiencia de los equipos se mide con su propia voz y no solo con la percepción de sus líderes.",
+    "alcance_en": "Deloitte surveyed 806 board members and senior executives in 53 countries; Accenture, 3,000 C-suite leaders and 3,000 employees in 21 countries; BCG, 11,749 leaders, middle managers and frontline employees in 14 markets; McKinsey, 1,719 people at all levels in 97 countries. Unlike the previous cross-read, the experience of teams here is measured in their own voice, not only through their leaders' perception.",
+    "mirada_es": null,
+    "mirada_en": null,
+    "preguntas_es": [
+      "¿Qué información recibe el directorio sobre la experiencia de los equipos que ya usan IA, más allá de la productividad?",
+      "¿Qué decisiones se tomaron sobre cómo usar el tiempo que la IA libera en cada equipo?",
+      "¿Qué saben los mandos medios sobre cómo cambia su rol y el de sus equipos?",
+      "¿Cómo se mide la carga de trabajo y el bienestar de quienes usan la IA todos los días?"
+    ],
+    "preguntas_en": [
+      "What information does the board receive about the experience of teams already using AI, beyond productivity?",
+      "What decisions have been made about how to use the time AI frees up in each team?",
+      "What do middle managers know about how their role and their teams' roles are changing?",
+      "How are the workload and well-being of those who use AI every day measured?"
+    ],
+    "lectura_min": 4,
+    "patron_titulo_es": "Cinco pasos, cuatro estudios",
+    "patron_titulo_en": "Five steps, four studies",
+    "patron_intro_es": "La IA se decide en la dirección, pero el trabajo no se rediseña y la experiencia de los equipos queda fuera de la agenda. Cada paso muestra su dato.",
+    "patron_intro_en": "AI is decided at the top, but work is not redesigned and the experience of teams stays off the agenda. Each step shows its data point.",
+    "alcance_corto_es": "Un estudio mira desde el directorio (Deloitte, 806 directores y altos ejecutivos) y tres suman la voz de los equipos: Accenture, 3,000 líderes y 3,000 empleados; BCG, 11,749 personas de todos los niveles; McKinsey, 1,719 personas de todos los niveles.",
+    "alcance_corto_en": "One study looks from the board (Deloitte, 806 directors and senior executives) and three add the voice of teams: Accenture, 3,000 leaders and 3,000 employees; BCG, 11,749 people at all levels; McKinsey, 1,719 people at all levels.",
+    "muestras": {
+      "Deloitte": {
+        "es": "806 directores y altos ejecutivos",
+        "en": "806 directors and senior executives"
+      },
+      "Accenture": {
+        "es": "3,000 líderes y 3,000 empleados",
+        "en": "3,000 leaders and 3,000 employees"
+      },
+      "BCG": {
+        "es": "11,749 personas",
+        "en": "11,749 people"
+      },
+      "McKinsey & Company": {
+        "es": "1,719 personas",
+        "en": "1,719 people"
+      }
+    }
   }
 ];
