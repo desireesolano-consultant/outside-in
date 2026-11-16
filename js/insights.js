@@ -580,5 +580,627 @@ const INSIGHTS = [
         "en": "1,719 people"
       }
     }
+  },
+  {
+    "id": "i-2026-11-liderazgo-confianza-coherencia",
+    "numero": "03",
+    "publicado": "2026-11-16",
+    "tema": "liderazgo_cultura",
+    "industrias": [],
+    "estudios": [
+      "h-2026-10-edelman-confianza",
+      "h-2026-11-gallup-compromiso-eeuu",
+      "h-2026-11-pwc-confianza-ceo",
+      "h-2026-11-gptw-latam",
+      "h-2026-11-kornferry-workforce"
+    ],
+    "titulo_es": "La confianza en la dirección se debilita.",
+    "titulo2_es": "La coherencia entre lo que dice y lo que hace marca la diferencia.",
+    "titulo_en": "Trust in leadership is weakening.",
+    "titulo2_en": "Consistency between what it says and what it does makes the difference.",
+    "resumen_es": "Edelman, Gallup, PwC, Great Place to Work y Korn Ferry escuchan a los empleados. Leídos en conjunto, muestran que la confianza en la dirección cae con los cambios mal vividos y que las organizaciones que la sostienen comparten un rasgo: coherencia y claridad.",
+    "resumen_en": "Edelman, Gallup, PwC, Great Place to Work and Korn Ferry listen to employees. Read together, they show that trust in leadership falls when change is poorly experienced and that the organizations that sustain it share one trait: consistency and clarity.",
+    "bajada_es": "Cinco estudios recientes miden la relación entre los empleados y su dirección. Coinciden en que cerca de la mitad confía en lo que dice su liderazgo y en que las expectativas sobre el trabajo se vuelven menos claras. Al mismo tiempo, muestran que las empresas con mayor coherencia entre el discurso y la acción conservan la confianza y el compromiso de sus equipos.",
+    "bajada_en": "Five recent studies measure the relationship between employees and their leadership. They agree that about half trust what their leaders say and that expectations about work are becoming less clear. At the same time, they show that companies with greater consistency between words and actions keep the trust and commitment of their teams.",
+    "tesis_es": "La confianza en la dirección se pierde en la forma de ejecutar y comunicar el cambio, y se sostiene donde lo que la dirección dice coincide con lo que hace.",
+    "tesis_en": "Trust in leadership is lost in the way change is executed and communicated, and it holds where what leadership says matches what it does.",
+    "portada": [
+      {
+        "id": "h-2026-10-edelman-confianza",
+        "industria": null,
+        "etiqueta_es": "Tras un cambio mal vivido",
+        "etiqueta_en": "After a poorly experienced change",
+        "dato_es": "49%",
+        "dato_en": "49%",
+        "texto_es": "de los colaboradores confía en su CEO después de una transformación negativa, frente a 82% cuando la experiencia es positiva",
+        "texto_en": "of employees trust their CEO after a negative transformation, compared with 82% when the experience is positive"
+      },
+      {
+        "id": "h-2026-11-gptw-latam",
+        "industria": null,
+        "etiqueta_es": "Mejores empresas de Latinoamérica",
+        "etiqueta_en": "Best workplaces in Latin America",
+        "dato_es": "Casi 90%",
+        "dato_en": "Nearly 90%",
+        "texto_es": "de los empleados afirma que las acciones de la dirección coinciden con sus palabras, frente a 52% en las empresas típicas de la región",
+        "texto_en": "of employees say leadership's actions match its words, compared with 52% at typical companies in the region"
+      }
+    ],
+    "coinciden_titulo_es": "Lo que se repite en cinco estudios",
+    "coinciden_titulo_en": "What repeats across five studies",
+    "coinciden_intro_es": "Desde distintas muestras de empleados, los cinco estudios describen las mismas cinco etapas: el cambio se vuelve permanente, una mala experiencia reduce la confianza, las expectativas se vuelven difusas, la comunicación de la dirección no convence del todo y la dirección y los equipos ven realidades distintas.",
+    "coinciden_intro_en": "Across different samples of employees, the five studies describe the same five stages: change becomes constant, a bad experience reduces trust, expectations become blurred, leadership communication is not fully convincing, and leadership and teams see different realities.",
+    "cadena": [
+      {
+        "id": "h-2026-10-edelman-confianza",
+        "dato": "76%",
+        "titulo_es": "El cambio es permanente",
+        "titulo_en": "Change is constant",
+        "texto_es": "de los colaboradores vivió al menos una transformación importante en los últimos 12 meses, y 42% vivió tres o más.",
+        "texto_en": "of employees went through at least one major transformation in the past 12 months, and 42% went through three or more."
+      },
+      {
+        "id": "h-2026-10-edelman-confianza",
+        "dato": "82% → 49%",
+        "titulo_es": "Un cambio mal vivido cuesta confianza",
+        "titulo_en": "A poorly experienced change costs trust",
+        "texto_es": "Es la caída de la confianza de los colaboradores en su CEO cuando una transformación se vive de forma negativa.",
+        "texto_en": "This is the drop in employees' trust in their CEO when a transformation is experienced negatively."
+      },
+      {
+        "id": "h-2026-11-gallup-compromiso-eeuu",
+        "dato": "46%",
+        "titulo_es": "Las expectativas se vuelven difusas",
+        "titulo_en": "Expectations become blurred",
+        "texto_es": "de los empleados en EE.UU. sabe qué se espera de su trabajo, frente a 61% en 2015.",
+        "texto_en": "of U.S. employees know what is expected of them at work, compared with 61% in 2015."
+      },
+      {
+        "id": "h-2026-11-pwc-confianza-ceo",
+        "dato": "39%",
+        "titulo_es": "La comunicación de resultados no convence del todo",
+        "titulo_en": "Communication about results is not fully convincing",
+        "texto_es": "de los empleados de grandes empresas de EE.UU. confía por completo o casi por completo en lo que su CEO informa sobre los resultados.",
+        "texto_en": "of employees at large U.S. companies completely or nearly completely trust what their CEO reports on results."
+      },
+      {
+        "id": "h-2026-11-kornferry-workforce",
+        "dato": "85% vs. 46%",
+        "titulo_es": "La dirección y los equipos ven distinto",
+        "titulo_en": "Leadership and teams see things differently",
+        "texto_es": "En EE.UU., 85% de los CEO afirma que su organización se preocupa por sus colaboradores, frente a 46% de los colaboradores individuales.",
+        "texto_en": "In the U.S., 85% of CEOs say their organization cares about its employees, compared with 46% of individual contributors."
+      }
+    ],
+    "coinciden": [
+      {
+        "titulo_es": "Cerca de la mitad confía en la palabra de la dirección",
+        "titulo_en": "About half trust leadership's word",
+        "lados": [
+          {
+            "id": "h-2026-10-edelman-confianza",
+            "industria": null,
+            "etiqueta_es": "Tras un cambio mal vivido",
+            "etiqueta_en": "After a poorly experienced change",
+            "dato_es": "49%",
+            "dato_en": "49%",
+            "texto_es": "de los colaboradores confía en su CEO después de una transformación negativa",
+            "texto_en": "of employees trust their CEO after a negative transformation",
+            "v": 49
+          },
+          {
+            "id": "h-2026-11-gptw-latam",
+            "industria": null,
+            "etiqueta_es": "Empresas típicas de Latinoamérica",
+            "etiqueta_en": "Typical companies in Latin America",
+            "dato_es": "52%",
+            "dato_en": "52%",
+            "texto_es": "de los empleados afirma que las acciones de la dirección coinciden con sus palabras",
+            "texto_en": "of employees say leadership's actions match its words",
+            "v": 52
+          }
+        ],
+        "lectura_es": "Edelman muestra que, después de una transformación vivida de forma negativa, la confianza en el CEO baja a menos de la mitad de los colaboradores. Great Place to Work encuentra un nivel similar en las empresas típicas de Latinoamérica, donde 52% de los empleados ve coherencia entre lo que dice y lo que hace la dirección.\n\nLeídos juntos, los dos estudios ubican la credibilidad del liderazgo en un punto medio frágil: la mitad de los equipos no da por cierta la palabra de su dirección, y cada cambio mal ejecutado la pone a prueba.",
+        "lectura_en": "Edelman shows that, after a transformation experienced negatively, trust in the CEO falls to fewer than half of employees. Great Place to Work finds a similar level at typical companies in Latin America, where 52% of employees see consistency between what leadership says and what it does.\n\nRead together, the two studies place leadership credibility at a fragile midpoint: half of teams do not take their leadership's word for granted, and every poorly executed change puts it to the test.",
+        "nota_es": "Edelman mide la confianza en el CEO de colaboradores de 10 países que vivieron una transformación negativa; Great Place to Work, la coherencia percibida en empresas típicas de Latinoamérica, con datos de un estudio de marzo de 2024. Son medidas distintas de la credibilidad del liderazgo, no la misma cifra.",
+        "nota_en": "Edelman measures trust in the CEO among employees in 10 countries who went through a negative transformation; Great Place to Work, perceived consistency at typical companies in Latin America, using data from a March 2024 study. They are different measures of leadership credibility, not the same figure.",
+        "tarjeta_es": "Cerca de la mitad confía en la palabra de la dirección",
+        "tarjeta_en": "About half trust leadership's word",
+        "resumen_es": "Tras un cambio mal vivido o en una empresa típica, cerca de la mitad de los empleados confía en lo que dice su dirección.",
+        "resumen_en": "After a poorly experienced change or at a typical company, about half of employees trust what their leadership says.",
+        "eje_es": "Empleados que confían en la palabra de su dirección",
+        "eje_en": "Employees who trust their leadership's word",
+        "sub_es": "La credibilidad del liderazgo se ubica en un punto medio frágil",
+        "sub_en": "Leadership credibility sits at a fragile midpoint"
+      }
+    ],
+    "difieren_intro_es": "Al comparar los estudios aparecen diferencias que ninguno muestra por separado.",
+    "difieren_intro_en": "Comparing the studies reveals differences that none of them shows on its own.",
+    "difieren": [
+      {
+        "titulo_es": "La dirección percibe un cuidado que los equipos no sienten",
+        "titulo_en": "Leadership perceives a care that teams do not feel",
+        "lados": [
+          {
+            "id": "h-2026-11-kornferry-workforce",
+            "industria": null,
+            "etiqueta_es": "CEO en EE.UU.",
+            "etiqueta_en": "U.S. CEOs",
+            "dato_es": "85%",
+            "dato_en": "85%",
+            "texto_es": "de los CEO en EE.UU. afirma que su organización se preocupa por sus colaboradores",
+            "texto_en": "of U.S. CEOs say their organization cares about its employees",
+            "v": 85
+          },
+          {
+            "id": "h-2026-11-gallup-compromiso-eeuu",
+            "industria": null,
+            "etiqueta_es": "Empleados en EE.UU.",
+            "etiqueta_en": "U.S. employees",
+            "dato_es": "37%",
+            "dato_en": "37%",
+            "texto_es": "de los empleados en EE.UU. siente que su jefe o alguien en el trabajo se preocupa por él como persona, frente a 47% en marzo de 2020",
+            "texto_en": "of U.S. employees feel their manager or someone at work cares about them as a person, compared with 47% in March 2020",
+            "v": 37
+          }
+        ],
+        "lectura_es": "Korn Ferry encuentra que la gran mayoría de los CEO en EE.UU. considera que su organización se preocupa por sus colaboradores. Gallup, desde la experiencia de los empleados del mismo país, muestra que poco más de un tercio siente ese cuidado en su día a día, y que la cifra viene bajando desde 2020.\n\nLa diferencia indica que la intención de la dirección no siempre se traduce en la experiencia cotidiana de los equipos, que depende en gran medida de la relación con el jefe directo.",
+        "lectura_en": "Korn Ferry finds that the vast majority of U.S. CEOs consider that their organization cares about its employees. Gallup, from the experience of employees in the same country, shows that just over a third feel that care day to day, and that the figure has been falling since 2020.\n\nThe difference indicates that leadership's intention does not always translate into teams' daily experience, which depends largely on the relationship with the direct manager.",
+        "nota_es": "Las cifras no miden lo mismo: Korn Ferry pregunta a los CEO si su organización se preocupa por sus colaboradores; Gallup pregunta a los empleados si su jefe o alguien en el trabajo se preocupa por ellos como personas. La comparación muestra una distancia de percepción, no una relación directa.",
+        "nota_en": "The figures do not measure the same thing: Korn Ferry asks CEOs whether their organization cares about its employees; Gallup asks employees whether their manager or someone at work cares about them as people. The comparison shows a gap in perception, not a direct relationship.",
+        "tarjeta_es": "La dirección percibe un cuidado que los equipos no sienten",
+        "tarjeta_en": "Leadership perceives a care that teams do not feel",
+        "resumen_es": "La mayoría de los CEO cree que su organización cuida a su gente; poco más de un tercio de los empleados lo siente.",
+        "resumen_en": "Most CEOs believe their organization cares for its people; just over a third of employees feel it.",
+        "sub_es": "La intención de la dirección no siempre llega a la experiencia diaria de los equipos.",
+        "sub_en": "Leadership's intention does not always reach teams' daily experience.",
+        "eje_es": "Cuidado percibido por la dirección frente a cuidado sentido por los empleados",
+        "eje_en": "Care perceived by leadership versus care felt by employees"
+      },
+      {
+        "titulo_es": "Donde hay coherencia, los equipos se quedan",
+        "titulo_en": "Where there is consistency, teams stay",
+        "lados": [
+          {
+            "id": "h-2026-11-gptw-latam",
+            "industria": null,
+            "etiqueta_es": "Mejores empresas de Latinoamérica",
+            "etiqueta_en": "Best workplaces in Latin America",
+            "dato_es": "92%",
+            "dato_en": "92%",
+            "texto_es": "de los empleados de las mejores empresas tiene la intención de quedarse por mucho tiempo, frente a 64% en las empresas típicas de la región",
+            "texto_en": "of employees at the best workplaces intend to stay for a long time, compared with 64% at typical companies in the region",
+            "v": 92
+          },
+          {
+            "id": "h-2026-11-gallup-compromiso-eeuu",
+            "industria": null,
+            "etiqueta_es": "Empleados en EE.UU.",
+            "etiqueta_en": "U.S. employees",
+            "dato_es": "29%",
+            "dato_en": "29%",
+            "texto_es": "de los empleados en EE.UU. está comprometido con su trabajo, es decir, psicológicamente involucrado con su trabajo y con su organización: la cifra más baja desde 2011",
+            "texto_en": "of U.S. employees are engaged, that is, psychologically involved in their work and their organization: the lowest level since 2011",
+            "v": 29
+          }
+        ],
+        "lectura_es": "En las mejores empresas para trabajar de Latinoamérica, donde casi 90% de los empleados ve coherencia entre lo que dice y hace la dirección, la gran mayoría quiere quedarse por mucho tiempo. En el conjunto de la fuerza laboral de EE.UU., Gallup registra el nivel de compromiso más bajo en 15 años, junto con una caída en la claridad de expectativas.\n\nLa comparación muestra dos extremos de un mismo vínculo: cuando la dirección es coherente y clara, la confianza se traduce en permanencia; cuando esa base se debilita, también lo hace la relación de las personas con su trabajo.",
+        "lectura_en": "At the best workplaces in Latin America, where nearly 90% of employees see consistency between what leadership says and does, the vast majority want to stay for a long time. Across the U.S. workforce as a whole, Gallup records the lowest level of engagement in 15 years, along with a decline in clarity of expectations.\n\nThe comparison shows two ends of the same bond: when leadership is consistent and clear, trust translates into retention; when that foundation weakens, so does people's relationship with their work.",
+        "nota_es": "Great Place to Work mide a las 200 empresas reconocidas como las mejores de Latinoamérica; Gallup, a una muestra probabilística de toda la fuerza laboral de EE.UU. Son poblaciones y preguntas distintas: la comparación ilustra un contraste, no prueba una relación de causa y efecto.",
+        "nota_en": "Great Place to Work measures the 200 companies recognized as the best in Latin America; Gallup, a probability sample of the entire U.S. workforce. These are different populations and questions: the comparison illustrates a contrast and does not prove cause and effect.",
+        "tarjeta_es": "Donde hay coherencia, los equipos se quedan",
+        "tarjeta_en": "Where there is consistency, teams stay",
+        "resumen_es": "En las culturas de alta confianza, 9 de cada 10 quiere quedarse; en la fuerza laboral de EE.UU., el compromiso está en su mínimo de 15 años.",
+        "resumen_en": "In high-trust cultures, 9 in 10 want to stay; in the U.S. workforce, engagement is at a 15-year low.",
+        "sub_es": "La coherencia de la dirección sostiene el vínculo de las personas con su organización.",
+        "sub_en": "Leadership consistency sustains people's bond with their organization.",
+        "eje_es": "Permanencia en culturas de alta confianza frente a compromiso del total",
+        "eje_en": "Retention in high-trust cultures versus overall engagement"
+      }
+    ],
+    "dicen": [
+      {
+        "id": "h-2026-10-edelman-confianza",
+        "postura_es": "La forma de ejecutar el cambio define la confianza en el liderazgo.",
+        "postura_en": "The way change is executed defines trust in leadership.",
+        "dato_es": "82% → 49%",
+        "dato_en": "82% → 49%",
+        "frase_es": "Es la caída de la confianza en el CEO tras una transformación negativa; en el jefe directo, baja de 85% a 60%.",
+        "frase_en": "This is the drop in trust in the CEO after a negative transformation; in the direct manager, it falls from 85% to 60%."
+      },
+      {
+        "id": "h-2026-11-gallup-compromiso-eeuu",
+        "postura_es": "Sin claridad ni cuidado, el compromiso cae.",
+        "postura_en": "Without clarity or care, engagement falls.",
+        "dato_es": "29%",
+        "dato_en": "29%",
+        "frase_es": "de los empleados en EE.UU. está comprometido con su trabajo, el nivel más bajo desde 2011; solo 46% sabe qué se espera de él.",
+        "frase_en": "of U.S. employees are engaged, the lowest level since 2011; only 46% know what is expected of them."
+      },
+      {
+        "id": "h-2026-11-pwc-confianza-ceo",
+        "postura_es": "La credibilidad del CEO se juega en cómo comunica los resultados.",
+        "postura_en": "CEO credibility depends on how results are communicated.",
+        "dato_es": "39%",
+        "dato_en": "39%",
+        "frase_es": "de los empleados de grandes empresas de EE.UU. confía plenamente en lo que su CEO informa sobre los resultados.",
+        "frase_en": "of employees at large U.S. companies fully trust what their CEO reports on results."
+      },
+      {
+        "id": "h-2026-11-gptw-latam",
+        "postura_es": "La coherencia del liderazgo distingue a las culturas de alta confianza.",
+        "postura_en": "Leadership consistency sets high-trust cultures apart.",
+        "dato_es": "Casi 90% vs. 52%",
+        "dato_en": "Nearly 90% vs. 52%",
+        "frase_es": "Es la proporción de empleados que ve coherencia entre lo que dice y hace la dirección en las mejores empresas de Latinoamérica y en las empresas típicas de la región.",
+        "frase_en": "This is the share of employees who see consistency between what leadership says and does at the best workplaces in Latin America and at typical companies in the region."
+      },
+      {
+        "id": "h-2026-11-kornferry-workforce",
+        "postura_es": "La dirección y los equipos ven realidades distintas.",
+        "postura_en": "Leadership and teams see different realities.",
+        "dato_es": "85% vs. 46%",
+        "dato_en": "85% vs. 46%",
+        "frase_es": "En EE.UU., 85% de los CEO afirma que su organización se preocupa por sus colaboradores, frente a 46% de los colaboradores individuales.",
+        "frase_en": "In the U.S., 85% of CEOs say their organization cares about its employees, compared with 46% of individual contributors."
+      }
+    ],
+    "alcance_titulo_es": "Los cinco estudios escuchan a los empleados; Korn Ferry suma la mirada de los CEO.",
+    "alcance_titulo_en": "All five studies listen to employees; Korn Ferry adds the view of CEOs.",
+    "alcance_es": "Edelman encuestó a 10,018 colaboradores de 10 países; Gallup, a 21,648 adultos de EE.UU.; PwC, a 552 empleados de EE.UU., con resultados de los 128 que trabajan en empresas de 10,000 o más; Great Place to Work, a más de 2.4 millones de empleados de Latinoamérica; Korn Ferry, a más de 16,000 profesionales de todos los roles en 11 mercados. La muestra de PwC es acotada y la comparación de Great Place to Work con las empresas típicas proviene de un estudio de marzo de 2024.",
+    "alcance_en": "Edelman surveyed 10,018 employees in 10 countries; Gallup, 21,648 U.S. adults; PwC, 552 U.S. employees, with results from the 128 who work at companies with 10,000 or more; Great Place to Work, more than 2.4 million employees in Latin America; Korn Ferry, more than 16,000 professionals in all roles across 11 markets. PwC's sample is limited, and Great Place to Work's comparison with typical companies comes from a March 2024 study.",
+    "mirada_es": null,
+    "mirada_en": null,
+    "preguntas_es": [
+      "¿Cómo se mide la confianza de los equipos después de cada transformación importante?",
+      "¿Qué tan claro tiene cada persona lo que se espera de su trabajo en medio de los cambios en curso?",
+      "¿Qué distancia existe entre lo que la dirección cree que transmite y lo que los equipos perciben?",
+      "¿Qué decisiones recientes de la dirección pueden leerse como coherentes, o no, con lo que comunicó?"
+    ],
+    "preguntas_en": [
+      "How is teams' trust measured after each major transformation?",
+      "How clear is each person about what is expected of their work amid ongoing changes?",
+      "What distance exists between what leadership believes it conveys and what teams perceive?",
+      "Which recent leadership decisions could be read as consistent, or not, with what it communicated?"
+    ],
+    "lectura_min": 4,
+    "patron_titulo_es": "Cinco pasos, cinco estudios",
+    "patron_titulo_en": "Five steps, five studies",
+    "patron_intro_es": "El cambio es permanente y, cuando se vive mal, la confianza en la dirección cae; las expectativas se vuelven difusas y la dirección y los equipos ven realidades distintas. Cada paso muestra su dato.",
+    "patron_intro_en": "Change is constant and, when it is poorly experienced, trust in leadership falls; expectations become blurred and leadership and teams see different realities. Each step shows its data point.",
+    "alcance_corto_es": "Los cinco escuchan a los empleados: Edelman, 10,018 en 10 países; Gallup, 21,648 en EE.UU.; PwC, 128 de grandes empresas de EE.UU.; Great Place to Work, más de 2.4 millones en Latinoamérica; Korn Ferry, más de 16,000 profesionales, incluidos CEO.",
+    "alcance_corto_en": "All five listen to employees: Edelman, 10,018 in 10 countries; Gallup, 21,648 in the U.S.; PwC, 128 at large U.S. companies; Great Place to Work, more than 2.4 million in Latin America; Korn Ferry, more than 16,000 professionals, including CEOs.",
+    "muestras": {
+      "Edelman": {
+        "es": "10,018 colaboradores",
+        "en": "10,018 employees"
+      },
+      "Gallup": {
+        "es": "21,648 adultos",
+        "en": "21,648 adults"
+      },
+      "PwC": {
+        "es": "128 empleados (de 552)",
+        "en": "128 employees (of 552)"
+      },
+      "Great Place to Work": {
+        "es": "Más de 2.4 millones de empleados",
+        "en": "More than 2.4 million employees"
+      },
+      "Korn Ferry": {
+        "es": "Más de 16,000 profesionales",
+        "en": "More than 16,000 professionals"
+      }
+    }
+  },
+  {
+    "id": "i-2026-11-ia-roles-inversion-personas",
+    "numero": "04",
+    "publicado": "2026-11-16",
+    "tema": "ia_personas",
+    "industrias": [],
+    "estudios": [
+      "h-2026-10-ey-ceo",
+      "h-2026-10-kpmg-ceo-eeuu",
+      "h-2026-10-pwc-hopes-fears",
+      "h-2026-11-gallup-ia-beneficios",
+      "h-2026-11-deloitte-agentes-ia"
+    ],
+    "titulo_es": "Las empresas rediseñan los roles por la IA.",
+    "titulo2_es": "La inversión en las personas que los ocupan todavía no acompaña.",
+    "titulo_en": "Companies are redesigning roles because of AI.",
+    "titulo2_en": "Investment in the people who fill them has not yet kept pace.",
+    "resumen_es": "EY, KPMG, PwC, Gallup y Deloitte miran la IA desde los CEO, los líderes y los trabajadores. Leídos en conjunto, muestran que la IA cambia el contenido de los roles, pero las ganancias de productividad y el apoyo para aprender no vuelven a las personas al mismo ritmo.",
+    "resumen_en": "EY, KPMG, PwC, Gallup and Deloitte look at AI from CEOs, leaders and workers. Read together, they show that AI is changing the content of roles, but productivity gains and support for learning are not returning to people at the same pace.",
+    "bajada_es": "Cinco estudios recientes analizan el efecto de la IA en el trabajo. Coinciden en que cambia más los roles y las habilidades que el tamaño de las plantillas, y en que cerca de la mitad de los líderes reconoce que la inversión en las personas va detrás. Al mismo tiempo, los trabajadores perciben menos apoyo para aprender y, en parte, más responsabilidades.",
+    "bajada_en": "Five recent studies analyze AI's effect on work. They agree that it changes roles and skills more than the size of the workforce, and that about half of leaders acknowledge that investment in people is lagging. At the same time, workers perceive less support for learning and, in part, more responsibilities.",
+    "tesis_es": "La IA ya obliga a rediseñar los roles, pero las ganancias que genera se reinvierten poco en desarrollar a las personas que deberán ocuparlos.",
+    "tesis_en": "AI is already forcing companies to redesign roles, but the gains it generates are rarely reinvested in developing the people who will fill them.",
+    "portada": [
+      {
+        "id": "h-2026-10-kpmg-ceo-eeuu",
+        "industria": null,
+        "etiqueta_es": "CEO de EE.UU.",
+        "etiqueta_en": "U.S. CEOs",
+        "dato_es": "86%",
+        "dato_en": "86%",
+        "texto_es": "de los CEO de grandes empresas de EE.UU. está rediseñando roles, trayectorias y equipos para que personas e IA trabajen juntas",
+        "texto_en": "of CEOs of large U.S. companies are redesigning roles, career paths and teams so that people and AI work together"
+      },
+      {
+        "id": "h-2026-10-ey-ceo",
+        "industria": null,
+        "etiqueta_es": "CEO de 21 países",
+        "etiqueta_en": "CEOs in 21 countries",
+        "dato_es": "15%",
+        "dato_en": "15%",
+        "texto_es": "de los CEO afirma que las ganancias de productividad de la IA se reinvierten en el desarrollo de sus equipos",
+        "texto_en": "of CEOs say AI productivity gains are reinvested in developing their teams"
+      }
+    ],
+    "coinciden_titulo_es": "Lo que se repite en cinco estudios",
+    "coinciden_titulo_en": "What repeats across five studies",
+    "coinciden_intro_es": "Desde la dirección y desde los trabajadores, los cinco estudios describen las mismas cinco etapas: la IA cambia el contenido del trabajo, los roles se rediseñan, las habilidades no avanzan al mismo ritmo, el apoyo para aprender se percibe menor y el tiempo ahorrado se convierte en más carga.",
+    "coinciden_intro_en": "From leadership and from workers, the five studies describe the same five stages: AI changes the content of work, roles are redesigned, skills do not advance at the same pace, support for learning is perceived as lower and time saved turns into more workload.",
+    "cadena": [
+      {
+        "id": "h-2026-10-ey-ceo",
+        "dato": "80%",
+        "titulo_es": "La IA cambia el contenido del trabajo",
+        "titulo_en": "AI changes the content of work",
+        "texto_es": "de los CEO considera que en tres años la IA impactará más en los roles, las habilidades y la forma de trabajar que en el tamaño de la plantilla.",
+        "texto_en": "of CEOs believe that within three years AI will affect roles, skills and ways of working more than headcount."
+      },
+      {
+        "id": "h-2026-10-kpmg-ceo-eeuu",
+        "dato": "86%",
+        "titulo_es": "El rediseño de roles ya empezó",
+        "titulo_en": "Role redesign has already begun",
+        "texto_es": "de los CEO de grandes empresas de EE.UU. está rediseñando roles, trayectorias profesionales y estructuras de equipo para la colaboración entre personas e IA.",
+        "texto_en": "of CEOs of large U.S. companies are redesigning roles, career paths and team structures for collaboration between people and AI."
+      },
+      {
+        "id": "h-2026-10-ey-ceo",
+        "dato": "47%",
+        "titulo_es": "Las habilidades van detrás",
+        "titulo_en": "Skills lag behind",
+        "texto_es": "de los CEO reconoce que su organización no desarrolla habilidades al ritmo de la innovación en IA.",
+        "texto_en": "of CEOs acknowledge that their organization is not developing skills at the pace of AI innovation."
+      },
+      {
+        "id": "h-2026-10-pwc-hopes-fears",
+        "dato": "59% → 51%",
+        "titulo_es": "El apoyo para aprender se percibe menor",
+        "titulo_en": "Support for learning is perceived as lower",
+        "texto_es": "Es la caída en la valoración que hacen los trabajadores de su acceso a recursos de aprendizaje y desarrollo, en un año en que 64% ya usó IA en su trabajo.",
+        "texto_en": "This is the decline in workers' rating of their access to learning and development resources, in a year when 64% already used AI at work."
+      },
+      {
+        "id": "h-2026-11-gallup-ia-beneficios",
+        "dato": "31%",
+        "titulo_es": "El tiempo ahorrado se convierte en más carga",
+        "titulo_en": "Time saved turns into more workload",
+        "texto_es": "de los trabajadores de EE.UU. que usan IA afirma que su empleador le pidió más responsabilidades a raíz de ella.",
+        "texto_en": "of U.S. workers who use AI say their employer asked them to take on more responsibilities because of it."
+      }
+    ],
+    "coinciden": [
+      {
+        "titulo_es": "La mitad de los líderes reconoce que la inversión en las personas va detrás",
+        "titulo_en": "Half of leaders acknowledge that investment in people is lagging",
+        "lados": [
+          {
+            "id": "h-2026-10-ey-ceo",
+            "industria": null,
+            "etiqueta_es": "CEO de 21 países",
+            "etiqueta_en": "CEOs in 21 countries",
+            "dato_es": "47%",
+            "dato_en": "47%",
+            "texto_es": "de los CEO reconoce que su organización no desarrolla habilidades al ritmo de la innovación en IA",
+            "texto_en": "of CEOs acknowledge that their organization is not developing skills at the pace of AI innovation",
+            "v": 47
+          },
+          {
+            "id": "h-2026-11-deloitte-agentes-ia",
+            "industria": null,
+            "etiqueta_es": "Líderes de EE.UU.",
+            "etiqueta_en": "U.S. leaders",
+            "dato_es": "La mitad",
+            "dato_en": "Half",
+            "texto_es": "de los líderes considera que su organización no invierte lo suficiente en la transformación de su fuerza laboral",
+            "texto_en": "of leaders say their organization is not investing enough in workforce transformation",
+            "v": 50
+          }
+        ],
+        "lectura_es": "EY encuentra que casi la mitad de los CEO de grandes empresas reconoce que el desarrollo de habilidades no sigue el ritmo de la IA. Deloitte llega a una conclusión muy cercana entre líderes de EE.UU. que ya trabajan con agentes de IA: la mitad considera que su organización no invierte lo suficiente en la transformación de su fuerza laboral.\n\nLeídos juntos, los dos estudios muestran que la propia dirección identifica la brecha: la tecnología avanza más rápido que la preparación de las personas, y la mitad de los líderes lo admite.",
+        "lectura_en": "EY finds that almost half of CEOs of large companies acknowledge that skills development is not keeping pace with AI. Deloitte reaches a very similar conclusion among U.S. leaders already working with AI agents: half say their organization is not investing enough in workforce transformation.\n\nRead together, the two studies show that leadership itself identifies the gap: technology is moving faster than people's preparation, and half of leaders admit it.",
+        "nota_es": "EY encuesta a 1,200 CEO de 21 países; Deloitte, a 501 líderes de organizaciones de EE.UU. que al menos tienen pilotos con agentes de IA. Las preguntas son distintas, pero ambas miden si la dirección considera suficiente su esfuerzo en las personas.",
+        "nota_en": "EY surveys 1,200 CEOs in 21 countries; Deloitte, 501 leaders at U.S. organizations that are at least piloting AI agents. The questions differ, but both measure whether leadership considers its effort on people sufficient.",
+        "tarjeta_es": "La mitad de los líderes reconoce que la inversión en las personas va detrás",
+        "tarjeta_en": "Half of leaders acknowledge that investment in people is lagging",
+        "resumen_es": "En dos estudios distintos, cerca de la mitad de los líderes admite que las habilidades o la inversión en las personas no siguen el ritmo de la IA.",
+        "resumen_en": "In two different studies, about half of leaders admit that skills or investment in people are not keeping pace with AI.",
+        "eje_es": "Líderes que reconocen un rezago en la inversión en personas",
+        "eje_en": "Leaders who acknowledge a lag in investment in people",
+        "sub_es": "Cerca de la mitad de los líderes admite que las personas van detrás de la tecnología",
+        "sub_en": "About half of leaders admit that people are lagging behind the technology"
+      }
+    ],
+    "difieren_intro_es": "Al comparar los estudios aparecen diferencias que ninguno muestra por separado.",
+    "difieren_intro_en": "Comparing the studies reveals differences that none of them shows on its own.",
+    "difieren": [
+      {
+        "titulo_es": "La productividad crece; su retorno a las personas, no",
+        "titulo_en": "Productivity grows; its return to people does not",
+        "lados": [
+          {
+            "id": "h-2026-11-gallup-ia-beneficios",
+            "industria": null,
+            "etiqueta_es": "Trabajadores de EE.UU.",
+            "etiqueta_en": "U.S. workers",
+            "dato_es": "63%",
+            "dato_en": "63%",
+            "texto_es": "de los trabajadores de EE.UU. que usan IA trabaja más rápido gracias a ella; 31% recibió más responsabilidades por ese motivo",
+            "texto_en": "of U.S. workers who use AI work faster thanks to it; 31% were given more responsibilities as a result",
+            "v": 63
+          },
+          {
+            "id": "h-2026-10-ey-ceo",
+            "industria": null,
+            "etiqueta_es": "CEO de 21 países",
+            "etiqueta_en": "CEOs in 21 countries",
+            "dato_es": "15%",
+            "dato_en": "15%",
+            "texto_es": "de los CEO afirma que las ganancias de productividad de la IA se reinvierten en el desarrollo de sus equipos",
+            "texto_en": "of CEOs say AI productivity gains are reinvested in developing their teams",
+            "v": 15
+          }
+        ],
+        "lectura_es": "Gallup muestra que la mayoría de quienes usan IA en EE.UU. trabaja más rápido, y que casi un tercio recibió más responsabilidades a raíz de ello. EY, desde la dirección, encuentra que solo una minoría de los CEO reinvierte esas ganancias de productividad en el desarrollo de sus equipos.\n\nLa diferencia indica que el valor que genera la IA se captura sobre todo como más velocidad y más trabajo, y muy poco como inversión en las capacidades de las personas.",
+        "lectura_en": "Gallup shows that most of those who use AI in the U.S. work faster, and that almost a third were given more responsibilities as a result. EY, from leadership's side, finds that only a minority of CEOs reinvest those productivity gains in developing their teams.\n\nThe difference indicates that the value AI generates is captured mainly as more speed and more work, and very little as investment in people's capabilities.",
+        "nota_es": "Las cifras no miden lo mismo: Gallup mide la experiencia de trabajadores de EE.UU. que usan IA; EY, la decisión de los CEO sobre el destino de las ganancias de productividad. La comparación muestra una distancia entre el beneficio y su reinversión, no una relación directa.",
+        "nota_en": "The figures do not measure the same thing: Gallup measures the experience of U.S. workers who use AI; EY, CEOs' decisions about where productivity gains go. The comparison shows a gap between the benefit and its reinvestment, not a direct relationship.",
+        "tarjeta_es": "La productividad crece; su retorno a las personas, no",
+        "tarjeta_en": "Productivity grows; its return to people does not",
+        "resumen_es": "La mayoría trabaja más rápido con la IA, pero pocos CEO reinvierten esa ganancia en sus equipos.",
+        "resumen_en": "Most work faster with AI, but few CEOs reinvest that gain in their teams.",
+        "sub_es": "El valor de la IA se captura como velocidad y carga, no como desarrollo.",
+        "sub_en": "AI's value is captured as speed and workload, not as development.",
+        "eje_es": "Productividad percibida frente a reinversión en los equipos",
+        "eje_en": "Perceived productivity versus reinvestment in teams"
+      },
+      {
+        "titulo_es": "Se rediseñan los roles, pero baja el apoyo para aprender",
+        "titulo_en": "Roles are redesigned, but support for learning declines",
+        "lados": [
+          {
+            "id": "h-2026-10-kpmg-ceo-eeuu",
+            "industria": null,
+            "etiqueta_es": "CEO de EE.UU.",
+            "etiqueta_en": "U.S. CEOs",
+            "dato_es": "86%",
+            "dato_en": "86%",
+            "texto_es": "de los CEO de grandes empresas de EE.UU. está rediseñando roles, trayectorias y estructuras de equipo por la IA",
+            "texto_en": "of CEOs of large U.S. companies are redesigning roles, career paths and team structures because of AI",
+            "v": 86
+          },
+          {
+            "id": "h-2026-10-pwc-hopes-fears",
+            "industria": null,
+            "etiqueta_es": "Trabajadores de 48 países",
+            "etiqueta_en": "Workers in 48 countries",
+            "dato_es": "51%",
+            "dato_en": "51%",
+            "texto_es": "de los trabajadores valora positivamente su acceso a recursos de aprendizaje y desarrollo, frente a 59% el año anterior",
+            "texto_en": "of workers rate their access to learning and development resources positively, compared with 59% the previous year",
+            "v": 51
+          }
+        ],
+        "lectura_es": "KPMG muestra que la gran mayoría de los CEO de grandes empresas de EE.UU. ya está rediseñando roles, trayectorias y equipos por la IA. PwC, desde la experiencia de casi 50,000 trabajadores, registra que la valoración del acceso a recursos de aprendizaje cayó 8 puntos en un año.\n\nLa comparación sugiere que el rediseño de los puestos avanza más rápido que el apoyo que las personas reciben para prepararse para ellos.",
+        "lectura_en": "KPMG shows that the vast majority of CEOs of large U.S. companies are already redesigning roles, career paths and teams because of AI. PwC, drawing on the experience of almost 50,000 workers, records that the rating of access to learning resources fell 8 points in one year.\n\nThe comparison suggests that the redesign of jobs is moving faster than the support people receive to prepare for them.",
+        "nota_es": "KPMG encuesta a 400 CEO de grandes empresas de EE.UU.; PwC, a 49,364 trabajadores de 48 países. Una cifra mide lo que hace la dirección y la otra lo que perciben los trabajadores, en muestras distintas: la comparación muestra una diferencia de ritmo, no una relación directa.",
+        "nota_en": "KPMG surveys 400 CEOs of large U.S. companies; PwC, 49,364 workers in 48 countries. One figure measures what leadership does and the other what workers perceive, in different samples: the comparison shows a difference in pace, not a direct relationship.",
+        "tarjeta_es": "Se rediseñan los roles, pero baja el apoyo para aprender",
+        "tarjeta_en": "Roles are redesigned, but support for learning declines",
+        "resumen_es": "La mayoría de los CEO rediseña roles; la valoración del acceso a aprendizaje entre los trabajadores baja.",
+        "resumen_en": "Most CEOs are redesigning roles; workers' rating of access to learning is falling.",
+        "sub_es": "El rediseño de los puestos avanza más rápido que la preparación de quienes los ocupan.",
+        "sub_en": "Job redesign is moving faster than the preparation of those who fill the jobs.",
+        "eje_es": "Rediseño de roles frente a apoyo para aprender",
+        "eje_en": "Role redesign versus support for learning"
+      }
+    ],
+    "dicen": [
+      {
+        "id": "h-2026-10-ey-ceo",
+        "postura_es": "Las ganancias de la IA casi no vuelven a las personas.",
+        "postura_en": "AI gains barely return to people.",
+        "dato_es": "15%",
+        "dato_en": "15%",
+        "frase_es": "de los CEO reinvierte en el desarrollo de sus equipos las ganancias de productividad de la IA, aunque 80% cree que la IA cambiará sobre todo los roles y las habilidades.",
+        "frase_en": "of CEOs reinvest AI productivity gains in developing their teams, although 80% believe AI will mainly change roles and skills."
+      },
+      {
+        "id": "h-2026-10-kpmg-ceo-eeuu",
+        "postura_es": "La IA ya obliga a rediseñar la organización del trabajo.",
+        "postura_en": "AI is already forcing a redesign of how work is organized.",
+        "dato_es": "86%",
+        "dato_en": "86%",
+        "frase_es": "de los CEO de grandes empresas de EE.UU. está rediseñando roles; la brecha de habilidades (60%) encabeza sus desafíos de talento.",
+        "frase_en": "of CEOs of large U.S. companies are redesigning roles; the skills gap (60%) tops their talent challenges."
+      },
+      {
+        "id": "h-2026-10-pwc-hopes-fears",
+        "postura_es": "Los trabajadores usan más la IA y perciben menos apoyo para aprender.",
+        "postura_en": "Workers use AI more and perceive less support for learning.",
+        "dato_es": "59% → 51%",
+        "dato_en": "59% → 51%",
+        "frase_es": "Es la caída en la valoración del acceso a recursos de aprendizaje, mientras 64% de los trabajadores ya usó IA en su trabajo.",
+        "frase_en": "This is the decline in the rating of access to learning resources, while 64% of workers have already used AI at work."
+      },
+      {
+        "id": "h-2026-11-gallup-ia-beneficios",
+        "postura_es": "El tiempo que ahorra la IA puede convertirse en más carga.",
+        "postura_en": "The time AI saves can turn into more workload.",
+        "dato_es": "31%",
+        "dato_en": "31%",
+        "frase_es": "de los trabajadores de EE.UU. que usan IA recibió más responsabilidades a raíz de ella; entre los de 18 a 24 años, 38%.",
+        "frase_en": "of U.S. workers who use AI were given more responsibilities because of it; among those aged 18 to 24, 38%."
+      },
+      {
+        "id": "h-2026-11-deloitte-agentes-ia",
+        "postura_es": "Se anticipa un cambio profundo en el empleo sin la inversión suficiente en las personas.",
+        "postura_en": "Deep job change is anticipated without sufficient investment in people.",
+        "dato_es": "72%",
+        "dato_en": "72%",
+        "frase_es": "de los líderes de EE.UU. espera cambios profundos en el empleo por los agentes de IA en dos a tres años, y la mitad considera que no invierte lo suficiente en su fuerza laboral.",
+        "frase_en": "of U.S. leaders expect deep job changes from AI agents within two to three years, and half say they are not investing enough in their workforce."
+      }
+    ],
+    "alcance_titulo_es": "Tres estudios encuestan a la dirección; dos, a los trabajadores.",
+    "alcance_titulo_en": "Three studies survey leadership; two survey workers.",
+    "alcance_es": "EY encuestó a 1,200 CEO de 21 países; KPMG, a 400 CEO de grandes empresas de EE.UU.; Deloitte, a 501 líderes de organizaciones de EE.UU.; PwC, a 49,364 trabajadores de 48 países; Gallup, a 15,482 trabajadores de EE.UU. Por eso, el cruce permite comparar lo que la dirección decide con lo que los trabajadores perciben, aunque en muestras distintas.",
+    "alcance_en": "EY surveyed 1,200 CEOs in 21 countries; KPMG, 400 CEOs of large U.S. companies; Deloitte, 501 leaders at U.S. organizations; PwC, 49,364 workers in 48 countries; Gallup, 15,482 U.S. workers. As a result, the cross-read makes it possible to compare what leadership decides with what workers perceive, although in different samples.",
+    "mirada_es": null,
+    "mirada_en": null,
+    "preguntas_es": [
+      "¿Qué parte de las ganancias de productividad de la IA se destina a desarrollar a los equipos?",
+      "¿Qué roles se están rediseñando y qué formación acompaña a cada uno?",
+      "¿Cómo se decide qué hacer con el tiempo que la IA ahorra, para que no se convierta solo en más carga?"
+    ],
+    "preguntas_en": [
+      "What share of AI productivity gains goes to developing teams?",
+      "Which roles are being redesigned, and what training accompanies each one?",
+      "How is it decided what to do with the time AI saves, so that it does not simply become more workload?"
+    ],
+    "lectura_min": 4,
+    "patron_titulo_es": "Cinco pasos, cinco estudios",
+    "patron_titulo_en": "Five steps, five studies",
+    "patron_intro_es": "La IA cambia el contenido del trabajo y los roles se rediseñan, pero las habilidades y el apoyo para aprender van detrás, y el tiempo ahorrado se convierte en más carga. Cada paso muestra su dato.",
+    "patron_intro_en": "AI changes the content of work and roles are being redesigned, but skills and support for learning lag behind, and time saved turns into more workload. Each step shows its data point.",
+    "alcance_corto_es": "Tres encuestan a la dirección (EY, 1,200 CEO; KPMG, 400 CEO; Deloitte, 501 líderes) y dos a los trabajadores (PwC, 49,364; Gallup, 15,482).",
+    "alcance_corto_en": "Three survey leadership (EY, 1,200 CEOs; KPMG, 400 CEOs; Deloitte, 501 leaders) and two survey workers (PwC, 49,364; Gallup, 15,482).",
+    "muestras": {
+      "EY-Parthenon": {
+        "es": "1,200 CEO",
+        "en": "1,200 CEOs"
+      },
+      "KPMG": {
+        "es": "400 CEO",
+        "en": "400 CEOs"
+      },
+      "PwC": {
+        "es": "49,364 trabajadores",
+        "en": "49,364 workers"
+      },
+      "Gallup": {
+        "es": "15,482 trabajadores",
+        "en": "15,482 workers"
+      },
+      "Deloitte": {
+        "es": "501 líderes",
+        "en": "501 leaders"
+      }
+    }
   }
 ];
