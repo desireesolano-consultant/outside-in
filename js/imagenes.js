@@ -37,6 +37,17 @@ const IMAGENES_POR_HALLAZGO = {
   "h-2026-11-kornferry-workforce": { foto: "photo-1573164574572-cb89e39749b4", autor: "Christina @ wocintechchat.com" },
   "h-2026-11-deloitte-genz": { foto: "photo-1758520144437-f068ecaf0d83", autor: "Vitaly Gariev" },
   "h-2026-11-gallup-sogw": { foto: "photo-1758873269811-4e62e346b4b7", autor: "Vitaly Gariev" },
+  // Fotos fijadas el 16-nov-2026 para que no cambien al sumar fotos al grupo ia_personas.
+  "h-2026-11-accenture-pulso-cambio": { foto: "photo-1653566031504-17467a0429b0", autor: "UK Black Tech" },
+  "h-2026-11-mckinsey-estado-ia": { foto: "photo-1724754608848-cdd8d5cd8538", autor: "Swello" },
+  "h-2026-11-kpmg-global-ai-pulse": { foto: "photo-1596722350768-24e1bd412882", autor: "Amy Hirschi" },
+  "h-2026-11-pwc-ia-rendimiento": { foto: "photo-1758626101945-ed0068aad9f9", autor: "Jo Lin" },
+  "h-2026-11-pwc-confianza-ceo": { foto: "photo-1582213782179-e0d53f98f2ca", autor: "Hannah Busing" },
+  "h-2026-11-gptw-latam": { foto: "photo-1758518731706-be5d5230e5a5", autor: "Vitaly Gariev" },
+  "h-2026-11-deloitte-directorios-ia": { foto: "photo-1646583288948-24548aedffd8", autor: "Markus Spiske" },
+  "h-2026-11-bcg-salud-consumidor": { foto: "photo-1765031092161-a9ebe556117e", autor: "Bernd Dittrich" },
+  "h-2026-11-bcg-confianza-ofertas": { foto: "photo-1739300293398-468ba82fd418", autor: "Ninthgrid" },
+  "h-2026-11-deloitte-agentes-ia": { foto: "photo-1758873268695-1b55590e507a", autor: "Vitaly Gariev" },
 };
 
 // Grupos de fotos por industria y por tema (para hallazgos nuevos).
@@ -106,6 +117,12 @@ const IMAGENES_POR_CATEGORIA = {
     { foto: "photo-1770171323762-7b9a517a7094", autor: "Zach M" },
     { foto: "photo-1724754608848-cdd8d5cd8538", autor: "Swello" },
     { foto: "photo-1706466614967-f4f14a3d9d08", autor: "Neeqolah Creative Works" },
+    // Sumadas el 16-nov-2026 (fotos gratuitas vistas en unsplash.com/s/photos/Ai-team).
+    { foto: "photo-1633311905139-7b6088a69e33", autor: "Jackson Sophat" },
+    { foto: "photo-1738003667850-a2fb736e31b3", autor: "Shubham Dhage" },
+    { foto: "photo-1706466614149-5e04fd018a49", autor: "Neeqolah Creative Works" },
+    { foto: "photo-1677442135751-15e514d909f3", autor: "Steve A Johnson" },
+    { foto: "photo-1770169272345-9636d5ef2681", autor: "Zach M" },
   ],
   liderazgo_cultura: [
     { foto: "photo-1758691737543-09a1b2b715fa", autor: "Vitaly Gariev" },

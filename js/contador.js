@@ -8,15 +8,15 @@
 // - publicados: estudios publicados como hallazgo en la web.
 
 const CONTADOR = {
-  actualizado: "2026-11-09",
+  actualizado: "2026-11-16",
   semana: {
-    revisados: 12,
-    seleccionados: 6,
-    publicados: 6,
+    revisados: 18,
+    seleccionados: 4,
+    publicados: 4,
   },
   desdeInicio: {
-    revisados: 80,
-    seleccionados: 32,
-    publicados: 29,
+    revisados: 98,
+    seleccionados: 36,
+    publicados: 33,
   },
 };
