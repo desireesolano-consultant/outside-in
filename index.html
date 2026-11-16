@@ -502,6 +502,19 @@ img{max-width:100%;display:block}
 .gigante-card .arriba{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font:600 13px var(--x);color:var(--gris)}
 .gigante-card .arriba span{background:none!important;color:var(--gris)!important;padding:0!important;border-radius:0!important;font:600 13px var(--x)!important}
 .gigante-card .arriba span:first-child{color:var(--gris)!important}
+/* Más cruces: los cruces anteriores, debajo del destacado (16-nov-2026) */
+.cruces-mas{margin-top:40px}
+.cruces-mas-tit{margin:0 0 18px;font:800 clamp(20px,1.8vw,26px)/1.2 var(--t);letter-spacing:-.02em;color:var(--blanco)}
+.cruces-mas-grilla{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.cruce-mini{display:flex;flex-direction:column;gap:12px;background:var(--blanco);color:var(--negro);border-radius:22px;padding:24px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+.cruce-mini:hover,.cruce-mini:focus-visible{transform:translateY(-4px);box-shadow:0 14px 30px rgba(17,18,20,.18)}
+.cruce-mini small{font:600 13px var(--x);color:var(--gris)}
+.cruce-mini h4{margin:0;font:800 clamp(19px,1.5vw,22px)/1.25 var(--t);letter-spacing:-.02em;text-wrap:balance}
+.cruce-mini h4 span{color:var(--azul)}
+.cruce-mini p{margin:0;font-size:15px;line-height:1.5;color:var(--gris)}
+.cruce-mini .fuentes-m{font:600 12.5px var(--x);color:var(--negro);margin-top:auto;padding-top:12px;border-top:1px solid var(--borde)}
+.cruce-mini .leer-m{font:700 14px var(--x);color:var(--azul)}
+@media (max-width:900px){.cruces-mas-grilla{grid-template-columns:1fr}}
 .gigante-card .arriba span+span::before{content:'·';margin-right:6px;color:var(--borde)}
 .columna-c.pronto{cursor:default;flex-grow:.8}
 .columna-c:not(.pronto){background:var(--azul)}
@@ -666,6 +679,10 @@ img{max-width:100%;display:block}
           <span class="btn">Leer el cruce completo →</span>
         </div>
       </a>
+      <div class="cruces-mas" id="cruces-mas" hidden>
+        <h3 class="cruces-mas-tit" id="cruces-mas-tit">Más cruces</h3>
+        <div class="cruces-mas-grilla" id="cruces-mas-grilla"></div>
+      </div>
       <p class="proximo">El próximo cruce de estudios ya está en preparación.</p>
     </div>
   </section>
@@ -729,17 +746,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611162015"></script>
-<script src="js/textos.js?v=202611162015"></script>
-<script src="js/datos.js?v=202611162015"></script>
-<script src="js/contador.js?v=202611162015"></script>
-<script src="js/buscador.js?v=202611162015"></script>
-<script src="js/imagenes.js?v=202611162015"></script>
-<script src="js/insights.js?v=202611162015"></script>
-<script src="js/columnas.js?v=202611162015"></script>
-<script src="js/radar.js?v=202611162015"></script>
-<script src="js/traduccion.js?v=202611162015"></script>
-<script src="js/metricas.js?v=202611162015"></script>
+<script src="js/config.js?v=202611162019"></script>
+<script src="js/textos.js?v=202611162019"></script>
+<script src="js/datos.js?v=202611162019"></script>
+<script src="js/contador.js?v=202611162019"></script>
+<script src="js/buscador.js?v=202611162019"></script>
+<script src="js/imagenes.js?v=202611162019"></script>
+<script src="js/insights.js?v=202611162019"></script>
+<script src="js/columnas.js?v=202611162019"></script>
+<script src="js/radar.js?v=202611162019"></script>
+<script src="js/traduccion.js?v=202611162019"></script>
+<script src="js/metricas.js?v=202611162019"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -964,6 +981,22 @@ img{max-width:100%;display:block}
     const s0=document.createElement('span');s0.textContent=(EN?'Cross-read ':'El cruce ')+(ins.numero||'')+' · '+nombreDe(ins.tema);et.appendChild(s0);
     [...new Set(ins.estudios.map(id=>{const h=HALLAZGOS.find(x=>x.id===id);return h?h.fuente.replace(' AI Institute',''):null;}).filter(Boolean))]
       .forEach(fu=>{const s=document.createElement('span');s.className='b';s.textContent=fu;et.appendChild(s);});
+    // Más cruces: todos los demás, del más reciente al más antiguo
+    const resto=[...INSIGHTS].sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||'')||String(b.numero||'').localeCompare(String(a.numero||''))).filter(x=>x.id!==ins.id);
+    const caja=document.getElementById('cruces-mas'), grilla=document.getElementById('cruces-mas-grilla');
+    if(caja&&grilla&&resto.length){
+      document.getElementById('cruces-mas-tit').textContent=EN?'More cross-reads':'Más cruces';
+      resto.forEach(x=>{
+        const a=document.createElement('a');a.className='cruce-mini';a.href='insight.html?id='+encodeURIComponent(x.id);
+        const sm=document.createElement('small');sm.textContent=(EN?'Cross-read ':'El cruce ')+(x.numero||'')+' · '+nombreDe(x.tema);
+        const h4=document.createElement('h4');h4.append(document.createTextNode((EN?x.titulo_en:x.titulo_es)+' '));const s2=document.createElement('span');s2.textContent=(EN?x.titulo2_en:x.titulo2_es)||'';h4.appendChild(s2);
+        const p=document.createElement('p');p.textContent=EN?(x.resumen_en||x.bajada_en):(x.resumen_es||x.bajada_es);
+        const fu=document.createElement('p');fu.className='fuentes-m';fu.textContent=[...new Set(x.estudios.map(id=>{const h=HALLAZGOS.find(y=>y.id===id);return h?h.fuente.replace(' AI Institute',''):null;}).filter(Boolean))].join(' · ');
+        const l=document.createElement('span');l.className='leer-m';l.textContent=EN?'Read the cross-read →':'Leer el cruce →';
+        a.append(sm,h4,p,fu,l);grilla.appendChild(a);
+      });
+      caja.hidden=false;
+    }
   })();
 
   // Mi mirada: columnas de js/columnas.js. Si todavía no hay, se muestran las próximas por tema.
