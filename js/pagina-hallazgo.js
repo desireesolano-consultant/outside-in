@@ -158,17 +158,19 @@ function renderizarHallazgo() {
   });
   lista.parentElement.hidden = lista.children.length === 0;
 
-  // Cita: en inglés se muestra la original; en español, la traducción
-  // con la frase original debajo.
+  // Cita: en español se muestra traduccion_es; en inglés, traduccion_en si la cita original no está en inglés.
+  // La frase original aparece debajo cuando difiere de la que se lee.
   const cita = document.getElementById("hallazgo-cita");
   if (h.cita) {
     cita.hidden = false;
     document.getElementById("hallazgo-cita-texto").textContent =
-      `“${idioma === "es" ? h.cita.traduccion_es : h.cita.original}”`;
+      `“${idioma === "es" ? h.cita.traduccion_es : (h.cita.traduccion_en || h.cita.original)}”`;
     document.getElementById("hallazgo-cita-autor").textContent =
       `— ${idioma === "es" ? h.cita.autor_es : h.cita.autor_en}`;
     const original = document.getElementById("hallazgo-cita-original");
-    original.hidden = idioma !== "es";
+    // Se muestra la frase original solo si difiere de lo que se lee (por ejemplo, una cita en inglés leída en español, o una en español leída en inglés)
+    const leida = idioma === "es" ? h.cita.traduccion_es : (h.cita.traduccion_en || h.cita.original);
+    original.hidden = leida === h.cita.original;
     original.textContent = `${t.hallazgoCitaOriginal}: “${h.cita.original}”`;
   } else {
     cita.hidden = true;

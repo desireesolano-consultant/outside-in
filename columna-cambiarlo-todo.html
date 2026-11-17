@@ -51,6 +51,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .cab nav{display:flex;gap:26px;font-size:15px}
 .cab nav a{text-decoration:none}
 .cab nav a.act{color:var(--azul);font-weight:600}
+.idioma{border:1.5px solid var(--fg);background:transparent;color:var(--fg);font:600 14px var(--x);padding:9px 18px;border-radius:999px;cursor:pointer}
+.idioma:hover{background:var(--suave)}
+.cab-der{display:flex;align-items:center;gap:22px}
 @media (max-width:860px){.cab nav{display:none}}
 
 /* Portada de la columna */
@@ -146,54 +149,78 @@ td a{color:var(--azul);font-weight:600}
 <body>
 <header class="cab"><div class="env">
   <a class="logo" href="index.html#inicio"><i></i>Outside-In</a>
-  <nav aria-label="Secciones"><a href="que-es.html">Qué es Outside-In</a><a href="index.html#estudios">Estudios</a><a href="index.html#insights">Cruces</a><a href="index.html#mirada" class="act">Mi mirada</a><a href="index.html#yo">Sobre mí</a></nav>
+  <div class="cab-der"><nav aria-label="Secciones"><a href="que-es.html" data-t="navQue">Qué es Outside-In</a><a href="index.html#estudios" data-t="navEst">Estudios</a><a href="index.html#insights" data-t="navCru">Cruces</a><a href="index.html#mirada" class="act" data-t="navMir">Mi mirada</a><a href="index.html#yo" data-t="navYo">Sobre mí</a></nav><button type="button" class="idioma" id="boton-idioma">English</button></div>
 </div></header>
 
 <main id="top">
 <section class="portada"><div class="env">
-  <h1><span>Cambiarlo todo, comunicarlo todo<b>:</b></span> el exceso que agota a las organizaciones</h1>
-  <p class="bajada">Las organizaciones nunca comunicaron tanto sobre el cambio, y rara vez sus equipos estuvieron tan saturados para procesarlo. Cinco estudios publicados en 2026 coinciden en un diagnóstico incómodo: el problema ya no es la falta de información, sino su exceso.</p>
-  <div class="firma"><img src="img/desiree-columnista.webp" alt="Desirée Solano" width="44" height="44"><p>Por <strong>Desirée Solano</strong>, estratega de comunicación organizacional<br><span>Noviembre de 2026 · 6 min de lectura</span></p></div>
+  <h1 data-th="h1"><span>Cambiarlo todo, comunicarlo todo<b>:</b></span> el exceso que agota a las organizaciones</h1>
+  <p class="bajada" data-t="bajada">Las organizaciones nunca comunicaron tanto sobre el cambio, y rara vez sus equipos estuvieron tan saturados para procesarlo. Cinco estudios publicados en 2026 coinciden en un diagnóstico incómodo: el problema ya no es la falta de información, sino su exceso.</p>
+  <div class="firma"><img src="img/desiree-columnista.webp" alt="Desirée Solano" width="44" height="44"><p data-th="firma">Por <strong>Desirée Solano</strong>, estratega de comunicación organizacional<br><span>Noviembre de 2026 · 6 min de lectura</span></p></div>
   <div class="intro">
-    <p>Inteligencia artificial, reestructuraciones, rediseño de procesos y repriorizaciones conviven hoy en una misma agenda, y cada iniciativa llega con su propio despliegue de anuncios, capacitaciones y recordatorios. La respuesta habitual ha sido intensificar la comunicación. Los estudios de Deloitte, Sia, Edelman, Gallagher y Korn Ferry indican que ese enfoque alcanzó su límite.</p>
+    <p data-t="intro">Inteligencia artificial, reestructuraciones, rediseño de procesos y repriorizaciones conviven hoy en una misma agenda, y cada iniciativa llega con su propio despliegue de anuncios, capacitaciones y recordatorios. La respuesta habitual ha sido intensificar la comunicación. Los estudios de Deloitte, Sia, Edelman, Gallagher y Korn Ferry indican que ese enfoque alcanzó su límite.</p>
   </div>
 </div></section>
 
 <section class="vistazo" aria-labelledby="t-vistazo"><div class="env">
-  <h2 id="t-vistazo">Los cuatro hallazgos de un vistazo</h2>
+  <h2 id="t-vistazo" data-t="vistazo">Los cuatro hallazgos de un vistazo</h2>
   <div class="grilla" id="grilla"></div>
 </div></section>
 
 <section class="hallazgos" id="hallazgos" aria-labelledby="t-hall"><div class="env">
-  <h2 class="titulo-sec" id="t-hall">Los hallazgos</h2>
+  <h2 class="titulo-sec" id="t-hall" data-t="hallazgos">Los hallazgos</h2>
   <div class="tabs-wrap"><div class="tabs" role="tablist" id="tabs" aria-label="Hallazgos"></div></div>
   <div id="panel" class="panel" role="tabpanel"></div>
 </div></section>
 
 <section class="reflexion" aria-labelledby="t-ref"><div class="env">
-  <span class="etq" id="t-ref">Reflexión final</span>
+  <span class="etq" id="t-ref" data-t="reflexion">Reflexión final</span>
   <p class="cita">“Change is no longer a specialty; it’s the job.”</p>
-  <p class="cita-tr">El cambio ya no es una especialidad: es el trabajo. · Gallagher, Employee Communications Report 2026. Aun así, 61% de los equipos de comunicación no cuenta con un enfoque definido para comunicarlo.</p>
-  <p class="cierre">Para mí, ese es el desafío que enfrentan hoy las organizaciones. No se trata de cambiar menos ni de comunicar más, sino de administrar la atención como un recurso estratégico: priorizar qué se comunica, adaptar el mensaje a cada rol e integrar el cambio en la operación en lugar de superponerlo a ella.</p>
+  <p class="cita-tr" data-t="citaTr">El cambio ya no es una especialidad: es el trabajo. · Gallagher, Employee Communications Report 2026. Aun así, 61% de los equipos de comunicación no cuenta con un enfoque definido para comunicarlo.</p>
+  <p class="cierre" data-t="cierre">Para mí, ese es el desafío que enfrentan hoy las organizaciones. No se trata de cambiar menos ni de comunicar más, sino de administrar la atención como un recurso estratégico: priorizar qué se comunica, adaptar el mensaje a cada rol e integrar el cambio en la operación en lugar de superponerlo a ella.</p>
 </div></section>
 
 <section class="fuentes" aria-labelledby="t-fu"><div class="env">
-  <h2 id="t-fu">Las cinco fuentes</h2>
+  <h2 id="t-fu" data-t="fuentes">Las cinco fuentes</h2>
   <div class="tabla-wrap"><table>
-    <thead><tr><th>Estudio</th><th>A quién preguntó</th></tr></thead>
+    <thead><tr><th data-t="thEst">Estudio</th><th data-t="thQuien">A quién preguntó</th></tr></thead>
     <tbody>
-      <tr><td><a href="https://www.deloitte.com/global/en/insights/topics/business-strategy-growth/change-management-roi.html" target="_blank" rel="noopener">Deloitte, 2026 Change Management Study</a></td><td>1,000 líderes de cambio (EE.UU., Reino Unido, Australia, Canadá)</td></tr>
-      <tr><td><a href="https://www.sia-partners.com/en/insights/publications/change-report-0" target="_blank" rel="noopener">Sia, The Change Report 2026</a></td><td>1,450 colaboradores y líderes</td></tr>
-      <tr><td><a href="https://www.edelman.com/trust/2026/trust-barometer/special-report-work" target="_blank" rel="noopener">Edelman, Trust at Work 2026</a></td><td>10,018 colaboradores, 10 países (incluye Brasil, Canadá y EE.UU.)</td></tr>
-      <tr><td><a href="https://www.ajg.com/employeeexperience/-/media/files/gallaghercomms/gcommssite/state-of-the-sector/gallagher-employee-communications-report-2026-global.pdf" target="_blank" rel="noopener">Gallagher, Employee Communications Report 2026</a></td><td>Más de 1,300 profesionales de comunicación interna y RR.HH., 40 países</td></tr>
-      <tr><td><a href="https://www.kornferry.com/insights/featured-topics/workforce-management-articles/workforce-planning-insights#findings" target="_blank" rel="noopener">Korn Ferry, Workforce 2026</a></td><td>Más de 16,000 profesionales, 11 mercados (incluye EE.UU. y Brasil)</td></tr>
+      <tr><td><a href="https://www.deloitte.com/global/en/insights/topics/business-strategy-growth/change-management-roi.html" target="_blank" rel="noopener">Deloitte, 2026 Change Management Study</a></td><td data-t="m0">1,000 líderes de cambio (EE.UU., Reino Unido, Australia, Canadá)</td></tr>
+      <tr><td><a href="https://www.sia-partners.com/en/insights/publications/change-report-0" target="_blank" rel="noopener">Sia, The Change Report 2026</a></td><td data-t="m1">1,450 colaboradores y líderes</td></tr>
+      <tr><td><a href="https://www.edelman.com/trust/2026/trust-barometer/special-report-work" target="_blank" rel="noopener">Edelman, Trust at Work 2026</a></td><td data-t="m2">10,018 colaboradores, 10 países (incluye Brasil, Canadá y EE.UU.)</td></tr>
+      <tr><td><a href="https://www.ajg.com/employeeexperience/-/media/files/gallaghercomms/gcommssite/state-of-the-sector/gallagher-employee-communications-report-2026-global.pdf" target="_blank" rel="noopener">Gallagher, Employee Communications Report 2026</a></td><td data-t="m3">Más de 1,300 profesionales de comunicación interna y RR.HH., 40 países</td></tr>
+      <tr><td><a href="https://www.kornferry.com/insights/featured-topics/workforce-management-articles/workforce-planning-insights#findings" target="_blank" rel="noopener">Korn Ferry, Workforce 2026</a></td><td data-t="m4">Más de 16,000 profesionales, 11 mercados (incluye EE.UU. y Brasil)</td></tr>
     </tbody>
   </table></div>
 </div></section>
 </main>
 
 <script>
-const H=[
+// Idioma: el mismo que eligió la persona en el resto de la web (clave "idioma" en el navegador)
+let IDI="es";try{const g=localStorage.getItem("idioma");if(g==="en"||g==="es")IDI=g;}catch(e){}
+const EN={
+ navQue:"What is Outside-In",navEst:"Studies",navCru:"Cross-reads",navMir:"My view",navYo:"About me",
+ h1:'<span>Change everything, communicate everything<b>:</b></span> the excess wearing organizations out',
+ bajada:"Organizations have never communicated so much about change, and rarely have their teams been so saturated to process it. Five studies published in 2026 agree on an uncomfortable diagnosis: the problem is no longer a lack of information, but too much of it.",
+ firma:'By <strong>Desirée Solano</strong>, organizational communication strategist<br><span>November 2026 · 6 min read</span>',
+ intro:"Artificial intelligence, restructurings, process redesign and reprioritizations now share the same agenda, and each initiative arrives with its own rollout of announcements, training and reminders. The usual response has been to step up communication. Studies by Deloitte, Sia, Edelman, Gallagher and Korn Ferry indicate that this approach has reached its limit.",
+ vistazo:"The four findings at a glance",hallazgos:"The findings",reflexion:"Final reflection",
+ citaTr:"Change is no longer a specialty; it is the job. · Gallagher, Employee Communications Report 2026. Even so, 61% of communication teams have no defined approach to communicating it.",
+ cierre:"For me, that is the challenge organizations face today. It is not about changing less or communicating more, but about managing attention as a strategic resource: prioritizing what is communicated, tailoring the message to each role and integrating change into operations instead of layering it on top of them.",
+ fuentes:"The five sources",thEst:"Study",thQuien:"Who was asked",
+ m0:"1,000 change leaders (U.S., U.K., Australia, Canada)",m1:"1,450 employees and leaders",m2:"10,018 employees, 10 countries (including Brazil, Canada and the U.S.)",m3:"More than 1,300 internal communication and HR professionals, 40 countries",m4:"More than 16,000 professionals, 11 markets (including the U.S. and Brazil)",
+ verHallazgo:"See finding →",hallazgo:"Finding",miLectura:"My reading",vista:"Select a view",fuente:"Source"};
+const ES={verHallazgo:"Ver hallazgo →",hallazgo:"Hallazgo",miLectura:"Mi lectura",vista:"Selecciona la vista",fuente:"Fuente"};
+const TX=k=>(IDI==="en"?EN:ES)[k];
+if(IDI==="en"){
+ document.documentElement.lang="en";
+ document.title="Change everything, communicate everything · My view · Outside-In";
+ document.querySelectorAll("[data-t]").forEach(e=>{const v=EN[e.dataset.t];if(v)e.textContent=v;});
+ document.querySelectorAll("[data-th]").forEach(e=>{const v=EN[e.dataset.th];if(v)e.innerHTML=v;});
+}
+const btnIdi=document.getElementById("boton-idioma");btnIdi.textContent=IDI==="en"?"Español":"English";
+btnIdi.onclick=()=>{try{localStorage.setItem("idioma",IDI==="en"?"es":"en");}catch(e){}location.reload();};
+const H_ES=[
  {t:"El cambio que no para de cambiar",s:"Las organizaciones ejecutan más transformaciones simultáneas de las que sus equipos pueden sostener.",
   p:["El cambio ya no se presenta de forma secuencial. Según Sia, 30% de las personas atraviesa entre tres y cinco cambios en simultáneo; Edelman confirma que 42% de los colaboradores vivió tres o más transformaciones en el último año.",
      "Deloitte cuantifica el impacto: con cuatro o más iniciativas grandes en paralelo, la probabilidad de una fatiga de cambio alta se multiplica por 6.4. Edelman agrega un matiz: los colaboradores no rechazan el cambio; lo que define cómo lo viven es la carga de trabajo."],
@@ -217,7 +244,7 @@ const H=[
   v:[{n:"Confianza",f:"Korn Ferry, Workforce 2026",u:"% que duda de que la organización convierta ideas en cambios reales",max:100,r:[["CEOs",5],["Ejecutivos",14],["Colaboradores",20]]},
      {n:"Respaldo",f:"Korn Ferry, Workforce 2026",u:"% por rol",max:100,r:[["CEOs que se sienten alentados a experimentar",78],["Colaboradores que se sienten alentados a experimentar",41],["CEOs que perciben falta de respaldo",6],["Colaboradores que perciben falta de respaldo",21]]},
      {n:"Energía",f:"Korn Ferry, Workforce 2026",u:"% agotado por el ritmo del cambio",max:100,r:[["Jefes de equipo",55],["CEOs",49],["Colaboradores",44]]},
-     {n:"Disposición",f:"Sia, The Change Report 2026",u:"% de personas según su postura frente al cambio",max:100,r:[["Entusiasta",33],["Impulsora",15],["Escéptica",28]],nota:"Casi la mitad se declara entusiasta o impulsora: la disposición existe; lo que falta es respaldo."}]},
+     {n:"Disposición",f:"Sia, The Change Report 2026",u:"% de personas según su postura frente al cambio",max:100,r:[["Entusiasta",33],["Impulsora",15],["Escéptica",28]],nota:"48% se declara entusiasta o impulsora: la disposición existe; lo que falta es respaldo."}]},
  {t:"El cambio ya no puede interrumpir el trabajo",s:"Gestionado como campaña, el cambio compite con una agenda que ya no tiene espacio.",
   p:["El último eslabón es quien recibe todos esos mensajes. Según Korn Ferry, dos de cada tres profesionales asumen responsabilidades de más de un puesto: cada capacitación o instructivo adicional compite con una agenda ya saturada.",
      "Los líderes directos son el canal más creíble para entender un cambio, según Edelman, pero también uno de los más saturados. Y Deloitte advierte que 60% de las organizaciones aún trata la gestión del cambio como un costo de proyecto."],
@@ -226,16 +253,50 @@ const H=[
      {n:"Líderes directos",f:"Gallagher, Employee Communications Report 2026",u:"% de equipos de comunicación",max:100,r:[["Ve la capacidad de los mandos como un riesgo",87],["Les da herramientas de apoyo",21]]},
      {n:"Gestión del cambio",f:"Deloitte, 2026 Change Management Study · Gallagher, 2026",u:"% de organizaciones y equipos",max:100,r:[["Trata la gestión del cambio como un costo de proyecto (Deloitte)",60],["No tiene un enfoque definido para comunicar el cambio (Gallagher)",61]]}]}
 ];
+const H_EN=[
+ {t:"Change that never stops changing",s:"Organizations are running more simultaneous transformations than their teams can sustain.",
+  p:["Change no longer arrives in sequence. According to Sia, 30% of people are going through three to five changes at once; Edelman confirms that 42% of employees experienced three or more transformations in the past year.",
+     "Deloitte quantifies the impact: with four or more major initiatives running in parallel, the likelihood of high change fatigue is multiplied by 6.4. Edelman adds a nuance: employees do not reject change; what shapes how they experience it is their workload."],
+  l:"Each initiative is added on top of existing operations instead of replacing part of them, and the wear is the accumulated result of that sum.",
+  v:[{n:"Sia",f:"Sia, The Change Report 2026",u:"% of people",max:100,r:[["Going through 3 to 5 changes at the same time",30],["Feel their organization is trying to do everything at once",41]]},
+     {n:"Edelman",f:"Edelman, Trust at Work 2026",u:"% of employees",max:100,r:[["Went through three or more transformations in the past year",42],["Name AI as the most frequent transformation",53]]},
+     {n:"Deloitte",f:"Deloitte, 2026 Change Management Study",u:"% of organizations and change leaders",max:100,r:[["Organizations with several major initiatives in parallel",83],["Change leaders who already see fatigue in their teams",73]],nota:"<strong>×6.4</strong> is how much the likelihood of high fatigue increases with four or more initiatives at once."}]},
+ {t:"The boomerang effect of overcommunicating",s:"Stepping up messages raises distrust, fatigue and uncertainty.",
+  p:["Faced with this volume of change, organizations tend to react the same way: by communicating more. Each initiative triggers its own cycle of announcements, training and reminders, and that flow turns into saturation.",
+     "Gallagher compared teams that communicate intensively with those that do so moderately: the excess raises a different risk depending on the topic. In the study's words, volume ends up replacing clarity."],
+  l:"Protecting attention requires editorial judgment: defining what each audience needs to know, when and through which channel. That judgment is only possible if the organization listens before it broadcasts.",
+  v:[{n:"Overview",f:"Gallagher, Employee Communications Report 2026",u:"% of communication teams",max:100,r:[["Report an increase in information overload",83],["Communicate a lot or quite a lot about strategy",82],["Communicate intensively about AI",39]]},
+     {n:"Change",f:"Gallagher, Employee Communications Report 2026",u:"Increase in risk when overcommunicating (%)",max:60,r:[["Distrust of leaders",30],["Burnout",24],["Information overload",16]],nota:"These values show how much the risk rises compared with teams that communicate moderately, not percentages of people."},
+     {n:"Culture",f:"Gallagher, Employee Communications Report 2026",u:"Increase in risk when overcommunicating (%)",max:60,r:[["Crisis of trust",25]],nota:"Increase in risk compared with teams that communicate moderately."},
+     {n:"Strategy",f:"Gallagher, Employee Communications Report 2026",u:"Increase in risk when overcommunicating (%)",max:60,r:[["Perceived lack of direction",12]],nota:"It is the most communicated topic: 82% of teams address it a lot or quite a lot."},
+     {n:"AI",f:"Gallagher, Employee Communications Report 2026",u:"Increase in risk when overcommunicating (%)",max:60,r:[["Uncertainty",56]],nota:"The largest increase recorded, even though only 39% of teams communicate intensively about AI."}]},
+ {t:"The same change, at two speeds",s:"Trust, support and energy weaken as change moves down the structure.",
+  p:["The same change is announced uniformly, but each role processes it differently. Korn Ferry shows gaps in three dimensions: confidence in the outcome, support to achieve it and energy to sustain it.",
+     "Confidence fades as change moves down the structure, and team managers, who are responsible for turning it into operations, are the role most exhausted by its pace. Sia, for its part, shows that willingness to change exists."],
+  l:"Commitment to a change comes from having taken part in designing it. Those who receive a decision already made, and must sustain it while worn out, will hardly replicate the enthusiasm of those who built it.",
+  v:[{n:"Confidence",f:"Korn Ferry, Workforce 2026",u:"% who doubt the organization can turn ideas into real change",max:100,r:[["CEOs",5],["Executives",14],["Employees",20]]},
+     {n:"Support",f:"Korn Ferry, Workforce 2026",u:"% by role",max:100,r:[["CEOs who feel encouraged to experiment",78],["Employees who feel encouraged to experiment",41],["CEOs who perceive a lack of support",6],["Employees who perceive a lack of support",21]]},
+     {n:"Energy",f:"Korn Ferry, Workforce 2026",u:"% exhausted by the pace of change",max:100,r:[["Team managers",55],["CEOs",49],["Employees",44]]},
+     {n:"Willingness",f:"Sia, The Change Report 2026",u:"% of people by their stance on change",max:100,r:[["Enthusiastic",33],["Driver",15],["Skeptical",28]],nota:"48% describe themselves as enthusiastic or drivers: the willingness exists; what is missing is support."}]},
+ {t:"Change can no longer interrupt work",s:"Managed as a campaign, change competes with an agenda that has no room left.",
+  p:["The last link is the person who receives all those messages. According to Korn Ferry, two in three professionals take on the responsibilities of more than one role: every additional training session or guide competes with an already saturated agenda.",
+     "Direct managers are the most credible channel for understanding a change, according to Edelman, but also one of the most saturated. And Deloitte warns that 60% of organizations still treat change management as a project cost."],
+  l:"Change management must stop operating as a campaign with a launch, training and close, and become part of day-to-day operations.",
+  v:[{n:"People",f:"Korn Ferry, Workforce 2026",u:"% of professionals",max:100,r:[["Take on responsibilities of more than one role",61],["Team managers too busy to achieve meaningful results",50]]},
+     {n:"Direct managers",f:"Gallagher, Employee Communications Report 2026",u:"% of communication teams",max:100,r:[["See managers' capacity as a risk",87],["Give them support tools",21]]},
+     {n:"Change management",f:"Deloitte, 2026 Change Management Study · Gallagher, 2026",u:"% of organizations and teams",max:100,r:[["Treat change management as a project cost (Deloitte)",60],["Have no defined approach to communicating change (Gallagher)",61]]}]}
+];
+const H=IDI==="en"?H_EN:H_ES;
 const pad=n=>String(n).padStart(2,"0");
 const grilla=document.getElementById("grilla"),tabs=document.getElementById("tabs"),panel=document.getElementById("panel");
 let actual=0,vista=0;
 H.forEach((h,i)=>{
   const b=document.createElement("button");b.className="tarjeta";b.type="button";
-  b.innerHTML=`<span class="num">${pad(i+1)}</span><h3>${h.t}</h3><p>${h.s}</p><span class="ir">Ver hallazgo →</span>`;
+  b.innerHTML=`<span class="num">${pad(i+1)}</span><h3>${h.t}</h3><p>${h.s}</p><span class="ir">${TX("verHallazgo")}</span>`;
   b.onclick=()=>{abrir(i);document.getElementById("hallazgos").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})};
   grilla.appendChild(b);
   const t=document.createElement("button");t.className="tab";t.type="button";t.role="tab";t.id="tab-"+i;
-  t.textContent="Hallazgo "+pad(i+1);t.onclick=()=>abrir(i);tabs.appendChild(t);
+  t.textContent=TX("hallazgo")+" "+pad(i+1);t.onclick=()=>abrir(i);tabs.appendChild(t);
 });
 function abrir(i){
   actual=i;vista=0;
@@ -243,8 +304,8 @@ function abrir(i){
   panel.setAttribute("aria-labelledby","tab-"+i);
   const h=H[i];
   panel.innerHTML=`<div class="texto"><span class="gran-num">${pad(i+1)}</span><h3>${h.t}</h3><p class="sub">${h.s}</p>${h.p.map(x=>`<p>${x}</p>`).join("")}
-  <div class="lectura"><span class="etq">Mi lectura</span><p>${h.l}</p></div></div>
-  <div class="grafico"><div class="vistas"><span class="etq">Selecciona la vista</span><div class="botones">${h.v.map((v,k)=>`<button type="button" class="vista" data-k="${k}">${v.n}</button>`).join("")}</div></div><div id="chart"></div></div>`;
+  <div class="lectura"><span class="etq">${TX("miLectura")}</span><p>${h.l}</p></div></div>
+  <div class="grafico"><div class="vistas"><span class="etq">${TX("vista")}</span><div class="botones">${h.v.map((v,k)=>`<button type="button" class="vista" data-k="${k}">${v.n}</button>`).join("")}</div></div><div id="chart"></div></div>`;
   panel.querySelectorAll(".vista").forEach(b=>b.onclick=()=>{vista=+b.dataset.k;pintar()});
   pintar();
 }
@@ -255,14 +316,14 @@ function pintar(){
   const c=document.getElementById("chart");
   c.innerHTML=`<div class="chart"><span class="eje-tit">${v.u}</span><div class="ticks">${ticks.map(x=>`<span style="left:${x/v.max*100}%">${x}%</span>`).join("")}</div>
   ${v.r.map(([l,n])=>`<div class="fila"><span class="lbl">${l}</span><div class="barra"><div class="pista"><div class="relleno" style="width:0" data-w="${n/v.max*100}"></div></div><span class="valor">${n}%</span></div></div>`).join("")}</div>
-  ${v.nota?`<p class="nota" style="margin-top:18px">${v.nota}</p>`:""}<p class="fuente" style="margin-top:12px">Fuente: ${v.f}</p>`;
+  ${v.nota?`<p class="nota" style="margin-top:18px">${v.nota}</p>`:""}<p class="fuente" style="margin-top:12px">${TX("fuente")}: ${v.f}</p>`;
   c.querySelector(".ticks span:last-child").style.transform="translateX(-100%)";
   requestAnimationFrame(()=>requestAnimationFrame(()=>c.querySelectorAll(".relleno").forEach(r=>r.style.width=r.dataset.w+"%")));
 }
 abrir(0);
 </script>
 
-<script src="js/config.js?v=202611172045"></script>
-<script src="js/metricas.js?v=202611172045"></script>
+<script src="js/config.js?v=202611172200"></script>
+<script src="js/metricas.js?v=202611172200"></script>
 </body>
 </html>

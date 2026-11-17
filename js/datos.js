@@ -1479,6 +1479,7 @@ const HALLAZGOS = [
     cita: {
       "original": "La IA es una prioridad, pero la preparación es desigual.",
       "traduccion_es": "La IA es una prioridad, pero la preparación es desigual.",
+      "traduccion_en": "AI is a priority, but readiness is uneven.",
       "autor_es": "JLL, principales hallazgos de la encuesta",
       "autor_en": "JLL, key findings of the survey"
     },
