@@ -535,16 +535,20 @@ img{max-width:100%;display:block}
 .panel-c .cif-c.abre{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:40px}
 .panel-c .cif-c i.con-c{align-self:start;margin-top:130px;font:italic 600 clamp(17px,1.5vw,21px)/1.2 var(--t);color:inherit;opacity:.75;white-space:nowrap}
 .panel-c.k0{--anillo:#111214}.panel-c.k1{--anillo:var(--azul)}.panel-c.k3{--anillo:var(--naranja)}.panel-c.k2{--anillo:var(--naranja)}
-.panel-c .abajo-c{display:flex;justify-content:flex-end;align-items:center;gap:12px}
-.panel-c .leer-c{font:700 15px var(--x);opacity:0;transition:opacity .3s}
-.panel-c.abierto .leer-c{opacity:1}
-.panel-c .flecha-c{width:58px;height:58px;border-radius:50%;background:var(--blanco);color:var(--negro);display:grid;place-items:center;font:700 22px var(--x);flex:none;transition:background .3s}
-.panel-c:hover .flecha-c{background:var(--naranja)}
+/* Botón "Leer el cruce": píldora visible arriba a la derecha del panel abierto (17-nov-2026) */
+.panel-c .abajo-c{position:absolute;z-index:3;top:clamp(22px,2.4vw,32px);right:clamp(22px,2.4vw,32px);display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:var(--blanco);color:var(--negro);font:700 15px var(--x);box-shadow:0 10px 24px -12px rgba(0,0,0,.45);opacity:0;transform:translateY(-6px);transition:opacity .35s .25s,transform .35s .25s,background .25s,color .25s}
+.panel-c.abierto .abajo-c{opacity:1;transform:none}
+.panel-c:not(.abierto) .abajo-c{visibility:hidden}
+.panel-c .leer-c{font:inherit}
+.panel-c .flecha-c{font:700 18px var(--x);transition:transform .25s}
+.panel-c:hover .abajo-c{background:var(--naranja);color:var(--negro)}
+.panel-c:hover .flecha-c{transform:translateX(4px)}
+.panel-c.k1 .abajo-c,.panel-c.k3 .abajo-c{background:var(--negro);color:var(--blanco)}
+.panel-c.k0:hover .abajo-c{background:var(--negro);color:var(--blanco)}
+.panel-c.k0{--anillo:#111214}.panel-c.k1{--anillo:var(--azul)}.panel-c.k3{--anillo:var(--naranja)}.panel-c.k2{--anillo:var(--naranja)}
 .panel-c.k0{--c1:#FF6B2C;--brillo:rgba(255,196,120,.55)}.panel-c.k1{--c1:#C9CCFF;--brillo:rgba(255,255,255,.6)}.panel-c.k2{--c1:#0B1A8F;--brillo:rgba(64,96,255,.55)}.panel-c.k3{--c1:#FFE2D1;--brillo:rgba(255,255,255,.7)}
 .panel-c.k1 .num-c{color:var(--azul)}.panel-c.k2 .num-c{color:var(--naranja)}.panel-c.k3 .num-c{color:var(--naranja)}
 .panel-c.k1,.panel-c.k3{color:var(--negro)}
-.panel-c.k0:hover .flecha-c{background:var(--negro);color:var(--blanco)}
-.panel-c.k1 .flecha-c,.panel-c.k3 .flecha-c{background:var(--negro);color:var(--blanco)}
 .panel-c.k1 .info-c h3 span,.panel-c.k3 .info-c h3 span{color:var(--azul);opacity:1}
 @media (max-width:900px){
  .paneles-c{flex-direction:column;height:auto}
@@ -553,6 +557,7 @@ img{max-width:100%;display:block}
  .panel-c.abierto .dentro-c{position:relative}
  .panel-c .vert-c{writing-mode:horizontal-tb;transform:none;left:100px;top:30px;bottom:auto;right:20px;max-height:none;font-size:15px}
  .panel-c .cif-c{grid-template-columns:1fr;gap:16px}
+ .panel-c .abajo-c{position:static;align-self:flex-start;margin-top:20px;transform:none}
  .panel-c .lado-c{display:grid;grid-template-columns:84px 1fr;column-gap:16px;row-gap:6px;align-items:center}
  .panel-c .anillo-c{width:84px;height:84px;grid-row:span 3}
  .panel-c .anillo-c b{font-size:20px}
@@ -778,17 +783,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611172030"></script>
-<script src="js/textos.js?v=202611172030"></script>
-<script src="js/datos.js?v=202611172030"></script>
-<script src="js/contador.js?v=202611172030"></script>
-<script src="js/buscador.js?v=202611172030"></script>
-<script src="js/imagenes.js?v=202611172030"></script>
-<script src="js/insights.js?v=202611172030"></script>
-<script src="js/columnas.js?v=202611172030"></script>
-<script src="js/radar.js?v=202611172030"></script>
-<script src="js/traduccion.js?v=202611172030"></script>
-<script src="js/metricas.js?v=202611172030"></script>
+<script src="js/config.js?v=202611172045"></script>
+<script src="js/textos.js?v=202611172045"></script>
+<script src="js/datos.js?v=202611172045"></script>
+<script src="js/contador.js?v=202611172045"></script>
+<script src="js/buscador.js?v=202611172045"></script>
+<script src="js/imagenes.js?v=202611172045"></script>
+<script src="js/insights.js?v=202611172045"></script>
+<script src="js/columnas.js?v=202611172045"></script>
+<script src="js/radar.js?v=202611172045"></script>
+<script src="js/traduccion.js?v=202611172045"></script>
+<script src="js/metricas.js?v=202611172045"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
