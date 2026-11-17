@@ -518,7 +518,7 @@ img{max-width:100%;display:block}
 .panel-c:not(.abierto) .info-c{visibility:hidden;transition:none}
 .panel-c.abierto .info-c{opacity:1;transform:none}
 .panel-c .info-c .tema-c{font:600 13px var(--x);opacity:.85}
-.panel-c .info-c h3{margin:10px 0 0;font:800 clamp(28px,3vw,44px)/1.04 var(--t);letter-spacing:-.03em;text-wrap:balance}
+.panel-c .info-c h3{margin:10px 0 0;font:800 clamp(24px,2.3vw,34px)/1.1 var(--t);letter-spacing:-.03em;text-wrap:balance}
 .panel-c .info-c h3 span{opacity:.75}
 .panel-c .cif-c{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:stretch;margin-top:22px}
 .panel-c .cif-c div{background:var(--blanco);color:var(--negro);border-radius:18px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
@@ -536,6 +536,8 @@ img{max-width:100%;display:block}
 .panel-c.k1 .fondo-c::after,.panel-c.k3 .fondo-c::after{background:linear-gradient(180deg,rgba(255,255,255,.45) 0%,rgba(255,255,255,.7) 100%)}
 .panel-c.k1 .fondo-c img,.panel-c.k3 .fondo-c img{opacity:.14}
 .panel-c .cif-c i.igual{background:var(--lila);font-size:20px}
+.panel-c.k0 .cif-c i{background:var(--negro);color:var(--blanco)}
+.panel-c.k0:hover .flecha-c{background:var(--negro);color:var(--blanco)}
 .panel-c.k1 .flecha-c,.panel-c.k3 .flecha-c{background:var(--negro);color:var(--blanco)}
 .panel-c.k1 .info-c h3 span,.panel-c.k3 .info-c h3 span{color:var(--azul);opacity:1}
 @media (max-width:900px){
@@ -765,17 +767,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611162202"></script>
-<script src="js/textos.js?v=202611162202"></script>
-<script src="js/datos.js?v=202611162202"></script>
-<script src="js/contador.js?v=202611162202"></script>
-<script src="js/buscador.js?v=202611162202"></script>
-<script src="js/imagenes.js?v=202611162202"></script>
-<script src="js/insights.js?v=202611162202"></script>
-<script src="js/columnas.js?v=202611162202"></script>
-<script src="js/radar.js?v=202611162202"></script>
-<script src="js/traduccion.js?v=202611162202"></script>
-<script src="js/metricas.js?v=202611162202"></script>
+<script src="js/config.js?v=202611162222"></script>
+<script src="js/textos.js?v=202611162222"></script>
+<script src="js/datos.js?v=202611162222"></script>
+<script src="js/contador.js?v=202611162222"></script>
+<script src="js/buscador.js?v=202611162222"></script>
+<script src="js/imagenes.js?v=202611162222"></script>
+<script src="js/insights.js?v=202611162222"></script>
+<script src="js/columnas.js?v=202611162222"></script>
+<script src="js/radar.js?v=202611162222"></script>
+<script src="js/traduccion.js?v=202611162222"></script>
+<script src="js/metricas.js?v=202611162222"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1009,7 +1011,7 @@ img{max-width:100%;display:block}
       }
       const ab=crear('div','abajo-c');ab.append(crear('span','leer-c',EN?'Read the cross-read':'Leer el cruce'),crear('span','flecha-c','→'));
       de.append(crear('div','num-c',ins.numero||''),info,ab);
-      const v=crear('span','vert-c',(EN?ins.corto_en:ins.corto_es)||String(EN?ins.titulo_en:ins.titulo_es).replace(/\.$/,''));
+      const v=crear('span','vert-c',nombreDe(ins.tema));
       a.append(fo,de,v);box.appendChild(a);return a;
     });
     const abrir=p=>paneles.forEach(o=>o.classList.toggle('abierto',o===p));
