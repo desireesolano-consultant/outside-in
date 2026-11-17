@@ -26,20 +26,20 @@ const INSIGHTS = [
       "h-2026-10-bain-life-sciences",
       "h-2026-10-pwc-fs-cambio"
     ],
-    "titulo_es": "Sin una explicación de cómo cambia cada rol,",
-    "titulo2_es": "los equipos usan la IA solo por obligación.",
-    "titulo_en": "Without an explanation of how each role changes,",
-    "titulo2_en": "teams use AI only out of obligation.",
-    "corto_es": "El uso de la IA en los equipos",
-    "corto_en": "How teams use AI",
+    "titulo_es": "Las empresas amplían el acceso a la IA,",
+    "titulo2_es": "pero pocas explican cómo cambia cada rol.",
+    "titulo_en": "Companies are expanding access to AI,",
+    "titulo2_en": "but few explain how each role changes.",
+    "corto_es": "Cómo cambia cada rol",
+    "corto_en": "How each role changes",
     "resumen_es": "Si bien Deloitte, Bain y PwC estudian tres industrias distintas, leídos en conjunto muestran que los equipos usan poco la IA cuando la empresa no define cómo encaja en su trabajo.",
     "resumen_en": "While Deloitte, Bain and PwC study three different industries, read together they show that teams make little use of AI when the company does not define how it fits into their work.",
     "bajada_es": "Deloitte, Bain y PwC analizan la adopción de la IA en tres industrias. Si bien las empresas amplían el acceso a la IA, no definen para qué tareas usarla, qué se espera de cada persona ni qué pasa con su puesto. Como resultado, el uso se limita a lo que se exige y, donde se anticipan recortes, predomina el temor.",
     "bajada_en": "Deloitte, Bain and PwC analyze AI adoption in three industries. While companies are expanding access to AI, they do not define which tasks to use it for, what is expected of each person or what happens to their job. As a result, use is limited to what is required and, where cuts are expected, fear prevails.",
-    "tesis_es": "Si bien las empresas amplían el acceso a la IA, en las tres industrias analizadas **pocas redefinieron el trabajo**: en consumo masivo, 82% no rediseñó sus puestos, y en servicios financieros, cerca de 2 de cada 10 firmas analizó cómo reorganizar sus procesos. Donde falta esa definición, el uso se limita a lo exigido, como observa 43% de los ejecutivos de servicios financieros.",
-    "tesis_en": "While companies are expanding access to AI, **few in the three industries analyzed have redefined work**: in consumer goods, 82% have not redesigned jobs, and in financial services, about 2 in 10 firms have analyzed how to reorganize their processes. Where that definition is missing, use is limited to what is required, as 43% of financial services executives observe.",
-    "universo_es": "3 estudios independientes, cada uno con su propia muestra: 2,100 líderes y ejecutivos en conjunto, de salud, servicios financieros y consumo masivo",
-    "universo_en": "3 independent studies, each with its own sample: 2,100 leaders and executives combined, in health, financial services and consumer goods",
+    "tesis_es": "Bain (salud y farmacéutica), PwC (servicios financieros) y Deloitte (consumo masivo) analizan cómo adoptan la IA las empresas de cada industria. **Los tres coinciden en que solo alrededor de 2 de cada 10 empresas convirtieron la IA en decisiones sobre cómo cambia el trabajo**; sin embargo, difieren en la disposición de los equipos a usarla.",
+    "tesis_en": "Bain (health and pharmaceuticals), PwC (financial services) and Deloitte (consumer goods) analyze how companies in each industry are adopting AI. **All three agree that only about 2 in 10 companies have turned AI into decisions about how work changes**; however, they differ on teams' willingness to use it.",
+    "universo_es": "3 estudios independientes, cada uno con su propia muestra: 2,100 líderes y ejecutivos en conjunto, de salud y farmacéutica, servicios financieros y consumo masivo",
+    "universo_en": "3 independent studies, each with its own sample: 2,100 leaders and executives combined, in health and pharmaceuticals, financial services and consumer goods",
     "portada": [
       {
         "id": "h-2026-10-bain-life-sciences",
@@ -48,18 +48,18 @@ const INSIGHTS = [
         "postura_en": "Few companies explain how each role changes",
         "dato_es": "7%",
         "dato_en": "7%",
-        "texto_es": "de las empresas farmacéuticas y de salud que recién exploran la IA lo explica a sus equipos",
-        "texto_en": "of pharmaceutical and health companies just exploring AI explain it to their teams"
+        "texto_es": "de las empresas de salud y farmacéutica que recién empiezan con la IA explica a sus equipos cómo cambia cada rol",
+        "texto_en": "of health and pharmaceutical companies just starting with AI explain to their teams how each role changes"
       },
       {
-        "id": "h-2026-10-pwc-fs-cambio",
-        "industria": "servicios_financieros",
-        "postura_es": "los equipos usan la IA solo por obligación",
-        "postura_en": "teams use AI only out of obligation",
-        "dato_es": "43%",
-        "dato_en": "43%",
-        "texto_es": "de los ejecutivos de servicios financieros lo observa en sus equipos",
-        "texto_en": "of financial services executives see this in their teams"
+        "id": "h-2026-10-deloitte-consumo-ia",
+        "industria": "consumo_masivo",
+        "postura_es": "la mayoría no rediseñó los puestos",
+        "postura_en": "most have not redesigned jobs",
+        "dato_es": "82%",
+        "dato_en": "82%",
+        "texto_es": "de las empresas de consumo masivo no rediseñó sus puestos en torno a la IA",
+        "texto_en": "of consumer goods companies have not redesigned their jobs around AI"
       }
     ],
     "portada_conector_es": "y",
@@ -112,80 +112,88 @@ const INSIGHTS = [
     ],
     "coinciden": [
       {
-        "titulo_es": "El trabajo no se rediseña al ritmo de la IA",
-        "titulo_en": "Work is not being redesigned at the pace of AI",
+        "titulo_es": "Solo alrededor de 2 de cada 10 empresas convirtieron la IA en decisiones sobre el trabajo",
+        "titulo_en": "Only about 2 in 10 companies have turned AI into decisions about work",
         "lados": [
           {
             "id": "h-2026-10-bain-life-sciences",
             "industria": "life_sciences",
             "dato_es": "20%",
             "dato_en": "20%",
-            "texto_es": "de las empresas que ya usan la IA en toda su operación convirtió su visión sobre el trabajo en decisiones para toda la organización",
-            "texto_en": "of companies already using AI across their operations have turned their vision of work into organization-wide decisions",
-            "v": 20
+            "texto_es": "de las empresas de salud y farmacéutica que ya usan la IA en toda su operación convirtió su visión sobre el trabajo en decisiones concretas para la organización",
+            "texto_en": "of health and pharmaceutical companies already using AI across their operations have turned their vision of work into concrete decisions for the organization",
+            "v": 20,
+            "etiqueta_es": "Salud y farmacéutica",
+            "etiqueta_en": "Health and pharmaceuticals"
           },
           {
             "id": "h-2026-10-pwc-fs-ia",
             "industria": "servicios_financieros",
-            "dato_es": "≈ 2 de 10",
-            "dato_en": "≈ 2 in 10",
-            "texto_es": "Firmas que calcularon el impacto de la IA y analizaron cómo rediseñar sus procesos: la mitad del 42% que hizo ese cálculo",
-            "texto_en": "Firms that estimated AI's impact and analyzed how to redesign their processes: half of the 42% that made that estimate",
-            "v": 21
+            "dato_es": "2 de cada 10",
+            "dato_en": "2 in 10",
+            "texto_es": "firmas de servicios financieros calcularon cuánto personal podrían reducir con la IA y, además, analizaron cómo reorganizar sus procesos (la mitad del 42% que hizo ese cálculo)",
+            "texto_en": "financial services firms have estimated how much staff they could cut with AI and have also analyzed how to reorganize their processes (half of the 42% that made that estimate)",
+            "v": 21,
+            "etiqueta_es": "Servicios financieros",
+            "etiqueta_en": "Financial services"
           }
         ],
-        "lectura_es": "En salud y farmacéutica, incluso las empresas que ya usan la IA en toda su operación tienen pendiente convertir su visión en decisiones sobre el trabajo. En servicios financieros, las firmas calculan cuánto personal podrían reducir, pero solo la mitad de las que hicieron ese cálculo analizó cómo se reorganizarán sus procesos.\n\nEn ambos sectores, el impacto de la IA se mide antes de definir cómo se trabajará. Deloitte encuentra el mismo pendiente en consumo masivo, donde 82% de las empresas no ha rediseñado sus puestos.",
-        "lectura_en": "In pharmaceuticals and health, even companies already using AI across their operations have yet to turn their vision into decisions about work. In financial services, firms estimate how much staff they could cut, but only half of those that made that estimate have analyzed how their processes will be reorganized.\n\nIn both sectors, AI's impact is measured before defining how work will be done. Deloitte finds the same gap in consumer goods, where 82% of companies have not redesigned their jobs.",
-        "nota_es": "Bain mide solo a las empresas más avanzadas de su sector; PwC, al total de firmas encuestadas. Que incluso las más avanzadas se ubiquen en ese nivel refuerza la coincidencia.",
-        "nota_en": "Bain measures only the most advanced companies in its sector; PwC, all firms surveyed. That even the most advanced sit at that level reinforces the agreement.",
-        "tarjeta_es": "El trabajo no se rediseña al ritmo de la IA",
-        "tarjeta_en": "Work is not being redesigned at the pace of AI",
-        "resumen_es": "En dos industrias, cerca de 2 de cada 10 empresas pasó del plan al rediseño del trabajo, mientras que el resto mide el impacto antes de definir cómo se trabajará.",
-        "resumen_en": "In two industries, about 2 in 10 companies have moved from plan to work redesign, while the rest measure the impact before defining how work will be done.",
-        "eje_es": "Empresas que ya convirtieron su plan en rediseño del trabajo",
-        "eje_en": "Companies that have already turned their plan into work redesign",
-        "sub_es": "En dos industrias, cerca de 2 de cada 10 empresas pasó del plan al rediseño del trabajo",
-        "sub_en": "In two industries, about 2 in 10 companies have moved from planning to redesigning work"
+        "lectura_es": "En el estudio de Bain, solo 20% de las empresas de salud y farmacéutica que ya usan la IA en toda su operación convirtió su visión sobre el trabajo en decisiones concretas. En el de PwC, 42% de las firmas de servicios financieros calculó cuánto personal podría reducir con la IA, pero solo la mitad de ellas analizó cómo reorganizar sus procesos. En el de Deloitte, 82% de las empresas de consumo masivo no rediseñó sus puestos; es decir, solo 18% lo hizo.\n\nSi bien las tres industrias avanzan a ritmos distintos, en todas la proporción de empresas que tradujo la IA en decisiones sobre el trabajo está entre 18% y 21%. PwC muestra dónde se detiene el proceso: las firmas calculan cuánto personal podrían reducir antes de definir cómo se trabajará. Mientras esa decisión no se tome, ningún líder puede explicar a su equipo qué cambia en su puesto.",
+        "lectura_en": "In Bain's study, only 20% of health and pharmaceutical companies already using AI across their operations have turned their vision of work into concrete decisions. In PwC's, 42% of financial services firms have estimated how much staff they could cut with AI, but only half of them have analyzed how to reorganize their processes. In Deloitte's, 82% of consumer goods companies have not redesigned their jobs; that is, only 18% have.\n\nWhile the three industries are moving at different speeds, in all of them the share of companies that have turned AI into decisions about work is between 18% and 21%. PwC shows where the process stalls: firms estimate how much staff they could cut before defining how work will be done. Until that decision is made, no leader can explain to their team what changes in their job.",
+        "nota_es": "La cifra de Bain corresponde solo a las empresas que ya usan la IA en toda su operación; las de PwC y Deloitte, al total de empresas encuestadas. Que incluso las más avanzadas se ubiquen en ese nivel refuerza la coincidencia.",
+        "nota_en": "Bain's figure refers only to companies already using AI across their operations; PwC's and Deloitte's, to all companies surveyed. That even the most advanced sit at that level strengthens the agreement.",
+        "tarjeta_es": "Solo alrededor de 2 de cada 10 empresas convirtieron la IA en decisiones sobre el trabajo",
+        "tarjeta_en": "Only about 2 in 10 companies have turned AI into decisions about work",
+        "resumen_es": "La proporción es similar en las tres industrias, entre 18% y 21%, incluso entre las empresas más avanzadas.",
+        "resumen_en": "The share is similar in all three industries, between 18% and 21%, even among the most advanced companies.",
+        "eje_es": "Empresas que ya convirtieron la IA en decisiones sobre el trabajo",
+        "eje_en": "Companies that have already turned AI into decisions about work",
+        "sub_es": "En servicios financieros, las firmas calculan cuánto personal podrían reducir antes de definir cómo cambia cada puesto.",
+        "sub_en": "In financial services, firms estimate how much staff they could cut before defining how each job changes."
       }
     ],
     "difieren_intro_es": "Donde los estudios llegan a conclusiones distintas sobre una misma pregunta.",
     "difieren_intro_en": "Where the studies reach different conclusions on the same question.",
     "difieren": [
       {
-        "titulo_es": "Donde se anticipan recortes, el uso de la IA se limita a lo que se exige",
-        "titulo_en": "Where cuts are expected, AI use is limited to what is required",
+        "titulo_es": "El uso de la IA por obligación es minoritario en consumo masivo y frecuente en servicios financieros",
+        "titulo_en": "Using AI only out of obligation is rare in consumer goods and common in financial services",
         "lados": [
           {
             "id": "h-2026-10-deloitte-consumo-ia",
             "industria": "consumo_masivo",
             "dato_es": "19%",
             "dato_en": "19%",
-            "texto_es": "de los colaboradores no técnicos usa la IA solo cuando se le exige, según sus líderes. Otro 69% está entusiasmado o abierto a explorarla.",
-            "texto_en": "of non-technical employees use AI only when required, according to their leaders. Another 69% are enthusiastic or open to exploring it.",
-            "v": 19
+            "texto_es": "de los colaboradores no técnicos de consumo masivo usa la IA solo cuando se le exige, según sus líderes; otro 69% está entusiasmado o abierto a explorarla",
+            "texto_en": "of non-technical consumer goods employees use AI only when required, according to their leaders; another 69% are enthusiastic or open to exploring it",
+            "v": 19,
+            "etiqueta_es": "Consumo masivo",
+            "etiqueta_en": "Consumer goods"
           },
           {
             "id": "h-2026-10-pwc-fs-cambio",
             "industria": "servicios_financieros",
             "dato_es": "43%",
             "dato_en": "43%",
-            "texto_es": "de los ejecutivos observa que sus equipos usan la IA solo cuando se les exige. 8 de cada 10 prevé una plantilla al menos 20% menor en cinco años.",
-            "texto_en": "of executives see their teams use AI only when required. 8 in 10 expect a workforce at least 20% smaller within five years.",
-            "v": 43
+            "texto_es": "de los ejecutivos de servicios financieros observa que sus equipos usan la IA solo cuando se les exige",
+            "texto_en": "of financial services executives see their teams use AI only when required",
+            "v": 43,
+            "etiqueta_es": "Servicios financieros",
+            "etiqueta_en": "Financial services"
           }
         ],
-        "lectura_es": "En consumo masivo, los líderes describen equipos mayoritariamente dispuestos y un uso por obligación minoritario. En servicios financieros el contexto es otro: el sector ya proyecta una reducción de personal de gran escala, y 44% de sus ejecutivos observa temor entre los colaboradores.\n\nCuando la organización anticipa recortes y no explica qué trabajo permanece, el uso se reduce al mínimo exigido.",
-        "lectura_en": "In consumer goods, leaders describe teams that are mostly willing and a minority using AI out of obligation. In financial services the context is different: the sector already projects a large-scale workforce reduction, and 44% of its executives see fear among employees.\n\nWhen the organization anticipates cuts and does not explain what work remains, use falls to the required minimum.",
+        "lectura_es": "En el estudio de Deloitte, los líderes de consumo masivo describen equipos mayoritariamente dispuestos: solo 19% de los colaboradores no técnicos usa la IA únicamente cuando se le exige, y 69% está entusiasmado o abierto a explorarla. En el de PwC, 43% de los ejecutivos de servicios financieros observa ese uso por obligación en sus equipos, y 44% percibe que sus colaboradores temen perder su empleo o que la IA cambie su rol.\n\nLa diferencia coincide con el contexto de cada sector: en servicios financieros, casi 8 de cada 10 ejecutivos esperan reducir su personal al menos 20% en cinco años. Los datos no prueban que una cosa cause la otra, pero sugieren que, donde se anticipan recortes sin explicar qué trabajo permanece, los equipos usan la IA solo cuando se les exige.",
+        "lectura_en": "In Deloitte's study, consumer goods leaders describe mostly willing teams: only 19% of non-technical employees use AI only when required, and 69% are enthusiastic or open to exploring it. In PwC's, 43% of financial services executives see that use out of obligation in their teams, and 44% perceive that their employees fear losing their jobs or having their role changed by AI.\n\nThe difference matches each sector's context: in financial services, nearly 8 in 10 executives expect to reduce their staff by at least 20% within five years. The data do not prove that one causes the other, but they suggest that where cuts are expected without explaining which work remains, teams use AI only when required.",
         "nota_es": "Las cifras no se miden de la misma forma: Deloitte estima la proporción de colaboradores; PwC, la proporción de ejecutivos que observa esa conducta en sus equipos. La comparación indica una diferencia de clima entre sectores, no una proporción exacta.",
         "nota_en": "The figures are not measured the same way: Deloitte estimates the share of employees; PwC, the share of executives who see that behavior in their teams. The comparison points to a difference in climate between sectors, not an exact proportion.",
-        "tarjeta_es": "Donde se anticipan recortes, el uso de la IA se limita a lo que se exige",
-        "tarjeta_en": "Where cuts are expected, AI use is limited to what is required",
-        "resumen_es": "Si bien en consumo masivo el uso por obligación es minoritario (19%), en servicios financieros lo observa 43% de los ejecutivos.",
-        "resumen_en": "While use out of obligation is a minority in consumer goods (19%), 43% of financial services executives observe it.",
-        "sub_es": "Ante la misma pregunta, los líderes de cada industria describen equipos muy distintos.",
-        "sub_en": "Asked the same question, leaders in each industry describe very different teams.",
+        "tarjeta_es": "El uso de la IA por obligación es minoritario en consumo masivo y frecuente en servicios financieros",
+        "tarjeta_en": "Using AI only out of obligation is rare in consumer goods and common in financial services",
+        "resumen_es": "Según sus líderes, 19% de los colaboradores de consumo masivo usa la IA solo cuando se le exige, mientras que en servicios financieros 43% de los ejecutivos observa esa conducta en sus equipos.",
+        "resumen_en": "According to their leaders, 19% of consumer goods employees use AI only when required, while in financial services 43% of executives see that behavior in their teams.",
+        "sub_es": "El uso por obligación es mayor en el sector que ya proyecta recortes de personal.",
+        "sub_en": "Use out of obligation is higher in the sector that already expects staff cuts.",
         "eje_es": "Uso de la IA solo cuando se exige",
-        "eje_en": "AI used only when required"
+        "eje_en": "Using AI only when required"
       }
     ],
     "dicen": [
@@ -279,10 +287,10 @@ const INSIGHTS = [
     "resumen_en": "Deloitte, Accenture, BCG and McKinsey analyze AI from the perspective of boards, senior leaders and teams. Together, they show that AI raises teams' pace and workload, while boards focus on productivity.",
     "bajada_es": "Cuatro estudios recientes analizan la IA desde distintos roles de la organización y coinciden en que pocas empresas definieron cómo cambia el trabajo de las personas. Si bien los equipos reportan más ritmo, más revisión y más carga mental, el bienestar ocupa un lugar menor en la agenda de los directorios.",
     "bajada_en": "Four recent studies analyze AI from different roles in the organization and agree that few companies have defined how people's work changes. While teams report a faster pace, more review and a heavier mental load, well-being holds a minor place on board agendas.",
-    "tesis_es": "Si bien 82% de los empleados afirma que la IA aumentó su productividad, la mitad percibe más ritmo y más revisión del trabajo. Sin embargo, cuando el directorio trata la tecnología y las personas, **solo 9% de los directores y altos ejecutivos señala el bienestar como tema principal**, frente a 42% que señala la productividad.",
-    "tesis_en": "While 82% of employees say AI has increased their productivity, half perceive a faster pace and more review of their work. However, when the board addresses technology and people, **only 9% of directors and senior executives name well-being as the main topic**, compared with 42% who name productivity.",
-    "universo_es": "4 estudios independientes, cada uno con su propia muestra: uno a directorios (806 personas) y tres a líderes y empleados de todos los niveles (más de 19,000 en conjunto)",
-    "universo_en": "4 independent studies, each with its own sample: one of boards (806 people) and three of leaders and employees at all levels (more than 19,000 combined)",
+    "tesis_es": "Deloitte, Accenture, BCG y McKinsey analizan la IA desde el directorio, la alta dirección y los equipos. **Deloitte y Accenture coinciden en que menos de 2 de cada 10 organizaciones definieron cómo cambia el trabajo con la tecnología**, mientras que Accenture y McKinsey discrepan sobre el futuro del empleo.",
+    "tesis_en": "Deloitte, Accenture, BCG and McKinsey analyze AI from the perspective of boards, senior leadership and teams. **Deloitte and Accenture agree that fewer than 2 in 10 organizations have defined how work changes with technology**, while Accenture and McKinsey disagree about the future of jobs.",
+    "universo_es": "4 estudios independientes, cada uno con su propia muestra: uno a directores y altos ejecutivos (806) y tres a líderes y empleados de todos los niveles (más de 19,000 en conjunto)",
+    "universo_en": "4 independent studies, each with its own sample: one of directors and senior executives (806) and three of leaders and employees at all levels (more than 19,000 combined)",
     "portada": [
       {
         "id": "h-2026-11-accenture-pulso-cambio",
@@ -291,8 +299,8 @@ const INSIGHTS = [
         "postura_en": "AI is raising teams’ pace of work",
         "dato_es": "50%",
         "dato_en": "50%",
-        "texto_es": "de los empleados dice que aumentó el ritmo y la revisión del trabajo",
-        "texto_en": "of employees say it has increased the pace of work and the need for review"
+        "texto_es": "de los empleados dice que la IA elevó el ritmo esperado de su trabajo y la necesidad de revisar lo que produce",
+        "texto_en": "of employees say AI has raised the expected pace of their work and the need to review what it produces"
       },
       {
         "id": "h-2026-11-deloitte-directorios-ia",
@@ -301,8 +309,8 @@ const INSIGHTS = [
         "postura_en": "well-being barely reaches boards",
         "dato_es": "9%",
         "dato_en": "9%",
-        "texto_es": "de los directores lo señala como tema principal cuando el directorio trata la tecnología y las personas",
-        "texto_en": "of directors name it the main topic when the board discusses technology and people"
+        "texto_es": "de los directores y altos ejecutivos señala el bienestar de los empleados como el tema más frecuente cuando su directorio trata el efecto de la tecnología en las personas",
+        "texto_en": "of directors and senior executives name employee well-being as the most frequent topic when their board discusses technology's effect on people"
       }
     ],
     "portada_conector_es": "pero",
@@ -355,8 +363,8 @@ const INSIGHTS = [
     ],
     "coinciden": [
       {
-        "titulo_es": "Pocas organizaciones definieron qué cambia en el trabajo",
-        "titulo_en": "Few organizations have defined what changes in work",
+        "titulo_es": "Menos de 2 de cada 10 organizaciones definieron cómo cambia el trabajo con la tecnología",
+        "titulo_en": "Fewer than 2 in 10 organizations have defined how work changes with technology",
         "lados": [
           {
             "id": "h-2026-11-deloitte-directorios-ia",
@@ -365,42 +373,42 @@ const INSIGHTS = [
             "etiqueta_en": "Boards",
             "dato_es": "16%",
             "dato_en": "16%",
-            "texto_es": "de los miembros de directorios y altos ejecutivos dice que su organización tiene una estrategia establecida sobre el impacto de la tecnología en su fuerza laboral",
-            "texto_en": "of board members and senior executives say their organization has an established strategy for technology's impact on its workforce",
+            "texto_es": "de los directores y altos ejecutivos dice que su organización tiene una estrategia definida sobre el efecto de la tecnología en sus empleados",
+            "texto_en": "of directors and senior executives say their organization has a defined strategy on technology's effect on its employees",
             "v": 16
           },
           {
             "id": "h-2026-11-accenture-pulso-cambio",
             "industria": null,
             "etiqueta_es": "Alta dirección",
-            "etiqueta_en": "C-suite",
+            "etiqueta_en": "Senior leadership",
             "dato_es": "15%",
             "dato_en": "15%",
             "texto_es": "de los líderes de alta dirección rediseña sus procesos de punta a punta",
-            "texto_en": "of C-suite leaders are redesigning their processes end to end",
+            "texto_en": "of senior leaders are redesigning their processes end to end",
             "v": 15
           }
         ],
-        "lectura_es": "Desde el directorio, Deloitte encuentra que la estrategia sobre el efecto de la tecnología en las personas existe en una minoría de organizaciones; otro 51% todavía la está desarrollando. Desde la alta dirección, Accenture encuentra una proporción casi idéntica de líderes que rediseña sus procesos de punta a punta.\n\nLeídos juntos, los dos estudios describen el mismo punto de partida: la IA ya está en marcha, pero en más de 8 de cada 10 organizaciones todavía no se decidió cómo cambia el trabajo ni qué se espera de las personas.",
-        "lectura_en": "From the board, Deloitte finds that a strategy for technology's effect on people exists in a minority of organizations; another 51% are still developing one. From the C-suite, Accenture finds an almost identical share of leaders redesigning their processes end to end.\n\nRead together, the two studies describe the same starting point: AI is already under way, but in more than 8 in 10 organizations it has not yet been decided how work changes or what is expected of people.",
-        "nota_es": "Deloitte mide la proporción de organizaciones con una estrategia establecida, según sus directores y altos ejecutivos; Accenture, la proporción de líderes de alta dirección que rediseña procesos. Son medidas distintas de un mismo avance pendiente, no la misma cifra.",
-        "nota_en": "Deloitte measures the share of organizations with an established strategy, according to their directors and senior executives; Accenture, the share of C-suite leaders redesigning processes. They are different measures of the same pending step, not the same figure.",
-        "tarjeta_es": "Pocas organizaciones definieron qué cambia en el trabajo",
-        "tarjeta_en": "Few organizations have defined what changes in work",
-        "resumen_es": "Desde el directorio y desde la alta dirección, menos de 2 de cada 10 pasó de la tecnología a la definición del trabajo.",
-        "resumen_en": "From the board and from the C-suite, fewer than 2 in 10 have moved from technology to defining work.",
-        "eje_es": "Organizaciones o líderes que ya definieron cómo cambia el trabajo",
-        "eje_en": "Organizations or leaders that have already defined how work changes",
-        "sub_es": "Menos de 2 de cada 10 pasó de la tecnología a la definición del trabajo",
-        "sub_en": "Fewer than 2 in 10 have moved from technology to defining work"
+        "lectura_es": "En el estudio de Deloitte, solo 16% de los directores y altos ejecutivos dice que su organización tiene una estrategia definida sobre el efecto de la tecnología en sus empleados; otro 51% todavía la está desarrollando. En el de Accenture, 15% de los líderes de alta dirección rediseña sus procesos de punta a punta.\n\nDesde dos niveles distintos, los estudios llegan a una proporción casi idéntica: en más de 8 de cada 10 casos, todavía no se decidió cómo cambia el trabajo. Mientras tanto, el cambio ya ocurre en los equipos: según Accenture, la mitad de los empleados trabaja a un ritmo mayor y revisa más lo que produce la IA, y según BCG, 41% de quienes la usan con frecuencia reporta una mayor carga mental.",
+        "lectura_en": "In Deloitte's study, only 16% of directors and senior executives say their organization has a defined strategy on technology's effect on its employees; another 51% are still developing one. In Accenture's, 15% of senior leaders are redesigning their processes end to end.\n\nFrom two different levels, the studies arrive at an almost identical share: in more than 8 in 10 cases, it has not yet been decided how work changes. Meanwhile, the change is already happening in teams: according to Accenture, half of employees work at a faster pace and review more of what AI produces, and according to BCG, 41% of frequent users report a heavier mental load.",
+        "nota_es": "Deloitte mide la proporción de organizaciones con una estrategia definida, según sus directores y altos ejecutivos; Accenture, la proporción de líderes de alta dirección que rediseña procesos. Son medidas distintas de un mismo avance pendiente, no la misma cifra.",
+        "nota_en": "Deloitte measures the share of organizations with a defined strategy, according to their directors and senior executives; Accenture, the share of senior leaders redesigning processes. They are different measures of the same pending progress, not the same figure.",
+        "tarjeta_es": "Menos de 2 de cada 10 organizaciones definieron cómo cambia el trabajo con la tecnología",
+        "tarjeta_en": "Fewer than 2 in 10 organizations have defined how work changes with technology",
+        "resumen_es": "Los directores y los líderes de alta dirección dan cifras casi idénticas: 16% y 15%.",
+        "resumen_en": "Directors and senior leaders give almost identical figures: 16% and 15%.",
+        "eje_es": "Avance en la definición de cómo cambia el trabajo",
+        "eje_en": "Progress in defining how work changes",
+        "sub_es": "Desde el directorio y desde la alta dirección, el rediseño del trabajo sigue pendiente.",
+        "sub_en": "From the board and from senior leadership, the redesign of work is still pending."
       }
     ],
     "difieren_intro_es": "Donde los estudios llegan a conclusiones distintas sobre una misma pregunta.",
     "difieren_intro_en": "Where the studies reach different conclusions on the same question.",
     "difieren": [
       {
-        "titulo_es": "Los empleados se sienten más seguros, mientras que crece la expectativa de recortes",
-        "titulo_en": "Employees feel more secure, while expectations of cuts are rising",
+        "titulo_es": "Los empleados se sienten más seguros en su puesto, pero más personas esperan recortes en su organización",
+        "titulo_en": "Employees feel more secure in their jobs, but more people expect cuts in their organization",
         "lados": [
           {
             "id": "h-2026-11-accenture-pulso-cambio",
@@ -420,21 +428,21 @@ const INSIGHTS = [
             "etiqueta_en": "People at all levels",
             "dato_es": "39%",
             "dato_en": "39%",
-            "texto_es": "de los encuestados espera que la IA reduzca la plantilla total de su organización el próximo año, frente a 32% en la edición anterior",
-            "texto_en": "of respondents expect AI to reduce their organization's total headcount next year, up from 32% in the previous edition",
+            "texto_es": "de las personas encuestadas espera que la IA reduzca el número de empleados de su organización el próximo año, frente a 32% en la edición anterior",
+            "texto_en": "of respondents expect AI to reduce their organization's number of employees next year, up from 32% in the previous edition",
             "v": 39
           }
         ],
-        "lectura_es": "Accenture registra una mejora clara en la seguridad laboral percibida: dos de cada tres empleados se sienten seguros en su puesto, 18 puntos más que en enero. McKinsey encuentra la tendencia contraria en las expectativas: la proporción que espera una reducción de plantilla por la IA sube de 32% a 39%.\n\nSi bien los empleados perciben hoy más estabilidad, la expectativa de recortes crece. Los dos estudios describen el mismo tema, el empleo frente a la IA, y llegan a lecturas opuestas.",
-        "lectura_en": "Accenture records a clear improvement in perceived job security: two in three employees feel secure in their jobs, 18 points more than in January. McKinsey finds the opposite trend in expectations: the share expecting AI-driven headcount reduction rises from 32% to 39%.\n\nWhile employees perceive more stability today, expectations of cuts are growing. Both studies address the same topic, jobs in the face of AI, and reach opposite readings.",
+        "lectura_es": "En el estudio de Accenture, 66% de los empleados se siente seguro en su puesto, 18 puntos más que en la medición de enero. En el de McKinsey, la proporción de personas que espera que la IA reduzca el número de empleados de su organización el próximo año sube de 32% a 39%.\n\nSi bien los empleados se sienten hoy más seguros, la expectativa de recortes crece en el mismo período. Una cifra mide el presente y la otra, el próximo año, por lo que ambas pueden ser ciertas a la vez. Sin embargo, si los recortes previstos se concretan, esa seguridad puede no sostenerse.",
+        "lectura_en": "In Accenture's study, 66% of employees feel secure in their jobs, 18 points more than in the January survey. In McKinsey's, the share of people who expect AI to reduce their organization's number of employees next year rises from 32% to 39%.\n\nWhile employees feel more secure today, expectations of cuts are growing over the same period. One figure measures the present and the other next year, so both can be true at once. However, if the expected cuts materialize, that security may not last.",
         "nota_es": "Accenture pregunta a empleados por su seguridad en el puesto hoy; McKinsey pregunta a personas de todos los niveles qué esperan para su organización el próximo año. Ambas miden la percepción sobre el empleo frente a la IA, una en el presente y otra como expectativa.",
         "nota_en": "Accenture asks employees about their job security today; McKinsey asks people at all levels what they expect for their organization next year. Both measure perceptions of jobs in the face of AI, one in the present and the other as an expectation.",
-        "tarjeta_es": "Los empleados se sienten más seguros, mientras que crece la expectativa de recortes",
-        "tarjeta_en": "Employees feel more secure, while expectations of cuts are rising",
-        "resumen_es": "Si bien 66% de los empleados se siente seguro en su puesto, 39% de los encuestados por McKinsey espera que la IA reduzca la plantilla el próximo año.",
-        "resumen_en": "While 66% of employees feel secure in their jobs, 39% of McKinsey respondents expect AI to reduce headcount next year.",
-        "sub_es": "Las señales sobre el empleo van en sentidos opuestos.",
-        "sub_en": "Signals about jobs point in opposite directions.",
+        "tarjeta_es": "Los empleados se sienten más seguros en su puesto, pero más personas esperan recortes en su organización",
+        "tarjeta_en": "Employees feel more secure in their jobs, but more people expect cuts in their organization",
+        "resumen_es": "Accenture registra 18 puntos más de seguridad laboral que en enero, mientras que McKinsey registra 7 puntos más de expectativa de recortes.",
+        "resumen_en": "Accenture records 18 more points of job security than in January, while McKinsey records 7 more points of expected cuts.",
+        "sub_es": "La tranquilidad que hoy sienten los empleados puede no resistir los recortes que ya se anticipan.",
+        "sub_en": "The reassurance employees feel today may not withstand the cuts already expected.",
         "eje_es": "Percepción sobre el empleo frente a la IA",
         "eje_en": "Perceptions of jobs in the face of AI"
       }
@@ -487,7 +495,7 @@ const INSIGHTS = [
       "¿Qué información recibe el directorio sobre la experiencia de los equipos que ya usan IA, más allá de la productividad?",
       "¿Qué decisiones se tomaron sobre cómo usar el tiempo que la IA libera en cada equipo?",
       "¿Qué saben los mandos medios sobre cómo cambia su rol y el de sus equipos?",
-      "¿Cómo se mide la carga de trabajo y el bienestar de quienes usan la IA todos los días?"
+      "¿Cómo se miden la carga de trabajo y el bienestar de quienes usan la IA todos los días?"
     ],
     "preguntas_en": [
       "What information does the board receive about the experience of teams already using AI, beyond productivity?",
@@ -500,8 +508,8 @@ const INSIGHTS = [
     "patron_titulo_en": "Five steps, four studies",
     "patron_intro_es": "Pocas empresas definieron cómo cambia el trabajo con la IA; el ritmo sube y la carga se siente más en los equipos que en la alta dirección. Cada paso muestra su dato.",
     "patron_intro_en": "Few companies have defined how work changes with AI; the pace rises and the load is felt more by teams than by senior leaders. Each step shows its data point.",
-    "alcance_corto_es": "Un estudio mira desde el directorio (Deloitte, 806 directores y altos ejecutivos) y tres suman la voz de los equipos: Accenture, 3,000 líderes y 3,000 empleados; BCG, 11,749 personas de todos los niveles; McKinsey, 1,719 personas de todos los niveles.",
-    "alcance_corto_en": "One study looks from the board (Deloitte, 806 directors and senior executives) and three add the voice of teams: Accenture, 3,000 leaders and 3,000 employees; BCG, 11,749 people at all levels; McKinsey, 1,719 people at all levels.",
+    "alcance_corto_es": "Un estudio encuesta a directores y altos ejecutivos (Deloitte, 806) y tres incluyen a empleados: Accenture, 3,000 líderes y 3,000 empleados; BCG, 11,749 personas de todos los niveles; McKinsey, 1,719 personas de todos los niveles.",
+    "alcance_corto_en": "One study surveys directors and senior executives (Deloitte, 806) and three include employees: Accenture, 3,000 leaders and 3,000 employees; BCG, 11,749 people at all levels; McKinsey, 1,719 people at all levels.",
     "muestras": {
       "Deloitte": {
         "es": "806 directores y altos ejecutivos",
@@ -544,8 +552,8 @@ const INSIGHTS = [
     "resumen_en": "Edelman, Gallup, PwC, Great Place to Work and Korn Ferry measure employees' trust in their leaders. Together, they show a gap between what CEOs believe they convey and what employees perceive. However, trust holds where leaders act in line with what they say.",
     "bajada_es": "Cinco estudios recientes miden la relación entre los empleados y sus líderes. Coinciden en que cerca de la mitad confía en lo que comunican sus líderes, mientras que las expectativas sobre el trabajo son cada vez menos claras. Sin embargo, las empresas donde los líderes actúan de acuerdo con lo que dicen conservan la confianza y el compromiso de sus equipos.",
     "bajada_en": "Five recent studies measure the relationship between employees and their leaders. They agree that about half trust what their leaders communicate, while expectations about work are becoming less clear. However, companies where leaders act in line with what they say keep the trust and commitment of their teams.",
-    "tesis_es": "Si bien 85% de los CEO de EE.UU. afirma que su organización cuida a sus colaboradores, **solo 37% de los empleados del mismo país lo siente así**. Predomina una confianza parcial: en dos estudios distintos, entre 49% y 52% de los empleados cree en la palabra de sus líderes.",
-    "tesis_en": "While 85% of U.S. CEOs say their organization cares for its employees, **only 37% of employees in the same country feel that way**. Trust is partial: in two different studies, between 49% and 52% of employees believe their leaders' word.",
+    "tesis_es": "Cinco estudios (Edelman, Gallup, PwC, Great Place to Work y Korn Ferry) miden la relación entre los empleados y sus líderes, y dos de ellos coinciden en que **la credibilidad de los líderes no está ganada**. En las empresas típicas de Latinoamérica, solo la mitad de los empleados ve coherencia entre lo que dicen y hacen sus líderes, mientras que, entre quienes vivieron mal un cambio, la confianza en el CEO es de 49%.",
+    "tesis_en": "Five studies (Edelman, Gallup, PwC, Great Place to Work and Korn Ferry) measure the relationship between employees and their leaders, and two of them agree that **leaders' credibility is not a given**. In typical companies in Latin America, only half of employees see consistency between what their leaders say and do, while among those who experienced a change badly, trust in the CEO is 49%.",
     "universo_es": "5 estudios independientes, cada uno con su propia muestra: de 128 empleados (PwC) a más de 2.4 millones (Great Place to Work)",
     "universo_en": "5 independent studies, each with its own sample: from 128 employees (PwC) to more than 2.4 million (Great Place to Work)",
     "portada": [
@@ -556,8 +564,8 @@ const INSIGHTS = [
         "postura_en": "CEOs believe their company cares for its people",
         "dato_es": "85%",
         "dato_en": "85%",
-        "texto_es": "de los CEO de EE.UU. lo afirma",
-        "texto_en": "of U.S. CEOs say so"
+        "texto_es": "de los CEO de EE.UU. afirma que su empresa se preocupa por sus colaboradores",
+        "texto_en": "of U.S. CEOs say their company cares about its employees"
       },
       {
         "id": "h-2026-11-gallup-compromiso-eeuu",
@@ -566,8 +574,8 @@ const INSIGHTS = [
         "postura_en": "most employees do not feel that way",
         "dato_es": "37%",
         "dato_en": "37%",
-        "texto_es": "de los empleados de EE.UU. siente que alguien en el trabajo se preocupa por él",
-        "texto_en": "of U.S. employees feel someone at work cares about them"
+        "texto_es": "de los empleados de EE.UU. siente que su jefe o alguien en el trabajo se preocupa por él como persona",
+        "texto_en": "of U.S. employees feel that their manager or someone at work cares about them as a person"
       }
     ],
     "portada_conector_es": "si bien",
@@ -620,8 +628,8 @@ const INSIGHTS = [
     ],
     "coinciden": [
       {
-        "titulo_es": "Cerca de la mitad de los empleados confía en la palabra de sus líderes",
-        "titulo_en": "About half of employees trust their leaders' word",
+        "titulo_es": "Solo la mitad de los empleados cree en la palabra de sus líderes",
+        "titulo_en": "Only half of employees believe their leaders' word",
         "lados": [
           {
             "id": "h-2026-10-edelman-confianza",
@@ -630,8 +638,8 @@ const INSIGHTS = [
             "etiqueta_en": "After a poorly experienced change",
             "dato_es": "49%",
             "dato_en": "49%",
-            "texto_es": "de los colaboradores confía en su CEO después de una transformación negativa",
-            "texto_en": "of employees trust their CEO after a negative transformation",
+            "texto_es": "de los colaboradores que vivieron una transformación de forma negativa confía en su CEO, frente a 82% entre quienes la vivieron de forma positiva",
+            "texto_en": "of employees who experienced a transformation negatively trust their CEO, compared with 82% among those who experienced it positively",
             "v": 49
           },
           {
@@ -641,109 +649,28 @@ const INSIGHTS = [
             "etiqueta_en": "Typical companies in Latin America",
             "dato_es": "52%",
             "dato_en": "52%",
-            "texto_es": "de los empleados afirma que las acciones de sus líderes coinciden con sus palabras",
-            "texto_en": "of employees say their leaders' actions match their words",
+            "texto_es": "de los empleados de empresas típicas de Latinoamérica afirma que las acciones de sus líderes coinciden con sus palabras",
+            "texto_en": "of employees at typical companies in Latin America say their leaders' actions match their words",
             "v": 52
           }
         ],
-        "lectura_es": "Edelman muestra que, después de una transformación vivida de forma negativa, menos de la mitad de los colaboradores confía en su CEO. Great Place to Work encuentra un nivel similar en las empresas típicas de Latinoamérica, donde 52% de los empleados ve coherencia entre lo que dicen y lo que hacen sus líderes.\n\nLeídos juntos, los dos estudios muestran que la credibilidad de los líderes no está asegurada: cerca de la mitad de los empleados no da por cierta su palabra, y cada cambio mal ejecutado la reduce.",
-        "lectura_en": "Edelman shows that, after a transformation experienced negatively, fewer than half of employees trust their CEO. Great Place to Work finds a similar level at typical companies in Latin America, where 52% of employees see consistency between what their leaders say and what they do.\n\nRead together, the two studies show that leaders' credibility is not guaranteed: about half of employees do not take their word for granted, and every poorly executed change reduces it.",
-        "nota_es": "Edelman mide la confianza en el CEO de colaboradores de 10 países que vivieron una transformación negativa; Great Place to Work, la coherencia percibida en empresas típicas de Latinoamérica, con datos de un estudio de marzo de 2024. Son medidas distintas de la credibilidad del liderazgo, no la misma cifra.",
-        "nota_en": "Edelman measures trust in the CEO among employees in 10 countries who went through a negative transformation; Great Place to Work, perceived consistency at typical companies in Latin America, using data from a March 2024 study. They are different measures of leaders' credibility, not the same figure.",
-        "tarjeta_es": "Cerca de la mitad de los empleados confía en la palabra de sus líderes",
-        "tarjeta_en": "About half of employees trust their leaders' word",
-        "resumen_es": "Predomina una confianza parcial: cerca de la mitad de los empleados cree en lo que dicen sus líderes, tanto tras un cambio mal vivido como en una empresa típica.",
-        "resumen_en": "Trust is partial: about half of employees believe what their leaders say, both after a poorly experienced change and in a typical company.",
+        "lectura_es": "En el estudio de Great Place to Work, 52% de los empleados de empresas típicas de Latinoamérica afirma que las acciones de sus líderes coinciden con lo que dicen. En el de Edelman, la confianza en el CEO es de 49% entre los colaboradores que vivieron una transformación de forma negativa, frente a 82% entre quienes la vivieron de forma positiva.\n\nPor caminos distintos, los dos estudios muestran que la credibilidad de los líderes no está ganada: Great Place to Work la sitúa en la mitad de los empleados, mientras que Edelman muestra que baja cuando un cambio se vive mal. Para una empresa en transformación, cada cambio pone en juego esa credibilidad.",
+        "lectura_en": "In Great Place to Work's study, 52% of employees at typical companies in Latin America say their leaders' actions match what they say. In Edelman's, trust in the CEO is 49% among employees who experienced a transformation negatively, compared with 82% among those who experienced it positively.\n\nBy different paths, the two studies show that leaders' credibility is not a given: Great Place to Work puts it at half of employees, while Edelman shows that it falls when a change goes badly. For a company in transformation, every change puts that credibility at stake.",
+        "nota_es": "Edelman mide cuánto confían en su CEO los colaboradores de 10 países que vivieron una transformación de forma negativa; Great Place to Work, la coherencia que perciben los empleados de empresas típicas de Latinoamérica, con datos de marzo de 2024. Son medidas distintas de la credibilidad de los líderes, no la misma cifra.",
+        "nota_en": "Edelman measures how much employees in 10 countries who experienced a transformation negatively trust their CEO; Great Place to Work, the consistency perceived by employees at typical companies in Latin America, with data from March 2024. They are different measures of leaders' credibility, not the same figure.",
+        "tarjeta_es": "Solo la mitad de los empleados cree en la palabra de sus líderes",
+        "tarjeta_en": "Only half of employees believe their leaders' word",
+        "resumen_es": "Entre quienes vivieron mal una transformación, la confianza en el CEO es de 49%, frente a 82% entre quienes la vivieron bien.",
+        "resumen_en": "Among those who experienced a transformation badly, trust in the CEO is 49%, compared with 82% among those who experienced it well.",
         "eje_es": "Empleados que confían en la palabra de sus líderes",
         "eje_en": "Employees who trust their leaders' word",
-        "sub_es": "La credibilidad de los líderes no está asegurada",
-        "sub_en": "Leaders' credibility is not guaranteed"
+        "sub_es": "La forma en que se vive cada cambio define cuánto se cree en los líderes.",
+        "sub_en": "How each change is experienced shapes how much leaders are believed."
       }
     ],
     "difieren_intro_es": "Donde los estudios llegan a conclusiones distintas sobre una misma pregunta.",
     "difieren_intro_en": "Where the studies reach different conclusions on the same question.",
-    "difieren": [
-      {
-        "titulo_es": "La mayoría confía en su empleador, pero pocos confían plenamente en lo que informa su CEO",
-        "titulo_en": "Most trust their employer, but few fully trust what their CEO reports",
-        "lados": [
-          {
-            "id": "h-2026-10-edelman-confianza",
-            "industria": null,
-            "etiqueta_es": "Colaboradores de 7 mercados",
-            "etiqueta_en": "Employees in 7 markets",
-            "dato_es": "74%",
-            "dato_en": "74%",
-            "texto_es": "de los colaboradores confía en su empleador, 5 puntos menos que en agosto de 2024",
-            "texto_en": "of employees trust their employer, 5 points less than in August 2024",
-            "v": 74
-          },
-          {
-            "id": "h-2026-11-pwc-confianza-ceo",
-            "industria": null,
-            "etiqueta_es": "Empleados de EE.UU.",
-            "etiqueta_en": "U.S. employees",
-            "dato_es": "39%",
-            "dato_en": "39%",
-            "texto_es": "de los empleados confía por completo o casi por completo en lo que su CEO informa sobre los resultados",
-            "texto_en": "of employees fully or almost fully trust what their CEO reports about results",
-            "v": 39
-          }
-        ],
-        "lectura_es": "Edelman encuentra que la confianza en el empleador todavía es mayoritaria, aunque bajó 5 puntos desde 2024. PwC, al preguntar por la información que el CEO comunica sobre finanzas, perspectivas y desempeño, encuentra que menos de cuatro de cada diez empleados confía plenamente en ella.\n\nLeídos juntos, los estudios muestran que la confianza en la organización y la credibilidad de lo que comunica el CEO no van de la mano: la primera se sostiene, mientras que la segunda queda en duda para la mayoría.",
-        "lectura_en": "Edelman finds that trust in the employer is still held by a majority, although it fell 5 points since 2024. PwC, asking about the information the CEO communicates on finances, outlook and performance, finds that fewer than four in ten employees fully trust it.\n\nRead together, the studies show that trust in the organization and the credibility of what the CEO communicates do not go hand in hand: the former holds, while the latter remains in doubt for most.",
-        "nota_es": "Edelman mide la confianza general en el empleador (promedio de 7 mercados); PwC, la confianza plena en lo que el CEO informa sobre resultados, entre empleados de EE.UU. Ambas preguntan a empleados por su confianza, en dos niveles distintos.",
-        "nota_en": "Edelman measures general trust in the employer (average of 7 markets); PwC, full trust in what the CEO reports about results, among U.S. employees. Both ask employees about trust, at two different levels.",
-        "tarjeta_es": "La mayoría confía en su empleador, pero pocos confían plenamente en lo que informa su CEO",
-        "tarjeta_en": "Most trust their employer, but few fully trust what their CEO reports",
-        "resumen_es": "Si bien 74% de los colaboradores confía en su empleador, solo 39% de los empleados confía plenamente en lo que su CEO informa sobre los resultados.",
-        "resumen_en": "While 74% of employees trust their employer, only 39% fully trust what their CEO reports about results.",
-        "sub_es": "La confianza en la organización no se traslada a la palabra del CEO.",
-        "sub_en": "Trust in the organization does not carry over to the CEO's word.",
-        "eje_es": "Confianza de los empleados",
-        "eje_en": "Employee trust"
-      },
-      {
-        "titulo_es": "La mayoría se siente motivada, mientras que pocos están comprometidos",
-        "titulo_en": "Most feel motivated, while few are engaged",
-        "lados": [
-          {
-            "id": "h-2026-11-kornferry-workforce",
-            "industria": null,
-            "etiqueta_es": "Profesionales de 11 mercados",
-            "etiqueta_en": "Professionals in 11 markets",
-            "dato_es": "61%",
-            "dato_en": "61%",
-            "texto_es": "de los profesionales se siente motivado, 9 puntos menos que hace un año",
-            "texto_en": "of professionals feel motivated, 9 points less than a year ago",
-            "v": 61
-          },
-          {
-            "id": "h-2026-11-gallup-compromiso-eeuu",
-            "industria": null,
-            "etiqueta_es": "Empleados de EE.UU.",
-            "etiqueta_en": "U.S. employees",
-            "dato_es": "29%",
-            "dato_en": "29%",
-            "texto_es": "de los empleados está comprometido con su trabajo y con su organización, la cifra más baja desde 2011",
-            "texto_en": "of employees are engaged with their work and their organization, the lowest figure since 2011",
-            "v": 29
-          }
-        ],
-        "lectura_es": "Korn Ferry encuentra que seis de cada diez profesionales todavía se sienten motivados, aunque la cifra cayó 9 puntos en un año. Gallup, con una medida más exigente, encuentra que menos de un tercio de los empleados de EE.UU. está comprometido, es decir, involucrado con su trabajo y con su organización.\n\nSi bien los dos datos parecen contradecirse, coinciden en la tendencia, que es a la baja. La distancia indica que la motivación declarada no garantiza el compromiso: las personas pueden mantener su energía y, al mismo tiempo, debilitar su vínculo con la organización.",
-        "lectura_en": "Korn Ferry finds that six in ten professionals still feel motivated, although the figure fell 9 points in a year. Gallup, with a more demanding measure, finds that fewer than a third of U.S. employees are engaged, that is, involved with their work and their organization.\n\nWhile the two figures seem to contradict each other, they agree on the trend, which is downward. The gap indicates that stated motivation does not guarantee engagement: people can keep their energy while weakening their bond with the organization.",
-        "nota_es": "Korn Ferry pregunta por la motivación a profesionales de 11 mercados; Gallup mide el compromiso (el involucramiento con el trabajo y con la organización) en empleados de EE.UU. Son medidas distintas sobre el mismo vínculo, por eso la comparación muestra una distancia, no una relación directa.",
-        "nota_en": "Korn Ferry asks professionals in 11 markets about motivation; Gallup measures engagement (involvement with work and the organization) among U.S. employees. They are different measures of the same bond, so the comparison shows a gap, not a direct relationship.",
-        "tarjeta_es": "La mayoría se siente motivada, mientras que pocos están comprometidos",
-        "tarjeta_en": "Most feel motivated, while few are engaged",
-        "resumen_es": "Si bien 61% de los profesionales se siente motivado, solo 29% de los empleados de EE.UU. está comprometido con su trabajo.",
-        "resumen_en": "While 61% of professionals feel motivated, only 29% of U.S. employees are engaged with their work.",
-        "sub_es": "Sentirse motivado no equivale a estar comprometido con la organización.",
-        "sub_en": "Feeling motivated is not the same as being engaged with the organization.",
-        "eje_es": "Motivación y compromiso de los empleados",
-        "eje_en": "Employee motivation and engagement"
-      }
-    ],
+    "difieren": [],
     "dicen": [
       {
         "id": "h-2026-10-edelman-confianza",
@@ -862,8 +789,8 @@ const INSIGHTS = [
     "resumen_en": "EY, KPMG, PwC, Gallup and Deloitte analyze AI's effect on work from the perspective of CEOs, leaders and workers. Together, they show that companies are redesigning jobs but investing little in preparing the people who fill them.",
     "bajada_es": "Cinco estudios recientes coinciden en que la IA cambia sobre todo el contenido de los puestos, más que el número de empleados. Cerca de la mitad de los CEO y líderes reconoce que la preparación de las personas va detrás de la tecnología, mientras que los trabajadores perciben menos apoyo para aprender y, en parte, más responsabilidades.",
     "bajada_en": "Five recent studies agree that AI mainly changes the content of jobs rather than the number of employees. About half of CEOs and leaders acknowledge that people's preparation lags behind the technology, while workers perceive less support for learning and, in part, more responsibilities.",
-    "tesis_es": "Si bien 86% de los CEO de EE.UU. ya rediseña roles por la IA, **cerca de la mitad de los CEO y líderes reconoce que la preparación de las personas va detrás**: así lo afirma 47% de los CEO encuestados por EY y la mitad de los líderes encuestados por Deloitte. A esto se suma que solo 15% de los CEO reinvierte las ganancias de productividad en sus equipos.",
-    "tesis_en": "While 86% of U.S. CEOs are already redesigning roles for AI, **about half of CEOs and leaders acknowledge that people's preparation is lagging**: 47% of the CEOs surveyed by EY and half of the leaders surveyed by Deloitte say so. In addition, only 15% of CEOs reinvest productivity gains in their teams.",
+    "tesis_es": "EY, KPMG y Deloitte encuestan a CEO y líderes, y PwC y Gallup, a trabajadores, sobre cómo la IA cambia el trabajo. **EY y Deloitte coinciden en que cerca de la mitad de los líderes reconoce que su empresa no prepara a las personas al ritmo de la IA**, mientras que KPMG y EY discrepan sobre cuánto invierten los CEO en formar a sus equipos.",
+    "tesis_en": "EY, KPMG and Deloitte survey CEOs and leaders, and PwC and Gallup survey workers, about how AI is changing work. **EY and Deloitte agree that about half of leaders acknowledge their company is not preparing people at the pace of AI**, while KPMG and EY disagree on how much CEOs invest in developing their teams.",
     "universo_es": "5 estudios independientes, cada uno con su propia muestra: tres a CEO y líderes (2,101 en conjunto) y dos a trabajadores (64,846 en conjunto)",
     "universo_en": "5 independent studies, each with its own sample: three of CEOs and leaders (2,101 combined) and two of workers (64,846 combined)",
     "portada": [
@@ -874,8 +801,8 @@ const INSIGHTS = [
         "postura_en": "Jobs are already being redesigned",
         "dato_es": "86%",
         "dato_en": "86%",
-        "texto_es": "de los CEO de EE.UU. rediseña roles por la IA",
-        "texto_en": "of U.S. CEOs are redesigning roles because of AI"
+        "texto_es": "de los CEO de grandes empresas de EE.UU. rediseña roles por la IA",
+        "texto_en": "of CEOs of large U.S. companies are redesigning roles because of AI"
       },
       {
         "id": "h-2026-10-ey-ceo",
@@ -884,8 +811,8 @@ const INSIGHTS = [
         "postura_en": "skills are not advancing at the same pace",
         "dato_es": "47%",
         "dato_en": "47%",
-        "texto_es": "de los CEO admite que su empresa no desarrolla habilidades al ritmo de la IA",
-        "texto_en": "of CEOs admit their company is not developing skills at the pace of AI"
+        "texto_es": "de los CEO de 21 países admite que su empresa no desarrolla habilidades al ritmo de la IA",
+        "texto_en": "of CEOs in 21 countries admit their company is not developing skills at the pace of AI"
       }
     ],
     "portada_conector_es": "pero",
@@ -900,7 +827,7 @@ const INSIGHTS = [
         "dato": "80%",
         "titulo_es": "La IA cambia el contenido del trabajo",
         "titulo_en": "AI changes the content of work",
-        "texto_es": "de los CEO considera que en tres años la IA impactará más en los roles, las habilidades y la forma de trabajar que en el tamaño de la plantilla.",
+        "texto_es": "de los CEO considera que en tres años la IA impactará más en los roles, las habilidades y la forma de trabajar que en el número de empleados.",
         "texto_en": "of CEOs believe that within three years AI will affect roles, skills and ways of working more than headcount."
       },
       {
@@ -938,8 +865,8 @@ const INSIGHTS = [
     ],
     "coinciden": [
       {
-        "titulo_es": "La mitad de los líderes reconoce que la preparación de las personas va detrás",
-        "titulo_en": "Half of leaders acknowledge that people's preparation is lagging",
+        "titulo_es": "Cerca de la mitad de los líderes reconoce que su empresa no prepara a las personas al ritmo de la IA",
+        "titulo_en": "About half of leaders acknowledge their company is not preparing people at the pace of AI",
         "lados": [
           {
             "id": "h-2026-10-ey-ceo",
@@ -959,31 +886,31 @@ const INSIGHTS = [
             "etiqueta_en": "U.S. leaders",
             "dato_es": "La mitad",
             "dato_en": "Half",
-            "texto_es": "de los líderes considera que su organización no invierte lo suficiente en la transformación de su fuerza laboral",
-            "texto_en": "of leaders say their organization is not investing enough in workforce transformation",
+            "texto_es": "de los líderes de empresas de EE.UU. que ya prueban agentes de IA considera que su organización no invierte lo suficiente en preparar a su fuerza laboral",
+            "texto_en": "of leaders at U.S. companies already testing AI agents say their organization is not investing enough in preparing its workforce",
             "v": 50
           }
         ],
-        "lectura_es": "EY encuentra que 47% de los CEO de grandes empresas reconoce que su organización no desarrolla habilidades al ritmo de la IA. Deloitte llega a una conclusión muy cercana entre líderes de EE.UU. que ya trabajan con agentes de IA: la mitad considera que su organización no invierte lo suficiente en la transformación de su fuerza laboral.\n\nLeídos juntos, los dos estudios muestran que la brecha la reconocen los propios CEO y líderes: la tecnología avanza más rápido que la preparación de las personas.",
-        "lectura_en": "EY finds that 47% of CEOs of large companies acknowledge that their organization is not developing skills at the pace of AI. Deloitte reaches a very similar conclusion among U.S. leaders already working with AI agents: half say their organization is not investing enough in workforce transformation.\n\nRead together, the two studies show that CEOs and leaders themselves recognize the gap: technology is moving faster than people's preparation.",
-        "nota_es": "EY encuesta a 1,200 CEO de 21 países; Deloitte, a 501 líderes de organizaciones de EE.UU. que al menos tienen pilotos con agentes de IA. Las preguntas son distintas, pero ambas miden si los CEO y líderes consideran suficiente su inversión en las personas.",
-        "nota_en": "EY surveys 1,200 CEOs in 21 countries; Deloitte, 501 leaders at U.S. organizations that are at least piloting AI agents. The questions differ, but both measure whether CEOs and leaders consider their investment in people sufficient.",
-        "tarjeta_es": "La mitad de los líderes reconoce que la preparación de las personas va detrás",
-        "tarjeta_en": "Half of leaders acknowledge that people's preparation is lagging",
-        "resumen_es": "En dos estudios distintos, cerca de la mitad de los CEO y líderes admite que las habilidades de su gente no siguen el ritmo de la IA.",
-        "resumen_en": "In two different studies, about half of CEOs and leaders admit that their people's skills are not keeping pace with AI.",
-        "eje_es": "Líderes que reconocen un rezago en la inversión en personas",
-        "eje_en": "Leaders who acknowledge a lag in investment in people",
-        "sub_es": "Cerca de la mitad de los CEO y líderes admite que la preparación de las personas va detrás de la tecnología",
-        "sub_en": "About half of CEOs and leaders admit that people's preparation lags behind the technology"
+        "lectura_es": "En el estudio de EY, 47% de los CEO de grandes empresas de 21 países reconoce que su organización no desarrolla habilidades al ritmo de la IA. En el de Deloitte, la mitad de los líderes de empresas de EE.UU. que ya prueban agentes de IA (sistemas que ejecutan tareas por sí solos) considera que su organización no invierte lo suficiente en preparar a su fuerza laboral. Del lado de los trabajadores, PwC registra que la valoración del acceso a recursos de aprendizaje bajó de 59% a 51% en un año.\n\nQue el rezago lo reconozcan quienes deciden dónde se invierte es significativo: no es un reclamo de los equipos, sino un pendiente que asumen los propios CEO y líderes. La pregunta deja de ser si existe el rezago y pasa a ser qué impide corregirlo.",
+        "lectura_en": "In EY's study, 47% of CEOs of large companies in 21 countries acknowledge that their organization is not developing skills at the pace of AI. In Deloitte's, half of the leaders at U.S. companies already testing AI agents (systems that carry out tasks on their own) say their organization is not investing enough in preparing its workforce. On the workers' side, PwC records that the rating of access to learning resources fell from 59% to 51% in one year.\n\nThat the lag is acknowledged by those who decide where to invest is significant: it is not a complaint from teams, but a pending task that CEOs and leaders themselves accept. The question is no longer whether the lag exists, but what prevents it from being corrected.",
+        "nota_es": "EY encuesta a 1,200 CEO de 21 países; Deloitte, a 501 líderes de empresas de EE.UU. que al menos prueban agentes de IA. Las preguntas no son idénticas (una habla de habilidades y la otra de inversión en la fuerza laboral), pero ambas miden si los líderes consideran suficiente lo que hacen para preparar a las personas.",
+        "nota_en": "EY surveys 1,200 CEOs in 21 countries; Deloitte, 501 leaders at U.S. companies that are at least testing AI agents. The questions are not identical (one is about skills and the other about investment in the workforce), but both measure whether leaders consider what they do to prepare people sufficient.",
+        "tarjeta_es": "Cerca de la mitad de los líderes reconoce que su empresa no prepara a las personas al ritmo de la IA",
+        "tarjeta_en": "About half of leaders acknowledge their company is not preparing people at the pace of AI",
+        "resumen_es": "Así lo afirma 47% de los CEO encuestados por EY y la mitad de los líderes encuestados por Deloitte.",
+        "resumen_en": "So say 47% of the CEOs surveyed by EY and half of the leaders surveyed by Deloitte.",
+        "eje_es": "Líderes que reconocen que su empresa no prepara a las personas al ritmo de la IA",
+        "eje_en": "Leaders who acknowledge their company is not preparing people at the pace of AI",
+        "sub_es": "Los trabajadores lo confirman: perciben menos apoyo para aprender que hace un año.",
+        "sub_en": "Workers confirm it: they perceive less support for learning than a year ago."
       }
     ],
     "difieren_intro_es": "Donde los estudios llegan a conclusiones distintas sobre una misma pregunta.",
     "difieren_intro_en": "Where the studies reach different conclusions on the same question.",
     "difieren": [
       {
-        "titulo_es": "Los CEO priorizan reentrenar, pero pocos reinvierten las ganancias en sus equipos",
-        "titulo_en": "CEOs prioritize reskilling, but few reinvest the gains in their teams",
+        "titulo_es": "Los CEO priorizan reentrenar a su talento, pero pocos reinvierten en sus equipos lo que ganan con la IA",
+        "titulo_en": "CEOs prioritize reskilling their talent, but few reinvest in their teams what they gain from AI",
         "lados": [
           {
             "id": "h-2026-10-kpmg-ceo-eeuu",
@@ -1008,58 +935,18 @@ const INSIGHTS = [
             "v": 15
           }
         ],
-        "lectura_es": "KPMG encuentra que la gran mayoría de los CEO de grandes empresas de EE.UU. se enfoca en retener y reentrenar a su talento de alto potencial. EY, al preguntar a CEO de 21 países por el destino de las ganancias de productividad de la IA, encuentra que muy pocos las reinvierten en el desarrollo de sus equipos.\n\nLos dos estudios preguntan al mismo público y llegan a lecturas opuestas: el desarrollo de las personas aparece como prioridad, pero no como destino de los recursos que genera la IA. Además, KPMG se refiere al talento de alto potencial, no al conjunto de los equipos.",
-        "lectura_en": "KPMG finds that the vast majority of CEOs of large U.S. companies focus on retaining and reskilling their high-potential talent. EY, asking CEOs in 21 countries where AI productivity gains go, finds that very few reinvest them in developing their teams.\n\nThe two studies ask the same audience and reach opposite readings: people development appears as a priority, but not as a destination for the resources AI generates. In addition, KPMG refers to high-potential talent, not to teams as a whole.",
-        "nota_es": "Ambos encuestan a CEO: KPMG, a 400 de grandes empresas de EE.UU.; EY, a 1,200 de 21 países. KPMG mide en qué se enfocan; EY, adónde van las ganancias de productividad de la IA.",
-        "nota_en": "Both survey CEOs: KPMG, 400 at large U.S. companies; EY, 1,200 in 21 countries. KPMG measures what they focus on; EY, where AI productivity gains go.",
-        "tarjeta_es": "Los CEO priorizan reentrenar, pero pocos reinvierten las ganancias en sus equipos",
-        "tarjeta_en": "CEOs prioritize reskilling, but few reinvest the gains in their teams",
-        "resumen_es": "Si bien 83% de los CEO de EE.UU. se enfoca en reentrenar a su talento, solo 15% de los CEO reinvierte las ganancias de la IA en sus equipos.",
-        "resumen_en": "While 83% of U.S. CEOs focus on reskilling their talent, only 15% of CEOs reinvest AI gains in their teams.",
-        "sub_es": "La prioridad declarada no se refleja en el destino de los recursos.",
-        "sub_en": "The stated priority is not reflected in where resources go.",
+        "lectura_es": "En el estudio de KPMG, 83% de los CEO de grandes empresas de EE.UU. afirma que se enfoca en retener y reentrenar a su talento de alto potencial. En el de EY, que encuesta a CEO de 21 países, solo 15% dice que las ganancias de productividad que deja la IA se reinvierten en desarrollar a sus equipos.\n\nLos dos estudios preguntan a CEO y obtienen respuestas que no encajan: la formación es prioridad como enfoque, pero rara vez como destino de los recursos. Para los equipos, la señal que cuenta es la segunda, ya que muestra adónde va el dinero.",
+        "lectura_en": "In KPMG's study, 83% of CEOs of large U.S. companies say they focus on retaining and reskilling their high-potential talent. In EY's, which surveys CEOs in 21 countries, only 15% say the productivity gains AI delivers are reinvested in developing their teams.\n\nThe two studies ask CEOs and get answers that do not fit together: training is a priority as a focus, but rarely as a destination for resources. For teams, the signal that counts is the second, since it shows where the money goes.",
+        "nota_es": "Ambos encuestan a CEO: KPMG, a 400 de grandes empresas de EE.UU.; EY, a 1,200 de 21 países. KPMG mide en qué se enfocan y se refiere solo al talento de alto potencial; EY mide adónde van las ganancias de productividad de la IA y se refiere a los equipos en general.",
+        "nota_en": "Both survey CEOs: KPMG, 400 at large U.S. companies; EY, 1,200 in 21 countries. KPMG measures what they focus on and refers only to high-potential talent; EY measures where AI productivity gains go and refers to teams in general.",
+        "tarjeta_es": "Los CEO priorizan reentrenar a su talento, pero pocos reinvierten en sus equipos lo que ganan con la IA",
+        "tarjeta_en": "CEOs prioritize reskilling their talent, but few reinvest in their teams what they gain from AI",
+        "resumen_es": "83% de los CEO de EE.UU. se enfoca en reentrenar a su talento clave (KPMG), pero solo 15% de los CEO de 21 países reinvierte en sus equipos las ganancias de la IA (EY).",
+        "resumen_en": "83% of U.S. CEOs focus on reskilling their key talent (KPMG), but only 15% of CEOs in 21 countries reinvest AI gains in their teams (EY).",
+        "sub_es": "La formación aparece como prioridad, pero no como destino de lo que la IA deja.",
+        "sub_en": "Training appears as a priority, but not as the destination of what AI delivers.",
         "eje_es": "El desarrollo de las personas según los CEO",
         "eje_en": "People development according to CEOs"
-      },
-      {
-        "titulo_es": "La IA cambiará más los roles que la plantilla, aunque la mitad de los CEO prevé recortes",
-        "titulo_en": "AI will change roles more than headcount, although half of CEOs plan cuts",
-        "lados": [
-          {
-            "id": "h-2026-10-ey-ceo",
-            "industria": null,
-            "etiqueta_es": "CEO de 21 países",
-            "etiqueta_en": "CEOs in 21 countries",
-            "dato_es": "80%",
-            "dato_en": "80%",
-            "texto_es": "de los CEO considera que en tres años la IA impactará más en los roles y las habilidades que en el tamaño de la plantilla",
-            "texto_en": "of CEOs believe that within three years AI will affect roles and skills more than headcount",
-            "v": 80
-          },
-          {
-            "id": "h-2026-10-kpmg-ceo-eeuu",
-            "industria": null,
-            "etiqueta_es": "CEO de EE.UU.",
-            "etiqueta_en": "U.S. CEOs",
-            "dato_es": "53%",
-            "dato_en": "53%",
-            "texto_es": "de los CEO de grandes empresas de EE.UU. planea reducir su plantilla en algunas áreas",
-            "texto_en": "of CEOs of large U.S. companies plan to reduce headcount in some areas",
-            "v": 53
-          }
-        ],
-        "lectura_es": "EY encuentra que la gran mayoría de los CEO espera que la IA transforme sobre todo el contenido del trabajo, más que el número de empleados. KPMG, en grandes empresas de EE.UU., muestra que más de la mitad de los CEO planea reducir su plantilla en algunas áreas.\n\nLas dos lecturas pueden convivir, ya que una empresa puede rediseñar roles y recortar en áreas puntuales a la vez. Sin embargo, ambos mensajes llegan a los mismos equipos: el de un cambio centrado en los roles y el de una reducción de personal.",
-        "lectura_en": "EY finds that the vast majority of CEOs expect AI to transform mainly the content of work rather than the number of employees. KPMG, in large U.S. companies, shows that more than half of CEOs plan to reduce headcount in some areas.\n\nThe two readings can coexist, since a company can redesign roles and cut in specific areas at the same time. However, both messages reach the same teams: one of change centered on roles and one of staff reductions.",
-        "nota_es": "Ambos encuestan a CEO: EY, a 1,200 de 21 países; KPMG, a 400 de grandes empresas de EE.UU. EY mide qué impacto esperan en tres años; KPMG, qué planean hacer con su plantilla.",
-        "nota_en": "Both survey CEOs: EY, 1,200 in 21 countries; KPMG, 400 at large U.S. companies. EY measures what impact they expect within three years; KPMG, what they plan to do with their headcount.",
-        "tarjeta_es": "La IA cambiará más los roles que la plantilla, aunque la mitad de los CEO prevé recortes",
-        "tarjeta_en": "AI will change roles more than headcount, although half of CEOs plan cuts",
-        "resumen_es": "Si bien 80% de los CEO cree que la IA cambiará más los roles que el tamaño de la plantilla, 53% de los CEO de EE.UU. planea reducir personal en algunas áreas.",
-        "resumen_en": "While 80% of CEOs believe AI will change roles more than headcount, 53% of U.S. CEOs plan to reduce staff in some areas.",
-        "sub_es": "Los CEO describen la IA como un cambio de roles, pero también planean reducciones.",
-        "sub_en": "CEOs describe AI as a change in roles, but also plan reductions.",
-        "eje_es": "Qué esperan los CEO del empleo",
-        "eje_en": "What CEOs expect for jobs"
       }
     ],
     "dicen": [

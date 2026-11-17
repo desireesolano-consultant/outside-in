@@ -2762,6 +2762,9 @@ ul:has(> .oi-insight-punto) { padding-left: 0; }
 /* Duelo con anillos al costado del titular (mismos colores que el panel de la portada) */
 .iv-duelo { position: relative; overflow: hidden; border-radius: 28px; padding: clamp(24px, 2.6vw, 34px); background: var(--c1); color: var(--tx, #fff); display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); gap: 18px; align-items: start; }
 .iv-duelo:empty { display: none; }
+.iv-duelo { grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important; column-gap: 28px; }
+.iv-duelo .iv-duelo-t { grid-column: 1 / -1; margin: 0 0 4px; font: 700 11.5px var(--oi-fuente-texto); letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+.iv-duelo .iv-lado p { font: 500 15px/1.45 var(--oi-fuente-texto); opacity: .95; }
 .iv-duelo::before { content: ""; position: absolute; right: -30%; top: -40%; width: 90%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--brillo) 0%, transparent 65%); pointer-events: none; }
 .iv-duelo > * { position: relative; }
 .iv-duelo .iv-lado { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
@@ -2784,7 +2787,7 @@ ul:has(> .oi-insight-punto) { padding-left: 0; }
 .iv-duelo.k3 { --c1: #FFE2D1; --tx: #111214; --anillo: #FF6B2C; --brillo: rgba(255, 255, 255, .7); }
 @media (max-width: 900px) {
   .iv-portada-grid { grid-template-columns: 1fr; }
-  .iv-duelo, .iv-duelo.abre { grid-template-columns: 1fr; gap: 14px; }
+  .iv-duelo, .iv-duelo.abre { grid-template-columns: 1fr !important; gap: 14px; }
   .iv-duelo .iv-lado { display: grid; grid-template-columns: 84px 1fr; column-gap: 14px; row-gap: 4px; align-items: center; }
   .iv-duelo .iv-anillo { width: 84px; height: 84px; grid-row: span 3; }
   .iv-duelo .iv-anillo b { font-size: 19px; }

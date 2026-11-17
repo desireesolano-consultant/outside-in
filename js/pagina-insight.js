@@ -172,9 +172,8 @@ function dibujarDuelo(ins) {
   if (!ins.portada || ins.portada.length !== 2) return;
   const n = parseInt(ins.numero, 10) || 0;
   box.className = `iv-duelo k${n % 4}`;
-  const con = (campo(ins, "portada_conector") || (idioma === "en" ? "and" : "y")).trim();
-  const abre = /^(si bien|aunque|while|although)$/i.test(con);
-  if (abre) box.classList.add("abre");
+  // Solo la evidencia del titular (cifra, qué mide y fuente): las afirmaciones ya están en el titular (pedido de Desiree, 17-nov-2026)
+  box.appendChild(crear("p", "iv-duelo-t", idioma === "en" ? "The data behind the headline" : "Los datos detrás del titular"));
   const NS = "http://www.w3.org/2000/svg", R = 50, C = 2 * Math.PI * R;
   ins.portada.forEach((d, k) => {
     const h = HALLAZGOS.find((x) => x.id === d.id);
@@ -192,13 +191,8 @@ function dibujarDuelo(ins) {
       sv.appendChild(ci);
     });
     an.append(sv, crear("b", null, dato));
-    const po = campo(d, "postura") || "";
-    const h4 = crear("h4");
-    if (k === 0 && abre) h4.append(crear("i", null, cap(con) + " "), document.createTextNode(po.charAt(0).toLowerCase() + po.slice(1) + ","));
-    else h4.textContent = k === 0 ? cap(po) : po;
-    lado.append(an, h4, crear("p", null, `${dato} ${campo(d, "texto") || ""}`), crear("small", null, h ? h.fuente.replace(" AI Institute", "") : ""));
+    lado.append(an, crear("p", null, `${dato} ${campo(d, "texto") || ""}`), crear("small", null, h ? h.fuente.replace(" AI Institute", "") : ""));
     box.appendChild(lado);
-    if (k === 0) box.appendChild(crear("i", "iv-con", abre ? "" : con));
   });
   requestAnimationFrame(() => requestAnimationFrame(() => box.querySelectorAll(".valor").forEach((c) => { c.style.strokeDashoffset = c.dataset.o; })));
 }
