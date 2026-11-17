@@ -520,12 +520,13 @@ img{max-width:100%;display:block}
 .panel-c .info-c .tema-c{font:600 13px var(--x);opacity:.85}
 .panel-c .info-c h3{margin:10px 0 0;font:800 clamp(24px,2.3vw,34px)/1.1 var(--t);letter-spacing:-.03em;text-wrap:balance}
 .panel-c .info-c h3 span{opacity:.75}
-.panel-c .cif-c{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:stretch;margin-top:22px}
-.panel-c .cif-c div{background:var(--blanco);color:var(--negro);border-radius:18px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
-.panel-c .cif-c b{font:900 clamp(30px,2.8vw,42px)/1 var(--t);letter-spacing:-.04em;color:var(--azul)}
-.panel-c .cif-c p{margin:0;font:600 13.5px/1.35 var(--x);color:var(--negro)}
-.panel-c .cif-c small{margin-top:auto;font:700 11px var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
-.panel-c .cif-c i{align-self:center;width:40px;height:40px;border-radius:50%;background:var(--naranja);color:var(--negro);display:grid;place-items:center;font:800 13px var(--t);font-style:normal}
+.panel-c .cif-rel{display:block;margin-top:24px;font:700 11px var(--x);letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.panel-c .cif-c{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:22px;align-items:start;margin-top:10px;padding-top:16px;border-top:1px solid currentColor;border-top-color:color-mix(in srgb,currentColor 35%,transparent)}
+.panel-c .cif-c div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.panel-c .cif-c b{font:900 clamp(36px,3.4vw,54px)/1 var(--t);letter-spacing:-.045em;color:inherit}
+.panel-c .cif-c p{margin:0;font:600 14px/1.4 var(--x);color:inherit;opacity:.92}
+.panel-c .cif-c small{font:700 11px var(--x);letter-spacing:.08em;text-transform:uppercase;color:inherit;opacity:.65}
+.panel-c .cif-c i{align-self:center;width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;background:transparent;color:inherit;display:grid;place-items:center;font:800 14px var(--t);font-style:normal}
 .panel-c .abajo-c{display:flex;justify-content:flex-end;align-items:center;gap:12px}
 .panel-c .leer-c{font:700 15px var(--x);opacity:0;transition:opacity .3s}
 .panel-c.abierto .leer-c{opacity:1}
@@ -535,8 +536,6 @@ img{max-width:100%;display:block}
 .panel-c.k1,.panel-c.k3{color:var(--negro)}
 .panel-c.k1 .fondo-c::after,.panel-c.k3 .fondo-c::after{background:linear-gradient(180deg,rgba(255,255,255,.45) 0%,rgba(255,255,255,.7) 100%)}
 .panel-c.k1 .fondo-c img,.panel-c.k3 .fondo-c img{opacity:.14}
-.panel-c .cif-c i.igual{background:var(--lila);font-size:20px}
-.panel-c.k0 .cif-c i{background:var(--negro);color:var(--blanco)}
 .panel-c.k0:hover .flecha-c{background:var(--negro);color:var(--blanco)}
 .panel-c.k1 .flecha-c,.panel-c.k3 .flecha-c{background:var(--negro);color:var(--blanco)}
 .panel-c.k1 .info-c h3 span,.panel-c.k3 .info-c h3 span{color:var(--azul);opacity:1}
@@ -546,7 +545,7 @@ img{max-width:100%;display:block}
  .panel-c.abierto{flex:none;height:auto;min-height:520px}
  .panel-c.abierto .dentro-c{position:relative}
  .panel-c .vert-c{writing-mode:horizontal-tb;transform:none;left:100px;top:30px;bottom:auto;right:20px;max-height:none;font-size:15px}
- .panel-c .cif-c{grid-template-columns:1fr}.panel-c .cif-c i{justify-self:center}
+ .panel-c .cif-c{grid-template-columns:1fr;gap:14px}.panel-c .cif-c i{justify-self:start;width:36px;height:36px}
 }
 @media (prefers-reduced-motion:reduce){.panel-c,.panel-c .info-c,.panel-c .fondo-c img{transition:none}}
 .gigante-card .arriba span+span::before{content:'·';margin-right:6px;color:var(--borde)}
@@ -767,17 +766,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611162222"></script>
-<script src="js/textos.js?v=202611162222"></script>
-<script src="js/datos.js?v=202611162222"></script>
-<script src="js/contador.js?v=202611162222"></script>
-<script src="js/buscador.js?v=202611162222"></script>
-<script src="js/imagenes.js?v=202611162222"></script>
-<script src="js/insights.js?v=202611162222"></script>
-<script src="js/columnas.js?v=202611162222"></script>
-<script src="js/radar.js?v=202611162222"></script>
-<script src="js/traduccion.js?v=202611162222"></script>
-<script src="js/metricas.js?v=202611162222"></script>
+<script src="js/config.js?v=202611162233"></script>
+<script src="js/textos.js?v=202611162233"></script>
+<script src="js/datos.js?v=202611162233"></script>
+<script src="js/contador.js?v=202611162233"></script>
+<script src="js/buscador.js?v=202611162233"></script>
+<script src="js/imagenes.js?v=202611162233"></script>
+<script src="js/insights.js?v=202611162233"></script>
+<script src="js/columnas.js?v=202611162233"></script>
+<script src="js/radar.js?v=202611162233"></script>
+<script src="js/traduccion.js?v=202611162233"></script>
+<script src="js/metricas.js?v=202611162233"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1006,7 +1005,7 @@ img{max-width:100%;display:block}
       const corto=(EN?ins.corto_en:ins.corto_es)||((EN?ins.titulo_en:ins.titulo_es)||'').replace(/\.$/,'');info.appendChild(crear('h3',null,corto));
       if(ins.portada&&ins.portada.length===2){
         const cf=crear('div','cif-c');
-        ins.portada.forEach((d,k)=>{const h=HALLAZGOS.find(x=>x.id===d.id);const c=crear('div');c.append(crear('b',null,EN?d.dato_en:d.dato_es),crear('p',null,EN?d.texto_en:d.texto_es),crear('small',null,(h?h.fuente.replace(' AI Institute',''):'')));cf.appendChild(c);if(k===0)cf.appendChild(crear('i',ins.portada_relacion==='='?'igual':null,ins.portada_relacion==='='?'=':'vs.'));});
+        const R={'vs':{s:'vs.',es:'Contraste entre estudios',en:'Contrast between studies'},'=':{s:'=',es:'Coincidencia entre estudios',en:'Agreement between studies'},'+':{s:'+',es:'Un estudio refuerza al otro',en:'One study reinforces the other'}}[ins.portada_relacion||'vs']||{s:'vs.',es:'Contraste entre estudios',en:'Contrast between studies'};info.appendChild(crear('span','cif-rel',EN?R.en:R.es));ins.portada.forEach((d,k)=>{const h=HALLAZGOS.find(x=>x.id===d.id);const c=crear('div');c.append(crear('b',null,EN?d.dato_en:d.dato_es),crear('p',null,EN?d.texto_en:d.texto_es),crear('small',null,(h?h.fuente.replace(' AI Institute',''):'')));cf.appendChild(c);if(k===0)cf.appendChild(crear('i',null,R.s));});
         info.appendChild(cf);
       }
       const ab=crear('div','abajo-c');ab.append(crear('span','leer-c',EN?'Read the cross-read':'Leer el cruce'),crear('span','flecha-c','→'));

@@ -284,7 +284,7 @@ const INSIGHTS = [
         "en": "1,004 executives"
       }
     },
-    "portada_relacion": "vs"
+    "portada_relacion": "+"
   },
   {
     "id": "i-2026-11-ia-direccion-equipos",
