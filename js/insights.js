@@ -30,6 +30,8 @@ const INSIGHTS = [
     "titulo2_es": "sin definir cómo se integra en el trabajo de sus equipos.",
     "titulo_en": "Organizations are rolling out AI",
     "titulo2_en": "without defining how it fits into their teams’ work.",
+    "corto_es": "Acceso a la IA, sin rediseño del trabajo",
+    "corto_en": "Access to AI, without redesigning work",
     "resumen_es": "Deloitte, Bain y PwC estudian tres industrias distintas. Leídos en conjunto, muestran que los equipos usan poco la IA cuando la empresa no define cómo encaja en su trabajo.",
     "resumen_en": "Deloitte, Bain and PwC study three different industries. Read together, they show that teams make little use of AI when the company does not define how it fits into their work.",
     "bajada_es": "Deloitte, Bain y PwC analizan la adopción de la IA en tres industrias. Por caminos distintos, llegan a la misma conclusión: las empresas amplían el acceso a la IA, pero no definen para qué tareas usarla, qué se espera de cada persona ni qué pasa con su puesto. El resultado es un uso limitado a lo que se exige y, donde se anticipan recortes, temor.",
@@ -42,16 +44,16 @@ const INSIGHTS = [
         "industria": "consumo_masivo",
         "dato_es": "19%",
         "dato_en": "19%",
-        "texto_es": "de los colaboradores de consumo masivo usa la IA solo cuando se le exige, según sus líderes",
-        "texto_en": "of consumer goods employees use AI only when required, according to their leaders"
+        "texto_es": "de los colaboradores de consumo masivo usa la IA solo por obligación",
+        "texto_en": "of consumer goods employees use AI only out of obligation"
       },
       {
         "id": "h-2026-10-pwc-fs-cambio",
         "industria": "servicios_financieros",
         "dato_es": "43%",
         "dato_en": "43%",
-        "texto_es": "de los ejecutivos de servicios financieros ve que sus equipos usan la IA solo cuando se les exige",
-        "texto_en": "of financial services executives see their teams use AI only when required"
+        "texto_es": "de los ejecutivos de servicios financieros ve un uso de la IA solo por obligación",
+        "texto_en": "of financial services executives see AI used only out of obligation"
       }
     ],
     "coinciden_titulo_es": "Lo que se repite en tres industrias",
@@ -281,7 +283,8 @@ const INSIGHTS = [
         "es": "1,004 ejecutivos",
         "en": "1,004 executives"
       }
-    }
+    },
+    "portada_relacion": "vs"
   },
   {
     "id": "i-2026-11-ia-direccion-equipos",
@@ -299,6 +302,8 @@ const INSIGHTS = [
     "titulo2_es": "Su efecto en los equipos todavía no entra en esa agenda.",
     "titulo_en": "AI is decided at the top.",
     "titulo2_en": "Its effect on teams has not yet made it onto that agenda.",
+    "corto_es": "La IA, desde el directorio y desde los equipos",
+    "corto_en": "AI, from the board and from teams",
     "resumen_es": "Deloitte, Accenture, BCG y McKinsey miran la IA desde el directorio, la alta dirección y los equipos. Leídos en conjunto, muestran que la organización avanza con la tecnología antes de definir qué cambia para las personas que la usan.",
     "resumen_en": "Deloitte, Accenture, BCG and McKinsey look at AI from the board, senior leadership and teams. Read together, they show that organizations move ahead with the technology before defining what changes for the people who use it.",
     "bajada_es": "Cuatro estudios recientes analizan la IA desde distintos niveles de la organización. Coinciden en que pocas empresas tienen una estrategia sobre su efecto en las personas o rediseñan sus procesos. Al mismo tiempo, los equipos reportan más ritmo, más carga y poca claridad, mientras el directorio dedica poca atención a su bienestar.",
@@ -313,8 +318,8 @@ const INSIGHTS = [
         "etiqueta_en": "Middle managers and employees",
         "dato_es": "47%",
         "dato_en": "47%",
-        "texto_es": "de los mandos medios y colaboradores que usan IA reporta efectos negativos, como estrés o más carga",
-        "texto_en": "of middle managers and employees who use AI report negative effects, such as stress or a heavier workload"
+        "texto_es": "de los mandos medios y colaboradores reporta efectos negativos de la IA",
+        "texto_en": "of middle managers and employees report negative effects from AI"
       },
       {
         "id": "h-2026-11-deloitte-directorios-ia",
@@ -323,8 +328,8 @@ const INSIGHTS = [
         "etiqueta_en": "Boards",
         "dato_es": "9%",
         "dato_en": "9%",
-        "texto_es": "de los directores y altos ejecutivos dice que el bienestar de los empleados es el tema principal cuando su directorio habla de tecnología y personas; 42% dice la productividad",
-        "texto_en": "of directors and senior executives say employee well-being is the main topic when their board discusses technology and people; 42% say productivity"
+        "texto_es": "de los directores dice que el bienestar es el tema principal en su directorio",
+        "texto_en": "of directors say well-being is the main topic on their board"
       }
     ],
     "coinciden_titulo_es": "Lo que se repite en cuatro estudios",
@@ -579,7 +584,8 @@ const INSIGHTS = [
         "es": "1,719 personas",
         "en": "1,719 people"
       }
-    }
+    },
+    "portada_relacion": "vs"
   },
   {
     "id": "i-2026-11-liderazgo-confianza-coherencia",
@@ -598,6 +604,8 @@ const INSIGHTS = [
     "titulo2_es": "La coherencia entre lo que dice y lo que hace marca la diferencia.",
     "titulo_en": "Trust in leadership is weakening.",
     "titulo2_en": "Consistency between what it says and what it does makes the difference.",
+    "corto_es": "Cuidado declarado, cuidado percibido",
+    "corto_en": "Care declared, care perceived",
     "resumen_es": "Edelman, Gallup, PwC, Great Place to Work y Korn Ferry escuchan a los empleados. Leídos en conjunto, muestran que la confianza en la dirección cae con los cambios mal vividos y que las organizaciones que la sostienen comparten un rasgo: coherencia y claridad.",
     "resumen_en": "Edelman, Gallup, PwC, Great Place to Work and Korn Ferry listen to employees. Read together, they show that trust in leadership falls when change is poorly experienced and that the organizations that sustain it share one trait: consistency and clarity.",
     "bajada_es": "Cinco estudios recientes miden la relación entre los empleados y su dirección. Coinciden en que cerca de la mitad confía en lo que dice su liderazgo y en que las expectativas sobre el trabajo se vuelven menos claras. Al mismo tiempo, muestran que las empresas con mayor coherencia entre el discurso y la acción conservan la confianza y el compromiso de sus equipos.",
@@ -606,24 +614,24 @@ const INSIGHTS = [
     "tesis_en": "Trust in leadership is lost in the way change is executed and communicated, and it holds where what leadership says matches what it does.",
     "portada": [
       {
-        "id": "h-2026-10-edelman-confianza",
+        "id": "h-2026-11-kornferry-workforce",
         "industria": null,
-        "etiqueta_es": "Colaboradores de 10 países",
-        "etiqueta_en": "Employees in 10 countries",
-        "dato_es": "49%",
-        "dato_en": "49%",
-        "texto_es": "de los colaboradores confía en su CEO después de un cambio que vivió de forma negativa; si fue positivo, 82%",
-        "texto_en": "of employees trust their CEO after a change they experienced negatively; if it was positive, 82%"
+        "etiqueta_es": "CEO de EE.UU.",
+        "etiqueta_en": "U.S. CEOs",
+        "dato_es": "85%",
+        "dato_en": "85%",
+        "texto_es": "de los CEO de EE.UU. cree que su empresa se preocupa por su gente",
+        "texto_en": "of U.S. CEOs believe their company cares about its people"
       },
       {
-        "id": "h-2026-11-gptw-latam",
+        "id": "h-2026-11-gallup-compromiso-eeuu",
         "industria": null,
-        "etiqueta_es": "Mejores empresas de Latinoamérica",
-        "etiqueta_en": "Best workplaces in Latin America",
-        "dato_es": "Casi 90%",
-        "dato_en": "Nearly 90%",
-        "texto_es": "de los empleados de las mejores empresas de Latinoamérica ve coherencia entre lo que la dirección dice y hace; en el resto, 52%",
-        "texto_en": "of employees at the best workplaces in Latin America see consistency between what leadership says and does; elsewhere, 52%"
+        "etiqueta_es": "Empleados de EE.UU.",
+        "etiqueta_en": "U.S. employees",
+        "dato_es": "37%",
+        "dato_en": "37%",
+        "texto_es": "de los empleados de EE.UU. siente que alguien en el trabajo se preocupa por él",
+        "texto_en": "of U.S. employees feel someone at work cares about them"
       }
     ],
     "coinciden_titulo_es": "Lo que se repite en cinco estudios",
@@ -891,7 +899,8 @@ const INSIGHTS = [
         "es": "Más de 16,000 profesionales",
         "en": "More than 16,000 professionals"
       }
-    }
+    },
+    "portada_relacion": "vs"
   },
   {
     "id": "i-2026-11-ia-roles-inversion-personas",
@@ -910,6 +919,8 @@ const INSIGHTS = [
     "titulo2_es": "La inversión en las personas que los ocupan todavía no acompaña.",
     "titulo_en": "Companies are redesigning roles because of AI.",
     "titulo2_en": "Investment in the people who fill them has not yet kept pace.",
+    "corto_es": "Roles nuevos, poca inversión en las personas",
+    "corto_en": "New roles, little investment in people",
     "resumen_es": "EY, KPMG, PwC, Gallup y Deloitte miran la IA desde los CEO, los líderes y los trabajadores. Leídos en conjunto, muestran que la IA cambia el contenido de los roles, pero las ganancias de productividad y el apoyo para aprender no vuelven a las personas al mismo ritmo.",
     "resumen_en": "EY, KPMG, PwC, Gallup and Deloitte look at AI from CEOs, leaders and workers. Read together, they show that AI is changing the content of roles, but productivity gains and support for learning are not returning to people at the same pace.",
     "bajada_es": "Cinco estudios recientes analizan el efecto de la IA en el trabajo. Coinciden en que cambia más los roles y las habilidades que el tamaño de las plantillas, y en que cerca de la mitad de los líderes reconoce que la inversión en las personas va detrás. Al mismo tiempo, los trabajadores perciben menos apoyo para aprender y, en parte, más responsabilidades.",
@@ -924,8 +935,8 @@ const INSIGHTS = [
         "etiqueta_en": "U.S. CEOs",
         "dato_es": "86%",
         "dato_en": "86%",
-        "texto_es": "de los CEO de grandes empresas de EE.UU. ya rediseña roles y equipos por la IA",
-        "texto_en": "of CEOs of large U.S. companies are already redesigning roles and teams because of AI"
+        "texto_es": "de los CEO de EE.UU. rediseña roles por la IA",
+        "texto_en": "of U.S. CEOs are redesigning roles because of AI"
       },
       {
         "id": "h-2026-10-ey-ceo",
@@ -934,8 +945,8 @@ const INSIGHTS = [
         "etiqueta_en": "CEOs in 21 countries",
         "dato_es": "15%",
         "dato_en": "15%",
-        "texto_es": "de los CEO reinvierte en sus equipos lo que gana en productividad con la IA",
-        "texto_en": "of CEOs reinvest in their teams what they gain in productivity from AI"
+        "texto_es": "de los CEO reinvierte en sus equipos lo que gana con la IA",
+        "texto_en": "of CEOs reinvest AI gains in their teams"
       }
     ],
     "coinciden_titulo_es": "Lo que se repite en cinco estudios",
@@ -1201,6 +1212,7 @@ const INSIGHTS = [
         "es": "501 líderes",
         "en": "501 leaders"
       }
-    }
+    },
+    "portada_relacion": "vs"
   }
 ];
