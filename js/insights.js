@@ -30,8 +30,8 @@ const INSIGHTS = [
     "titulo2_es": "los equipos usan la IA solo por obligación.",
     "titulo_en": "Without an explanation of how each role changes,",
     "titulo2_en": "teams use AI only out of obligation.",
-    "corto_es": "Sin una explicación de cómo cambia cada rol, los equipos usan la IA solo por obligación",
-    "corto_en": "Without an explanation of how each role changes, teams use AI only out of obligation",
+    "corto_es": "El uso de la IA en los equipos",
+    "corto_en": "How teams use AI",
     "resumen_es": "Deloitte, Bain y PwC estudian tres industrias distintas. Leídos en conjunto, muestran que los equipos usan poco la IA cuando la empresa no define cómo encaja en su trabajo.",
     "resumen_en": "Deloitte, Bain and PwC study three different industries. Read together, they show that teams make little use of AI when the company does not define how it fits into their work.",
     "bajada_es": "Deloitte, Bain y PwC analizan la adopción de la IA en tres industrias. Por caminos distintos, llegan a la misma conclusión: las empresas amplían el acceso a la IA, pero no definen para qué tareas usarla, qué se espera de cada persona ni qué pasa con su puesto. El resultado es un uso limitado a lo que se exige y, donde se anticipan recortes, temor.",
@@ -40,22 +40,28 @@ const INSIGHTS = [
     "tesis_en": "What holds AI back is not people’s willingness, but the fact that companies do not define how it is used in each job or what happens to the work of those who use it.",
     "portada": [
       {
-        "id": "h-2026-10-deloitte-consumo-ia",
-        "industria": "consumo_masivo",
-        "dato_es": "19%",
-        "dato_en": "19%",
-        "texto_es": "de los colaboradores de consumo masivo usa la IA solo por obligación",
-        "texto_en": "of consumer goods employees use AI only out of obligation"
+        "id": "h-2026-10-bain-life-sciences",
+        "industria": "life_sciences",
+        "postura_es": "Pocas empresas explican cómo cambia cada rol",
+        "postura_en": "Few companies explain how each role changes",
+        "dato_es": "7%",
+        "dato_en": "7%",
+        "texto_es": "de las empresas farmacéuticas y de salud que recién exploran la IA lo explica a sus equipos",
+        "texto_en": "of pharmaceutical and health companies just exploring AI explain it to their teams"
       },
       {
         "id": "h-2026-10-pwc-fs-cambio",
         "industria": "servicios_financieros",
+        "postura_es": "los equipos usan la IA solo por obligación",
+        "postura_en": "teams use AI only out of obligation",
         "dato_es": "43%",
         "dato_en": "43%",
-        "texto_es": "de los ejecutivos de servicios financieros ve un uso de la IA solo por obligación",
-        "texto_en": "of financial services executives see AI used only out of obligation"
+        "texto_es": "de los ejecutivos de servicios financieros lo observa en sus equipos",
+        "texto_en": "of financial services executives see this in their teams"
       }
     ],
+    "portada_conector_es": "y",
+    "portada_conector_en": "and",
     "coinciden_titulo_es": "Lo que se repite en tres industrias",
     "coinciden_titulo_en": "What repeats across three industries",
     "coinciden_intro_es": "En industrias distintas, los tres estudios describen las mismas cinco etapas: las empresas dan acceso a la IA, pero no cambian los puestos ni explican qué cambia en cada rol; los equipos responden con temor y la usan solo cuando se les exige.",
@@ -283,8 +289,7 @@ const INSIGHTS = [
         "es": "1,004 ejecutivos",
         "en": "1,004 executives"
       }
-    },
-    "portada_relacion": "+"
+    }
   },
   {
     "id": "i-2026-11-ia-direccion-equipos",
@@ -302,8 +307,8 @@ const INSIGHTS = [
     "titulo2_es": "Ese efecto casi no llega a los directorios.",
     "titulo_en": "AI is increasing teams' workload.",
     "titulo2_en": "That effect barely reaches boards.",
-    "corto_es": "La IA aumenta la carga de trabajo de los equipos, un tema que casi no llega a los directorios",
-    "corto_en": "AI is increasing teams' workload, an issue that barely reaches boards",
+    "corto_es": "La carga de trabajo",
+    "corto_en": "Workload",
     "resumen_es": "Deloitte, Accenture, BCG y McKinsey analizan la IA desde el directorio, la alta dirección y los equipos. En conjunto, muestran que la IA eleva el ritmo y la carga de trabajo de los equipos, mientras los directorios se concentran en la productividad.",
     "resumen_en": "Deloitte, Accenture, BCG and McKinsey analyze AI from the perspective of boards, senior leaders and teams. Together, they show that AI raises teams' pace and workload, while boards focus on productivity.",
     "bajada_es": "Cuatro estudios recientes analizan la IA desde distintos roles de la organización. Coinciden en que pocas empresas definieron cómo cambia el trabajo de las personas. Al mismo tiempo, los equipos reportan más ritmo, más revisión y más carga mental, mientras el bienestar ocupa un lugar menor en la agenda de los directorios.",
@@ -314,24 +319,26 @@ const INSIGHTS = [
       {
         "id": "h-2026-11-accenture-pulso-cambio",
         "industria": null,
-        "etiqueta_es": "Empleados",
-        "etiqueta_en": "Employees",
+        "postura_es": "La IA eleva el ritmo de trabajo de los equipos",
+        "postura_en": "AI is raising teams’ pace of work",
         "dato_es": "50%",
         "dato_en": "50%",
-        "texto_es": "de los empleados dice que la IA elevó el ritmo y la revisión del trabajo",
-        "texto_en": "of employees say AI has raised the pace of work and the need to review it"
+        "texto_es": "de los empleados dice que aumentó el ritmo y la revisión del trabajo",
+        "texto_en": "of employees say it has increased the pace of work and the need for review"
       },
       {
         "id": "h-2026-11-deloitte-directorios-ia",
         "industria": null,
-        "etiqueta_es": "Directorios",
-        "etiqueta_en": "Boards",
+        "postura_es": "el bienestar casi no llega a los directorios",
+        "postura_en": "well-being barely reaches boards",
         "dato_es": "9%",
         "dato_en": "9%",
-        "texto_es": "de los directores dice que el bienestar es el tema principal en su directorio",
-        "texto_en": "of directors say well-being is the main topic on their board"
+        "texto_es": "de los directores dice que es el tema principal en su directorio",
+        "texto_en": "of directors say it is the main topic on their board"
       }
     ],
+    "portada_conector_es": "pero",
+    "portada_conector_en": "but",
     "coinciden_titulo_es": "Lo que se repite en cuatro estudios",
     "coinciden_titulo_en": "What repeats across four studies",
     "coinciden_intro_es": "Desde el directorio, la alta dirección y los equipos, los cuatro estudios describen las mismas cinco etapas: pocas empresas tienen una estrategia sobre el efecto de la IA en las personas, los procesos no se rediseñan, la comunicación sobre la IA no llega con claridad, el ritmo de trabajo sube y la carga se siente más en los equipos.",
@@ -584,8 +591,7 @@ const INSIGHTS = [
         "es": "1,719 personas",
         "en": "1,719 people"
       }
-    },
-    "portada_relacion": "vs"
+    }
   },
   {
     "id": "i-2026-11-liderazgo-confianza-coherencia",
@@ -604,8 +610,8 @@ const INSIGHTS = [
     "titulo2_es": "La mayoría de los empleados no lo percibe así.",
     "titulo_en": "CEOs believe their companies care for their people.",
     "titulo2_en": "Most employees do not see it that way.",
-    "corto_es": "Los CEO consideran que sus empresas cuidan a sus colaboradores; la mayoría de los empleados no lo percibe así",
-    "corto_en": "CEOs believe their companies care for their people; most employees do not see it that way",
+    "corto_es": "El cuidado de los colaboradores",
+    "corto_en": "Caring for employees",
     "resumen_es": "Edelman, Gallup, PwC, Great Place to Work y Korn Ferry miden la confianza de los empleados en sus líderes. En conjunto, muestran una distancia entre lo que los CEO creen transmitir y lo que los empleados perciben, y que la confianza se sostiene donde los líderes actúan de acuerdo con lo que dicen.",
     "resumen_en": "Edelman, Gallup, PwC, Great Place to Work and Korn Ferry measure employees' trust in their leaders. Together, they show a gap between what CEOs believe they convey and what employees perceive, and that trust holds where leaders act in line with what they say.",
     "bajada_es": "Cinco estudios recientes miden la relación entre los empleados y sus líderes. Coinciden en que cerca de la mitad confía en lo que comunican sus líderes y en que las expectativas sobre el trabajo son cada vez menos claras. Al mismo tiempo, las empresas donde los líderes actúan de acuerdo con lo que dicen conservan la confianza y el compromiso de sus equipos.",
@@ -616,24 +622,26 @@ const INSIGHTS = [
       {
         "id": "h-2026-11-kornferry-workforce",
         "industria": null,
-        "etiqueta_es": "CEO de EE.UU.",
-        "etiqueta_en": "U.S. CEOs",
+        "postura_es": "Los CEO creen que su empresa cuida a su gente",
+        "postura_en": "CEOs believe their company cares for its people",
         "dato_es": "85%",
         "dato_en": "85%",
-        "texto_es": "de los CEO de EE.UU. cree que su empresa se preocupa por su gente",
-        "texto_en": "of U.S. CEOs believe their company cares about its people"
+        "texto_es": "de los CEO de EE.UU. lo afirma",
+        "texto_en": "of U.S. CEOs say so"
       },
       {
         "id": "h-2026-11-gallup-compromiso-eeuu",
         "industria": null,
-        "etiqueta_es": "Empleados de EE.UU.",
-        "etiqueta_en": "U.S. employees",
+        "postura_es": "la mayoría de los empleados no lo siente así",
+        "postura_en": "most employees do not feel that way",
         "dato_es": "37%",
         "dato_en": "37%",
         "texto_es": "de los empleados de EE.UU. siente que alguien en el trabajo se preocupa por él",
         "texto_en": "of U.S. employees feel someone at work cares about them"
       }
     ],
+    "portada_conector_es": "mientras que",
+    "portada_conector_en": "while",
     "coinciden_titulo_es": "Lo que se repite en cinco estudios",
     "coinciden_titulo_en": "What repeats across five studies",
     "coinciden_intro_es": "Desde distintas muestras de empleados, los cinco estudios describen las mismas cinco etapas: el cambio se vuelve permanente, una mala experiencia reduce la confianza en el CEO, las expectativas se vuelven difusas, la comunicación de resultados no convence del todo, y los CEO y los empleados ven realidades distintas.",
@@ -899,8 +907,7 @@ const INSIGHTS = [
         "es": "Más de 16,000 profesionales",
         "en": "More than 16,000 professionals"
       }
-    },
-    "portada_relacion": "vs"
+    }
   },
   {
     "id": "i-2026-11-ia-roles-inversion-personas",
@@ -919,8 +926,8 @@ const INSIGHTS = [
     "titulo2_es": "La preparación en habilidades no avanza al mismo ritmo.",
     "titulo_en": "Jobs are being redesigned for AI.",
     "titulo2_en": "Skills preparation is not keeping pace.",
-    "corto_es": "Los puestos de trabajo se rediseñan por la IA, pero sin una preparación en habilidades que los respalde",
-    "corto_en": "Jobs are being redesigned for AI, but without the skills preparation to support them",
+    "corto_es": "Puestos y habilidades",
+    "corto_en": "Jobs and skills",
     "resumen_es": "EY, KPMG, PwC, Gallup y Deloitte analizan el efecto de la IA en el trabajo desde los CEO, los líderes y los trabajadores. En conjunto, muestran que las empresas rediseñan los puestos, pero invierten poco en preparar a las personas que los ocupan.",
     "resumen_en": "EY, KPMG, PwC, Gallup and Deloitte analyze AI's effect on work from the perspective of CEOs, leaders and workers. Together, they show that companies are redesigning jobs but investing little in preparing the people who fill them.",
     "bajada_es": "Cinco estudios recientes coinciden en que la IA cambia sobre todo el contenido de los puestos, más que el número de empleados. Cerca de la mitad de los CEO y líderes reconoce que la preparación de las personas va detrás de la tecnología. Del lado de los trabajadores, se percibe menos apoyo para aprender y, en parte, más responsabilidades.",
@@ -931,8 +938,8 @@ const INSIGHTS = [
       {
         "id": "h-2026-10-kpmg-ceo-eeuu",
         "industria": null,
-        "etiqueta_es": "CEO de EE.UU.",
-        "etiqueta_en": "U.S. CEOs",
+        "postura_es": "Los puestos ya se están rediseñando",
+        "postura_en": "Jobs are already being redesigned",
         "dato_es": "86%",
         "dato_en": "86%",
         "texto_es": "de los CEO de EE.UU. rediseña roles por la IA",
@@ -941,14 +948,16 @@ const INSIGHTS = [
       {
         "id": "h-2026-10-ey-ceo",
         "industria": null,
-        "etiqueta_es": "CEO de 21 países",
-        "etiqueta_en": "CEOs in 21 countries",
-        "dato_es": "15%",
-        "dato_en": "15%",
-        "texto_es": "de los CEO reinvierte en sus equipos lo que gana con la IA",
-        "texto_en": "of CEOs reinvest AI gains in their teams"
+        "postura_es": "las habilidades no avanzan al mismo ritmo",
+        "postura_en": "skills are not advancing at the same pace",
+        "dato_es": "47%",
+        "dato_en": "47%",
+        "texto_es": "de los CEO admite que su empresa no desarrolla habilidades al ritmo de la IA",
+        "texto_en": "of CEOs admit their company is not developing skills at the pace of AI"
       }
     ],
+    "portada_conector_es": "pero",
+    "portada_conector_en": "but",
     "coinciden_titulo_es": "Lo que se repite en cinco estudios",
     "coinciden_titulo_en": "What repeats across five studies",
     "coinciden_intro_es": "Desde los CEO y desde los trabajadores, los cinco estudios describen las mismas cinco etapas: la IA cambia el contenido de los puestos, las empresas los rediseñan, las habilidades no avanzan al mismo ritmo, el apoyo para aprender disminuye y el tiempo ahorrado se convierte en más carga.",
@@ -1212,7 +1221,6 @@ const INSIGHTS = [
         "es": "501 líderes",
         "en": "501 leaders"
       }
-    },
-    "portada_relacion": "vs"
+    }
   }
 ];
