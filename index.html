@@ -502,27 +502,49 @@ img{max-width:100%;display:block}
 .gigante-card .arriba{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font:600 13px var(--x);color:var(--gris)}
 .gigante-card .arriba span{background:none!important;color:var(--gris)!important;padding:0!important;border-radius:0!important;font:600 13px var(--x)!important}
 .gigante-card .arriba span:first-child{color:var(--gris)!important}
-/* Más cruces: columna derecha animada junto al destacado (16-nov-2026) */
-.cruces-zona{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(0,1fr);gap:22px;margin-top:48px;align-items:stretch}
-.cruces-zona .gigante-card{margin-top:0;grid-template-columns:1fr}
-.cruces-zona .gigante-card .foto-i{min-height:200px}
-.cruces-zona.solo{grid-template-columns:1fr}
-.cruces-zona.solo .gigante-card{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
-.cruces-zona.solo .gigante-card .foto-i{min-height:440px}
-.cruces-mas{display:flex;flex-direction:column;min-height:0}
-.cruces-mas-tit{margin:0 0 14px;font:800 clamp(18px,1.6vw,22px)/1.2 var(--t);letter-spacing:-.02em;color:var(--blanco)}
-.cruces-mas-ventana{position:relative;flex:1;min-height:0;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent);mask-image:linear-gradient(180deg,#000 82%,transparent)}
-.cruces-mas-grilla{display:flex;flex-direction:column;gap:14px;will-change:transform}
-.cruce-mini{display:flex;flex-direction:column;gap:10px;background:var(--blanco);color:var(--negro);border-radius:20px;padding:22px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease;flex:none}
-.cruce-mini:hover,.cruce-mini:focus-visible{transform:translateX(-4px);box-shadow:0 14px 30px rgba(17,18,20,.2)}
-.cruce-mini small{font:600 12.5px var(--x);color:var(--gris)}
-.cruce-mini h4{margin:0;font:800 clamp(17px,1.35vw,20px)/1.25 var(--t);letter-spacing:-.02em;text-wrap:balance}
-.cruce-mini h4 span{color:var(--azul)}
-.cruce-mini .fuentes-m{margin:0;font:600 12px var(--x);color:var(--negro);padding-top:10px;border-top:1px solid var(--borde)}
-.cruce-mini .leer-m{font:700 13.5px var(--x);color:var(--azul)}
-.cruce-mini.llega{opacity:0;transform:translateX(48px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-.cruce-mini.llega.llego{opacity:1;transform:none}
-@media (max-width:900px){.cruces-zona,.cruces-zona.solo{grid-template-columns:1fr}.cruces-zona.solo .gigante-card{grid-template-columns:1fr}.cruces-mas-ventana{-webkit-mask-image:none;mask-image:none}}
+/* Cruces: paneles que se abren (17-nov-2026, pedido por Desiree) */
+.paneles-c{display:flex;gap:16px;height:560px;margin-top:48px}
+.panel-c{position:relative;flex:1;min-width:0;border-radius:28px;overflow:hidden;color:var(--blanco);text-decoration:none;background:var(--c1);transition:flex .7s cubic-bezier(.3,.7,.2,1)}
+.panel-c.abierto{flex:3.6}
+.panel-c .fondo-c{position:absolute;inset:0}
+.panel-c .fondo-c img{width:100%;height:100%;object-fit:cover;mix-blend-mode:luminosity;opacity:.5;transform:scale(1.04);transition:transform 1.2s ease}
+.panel-c.abierto .fondo-c img{transform:scale(1.1)}
+.panel-c .fondo-c::after{content:"";position:absolute;inset:0;background:linear-gradient(170deg,transparent 30%,rgba(17,18,20,.5) 100%)}
+.panel-c .dentro-c{position:absolute;inset:0;z-index:1;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;justify-content:space-between}
+.panel-c .num-c{font:900 clamp(48px,5vw,72px)/.9 var(--t);letter-spacing:-.05em}
+.panel-c .vert-c{position:absolute;z-index:1;left:clamp(22px,2.4vw,32px);bottom:clamp(22px,2.4vw,32px);writing-mode:vertical-rl;transform:rotate(180deg);font:800 17px/1.2 var(--t);max-height:320px;transition:opacity .3s}
+.panel-c.abierto .vert-c{opacity:0}
+.panel-c .info-c{opacity:0;transform:translateY(20px);transition:opacity .45s .25s,transform .55s .25s;max-width:640px}
+.panel-c:not(.abierto) .info-c{visibility:hidden;transition:none}
+.panel-c.abierto .info-c{opacity:1;transform:none}
+.panel-c .info-c .tema-c{font:600 13px var(--x);opacity:.85}
+.panel-c .info-c h3{margin:10px 0 0;font:800 clamp(24px,2.4vw,36px)/1.06 var(--t);letter-spacing:-.03em;text-wrap:balance}
+.panel-c .info-c h3 span{opacity:.75}
+.panel-c .cif-c{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:stretch;margin-top:22px}
+.panel-c .cif-c div{background:var(--blanco);color:var(--negro);border-radius:18px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.panel-c .cif-c b{font:900 clamp(30px,2.8vw,42px)/1 var(--t);letter-spacing:-.04em;color:var(--azul)}
+.panel-c .cif-c p{margin:0;font:600 13.5px/1.35 var(--x);color:var(--negro)}
+.panel-c .cif-c small{margin-top:auto;font:700 11px var(--x);letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+.panel-c .cif-c i{align-self:center;width:40px;height:40px;border-radius:50%;background:var(--naranja);color:var(--negro);display:grid;place-items:center;font:800 13px var(--t);font-style:normal}
+.panel-c .abajo-c{display:flex;justify-content:flex-end;align-items:center;gap:12px}
+.panel-c .leer-c{font:700 15px var(--x);opacity:0;transition:opacity .3s}
+.panel-c.abierto .leer-c{opacity:1}
+.panel-c .flecha-c{width:58px;height:58px;border-radius:50%;background:var(--blanco);color:var(--negro);display:grid;place-items:center;font:700 22px var(--x);flex:none;transition:background .3s}
+.panel-c:hover .flecha-c{background:var(--naranja)}
+.panel-c.k0{--c1:#FF6B2C}.panel-c.k1{--c1:#C9CCFF}.panel-c.k2{--c1:#0B1A8F}.panel-c.k3{--c1:#F2F2F0}
+.panel-c.k1,.panel-c.k3{color:var(--negro)}
+.panel-c.k1 .fondo-c::after,.panel-c.k3 .fondo-c::after{background:linear-gradient(170deg,transparent 40%,rgba(255,255,255,.25) 100%)}
+.panel-c.k1 .flecha-c,.panel-c.k3 .flecha-c{background:var(--negro);color:var(--blanco)}
+.panel-c.k1 .info-c h3 span,.panel-c.k3 .info-c h3 span{color:var(--azul);opacity:1}
+@media (max-width:900px){
+ .paneles-c{flex-direction:column;height:auto}
+ .panel-c{flex:none;height:96px;transition:height .6s cubic-bezier(.3,.7,.2,1)}
+ .panel-c.abierto{flex:none;height:auto;min-height:520px}
+ .panel-c.abierto .dentro-c{position:relative}
+ .panel-c .vert-c{writing-mode:horizontal-tb;transform:none;left:100px;top:30px;bottom:auto;right:20px;max-height:none;font-size:15px}
+ .panel-c .cif-c{grid-template-columns:1fr}.panel-c .cif-c i{justify-self:center}
+}
+@media (prefers-reduced-motion:reduce){.panel-c,.panel-c .info-c,.panel-c .fondo-c img{transition:none}}
 .gigante-card .arriba span+span::before{content:'·';margin-right:6px;color:var(--borde)}
 .columna-c.pronto{cursor:default;flex-grow:.8}
 .columna-c:not(.pronto){background:var(--azul)}
@@ -677,22 +699,7 @@ img{max-width:100%;display:block}
     <div class="envoltura">
       <div class="sec-cab"><h2 class="palabra" data-numero="02">Cruces</h2>
       <p class="sub">Varios estudios, un mismo tema: en qué coinciden y qué significa para las organizaciones.</p></div>
-      <div class="cruces-zona">
-      <a class="gigante-card" id="gigante" href="insight.html">
-        <div class="foto-i"><img loading="lazy" src="https://images.unsplash.com/photo-1758519289074-9de36003622b?auto=format&fit=crop&w=1400&q=70" alt="" /></div>
-        <div class="dentro">
-          <div class="arriba" id="gigante-etiquetas"></div>
-          <h3 id="gigante-titulo"></h3>
-          <p id="gigante-bajada"></p>
-          <div class="cifras-i duelo-i" id="gigante-cifras"></div>
-          <span class="btn">Leer el cruce completo →</span>
-        </div>
-      </a>
-      <aside class="cruces-mas" id="cruces-mas" hidden>
-        <h3 class="cruces-mas-tit" id="cruces-mas-tit">Más cruces</h3>
-        <div class="cruces-mas-ventana" id="cruces-mas-ventana"><div class="cruces-mas-grilla" id="cruces-mas-grilla"></div></div>
-      </aside>
-      </div>
+      <div class="paneles-c" id="cruces-paneles"></div>
       <p class="proximo">El próximo cruce de estudios ya está en preparación.</p>
     </div>
   </section>
@@ -756,17 +763,17 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script src="js/config.js?v=202611162022"></script>
-<script src="js/textos.js?v=202611162022"></script>
-<script src="js/datos.js?v=202611162022"></script>
-<script src="js/contador.js?v=202611162022"></script>
-<script src="js/buscador.js?v=202611162022"></script>
-<script src="js/imagenes.js?v=202611162022"></script>
-<script src="js/insights.js?v=202611162022"></script>
-<script src="js/columnas.js?v=202611162022"></script>
-<script src="js/radar.js?v=202611162022"></script>
-<script src="js/traduccion.js?v=202611162022"></script>
-<script src="js/metricas.js?v=202611162022"></script>
+<script src="js/config.js?v=202611162152"></script>
+<script src="js/textos.js?v=202611162152"></script>
+<script src="js/datos.js?v=202611162152"></script>
+<script src="js/contador.js?v=202611162152"></script>
+<script src="js/buscador.js?v=202611162152"></script>
+<script src="js/imagenes.js?v=202611162152"></script>
+<script src="js/insights.js?v=202611162152"></script>
+<script src="js/columnas.js?v=202611162152"></script>
+<script src="js/radar.js?v=202611162152"></script>
+<script src="js/traduccion.js?v=202611162152"></script>
+<script src="js/metricas.js?v=202611162152"></script>
 <script>
 (function(){
   const reducido = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -977,54 +984,43 @@ img{max-width:100%;display:block}
     }));
   })();
 
-  // Insight destacado: el más reciente de js/insights.js
+  // Cruces: paneles que se abren (el más reciente, abierto). Se abren solos mientras nadie los toca.
   (function(){
-    const g=document.getElementById('gigante'); if(!g||typeof INSIGHTS==='undefined'||!INSIGHTS.length){if(g)g.closest('section').hidden=true;return;}
-    const ins=[...INSIGHTS].sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||'')||String(b.numero||'').localeCompare(String(a.numero||'')))[0];
-    g.href='insight.html?id='+encodeURIComponent(ins.id);
-    const gt=document.getElementById('gigante-titulo'); gt.textContent=(EN?ins.titulo_en:ins.titulo_es)+' '+((EN?ins.titulo2_en:ins.titulo2_es)||'');
-    document.getElementById('gigante-bajada').textContent=EN?(ins.resumen_en||ins.bajada_en):(ins.resumen_es||ins.bajada_es);
-    // Duelo de cifras: dos estudios distintos, cada cifra con su sujeto completo.
-    const gc=document.getElementById('gigante-cifras');
-    if(gc&&ins.portada){ins.portada.forEach((d,i)=>{const h=typeof HALLAZGOS!=='undefined'?HALLAZGOS.find(x=>x.id===d.id):null;const dv=document.createElement('div');const em=document.createElement('em');{const ind=INDUSTRIAS.find(x=>x.id===d.industria);const f=ind?(EN?ind.frase_en:ind.frase_es):((EN?d.etiqueta_en:d.etiqueta_es)||'');em.textContent=f.charAt(0).toUpperCase()+f.slice(1);}const b=document.createElement('b');b.textContent=EN?d.dato_en:d.dato_es;const ds=document.createElement('span');ds.textContent=EN?d.texto_en:d.texto_es;const sm=document.createElement('small');sm.textContent=h?h.fuente:'';dv.append(em,b,ds,sm);gc.appendChild(dv);if(i===0){const v=document.createElement('i');v.textContent='vs.';v.setAttribute('aria-hidden','true');gc.appendChild(v);}});}
-    const et=document.getElementById('gigante-etiquetas');
-    const s0=document.createElement('span');s0.textContent=(EN?'Cross-read ':'El cruce ')+(ins.numero||'')+' · '+nombreDe(ins.tema);et.appendChild(s0);
-    [...new Set(ins.estudios.map(id=>{const h=HALLAZGOS.find(x=>x.id===id);return h?h.fuente.replace(' AI Institute',''):null;}).filter(Boolean))]
-      .forEach(fu=>{const s=document.createElement('span');s.className='b';s.textContent=fu;et.appendChild(s);});
-    // Más cruces: columna derecha con los demás cruces, que suben solos uno por uno
-    const resto=[...INSIGHTS].sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||'')||String(b.numero||'').localeCompare(String(a.numero||''))).filter(x=>x.id!==ins.id);
-    const caja=document.getElementById('cruces-mas'), grilla=document.getElementById('cruces-mas-grilla'), ventana=document.getElementById('cruces-mas-ventana');
-    if(!caja||!grilla||!resto.length){g.closest('.cruces-zona').classList.add('solo');}
-    else{
-      document.getElementById('cruces-mas-tit').textContent=EN?'More cross-reads':'Más cruces';
-      resto.forEach(x=>{
-        const a=document.createElement('a');a.className='cruce-mini';a.href='insight.html?id='+encodeURIComponent(x.id);
-        const sm=document.createElement('small');sm.textContent=(EN?'Cross-read ':'El cruce ')+(x.numero||'')+' · '+nombreDe(x.tema);
-        const h4=document.createElement('h4');h4.append(document.createTextNode((EN?x.titulo_en:x.titulo_es)+' '));const s2=document.createElement('span');s2.textContent=(EN?x.titulo2_en:x.titulo2_es)||'';h4.appendChild(s2);
-        const fu=document.createElement('p');fu.className='fuentes-m';fu.textContent=[...new Set(x.estudios.map(id=>{const h=HALLAZGOS.find(y=>y.id===id);return h?h.fuente.replace(' AI Institute',''):null;}).filter(Boolean))].join(' · ');
-        const l=document.createElement('span');l.className='leer-m';l.textContent=EN?'Read the cross-read →':'Leer el cruce →';
-        a.append(sm,h4,fu,l);grilla.appendChild(a);
-      });
-      caja.hidden=false;
-      // Entrada: las tarjetas llegan desde la derecha, una tras otra, al ver la sección
-      const tarjetasM=[...grilla.children];
-      if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){
-        tarjetasM.forEach((c,i)=>{c.classList.add('llega');c.style.transitionDelay=(0.12*i)+'s';});
-        const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){tarjetasM.forEach(c=>c.classList.add('llego'));setTimeout(()=>tarjetasM.forEach(c=>{c.style.transitionDelay='';c.classList.remove('llega','llego');}),1400);io.disconnect();}},{threshold:.2});
-        io.observe(caja);
+    const box=document.getElementById('cruces-paneles'); if(!box) return;
+    if(typeof INSIGHTS==='undefined'||!INSIGHTS.length){box.closest('section').hidden=true;return;}
+    const FOTOS=['photo-1758519289074-9de36003622b','photo-1522071820081-009f0129c71c','photo-1551135049-8a33b5883817','photo-1543269865-cbf427effbad'];
+    const lista=[...INSIGHTS].sort((a,b)=>(b.publicado||'').localeCompare(a.publicado||'')||String(b.numero||'').localeCompare(String(a.numero||'')));
+    const quien=d=>{const ind=INDUSTRIAS.find(x=>x.id===d.industria);const f=ind?(EN?ind.frase_en:ind.frase_es):((EN?d.etiqueta_en:d.etiqueta_es)||'');return f.charAt(0).toUpperCase()+f.slice(1);};
+    const crear=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;};
+    const paneles=lista.map((ins,i)=>{
+      const n=parseInt(ins.numero,10)||i;
+      const a=crear('a','panel-c k'+(n%4)+(i===0?' abierto':''));a.href='insight.html?id='+encodeURIComponent(ins.id);
+      const fo=crear('div','fondo-c');const im=document.createElement('img');im.loading='lazy';im.alt='';im.src=`https://images.unsplash.com/${ins.foto||FOTOS[n%FOTOS.length]}?auto=format&fit=crop&w=1200&q=70`;im.addEventListener('error',()=>im.remove());fo.appendChild(im);
+      const de=crear('div','dentro-c');
+      const info=crear('div','info-c');
+      info.append(crear('span','tema-c',nombreDe(ins.tema)));
+      const h3=crear('h3',null,(EN?ins.titulo_en:ins.titulo_es)+' ');h3.appendChild(crear('span',null,(EN?ins.titulo2_en:ins.titulo2_es)||''));info.appendChild(h3);
+      if(ins.portada&&ins.portada.length===2){
+        const cf=crear('div','cif-c');
+        ins.portada.forEach((d,k)=>{const h=HALLAZGOS.find(x=>x.id===d.id);const c=crear('div');c.append(crear('b',null,EN?d.dato_en:d.dato_es),crear('p',null,EN?d.texto_en:d.texto_es),crear('small',null,(h?h.fuente.replace(' AI Institute',''):'')));cf.appendChild(c);if(k===0)cf.appendChild(crear('i',null,'vs.'));});
+        info.appendChild(cf);
       }
-      const quieto=window.matchMedia('(prefers-reduced-motion: reduce)'), movil=window.matchMedia('(max-width:900px)');
-      let pausa=false, girando=false;
-      ['mouseenter','focusin'].forEach(e=>caja.addEventListener(e,()=>pausa=true));
-      ['mouseleave','focusout'].forEach(e=>caja.addEventListener(e,()=>pausa=false));
-      setInterval(()=>{
-        if(pausa||girando||quieto.matches||movil.matches||document.hidden) return;
-        if(grilla.children.length<2) return;
-        const primera=grilla.firstElementChild; const paso=primera.offsetHeight+14;
-        girando=true; grilla.style.transition='transform .8s cubic-bezier(.4,0,.2,1)'; grilla.style.transform=`translateY(-${paso}px)`;
-        setTimeout(()=>{grilla.style.transition='none';grilla.appendChild(primera);grilla.style.transform='translateY(0)';girando=false;},850);
-      },3800);
-    }
+      const ab=crear('div','abajo-c');ab.append(crear('span','leer-c',EN?'Read the cross-read':'Leer el cruce'),crear('span','flecha-c','→'));
+      de.append(crear('div','num-c',ins.numero||''),info,ab);
+      const v=crear('span','vert-c',String(EN?ins.titulo_en:ins.titulo_es).replace(/\.$/,''));
+      a.append(fo,de,v);box.appendChild(a);return a;
+    });
+    const abrir=p=>paneles.forEach(o=>o.classList.toggle('abierto',o===p));
+    const movil=window.matchMedia('(max-width:900px)'), quieto=window.matchMedia('(prefers-reduced-motion: reduce)');
+    let tocando=false,k=0;
+    paneles.forEach(p=>{
+      p.addEventListener('mouseenter',()=>{if(movil.matches)return;tocando=true;abrir(p);});
+      p.addEventListener('mouseleave',()=>tocando=false);
+      p.addEventListener('focus',()=>abrir(p));
+      // En celular, el primer toque abre el panel y el segundo entra al cruce
+      p.addEventListener('click',e=>{if(movil.matches&&!p.classList.contains('abierto')){e.preventDefault();abrir(p);}});
+    });
+    setInterval(()=>{if(tocando||movil.matches||quieto.matches||document.hidden||paneles.length<2)return;k=(paneles.findIndex(p=>p.classList.contains('abierto'))+1)%paneles.length;abrir(paneles[k]);},4500);
   })();
 
   // Mi mirada: columnas de js/columnas.js. Si todavía no hay, se muestran las próximas por tema.

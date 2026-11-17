@@ -42,16 +42,16 @@ const INSIGHTS = [
         "industria": "consumo_masivo",
         "dato_es": "19%",
         "dato_en": "19%",
-        "texto_es": "de los colaboradores no técnicos usa la IA solo cuando se le exige, según sus líderes",
-        "texto_en": "of non-technical employees use AI only when required, according to their leaders"
+        "texto_es": "de los colaboradores de consumo masivo usa la IA solo cuando se le exige, según sus líderes",
+        "texto_en": "of consumer goods employees use AI only when required, according to their leaders"
       },
       {
         "id": "h-2026-10-pwc-fs-cambio",
         "industria": "servicios_financieros",
         "dato_es": "43%",
         "dato_en": "43%",
-        "texto_es": "de los ejecutivos observa que sus equipos usan la IA solo cuando se les exige",
-        "texto_en": "of executives see their teams use AI only when required"
+        "texto_es": "de los ejecutivos de servicios financieros ve que sus equipos usan la IA solo cuando se les exige",
+        "texto_en": "of financial services executives see their teams use AI only when required"
       }
     ],
     "coinciden_titulo_es": "Lo que se repite en tres industrias",
@@ -313,8 +313,8 @@ const INSIGHTS = [
         "etiqueta_en": "Middle managers and employees",
         "dato_es": "47%",
         "dato_en": "47%",
-        "texto_es": "de los mandos medios y colaboradores que usan IA reporta al menos un efecto negativo, como estrés o más carga",
-        "texto_en": "of middle managers and individual contributors who use AI report at least one negative effect, such as stress or a heavier workload"
+        "texto_es": "de los mandos medios y colaboradores que usan IA reporta efectos negativos, como estrés o más carga",
+        "texto_en": "of middle managers and employees who use AI report negative effects, such as stress or a heavier workload"
       },
       {
         "id": "h-2026-11-deloitte-directorios-ia",
@@ -323,8 +323,8 @@ const INSIGHTS = [
         "etiqueta_en": "Boards",
         "dato_es": "9%",
         "dato_en": "9%",
-        "texto_es": "es la frecuencia con que el bienestar de los empleados aparece cuando el directorio discute el efecto de la tecnología en la fuerza laboral",
-        "texto_en": "is how often employee well-being comes up when the board discusses technology's effect on the workforce"
+        "texto_es": "de los directores y altos ejecutivos dice que el bienestar de los empleados es el tema principal cuando su directorio habla de tecnología y personas; 42% dice la productividad",
+        "texto_en": "of directors and senior executives say employee well-being is the main topic when their board discusses technology and people; 42% say productivity"
       }
     ],
     "coinciden_titulo_es": "Lo que se repite en cuatro estudios",
@@ -608,12 +608,12 @@ const INSIGHTS = [
       {
         "id": "h-2026-10-edelman-confianza",
         "industria": null,
-        "etiqueta_es": "Tras un cambio mal vivido",
-        "etiqueta_en": "After a poorly experienced change",
+        "etiqueta_es": "Colaboradores de 10 países",
+        "etiqueta_en": "Employees in 10 countries",
         "dato_es": "49%",
         "dato_en": "49%",
-        "texto_es": "de los colaboradores confía en su CEO después de una transformación negativa, frente a 82% cuando la experiencia es positiva",
-        "texto_en": "of employees trust their CEO after a negative transformation, compared with 82% when the experience is positive"
+        "texto_es": "de los colaboradores confía en su CEO después de un cambio que vivió de forma negativa; si fue positivo, 82%",
+        "texto_en": "of employees trust their CEO after a change they experienced negatively; if it was positive, 82%"
       },
       {
         "id": "h-2026-11-gptw-latam",
@@ -622,8 +622,8 @@ const INSIGHTS = [
         "etiqueta_en": "Best workplaces in Latin America",
         "dato_es": "Casi 90%",
         "dato_en": "Nearly 90%",
-        "texto_es": "de los empleados afirma que las acciones de la dirección coinciden con sus palabras, frente a 52% en las empresas típicas de la región",
-        "texto_en": "of employees say leadership's actions match its words, compared with 52% at typical companies in the region"
+        "texto_es": "de los empleados de las mejores empresas de Latinoamérica ve coherencia entre lo que la dirección dice y hace; en el resto, 52%",
+        "texto_en": "of employees at the best workplaces in Latin America see consistency between what leadership says and does; elsewhere, 52%"
       }
     ],
     "coinciden_titulo_es": "Lo que se repite en cinco estudios",
@@ -924,8 +924,8 @@ const INSIGHTS = [
         "etiqueta_en": "U.S. CEOs",
         "dato_es": "86%",
         "dato_en": "86%",
-        "texto_es": "de los CEO de grandes empresas de EE.UU. está rediseñando roles, trayectorias y equipos para que personas e IA trabajen juntas",
-        "texto_en": "of CEOs of large U.S. companies are redesigning roles, career paths and teams so that people and AI work together"
+        "texto_es": "de los CEO de grandes empresas de EE.UU. ya rediseña roles y equipos por la IA",
+        "texto_en": "of CEOs of large U.S. companies are already redesigning roles and teams because of AI"
       },
       {
         "id": "h-2026-10-ey-ceo",
@@ -934,8 +934,8 @@ const INSIGHTS = [
         "etiqueta_en": "CEOs in 21 countries",
         "dato_es": "15%",
         "dato_en": "15%",
-        "texto_es": "de los CEO afirma que las ganancias de productividad de la IA se reinvierten en el desarrollo de sus equipos",
-        "texto_en": "of CEOs say AI productivity gains are reinvested in developing their teams"
+        "texto_es": "de los CEO reinvierte en sus equipos lo que gana en productividad con la IA",
+        "texto_en": "of CEOs reinvest in their teams what they gain in productivity from AI"
       }
     ],
     "coinciden_titulo_es": "Lo que se repite en cinco estudios",
