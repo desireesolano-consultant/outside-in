@@ -2738,6 +2738,20 @@ ul:has(> .oi-insight-punto) { padding-left: 0; }
 .iv-bajada { margin-top: 18px !important; font: 500 clamp(16.5px, 1.5vw, 18.5px)/1.55 var(--oi-fuente-titulo); letter-spacing: -.005em; max-width: 60ch; color: #2A2C31; }
 .iv-bajada b { font-weight: 700; color: var(--oi-negro); }
 .iv-estudios { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+/* Encabezado del cruce en fondo oscuro, separado del resto de la página (17-nov-2026, pedido por Desiree) */
+.iv-portada { background: #111214; color: #fff; padding: 32px 0 56px; }
+.iv-portada .oi-hallazgo-volver { color: #C9CBD1; }
+.iv-portada .iv-ceja { color: #A9ACB4; }
+.iv-portada .iv-pill { background: rgba(201, 204, 255, .14); color: #C9CCFF; }
+.iv-portada .iv-titulo { color: #fff; }
+.iv-portada .iv-titulo span { color: #C9CCFF; }
+.iv-portada .iv-bajada { color: #D5D7DD; }
+.iv-portada .iv-bajada b { color: #fff; }
+.iv-portada .iv-universo { color: #A9ACB4; }
+.iv-portada .iv-universo b { color: #FFB38A; }
+.iv-portada .iv-estudios span { border-color: rgba(255, 255, 255, .22); color: #fff; }
+.iv-portada .iv-estudios span i { background: #fff; color: #111214; }
+.iv-portada .iv-estudios span small { color: #A9ACB4; }
 .iv-portada-grid { width: 100%; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
 .iv-portada-txt { min-width: 0; }
 .iv-universo { margin-top: 16px !important; display: inline-flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; font: 500 14.5px/1.5 var(--oi-fuente-texto); color: var(--oi-texto-gris); }
