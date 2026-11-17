@@ -172,8 +172,11 @@ function dibujarDuelo(ins) {
   if (!ins.portada || ins.portada.length !== 2) return;
   const n = parseInt(ins.numero, 10) || 0;
   box.className = `iv-duelo k${n % 4}`;
-  // Solo la evidencia del titular (cifra, qué mide y fuente): las afirmaciones ya están en el titular (pedido de Desiree, 17-nov-2026)
+  // Evidencia del titular: cifra + qué mide + fuente, unidas por el conector ("pero", "mientras que", "si bien…")
   box.appendChild(crear("p", "iv-duelo-t", idioma === "en" ? "The data behind the headline" : "Los datos detrás del titular"));
+  const con = (campo(ins, "portada_conector") || (idioma === "en" ? "and" : "y")).trim();
+  const abre = /^(si bien|aunque|while|although)$/i.test(con);
+  if (abre) box.classList.add("abre");
   const NS = "http://www.w3.org/2000/svg", R = 50, C = 2 * Math.PI * R;
   ins.portada.forEach((d, k) => {
     const h = HALLAZGOS.find((x) => x.id === d.id);
@@ -191,8 +194,13 @@ function dibujarDuelo(ins) {
       sv.appendChild(ci);
     });
     an.append(sv, crear("b", null, dato));
-    lado.append(an, crear("p", null, `${dato} ${campo(d, "texto") || ""}`), crear("small", null, h ? h.fuente.replace(" AI Institute", "") : ""));
+    const frase = crear("p");
+    const prueba = `${dato} ${campo(d, "texto") || ""}`;
+    if (k === 0 && abre) frase.append(crear("i", null, cap(con) + " "), document.createTextNode(prueba + ","));
+    else frase.textContent = prueba;
+    lado.append(an, frase, crear("small", null, h ? h.fuente.replace(" AI Institute", "") : ""));
     box.appendChild(lado);
+    if (k === 0 && !abre) box.appendChild(crear("i", "iv-con", con));
   });
   requestAnimationFrame(() => requestAnimationFrame(() => box.querySelectorAll(".valor").forEach((c) => { c.style.strokeDashoffset = c.dataset.o; })));
 }
@@ -229,18 +237,7 @@ function renderizarInsight() {
   if (campo(ins, "universo")) uni.append(crear("b", null, t.insightUniverso), document.createTextNode(campo(ins, "universo")));
   dibujarDuelo(ins);
 
-  // Fuentes del cruce (solo etiquetas; no son links, pedido de Desiree 17-nov-2026)
-  const est = document.getElementById("insight-estudios");
-  est.innerHTML = "";
-  fuentes.forEach((h) => {
-    const a = crear("span");
-    const i = crear("i", null, h.fuente.charAt(0));
-    i.setAttribute("aria-hidden", "true");
-    a.append(i, document.createTextNode(h.fuente));
-    // El tema solo se muestra si el estudio aporta una industria distinta a la del cruce
-    if (h.industria) a.appendChild(crear("small", null, ` · ${nombreCortoInsight(h.industria)}`));
-    est.appendChild(a);
-  });
+  // Las fuentes van solo al final, en la tabla (pedido de Desiree, 17-nov-2026)
 
   // Patrón en cinco pasos: retirado de la página el 17-nov-2026 (repetía "El cruce de un vistazo")
   if (document.getElementById("insight-pasos")) {
@@ -299,6 +296,7 @@ function renderizarInsight() {
     tab.addEventListener("click", () => verCruce(i, false));
     tabs.appendChild(tab);
   });
+  grilla.style.setProperty("--n", String(Math.max(1, lista.length)));
   if (lista.length) verCruce(0, false);
 
   // La postura de cada estudio
@@ -309,11 +307,10 @@ function renderizarInsight() {
     if (!h) return;
     const a = crear("a", "iv-postura");
     a.href = `hallazgo.html?id=${encodeURIComponent(h.id)}`;
-    a.append(
-      crear("p", "iv-etq", `${h.fuente} · ${nombreCortoInsight(h.industria || h.tema)}`),
-      crear("p", "iv-q", campo(d, "postura")),
-      crear("span", "iv-ir", t.insightVerResumenEstudio)
-    );
+    const quien = crear("div", "iv-quien");
+    const muestra = ins.muestras && ins.muestras[h.fuente] ? ins.muestras[h.fuente][idioma] : "";
+    quien.append(crear("b", null, h.fuente), crear("small", null, [muestra, h.industria ? nombreCortoInsight(h.industria) : ""].filter(Boolean).join(" · ")));
+    a.append(quien, crear("p", "iv-q", campo(d, "postura")), crear("span", "iv-ir", t.insightVerResumenEstudio));
     dicen.appendChild(a);
   });
   document.getElementById("insight-porque").textContent = campo(ins, "alcance_corto") || campo(ins, "alcance") || "";
@@ -374,7 +371,17 @@ function configurarMenuMovil() {
   });
 }
 
+// Cada sección sube como una capa nueva al hacer scroll (pedido de Desiree, 17-nov-2026)
+function configurarCapas() {
+  const capas = document.querySelectorAll(".iv-capa");
+  if (!capas.length) return;
+  if (prefiereMovimientoReducido() || !("IntersectionObserver" in window)) { capas.forEach((c) => c.classList.add("iv-capa-in")); return; }
+  const obs = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("iv-capa-in"); obs.unobserve(e.target); } }), { threshold: 0.06, rootMargin: "0px 0px -8% 0px" });
+  capas.forEach((c) => obs.observe(c));
+}
+
 function configurarRevelado() {
+  configurarCapas();
   const elementos = document.querySelectorAll(".oi-reveal, .iv-rv");
   if (!elementos.length) return;
 

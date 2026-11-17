@@ -26,10 +26,10 @@ const INSIGHTS = [
       "h-2026-10-bain-life-sciences",
       "h-2026-10-pwc-fs-cambio"
     ],
-    "titulo_es": "Las empresas amplían el acceso a la IA,",
-    "titulo2_es": "pero pocas explican cómo cambia cada rol.",
-    "titulo_en": "Companies are expanding access to AI,",
-    "titulo2_en": "but few explain how each role changes.",
+    "titulo_es": "Más empresas usan la IA,",
+    "titulo2_es": "pero pocas explican qué cambia en cada rol.",
+    "titulo_en": "More companies are using AI,",
+    "titulo2_en": "but few explain what changes in each role.",
     "corto_es": "Cómo cambia cada rol",
     "corto_en": "How each role changes",
     "resumen_es": "Si bien Deloitte, Bain y PwC estudian tres industrias distintas, leídos en conjunto muestran que los equipos usan poco la IA cuando la empresa no define cómo encaja en su trabajo.",
@@ -38,8 +38,8 @@ const INSIGHTS = [
     "bajada_en": "Deloitte, Bain and PwC analyze AI adoption in three industries. While companies are expanding access to AI, they do not define which tasks to use it for, what is expected of each person or what happens to their job. As a result, use is limited to what is required and, where cuts are expected, fear prevails.",
     "tesis_es": "Bain (salud y farmacéutica), PwC (servicios financieros) y Deloitte (consumo masivo) analizan cómo adoptan la IA las empresas de cada industria. **Los tres coinciden en que solo alrededor de 2 de cada 10 empresas convirtieron la IA en decisiones sobre cómo cambia el trabajo**; sin embargo, difieren en la disposición de los equipos a usarla.",
     "tesis_en": "Bain (health and pharmaceuticals), PwC (financial services) and Deloitte (consumer goods) analyze how companies in each industry are adopting AI. **All three agree that only about 2 in 10 companies have turned AI into decisions about how work changes**; however, they differ on teams' willingness to use it.",
-    "universo_es": "3 estudios independientes, cada uno con su propia muestra: 2,100 líderes y ejecutivos en conjunto, de salud y farmacéutica, servicios financieros y consumo masivo",
-    "universo_en": "3 independent studies, each with its own sample: 2,100 leaders and executives combined, in health and pharmaceuticals, financial services and consumer goods",
+    "universo_es": "Tres estudios independientes, cada uno con su propia muestra: Bain, PwC y Deloitte encuestaron en conjunto a 2,100 líderes y ejecutivos de salud y farmacéutica, servicios financieros y consumo masivo.",
+    "universo_en": "Three independent studies, each with its own sample: Bain, PwC and Deloitte surveyed a combined 2,100 leaders and executives in health and pharmaceuticals, financial services and consumer goods.",
     "portada": [
       {
         "id": "h-2026-10-bain-life-sciences",
@@ -277,10 +277,10 @@ const INSIGHTS = [
       "h-2026-11-bcg-ia-trabajo",
       "h-2026-11-mckinsey-estado-ia"
     ],
-    "titulo_es": "La IA aumenta la carga de trabajo de los equipos.",
-    "titulo2_es": "Ese efecto casi no llega a los directorios.",
-    "titulo_en": "AI is increasing teams' workload.",
-    "titulo2_en": "That effect barely reaches boards.",
+    "titulo_es": "La IA aumenta la carga de los equipos,",
+    "titulo2_es": "pero el tema casi no llega al directorio.",
+    "titulo_en": "AI is increasing teams’ workload,",
+    "titulo2_en": "but the issue barely reaches the board.",
     "corto_es": "La carga de trabajo",
     "corto_en": "Workload",
     "resumen_es": "Deloitte, Accenture, BCG y McKinsey analizan la IA desde el directorio, la alta dirección y los equipos. En conjunto, muestran que la IA eleva el ritmo y la carga de trabajo de los equipos, mientras que los directorios se concentran en la productividad.",
@@ -289,8 +289,8 @@ const INSIGHTS = [
     "bajada_en": "Four recent studies analyze AI from different roles in the organization and agree that few companies have defined how people's work changes. While teams report a faster pace, more review and a heavier mental load, well-being holds a minor place on board agendas.",
     "tesis_es": "Deloitte, Accenture, BCG y McKinsey analizan la IA desde el directorio, la alta dirección y los equipos. **Deloitte y Accenture coinciden en que menos de 2 de cada 10 organizaciones definieron cómo cambia el trabajo con la tecnología**, mientras que Accenture y McKinsey discrepan sobre el futuro del empleo.",
     "tesis_en": "Deloitte, Accenture, BCG and McKinsey analyze AI from the perspective of boards, senior leadership and teams. **Deloitte and Accenture agree that fewer than 2 in 10 organizations have defined how work changes with technology**, while Accenture and McKinsey disagree about the future of jobs.",
-    "universo_es": "4 estudios independientes, cada uno con su propia muestra: uno a directores y altos ejecutivos (806) y tres a líderes y empleados de todos los niveles (más de 19,000 en conjunto)",
-    "universo_en": "4 independent studies, each with its own sample: one of directors and senior executives (806) and three of leaders and employees at all levels (more than 19,000 combined)",
+    "universo_es": "Cuatro estudios independientes, cada uno con su propia muestra: Deloitte encuestó a 806 directores y altos ejecutivos; Accenture, BCG y McKinsey, en conjunto, a más de 19,000 líderes y empleados de todos los niveles.",
+    "universo_en": "Four independent studies, each with its own sample: Deloitte surveyed 806 directors and senior executives; Accenture, BCG and McKinsey, combined, more than 19,000 leaders and employees at all levels.",
     "portada": [
       {
         "id": "h-2026-11-accenture-pulso-cambio",
@@ -542,10 +542,10 @@ const INSIGHTS = [
       "h-2026-11-gptw-latam",
       "h-2026-11-kornferry-workforce"
     ],
-    "titulo_es": "Los CEO consideran que sus empresas cuidan a sus colaboradores.",
-    "titulo2_es": "La mayoría de los empleados no lo percibe así.",
-    "titulo_en": "CEOs believe their companies care for their people.",
-    "titulo2_en": "Most employees do not see it that way.",
+    "titulo_es": "Los CEO creen que cuidan a su gente,",
+    "titulo2_es": "pero los empleados no lo sienten así.",
+    "titulo_en": "CEOs believe they care for their people,",
+    "titulo2_en": "but employees do not feel it.",
     "corto_es": "El cuidado de los colaboradores",
     "corto_en": "Caring for employees",
     "resumen_es": "Edelman, Gallup, PwC, Great Place to Work y Korn Ferry miden la confianza de los empleados en sus líderes. En conjunto, muestran una distancia entre lo que los CEO creen transmitir y lo que los empleados perciben. Sin embargo, la confianza se sostiene donde los líderes actúan de acuerdo con lo que dicen.",
@@ -554,8 +554,8 @@ const INSIGHTS = [
     "bajada_en": "Five recent studies measure the relationship between employees and their leaders. They agree that about half trust what their leaders communicate, while expectations about work are becoming less clear. However, companies where leaders act in line with what they say keep the trust and commitment of their teams.",
     "tesis_es": "Cinco estudios (Edelman, Gallup, PwC, Great Place to Work y Korn Ferry) miden la relación entre los empleados y sus líderes, y dos de ellos coinciden en que **la credibilidad de los líderes no está ganada**. En las empresas típicas de Latinoamérica, solo la mitad de los empleados ve coherencia entre lo que dicen y hacen sus líderes, mientras que, entre quienes vivieron mal un cambio, la confianza en el CEO es de 49%.",
     "tesis_en": "Five studies (Edelman, Gallup, PwC, Great Place to Work and Korn Ferry) measure the relationship between employees and their leaders, and two of them agree that **leaders' credibility is not a given**. In typical companies in Latin America, only half of employees see consistency between what their leaders say and do, while among those who experienced a change badly, trust in the CEO is 49%.",
-    "universo_es": "5 estudios independientes, cada uno con su propia muestra: de 128 empleados (PwC) a más de 2.4 millones (Great Place to Work)",
-    "universo_en": "5 independent studies, each with its own sample: from 128 employees (PwC) to more than 2.4 million (Great Place to Work)",
+    "universo_es": "Cinco estudios independientes, cada uno con su propia muestra, que van desde 128 empleados (PwC) hasta más de 2.4 millones (Great Place to Work).",
+    "universo_en": "Five independent studies, each with its own sample, ranging from 128 employees (PwC) to more than 2.4 million (Great Place to Work).",
     "portada": [
       {
         "id": "h-2026-11-kornferry-workforce",
@@ -779,10 +779,10 @@ const INSIGHTS = [
       "h-2026-11-gallup-ia-beneficios",
       "h-2026-11-deloitte-agentes-ia"
     ],
-    "titulo_es": "Los puestos de trabajo se rediseñan por la IA.",
-    "titulo2_es": "La preparación en habilidades no avanza al mismo ritmo.",
-    "titulo_en": "Jobs are being redesigned for AI.",
-    "titulo2_en": "Skills preparation is not keeping pace.",
+    "titulo_es": "Las empresas rediseñan los puestos,",
+    "titulo2_es": "pero no preparan a las personas al mismo ritmo.",
+    "titulo_en": "Companies are redesigning jobs,",
+    "titulo2_en": "but are not preparing people at the same pace.",
     "corto_es": "Puestos y habilidades",
     "corto_en": "Jobs and skills",
     "resumen_es": "EY, KPMG, PwC, Gallup y Deloitte analizan el efecto de la IA en el trabajo desde los CEO, los líderes y los trabajadores. En conjunto, muestran que las empresas rediseñan los puestos, pero invierten poco en preparar a las personas que los ocupan.",
@@ -791,8 +791,8 @@ const INSIGHTS = [
     "bajada_en": "Five recent studies agree that AI mainly changes the content of jobs rather than the number of employees. About half of CEOs and leaders acknowledge that people's preparation lags behind the technology, while workers perceive less support for learning and, in part, more responsibilities.",
     "tesis_es": "EY, KPMG y Deloitte encuestan a CEO y líderes, y PwC y Gallup, a trabajadores, sobre cómo la IA cambia el trabajo. **EY y Deloitte coinciden en que cerca de la mitad de los líderes reconoce que su empresa no prepara a las personas al ritmo de la IA**, mientras que KPMG y EY discrepan sobre cuánto invierten los CEO en formar a sus equipos.",
     "tesis_en": "EY, KPMG and Deloitte survey CEOs and leaders, and PwC and Gallup survey workers, about how AI is changing work. **EY and Deloitte agree that about half of leaders acknowledge their company is not preparing people at the pace of AI**, while KPMG and EY disagree on how much CEOs invest in developing their teams.",
-    "universo_es": "5 estudios independientes, cada uno con su propia muestra: tres a CEO y líderes (2,101 en conjunto) y dos a trabajadores (64,846 en conjunto)",
-    "universo_en": "5 independent studies, each with its own sample: three of CEOs and leaders (2,101 combined) and two of workers (64,846 combined)",
+    "universo_es": "Cinco estudios independientes, cada uno con su propia muestra: EY, KPMG y Deloitte encuestaron en conjunto a 2,101 CEO y líderes; PwC y Gallup, a 64,846 trabajadores.",
+    "universo_en": "Five independent studies, each with its own sample: EY, KPMG and Deloitte surveyed a combined 2,101 CEOs and leaders; PwC and Gallup, 64,846 workers.",
     "portada": [
       {
         "id": "h-2026-10-kpmg-ceo-eeuu",
