@@ -2735,8 +2735,48 @@ ul:has(> .oi-insight-punto) { padding-left: 0; }
 .iv-pill { background: var(--oi-azul-suave, #EEF0FF); color: var(--oi-azul); padding: 6px 12px; border-radius: 999px; }
 .iv-titulo { margin: 18px 0 0; font: 700 clamp(30px, 4vw, 48px)/1.1 var(--oi-fuente-titulo); letter-spacing: -.02em; max-width: 22ch; text-wrap: balance; }
 .iv-titulo span { display: block; color: var(--oi-azul); }
-.iv-bajada { margin-top: 18px !important; font: 700 clamp(17px, 1.7vw, 20px)/1.5 var(--oi-fuente-titulo); letter-spacing: -.01em; max-width: 58ch; }
+.iv-bajada { margin-top: 18px !important; font: 500 clamp(16.5px, 1.5vw, 18.5px)/1.55 var(--oi-fuente-titulo); letter-spacing: -.005em; max-width: 60ch; color: #2A2C31; }
+.iv-bajada b { font-weight: 700; color: var(--oi-negro); }
 .iv-estudios { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+.iv-portada-grid { width: 100%; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
+.iv-portada-txt { min-width: 0; }
+.iv-universo { margin-top: 16px !important; display: inline-flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; font: 500 14.5px/1.5 var(--oi-fuente-texto); color: var(--oi-texto-gris); }
+.iv-universo b { font: 700 11.5px var(--oi-fuente-texto); letter-spacing: .1em; text-transform: uppercase; color: var(--oi-negro); }
+.iv-estudios span { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--oi-borde); border-radius: 999px; padding: 7px 14px 7px 8px; font: 600 13.5px var(--oi-fuente-texto); color: var(--oi-negro); }
+.iv-estudios span i { width: 24px; height: 24px; border-radius: 50%; background: var(--oi-negro); color: #fff; display: grid; place-items: center; font: 800 11px var(--oi-fuente-titulo); font-style: normal; }
+.iv-estudios span small { color: var(--oi-texto-gris); font-weight: 500; font-size: 13px; }
+/* Duelo con anillos al costado del titular (mismos colores que el panel de la portada) */
+.iv-duelo { position: relative; overflow: hidden; border-radius: 28px; padding: clamp(24px, 2.6vw, 34px); background: var(--c1); color: var(--tx, #fff); display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); gap: 18px; align-items: start; }
+.iv-duelo:empty { display: none; }
+.iv-duelo::before { content: ""; position: absolute; right: -30%; top: -40%; width: 90%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--brillo) 0%, transparent 65%); pointer-events: none; }
+.iv-duelo > * { position: relative; }
+.iv-duelo .iv-lado { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.iv-duelo .iv-anillo { position: relative; width: 104px; height: 104px; }
+.iv-duelo .iv-anillo svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.iv-duelo .iv-anillo circle { fill: none; stroke-width: 11; }
+.iv-duelo .iv-anillo .base-r { stroke: color-mix(in srgb, currentColor 20%, transparent); }
+.iv-duelo .iv-anillo .valor { stroke: var(--anillo); stroke-linecap: round; transition: stroke-dashoffset 1.4s cubic-bezier(.3,.7,.2,1) .3s; }
+.iv-duelo .iv-anillo b { position: absolute; inset: 0; display: grid; place-items: center; font: 800 24px var(--oi-fuente-titulo); letter-spacing: -.03em; }
+.iv-duelo h4 { margin: 0; font: 700 16.5px/1.25 var(--oi-fuente-titulo); letter-spacing: -.01em; text-wrap: balance; }
+.iv-duelo h4 i { font-weight: 600; opacity: .8; }
+.iv-duelo p { margin: 0; font: 500 13px/1.45 var(--oi-fuente-texto); opacity: .88; }
+.iv-duelo small { font: 700 10.5px var(--oi-fuente-texto); letter-spacing: .09em; text-transform: uppercase; opacity: .65; }
+.iv-duelo .iv-con { align-self: start; margin-top: 118px; font: italic 600 18px var(--oi-fuente-titulo); opacity: .75; white-space: nowrap; }
+.iv-duelo .iv-con:empty { display: none; }
+.iv-duelo.abre { grid-template-columns: minmax(0,1fr) minmax(0,1fr); column-gap: 28px; }
+.iv-duelo.k0 { --c1: #FF6B2C; --anillo: #111214; --brillo: rgba(255, 196, 120, .55); }
+.iv-duelo.k1 { --c1: #C9CCFF; --tx: #111214; --anillo: #2440F0; --brillo: rgba(255, 255, 255, .6); }
+.iv-duelo.k2 { --c1: #0B1A8F; --anillo: #FF6B2C; --brillo: rgba(64, 96, 255, .55); }
+.iv-duelo.k3 { --c1: #FFE2D1; --tx: #111214; --anillo: #FF6B2C; --brillo: rgba(255, 255, 255, .7); }
+@media (max-width: 900px) {
+  .iv-portada-grid { grid-template-columns: 1fr; }
+  .iv-duelo, .iv-duelo.abre { grid-template-columns: 1fr; gap: 14px; }
+  .iv-duelo .iv-lado { display: grid; grid-template-columns: 84px 1fr; column-gap: 14px; row-gap: 4px; align-items: center; }
+  .iv-duelo .iv-anillo { width: 84px; height: 84px; grid-row: span 3; }
+  .iv-duelo .iv-anillo b { font-size: 19px; }
+  .iv-duelo .iv-con { margin-top: 0; padding-left: 98px; }
+}
+@media (prefers-reduced-motion: reduce) { .iv-duelo .iv-anillo .valor { transition: none; } }
 .iv-estudios a { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--oi-borde); border-radius: 999px; padding: 7px 14px 7px 8px; font: 600 13.5px var(--oi-fuente-texto); color: var(--oi-negro); text-decoration: none; transition: border-color .2s, background .2s; }
 .iv-estudios a:hover { border-color: var(--oi-azul); background: #EEF0FF; }
 .iv-estudios a i { width: 24px; height: 24px; border-radius: 50%; background: var(--oi-negro); color: #fff; display: grid; place-items: center; font: 800 11px var(--oi-fuente-titulo); font-style: normal; }
@@ -2811,6 +2851,7 @@ ul:has(> .oi-insight-punto) { padding-left: 0; }
 .iv-postura { display: grid; grid-template-rows: auto 1fr auto; gap: 12px; padding: 22px; border: 1.5px solid var(--oi-borde); border-radius: 18px; color: var(--oi-negro); text-decoration: none; transition: border-color .2s, transform .25s; }
 .iv-postura:hover { border-color: var(--oi-azul); transform: translateY(-3px); }
 .iv-q { font: 700 17px/1.35 var(--oi-fuente-titulo); }
+.iv-fuentes .iv-alcance { margin: 16px 0 8px !important; }
 .iv-alcance { margin-top: 20px !important; display: flex; gap: 14px; align-items: flex-start; background: var(--oi-fondo-alt); border-radius: 14px; padding: 16px 20px; font-size: 14.5px; line-height: 1.6; }
 .iv-alcance i { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--oi-negro); color: #fff; display: grid; place-items: center; font: 800 13px var(--oi-fuente-titulo); font-style: normal; margin-top: 1px; }
 

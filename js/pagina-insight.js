@@ -164,6 +164,45 @@ function verCruce(i, bajar) {
   if (bajar) document.getElementById("insight-cruces").scrollIntoView({ behavior: prefiereMovimientoReducido() ? "auto" : "smooth" });
 }
 
+// Duelo con anillos al costado del titular: las dos cifras de "portada", como en el panel de la portada
+function dibujarDuelo(ins) {
+  const box = document.getElementById("insight-duelo");
+  if (!box) return;
+  box.innerHTML = "";
+  if (!ins.portada || ins.portada.length !== 2) return;
+  const n = parseInt(ins.numero, 10) || 0;
+  box.className = `iv-duelo k${n % 4}`;
+  const con = (campo(ins, "portada_conector") || (idioma === "en" ? "and" : "y")).trim();
+  const abre = /^(si bien|aunque|while|although)$/i.test(con);
+  if (abre) box.classList.add("abre");
+  const NS = "http://www.w3.org/2000/svg", R = 50, C = 2 * Math.PI * R;
+  ins.portada.forEach((d, k) => {
+    const h = HALLAZGOS.find((x) => x.id === d.id);
+    const dato = campo(d, "dato") || "";
+    const v = Math.max(0, Math.min(100, parseFloat(String(dato).replace(/[^0-9.]/g, "")) || 0));
+    const lado = crear("div", "iv-lado");
+    const an = crear("div", "iv-anillo");
+    const sv = document.createElementNS(NS, "svg");
+    sv.setAttribute("viewBox", "0 0 120 120");
+    sv.setAttribute("aria-hidden", "true");
+    [["base-r", 0], ["valor", 1]].forEach(([cl, es]) => {
+      const ci = document.createElementNS(NS, "circle");
+      ci.setAttribute("class", cl); ci.setAttribute("cx", "60"); ci.setAttribute("cy", "60"); ci.setAttribute("r", R);
+      if (es) { ci.setAttribute("stroke-dasharray", C); ci.style.strokeDashoffset = C; ci.dataset.o = C * (1 - v / 100); }
+      sv.appendChild(ci);
+    });
+    an.append(sv, crear("b", null, dato));
+    const po = campo(d, "postura") || "";
+    const h4 = crear("h4");
+    if (k === 0 && abre) h4.append(crear("i", null, cap(con) + " "), document.createTextNode(po.charAt(0).toLowerCase() + po.slice(1) + ","));
+    else h4.textContent = k === 0 ? cap(po) : po;
+    lado.append(an, h4, crear("p", null, `${dato} ${campo(d, "texto") || ""}`), crear("small", null, h ? h.fuente.replace(" AI Institute", "") : ""));
+    box.appendChild(lado);
+    if (k === 0) box.appendChild(crear("i", "iv-con", abre ? "" : con));
+  });
+  requestAnimationFrame(() => requestAnimationFrame(() => box.querySelectorAll(".valor").forEach((c) => { c.style.strokeDashoffset = c.dataset.o; })));
+}
+
 function renderizarInsight() {
   const t = TEXTOS[idioma];
   const articulo = document.getElementById("insight");
@@ -187,21 +226,30 @@ function renderizarInsight() {
   const h1 = document.getElementById("insight-titulo");
   h1.textContent = `${titulo1} `;
   if (titulo2) h1.appendChild(crear("span", null, titulo2));
-  document.getElementById("insight-tesis").textContent = campo(ins, "tesis");
+  // La bajada admite **negrita** para la idea clave (estilo de Desiree)
+  const tesis = document.getElementById("insight-tesis");
+  tesis.textContent = "";
+  (campo(ins, "tesis") || "").split(/\*\*(.+?)\*\*/).forEach((parte, k) => tesis.append(k % 2 ? crear("b", null, parte) : document.createTextNode(parte)));
+  const uni = document.getElementById("insight-universo");
+  uni.textContent = "";
+  if (campo(ins, "universo")) uni.append(crear("b", null, t.insightUniverso), document.createTextNode(campo(ins, "universo")));
+  dibujarDuelo(ins);
 
-  // Botones de los estudios: llevan al resumen de cada uno
+  // Fuentes del cruce (solo etiquetas; no son links, pedido de Desiree 17-nov-2026)
   const est = document.getElementById("insight-estudios");
   est.innerHTML = "";
   fuentes.forEach((h) => {
-    const a = crear("a");
-    a.href = `hallazgo.html?id=${encodeURIComponent(h.id)}`;
+    const a = crear("span");
     const i = crear("i", null, h.fuente.charAt(0));
     i.setAttribute("aria-hidden", "true");
-    a.append(i, document.createTextNode(h.fuente), crear("small", null, ` · ${nombreCortoInsight(h.industria || h.tema)}`));
+    a.append(i, document.createTextNode(h.fuente));
+    // El tema solo se muestra si el estudio aporta una industria distinta a la del cruce
+    if (h.industria) a.appendChild(crear("small", null, ` · ${nombreCortoInsight(h.industria)}`));
     est.appendChild(a);
   });
 
-  // Patrón en cinco pasos
+  // Patrón en cinco pasos: retirado de la página el 17-nov-2026 (repetía "El cruce de un vistazo")
+  if (document.getElementById("insight-pasos")) {
   document.getElementById("insight-patron-titulo").textContent = campo(ins, "patron_titulo") || "";
   document.getElementById("insight-patron-intro").textContent = campo(ins, "patron_intro") || "";
   const pasos = document.getElementById("insight-pasos");
@@ -222,6 +270,7 @@ function renderizarInsight() {
       if (r.bottom < 0 || r.top > window.innerHeight) return;
       verPaso((pasoIndice + 1) % insightActual.cadena.length);
     }, 3500);
+  }
   }
 
   // De un vistazo + pestañas

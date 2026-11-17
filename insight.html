@@ -25,7 +25,7 @@
     href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="css/estilos.css?v=202611171200" />
+  <link rel="stylesheet" href="css/estilos.css?v=202611171530" />
 </head>
 <body>
   <div id="franja-vista-previa" class="oi-franja-vista-previa" data-i18n="franjaVistaPrevia" hidden></div>
@@ -58,20 +58,16 @@
       <section class="iv-portada">
         <div class="iv-env">
           <a href="index.html#insights" class="oi-hallazgo-volver" data-i18n="insightVolver"></a>
-          <div class="iv-ceja"><span class="iv-pill" id="insight-pill"></span><span id="insight-meta"></span></div>
-          <h1 id="insight-titulo" class="iv-titulo"></h1>
-          <p id="insight-tesis" class="iv-bajada"></p>
-          <div id="insight-estudios" class="iv-estudios"></div>
-        </div>
-      </section>
-
-      <section class="iv-patron">
-        <div class="iv-env iv-rv">
-          <p class="iv-etq" data-i18n="insightPatronEtq"></p>
-          <h2 class="iv-sec-t" id="insight-patron-titulo"></h2>
-          <p class="iv-intro" id="insight-patron-intro"></p>
-          <div class="iv-pasos" role="tablist" id="insight-pasos"></div>
-          <div class="iv-detalle" id="insight-detalle" aria-live="polite"></div>
+          <div class="iv-portada-grid">
+            <div class="iv-portada-txt">
+              <div class="iv-ceja"><span class="iv-pill" id="insight-pill"></span><span id="insight-meta"></span></div>
+              <h1 id="insight-titulo" class="iv-titulo"></h1>
+              <p id="insight-tesis" class="iv-bajada"></p>
+              <p id="insight-universo" class="iv-universo"></p>
+              <div id="insight-estudios" class="iv-estudios"></div>
+            </div>
+            <div id="insight-duelo" class="iv-duelo" aria-label=""></div>
+          </div>
         </div>
       </section>
 
@@ -94,7 +90,6 @@
         <div class="iv-env iv-rv">
           <h2 class="iv-sec-t" data-i18n="insightDicen"></h2>
           <div class="iv-posturas" id="insight-dicen"></div>
-          <p class="iv-alcance"><i aria-hidden="true">i</i><span><b data-i18n="insightPorque"></b><b>.</b> <span id="insight-porque"></span></span></p>
         </div>
       </section>
 
@@ -109,6 +104,7 @@
       <section class="iv-fuentes">
         <div class="iv-env">
           <h2 data-i18n="insightFuentesTitulo"></h2>
+          <p class="iv-alcance"><i aria-hidden="true">i</i><span><b data-i18n="insightPorque"></b><b>.</b> <span id="insight-porque"></span></span></p>
           <div class="iv-tabla-wrap"><table>
             <thead><tr><th data-i18n="fuenteLabel"></th><th data-i18n="estudioLabel"></th><th data-i18n="insightIndustria"></th><th data-i18n="insightMuestra"></th><th></th></tr></thead>
             <tbody id="insight-fuentes-tabla"></tbody>
@@ -145,13 +141,13 @@
     </div>
   </footer>
 
-  <script src="js/config.js?v=202611171200"></script>
-  <script src="js/textos.js?v=202611171200"></script>
-  <script src="js/datos.js?v=202611171200"></script>
-  <script src="js/insights.js?v=202611171200"></script>
-  <script src="js/imagenes.js?v=202611171200"></script>
-  <script src="js/pagina-insight.js?v=202611171200"></script>
-  <script src="js/buscador.js?v=202611171200"></script>
-  <script src="js/metricas.js?v=202611171200"></script>
+  <script src="js/config.js?v=202611171530"></script>
+  <script src="js/textos.js?v=202611171530"></script>
+  <script src="js/datos.js?v=202611171530"></script>
+  <script src="js/insights.js?v=202611171530"></script>
+  <script src="js/imagenes.js?v=202611171530"></script>
+  <script src="js/pagina-insight.js?v=202611171530"></script>
+  <script src="js/buscador.js?v=202611171530"></script>
+  <script src="js/metricas.js?v=202611171530"></script>
 </body>
 </html>
