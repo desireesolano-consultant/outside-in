@@ -48,6 +48,8 @@ const IMAGENES_POR_HALLAZGO = {
   "h-2026-11-bcg-salud-consumidor": { foto: "photo-1765031092161-a9ebe556117e", autor: "Bernd Dittrich" },
   "h-2026-11-bcg-confianza-ofertas": { foto: "photo-1739300293398-468ba82fd418", autor: "Ninthgrid" },
   "h-2026-11-deloitte-agentes-ia": { foto: "photo-1758873268695-1b55590e507a", autor: "Vitaly Gariev" },
+  "h-2026-11-gallup-ia-tiempo": { foto: "photo-1770171323762-7b9a517a7094", autor: "Zach M" },
+  "h-2026-11-microsoft-ia-sistema": { foto: "photo-1706466614967-f4f14a3d9d08", autor: "Neeqolah Creative Works" },
 };
 
 // Grupos de fotos por industria y por tema (para hallazgos nuevos).

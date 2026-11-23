@@ -2738,6 +2738,163 @@ const HALLAZGOS = [
     lecturaEstado: "pendiente",
     estado: "PUBLICADO",
   },
+  {
+    id: "h-2026-11-gallup-ia-tiempo",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "IA y trabajo",
+    esEjemplo: false,
+    publicado: "2026-11-23",
+    fecha: "2026-11-16",
+    anio: "2026",
+    fuente: "Gallup",
+    estudio_es: "Cómo la IA cambia la forma en que los empleados usan su tiempo de trabajo",
+    estudio_en: "How AI Is Changing the Way Employees Spend Time at Work",
+    link: "https://www.gallup.com/workplace/716585/ai-changing-employees-spend-time-work.aspx",
+    region_es: "Estados Unidos",
+    region_en: "United States",
+    hallazgo_es: "88% de los empleados que usan IA con frecuencia cambió cómo distribuye su tiempo de trabajo",
+    hallazgo_en: "88% of employees who use AI frequently have changed how they spend their work time",
+    dato_clave_es: "88% de los empleados de EE.UU. que usan IA al menos algunas veces por semana afirma que la tecnología cambió cómo distribuye su tiempo: 52% dedica menos tiempo a buscar información y 47%, a redactar. Para las organizaciones, significa que la IA ya libera horas de trabajo, mientras que el destino de ese tiempo y las expectativas de rendimiento todavía no están definidos.",
+    dato_clave_en: "88% of U.S. employees who use AI at least a few times a week say the technology has changed how they spend their time: 52% spend less time searching for information and 47% less time writing. For organizations, it means AI is already freeing up working hours, while where that time goes and what output is expected remain undefined.",
+    contexto_es: "Análisis de Gallup firmado por Andy Kemp, basado en su estudio trimestral de la fuerza laboral. Encuesta web a 21,648 empleados de Estados Unidos, de 18 años o más, que trabajan a tiempo completo o parcial, seleccionados de forma aleatoria del Gallup Panel; margen de error de ±0.9 puntos. Trabajo de campo: del 5 al 19 de agosto de 2026. Publicación: 16 de noviembre de 2026.",
+    contexto_en: "Gallup analysis by Andy Kemp, based on its quarterly workforce study. Web survey of 21,648 U.S. employees aged 18 or older working full or part time, randomly selected from the Gallup Panel; margin of error of ±0.9 points. Fieldwork: August 5 to 19, 2026. Published: November 16, 2026.",
+    puntos_es: [
+      "**El uso frecuente de la IA sigue creciendo, pero todavía es minoritario.** 32% de los empleados de EE.UU. usa IA al menos algunas veces por semana, 2 puntos más que el trimestre anterior, y 16% la usa a diario.",
+      "**La IA reduce sobre todo las tareas de información y redacción.** Entre los usuarios frecuentes, 52% dedica menos tiempo a buscar información, 47% a redactar y 38% a analizar datos.",
+      "**El trabajo con otras personas se mantiene estable.** 82% de los usuarios frecuentes dedica el mismo tiempo a clientes, 78% a colaborar con sus compañeros y 83% a reuniones.",
+      "**Las expectativas de rendimiento todavía no cambian para la mayoría.** Solo 29% de los empleados de organizaciones que adoptan IA afirma que la tecnología elevó lo que se espera que complete en un día.",
+      "**La presión crece con el uso.** 33% de los usuarios frecuentes siente presión por usar IA para cumplir con lo que se espera de su trabajo, frente a 17% de los usuarios ocasionales.",
+      "**El acceso depende del tipo de puesto.** 49% de quienes tienen puestos que pueden hacerse a distancia usa IA con frecuencia, frente a 22% de quienes trabajan de forma presencial."
+    ],
+    puntos_en: [
+      "**Frequent AI use keeps growing, but it is still a minority.** 32% of U.S. employees use AI at least a few times a week, 2 points more than the previous quarter, and 16% use it daily.",
+      "**AI mainly reduces information and writing tasks.** Among frequent users, 52% spend less time searching for information, 47% writing and 38% analyzing data.",
+      "**Work with other people remains stable.** 82% of frequent users spend the same time with customers, 78% collaborating with coworkers and 83% in meetings.",
+      "**Output expectations have not yet changed for most.** Only 29% of employees in organizations adopting AI say the technology has raised how much they are expected to complete in a day.",
+      "**Pressure grows with use.** 33% of frequent users feel pressure to use AI to keep up with what is expected of their work, compared with 17% of infrequent users.",
+      "**Access depends on the type of job.** 49% of those in remote-capable jobs use AI frequently, compared with 22% of those who work on-site."
+    ],
+    articulo_es: {
+      bajada: "La IA ya cambia en qué se usa el tiempo de trabajo, pero las organizaciones todavía no definen a qué se destina ese tiempo ni qué se espera de los equipos a cambio.",
+      parrafos: [
+        "La IA ya modifica cómo distribuyen su jornada quienes la usan con frecuencia. Gallup encuestó en agosto de 2026 a 21,648 empleados de Estados Unidos y encontró que 32% usa IA al menos algunas veces por semana. Entre ellos, 88% afirma que la tecnología cambió cómo distribuye su tiempo. Es decir, para este grupo la IA dejó de ser una prueba y pasó a formar parte del trabajo diario.",
+        "El cambio se concentra en las tareas individuales de información. Entre los usuarios frecuentes, 52% dedica menos tiempo a buscar información, 47% a redactar y 38% a analizar datos. En cambio, el tiempo con otras personas casi no se mueve: 82% dedica lo mismo a clientes, 78% a colaborar con sus compañeros y 83% a reuniones. Por ahora, la IA reduce las tareas de escritorio y casi no altera la relación con clientes y compañeros.",
+        "Sin embargo, las reglas del trabajo no se ajustan al mismo ritmo. Solo 29% de los empleados de organizaciones que adoptan IA afirma que la tecnología elevó lo que se espera que complete en un día. A su vez, 33% de los usuarios frecuentes siente presión por usarla para cumplir con su trabajo, frente a 17% de los usuarios ocasionales. Para Gallup, esto indica que los líderes aún no definen el papel de la IA en el trabajo de sus equipos.",
+        "Para el negocio, lo que está en juego es el destino del tiempo liberado. Si nadie decide a qué se dedican esas horas, el ahorro se diluye o se convierte en presión individual. A esto se suma una brecha de acceso: 49% de quienes tienen puestos que pueden hacerse a distancia usa IA con frecuencia, frente a 22% de quienes trabajan de forma presencial. Es decir, el tiempo que libera la IA se concentra hoy en los puestos que pueden hacerse a distancia.",
+        "La productividad que promete la IA depende de una decisión de gestión: definir qué trabajo se espera de los equipos cuando la tecnología libera parte de su tiempo. Sin esa definición, el beneficio queda en manos de cada empleado."
+      ]
+    },
+    articulo_en: {
+      bajada: "AI is already changing what working time is spent on, but organizations have not yet defined where that time goes or what is expected of teams in return.",
+      parrafos: [
+        "AI is already changing how frequent users organize their workday. Gallup surveyed 21,648 U.S. employees in August 2026 and found that 32% use AI at least a few times a week. Among them, 88% say the technology has changed how they spend their time. In other words, for this group AI is no longer a trial and has become part of daily work.",
+        "The change is concentrated in individual information tasks. Among frequent users, 52% spend less time searching for information, 47% writing and 38% analyzing data. By contrast, time with other people barely moves: 82% spend the same time with customers, 78% collaborating with coworkers and 83% in meetings. For now, AI reduces desk tasks and barely changes relationships with customers and coworkers.",
+        "However, the rules of work are not adjusting at the same pace. Only 29% of employees in organizations adopting AI say the technology has raised how much they are expected to complete in a day. At the same time, 33% of frequent users feel pressure to use it to keep up with their work, compared with 17% of infrequent users. For Gallup, this indicates that leaders have not yet defined the role of AI in their teams' work.",
+        "For the business, what is at stake is where the freed-up time goes. If no one decides what those hours are for, the savings fade or turn into individual pressure. There is also an access gap: 49% of those in remote-capable jobs use AI frequently, compared with 22% of those who work on-site. In other words, the time AI frees up is concentrated today in remote-capable jobs.",
+        "The productivity AI promises depends on a management decision: defining what work is expected of teams when the technology frees up part of their time. Without that definition, the benefit is left to each employee."
+      ]
+    },
+    cita: {
+      original: "Leaders are still working out what AI means for their teams.",
+      traduccion_es: "Los líderes todavía están definiendo qué significa la IA para sus equipos.",
+      autor_es: "Andy Kemp, Gallup",
+      autor_en: "Andy Kemp, Gallup"
+    },
+    preguntas_es: [
+      "¿A qué se destina hoy el tiempo que la IA libera en los equipos que la usan con frecuencia?",
+      "¿Qué expectativas de rendimiento se comunican a los equipos cuando adoptan IA, y quién las define?",
+      "¿Cómo se asegura el acceso a la IA de los equipos que trabajan de forma presencial?"
+    ],
+    preguntas_en: [
+      "Where does the time AI frees up go today in the teams that use it frequently?",
+      "What output expectations are communicated to teams when they adopt AI, and who defines them?",
+      "How is access to AI ensured for teams that work on-site?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
+  {
+    id: "h-2026-11-microsoft-ia-sistema",
+    industria: null,
+    tema: "ia_personas",
+    subtema: "IA y trabajo",
+    esEjemplo: false,
+    publicado: "2026-11-23",
+    archivo: true, // estudio de archivo: no lleva "Nuevo" ni encabeza la portada
+    fecha: "2026-05-05",
+    anio: "2026",
+    fuente: "Microsoft",
+    estudio_es: "Work Trend Index 2026: agentes, capacidad de decisión de las personas y oportunidad para cada organización",
+    estudio_en: "2026 Work Trend Index: Agents, human agency, and the opportunity for every organization",
+    link: "https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization",
+    region_es: "Global (10 países, incluidos EE.UU. y Brasil)",
+    region_en: "Global (10 countries, including the U.S. and Brazil)",
+    hallazgo_es: "Solo 26% de quienes usan IA en el trabajo ve a sus líderes alineados sobre ella",
+    hallazgo_en: "Only 26% of those who use AI at work see their leaders aligned on it",
+    dato_clave_es: "Si bien 66% de los profesionales que usan IA en el trabajo dice que le permite dedicar más tiempo a trabajo de mayor valor, solo 26% afirma que sus líderes están alineados de forma clara y constante sobre la IA. Para las organizaciones, significa que el impacto de la IA se asocia más con la cultura, el apoyo de los jefes y las prácticas de talento que con las habilidades de cada persona.",
+    dato_clave_en: "While 66% of professionals who use AI at work say it lets them spend more time on higher-value work, only 26% say their leaders are clearly and consistently aligned on AI. For organizations, it means AI's impact is associated more with culture, manager support and talent practices than with individual skills.",
+    contexto_es: "Informe anual Work Trend Index 2026 de Microsoft. Encuesta en línea realizada por la firma independiente Edelman Data x Intelligence a 20,000 profesionales con empleo a tiempo completo o independientes que usan IA en su trabajo, 2,000 por país, en 10 países: Alemania, Australia, Brasil, Estados Unidos, Francia, India, Italia, Japón, Países Bajos y Reino Unido. Trabajo de campo: entre febrero y abril de 2026. Publicación: 5 de mayo de 2026.",
+    contexto_en: "Microsoft's 2026 Work Trend Index annual report. Online survey conducted by the independent firm Edelman Data x Intelligence of 20,000 full-time employed or self-employed knowledge workers who use AI at work, 2,000 per country, in 10 countries: Australia, Brazil, France, Germany, India, Italy, Japan, the Netherlands, the United Kingdom and the United States. Fieldwork: February to April 2026. Published: May 5, 2026.",
+    puntos_es: [
+      "**La IA ya amplía lo que las personas pueden hacer.** 66% de los profesionales que usan IA afirma que le permite dedicar más tiempo a trabajo de mayor valor y 58% produce trabajo que no podía hacer hace un año.",
+      "**La alineación de los líderes es la excepción.** Solo 26% de quienes usan IA ve a sus líderes alineados de forma clara y constante sobre la IA.",
+      "**Los incentivos todavía premian lo conocido.** 65% teme quedarse atrás si no usa la IA para adaptarse, pero 45% considera más seguro concentrarse en sus objetivos actuales. Solo 13% recibe reconocimiento por reinventar su trabajo aunque no logre resultados.",
+      "**La organización pesa más que el individuo.** Los factores de la organización (cultura, apoyo de los jefes y prácticas de talento) se asocian con un impacto de la IA más de dos veces mayor que los factores individuales; Microsoft aclara que es una asociación, no una relación de causa y efecto.",
+      "**El criterio humano gana peso.** 86% de los encuestados trata lo que produce la IA como un punto de partida y no como una respuesta final. Entre las habilidades que ganan importancia, 50% menciona el control de calidad y 46%, el pensamiento crítico.",
+      "**Pocos ya trabajan de otra forma.** Solo 16% de los encuestados reúne las prácticas que Microsoft define como profesionales de frontera: usa agentes de IA (sistemas que ejecutan tareas por sí solos) para trabajo complejo y rediseña sus procesos de manera habitual."
+    ],
+    puntos_en: [
+      "**AI is already expanding what people can do.** 66% of professionals who use AI say it lets them spend more time on higher-value work, and 58% produce work they could not do a year ago.",
+      "**Leadership alignment is the exception.** Only 26% of AI users see their leaders clearly and consistently aligned on AI.",
+      "**Incentives still reward the familiar.** 65% fear falling behind if they do not use AI to adapt, but 45% feel it is safer to focus on their current goals. Only 13% are rewarded for reinventing their work even when results are not met.",
+      "**The organization weighs more than the individual.** Organizational factors (culture, manager support and talent practices) are associated with more than twice the AI impact of individual factors; Microsoft notes this is an association, not cause and effect.",
+      "**Human judgment gains weight.** 86% of respondents treat AI output as a starting point rather than a final answer. Among the skills becoming more important, 50% cite quality control and 46% critical thinking.",
+      "**Few already work differently.** Only 16% of respondents meet the practices Microsoft defines as Frontier Professionals: they use AI agents (systems that carry out tasks on their own) for complex work and routinely redesign their workflows."
+    ],
+    articulo_es: {
+      bajada: "Las personas ya usan la IA para hacer un trabajo de mayor valor, pero la cultura, los incentivos y la alineación de los líderes no acompañan ese cambio.",
+      parrafos: [
+        "Los profesionales que usan IA ya ven un cambio en su trabajo, pero pocos ven a sus líderes alineados sobre ese cambio. El Work Trend Index 2026 de Microsoft encuestó a 20,000 profesionales que usan IA en 10 países, entre ellos Estados Unidos y Brasil. 66% afirma que la IA le permite dedicar más tiempo a trabajo de mayor valor y 58% produce trabajo que no podía hacer hace un año. Sin embargo, solo 26% ve a sus líderes alineados de forma clara y constante sobre la IA.",
+        "El informe describe una brecha entre la disposición de las personas y las reglas del trabajo. 65% de los encuestados teme quedarse atrás si no usa la IA para adaptarse, pero 45% considera más seguro concentrarse en sus objetivos actuales. Solo 13% recibe reconocimiento por reinventar su trabajo con IA aunque no logre resultados. Microsoft llama a esta brecha la paradoja de la transformación: los equipos están listos para cambiar, mientras que las métricas y los incentivos refuerzan la forma anterior de trabajar.",
+        "El matiz está en dónde se ubica el problema. Según el análisis de Microsoft, los factores de la organización (cultura, apoyo de los jefes y prácticas de talento) se asocian con un impacto de la IA más de dos veces mayor que los factores individuales. La firma aclara que es una asociación estadística y no una relación de causa y efecto. Aun así, el dato desplaza la atención de la capacitación individual hacia el diseño de la organización.",
+        "Para el negocio, lo que está en juego es convertir el uso individual en una capacidad de la empresa. Solo 16% de los encuestados ya usa agentes de IA (sistemas que ejecutan tareas por sí solos) para trabajo complejo y rediseña sus procesos de manera habitual. Además, 86% de los encuestados trata lo que produce la IA como un punto de partida, y 50% menciona el control de calidad y 46% el pensamiento crítico entre las habilidades que ganan importancia. El valor se desplaza hacia el criterio de las personas para revisar lo que produce la IA.",
+        "La adopción de la IA se juega en el sistema que rodea a las personas: lo que los líderes comunican, lo que los jefes muestran con su ejemplo y lo que la organización reconoce. Cuando esas señales no están alineadas, el avance queda limitado a iniciativas individuales."
+      ]
+    },
+    articulo_en: {
+      bajada: "People already use AI to do higher-value work, but culture, incentives and leadership alignment are not keeping pace with that change.",
+      parrafos: [
+        "Professionals who use AI already see a change in their work, but few see their leaders aligned on that change. Microsoft's 2026 Work Trend Index surveyed 20,000 professionals who use AI in 10 countries, including the United States and Brazil. 66% say AI lets them spend more time on higher-value work and 58% produce work they could not do a year ago. However, only 26% see their leaders clearly and consistently aligned on AI.",
+        "The report describes a gap between people's readiness and the rules of work. 65% of respondents fear falling behind if they do not use AI to adapt, but 45% feel it is safer to focus on their current goals. Only 13% are rewarded for reinventing their work with AI even when results are not met. Microsoft calls this gap the Transformation Paradox: teams are ready to change, while metrics and incentives reinforce the old way of working.",
+        "The nuance lies in where the problem sits. According to Microsoft's analysis, organizational factors (culture, manager support and talent practices) are associated with more than twice the AI impact of individual factors. The firm notes this is a statistical association, not cause and effect. Even so, the finding shifts attention from individual training to how the organization is designed.",
+        "For the business, what is at stake is turning individual use into a company capability. Only 16% of respondents already use AI agents (systems that carry out tasks on their own) for complex work and routinely redesign their workflows. In addition, 86% of respondents treat AI output as a starting point, and 50% cite quality control and 46% critical thinking among the skills becoming more important. Value is shifting toward people's judgment in reviewing what AI produces.",
+        "AI adoption is decided in the system around people: what leaders communicate, what managers model and what the organization rewards. When those signals are not aligned, progress is limited to individual initiatives."
+      ]
+    },
+    cita: {
+      original: "The Transformation Paradox is, at its core, a systems problem.",
+      traduccion_es: "La paradoja de la transformación es, en el fondo, un problema del sistema.",
+      autor_es: "Informe Work Trend Index 2026, Microsoft",
+      autor_en: "2026 Work Trend Index report, Microsoft"
+    },
+    preguntas_es: [
+      "¿Qué tan alineados perciben los equipos a sus líderes sobre el uso de la IA, y cómo se mide esa percepción?",
+      "¿Qué reconocen hoy las métricas e incentivos: cumplir los objetivos actuales o rediseñar el trabajo con IA?",
+      "¿Qué papel tienen los jefes de equipo en mostrar cómo se usa la IA y en abrir espacio para probarla?"
+    ],
+    preguntas_en: [
+      "How aligned do teams perceive their leaders to be on the use of AI, and how is that perception measured?",
+      "What do current metrics and incentives reward: meeting current goals or redesigning work with AI?",
+      "What role do team managers play in showing how AI is used and in making room to try it?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
 ];
 
 

@@ -1041,5 +1041,264 @@ const INSIGHTS = [
         "en": "501 leaders"
       }
     }
+  },
+  {
+    "id": "i-2026-11-ia-uso-rediseno-trabajo",
+    "numero": "05",
+    "publicado": "2026-11-23",
+    "tema": "ia_personas",
+    "industrias": [
+      "servicios_financieros"
+    ],
+    "estudios": [
+      "h-2026-11-gallup-ia-tiempo",
+      "h-2026-11-kpmg-global-ai-pulse",
+      "h-2026-10-pwc-fs-ia",
+      "h-2026-10-jll-latam-ia"
+    ],
+    "titulo_es": "Los equipos ya trabajan distinto con la IA,",
+    "titulo2_es": "pero las empresas todavía no definen cómo cambia ese trabajo.",
+    "titulo_en": "Teams already work differently with AI,",
+    "titulo2_en": "but companies have not yet defined how that work changes.",
+    "corto_es": "Uso y rediseño del trabajo",
+    "corto_en": "AI use and work redesign",
+    "resumen_es": "Gallup, KPMG, PwC y JLL analizan el uso de la IA en el trabajo desde los empleados y desde los líderes. En conjunto, muestran que los equipos ya trabajan distinto con la IA, mientras que las empresas todavía no definen cómo cambia ese trabajo.",
+    "resumen_en": "Gallup, KPMG, PwC and JLL analyze the use of AI at work from the perspective of employees and leaders. Together, they show that teams already work differently with AI, while companies have not yet defined how that work changes.",
+    "bajada_es": "Cuatro estudios recientes muestran que la IA ya cambia el trabajo diario, mientras que el rediseño de los procesos y las reglas de uso avanzan más lento. Si bien 32% de los empleados de EE.UU. encuestados por Gallup usa IA al menos algunas veces por semana, solo 50% de los ejecutivos de servicios financieros encuestados por PwC que proyectaron su impacto analizó cómo rediseñar los procesos.",
+    "bajada_en": "Four recent studies show that AI is already changing daily work, while process redesign and usage rules are moving more slowly. While 32% of the U.S. employees surveyed by Gallup use AI at least a few times a week, only 50% of the financial services executives surveyed by PwC who modeled its impact have analyzed how to redesign processes.",
+    "tesis_es": "Gallup encuesta a empleados, y PwC, KPMG y JLL, a ejecutivos y líderes, sobre cómo la IA cambia el trabajo. **Gallup y KPMG coinciden en que el uso frecuente de la IA supera 30% y crece**, mientras que PwC y KPMG muestran que rediseñar los procesos y fijar reglas de uso avanza más lento.",
+    "tesis_en": "Gallup surveys employees, and PwC, KPMG and JLL survey executives and leaders, about how AI is changing work. **Gallup and KPMG agree that frequent AI use exceeds 30% and is growing**, while PwC and KPMG show that redesigning processes and setting usage rules is moving more slowly.",
+    "universo_es": "Cuatro estudios independientes, cada uno con su propia muestra: PwC, KPMG y JLL encuestaron en conjunto a 3,285 ejecutivos y líderes; Gallup, a 21,648 empleados.",
+    "universo_en": "Four independent studies, each with its own sample: PwC, KPMG and JLL surveyed a combined 3,285 executives and leaders; Gallup, 21,648 employees.",
+    "portada": [
+      {
+        "id": "h-2026-11-gallup-ia-tiempo",
+        "industria": null,
+        "etiqueta_es": "Empleados",
+        "etiqueta_en": "Employees",
+        "postura_es": "Los equipos ya trabajan distinto con la IA",
+        "postura_en": "Teams already work differently with AI",
+        "dato_es": "88%",
+        "dato_en": "88%",
+        "texto_es": "de los empleados de EE.UU. que usan IA con frecuencia cambió cómo distribuye su tiempo de trabajo",
+        "texto_en": "of U.S. employees who use AI frequently have changed how they spend their work time"
+      },
+      {
+        "id": "h-2026-10-pwc-fs-ia",
+        "industria": "servicios_financieros",
+        "postura_es": "el rediseño de los procesos va detrás del uso",
+        "postura_en": "process redesign lags behind use",
+        "dato_es": "50%",
+        "dato_en": "50%",
+        "texto_es": "de los ejecutivos de servicios financieros de EE.UU. que proyectaron el impacto de la IA analizó cómo rediseñar los procesos",
+        "texto_en": "of U.S. financial services executives who modeled AI's impact have analyzed how to redesign processes"
+      }
+    ],
+    "portada_conector_es": "pero",
+    "portada_conector_en": "but",
+    "coinciden_titulo_es": "Lo que se repite en cuatro estudios",
+    "coinciden_titulo_en": "What repeats across four studies",
+    "coinciden_intro_es": "Desde los empleados y desde los líderes, los cuatro estudios describen la misma secuencia: la IA es prioridad, su uso frecuente crece y cambia el trabajo diario, pero el rediseño de los procesos y las reglas de uso avanzan más lento.",
+    "coinciden_intro_en": "From employees and from leaders, the four studies describe the same sequence: AI is a priority, its frequent use grows and changes daily work, but process redesign and usage rules are moving more slowly.",
+    "cadena": [
+      {
+        "id": "h-2026-10-jll-latam-ia",
+        "dato": "47%",
+        "titulo_es": "La IA es la prioridad",
+        "titulo_en": "AI is the priority",
+        "texto_es": "de los líderes de Latinoamérica ubica la transformación del trabajo con IA como su principal prioridad, aunque es el escenario para el que se declaran menos preparados de los ocho evaluados.",
+        "texto_en": "of leaders in Latin America rank AI-driven work transformation as their top priority, although it is the scenario they feel least prepared for among the eight assessed."
+      },
+      {
+        "id": "h-2026-11-kpmg-global-ai-pulse",
+        "dato": "34%",
+        "titulo_es": "Los equipos adoptan agentes de IA",
+        "titulo_en": "Teams are adopting AI agents",
+        "texto_es": "de las organizaciones de 20 países reporta una adopción significativa de agentes de IA por parte de sus empleados, frente a 25% en el primer trimestre de 2026.",
+        "texto_en": "of organizations in 20 countries report significant adoption of AI agents by their employees, compared with 25% in the first quarter of 2026."
+      },
+      {
+        "id": "h-2026-11-gallup-ia-tiempo",
+        "dato": "88%",
+        "titulo_es": "El trabajo diario ya cambió",
+        "titulo_en": "Daily work has already changed",
+        "texto_es": "de los empleados de EE.UU. que usan IA con frecuencia cambió cómo distribuye su tiempo, sobre todo en buscar información y redactar.",
+        "texto_en": "of U.S. employees who use AI frequently have changed how they spend their time, especially on searching for information and writing."
+      },
+      {
+        "id": "h-2026-10-pwc-fs-ia",
+        "dato": "50%",
+        "titulo_es": "El rediseño de los procesos va detrás",
+        "titulo_en": "Process redesign lags behind",
+        "texto_es": "de los ejecutivos de servicios financieros de EE.UU. que ya proyectaron el impacto de la IA analizó cómo rediseñar los procesos y flujos de trabajo.",
+        "texto_en": "of U.S. financial services executives who have already modeled AI's impact have analyzed how to redesign processes and workflows."
+      }
+    ],
+    "coinciden": [
+      {
+        "titulo_es": "El uso frecuente de la IA en el trabajo crece, aunque todavía no es mayoritario",
+        "titulo_en": "Frequent AI use at work is growing, although it is not yet the majority",
+        "tarjeta_es": "El uso frecuente de la IA en el trabajo crece, aunque todavía no es mayoritario",
+        "tarjeta_en": "Frequent AI use at work is growing, although it is not yet the majority",
+        "resumen_es": "Así lo afirma 32% de los empleados de EE.UU. encuestados por Gallup, que usa IA al menos algunas veces por semana. En KPMG, 34% de las organizaciones de 20 países reporta una adopción significativa de agentes de IA.",
+        "resumen_en": "So say 32% of the U.S. employees surveyed by Gallup, who use AI at least a few times a week. In KPMG's survey, 34% of organizations in 20 countries report significant adoption of AI agents.",
+        "sub_es": "Gallup registra un alza de 2 puntos en un trimestre, y KPMG, de 9 puntos desde el primer trimestre de 2026.",
+        "sub_en": "Gallup records a 2-point rise in one quarter, and KPMG a 9-point rise since the first quarter of 2026.",
+        "eje_es": "Uso frecuente de la IA en el trabajo",
+        "eje_en": "Frequent use of AI at work",
+        "lados": [
+          {
+            "id": "h-2026-11-gallup-ia-tiempo",
+            "industria": null,
+            "etiqueta_es": "Empleados de EE.UU.",
+            "etiqueta_en": "U.S. employees",
+            "dato_es": "32%",
+            "dato_en": "32%",
+            "texto_es": "de los empleados de EE.UU. usa IA en su trabajo al menos algunas veces por semana",
+            "texto_en": "of U.S. employees use AI at work at least a few times a week",
+            "v": 32
+          },
+          {
+            "id": "h-2026-11-kpmg-global-ai-pulse",
+            "industria": null,
+            "etiqueta_es": "Organizaciones de 20 países",
+            "etiqueta_en": "Organizations in 20 countries",
+            "dato_es": "34%",
+            "dato_en": "34%",
+            "texto_es": "de las organizaciones reporta una adopción significativa de agentes de IA por parte de sus empleados",
+            "texto_en": "of organizations report significant adoption of AI agents by their employees",
+            "v": 34
+          }
+        ],
+        "lectura_es": "En el estudio de Gallup, 32% de los empleados de EE.UU. usa IA al menos algunas veces por semana, y 88% de ese grupo afirma que la tecnología cambió cómo distribuye su tiempo. En el de KPMG, 34% de las organizaciones de 20 países reporta una adopción significativa de agentes de IA (sistemas que ejecutan tareas por sí solos) por parte de sus empleados, 9 puntos más que en el primer trimestre de 2026.\n\nSi bien el uso frecuente todavía es minoritario, los dos estudios muestran que crece. Para las empresas, significa que el trabajo de una parte de sus equipos ya cambió y requiere decisiones sobre cómo organizarlo.",
+        "lectura_en": "In Gallup's study, 32% of U.S. employees use AI at least a few times a week, and 88% of that group say the technology has changed how they spend their time. In KPMG's, 34% of organizations in 20 countries report significant adoption of AI agents (systems that carry out tasks on their own) by their employees, 9 points more than in the first quarter of 2026.\n\nWhile frequent use is still a minority, both studies show that it is growing. For companies, it means that the work of part of their teams has already changed and requires decisions on how to organize it.",
+        "nota_es": "Gallup encuesta a 21,648 empleados de EE.UU. y mide la proporción de personas que usan IA con frecuencia; KPMG encuesta a 2,131 líderes senior de 20 países y mide la proporción de organizaciones con una adopción significativa de agentes de IA entre sus empleados. Una cifra habla de personas y la otra de organizaciones, pero ambas miden qué tan extendido está el uso frecuente de la IA y cómo evoluciona.",
+        "nota_en": "Gallup surveys 21,648 U.S. employees and measures the share of people who use AI frequently; KPMG surveys 2,131 senior leaders in 20 countries and measures the share of organizations with significant adoption of AI agents among their employees. One figure refers to people and the other to organizations, but both measure how widespread frequent AI use is and how it is evolving."
+      },
+      {
+        "titulo_es": "Solo una parte de las empresas rediseña sus procesos o fija reglas para el uso de la IA",
+        "titulo_en": "Only some companies are redesigning processes or setting rules for AI use",
+        "tarjeta_es": "Solo una parte de las empresas rediseña sus procesos o fija reglas para el uso de la IA",
+        "tarjeta_en": "Only some companies are redesigning processes or setting rules for AI use",
+        "resumen_es": "En PwC, solo 50% de los ejecutivos de servicios financieros de EE.UU. que proyectaron el impacto de la IA analizó cómo rediseñar los procesos. En KPMG, solo 31% de las organizaciones que siguen probando la IA tiene reglas formales sobre su uso.",
+        "resumen_en": "In PwC's survey, only 50% of U.S. financial services executives who modeled AI's impact have analyzed how to redesign processes. In KPMG's, only 31% of organizations still testing AI have formal rules for its use.",
+        "sub_es": "Las expectativas tampoco se ajustan: solo 29% de los empleados de EE.UU. en empresas que adoptan IA dice que esta elevó lo que se espera que complete en un día.",
+        "sub_en": "Expectations are not adjusting either: only 29% of U.S. employees at companies adopting AI say it has raised how much they are expected to complete in a day.",
+        "eje_es": "Empresas que definen cómo se trabaja con la IA",
+        "eje_en": "Companies that define how work is done with AI",
+        "lados": [
+          {
+            "id": "h-2026-10-pwc-fs-ia",
+            "industria": "servicios_financieros",
+            "etiqueta_es": "Ejecutivos de servicios financieros",
+            "etiqueta_en": "Financial services executives",
+            "dato_es": "50%",
+            "dato_en": "50%",
+            "texto_es": "de los ejecutivos de servicios financieros de EE.UU. que proyectaron el impacto de la IA analizó cómo rediseñar los procesos y flujos de trabajo",
+            "texto_en": "of U.S. financial services executives who modeled AI's impact have analyzed how to redesign processes and workflows",
+            "v": 50
+          },
+          {
+            "id": "h-2026-11-kpmg-global-ai-pulse",
+            "industria": null,
+            "etiqueta_es": "Organizaciones en etapa de prueba",
+            "etiqueta_en": "Organizations in the testing stage",
+            "dato_es": "31%",
+            "dato_en": "31%",
+            "texto_es": "de las organizaciones que siguen probando la IA opera una estructura formal que define qué puede hacer la IA y dónde",
+            "texto_en": "of organizations still testing AI operate a formal structure that defines what AI can do and where",
+            "v": 31
+          }
+        ],
+        "lectura_es": "En el estudio de PwC, 42% de los ejecutivos de servicios financieros de EE.UU. ya proyectó el impacto de la IA en toda la empresa, pero solo 50% de ese grupo analizó cómo rediseñar los procesos. En el de KPMG, 31% de las organizaciones que siguen probando la IA tiene una estructura formal que define qué puede hacer la IA y dónde, frente a 86% de las que ya obtienen retorno. JLL apunta en la misma dirección en Latinoamérica: 47% de los líderes de la región ubica la transformación del trabajo con IA como su principal prioridad, aunque es el escenario para el que se declaran menos preparados de los ocho evaluados.\n\nLos tres estudios describen empresas que avanzan con la IA sin haber definido todavía cómo será el trabajo que la rodea. Los datos no prueban que la falta de reglas frene los resultados, pero sugieren que el rediseño de procesos y las reglas de uso son hoy el punto más rezagado de la adopción. De ellos depende que el cambio en el trabajo diario se convierta en resultados.",
+        "lectura_en": "In PwC's study, 42% of U.S. financial services executives have already modeled AI's impact across the company, but only 50% of that group have analyzed how to redesign processes. In KPMG's, 31% of organizations still testing AI have a formal structure that defines what AI can do and where, compared with 86% of those already seeing a return. JLL points in the same direction in Latin America: 47% of the region's leaders rank AI-driven work transformation as their top priority, although it is the scenario they feel least prepared for among the eight assessed.\n\nThe three studies describe companies moving ahead with AI without yet having defined what the work around it will look like. The data do not prove that a lack of rules holds back results, but they suggest that process redesign and usage rules are currently the part of adoption that lags furthest behind. Turning the change in daily work into results depends on them.",
+        "nota_es": "PwC encuesta a 1,004 ejecutivos de firmas de servicios financieros de EE.UU. y mide, entre quienes ya proyectaron el impacto de la IA, cuántos analizaron el rediseño de procesos; KPMG encuesta a 2,131 líderes senior de 20 países y mide, entre las organizaciones que siguen probando la IA, cuántas tienen reglas formales de uso. Las preguntas no son idénticas, pero ambas miden si las empresas definen cómo cambia el trabajo cuando adoptan IA.",
+        "nota_en": "PwC surveys 1,004 executives at U.S. financial services firms and measures, among those who have already modeled AI's impact, how many have analyzed process redesign; KPMG surveys 2,131 senior leaders in 20 countries and measures, among organizations still testing AI, how many have formal usage rules. The questions are not identical, but both measure whether companies define how work changes when they adopt AI."
+      }
+    ],
+    "difieren_intro_es": "Donde los estudios llegan a conclusiones distintas sobre una misma pregunta.",
+    "difieren_intro_en": "Where the studies reach different conclusions on the same question.",
+    "difieren": [],
+    "dicen": [
+      {
+        "id": "h-2026-11-gallup-ia-tiempo",
+        "postura_es": "La IA ya cambia en qué se usa el tiempo de trabajo.",
+        "postura_en": "AI is already changing what working time is spent on.",
+        "dato_es": "88%",
+        "dato_en": "88%",
+        "frase_es": "de los empleados de EE.UU. que usan IA con frecuencia cambió cómo distribuye su tiempo; solo 29% de quienes trabajan en empresas que adoptan IA afirma que esta elevó lo que se espera que complete en un día.",
+        "frase_en": "of U.S. employees who use AI frequently have changed how they spend their time; only 29% of those working at companies adopting AI say it has raised how much they are expected to complete in a day."
+      },
+      {
+        "id": "h-2026-11-kpmg-global-ai-pulse",
+        "postura_es": "Las reglas de uso acompañan el retorno de la IA.",
+        "postura_en": "Usage rules go hand in hand with AI returns.",
+        "dato_es": "34%",
+        "dato_en": "34%",
+        "frase_es": "de las organizaciones reporta una adopción significativa de agentes de IA por sus empleados; 86% de las que ya obtienen retorno tiene reglas formales de uso, frente a 31% de las que siguen probando.",
+        "frase_en": "of organizations report significant adoption of AI agents by their employees; 86% of those already seeing a return have formal usage rules, compared with 31% of those still testing."
+      },
+      {
+        "id": "h-2026-10-pwc-fs-ia",
+        "postura_es": "Se calcula el tamaño de la organización antes que el rediseño del trabajo.",
+        "postura_en": "The size of the organization is calculated before work is redesigned.",
+        "dato_es": "50%",
+        "dato_en": "50%",
+        "frase_es": "de los ejecutivos de servicios financieros de EE.UU. que proyectaron el impacto de la IA analizó cómo rediseñar los procesos; casi 8 de cada 10 esperan reducir su personal al menos 20% en cinco años.",
+        "frase_en": "of U.S. financial services executives who modeled AI's impact have analyzed how to redesign processes; nearly 8 in 10 expect a workforce at least 20% smaller within five years."
+      },
+      {
+        "id": "h-2026-10-jll-latam-ia",
+        "postura_es": "La prioridad está definida, pero la preparación todavía no.",
+        "postura_en": "The priority is set, but preparation is not.",
+        "dato_es": "47%",
+        "dato_en": "47%",
+        "frase_es": "de los líderes de Latinoamérica ubica la transformación del trabajo con IA como su principal prioridad, aunque es el escenario para el que se declaran menos preparados de los ocho evaluados.",
+        "frase_en": "of leaders in Latin America rank AI-driven work transformation as their top priority, although it is the scenario they feel least prepared for among the eight assessed."
+      }
+    ],
+    "alcance_titulo_es": "Tres estudios encuestan a ejecutivos y líderes; uno, a empleados.",
+    "alcance_titulo_en": "Three studies survey executives and leaders; one surveys employees.",
+    "alcance_es": "PwC encuestó a 1,004 ejecutivos de firmas de servicios financieros de EE.UU.; KPMG, a 2,131 líderes senior de 20 países; JLL, a 150 responsables de decisiones sobre espacios de trabajo de Argentina, Brasil, Colombia y México; Gallup, a 21,648 empleados de EE.UU. Por eso, el cruce permite comparar lo que viven los empleados con lo que deciden los líderes, aunque en muestras distintas.",
+    "alcance_en": "PwC surveyed 1,004 executives at U.S. financial services firms; KPMG, 2,131 senior leaders in 20 countries; JLL, 150 workplace decision-makers in Argentina, Brazil, Colombia and Mexico; Gallup, 21,648 U.S. employees. As a result, the cross-read makes it possible to compare what employees experience with what leaders decide, although in different samples.",
+    "mirada_es": null,
+    "mirada_en": null,
+    "preguntas_es": [
+      "¿Qué tareas cambiaron ya en los equipos que usan IA, y quién define cómo se reorganiza ese trabajo?",
+      "¿Qué reglas establecen hoy qué puede hacer la IA y qué queda a cargo de las personas?",
+      "¿Cómo se comunican a los equipos las expectativas de rendimiento cuando adoptan IA?",
+      "¿Qué parte de la planificación de la IA analiza los procesos y no solo el número de empleados?"
+    ],
+    "preguntas_en": [
+      "Which tasks have already changed in the teams that use AI, and who defines how that work is reorganized?",
+      "What rules currently establish what AI can do and what remains in people's hands?",
+      "How are output expectations communicated to teams when they adopt AI?",
+      "What part of AI planning analyzes processes and not just headcount?"
+    ],
+    "lectura_min": 4,
+    "patron_titulo_es": "Cuatro pasos, cuatro estudios",
+    "patron_titulo_en": "Four steps, four studies",
+    "patron_intro_es": "La IA es prioridad, su uso frecuente crece y el trabajo diario cambia, pero el rediseño de los procesos va detrás. Cada paso muestra su dato.",
+    "patron_intro_en": "AI is a priority, its frequent use is growing and daily work is changing, but process redesign lags behind. Each step shows its data point.",
+    "alcance_corto_es": "Tres encuestan a ejecutivos y líderes (PwC, 1,004 ejecutivos; KPMG, 2,131 líderes; JLL, 150 líderes) y uno a empleados (Gallup, 21,648).",
+    "alcance_corto_en": "Three survey executives and leaders (PwC, 1,004 executives; KPMG, 2,131 leaders; JLL, 150 leaders) and one surveys employees (Gallup, 21,648).",
+    "muestras": {
+      "Gallup": {
+        "es": "21,648 empleados",
+        "en": "21,648 employees"
+      },
+      "KPMG": {
+        "es": "2,131 líderes",
+        "en": "2,131 leaders"
+      },
+      "PwC": {
+        "es": "1,004 ejecutivos",
+        "en": "1,004 executives"
+      },
+      "JLL": {
+        "es": "150 líderes",
+        "en": "150 leaders"
+      }
+    }
   }
 ];
