@@ -2895,6 +2895,86 @@ const HALLAZGOS = [
     lecturaEstado: "pendiente",
     estado: "PUBLICADO",
   },
+  {
+    // Excepción aprobada por Desiree el 21-nov-2026 (proveedor de software, muestra menor a 1,000,
+    // sin fecha de publicación ni países). Fecha = la de generación del PDF (13-nov-2026).
+    id: "h-2026-11-workshop-comunicacion-interna",
+    industria: null,
+    tema: "liderazgo_cultura",
+    subtema: "Comunicación interna",
+    esEjemplo: false,
+    publicado: "2026-11-23",
+    fecha: "2026-11-13",
+    anio: "2026",
+    fuente: "Workshop",
+    estudio_es: "Tendencias de comunicación interna 2027",
+    estudio_en: "Internal Comms Trends Report 2027",
+    link: "https://useworkshop.com/wp-content/uploads/2026/11/Workshop-Internal-Comms-Trends-Report-2027-1.pdf",
+    region_es: "Global (países no especificados)",
+    region_en: "Global (countries not specified)",
+    hallazgo_es: "Solo 17% de los comunicadores internos considera efectivas a las jefaturas para transmitir los mensajes",
+    hallazgo_en: "Only 17% of internal communicators consider managers effective at cascading messages",
+    dato_clave_es: "Si bien 77% de los comunicadores internos quiere priorizar la comunicación de líderes y jefaturas en 2027, solo 17% considera efectivas a las jefaturas para transmitir los mensajes a sus equipos. Para las organizaciones, significa que el canal con más alcance diario es también el menos preparado, en equipos de comunicación con poca capacidad.",
+    dato_clave_en: "While 77% of internal communicators want to prioritize leadership and manager communication in 2027, only 17% consider managers effective at cascading messages to their teams. For organizations, it means the channel with the most daily reach is also the least prepared, in communication teams with little capacity.",
+    contexto_es: "Informe anual de Workshop, empresa que vende una plataforma de comunicación interna. Encuesta a más de 300 comunicadores internos de empresas de todos los tamaños; 65% trabaja en equipos de un solo país y 35% en equipos de varios países. El informe no detalla los países ni las fechas de campo. La fecha que se muestra es la del PDF (13 de noviembre de 2026). Se publica como excepción aprobada por Desiree: es un proveedor de software y la muestra es menor a 1,000 personas.",
+    contexto_en: "Annual report by Workshop, a company that sells an internal communications platform. Survey of more than 300 internal communicators at companies of all sizes; 65% work in teams based in one country and 35% in teams spread across several. The report does not specify the countries or fieldwork dates. The date shown is that of the PDF (November 13, 2026). Published as an exception approved by Desiree: the publisher is a software vendor and the sample is under 1,000 people.",
+    puntos_es: [
+      "**Las jefaturas son el eslabón débil de la cascada.** Solo 17% de los comunicadores internos considera efectivas a las jefaturas para transmitir los mensajes, 4% las considera muy efectivas y 45% las califica como poco efectivas.",
+      "**La capacidad de los equipos no alcanza para la estrategia.** Solo 39% de los comunicadores internos tiene los recursos para cumplir su estrategia, 71% trabaja en equipos de tres personas o menos y 35% es un equipo de una sola persona.",
+      "**El presupuesto marca la diferencia en la solidez del área.** 76% de los equipos con presupuesto propio siente que su comunicación interna tiene una base sólida, frente a 33% de los equipos sin presupuesto.",
+      "**Se mide la difusión, no el impacto en el negocio.** 9 de cada 10 equipos mide algo, sobre todo aperturas y clics (68%), pero solo 17% vincula la comunicación con métricas clave del negocio, y 36% señala medir resultados como su principal desafío.",
+      "**La IA ya es parte del trabajo diario, pero no lo automatiza.** 48% de los comunicadores internos usa IA a diario (42% en 2026), mientras que solo 8% de quienes la usan afirma que ya ejecuta partes reales de su trabajo.",
+      "**El tono humano es la principal duda frente a la IA.** 39% de los comunicadores internos señala el tono o la voz poco humana como su mayor reparo, por delante de la precisión (24%)."
+    ],
+    puntos_en: [
+      "**Managers are the weak link in the cascade.** Only 17% of internal communicators consider managers effective at cascading messages, 4% consider them very effective and 45% rate them as ineffective.",
+      "**Team capacity falls short of the strategy.** Only 39% of internal communicators have the resources to deliver on their strategy, 71% work in teams of three people or fewer and 35% are a team of one.",
+      "**Budget makes the difference in how solid the function is.** 76% of teams with a dedicated budget feel their internal communication has a solid foundation, compared with 33% of teams with no budget.",
+      "**Reach is measured, not business impact.** 9 in 10 teams measure something, mainly opens and clicks (68%), but only 17% connect communication to key business metrics, and 36% name measuring results as their top challenge.",
+      "**AI is already part of daily work, but it does not automate it.** 48% of internal communicators use AI every day (42% in 2026), while only 8% of those who use it say it already runs real parts of their work.",
+      "**A human tone is the main doubt about AI.** 39% of internal communicators name a tone or voice that does not sound human as their biggest hesitation, ahead of accuracy (24%)."
+    ],
+    articulo_es: {
+      bajada: "La comunicación interna sostiene su base, pero depende de equipos pequeños y de jefaturas que todavía no están preparadas para transmitir los mensajes.",
+      parrafos: [
+        "La comunicación interna llega a 2027 con una base estable y una capacidad limitada. Workshop encuestó a más de 300 comunicadores internos: 54% afirma que su organización tiene una base sólida de comunicación interna, mientras que 46% no lo afirma. A su vez, solo 39% tiene los recursos para cumplir su estrategia. Es decir, buena parte del trabajo se sostiene en pocas personas.",
+        "La evidencia apunta a equipos pequeños y con poco presupuesto. 71% de los comunicadores internos trabaja en equipos de tres personas o menos, y 35% es un equipo de una sola persona. Solo 11% tiene un presupuesto propio y listo para invertir en nuevas herramientas, mientras que 40% no tiene presupuesto. La diferencia se nota en la solidez del área: 76% de los equipos con presupuesto propio siente que tiene una base sólida, frente a 33% de los equipos sin presupuesto.",
+        "El punto más débil está en las jefaturas. Solo 17% de los comunicadores internos considera efectivas a las jefaturas para transmitir los mensajes a sus equipos, y 45% las califica como poco efectivas. Sin embargo, 77% quiere priorizar la comunicación de líderes y jefaturas en 2027, y la comunicación de las jefaturas es la tendencia más elegida por tercer año consecutivo (54%). Workshop atribuye la brecha a jefaturas que reciben un correo reenviado y deben resolver el resto por su cuenta.",
+        "Para el negocio, lo que está en juego es demostrar el valor del área. 9 de cada 10 equipos mide algo, pero solo 17% vincula la comunicación con métricas clave del negocio, y medir resultados es el principal desafío para 36%. La IA todavía no cierra esa brecha: 48% de los comunicadores internos la usa a diario, mientras que solo 8% de quienes la usan afirma que ya ejecuta partes reales de su trabajo.",
+        "El estudio describe un área que tiene claras sus prioridades, pero no la capacidad para cumplirlas. La comunicación de los cambios depende de preparar a las jefaturas y de medir su efecto en el negocio, dos tareas que hoy compiten con el tiempo de equipos muy pequeños."
+      ]
+    },
+    articulo_en: {
+      bajada: "Internal communication holds its foundation, but it depends on small teams and on managers who are not yet prepared to cascade messages.",
+      parrafos: [
+        "Internal communication heads into 2027 with a stable foundation and limited capacity. Workshop surveyed more than 300 internal communicators: 54% say their organization has a solid internal communication foundation, while 46% do not. At the same time, only 39% have the resources to deliver on their strategy. In other words, much of the work rests on a few people.",
+        "The evidence points to small teams with little budget. 71% of internal communicators work in teams of three people or fewer, and 35% are a team of one. Only 11% have a dedicated budget ready to invest in new tools, while 40% have no budget at all. The difference shows in how solid the function is: 76% of teams with a dedicated budget feel they have a solid foundation, compared with 33% of teams with no budget.",
+        "The weakest point is managers. Only 17% of internal communicators consider managers effective at cascading messages to their teams, and 45% rate them as ineffective. However, 77% want to prioritize leadership and manager communication in 2027, and manager communication is the top trend for the third year in a row (54%). Workshop attributes the gap to managers who receive a forwarded email and are left to figure out the rest on their own.",
+        "For the business, what is at stake is proving the function's value. 9 in 10 teams measure something, but only 17% connect communication to key business metrics, and measuring results is the top challenge for 36%. AI is not yet closing that gap: 48% of internal communicators use it every day, while only 8% of those who use it say it already runs real parts of their work.",
+        "The study describes a function that is clear on its priorities but lacks the capacity to deliver them. Communicating change depends on preparing managers and on measuring the effect on the business, two tasks that today compete for the time of very small teams."
+      ]
+    },
+    cita: {
+      original: "When a message depends on hundreds of managers each choosing to pass it on, it will break somewhere.",
+      traduccion_es: "Cuando un mensaje depende de que cientos de jefes decidan transmitirlo, en algún punto se va a cortar.",
+      autor_es: "Workshop, Internal Comms Trends Report 2027",
+      autor_en: "Workshop, Internal Comms Trends Report 2027"
+    },
+    preguntas_es: [
+      "¿Con qué herramientas y con cuánta anticipación reciben las jefaturas los mensajes que deben transmitir a sus equipos?",
+      "¿Qué métrica del negocio podría mostrar el efecto de la comunicación interna en el próximo cambio de la organización?",
+      "¿Qué tareas repetitivas del equipo de comunicación interna podrían automatizarse para liberar tiempo para la estrategia?"
+    ],
+    preguntas_en: [
+      "With what tools and how far in advance do managers receive the messages they must pass on to their teams?",
+      "Which business metric could show the effect of internal communication in the organization's next change?",
+      "Which repetitive tasks of the internal communication team could be automated to free up time for strategy?"
+    ],
+    implicancia_es: null,
+    implicancia_en: null,
+    lecturaEstado: "pendiente",
+    estado: "PUBLICADO",
+  },
 ];
 
 
